@@ -91,6 +91,6 @@ A data set having the value `42` as a value for the `orgtype` attribute
 won't compile and our IDE will warn us of an invalid data set.
 
 
-[setup]: https://github.com/marcgrue/molecule/wiki/Setup-a-Datomic-database
-[populate]: https://github.com/marcgrue/molecule/wiki/Populate-the-database
-[tutorial]: https://github.com/marcgrue/molecule/wiki/Molecule-Seattle-tutorial
+[setup]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database
+[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
+[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial

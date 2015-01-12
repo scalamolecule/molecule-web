@@ -834,7 +834,7 @@ as we can format it as a list of tuples/HLists of values each matching
 our template molecule. 
 
 We use an insert-molecule also when we initially [populate 
-the Seattle database](https://github.com/marcgrue/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L43). 
+the Seattle database](https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleSpec.scala#L43). 
 
 ### Missing attribute values (Null values)
 
@@ -949,6 +949,6 @@ as described in [Database setup][setup].
 
 
 [seattle]: http://docs.datomic.com/tutorial.html
-[setup]: /molecule/manual/database-setup
-[populate]: /molecule/manual/populate-database
+[setup]: /manual/database-setup
+[populate]: /manual/populate-database
 

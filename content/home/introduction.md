@@ -35,13 +35,13 @@ Also when we delete data, it's actually not deleted, but "retracted". Retracted 
 
 `attributes` are typically organized in `namespaces` to group related qualities of our domain:
  
-![](/molecule/img/DatomicElements1.png)
+![](/img/DatomicElements1.png)
 
 ### Entity != row in an sql Table
 
 An `entity` can have _any_ `attribute` from _any_ `namespace` associated to it:
 
-![](/molecule/img/DatomicElements2.png)
+![](/img/DatomicElements2.png)
 
 An entity is therefore not like a row in a table but rather a "cross-cutting" thing that we can
 freely associate any attribute value to. Note how "attrB1" in this example is not associated to entity1.
@@ -98,6 +98,6 @@ Go straight to the [Molecule Seattle tutorial][tutorial] to see a wide range of
  [setup the database][setup] and [populated it with data][populate].
  
  
-[setup]: https://github.com/marcgrue/molecule/wiki/Setup-a-Datomic-database
-[populate]: https://github.com/marcgrue/molecule/wiki/Populate-the-database
-[tutorial]: https://github.com/marcgrue/molecule/wiki/Molecule-Seattle-tutorial
+[setup]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database
+[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
+[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial

@@ -4,12 +4,11 @@
     <ul class="nav nav-pills">
     {{ $section := .Section }}
     {{ range .Site.Menus.main }}
-      {{ $home := "/molecule" }}
       {{ $main := .Name }}
       <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">
         <a data-toggle="dropdown" 
-          href="{{ if eq .Name "Molecule" }}{{ $home }}{{ else }}{{ .Url }}{{ end }}"
-          onclick="window.location.href='{{ if eq .Name "Molecule" }}{{ $home }}{{ else }}{{ .Url }}{{ end }}';">{{ .Name }}</a>
+          href="{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}"
+          onclick="window.location.href='{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}';">{{ .Name }}</a>
         <ul class="dropdown-menu level1" role="menu" aria-labelledby="dropdownMenu">
           {{ range .Children }}
             {{ if eq $main .Name }}
@@ -36,11 +35,11 @@
   </div>
 
   <div class="col-xs-1 column" style="padding:4px;height:25px;float:right;">
-    <a href="https://github.com/marcgrue/molecule" 
+    <a href="https://github.com/scalamolecule/molecule" 
     class="github-button" 
     data-icon="octicon-star"
-    data-count-href="/marcgrue/molecule/stargazers" 
-    data-count-api="/repos/marcgrue/molecule#stargazers_count">Github</a>
+    data-count-href="/scalamolecule/stargazers" 
+    data-count-api="/repos/scalamolecule/molecule#stargazers_count">Github</a>
   </div>
 
 </div>

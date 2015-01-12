@@ -161,5 +161,5 @@ conn.transact(SeattleSchema.tx).get()
 [seattle]: http://docs.datomic.com/tutorial.html
 [schema]: http://docs.datomic.com/schema.htm
 
-[populate]: https://github.com/marcgrue/molecule/wiki/Populate-the-database
-[tutorial]: https://github.com/marcgrue/molecule/wiki/Molecule-Seattle-tutorial
+[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
+[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial

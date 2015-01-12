@@ -11,16 +11,16 @@ menu:
 
 As we see more tutorials on Molecule we'll collect them here:
 
-- [Seattle tutorial](/molecule/tutorials/seattle) - all-round introduction to using Molecule:
-  - [Basic introduction to Molecule](/molecule/tutorials/seattle/#0:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Queries with attributes](/molecule/tutorials/seattle/#1:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Relationships across references](/molecule/tutorials/seattle/#4:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Parameterized molecules for caching queries](/molecule/tutorials/seattle/#5:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Functions and fulltext search in queries](/molecule/tutorials/seattle/#6:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Querying with rules - logical OR](/molecule/tutorials/seattle/#8:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Working with time](/molecule/tutorials/seattle/#9:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Inserting data](/molecule/tutorials/seattle/#10:3d29aefa7257f22b89227d9f373cd5f9)
-  - [Updating/deleting data](/molecule/tutorials/seattle/#11:3d29aefa7257f22b89227d9f373cd5f9)
+- [Seattle tutorial](/tutorials/seattle) - all-round introduction to using Molecule:
+  - [Basic introduction to Molecule](/tutorials/seattle/#0:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Queries with attributes](/tutorials/seattle/#1:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Relationships across references](/tutorials/seattle/#4:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Parameterized molecules for caching queries](/tutorials/seattle/#5:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Functions and fulltext search in queries](/tutorials/seattle/#6:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Querying with rules - logical OR](/tutorials/seattle/#8:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Working with time](/tutorials/seattle/#9:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Inserting data](/tutorials/seattle/#10:3d29aefa7257f22b89227d9f373cd5f9)
+  - [Updating/deleting data](/tutorials/seattle/#11:3d29aefa7257f22b89227d9f373cd5f9)
   
 Wish-list for cookbook recipees (in random order):
 

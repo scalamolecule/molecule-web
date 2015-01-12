@@ -12,7 +12,7 @@ menu:
 
 ### Download code
 
-1. `git clone https://github.com/marcgrue/molecule.git`
+1. `git clone https://github.com/scalamolecule/molecule.git`
 2. `sbt compile`
 3. Import into your IDE
 4. Run tests and poke around...
@@ -21,7 +21,7 @@ menu:
 ### Dependency in your project
 
 Molecule 0.2.0 for Scala 2.11.4 is available at
-[Sonatype](https://oss.sonatype.org/content/repositories/releases/com/marcgrue/molecule_2.11/)
+[Sonatype](https://oss.sonatype.org/content/repositories/releases/com/scalamolecule/molecule_2.11/)
  so that you can add a dependency in your sbt file to `"com.marcgrue" % "molecule_2.11.4" % "0.2.0"`.
 
 Since Molecule generates boilerplate code from your definitions it also needs to have the `DslBoilerplate.scala` file in your project folder. Please have a look at how the sbt build file

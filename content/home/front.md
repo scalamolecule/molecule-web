@@ -102,15 +102,15 @@ Since we use type-interferred code to query for molecular combinations of atomic
    
 ### Get started
 
-- [Introduction](/molecule/home/introduction) to Datomic/Molecule
-- [Setup Database](/molecule/manual/database-setup): initiate a Datomic database and create a database schema with Molecule
-- [Populate Database](/molecule/manual/populate-database): populate a Datomic database with Molecule
-- [Molecule Seattle tutorial](/molecule/tutorials/seattle) examples of using Molecule (based on the 
+- [Introduction](/home/introduction) to Datomic/Molecule
+- [Setup Database](/manual/database-setup): initiate a Datomic database and create a database schema with Molecule
+- [Populate Database](/manual/populate-database): populate a Datomic database with Molecule
+- [Molecule Seattle tutorial](/tutorials/seattle) examples of using Molecule (based on the 
 [Datomic Seattle tutorial](http://docs.datomic.com/tutorial.html))
 
 ### Download code
 
-1. `git clone https://github.com/marcgrue/molecule.git`
+1. `git clone https://github.com/scalamolecule/molecule.git`
 2. `sbt compile`
 3. Open in your IDE
 4. Run tests and poke around...
@@ -121,16 +121,16 @@ Since we use type-interferred code to query for molecular combinations of atomic
 [datomic]: http://www.datomic.com
 [seattle]: http://docs.datomic.com/tutorial.html
 [moleculegroup]: https://groups.google.com/forum/#!forum/molecule-dsl
-[pullrequests]: https://github.com/marcgrue/molecule/pulls
-[issues]: https://github.com/marcgrue/molecule/issues
-[moleculesbt]: https://github.com/marcgrue/molecule/blob/master/project/build.scala
+[pullrequests]: https://github.com/scalamolecule/pulls
+[issues]: https://github.com/scalamolecule/issues
+[moleculesbt]: https://github.com/scalamolecule/blob/master/project/build.scala
 
-[intro]: https://github.com/marcgrue/molecule/wiki/Quick-introduction-to-Datomic-and-Molecule
-[setup]: https://github.com/marcgrue/molecule/wiki/Setup-a-Datomic-database
-[scheme]: https://github.com/marcgrue/molecule/wiki/Setup-a-Datomic-database#defining-a-schema
-[deffile]: https://github.com/marcgrue/molecule/blob/master/examples/src/main/scala/molecule/examples/seattle/schema/SeattleDefinition.scala
-[populate]: https://github.com/marcgrue/molecule/wiki/Populate-the-database
-[tutorial]: https://github.com/marcgrue/molecule/wiki/Molecule-Seattle-tutorial
-[tutorialcode]: https://github.com/marcgrue/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala
-[tutorialqueries]: https://github.com/marcgrue/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleQueryTests.scala
-[tutorialtransformations]: https://github.com/marcgrue/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTransformationTests.scala
+[intro]: https://github.com/scalamolecule/wiki/Quick-introduction-to-Datomic-and-Molecule
+[setup]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database
+[scheme]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database#defining-a-schema
+[deffile]: https://github.com/scalamolecule/blob/master/examples/src/main/scala/examples/seattle/schema/SeattleDefinition.scala
+[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
+[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial
+[tutorialcode]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleTests.scala
+[tutorialqueries]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleQueryTests.scala
+[tutorialtransformations]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleTransformationTests.scala
