@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on Molecule</title>
+    <link>http://scalamolecule.github.io/home/</link>
+    <description>Recent content in Homes on Molecule</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    <lastBuildDate>Fri, 02 Jan 2015 22:06:44 CET</lastBuildDate>
+    <atom:link href="http://scalamolecule.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Home</title>
+      <link>http://scalamolecule.github.io/</link>
+      <pubDate>Fri, 02 Jan 2015 22:06:44 CET</pubDate>
+      
+      <guid>http://scalamolecule.github.io/</guid>
+      <description>
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;molecule:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;Molecule&lt;/h1&gt;
+
+&lt;h4 id=&#34;write-powerful-datomic-queries-with-the-words-of-your-domain:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;&lt;strong&gt;&lt;em&gt;Write powerful &lt;a href=&#34;http://www.datomic.com&#34;&gt;Datomic&lt;/a&gt; queries with the words of your domain:&lt;/em&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;div id=&#34;myCarousel&#34; class=&#34;carousel slide&#34; data-interval=&#34;0&#34; data-ride=&#34;carousel&#34;&gt;
+    &lt;!-- Carousel indicators --&gt;
+    &lt;ol class=&#34;carousel-indicators&#34;&gt;
+        &lt;li data-target=&#34;#myCarousel&#34; data-slide-to=&#34;0&#34; class=&#34;active&#34;&gt;&lt;/li&gt;
+        &lt;li data-target=&#34;#myCarousel&#34; data-slide-to=&#34;1&#34;&gt;&lt;/li&gt;
+        &lt;li data-target=&#34;#myCarousel&#34; data-slide-to=&#34;2&#34;&gt;&lt;/li&gt;
+    &lt;/ol&gt;   
+   &lt;!-- Carousel items --&gt;
+    &lt;div class=&#34;carousel-inner&#34;&gt;
+        &lt;div class=&#34;active item&#34;&gt;
+            &lt;div class=&#34;carousel-caption&#34;&gt;                      
+            
+              &lt;h3&gt;Relationships&lt;/h3&gt;
+              &lt;p&gt;Find Smith&#39;s in New York:&lt;/p&gt;
+              &lt;pre&gt;&lt;code class=&#34;language-scala hljs&#34;&gt;&lt;span class=&#34;hljs-type&#34;&gt;Person&lt;/span&gt;.name(&lt;span class=&#34;hljs-string&#34;&gt;&#34;Smith&#34;&lt;/span&gt;).&lt;span class=&#34;hljs-type&#34;&gt;Address&lt;/span&gt;.&lt;span class=&#34;hljs-type&#34;&gt;City&lt;/span&gt;.name(&lt;span class=&#34;hljs-string&#34;&gt;&#34;New York&#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;
+Note how bla bla
+              
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;item&#34;&gt;
+            &lt;div class=&#34;carousel-caption&#34;&gt;                   
+            
+              &lt;h3&gt;Graph traversals&lt;/h3&gt;
+              &lt;p&gt;Find Collaborators of Collaborators of John Lennon:&lt;/p&gt;
+              &lt;pre&gt;&lt;code class=&#34;language-scala hljs&#34;&gt;&lt;span class=&#34;hljs-type&#34;&gt;Artist&lt;/span&gt;.name(&lt;span class=&#34;hljs-string&#34;&gt;&#34;John Lennon&#34;&lt;/span&gt;).name.get
+&lt;/code&gt;&lt;/pre&gt;
+Note how bla bla
+              
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;item&#34;&gt;
+            &lt;div class=&#34;carousel-caption&#34;&gt;                   
+            
+              &lt;h3&gt;Logic operations&lt;/h3&gt;
+              &lt;p&gt;Apply conditional logic to attribute values&lt;/p&gt;
+              &lt;pre&gt;&lt;code class=&#34;language-scala hljs&#34;&gt;&lt;span class=&#34;hljs-type&#34;&gt;Artist&lt;/span&gt;.name(&lt;span class=&#34;hljs-string&#34;&gt;&#34;Lisa&#34;&lt;/span&gt; or &lt;span class=&#34;hljs-string&#34;&gt;&#34;Linda&#34;&lt;/span&gt;).age.&amp;lt;(&lt;span class=&#34;hljs-number&#34;&gt;18&lt;/span&gt;).get
+&lt;/code&gt;&lt;/pre&gt;
+Note how bla bla
+              
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Carousel nav --&gt;
+    &lt;a class=&#34;carousel-control left&#34; href=&#34;#myCarousel&#34; data-slide=&#34;prev&#34;&gt;
+        &lt;span class=&#34;glyphicon glyphicon-chevron-left&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a class=&#34;carousel-control right&#34; href=&#34;#myCarousel&#34; data-slide=&#34;next&#34;&gt;
+        &lt;span class=&#34;glyphicon glyphicon-chevron-right&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Molecule is a Scala meta-DSL that translates your &amp;ldquo;domain molecules&amp;rdquo; of attributes to queries for &lt;a href=&#34;http://www.datomic.com&#34;&gt;Datomic&lt;/a&gt; - the database of immutable facts.&lt;/p&gt;
+
+&lt;h4 id=&#34;how-does-it-work:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;How does it work?&lt;/h4&gt;
+
+&lt;p&gt;Our domain could have a &lt;code&gt;Person&lt;/code&gt; with attributes &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;age&lt;/code&gt; having a relationship to an &lt;code&gt;Address&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;trait Person {
+  val name    = oneString
+  val age     = oneInt
+  val address = oneRef[Address]
+} 
+
+trait Address {
+  val street = oneString
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From this simple schema definition, Molecule generates the necessary code to compose intuitive and powerful queries - &lt;em&gt;your domain language becomes the query language:&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;Person.name.age.Address.street.get
+Person.name(&amp;quot;Lisa&amp;quot;).age.get
+Person.name(&amp;quot;Lisa&amp;quot;).age.&amp;lt;(18).get
+Person.name(&amp;quot;Lisa&amp;quot; or &amp;quot;Linda&amp;quot;).age.Address.street.contains(&amp;quot;5th&amp;quot;).get
+// etc..        
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since we use type-interferred code to query for molecular combinations of atomic attributes we are guaranteed to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only make valid queries (won&amp;rsquo;t compile otherwise)&lt;/li&gt;
+&lt;li&gt;Only get query results that satisfy our queries (no null checks etc)&lt;/li&gt;
+&lt;li&gt;Always get type-interferred query results&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;get-started:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;Get started&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://scalamolecule.github.io/home/introduction&#34;&gt;Introduction&lt;/a&gt; to Datomic/Molecule&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://scalamolecule.github.io/manual/database-setup&#34;&gt;Setup Database&lt;/a&gt;: initiate a Datomic database and create a database schema with Molecule&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://scalamolecule.github.io/manual/populate-database&#34;&gt;Populate Database&lt;/a&gt;: populate a Datomic database with Molecule&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://scalamolecule.github.io/tutorials/seattle&#34;&gt;Molecule Seattle tutorial&lt;/a&gt; examples of using Molecule (based on the
+&lt;a href=&#34;http://docs.datomic.com/tutorial.html&#34;&gt;Datomic Seattle tutorial&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;download-code:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;Download code&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/scalamolecule/molecule.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sbt compile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open in your IDE&lt;/li&gt;
+&lt;li&gt;Run tests and poke around&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;try-demo:ffcff61ab3a11ef1d50900901a24ec54&#34;&gt;Try demo&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>http://scalamolecule.github.io/home/introduction/</link>
+      <pubDate>Fri, 02 Jan 2015 22:06:44 CET</pubDate>
+      
+      <guid>http://scalamolecule.github.io/home/introduction/</guid>
+      <description>
+
+&lt;h1 id=&#34;molecule-introduction:2767292a573dc549b9b4297b701af3ab&#34;&gt;Molecule introduction&lt;/h1&gt;
+
+&lt;p&gt;Facts like&lt;/p&gt;
+
+&lt;pre&gt;John likes pizza 12:35:54&lt;/pre&gt;
+
+&lt;p&gt;are stored in Datomic as &lt;code&gt;Datom&lt;/code&gt;s having these 4 basic elements:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;entity&lt;/code&gt; &lt;code&gt;attribute&lt;/code&gt; &lt;code&gt;value&lt;/code&gt; &lt;code&gt;transaction&lt;/code&gt;(time)&lt;/p&gt;
+
+&lt;p&gt;In this example, &lt;em&gt;likes&lt;/em&gt; is an &lt;code&gt;attribute&lt;/code&gt; and it has the &lt;code&gt;value&lt;/code&gt; &lt;em&gt;pizza&lt;/em&gt;. It is &lt;strong&gt;asserted&lt;/strong&gt; that
+the &lt;code&gt;entity&lt;/code&gt; &lt;em&gt;John&lt;/em&gt; likes pizza at &lt;code&gt;transaction&lt;/code&gt; time 12:35:54.&lt;/p&gt;
+
+&lt;h3 id=&#34;immutable-data:2767292a573dc549b9b4297b701af3ab&#34;&gt;Immutable data&lt;/h3&gt;
+
+&lt;p&gt;Everytime a fact is asserted the old value of the attribute is &lt;em&gt;not deleted&lt;/em&gt;. A Datomic database
+is immutable. We can go back in time and see the values of an attribute &lt;em&gt;at any point in time&lt;/em&gt;. We could for
+instance see all our previous addresses if this was part of our domain model.&lt;/p&gt;
+
+&lt;p&gt;Also when we delete data, it&amp;rsquo;s actually not deleted, but &amp;ldquo;retracted&amp;rdquo;. Retracted data doesn&amp;rsquo;t show
+ up when we are querying the current database. But if we look at the database at an earlier point in
+  time we can see the data before it got retracted.&lt;/p&gt;
+
+&lt;h3 id=&#34;namespaces-and-attributes:2767292a573dc549b9b4297b701af3ab&#34;&gt;Namespaces and attributes&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;attributes&lt;/code&gt; are typically organized in &lt;code&gt;namespaces&lt;/code&gt; to group related qualities of our domain:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://scalamolecule.github.io/img/DatomicElements1.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;entity-row-in-an-sql-table:2767292a573dc549b9b4297b701af3ab&#34;&gt;Entity != row in an sql Table&lt;/h3&gt;
+
+&lt;p&gt;An &lt;code&gt;entity&lt;/code&gt; can have &lt;em&gt;any&lt;/em&gt; &lt;code&gt;attribute&lt;/code&gt; from &lt;em&gt;any&lt;/em&gt; &lt;code&gt;namespace&lt;/code&gt; associated to it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://scalamolecule.github.io/img/DatomicElements2.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;An entity is therefore not like a row in a table but rather a &amp;ldquo;cross-cutting&amp;rdquo; thing that we can
+freely associate any attribute value to. Note how &amp;ldquo;attrB1&amp;rdquo; in this example is not associated to entity1.&lt;/p&gt;
+
+&lt;h3 id=&#34;molecules:2767292a573dc549b9b4297b701af3ab&#34;&gt;Molecules&lt;/h3&gt;
+
+&lt;p&gt;If we imagine attributes as atomic data units, then we can
+imagine molecules as 3-dimensional data structures composed of atoms.&lt;/p&gt;
+
+&lt;p&gt;In Molecule we use the builder pattern to model such data structures, attribute
+by attribute until we have a desired data structure. We could model &lt;code&gt;entity1&lt;/code&gt;
+from the example above as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;NamespaceA.attrA1.attrA2.NamespaceB.attrB2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;queries-with-molecules:2767292a573dc549b9b4297b701af3ab&#34;&gt;Queries with molecules&lt;/h3&gt;
+
+&lt;p&gt;If a namespace &lt;code&gt;Community&lt;/code&gt; has two attributes &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;url&lt;/code&gt; we can
+model a data structure of community names and urls as a molecule and then ask
+the database to return those to us as a list of tuples with &lt;code&gt;name&lt;/code&gt;/&lt;code&gt;url&lt;/code&gt; values:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val namesAndUrls: List[(String, String)] = m(Community.name.url).get
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note how the return types of &lt;code&gt;name&lt;/code&gt; and &lt;code&gt;url&lt;/code&gt; are infered.&lt;/p&gt;
+
+&lt;p&gt;Implicit conversions even allow us to condense our query.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val namesAndUrls = Community.name.url.get
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;values-and-expressions:2767292a573dc549b9b4297b701af3ab&#34;&gt;Values and expressions&lt;/h3&gt;
+
+&lt;p&gt;Values and expressions can be applied to attributes of our molecule so that
+ we can express more complex data structures:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;Community.name.`type`(&amp;quot;twitter&amp;quot; or &amp;quot;facebook_page&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we find &lt;code&gt;name&lt;/code&gt;s of communities of a &lt;code&gt;type&lt;/code&gt; that has either the value &amp;ldquo;twitter&amp;rdquo;
+OR &amp;ldquo;facebook_page&amp;rdquo;. With your own definitions you can write similar
+ complex queries in a simple way using the terms of your own domain.&lt;/p&gt;
+
+&lt;h3 id=&#34;further-reading:2767292a573dc549b9b4297b701af3ab&#34;&gt;Further reading&amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;Go straight to the &lt;a href=&#34;https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial&#34;&gt;Molecule Seattle tutorial&lt;/a&gt; to see a wide range of
+ queries that Molecule can express, or check out first how we use Molecule to
+ &lt;a href=&#34;https://github.com/scalamolecule/wiki/Setup-a-Datomic-database&#34;&gt;setup the database&lt;/a&gt; and &lt;a href=&#34;https://github.com/scalamolecule/wiki/Populate-the-database&#34;&gt;populated it with data&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>http://scalamolecule.github.io/home/setup/</link>
+      <pubDate>Wed, 14 May 2014 02:13:50 UTC</pubDate>
+      
+      <guid>http://scalamolecule.github.io/home/setup/</guid>
+      <description>
+
+&lt;h1 id=&#34;setup-molecule:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Setup Molecule&lt;/h1&gt;
+
+&lt;h3 id=&#34;download-code:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Download code&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone https://github.com/scalamolecule/molecule.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sbt compile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Import into your IDE&lt;/li&gt;
+&lt;li&gt;Run tests and poke around&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;dependency-in-your-project:2cc0b07f42930e4520820be1fe66f913&#34;&gt;Dependency in your project&lt;/h3&gt;
+
+&lt;p&gt;Molecule 0.2.0 for Scala 2.11.4 is available at
+&lt;a href=&#34;https://oss.sonatype.org/content/repositories/releases/com/scalamolecule/molecule_2.11/&#34;&gt;Sonatype&lt;/a&gt;
+ so that you can add a dependency in your sbt file to &lt;code&gt;&amp;quot;com.marcgrue&amp;quot; % &amp;quot;molecule_2.11.4&amp;quot; % &amp;quot;0.2.0&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since Molecule generates boilerplate code from your definitions it also needs to have the &lt;code&gt;DslBoilerplate.scala&lt;/code&gt; file in your project folder. Please have a look at how the sbt build file
+ of the Molecule project itself puts things together and simply copy that to your own project:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Setup your sbt build file [as in Molecule][moleculesbt]:
+
+&lt;ul&gt;
+&lt;li&gt;Add library dependency &lt;code&gt;&amp;quot;com.marcgrue&amp;quot; % &amp;quot;molecule_2.11.4&amp;quot; % &amp;quot;0.2.0&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;List directories where you have your [definition file(s)][setup]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Define your domain schema in a [schema definition file][setup]&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sbt compile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Import into your IDE&lt;/li&gt;
+&lt;li&gt;[Setup your database][setup]&lt;/li&gt;
+&lt;li&gt;[Populate your database][populate] with data&lt;/li&gt;
+&lt;li&gt;[Make molecule queries][tutorial]&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://scalamolecule.github.io/home/about/</link>
+      <pubDate>Wed, 14 May 2014 02:13:50 UTC</pubDate>
+      
+      <guid>http://scalamolecule.github.io/home/about/</guid>
+      <description>
+
+&lt;h1 id=&#34;about:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;About&lt;/h1&gt;
+
+&lt;p&gt;Molecule is created by Marc Grue&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;contibutors:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Contibutors&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://marcgrue.com&#34;&gt;Marc Grue&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;inspired-by:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Inspired by&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/foursquare/rogue&#34;&gt;Rogue&lt;/a&gt;, type-safe Scala DSL for MongoDB&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pellucidanalytics/datomisca&#34;&gt;Datomisca&lt;/a&gt;, a Scala API for Datomic&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jonifreeman/sqltyped&#34;&gt;SqlTyped&lt;/a&gt;, Embedding SQL as an external DSL into Scala&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nau/jscala&#34;&gt;JScala&lt;/a&gt;, Scala macro that produces JavaScript from Scala code&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sirthias/parboiled2&#34;&gt;Parboiled2&lt;/a&gt;, A macro-based PEG parser generator for Scala&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;license:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;License&lt;/h4&gt;
+
+&lt;p&gt;Molecule is licensed under the &lt;a href=&#34;http://en.wikipedia.org/wiki/Apache_license&#34;&gt;Apache License 2.0&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

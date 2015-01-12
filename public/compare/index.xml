@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compares on Molecule</title>
+    <link>http://scalamolecule.github.io/compare/</link>
+    <description>Recent content in Compares on Molecule</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+    
+    <lastBuildDate>Wed, 14 May 2014 02:13:50 UTC</lastBuildDate>
+    <atom:link href="http://scalamolecule.github.io/compare/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Compare</title>
+      <link>http://scalamolecule.github.io/compare/overview/</link>
+      <pubDate>Wed, 14 May 2014 02:13:50 UTC</pubDate>
+      
+      <guid>http://scalamolecule.github.io/compare/overview/</guid>
+      <description>
+
+&lt;h1 id=&#34;compare-with-other-databases:68f80267fa3a50980dbb745a782b8dca&#34;&gt;Compare with other databases&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Overview&lt;/li&gt;
+&lt;li&gt;SQL
+
+&lt;ul&gt;
+&lt;li&gt;Slick&lt;/li&gt;
+&lt;li&gt;Sqltyped tutorial&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Mongodb
+
+&lt;ul&gt;
+&lt;li&gt;Original&lt;/li&gt;
+&lt;li&gt;Rogue tutorial&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Titan&lt;/li&gt;
+&lt;li&gt;Neo4j&lt;/li&gt;
+&lt;li&gt;Gremlin&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://scalamolecule.github.io/compare/sql/</link>
+      <pubDate>Wed, 14 May 2014 02:13:50 UTC</pubDate>
+      
+      <guid>http://scalamolecule.github.io/compare/sql/</guid>
+      <description>
+
+&lt;h1 id=&#34;compare-with-sql:d1babb582138b02a13547d2c6eb6df72&#34;&gt;Compare with SQL&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
