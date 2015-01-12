@@ -1,0 +1,46 @@
+<div class="col-md-12 column" style="padding-left:0px;height:30px;">
+
+  <div class="col-sm-11 column" style="padding-left:0;">
+    <ul class="nav nav-pills">
+    {{ $section := .Section }}
+    {{ range .Site.Menus.main }}
+      {{ $home := "/molecule" }}
+      {{ $main := .Name }}
+      <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">
+        <a data-toggle="dropdown" 
+          href="{{ if eq .Name "Molecule" }}{{ $home }}{{ else }}{{ .Url }}{{ end }}"
+          onclick="window.location.href='{{ if eq .Name "Molecule" }}{{ $home }}{{ else }}{{ .Url }}{{ end }}';">{{ .Name }}</a>
+        <ul class="dropdown-menu level1" role="menu" aria-labelledby="dropdownMenu">
+          {{ range .Children }}
+            {{ if eq $main .Name }}
+              <!-- Skip index page -->
+            {{ else }}
+              {{ if .HasChildren }}
+                <li class="dropdown-submenu">
+                  <a href="{{ .Url }}">{{ .Name }}</a>
+                  <ul class="dropdown-menu">
+                  {{ range .Children }}
+                    <li><a href="{{.Url}}">{{ .Name }}</a></li>
+                  {{ end }}
+                  </ul>
+                </li>
+              {{ else }}
+                <li><a href="{{.Url}}">{{ .Name }}</a></li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+    </ul>
+  </div>
+
+  <div class="col-xs-1 column" style="padding:4px;height:25px;float:right;">
+    <a href="https://github.com/marcgrue/molecule" 
+    class="github-button" 
+    data-icon="octicon-star"
+    data-count-href="/marcgrue/molecule/stargazers" 
+    data-count-api="/repos/marcgrue/molecule#stargazers_count">Github</a>
+  </div>
+
+</div>

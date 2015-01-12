@@ -1,0 +1,13 @@
+<!-- 
+{{ $currentNode := . }}
+{{ .Data.Pages "Section" "post" }}
+<br>==============<br>
+{{ range .Site.Menus.main }}
+{{ .Name }} - {{ .Identifier }} 
+{{ if .HasChildren }}       
+  {{ range .Children }}
+  {{ end }}
+  <br>
+{{end}}
+  <br>
+{{end}} -->

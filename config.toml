@@ -1,0 +1,40 @@
+baseurl = "http://marcgrue.github.io/molecule/"
+languageCode = "en-us"
+title = "Molecule"
+MetaDataFormat = "yaml"
+publishdir = "public"
+
+PygmentsStyle = "perldoc"
+
+[[menu.main]]
+    name = "Molecule"
+    weight = -110
+    identifier = "home"  
+    url = "/home/front"  
+[[menu.main]]
+    name = "Compare"
+    weight = -100
+    identifier = "compare"
+    url = "/compare/overview"
+[[menu.main]]
+    name = "Tutorials"
+    weight = -90
+    identifier = "tutorials"
+    url = "/tutorials/overview"
+
+[[menu.main]]
+    name = "Manual"
+    weight = -70
+    identifier = "manual"
+    url = "/manual/overview"
+
+[[menu.main]]
+    name = "Developer"
+    weight = -60
+    identifier = "developer"
+    url = "/developer/overview"
+[[menu.main]]
+    name = "Community"
+    weight = -50
+    identifier = "community"
+    url = "/community/overview"
