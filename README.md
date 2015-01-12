@@ -1,6 +1,6 @@
-# ☍ Molecule
+# Molecule website content
 
-Molecule is a type safe and intuitive Scala query/modelling DSL for 
-[Datomic][datomic] - the immutable database of facts. 
+Website content for [Molecule](http://scalamolecule.org) - the type safe and intuitive Scala query/modelling DSL for 
+[Datomic](http://www.datomic.com).
 
-Visit website: [ScalaMolecule.org](http://scalamolecule.org)
+Markdown files here are used by [Hugo](http://gohugo.io) to generate static files in the [scalamolecule.github.io](https://github.com/scalamolecule/scalamolecule.github.io) repository.
