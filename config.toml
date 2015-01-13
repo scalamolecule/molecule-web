@@ -1,4 +1,4 @@
-baseurl = "http://scalamolecule.github.io/"
+baseurl = "http://scalamolecule.org/"
 languageCode = "en-us"
 title = "Molecule"
 MetaDataFormat = "yaml"

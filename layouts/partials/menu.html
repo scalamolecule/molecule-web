@@ -7,8 +7,8 @@
       {{ $main := .Name }}
       <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">
         <a data-toggle="dropdown" 
-          href="{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}"
-          onclick="window.location.href='{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}';">{{ .Name }}</a>
+          href="{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}" target="_top" 
+          onclick="javascript:top.location = '{{ if eq .Name "Molecule" }}/{{ else }}{{ .Url }}{{ end }}';return true;">{{ .Name }}</a>
         <ul class="dropdown-menu level1" role="menu" aria-labelledby="dropdownMenu">
           {{ range .Children }}
             {{ if eq $main .Name }}
@@ -38,8 +38,10 @@
     <a href="https://github.com/scalamolecule/molecule" 
     class="github-button" 
     data-icon="octicon-star"
+    >Github</a>
+    <!-- Add this when there are more stargazers...
     data-count-href="/scalamolecule/stargazers" 
-    data-count-api="/repos/scalamolecule/molecule#stargazers_count">Github</a>
+    data-count-api="/repos/scalamolecule/molecule#stargazers_count" -->
   </div>
 
 </div>

@@ -14,7 +14,7 @@ menu:
 
 #### **_Write powerful [Datomic] queries with the words of your domain:_**
 
-<div id="myCarousel" class="carousel slide" data-interval="0" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
 	<!-- Carousel indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
