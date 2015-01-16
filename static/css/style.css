@@ -204,3 +204,41 @@ pre {
 .bs-example{
 	margin: 20px;
 }
+
+
+/* Numbered steps directive */
+.sequence-block {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /*margin: 5px 0;*/
+
+    /*margin-top: -20px;*/
+}
+
+.sequence-block > .bullet-block {
+    display: table-cell;
+    padding-right: 10px;
+    width: 3.0em;
+}
+
+.sequence-block .sequence-step {
+    text-align: center;
+    background-color: #555;
+    color: white;
+    width: 24px;
+    font-weight: bold;
+    height: 24px;
+    border-radius: 12px;
+
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.sequence-block > .section {
+    display: table-cell;
+}
+
+.sequence-block > .section > h4 {
+    /*margin: 0;*/
+}

@@ -131,53 +131,75 @@ menu:
 </div>
 
 
-Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to queries for [Datomic](http://www.datomic.com) - the database of immutable facts. 
+Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to Datalog queries for [Datomic](http://www.datomic.com) - the database of immutable facts. 
 
-Given a simple schema of your domain namespaces and their attributes, Molecule generates boilerplate code so that you can compose query molecules in endless combinations that suits your domain. Accessing Datomic probably couldn't be easier.
+Given a simple schema of your domain namespaces and their attributes, Molecule generates boilerplate code so that you can compose query molecules in endless combinations.
 
 
 ### How does it work?
 
+<div class="sequence-block">
+	<div class="bullet-block">
+		<div class="sequence-step">1</div>
+	</div>
+	<div class="section">
+		<h4 id="define-schema-once:ffcff61ab3a11ef1d50900901a24ec54">Define schema (once)</h4>
+        <p>Our domain could have a <code>Person</code> with attributes <code>name</code> and <code>age</code> having a relationship to an <code>Address</code> so we define a schema for our domain:</p>
 
-1. #### Define schema (once)
-   Our domain could have a `Person` with attributes `name` and `age` having a relationship to an `Address` so we define a schema for our domain:
-    
-    ```
-    trait Person {
-      val name    = oneString
-      val age     = oneInt
-      val address = one[Address]
-    }
-    trait Address {
-      val street = oneString
-    }
-    ```
-We run `sbt compile` and Molecule generates the necessary boilerplate code to compose intuitive and powerful queries. This step is only done once in the beginning (or when you need to change the schema). 
+<pre><code>trait Person {
+  val name    = oneString
+  val age     = oneInt
+  val address = one[Address]
+}
+trait Address {
+  val street = oneString
+}
+</code></pre>
 
-2. #### Make molecules
-    Now we can make Molecule queries _with the words of our domain_ as we saw above:
+        <p>When we run <code>sbt compile</code> Molecule uses our schema as a template to generate some boilerplate code so that we can compose intuitive and powerful query molecules. This step is only done once in the beginning (or when you need to change the schema).</p>
+	</div>
+</div>
 
-    ```scala
-    Person.name.age.Address.street.get
-    Person.name("Lisa").age.get
-    Person.name("Lisa").age.<(18).get
-    Person.name("Lisa" or "Linda").age.Address.street.contains("5th").get
-    // etc..        
-    ```
-The implicit macro `get` turns our molecule into a valid Datalog query at compile time. That means we can even infer the return type:
+<div class="sequence-block">
+    <div class="bullet-block">
+        <div class="sequence-step">2</div>
+    </div>
+    <div class="section">
+        <h4 id="make-molecules:ffcff61ab3a11ef1d50900901a24ec54">Make molecules</h4>
+        <p>Now we can make Molecule queries <em>with the words of our domain</em> as we saw above:</p>
 
-    ```
-    val persons: Seq[(String, Int, String)] = Person.name.age.Address.street.get
-    ```
- 
-3. #### Run queries
-   The generated Datalog queries are executed against Datomic and the results returned as either tuples or Shapeless HLists as you like.
+<pre><code class="language-scala">Person.name.age.Address.street.get
+Person.name(&quot;Lisa&quot;).age.get
+Person.name(&quot;Lisa&quot;).age.&lt;(18).get
+Person.name(&quot;Lisa&quot; or &quot;Linda&quot;).age.Address.street.contains(&quot;5th&quot;).get
+// etc..        
+</code></pre>
+
+        <p>The implicit macro <code>get</code> turns our molecule into a valid Datalog query at compile time so there's no runtime overhead. 
+    </div>
+</div>
+
+<div class="sequence-block">
+    <div class="bullet-block">
+        <div class="sequence-step">3</div>
+    </div>
+    <div class="section">
+        <h4 id="run-queries:ffcff61ab3a11ef1d50900901a24ec54">Run queries</h4>
+        <p>The generated Datalog queries are executed against Datomic and we can get our type-inferred result sets back from Datomic as either tuples or Shapeless HLists:</p>
+        <pre><code>val persons: Seq[(String, Int)]         = Person.name.age.get
+val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
+</code></pre>
+    </div>
+</div>
+
 
 ### Guarantees
 
-- Valid queries (won't compile otherwise)
-- Expected result sets without null values (we ask for existing attributes)
-- Type-interferred results
+Queries are
+
+- Valid (won't compile otherwise)
+- Returning predictable results without null values (we ask for existing attributes)
+- Type-interferred
 
    
 ### Get started
