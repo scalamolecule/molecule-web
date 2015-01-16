@@ -120,8 +120,8 @@ pre {
 }*/
 .carousel-caption {
     position: absolute;
-    left: 15%;
-    right: 15%;
+    left: 10%;
+    right: 10%;
     bottom: 35px;
     z-index: 10;
     padding-top: 20px;

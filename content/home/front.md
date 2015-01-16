@@ -14,46 +14,110 @@ menu:
 
 #### **_Write powerful [Datomic] queries with the words of your domain:_**
 
-<div id="myCarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
+
+
+<div id="myCarousel" class="carousel slide" data-interval="9000" data-ride="carousel">
 	<!-- Carousel indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
     </ol>   
    <!-- Carousel items -->
     <div class="carousel-inner">
         <div class="active item">
+            <div class="carousel-caption">
+              <h3>Type-inferred Queries</h3>
+<p>Build query molecules with your domain attributes</p>
+<pre><code class="language-scala">val persons: Seq[(String, Int)] = Person.name.age.get      
+</code></pre>
+<p><em>&ldquo;Name and age of Persons&rdquo;</em></p>
+            </div>
+        </div>   
+        <div class="item">
             <div class="carousel-caption">                      
-            
-              <h3>Relationships</h3>
-              <p>Find Smith's in New York:</p>
-              <pre><code class="language-scala hljs"><span class="hljs-type">Person</span>.name(<span class="hljs-string">"Smith"</span>).<span class="hljs-type">Address</span>.<span class="hljs-type">City</span>.name(<span class="hljs-string">"New York"</span>)
+            	<h3>Relationships</h3>
+<p>Pick attributes across namespaces</p>
+
+<pre><code class="language-scala">Person.name.age.Address.street.Country.name.get      
 </code></pre>
-Note how bla bla
-              
+
+<p><em>&ldquo;Name, age, street and country of residence&rdquo;</em></p>
             </div>
         </div>
         <div class="item">
             <div class="carousel-caption">                   
-            
-              <h3>Graph traversals</h3>
-              <p>Find Collaborators of Collaborators of John Lennon:</p>
-              <pre><code class="language-scala hljs"><span class="hljs-type">Artist</span>.name(<span class="hljs-string">"John Lennon"</span>).name.get
+            	<h3 id="conditional-values:ffcff61ab3a11ef1d50900901a24ec54">Conditional values</h3>
+
+<p>Apply required values for certain attributes</p>
+
+<pre><code class="language-scala">Person.name(&quot;Johnson&quot;).age.Address.City.name(&quot;New York&quot;).get      
 </code></pre>
-Note how bla bla
-              
+
+<p><em>&ldquo;Age of Johnsons in New York&rdquo; - name, age and city returned</em></p>
             </div>
         </div>
         <div class="item">
             <div class="carousel-caption">                   
-            
-              <h3>Logic operations</h3>
-              <p>Apply conditional logic to attribute values</p>
-              <pre><code class="language-scala hljs"><span class="hljs-type">Artist</span>.name(<span class="hljs-string">"Lisa"</span> or <span class="hljs-string">"Linda"</span>).age.&lt;(<span class="hljs-number">18</span>).get
+            	<h3 id="control-output:ffcff61ab3a11ef1d50900901a24ec54">Control output</h3>
+
+<p>Add an underscore to omit an attribute from the result set:</p>
+
+<pre><code class="language-scala">Person.name_(&quot;Johnson&quot;).age.Address.City.name_(&quot;New York&quot;).get      
 </code></pre>
-Note how bla bla
-              
+
+<p><em>&ldquo;Age of Johnsons in New York&rdquo; - only ages returned</em></p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="carousel-caption">                   
+            	<h3 id="logic-and-ranges:ffcff61ab3a11ef1d50900901a24ec54">Logic and ranges</h3>
+
+<p>Apply logical options and ranges</p>
+
+<pre><code class="language-scala">Person.name(&quot;Dean&quot; or &quot;Johnson&quot;).age.&lt;(25).Address.Country.iso2(&quot;US&quot;).get      
+</code></pre>
+
+<p><em>&ldquo;Young Dean and Johnsons in the US&rdquo;</em></p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="carousel-caption">                   
+            	<h3 id="insert-multi-level-data:ffcff61ab3a11ef1d50900901a24ec54">Insert multi-level data</h3>
+
+<p>Insert data for multiple namespace levels in one go:</p>
+
+<pre><code class="language-scala">Person.name(&quot;Johnson&quot;).age(35).Address.street(&quot;5th&quot;).City.name(&quot;New York&quot;).add
+</code></pre>
+
+<p><em>&ldquo;Add a 35-year-old Johnson living on 5th street in New York&rdquo;</em></p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="carousel-caption">                   
+            	<h3 id="upsert-data:ffcff61ab3a11ef1d50900901a24ec54">Upsert data</h3>
+
+<p>Add new facts</p>
+
+<pre><code class="language-scala">Person(johnsonId).Address.street(&quot;Broadway&quot;).update
+</code></pre>
+
+<p><em>&ldquo;Johnson now lives on Broadway&rdquo;</em></p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="carousel-caption">                   
+            	<h3 id="more-up-the-sleeve:ffcff61ab3a11ef1d50900901a24ec54">More up the sleeve..</h3>
+<ul>
+<li><a href="/manual/aggregates">Aggregates</a></li>
+<li><a href="/manual/graphs">Graphs</a></li>
+<li>etc&hellip;</li>
+</ul>
             </div>
         </div>
     </div>
@@ -66,38 +130,54 @@ Note how bla bla
     </a>
 </div>
 
-Molecule is a Scala meta-DSL that translates your "domain molecules" of attributes to queries for [Datomic](http://www.datomic.com) - the database of immutable facts. 
 
-#### How does it work?
+Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to queries for [Datomic](http://www.datomic.com) - the database of immutable facts. 
 
-Our domain could have a `Person` with attributes `name` and `age` having a relationship to an `Address`:
+Given a simple schema of your domain namespaces and their attributes, Molecule generates boilerplate code so that you can compose query molecules in endless combinations that suits your domain. Accessing Datomic probably couldn't be easier.
 
-```
-trait Person {
-  val name    = oneString
-  val age     = oneInt
-  val address = oneRef[Address]
-} 
 
-trait Address {
-  val street = oneString
-}
-```
-From this simple schema definition, Molecule generates the necessary code to compose intuitive and powerful queries - _your domain language becomes the query language:_
+### How does it work?
 
-```scala
-Person.name.age.Address.street.get
-Person.name("Lisa").age.get
-Person.name("Lisa").age.<(18).get
-Person.name("Lisa" or "Linda").age.Address.street.contains("5th").get
-// etc..        
-```
 
-Since we use type-interferred code to query for molecular combinations of atomic attributes we are guaranteed to:
+1. #### Define schema (once)
+   Our domain could have a `Person` with attributes `name` and `age` having a relationship to an `Address` so we define a schema for our domain:
+    
+    ```
+    trait Person {
+      val name    = oneString
+      val age     = oneInt
+      val address = one[Address]
+    }
+    trait Address {
+      val street = oneString
+    }
+    ```
+We run `sbt compile` and Molecule generates the necessary boilerplate code to compose intuitive and powerful queries. This step is only done once in the beginning (or when you need to change the schema). 
 
-- Only make valid queries (won't compile otherwise)
-- Only get query results that satisfy our queries (no null checks etc)
-- Always get type-interferred query results
+2. #### Make molecules
+    Now we can make Molecule queries _with the words of our domain_ as we saw above:
+
+    ```scala
+    Person.name.age.Address.street.get
+    Person.name("Lisa").age.get
+    Person.name("Lisa").age.<(18).get
+    Person.name("Lisa" or "Linda").age.Address.street.contains("5th").get
+    // etc..        
+    ```
+The implicit macro `get` turns our molecule into a valid Datalog query at compile time. That means we can even infer the return type:
+
+    ```
+    val persons: Seq[(String, Int, String)] = Person.name.age.Address.street.get
+    ```
+ 
+3. #### Run queries
+   The generated Datalog queries are executed against Datomic and the results returned as either tuples or Shapeless HLists as you like.
+
+### Guarantees
+
+- Valid queries (won't compile otherwise)
+- Expected result sets without null values (we ask for existing attributes)
+- Type-interferred results
 
    
 ### Get started
