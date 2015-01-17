@@ -133,8 +133,6 @@ menu:
 
 Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to Datalog queries for [Datomic](http://www.datomic.com) - the database of immutable facts. 
 
-Given a simple schema of your domain namespaces and their attributes, Molecule generates boilerplate code so that you can compose query molecules in endless combinations.
-
 
 ### How does it work?
 
@@ -175,7 +173,7 @@ Person.name(&quot;Lisa&quot; or &quot;Linda&quot;).age.Address.street.contains(&
 // etc..        
 </code></pre>
 
-        <p>The implicit macro <code>get</code> turns our molecule into a valid Datalog query at compile time so there's no runtime overhead. 
+        <p>The implicit macro <code>get</code> turns our molecule into a valid Datalog query at compile time. So there's no runtime overhead. 
     </div>
 </div>
 
@@ -193,16 +191,15 @@ val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 </div>
 
 
-### Guarantees
+### Try demo
 
-Queries are
-
-- Valid (won't compile otherwise)
-- Returning predictable results without null values (we ask for existing attributes)
-- Type-interferred
+1. `git clone https://github.com/scalamolecule/molecule-demo.git`
+2. `sbt compile`
+3. Open in your IDE
+4. Run tests and poke around...
 
    
-### Get started
+### Read more
 
 - [Introduction](/home/introduction) to Datomic/Molecule
 - [Setup Database](/manual/database-setup): initiate a Datomic database and create a database schema with Molecule
@@ -210,14 +207,17 @@ Queries are
 - [Molecule Seattle tutorial](/tutorials/seattle) examples of using Molecule (based on the 
 [Datomic Seattle tutorial](http://docs.datomic.com/tutorial.html))
 
-### Download code
+
+### Download and test
 
 1. `git clone https://github.com/scalamolecule/molecule.git`
 2. `sbt compile`
 3. Open in your IDE
 4. Run tests and poke around...
 
-### Try demo
+
+<br>
+Thank you for reading so far!
 
 
 [datomic]: http://www.datomic.com
