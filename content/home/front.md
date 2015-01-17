@@ -12,7 +12,7 @@ menu:
 
 # Molecule
 
-#### **_Write powerful [Datomic] queries with the words of your domain:_**
+#### _Write powerful [Datomic] queries with the words of your domain:_
 
 
 

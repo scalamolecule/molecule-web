@@ -9,13 +9,15 @@ menu:
 
 # About
 
-Molecule is created by Marc Grue...
+Molecule is created by [Marc Grue](http://marcgrue.com) as he saw a possibility to make life easier accessing Datomic. 
 
+![](/img/mg.jpg)
 
-.
+Marc is a professional double bass player in the [Gothenburg Symphony Orchestra](http://www.gso.se/en/page/Gothenburg-Symphony/About-The-Orchestra), the National Symphony Orchestra of Sweden.
 
-#### Contibutors
-[Marc Grue](http://marcgrue.com)
+### Contributions are welcome!
+
+Hopefully you want to contribute to Molecule too! [Pull requests](https://github.com/scalamolecule/molecule/pulls) for improvements to Molecule are most welcome.
 
 #### Inspired by
 - [Rogue](https://github.com/foursquare/rogue), type-safe Scala DSL for MongoDB
@@ -26,20 +28,3 @@ Molecule is created by Marc Grue...
 
 #### License
 Molecule is licensed under the [Apache License 2.0](http://en.wikipedia.org/wiki/Apache_license)
-
-[datomic]: http://www.datomic.com
-[seattle]: http://docs.datomic.com/tutorial.html
-[moleculegroup]: https://groups.google.com/forum/#!forum/molecule-dsl
-[pullrequests]: https://github.com/scalamolecule/pulls
-[issues]: https://github.com/scalamolecule/issues
-[moleculesbt]: https://github.com/scalamolecule/blob/master/project/build.scala
-
-[intro]: https://github.com/scalamolecule/wiki/Quick-introduction-to-Datomic-and-Molecule
-[setup]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database
-[scheme]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database#defining-a-schema
-[deffile]: https://github.com/scalamolecule/blob/master/examples/src/main/scala/examples/seattle/schema/SeattleDefinition.scala
-[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
-[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial
-[tutorialcode]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleTests.scala
-[tutorialqueries]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleQueryTests.scala
-[tutorialtransformations]: https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleTransformationTests.scala

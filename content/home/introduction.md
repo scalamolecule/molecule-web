@@ -9,31 +9,85 @@ menu:
 
 # Molecule introduction
 
-Facts like 
+Molecule let's you model and query your domain data structures directly with the words of your domain.
 
-<pre>John likes pizza 12:35:54</pre>
+### Query
 
-are stored in Datomic as `Datom`s having these 4 basic elements:
+Describing our domain with Attributes grouped in Namespaces allow us to for instance find Persons in our Datomic database by composing molecules attribute by attribute with the builder pattern:
 
-`entity` `attribute` `value` `transaction`(time)
+```scala
+val personMolecule = m(Person.name.age)
+```
 
-In this example, _likes_ is an `attribute` and it has the `value` _pizza_. It is **asserted** that 
-the `entity` _John_ likes pizza at `transaction` time 12:35:54. 
+An implicit macro method `get` (or `hl` for HLists) will at compile time translate our molecule to a Datalog query. And at runtime it will get executed against Datomic to retrieve a type-inferred result set of tuples/HLists:
 
+```scala
+val persons: Seq[(String, Int)]         = Person.name.age.get
+val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
+```
+
+Note how our type-inferred molecules make it impossible to write invalid queries since they simply wouldn't compile.
+
+
+### Insert and update
+
+We also insert and update data with molecules:
+
+```scala
+// Insert and retrieve new entity id
+val lisaId = Person.name("Lisa").age("27").insert.id
+
+// Update
+Person(lisaId).age("28").update
+```
+
+### Expressive powers
+
+We can apply conditional values, ranges etc to our molecules to express more subtle data structures:
+
+```scala
+Community.name.`type`("twitter" or "facebook_page")
+  .Neighborhood.District.region("sw" or "s" or "se")
+```
+which will find "names of twitter/facebook_page communities in neighborhoods of southern districts"
+
+
+
+## Datomic and Molecule
+
+Molecule is a domain-tailored abstraction layer on top of the Datomic database. It can therefore be good to know a little about Datomic in order to understand Molecule.
+
+
+### Facts/Datoms with time built in
+
+Instead of mapping objects to tables or documents, the core unit of data in Molecule is an atomic piece of information: an _attribute_. 
+
+Attributes are composed to form "molecules" that describe unique and flexible data structures in endless combinations suiting your domain. Those are then translated to Datalog queries being executed against the underlying Datomic database.
+
+An attribute in Datomic is part of _fact_ or _Datom_ consisting of four elements:
+
+```
+ John     likes    pizza       12:35:54
+   |        |        |            |
+Entity  Attribute  Value  Transactiion/time
+```
+
+With Molecule we could model the fact like this:
+
+```scala
+Person(johnId).likes("pizza").update
+```
+_likes_ is an `attribute` with `value` _pizza_. It is **asserted** that the `entity` _johnId_ likes) pizza at `transaction` time 12:35:54. A timestamp is automatically set with all transactions. But if we need "domain time" we could add such attribute to the transaction as well, since this is simply a saved data structure in Datomic as our domain data.
 
 ### Immutable data
 
-Everytime a fact is asserted the old value of the attribute is _not deleted_. A Datomic database
-is immutable. We can go back in time and see the values of an attribute _at any point in time_. We could for 
-instance see all our previous addresses if this was part of our domain model.
+Everytime a fact is asserted the old value of the attribute is _not deleted_. A Datomic database is immutable. We can go back in time and see the values of an attribute _at any point in time_. We could for instance see all our previous addresses if this was part of our domain model.
 
-Also when we delete data, it's actually not deleted, but "retracted". Retracted data doesn't show
- up when we are querying the current database. But if we look at the database at an earlier point in
-  time we can see the data before it got retracted.
+Also when we delete data, it's actually not deleted, but "retracted". Retracted data doesn't show up when we are querying the current database. But if we look at the database at an earlier point in time we can see the data before it got retracted.
 
 ### Namespaces and attributes
 
-`attributes` are typically organized in `namespaces` to group related qualities of our domain:
+`attributes` are organized in `namespaces` to group related qualities of our domain:
  
 ![](/img/DatomicElements1.png)
 
@@ -43,53 +97,9 @@ An `entity` can have _any_ `attribute` from _any_ `namespace` associated to it:
 
 ![](/img/DatomicElements2.png)
 
-An entity is therefore not like a row in a table but rather a "cross-cutting" thing that we can
-freely associate any attribute value to. Note how "attrB1" in this example is not associated to entity1.
+An entity is therefore not like a row in a table but rather a "cross-cutting" thing that we can freely associate any attribute value to. Note how "attrB1" in this example is not associated to entity1.
 
 
-### Molecules
-
-If we imagine attributes as atomic data units, then we can 
-imagine molecules as 3-dimensional data structures composed of atoms.
-
-In Molecule we use the builder pattern to model such data structures, attribute 
-by attribute until we have a desired data structure. We could model `entity1`
-from the example above as
-
-```scala
-NamespaceA.attrA1.attrA2.NamespaceB.attrB2
-```
-
-### Queries with molecules
-
-If a namespace `Community` has two attributes `name` and `url` we can 
-model a data structure of community names and urls as a molecule and then ask
-the database to return those to us as a list of tuples with `name`/`url` values:
-
-```scala
-val namesAndUrls: List[(String, String)] = m(Community.name.url).get
-```
-
-Note how the return types of `name` and `url` are infered. 
-
-Implicit conversions even allow us to condense our query.
-
-```scala
-val namesAndUrls = Community.name.url.get
-```
-
-### Values and expressions
-
-Values and expressions can be applied to attributes of our molecule so that
- we can express more complex data structures:
-
-```scala
-Community.name.`type`("twitter" or "facebook_page")
-```
-
-Here we find `name`s of communities of a `type` that has either the value "twitter" 
-OR "facebook_page". With your own definitions you can write similar
- complex queries in a simple way using the terms of your own domain.
 
 ### Further reading...
 

@@ -1,7 +1,7 @@
 ---
 date: 2014-05-14T02:13:50Z
 title: "SQL"
-weight: 10
+weight: 20
 menu:
   main:
     parent: compare
