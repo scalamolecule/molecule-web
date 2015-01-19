@@ -2,13 +2,13 @@
 
 <div class="col-sm-2 column" style="padding-left:0;padding-top:22px;padding-left:10px;">
   <ul style="list-style: none; padding:0; margin:0;font-size:12px;">{{ $currentNode := . }}{{ range where .Site.Menus.main "Identifier" .Section }}{{ if .HasChildren }}{{ range .Children }}{{if $currentNode.IsMenuCurrent "main" . }}
-    <li class="active">{{ .Name }}</li>{{if .HasChildren}}
+    <li class="active"><b>{{ .Name }}</b></li>{{if .HasChildren}}
       <ul style="list-style: none; padding-left: 15px;">{{ range .Children }}
         <li><a href="{{.Url}}">{{ .Name }}</a></li>{{end}}
       </ul>{{end}}{{else}}
     <li><a href="{{.Url}}">{{ .Name }}</a></li>{{if .HasChildren}}
       <ul style="list-style: none; padding-left: 15px;">{{ range .Children }}{{if $currentNode.IsMenuCurrent "main" . }}
-        <li class="active">{{ .Name }}</li>{{else}}
+        <li class="active"><b>{{ .Name }}</b></li>{{else}}
         <li><a href="{{.Url}}">{{ .Name }}</a></li>{{end}}{{end}}
       </ul>{{end}}{{end}}{{end}}{{end}}{{end}}
   </ul>

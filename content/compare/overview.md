@@ -50,8 +50,8 @@ val songs = Song.e.artist(id).get
 Over time we'll compare Molecule with as many database systems as possible. Those not linked yet below are on our wish list:
 
 - [Datomic](/compare/datomic)
-- SQL
-  - Slick
+- [SQL](/compare/sql)
+  - [Slick](/compare/sql/slick)
   - Squeryl
   - Sqltyped tutorial
 - Mongodb
