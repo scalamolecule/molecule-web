@@ -80,10 +80,9 @@ sql"""
   group by ADDRESS_ID
 """.as[(Int,Option[Int])].list
 ```
-Molecule...
+Molecule automatically group by attributes not having an aggregate expression. In this case the query will group by `address` and calculate the average `age` for persons living there.
 ```scala
-// TODO
-Person.address(groupBy).age(avg)).get
+Person.address.age(avg).get
 ```
 
 #### HAVING
@@ -96,10 +95,8 @@ sql"""
   having avg(AGE) > 50
 """.as[Int].list
 ```
-Molecule...
 ```scala
-// TODO
-Person.address(groupBy).age_(avg > 50)).get
+Person.address.age(avg).get.filter(_._2 > 50)
 ```
 
 #### Implicit join
@@ -111,7 +108,6 @@ sql"""
   where P.ADDRESS_ID = A.id
 """.as[(String,String)].list
 ```
-Molecule...
 ```scala
 Person.name.Address.city.get
 ```
@@ -125,7 +121,6 @@ sql"""
   join ADDRESS A on P.ADDRESS_ID = A.id
 """.as[(String,String)].list
 ```
-Molecule...
 ```scala
 Person.name.Address.city.get
 ```
@@ -139,7 +134,6 @@ sql"""
   left join PERSON P on P.ADDRESS_ID = A.id
 """.as[(Option[String],String)].list
 ```
-Molecule...
 ```scala
 // TODO
 Person.name(maybe).Address.city.get
@@ -156,7 +150,6 @@ sql"""
                  where CITY = 'New York City')
 """.as[Person].list
 ```
-Molecule...
 ```scala
 Person.age.name.Address.city_("New York City").get
 ```
@@ -172,7 +165,6 @@ sql"""
   limit 1
 """.as[Person].first
 ```
-Molecule...
 ```scala
 // TODO
 ```
@@ -184,7 +176,6 @@ sqlu"""
   insert into PERSON (NAME, AGE, ADDRESS_ID) values ('M Odersky', 12345, 1)
 """.first
 ```
-Molecule...
 ```scala
 Person.name("M Odersky").age(12345).address(1).add
 ```
@@ -196,7 +187,6 @@ sqlu"""
   update PERSON set NAME='M. Odersky', AGE=54321 where NAME='M Odersky'
 """.first
 ```
-Molecule...
 ```scala
 val odersky = Person.name("M Odersky").get.id
 Person(odersky).name("M. Odersky").age(54321).update
@@ -209,7 +199,6 @@ sqlu"""
   delete PERSON where NAME='M. Odersky'
 """.first
 ```
-Molecule...
 ```scala
 Person.name("M. Odersky").get.id.delete
 ```
@@ -226,7 +215,6 @@ sql"""
   from PERSON P
 """.as[Option[String]].list
 ```
-Molecule...
 ```scala
 Person.Address.e(1 or 2).get map {
   case 1 => "A"

@@ -77,9 +77,9 @@ people.groupBy(p => p.addressId)
        .map{ case (addressId, group) => (addressId, group.map(_.age).avg) }
        .list
 ```
+Molecule automatically group by attributes not having an aggregate expression. In this case the query will group by `address` and calculate the average `age` for persons living there.
 ```scala
-// TODO
-Person.address(groupBy).age(avg)).get
+Person.address.age(avg).get
 ```
 
 #### groupBy+filter / HAVING
@@ -92,8 +92,7 @@ people.groupBy(p => p.addressId)
        .run
 ```
 ```scala
-// TODO
-Person.address(groupBy).age_(avg > 50)).get
+Person.address.age(avg).get.filter(_._2 > 50)
 ```
 
 #### Implicit join
