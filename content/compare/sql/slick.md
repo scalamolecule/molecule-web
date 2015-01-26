@@ -144,21 +144,6 @@ people.filter(_.id in address_ids).run // <- run as one query
 Person.age.name.Address.city_("New York City").get
 ```
 
-#### Scalar value subquery / custom function
-
-```scala
-val rand = SimpleFunction.nullary[Double]("RAND")
-
-val rndId = (people.map(_.id).max.asColumnOf[Double] * rand).asColumnOf[Int]
-
-people.filter(_.id >= rndId)
-       .sortBy(_.id)
-       .first
-```
-```scala
-// TODO
-```
-
 #### insert
 
 ```scala

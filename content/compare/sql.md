@@ -154,21 +154,6 @@ sql"""
 Person.age.name.Address.city_("New York City").get
 ```
 
-#### Scalar value subquery / custom function
-
-```scala
-sql"""
-  select * from PERSON P,
-                     (select rand() * MAX(ID) as ID from PERSON) RAND_ID
-  where P.ID >= RAND_ID.ID
-  order by P.ID asc
-  limit 1
-""".as[Person].first
-```
-```scala
-// TODO
-```
-
 #### INSERT
 
 ```scala
