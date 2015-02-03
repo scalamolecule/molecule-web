@@ -1,18 +1,18 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Schema"
-weight: 84
+weight: 80
 menu:
   main:
     parent: manual
     identifier: schema
 ---
 
-# Database schema
+# Molecule schema
 
-A schema defines what attributes you'll have available to build molecules.
+A Molecule Schema defines what attributes you'll have available to build molecules.
 
-Preparing your domain to use Molecule takes 3 steps:
+Preparing your domain to use Molecule in 3 steps:
 
 ### 1. Define Schema
 
@@ -71,7 +71,7 @@ settings = commonSettings ++ Seq(
 [Read more...](/manual/) 
 
 
-### 3. Compile / generate boilerplate code
+### 3. Compile (generate boilerplate code)
 
 `sbt compile` your project, wait for your domain-customized boilerplate code to be generated - and you're ready to make intuitive molecule queries!
 
