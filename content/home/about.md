@@ -13,7 +13,7 @@ Molecule is created by [Marc Grue](http://marcgrue.com) as he saw a possibility 
 
 ![](/img/mg.jpg)
 
-Marc is a professional double bass player in the [Gothenburg Symphony Orchestra](http://www.gso.se/en/page/Gothenburg-Symphony/About-The-Orchestra), the National Symphony Orchestra of Sweden.
+Marc is a professional double bass player in the [Gothenburg Symphony Orchestra](http://www.gso.se/en/page/Gothenburg-Symphony/About-The-Orchestra), the National Symphony Orchestra of Sweden and a dedicated Scala meta-programmer.
 
 ### Contributions are welcome!
 

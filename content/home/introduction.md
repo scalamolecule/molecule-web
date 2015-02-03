@@ -26,7 +26,7 @@ val persons: Seq[(String, Int)]         = Person.name.age.get
 val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 ```
 
-Note how our type-inferred molecules make it impossible to write invalid queries since they simply wouldn't compile.
+The attributes of our domain directly form our molecules. Furthermore the compiler prevents us from making any invalid queries since all molecules are type-infered already in our IDE.
 
 
 ### Insert and update
@@ -49,7 +49,7 @@ We can apply conditional values, ranges etc to our molecules to express more sub
 Community.name.`type`("twitter" or "facebook_page")
   .Neighborhood.District.region("sw" or "s" or "se")
 ```
-which will find "names of twitter/facebook_page communities in neighborhoods of southern districts"
+which will find "names of twitter/facebook_page communities in neighborhoods of southern districts".
 
 
 
@@ -67,9 +67,9 @@ Attributes are composed to form "molecules" that describe unique and flexible da
 An attribute in Datomic is part of _fact_ or _Datom_ consisting of four elements:
 
 ```
- John     likes    pizza       12:35:54
-   |        |        |            |
-Entity  Attribute  Value  Transactiion/time
+ John     likes    pizza      12:35:54
+   |        |        |           |
+Entity  Attribute  Value  Transaction/time
 ```
 
 With Molecule we could model the fact like this:

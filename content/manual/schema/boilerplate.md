@@ -1,47 +1,30 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "Schema definition"
-weight: 83
+title: "Boilerplate"
+weight: 85
 menu:
   main:
-    parent: manual
+    parent: schema
 ---
 
+# Boilerplate code
 
-# Defining a schema
-
-In Molecule you simply define namespaces as Scala vanilla traits having 
-fields that model each attribute.
-
-Defining the schema of the 
-[Datomic Seattle tutorial](http://docs.datomic.com/tutorial.html) 
-for instance looks like this:
 
 ```scala
 @InOut(3, 8)
-trait Community {
-  val name         = oneString.fullTextSearch
-  val url          = oneString.fullTextSearch
-  val category     = manyString.fullTextSearch
-  val orgtype      = oneEnum('community, 'commercial, 'nonprofit, 'personal)
-  val `type`       = oneEnum('email_list, 'twitter, 'facebook_page, 'blog, 'website, 'wiki, 'myspace, 'ning)
-  val neighborhood = one[Neighborhood]
-}
+trait SeattleDefinition {
 
-trait Neighborhood {
-  val name     = oneString.fullTextSearch.uniqueIdentity
-  val district = one[District]
-}
-
-trait District {
-  val name   = oneString.fullTextSearch.uniqueIdentity
-  val region = oneEnum('n, 'ne, 'e, 'se, 's, 'sw, 'w, 'nw)
+  // namespace traits...
 }
 ```
 
+### Code generation
+When running `sbt compile` 
+
+
 ### In/Out arities
 
-We annotate the first namespace in the schema with `@InOut(x, y)`. This is to tell Molecule
+We annotate the definition trait with `@InOut(x, y)`. This is to tell Molecule
 how many inputs and outputs we expect molecules to be able to accept. 
 
 An input molecule like `Community.name(?).url(?)` for instance awaits 2 inputs. For now the 
@@ -52,6 +35,13 @@ Outputs are the number of attributes we can build a molecule of. `Community.name
 for instance has 3 attributes (in 2 namespaces). We need to be able to return tuples of values from 
 molecules so we can't exceed Scala's arity limit of 22 for tuples.
 
+The number of in/out attributes determines the arity of the boilerplate domain classes Molecule will generate for us to build molecules from. So if we know already that we will only build molecules with say maximum 8 attributes then there's no reason to create more boilerplate classes than necessary. We can always adjust the number up or down and recompile with `sbt compile` to re-generate the domain classes if our schema/requirements change.
+
+### Namespaces
+
+Each trait in the Definition
+
+Attributes having something in common are defined as fields in a namespace trait and we list all namespace traits in a Definition trait.
 
 ### Attribute types
 

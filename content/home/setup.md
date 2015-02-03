@@ -13,17 +13,19 @@ menu:
 ### Download the Molecule library with all tests
 
 1. `git clone https://github.com/scalamolecule/molecule.git`
-2. `sbt compile`
-3. Open in your IDE
-4. Run tests and poke around...
+2. `cd molecule`
+3. `sbt compile`
+4. Open in your IDE
+5. Run tests and poke around...
 
 
 ### Or try the demo project...
 
 1. `git clone https://github.com/scalamolecule/molecule-demo.git`
-2. `sbt compile`
-3. Open in your IDE
-4. Run tests and poke around...
+2. `cd molecule-demo`
+3. `sbt compile`
+4. Open in your IDE
+5. Run tests and poke around...
 
 
 ### Dependency in your project
@@ -33,7 +35,8 @@ Molecule 0.2.1 for Scala 2.11.4 is available at [Sonatype](https://oss.sonatype.
 Since Molecule generates boilerplate code from your definitions it also needs to have the `DslBoilerplate.scala` file in your project folder. Please have a look at how the sbt build file of the Molecule project itself puts things together and simply copy that to your own project:
 
 2. Setup your sbt build file [as in Molecule][moleculesbt]: 
-    - Add library dependency `"org.scalamolecule" % "molecule_2.11" % "0.2.1"`
+    - Add library dependency<br>
+    `"org.scalamolecule" % "molecule_2.11" % "0.2.1"`
     - List directories where you have your [definition file(s)][dbsetup]
 3. Define your domain schema in a [schema definition file][schema]
 4. `sbt compile`
