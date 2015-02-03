@@ -5,6 +5,7 @@ weight: 88
 menu:
   main:
     parent: schema
+    identifier: datomic-schema
 ---
 
 # Datomic schema

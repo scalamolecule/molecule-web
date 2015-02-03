@@ -77,7 +77,7 @@ With Molecule we could model the fact like this:
 ```scala
 Person(johnId).likes("pizza").update
 ```
-_likes_ is an `attribute` with `value` _pizza_. It is **asserted** that the `entity` _johnId_ likes) pizza at `transaction` time 12:35:54. A timestamp is automatically set with all transactions. But if we need "domain time" we could add such attribute to the transaction as well, since this is simply a saved data structure in Datomic as our domain data.
+_likes_ is an `attribute` with `value` _pizza_. It is **asserted** that the `entity` _johnId_ likes pizza at `transaction` time 12:35:54. A timestamp is automatically set with all transactions. But if we need "domain time" we could add such attribute to the transaction as well, since this is simply a saved data structure in Datomic as our domain data.
 
 ### Immutable data
 
