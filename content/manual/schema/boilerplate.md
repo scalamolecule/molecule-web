@@ -9,7 +9,7 @@ menu:
 
 # Boilerplate code
 
-SBT will call ask the `DslBoilerplate` file in our project folder to use our schema definition files as templates to generate a series of domain-specific boilerplate traits for us. 
+SBT will ask the `DslBoilerplate` file in our project folder to use our schema definition files as templates to generate a series of domain-specific boilerplate traits for us. 
 
 With these generated we can then build intuitive molecules like
 
@@ -43,6 +43,7 @@ trait Community_1  {
 
 // etc...
 ```
+See
 
 ### Increasing arity...
 

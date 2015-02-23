@@ -9,7 +9,9 @@ menu:
 
 # Compare with Datomic/Datalog
 
-It might seem strange to compare Molecule with Datomic since Molecule is adapting to Datomic. But Datalog is still very different from Molecule. So let's have a look at their differences - [follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleQueryTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
+Even though Molecule is adapting to Datomic we'll have a look the other way around to see how Datomic compares to Molecule. 
+
+[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleQueryTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
 
 ### Querying _for_ attribute values
 
@@ -47,7 +49,7 @@ Let's query by an enumerated value for the `type` attribute:
 Community.name.type_("twitter")
 ```
       
-Noter how we add an underscore to the `type` attribute to tell Molecule that we want to omit returning this value in the result set (since it will have the value "twitter" for all returned entities). 
+Note how we add an underscore to the `type` attribute to tell Molecule that we want to omit returning this value in the result set (since it will have the value "twitter" for all returned entities). 
 
 Since the `type` attribute is defined as en enumeration Molecule checks the "twitter" value at _compile time_ against the defined enumeration values that we have definied in our schema for the `Community` namespace to ensure that "twitter" is one of the enums. If it is not, our molecule won't compile and we'll get an error showing the available enum values.
  

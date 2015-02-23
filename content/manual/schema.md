@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Schema"
-weight: 80
+weight: 10
 menu:
   main:
     parent: manual
@@ -12,7 +12,7 @@ menu:
 
 A Molecule Schema defines what attributes you'll have available to build molecules.
 
-Preparing your domain to use Molecule in 3 steps:
+Prepare your domain in 3 steps to use Molecule:
 
 ### 1. Define Schema
 

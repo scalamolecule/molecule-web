@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Definition"
-weight: 82
+weight: 20
 menu:
   main:
     parent: schema
@@ -13,9 +13,7 @@ Molecule provides an easy way to model your domain in a Molecule Schema.
 
 A simple dsl lets you define attributes of your domain by type, cardinality and options/values with as little ceremony as possible.
 
-
-
-### Attribute types
+### Schema definition
 
 ```scala
 @InOut(3, 8)
@@ -48,7 +46,43 @@ In the Seattle schema we define 3 namespaces with different kinds of attributes:
 - `oneEnum`/`manyEnum` defines enumerated values
 - `one[<ReferencedNamespace>]` defines a reference to another namespace
 
-###  Attribute options
+
+### Attribute types
+
+We have the following types available:
+
+```
+Cardinality one     Cardinality many
+---------------     ----------------
+oneString           manyString
+oneInt              manyInt   
+oneLong             manyLong    
+oneFloat            manyFloat     
+oneDouble           manyDouble      
+oneBoolean          manyBoolean      
+oneDate             manyDate    
+oneUUID             manyUUID    
+oneURI              manyURI   
+oneEnum             manyEnum              
+```
+Datomic also has types `BigInt` and `Bytes` and those could later be implemented in Molecule if there's a need for those types.
+
+Cardinality-one attributes can have one value per entity.
+
+Cardinality-many attributes can have a _Set of unique values_ per entity. Often we choose instead to model many-values as a many-reference to some other namespace where we can define more.
+
+### Reference types
+
+References are also treated like attributes. It's basically a reference to one or many entities. We define such relationship by supplying the referenced namespace as the type parameter to the `one`/`many`
+```
+Cardinality one         Cardinality many
+---------------         ----------------
+one[<Ref-namespace>]    many[<Ref-namespace>]
+```
+In the example above we saw a reference from Community to Neighborhood defined as `one[Neighborhood]`. We would for instance likely define an Order/Order Line relationship in an Order namespace as `many[OrderLine]`.
+
+
+### Attribute options
 
 Each attribute can also have some extra options:
 
