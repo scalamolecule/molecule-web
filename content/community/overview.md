@@ -9,10 +9,10 @@ menu:
 
 # Community
 
+The [Molecule google list](https://groups.google.com/forum/#!forum/molecule-dsl) is open to questions and discussions about Molecule and other Scala-based Datomic resources.
 
-## Resources
-- [Molecule google list][moleculegroup] for questions and discussions about Molecule and other Scala-based Datomic resources
-- [Issues][issues] - please feel free to raise issues/report bugs
-- [Pull requests][pullrequests] are welcome
-- [Datomic][datomic] website
+
+### Resources
+- [Issues](https://github.com/scalamolecule/molecule/issues) - please feel free to raise issues/report bugs or make pull requests
+- [Datomic](http://datomic.com) website
 - [Datomisca](https://github.com/pellucidanalytics/datomisca), a Scala API for Datomic
