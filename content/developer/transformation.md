@@ -9,19 +9,19 @@ menu:
 
 # Macro transformation
 
+Molecule performs a series of transformation of the molecules we write so that they in the end become a Datomic query:
+
 ### 1. Source code
 
-A little more elaborate molecule like
-
+To find southern media communities we could make the following molecule
 ```scala
 Community.name.`type`("twitter" or "facebook_page")
   .Neighborhood.District.region("sw" or "s" or "se")
 ```
-is at compile time taken through a series of various abstraction transformations by Molecule macros.
 
-### 2. Model
+### 2. Model AST
 
-Our source code is pattern matched element by element and abstracted to a Model of `Atoms` and `Bonds`:
+The source code of our molecule is then pattern matched element by element in order to create an abstracted Model of `Atom`s and `Bond`s:
 
 ```scala
 Model(List(
@@ -34,7 +34,7 @@ Model(List(
 ```
 This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/model.scala#L26-L33) has shown to cover a surprising wide spectre of queries.
 
-### 3. Query
+### 3. Query AST
 Our model is then transformed to a Query AST which is a little more elaborate:
 
 ```scala
@@ -60,7 +60,7 @@ Query(
     RuleInvocation("rule2", List(Var("e")))))
 )
 ``` 
-As you see this abstraction is tailored to Datomic.
+As you see this [Query abstraction](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/query.scala) is tailored to Datomic.
 
 In principle we should be able to use the same model to create other Query abstractions tailored to other database systems!...
 
@@ -87,3 +87,4 @@ List(
      [(rule2 ?e) [?e :district/region ":district.region/se"]]]
 </pre>
 
+All 3 transformations happen at compile time and therefore have no impact on the runtime performance.
