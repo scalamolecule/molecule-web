@@ -10,18 +10,7 @@ menu:
 
 # Datomic schema
 
-A Molecule schema definition of attributes `name` and `url` like
-
-```scala
-trait SeattleDefinition {
-  trait Community {
-    val name         = oneString.fullTextSearch
-    val url          = oneString
-    // etc...
-  }
-}
-```
-will generate a corresponding Datomic schema definition with the following list of maps of key/values:
+Our [Schema definition file](/schema/definition) will generate a corresponding Datomic schema file:
 
 ```scala
 object SeattleSchema extends Schema {
@@ -48,9 +37,7 @@ object SeattleSchema extends Schema {
   )
 }
 ```
-Note how each attribute name is prefixed with the namespace name (":community/name"). 
-
-Our definition is transformed to a transactional data format that we can directly feed into Datomic to create a Datomic schema:
+We transact our schema by simply feeding `tx` into Datomic:
 
 ```scala
 conn.transact(SeattleSchema.tx).get()

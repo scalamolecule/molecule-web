@@ -9,64 +9,82 @@ menu:
 
 # Developer
 
+The basic philosophy of Molecule is to think from the User's perspective towards a technical solution. 
 
-- Source code transformation
-- 
+The priority is always to make it as easy as possible for the end User to make Datomic queries, no matter how challenging on the Molecule backend.
 
-As an example: to find
+When we asked
 
-_Names of twitter/facebook_page communities in neighborhoods of southern districts_
- 
-we can compose a "molecule query" that is very close to our
-human sentence:
+_"how can I most intuitively and with most minimal code query for persons?"_
+
+we first tried something like this
+```scala
+import Person._
+m(firstName ~ lastName ~ age) // all fields of a `Person` trait...
+```
+But it quickly became un-intuitive with relations, expressions etc.
+
+### Builder pattern
+
+Instead we settled on using the builder pattern
 
 ```scala
-Community.name.`type`("twitter" or "facebook_page")
-  .Neighborhood.District.region("sw" or "s" or "se")
+Person.firstName.lastName.age
+```
+We can't think of a more minimal Scala representation of "finding persons".
+
+
+### Generated boilerplate code
+
+The builder pattern has shown a surprising strong capacity to express a wide range of query constructs. But it also requires an extensive amount of boilerplace code to work.
+
+We therefore generate all boilerplate code automatically when we compile our project with `sbt compile`.
+
+From a minimal definition of for instance an attribute
+```scala
+val name = oneString.fullTextSearch // maybe more options...
+```
+we have enough information about type, cardinality and options to generate the following artifacts:
+
+1. [Schema transaction data](/developer/txdata) (in a Datomic format)
+2. [Scala code](/developer/boilerplate) to build molecules
+
+
+### Scala macro transformations
+Our generated boilerplate code allow us to build molecules attribute by attribute:
+
+```scala
+val molecule = m(Person.name.age)
 ```
 
-Molecule transforms this at compile time (with macros) to a little more elaborate Datalog query string and
- input rules that finds those communities in the Datomic database:
+The `m`olecule method transforms our source code _at compile time_ through a series of states:
 
-<pre>
-[:find ?a
- :in $ %
- :where
-   [?ent :community/name ?a]
-   (rule1 ?ent)
-   [?ent :community/neighborhood ?c]
-   [?c :neighborhood/district ?d]
-   (rule2 ?d)]
+1. Source code
+2. Model AST
+3. Query AST
+4. Datomic query string
 
-INPUTS:
-List(
-  datomic.db.Db@xxx,
-  [[[rule1 ?ent] [?ent :community/type ":community.type/twitter"]]
-   [[rule1 ?ent] [?ent :community/type ":community.type/facebook_page"]]
-   [[rule2 ?d] [?d :district/region ":district.region/sw"]]
-   [[rule2 ?d] [?d :district/region ":district.region/s"]]
-   [[rule2 ?d] [?d :district/region ":district.region/se"]]]
-)
-</pre>
+The end result is simply a Datomic query string:
 
-#### Benefits
+```scala
+"[:find ?b ?c :where [?a :person/name ?b] [?a :person/age ?c]]"
+```
 
-By not having to write such complex Datalog queries and rules "by hand", Molecule 
-allows you to
+Since the query is created at compile time it's all ready to fetch our data _at runtime_ with no performance impact:
 
-- Type less
-- Make type safe queries with inferred return types
-- Use your domain terms directly as query building blocks
-- Model complex queries intuitively (easier to understand and maintain)
-- Reduce syntactic noise
-- Focus more on your domain and less on queries
+```scala
+val data = personsMolecule.get
+```
 
-#### Possible drawbacks
+Given implicit conversions we could even unify the two steps:
+```scala
+val persons = Person.name.age.get
+```
+The query would still be created at compile time and fetching data at runtime.
 
-We still need to explore how far Molecule can match the expressive powers
- of Datalog. So far, all 
- examples in the
-[Seattle tutorial][seattle] have been 
-"molecularized" succesfully (see the 
-[Molecule Seattle tutorial][tutorial] and 
-[code][tutorialcode]). So as a proof-of-concept it looks promising...
+
+### Closed eco-system
+
+Since we create our molecules from our self-generated boilerplate code our macros have full knowledge about the possible constructs we can expect. We are therefore in full control of the entire "eco-system" from molecule to Datomic query. Non-valid molecules simply won't compile. And we can infer all type information from our molecules.
+
+[Read more about the macro transformations...](/developer/transformation)
