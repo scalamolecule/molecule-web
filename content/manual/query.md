@@ -55,3 +55,8 @@ val person = Person.name(?).age(?)
 val Johan  = person("John", 33).one
 val Lisa   = person("Lisa", 27).one
 ```
+[Relationships](/manual/query/relationships) - Connect namespaces with relationships 
+
+```scala
+Person.name.City.name.Country.name
+```

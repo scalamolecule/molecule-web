@@ -88,3 +88,5 @@ List(
 </pre>
 
 All 3 transformations happen at compile time and therefore have no impact on the runtime performance.
+
+See more examples of [transformation of the Seattle molecules](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTransformationTests.scala#L11)...
