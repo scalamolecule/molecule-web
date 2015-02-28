@@ -64,7 +64,7 @@ Instead of mapping objects to tables or documents, the core unit of data in Mole
 
 Attributes are composed to form "molecules" that describe unique and flexible data structures in endless combinations suiting your domain. Those are then translated to Datalog queries being executed against the underlying Datomic database.
 
-An attribute in Datomic is part of _fact_ or _Datom_ consisting of four elements:
+An attribute in Datomic is part of a _fact_ or _Datom_ consisting of four elements:
 
 ```
  John     likes    pizza      12:35:54
@@ -108,6 +108,6 @@ Go straight to the [Molecule Seattle tutorial][tutorial] to see a wide range of
  [setup the database][setup] and [populated it with data][populate].
  
  
-[setup]: https://github.com/scalamolecule/wiki/Setup-a-Datomic-database
-[populate]: https://github.com/scalamolecule/wiki/Populate-the-database
-[tutorial]: https://github.com/scalamolecule/wiki/Molecule-Seattle-tutorial
+[setup]: /manual/setup
+[populate]: /manual/insert
+[tutorial]: /tutorials/seattle
