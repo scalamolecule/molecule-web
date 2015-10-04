@@ -21,7 +21,7 @@ Community.name.`type`("twitter" or "facebook_page")
 
 ### 2. Model AST
 
-The source code of our molecule is then pattern matched element by element in order to create an abstracted Model of `Atom`s and `Bond`s:
+The source code of our molecule is then pattern matched in [Dsl2Model](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Dsl2Model.scala) element by element in order to create an abstracted Model of `Atom`s and `Bond`s:
 
 ```scala
 Model(List(
@@ -35,7 +35,7 @@ Model(List(
 This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/model.scala#L26-L33) has shown to cover a surprising wide spectre of queries.
 
 ### 3. Query AST
-Our model is then transformed to a Query AST which is a little more elaborate:
+Our model is then transformed in [Model2Query](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Model2Query.scala) to a Query AST which is a little more elaborate:
 
 ```scala
 Query(
@@ -60,13 +60,13 @@ Query(
     RuleInvocation("rule2", List(Var("e")))))
 )
 ``` 
-As you see this [Query abstraction](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/query.scala) is tailored to Datomic.
+As you see this [Query AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/query.scala) is tailored to Datomic.
 
 In principle we should be able to use the same model to create other Query abstractions tailored to other database systems!...
 
 ### 4. Datomic query string
 
-Finally Molecule transforms our Query AST to Datomic query text strings:
+Finally Molecule transforms our Query AST in [Query2String](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Query2String.scala) to a Datomic query text strings:
 
 <pre>
 [:find  ?b

@@ -13,7 +13,7 @@ Relationships are modelled in Molecule as "references between namespaces".
 
 It's not that namespaces automatically become entities referencing each other but rather that referenced entities will likely pick attributes from a certain namespace. 
 
-### One-references
+### One-to-One
 
 A `Person` could have a cardinality-one reference to `City` having a cardinality-one reference to a `Country`:
 
@@ -21,12 +21,12 @@ A `Person` could have a cardinality-one reference to `City` having a cardinality
 Person.name.City.name.Country.name
 ```
 
-Strictly speaking we would have an entity with an asserted `:person/name` attribute value with a reference to another entity with an asserted `:city/name` attribute value etc. But in practice we simply talk about "namespace A has a relationship/reference to namespace B".
+Strictly speaking we have an entity with an asserted `:person/name` attribute value with a reference to another entity with an asserted `:city/name` attribute value etc. But in practice we simply talk about "namespace A has a relationship/reference to namespace B".
 
 A namespace is not like an SQL Table but rather organizes some attributes by a meaningful name - it's, well, a _namespace_.
 
 
-### Many-references
+### One-to-Many
 
 
 If we have an `Order` with multiple `OrderLine`s we would instead define a cardinality-many reference to the `OrderLine` namespace in our Schema definition:

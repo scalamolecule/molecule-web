@@ -35,6 +35,10 @@ pre {
     padding: 2px 9px;
 }
 
+li {
+    list-style: none;
+}
+
 .dropdown:hover > .level1 {
 	display: block;
     /*position: relative;*/
@@ -80,6 +84,8 @@ pre {
 .dropdown-submenu.pull-left {
     float: none;
 }
+
+
 
 
 

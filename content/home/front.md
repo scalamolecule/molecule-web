@@ -2,13 +2,10 @@
 date: 2015-01-02T22:06:44+01:00
 title: "Home"
 weight: 10
-url: "/"
 menu:
   main:
     parent: home
 ---
-<br>
-
 
 # Molecule
 

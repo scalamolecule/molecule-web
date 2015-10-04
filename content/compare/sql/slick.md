@@ -9,7 +9,7 @@ menu:
 
 # Slick vs. Molecule examples
 
-Using the examples from [Slick](http://slick.typesafe.com/doc/3.0.0-M1/sql-to-slick.html#sql-vs-slick-examples)...
+Using examples from [Slick](http://slick.typesafe.com/doc/3.0.0-M1/sql-to-slick.html#sql-vs-slick-examples):
 
 #### Select all table values
 

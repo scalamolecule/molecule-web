@@ -46,7 +46,7 @@ object SeattleSchema extends Schema {
 }
 ```
 
-To avoid having to write this code manually, the `MoleculeBoilerplate` file generates is for us based on our schema definition. It has to be in our project folder for sbt to use it to generate our boilerplate code when we run `sbt compile`.
+To avoid having to write this code manually, the [MoleculeBoilerplate](https://github.com/scalamolecule/molecule/blob/master/project/DslBoilerplate.scala) file generates this for us based on our schema definition. It has to be in our [project folder](https://github.com/scalamolecule/molecule/tree/master/project) for sbt to use it to generate our boilerplate code when we run `sbt compile`.
 
 - [File organization](/manual/schema/files)
 - [Types and options](/manual/schema/definition)
