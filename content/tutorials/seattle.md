@@ -133,27 +133,27 @@ val communityId = Community.e.name_.get.head
 
 // Use the community id to touch all the entity's attribute values
 communityId.touch === Map(
-  ":community/type" -> ":community.type/blog",
-  ":community/url" -> "http://eastballard.wordpress.com/",
-  ":community/category" -> List("news", "events", "meeting", "community association"),
+  ":community/type" -> ":community.type/website",
+  ":community/url" -> "http://www.greenlakecommunitycouncil.org/",
+  ":community/category" -> List("community council"),
   ":community/orgtype" -> ":community.orgtype/community",
-  ":db/id" -> 17592186045520L,
-  ":community/name" -> "East Ballard Community Association Blog",
+  ":db/id" -> 17592186045665L,
+  ":community/name" -> "Greenlake Community Council",
   ":community/neighborhood" -> Map(
-    ":db/id" -> 17592186045456L,
+    ":db/id" -> 17592186045666L,
     ":neighborhood/district" -> Map(
-      ":db/id" -> 17592186045457L,
-      ":district/name" -> "Ballard",
-      ":district/region" -> ":district.region/nw"),
-    ":neighborhood/name" -> "Ballard"))
+      ":db/id" -> 17592186045667L,
+      ":district/name" -> "Northwest",
+      ":district/region" -> ":district.region/sw"),
+    ":neighborhood/name" -> "Green Lake"))
 ```
 
 We can also retrive attribute values one by one by simply applying an attribute name to the entity id:
 
 ```scala
-communityId(":community/name") === Some("East Ballard Community Association Blog")
-communityId(":community/url") === Some("http://eastballard.wordpress.com/")
-communityId(":community/category") === Some(List("news", "events", "meeting", "community association"))
+communityId(":community/name") === Some("Greenlake Community Council")
+communityId(":community/url") === Some("http://www.greenlakecommunitycouncil.org/")
+communityId(":community/category") === Some(Set("community council"))
 communityId(":community/emptyOrBogusAttribute") === None
 ```
 
@@ -168,9 +168,9 @@ value back.
 
 ```scala
 Community.name.get(3) === List(
-  "Capitol Hill Triangle",
-  "Miller Park Neighborhood Association",
-  "Capitol Hill Community Council")
+  "KOMO Communities - Ballard",
+  "Ballard Blog",
+  "Ballard Historical Society")
 ```
 
 If our molecule defines two or more attributes we'll get tuples of 
@@ -178,18 +178,18 @@ values back.
 
 ```scala
 Community.name.url.get(3) === List(
-  ("Chinatown/International District", "http://www.cidbia.org/"),
-  ("All About Belltown", "http://www.belltown.org/"),
-  ("Friends of Discovery Park", "http://www.friendsdiscoverypark.org/"))
+  ("Broadview Community Council", "http://groups.google.com/group/broadview-community-council"),
+  ("KOMO Communities - Wallingford", "http://wallingford.komonews.com"),
+  ("Aurora Seattle", "http://www.auroraseattle.com/"))
 ```
 Or we can choose to get the same data back with the `hl` method as Shapeless
 HLists where each element has its own type.
 
 ```scala
 Community.name.url.hl(3) === List(
-  "Chinatown/International District" :: "http://www.cidbia.org/" :: HNil,
-  "All About Belltown" :: "http://www.belltown.org/" :: HNil,
-  "Friends of Discovery Park" :: "http://www.friendsdiscoverypark.org/" :: HNil)
+  "Broadview Community Council" :: "http://groups.google.com/group/broadview-community-council" :: HNil,
+  "KOMO Communities - Wallingford" :: "http://wallingford.komonews.com" :: HNil,
+  "Aurora Seattle" :: "http://www.auroraseattle.com/" :: HNil)
 ```
 This gives us access to a wide range of [useful functions of HLists](https://github.com/milessabin/shapeless/blob/master/core/src/test/scala/shapeless/hlist.scala).
 
@@ -203,9 +203,9 @@ of type "twitter":
 
 ```scala
 Community.name.`type`("twitter").get(3) === List(
+  ("Columbia Citizens", "twitter"),
   ("Discover SLU", "twitter"),
-  ("Magnolia Voice", "twitter"),
-  ("MyWallingford", "twitter"))
+  ("Fremont Universe", "twitter"))
 ```
 (We use the back-ticks to avoid having Scala to think of `type` 
 as a Scala keyword)
@@ -215,7 +215,7 @@ by adding an underscore to the `type` attribute (and we don't need the back-tick
 
 ```scala
 Community.name.type_("twitter").get(3) === List(
-  "Discover SLU", "Fremont Universe", "Columbia Citizens")
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 Notice that we get some different communities. We are not guaranteed a specific order 
 of returned values and the first 3 values can therefore vary as we see here even though 
@@ -230,7 +230,7 @@ So we could as well write the following and get the same result.
 ```scala
 val tw = "twitter"
 Community.name.type_(tw).get(3) === List(
-  "Discover SLU", "Fremont Universe", "Columbia Citizens")
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 
 Retrieving values of many-attributes like `category` gives us sets 
@@ -246,9 +246,9 @@ it will match entities having any of those values (OR-semantics).
 
 ```scala
 Community.name.category_("news", "arts").get(3) === List(
-  "Capitol Hill Community Council",
-  "KOMO Communities - Rainier Valley",
-  "Discover SLU")
+  "Beach Drive Blog",
+  "KOMO Communities - Ballard",
+  "Ballard Blog")
 ```
 
 
@@ -262,17 +262,17 @@ to the next. Let's find communities in the noth-eastern region:
 
 ```scala
 Community.name.Neighborhood.District.region_("ne").get(3) === List(
-  "KOMO Communities - U-District",
   "Maple Leaf Community Council",
+  "Hawthorne Hills Community Website",
   "KOMO Communities - View Ridge")
 ```
 Or comunity names and their region:
 
 ```scala
 Community.name.Neighborhood.District.region.get(3) === List(
-  ("Broadview Community Council", "sw"),
-  ("KOMO Communities - Green Lake", "sw"),
-  ("Friends of Frink Park", "e"))
+  ("KOMO Communities - North Seattle","n"),
+  ("Morgan Junction Community Association","sw"),
+  ("Friends of Seward Park","se"))
 ```
 
 
@@ -306,10 +306,10 @@ different input values. Now we can more efficiently get out results.
 
 ```scala
 twitterCommunities.get(3) === List(
-  "Discover SLU", "Fremont Universe", "Columbia Citizens")
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
   
 facebookCommunities.get(3) === List(
-  "Discover SLU", "Blogging Georgetown", "Fremont Universe")
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 
 If we omit the underscore we can get the type too
@@ -318,9 +318,9 @@ If we omit the underscore we can get the type too
 val communitiesWithType = m(Community.name.`type`(?))
 
 communitiesWithType("twitter").get(3) === List(
-  ("Magnolia Voice", "twitter"),
   ("Discover SLU", "twitter"),
-  ("MyWallingford", "twitter"))
+  ("Fremont Universe", "twitter"),
+  ("Columbia Citizens", "twitter"))
 ```
 
 ### Multiple input values for an attribute - logical OR
@@ -329,9 +329,9 @@ Find communities of type "facebook_page" OR "twitter":
 
 ```scala
 communitiesWithType("facebook_page" or "twitter").get(3) === List(
-  ("Fremont Universe", "facebook_page"),
-  ("Fauntleroy Community Association", "facebook_page"),
-  ("Discover SLU", "twitter"))
+  ("Eastlake Community Council", "facebook_page"),
+  ("Discover SLU", "twitter"),
+  ("MyWallingford", "facebook_page"))
 ```
 Alternative syntaxes where comma-separations act as logical OR:
 
@@ -354,9 +354,9 @@ With this input molecule we can find communities that are of `type`
 
 ```scala
 typeAndOrgtype("email_list" and "community").get(3) === List(
-  "Greenwood Community Council Announcements",
-  "Madrona Moms",
-  "Ballard Neighbor Connection")
+  "Ballard Moms",
+  "Admiral Neighborhood Association",
+  "15th Ave Community")
 ```
 The order of arguments in the logical AND expression will correspond 
 to the order of the input placeholders in the input molecule so that 
@@ -403,11 +403,11 @@ typeAndOrgtype2(
   ("email_list" and "community") or 
   ("website" and "commercial")
 ).get(5) === List(
-  ("Madrona Moms", "email_list", "community"),
+  ("Fremont Arts Council", "email_list", "community"),
+  ("Greenwood Community Council Announcements", "email_list", "community"),
   ("Broadview Community Council", "email_list", "community"),
-  ("Greenwood Community Council Discussion", "email_list", "community"),
   ("Alki News", "email_list", "community"),
-  ("Discover SLU", "website", "commercial"))
+  ("Beacon Hill Burglaries", "email_list", "community"))
 ```
 As usual we can use alternative syntaxes as well. Here we group the 
 AND expression arguments as tuple values. Comma-separations between 
@@ -430,7 +430,7 @@ alphabetical order.
 
 ```scala
 m(Community.name < "C").get(3) === List(
-  "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
 ```
 Note how we use the `m` method here to allow the postfix notation 
 (spaces around `<`). Alternatively you can call the `<` method 
@@ -438,7 +438,7 @@ explicitly if you prefer this syntax:
 
 ```scala
 Community.name.<("C").get(3) === List(
-  "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
 ```
 We can also parameterize the molecule.
 
@@ -446,7 +446,7 @@ We can also parameterize the molecule.
 val communitiesBefore = m(Community.name < ?)
 
 communitiesBefore("C").get(3) === List(
-  "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
   
 communitiesBefore("A").get(3) === List("15th Ave Community")
 ```
@@ -484,8 +484,8 @@ containing the word "food":
 
 ```scala
 m(Community.name.type_("website").category contains "food").get(3) === List(
-  ("Community Harvest of Southwest Seattle", Set("sustainable food")), 
-  ("InBallard", Set("food"))
+  ("Community Harvest of Southwest Seattle", Set("sustainable food")),
+  ("InBallard", Set("food")))
 )
 ```
 And parameterized:
@@ -494,8 +494,8 @@ And parameterized:
 val typeAndCategory = m(Community.name.type_(?).category contains ?)
 
 typeAndCategory("website", Set("food")).get(3) === List(
-  ("Community Harvest of Southwest Seattle", Set("sustainable food")), 
-  ("InBallard", Set("food"))
+  ("Community Harvest of Southwest Seattle", Set("sustainable food")),
+  ("InBallard", Set("food")))
 )
 ```
 Note how the values of the `category` attribute are now returned 
@@ -517,25 +517,25 @@ logical OR expresion:
 
 ```scala
 Community.name.type_("twitter" or "facebook_page").get(3) === List(
-  "Discover SLU", "Blogging Georgetown", "Fremont Universe")
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 ... or find communities in the NE or SW regions.
 
 ```scala
 Community.name.Neighborhood.District.region_("ne" or "sw").get(3) === List(
-  "Greenwood Community Council Announcements", 
-  "Maple Leaf Community Council", 
-  "Genesee-Schmitz Neighborhood Council")
+  "Beach Drive Blog", 
+  "KOMO Communities - Green Lake", 
+  "Delridge Produce Cooperative")
 ```
 And we can combine them to find social-media communities in 
 southern regions.
 
 ```scala
 val southernSocialMedia = List(
-  "Blogging Georgetown",
   "Columbia Citizens",
+  "Fauntleroy Community Association",
   "MyWallingford",
-  "Fauntleroy Community Association")
+  "Blogging Georgetown")
 
 Community.name.type_("twitter" or "facebook_page")
   .Neighborhood
@@ -598,7 +598,7 @@ chronological order, and store the most recent two as dataTxDate
 and schemaTxDate, when we added our data and our schema, respectively.
 
 ```scala
-val txDates = Db.txInstant.get(2).sorted.reverse
+val txDates = Db.txInstant.get.sorted.reverse
 val dataTxDate = txDates(0)
 val schemaTxDate = txDates(1)
 ```
@@ -619,14 +619,14 @@ using a database value from before we ran the transaction to
 load seed data, the size is 0.
 
 ```scala
-communities.asOf(schemaTxDate).size === 0
+communities.asOf(schemaTxDate).get.size === 0
 ```
 If we do the same thing using the date of our seed data 
 transaction, the query returns 150 results, because as of 
 that moment, the seed data is there.
 
 ```scala
-communities.asOf(dataTxDate).size === 150
+communities.asOf(dataTxDate).get.size === 150
 ```
 
 ### Changes since a date - since(compareDate)
@@ -645,14 +645,14 @@ including the changes made when we loaded our seed data -
 the size is 150.
 
 ```scala
-communities.since(schemaTxDate).size === 150
+communities.since(schemaTxDate).get.size === 150
 ```
 If we do the same thing using the date of our seed data 
 transaction, the query returns 0 results, because we haven't 
 added any communities since that time.
 
 ```scala
-communities.since(dataTxDate).size === 0
+communities.since(dataTxDate).get.size === 0
 ```
 While we passed specific transaction dates to `asOf` 
 and `since`, you can pass any date. The system find the 
@@ -703,7 +703,7 @@ we get 258 results.
 
 ```scala
 // future db
-communities.imagine(newDataTx).size === 258
+communities.imagine(newDataTx).get.size === 258
 ```
 
 The actual data hasn't changed yet, so if we query the 
@@ -717,16 +717,16 @@ get 108 results, the number added by new data transaction.
 
 ```scala
 // existing db
-communities.size === 150
+communities.get.size === 150
 
 // transact
 conn.transact(newDataTx)
 
 // updated db
-communities.size === 258
+communities.get.size === 258
 
 // number of new transactions
-communities.since(dataTxDate).size === 108
+communities.since(dataTxDate).get.size === 108
 ```
 
 
@@ -750,8 +750,8 @@ Community
   .orgtype("personal")
   .category("my", "favorites")
   .Neighborhood.name("myNeighborhood")
-  .District.name("myDistrict").region("nw").add.ids === List(
-    17592186045785L, 17592186045786L, 17592186045787L)
+  .District.name("myDistrict").region("nw").add.eids === List(
+    17592186045891L, 17592186045892L, 17592186045893L)
 ```
 Note how we can add values for referenced namespaces and multiple values for 
 cardinality-many attributes like `category` - all in one go!
@@ -785,7 +785,7 @@ insertCommunity(
   "BBB", "url B", "twitter", "personal", Set("some", "cat B"), 
     "neighborhood B", 
     "district B", "s"
-) === List(17592186045789L, 17592186045790L, 17592186045791L)
+).eids === List(17592186045895L, 17592186045896L, 17592186045897L)
 ```
 As before, three entities are created here since we reference a new Neighborhood and District.
 
@@ -798,7 +798,7 @@ insertCommunity(
   "CCC" :: "url C" :: "twitter" :: "personal" :: Set("some", "cat C") :: 
     "neighborhood C" :: 
     "district C" :: "ne" :: HNil
-) === List(17592186045793L, 17592186045794L, 17592186045795L)
+).eids === List(17592186045899L, 17592186045900L, 17592186045901L)
 ```
 Again each element of the HList has to be of the expected 
 corresponding attribute type.
@@ -824,9 +824,9 @@ val newCommunitiesData = List(
 
 // Insert 3 new communities with 3 new neighborhoods
 insertCommunity(newCommunitiesData) === List(
-  17592186045669L, 17592186045670L, 17592186045452L,
-  17592186045671L, 17592186045672L, 17592186045540L,
-  17592186045673L, 17592186045674L, 17592186045443L)
+  17592186045909L, 17592186045910L, 17592186045911L,
+  17592186045912L, 17592186045913L, 17592186045914L,
+  17592186045915L, 17592186045916L, 17592186045917L)
 ```
 This approach gives us a clean way of populating a database 
 where we can supply raw data from any source easily as long 

@@ -22,22 +22,27 @@ trait SeattleDefinition {
 would generate the following boilerplate code
 
 ```scala
-object Community extends Community_0
+object Community extends Community_0 {
+  def apply(e: Long): Community_0 = ???
+}
 
 trait Community {
- class name [Ns, In] extends OneString [Ns, In] with FulltextSearch[Ns, In]
+  class name [Ns, In] extends OneString [Ns, In] with FulltextSearch[Ns, In] with Indexed
 }
 
 trait Community_0 extends Community with Out_0[Community_0, Community_1, Community_In_1_0, Community_In_1_1] {
-  val name  : name[Community_1[String], Community_In_1_1[String, String]] with Community_1[String] = ???
-  val name_ : name[Community_0, Community_In_1_0[String]] with Community_0 = ???
+  lazy val name : name[Community_1[String], Community_In_1_1[String, String]] with Community_1[String] = 
+    new name[Community_1[String], Community_In_1_1[String, String]] with Community_1[String] { 
+      override val _kw = ":community/name" 
+    }
+  lazy val name_ : name[Community_0, Community_In_1_0[String]] with Community_0 = ???
 }
          
 trait Community_1[A] extends Community with Out_1[Community_1, Community_2, Community_In_1_1, Community_In_1_2, A] {
-  val name  : name[Community_2[A, String], Community_In_1_2[String, A, String]] with Community_2[A, String] = ???
-  val name_ : name[Community_1[A], Community_In_1_1[String, A]] with Community_1[A] = ???
+  lazy val name  : name[Community_2[A, String], Community_In_1_2[String, A, String]] with Community_2[A, String] = ???
+  lazy val name_ : name[Community_1[A], Community_In_1_1[String, A]] with Community_1[A] = ???
 }
-
+         
 trait Community_2[A, B] extends Community with Out_2[Community_2, Community_3, Community_In_1_2, Community_In_1_3, A, B] {
   // etc up to arity 8...
 

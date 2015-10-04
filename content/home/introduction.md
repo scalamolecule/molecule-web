@@ -35,7 +35,7 @@ We also insert and update data with molecules:
 
 ```scala
 // Insert and retrieve new entity id
-val lisaId = Person.name("Lisa").age("27").insert.id
+val lisaId = Person.name("Lisa").age("27").insert.eid
 
 // Update
 Person(lisaId).age("28").update

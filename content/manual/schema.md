@@ -24,7 +24,7 @@ Shortened example from the [Datomic Seattle tutorial](http://docs.datomic.com/tu
 
 ```scala
 @InOut(3, 8)
-trait SeattleDefinition {
+object SeattleDefinition {
 
   trait Community {
     val name         = oneString.fullTextSearch

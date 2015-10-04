@@ -13,32 +13,37 @@ menu:
 Our [Schema definition file](/schema/definition) will generate a corresponding Datomic schema file:
 
 ```scala
-object SeattleSchema extends Schema {
+object SeattleSchema extends Transaction {
+  
+  lazy val partitions = Util.list()
 
-  lazy val tx = Util.list(
+  lazy val namespaces = Util.list(
+    
+    // Community --------------------------------------------------------
 
-    // Community ------------------------------------------------
-
-    Util.map(":db/id"                , Peer.tempid(":db.part/db"),
-             ":db/ident"             , ":community/name",
+    Util.map(":db/ident"             , ":community/name",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
              ":db/fulltext"          , true.asInstanceOf[Object],
+             ":db/index"             , true.asInstanceOf[Object],
+             ":db/id"                , Peer.tempid(":db.part/db"),
              ":db.install/_attribute", ":db.part/db"),
 
-    Util.map(":db/id"                , Peer.tempid(":db.part/db"),
-             ":db/ident"             , ":community/url",
+    Util.map(":db/ident"             , ":community/url",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
-             ":db/fulltext"          , true.asInstanceOf[Object],
+             ":db/index"             , true.asInstanceOf[Object],
+             ":db/id"                , Peer.tempid(":db.part/db"),
              ":db.install/_attribute", ":db.part/db"),
            
     // etc...
   )
 }
 ```
-We transact our schema by simply feeding `tx` into Datomic:
+We transact our schema by simply supplying the `SeattleSchema` object to the `load` method of `molecule.DatomicFacade`:
 
 ```scala
-conn.transact(SeattleSchema.tx).get()
+implicit val conn = load(SeattleSchema)
 ```
+
+When we assign the returned `datomic.Connection` to an implicit value, we can start making molecules.

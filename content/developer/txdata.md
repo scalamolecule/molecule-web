@@ -12,7 +12,7 @@ menu:
 
 A [Schema definition file](/schema/definition) like
 ```scala
-trait SeattleDefinition {
+object SeattleDefinition {
   trait Community {
     val name = oneString.fullTextSearch
   }
@@ -30,23 +30,27 @@ of a `name` attribute in the `Community` namespace.
 This is enough information to generate the necessary code to transact the schema in Datomic:
 
 ```scala
-object SeattleSchema extends Schema {
+object SeattleSchema extends Transaction {
+  
+  lazy val partitions = Util.list()
 
-  lazy val tx = Util.list(
+  lazy val namespaces = Util.list(
+    
+    // Community --------------------------------------------------------
 
-    // Community ------------------------------------------------
-
-    Util.map(":db/id"                , Peer.tempid(":db.part/db"),
-             ":db/ident"             , ":community/name",
+    Util.map(":db/ident"             , ":community/name",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
              ":db/fulltext"          , true.asInstanceOf[Object],
-             ":db.install/_attribute", ":db.part/db")
-  )
+             ":db/index"             , true.asInstanceOf[Object],
+             ":db/id"                , Peer.tempid(":db.part/db"),
+             ":db.install/_attribute", ":db.part/db"),
+             
+    // etc...
 }
 ```
 
-To avoid having to write this code manually, the [MoleculeBoilerplate](https://github.com/scalamolecule/molecule/blob/master/project/DslBoilerplate.scala) file generates this for us based on our schema definition. It has to be in our [project folder](https://github.com/scalamolecule/molecule/tree/master/project) for sbt to use it to generate our boilerplate code when we run `sbt compile`.
+To avoid having to write this code manually, the [MoleculeBoilerplate](https://github.com/scalamolecule/molecule/blob/master/project/MoleculeBoilerplate.scala) file generates this for us based on our schema definition. It has to be in our [project folder](https://github.com/scalamolecule/molecule/tree/master/project) for sbt to use it to generate our boilerplate code when we run `sbt compile`.
 
 - [File organization](/manual/schema/files)
 - [Types and options](/manual/schema/definition)

@@ -9,7 +9,7 @@ menu:
 
 # Boilerplate code
 
-SBT will ask the `DslBoilerplate` file in our project folder to use our schema definition files as templates to generate a series of domain-specific boilerplate traits for us. 
+SBT will ask the `MoleculeBoilerplate` file in our project folder to use our schema definition files as templates to generate a series of domain-specific boilerplate traits for us. 
 
 With these generated we can then build intuitive molecules like
 
@@ -23,27 +23,28 @@ Each namespace is defined as a trait for each arity of our molecule. We start al
 
 ```scala
 // (simplified...)
-object Community extends Community_0
+object Community extends Community_0 {
+  def apply(e: Long): Community_0 = ???
+}
 
 trait Community_0  {
-  val name          : /* types... */ = ???
-  val url           : /* types... */ = ???
-  val category      : /* types... */ = ???
+  val name          : Community_1 /* + more types... */ = ???
+  val url           : Community_1 /* + more types... */ = ???
+  val category      : Community_1 /* + more types... */ = ???
   
   def Neighborhood  : /* types... */ = ???
 }
 
 trait Community_1  {
-  val name          : /* types... */ = ???
-  val url           : /* types... */ = ???
-  val category      : /* types... */ = ???
+  val name          : Community_2 /* + more types... */ = ???
+  val url           : Community_2 /* + more types... */ = ???
+  val category      : Community_2 /* + more types... */ = ???
   
-  def Neighborhood  : /* types... */ = ???
+  def Neighborhood  : Community_2 /* + more types... */ = ???
 }
 
 // etc...
 ```
-See
 
 ### Increasing arity...
 
@@ -57,7 +58,7 @@ We annotate schema definition traits with `@InOut(x, y)` to tell Molecule the ar
 
 ```scala
 @InOut(3, 8) // <-- In-arity: 3, Out-arity: 8
-trait SeattleDefinition {
+object SeattleDefinition {
   // namespaces...
 }
 ```

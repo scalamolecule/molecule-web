@@ -26,7 +26,7 @@ Strictly speaking we have an entity with an asserted `:person/name` attribute va
 A namespace is not like an SQL Table but rather organizes some attributes by a meaningful name - it's, well, a _namespace_.
 
 
-### One-to-Many
+### One/Many-to-Many
 
 
 If we have an `Order` with multiple `OrderLine`s we would instead define a cardinality-many reference to the `OrderLine` namespace in our Schema definition:
@@ -38,7 +38,33 @@ This would cause Molecule to generate boilerplate code that would allow us to fo
 
 ```scala
 m(Order.id.LineItems * LineItem.product.price.quantity).insert(
-  "order1", List((chocolateId, 48.00, 1), (whiskyId, 38.00, 2))
+  ("order1", List((chocolateId, 48.00, 1), (whiskyId, 38.00, 2)))
+  ("order2", List((bread, 13.00, 4)))  
 )
 ```
 
+We can then fetch the nested data
+
+```scala
+m(Order.id.LineItems * LineItem.product.price.quantity).get === List(
+  ("order1", List((chocolateId, 48.00, 1), (whiskyId, 38.00, 2)))
+  ("order2", List((bread, 13.00, 4)))  
+)
+```
+
+The nested data structures can be arbitrarily deep (currently max 10 levels deep - can be expanded though if needed):
+
+```scala
+m(Order.orderid.LineItems * (LineItem.quantity.price.Comments * Comment.text.descr)).get === List(
+  (23, List(
+    (1, 48.00, List(
+      ("first", "1a"),
+      ("product", "1b"))),
+    (2, 38.00, List(
+      ("second", "2b"),
+      ("is", "2b"),
+      ("best", "2c")))
+  ))
+)
+// etc...
+```
