@@ -196,6 +196,16 @@ val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 4. Open in your IDE
 5. Run tests and poke around...
 
+
+### Molecule in your own project
+
+Add Molecule dependency to your project
+
+```scala
+"org.scalamolecule" %% "molecule" % "0.4.0"
+```
+
+(See more on setup [here](/manual/database-setup))
    
 ### Read more
 

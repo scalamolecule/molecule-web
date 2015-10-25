@@ -20,7 +20,10 @@ The fundamental building blocks are Namespaces like `Person` and Attributes like
 
 As you see we start our molecule from some Namespace and then build on Attribute by Attribute.
 
-### All Attributes looked for
+
+### 3 ways of getting data
+
+#### 1. Mandatory Attributes
 
 When we use a molecule to query the Datomic database we ask for entities having all our Attributes associated with them. 
 
@@ -34,9 +37,9 @@ val persons = Person.name.age.get
 Basically we look for **matches** to our molecule data structure.
 
 
-### Underscore omits values
+#### 2. Mandatory un-fetched Attributes with `_` suffix
 
-Sometimes we want to grap entities that we _know_ have certain attributes, but without returning those values. If for instance we wanted to find all names of Persons that have an age attribute set but we don't need to return those age values, then we can add an underscore `_` after the `age` Attribute so that it becomes `age_`:
+Sometimes we want to grap entities that we _know_ have certain attributes, but without returning those values. If for instance we wanted to find all names of Persons that have an age attribute set but we don't need to return those age values, then we can add an underscore `_` after the `age` Attribute:
 
 ```scala
 val names = Person.name.age_.get
@@ -50,6 +53,15 @@ val names  : List[String]        = Person.name.age_.get
 This way we can switch on and off individual attributes from the result set without affecting the data structures we look for.
 
 
+#### 3. Optional Attributes with `$` suffix (like Null values)
+
+If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
+
+```scala
+val names: List[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
+```
+That way we can get all person names with or without middleNames. As you can see from the return type, the middle name is wrapped in an `Option.
+
 
 ### Tuples or HLists returned
 
@@ -59,8 +71,7 @@ Molecule returns all result sets as either tuples of values (with `get`) or Shap
 val persons: List[(String, Int)]         = Person.name.age.get
 val persons: List[String :: Int :: HNil] = Person.name.age.hl
 ```
+At the moment the HList implementation is not as full as the tuple implementation. It seems as though tuples does the job very well.
 
 ### Molecule max size
-The size of molecules are limited to Scala's limit size of 22 for tuples. Since molecules only look for attributes having a value it seems unlikely that we need to surpass this upper limit except in very special cases.
-
-Once the entities matching our qriteria are found we can use those entities to find additional optional attribute values.
+The size of molecules are limited to Scala's arity limit of 22 for tuples.

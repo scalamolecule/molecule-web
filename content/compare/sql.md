@@ -34,6 +34,14 @@ With Molecule we would concatenate `name` and `id` with the returned result set:
 ```scala
 Person.age.name.e.get map { case (age, name, id) => (age, s"$name ($id)" }
 ```
+Actually, Molecule treats attributes as mandatory values whereas Select-attributes in a SQL query could be Null values (if allowed). Molecule can also ask for optional values too if a `$` sign is appended to an attribute name:
+```scala
+Person.age.firstName.middleName$.lastName.e.get map { 
+  case (age, firstName, Some(middleName), lastName, id) => (age, s"$firstName $middleName $lastName ($id)" 
+  case (age, firstName, None, lastName, id)             => (age, s"$firstName $lastName ($id)" 
+}
+```
+
 
 #### WHERE
 
