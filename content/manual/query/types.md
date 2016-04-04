@@ -12,18 +12,18 @@ menu:
 Molecule Attributes can have the following types:
 
 ```
-Cardinality one     Cardinality many
----------------     ----------------
-String              Set[String]
-Int                 Set[Int]   
-Long                Set[Long]    
-Float               Set[Float]     
-Double              Set[Double]      
-Boolean             Set[Boolean]      
-Date                Set[Date]    
-UUID                Set[UUID]    
-URI                 Set[URI]   
-enum: String        enums: Set[String]              
+Cardinality one     Cardinality many     Mapped Cardinality many    
+---------------     ----------------     -----------------------
+String              Set[String]          Map[String, String]
+Int                 Set[Int]             Map[String, Int]
+Long                Set[Long]            Map[String, Long]
+Float               Set[Float]           Map[String, Float]
+Double              Set[Double]          Map[String, Double]
+Boolean             Set[Boolean]         Map[String, Boolean]
+Date                Set[Date]            Map[String, Date]
+UUID                Set[UUID]            Map[String, UUID]
+URI                 Set[URI]             Map[String, URI]
+enum: String        enums: Set[String]   
 ```
 Attribute are defined in your [schema](/manual/schema/definition/).
  
