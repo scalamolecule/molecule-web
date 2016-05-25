@@ -30,15 +30,15 @@ menu:
 
 ### Dependency in your project
 
-Molecule 0.5.1 for Scala 2.11.7 is available at [Sonatype](https://oss.sonatype.org/content/repositories/releases/com/scalamolecule/molecule_2.11/) so that you can add a dependency in your sbt file:
+Molecule 0.6.1 for Scala 2.11.7 is available at [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.11/) so that you can add a dependency in your sbt file:
 
-`"org.scalamolecule" % "molecule_2.11" % "0.5.1"`
+`"org.scalamolecule" % "molecule_2.11" % "0.6.1"`
 
 Since Molecule generates boilerplate code from your definitions it also needs to have the `MoleculeBoilerplate.scala` file in your project folder. Add a copy of this file to your own project before compiling with sbt:
 
 2. Setup your sbt build file [as in Molecule][moleculesbt]: 
     - Add library dependency<br>
-    `"org.scalamolecule" % "molecule_2.11" % "0.5.1"`
+    `"org.scalamolecule" % "molecule_2.11" % "0.6.1"`
     - List directories where you have your [definition file(s)][dbsetup]
 3. Define your domain schema in a [schema definition file][schema]
 4. `sbt compile`
