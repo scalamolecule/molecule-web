@@ -27,7 +27,6 @@ defines
 
 of a `name` attribute in the `Community` namespace.
 
-
 This is enough information to generate the necessary code to transact the schema in Datomic:
 
 ```scala
