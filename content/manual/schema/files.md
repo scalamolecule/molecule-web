@@ -18,13 +18,13 @@ Your Molecule schema definition file should be in a folder named "schema" anywhe
 In the project build file we then tell sbt where such "schema" folders reside:
 
 ```scala
-settings = commonSettings ++ Seq(
-  definitionDirectories(
-    "examples/src/main/scala/molecule/examples/dayOfDatomic",
-    "examples/src/main/scala/molecule/examples/mbrainz",
-    "examples/src/main/scala/molecule/examples/seattle"
-  )
-)
+// Add schema definition directories
+.settings(Seq(definitionDirectories(
+  "examples/src/main/scala/molecule/examples/dayOfDatomic",
+  "examples/src/main/scala/molecule/examples/seattle",
+  "examples/src/main/scala/molecule/examples/mbrainz",
+  "examples/src/main/scala/molecule/examples/graph"
+)))
 ```
 
 We can add several locations with the `definitionDirectories` method which will tell sbt where to look for our schema definition files.

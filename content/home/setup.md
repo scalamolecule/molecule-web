@@ -48,7 +48,7 @@ Since Molecule generates boilerplate code from your definitions it also needs to
 8. [Make molecule queries][tutorial]
 
 
-[dbsetup]: http://scalamolecule.org/manual/database-setup
+[dbsetup]: http://scalamolecule.org/manual/setup
 [schema]: http://scalamolecule.org/manual/schema-definition
 [populate]: http://scalamolecule.org/manual/populate-database
 [tutorial]: http://scalamolecule.org/tutorials/seattle

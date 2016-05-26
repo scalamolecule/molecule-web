@@ -949,6 +949,6 @@ as described in [Database setup][setup].
 
 
 [seattle]: http://docs.datomic.com/tutorial.html
-[setup]: /manual/database-setup
+[setup]: /manual/setup
 [populate]: /manual/populate-database
 

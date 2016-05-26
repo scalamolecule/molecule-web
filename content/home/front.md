@@ -205,13 +205,13 @@ Add Molecule dependency to your project
 "org.scalamolecule" %% "molecule" % "0.6.1"
 ```
 
-(See more on setup [here](/manual/database-setup))
+(See more on setup [here](/manual/setup))
    
 ### Read more
 
 - [Introduction](/home/introduction) to Datomic/Molecule
-- [Setup Database](/manual/database-setup): initiate a Datomic database and create a database schema with Molecule
-- [Populate Database](/manual/populate-database): populate a Datomic database with Molecule
+- [Setup Database](/manual/setup): initiate a Datomic database and create a database schema with Molecule
+- [Populate Database](/manual/insert): populate a Datomic database with Molecule
 - [Molecule Seattle tutorial](/tutorials/seattle) examples of using Molecule (based on the 
 [Datomic Seattle tutorial](http://docs.datomic.com/tutorial.html))
 
