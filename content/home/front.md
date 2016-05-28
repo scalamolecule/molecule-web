@@ -202,7 +202,7 @@ val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 Add Molecule dependency to your project
 
 ```scala
-"org.scalamolecule" %% "molecule" % "0.6.1"
+"org.scalamolecule" %% "molecule" % "0.6.2"
 ```
 
 (See more on setup [here](/manual/setup))
