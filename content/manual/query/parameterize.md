@@ -15,7 +15,7 @@ By assigning parameterized "Input-molecules" to variables we can re-use those va
 
 ```scala
 // 1 input parameter
-val person = Person.name(?)
+val person = m(Person.name(?))
 
 val john = person("John").one
 val lisa = person("Lisa").one
@@ -30,7 +30,7 @@ Datomic will cache and optimize the queries from such Input-molecules. This give
 ### Parameterized expressions
 
 ```scala
-val personName = Person.name.())?
+val personName  = m(Person.name.(?))
 val johnOrLisas = personName("John" or "Lisa").get // OR
 ```
 
@@ -38,7 +38,7 @@ val johnOrLisas = personName("John" or "Lisa").get // OR
 Molecules can have up to 3 `?` placeholder parameters. Since we can apply expressions and logic to them it seems likely that this will satisfy the majority of all parameterized queires.
 
 ```scala
-val person      = Person.name(?).age(?)
+val person      = m(Person.name(?).age(?))
 val john        = person("John" and 42).one // AND
 val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
 ```
@@ -46,9 +46,9 @@ val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
 ### Mix parameterized and static expressions
 
 ```scala
-val americansYoungerThan = Person.name.age.<(?).Country.name("USA")
-val americanKids = americansYoungerThan(13).get
-val americanBabies = americansYoungerThan(1).get
+val americansYoungerThan = m(Person.name.age.<(?).Country.name("USA"))
+val americanKids         = americansYoungerThan(13).get
+val americanBabies       = americansYoungerThan(1).get
 ```
 
 For more examples, please see the [Seattle examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L141)

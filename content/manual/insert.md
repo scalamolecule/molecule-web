@@ -67,14 +67,14 @@ insertPerson("Lisa", "Tux", 27)
 ```
 This makes it easy to insert similar data sets.
 
-### Missing values ("Null values")
+### Optional values ("Null values")
 
-We might have some "rows" (tuples) of imported data with a missing attribute
+We might have some "rows" (tuples) of imported data with an optional attribute
 value. If for instance some row has no `orgtype` value in the data set, we can
-just use a `null` placeholder:
+just use `None`:
 
 ```scala
-  ("community4", "url2", "blog", null.asInstanceOf[String], Set("cat3", "cat1"), "NbhName4", "DistName4", "ne"), // ...
+  ("community4", "url2", "blog", None, Set("cat3", "cat1"), "NbhName4", "DistName4", "ne"), // ...
 ```
 (we need to type-cast it for the implicits to resolve correctly)
 

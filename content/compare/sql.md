@@ -62,7 +62,7 @@ sql"select * from PERSON order by AGE asc, NAME".as[Person].list
 ```
 Ordering is applied on the result set:
 ```scala
-Person.age.name.get sortBy(_._1)
+Person.age.name.get.sortBy(_._1)
 ```
 
 #### Aggregations

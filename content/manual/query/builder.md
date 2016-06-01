@@ -63,15 +63,15 @@ val names: List[(String, Option[String], String)] = Person.firstName.middleName$
 That way we can get all person names with or without middleNames. As you can see from the return type, the middle name is wrapped in an `Option.
 
 
-### Tuples or HLists returned
+### Tuples returned
 
-Molecule returns all result sets as either tuples of values (with `get`) or Shapeless HLists (with `hl`).
+Molecule returns all result sets as tuples of values (with `get`).
 
 ```scala
 val persons: List[(String, Int)]         = Person.name.age.get
-val persons: List[String :: Int :: HNil] = Person.name.age.hl
 ```
 At the moment the HList implementation is not as full as the tuple implementation. It seems as though tuples does the job very well.
 
 ### Molecule max size
-The size of molecules are limited to Scala's arity limit of 22 for tuples.
+The size of molecules are limited to Scala's arity limit of 22 for tuples. If you need to return more you can use an additional molecule
+that takes an entity id and then retrieve further attribute values for that entity.

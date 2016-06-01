@@ -10,7 +10,7 @@ menu:
 
 # Schema transaction data
 
-A [Schema definition file](/schema/definition) like
+A [Schema definition file](/manual/schema/attributes) like
 ```scala
 object SeattleDefinition {
   trait Community {
@@ -50,7 +50,8 @@ object SeattleSchema extends Transaction {
 }
 ```
 
-To avoid having to write this code manually, the [MoleculeBoilerplate](https://github.com/scalamolecule/molecule/blob/master/project/MoleculeBoilerplate.scala) file generates this for us based on our schema definition. It has to be in our [project folder](https://github.com/scalamolecule/molecule/tree/master/project) for sbt to use it to generate our boilerplate code when we run `sbt compile`.
-
-- [File organization](/manual/schema/files)
-- [Types and options](/manual/schema/definition)
+To avoid having to write this code manually, the 
+[MoleculeBoilerplate](https://github.com/scalamolecule/molecule/blob/master/project/MoleculeBoilerplate.scala) 
+file generates this for us based on our schema definition. It has to be in our 
+[project folder](https://github.com/scalamolecule/molecule/tree/master/project) for sbt to use it to generate 
+our boilerplate code when we run `sbt compile`.

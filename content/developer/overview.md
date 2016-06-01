@@ -26,7 +26,7 @@ But it quickly became un-intuitive with relations, expressions etc.
 
 ### Builder pattern
 
-Instead we settled on using the builder pattern
+Instead we settled on using the builder pattern with `.`s
 
 ```scala
 Person.firstName.lastName.age

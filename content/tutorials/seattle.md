@@ -182,17 +182,6 @@ Community.name.url.get(3) === List(
   ("KOMO Communities - Wallingford", "http://wallingford.komonews.com"),
   ("Aurora Seattle", "http://www.auroraseattle.com/"))
 ```
-Or we can choose to get the same data back with the `hl` method as Shapeless
-HLists where each element has its own type.
-
-```scala
-Community.name.url.hl(3) === List(
-  "Broadview Community Council" :: "http://groups.google.com/group/broadview-community-council" :: HNil,
-  "KOMO Communities - Wallingford" :: "http://wallingford.komonews.com" :: HNil,
-  "Aurora Seattle" :: "http://www.auroraseattle.com/" :: HNil)
-```
-This gives us access to a wide range of [useful functions of HLists](https://github.com/milessabin/shapeless/blob/master/core/src/test/scala/shapeless/hlist.scala).
-
 
 
 ## [☝︎](#contents:3d29aefa7257f22b89227d9f373cd5f9) Querying _by_ attribute values {#3}
@@ -791,17 +780,6 @@ As before, three entities are created here since we reference a new Neighborhood
 
 All values are type checked against the expected type of each attribute!
 
-We can also supply the input data as an HList
-
-```scala
-insertCommunity(
-  "CCC" :: "url C" :: "twitter" :: "personal" :: Set("some", "cat C") :: 
-    "neighborhood C" :: 
-    "district C" :: "ne" :: HNil
-).eids === List(17592186045899L, 17592186045900L, 17592186045901L)
-```
-Again each element of the HList has to be of the expected 
-corresponding attribute type.
 
 ### Insert-Molecule + multiple data tuples
 
@@ -830,20 +808,29 @@ insertCommunity(newCommunitiesData) === List(
 ```
 This approach gives us a clean way of populating a database 
 where we can supply raw data from any source easily as long 
-as we can format it as a list of tuples/HLists of values each matching 
+as we can format it as a list of tuples of values each matching 
 our template molecule. 
 
 We use an insert-molecule also when we initially [populate 
 the Seattle database](https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleSpec.scala#L43). 
 
-### Missing attribute values (Null values)
+### Optional attribute values
 
-We might have some "rows" (tuples) of imported data with a 
-missing attribute value. If for instance some row has no orgtype 
-value in the data set, we can just use a `null` placeholder:
+We might have a data set with some optional attribute values. We can append a `$` to
+such attribute names to tell Molecule that this is an optional value:
 
 ```scala
-("community4", "url2", "blog", null, Set("cat3", "cat1"), "NbhName4", "DistName4", "ne")
+val insertCommunity = m(
+  Community.name.url.`type`.orgtype$.category
+    .Neighborhood.name
+    .District.name.region
+) insert
+```
+
+If for instance some row has no orgtype we can use `None` (and likewise `Some(<value>)`):
+
+```scala
+("community4", "url2", "blog", None, Set("cat3", "cat1"), "NbhName4", "DistName4", "ne")
 ```
 
 In an sql table we would "insert a null value" for such column. 

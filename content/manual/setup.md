@@ -24,10 +24,10 @@ implicit val conn = Peer.connect(uri)
 We save the returned Datomic Connection as an implicit value so that our 
 molecules can later issue queries against it.
 
-Alternatively we can get the connection by loading a Schema definition object for our domain:
+Alternatively we can get the connection by recreating our datbase from a Schema definition object for our domain:
 
 ```scala
-implicit val conn = load(SeattleSchema)
+implicit val conn = recreateDbFrom(SeattleSchema)
 ```
 
 This will also allow us to start making molecules for the loaded domain.

@@ -49,26 +49,18 @@ Here we have a `Community`, `Neighborhood` and `District` namespace each definin
 
 Model your own domain structures with similar schemas and save each definition in a file in a "schema" folder anywhere within your project.
 
-[Read more...](/manual/schema/files) 
-
 
 ### 2. Tell sbt
 
 In your sbt build file you add the paths to one or more of your domains. Each of those domain directories should have one or more `schema` directories containing your schema definition files (like the one shown above):
 
 ```scala
-// Add schema definition directories
 .settings(Seq(definitionDirectories(
-  "examples/src/main/scala/molecule/examples/dayOfDatomic",
-  "examples/src/main/scala/molecule/examples/seattle",
-  "examples/src/main/scala/molecule/examples/mbrainz",
-  "examples/src/main/scala/molecule/examples/graph"
+  "molecule/examples/seattle",
 )))
 ```
 
-[Read more...](/manual/schema/files) 
-
-Have a look in the [build file](https://github.com/scalamolecule/molecule-demo/blob/master/build.sbt#L30-L33) of the molecule-demo project of how things are organized...
+Have a look in the [build file](https://github.com/scalamolecule/molecule-demo/blob/master/build.sbt) of the molecule-demo project of how things are organized...
 
 
 ### 3. Compile (generate boilerplate code)

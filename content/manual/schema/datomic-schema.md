@@ -40,10 +40,12 @@ object SeattleSchema extends Transaction {
   )
 }
 ```
-We transact our schema by simply supplying the `SeattleSchema` object to the `load` method of `molecule.DatomicFacade`:
+We transact our schema by simply supplying the `SeattleSchema` object to the `recreateDbFrom` method of `molecule.DatomicFacade`:
 
 ```scala
-implicit val conn = load(SeattleSchema)
+import molecule.DatomicFacade._
+
+implicit val conn = recreateDbFrom(SeattleSchema)
 ```
 
 When we assign the returned `datomic.Connection` to an implicit value, we can start making molecules.

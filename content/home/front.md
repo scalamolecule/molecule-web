@@ -180,10 +180,8 @@ Person.name(&quot;Lisa&quot; or &quot;Linda&quot;).age.Address.street.contains(&
     </div>
     <div class="section">
         <h4 id="run-queries:ffcff61ab3a11ef1d50900901a24ec54">Run queries</h4>
-        <p>The generated Datalog queries are executed against Datomic and we can get our type-inferred result sets back from Datomic as either tuples or Shapeless HLists:</p>
-        <pre><code>val persons: Seq[(String, Int)]         = Person.name.age.get
-val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
-</code></pre>
+        <p>The generated Datalog queries are executed against Datomic and we can get our type-inferred result sets back from Datomic as tuples:</p>
+        <pre><code>val persons: Seq[(String, Int)] = Person.name.age.get</code></pre>
     </div>
 </div>
 
@@ -194,7 +192,7 @@ val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 2. `cd molecule-demo`
 3. `sbt compile`
 4. Open in your IDE
-5. Run tests and poke around...
+5. Run app - and build new molecules...
 
 
 ### Molecule in your own project
@@ -202,10 +200,8 @@ val persons: Seq[String :: Int :: HNil] = Person.name.age.hl
 Add Molecule dependency to your project
 
 ```scala
-"org.scalamolecule" %% "molecule" % "0.6.2"
+"org.scalamolecule" %% "molecule" % "0.6.3"
 ```
-
-(See more on setup [here](/manual/setup))
    
 ### Read more
 
@@ -214,15 +210,6 @@ Add Molecule dependency to your project
 - [Populate Database](/manual/insert): populate a Datomic database with Molecule
 - [Molecule Seattle tutorial](/tutorials/seattle) examples of using Molecule (based on the 
 [Datomic Seattle tutorial](http://docs.datomic.com/tutorial.html))
-
-
-### Download and test
-
-1. `git clone https://github.com/scalamolecule/molecule.git`
-2. `cd molecule`
-3. `sbt compile`
-4. Open in your IDE
-5. Run tests and poke around...
 
 
 [datomic]: http://www.datomic.com

@@ -32,7 +32,7 @@ Model(List(
   Atom("district", "region_", "String", 1, Eq(List("sw", "s", "se")), Some(":district.region/")))
 )
 ```
-This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/model.scala#L26-L33) has shown to cover a surprising wide spectre of queries.
+This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/model.scala) has shown to cover a surprising wide spectre of queries.
 
 ### 3. Query AST
 Our model is then transformed in [Model2Query](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Model2Query.scala) to a Query AST which is a little more elaborate:
@@ -89,4 +89,4 @@ List(
 
 All 3 transformations happen at compile time and therefore have no impact on the runtime performance.
 
-See more examples of [transformation of the Seattle molecules](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTransformationTests.scala#L11)...
+See more examples of [transformation of the Seattle molecules](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTransformationTests.scala)...
