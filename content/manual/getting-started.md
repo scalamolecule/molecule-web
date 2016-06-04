@@ -45,7 +45,6 @@ Molecule 0.7.0 for Scala 2.11.8 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.11/).
 
 
-
 # 2. Paths to Schema definition files
 
 We use the `moleculeSchemas` sbt settings key to tell sbt where we have our Schema definition files.
