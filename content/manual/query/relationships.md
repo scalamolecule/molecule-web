@@ -9,6 +9,9 @@ menu:
 
 # Relationships
 
+(See [relationship tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Relations.scala)
+and [self-join tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/SelfJoin.scala))
+
 Relationships are modelled in Molecule as "references between namespaces".
 
 It's not that namespaces automatically become entities referencing each other but rather that referenced entities will likely pick attributes from a certain namespace. 

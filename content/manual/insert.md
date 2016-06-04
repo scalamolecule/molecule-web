@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Insert"
-weight: 30
+weight: 40
 menu:
   main:
     parent: manual

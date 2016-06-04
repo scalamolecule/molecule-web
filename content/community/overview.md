@@ -15,4 +15,3 @@ The [Molecule google list](https://groups.google.com/forum/#!forum/molecule-dsl)
 ### Resources
 - [Issues](https://github.com/scalamolecule/molecule/issues) - please feel free to raise issues/report bugs or make pull requests
 - [Datomic](http://datomic.com) website
-- [Datomisca](https://github.com/pellucidanalytics/datomisca), a Scala API for Datomic

@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Update/retract"
-weight: 40
+weight: 50
 menu:
   main:
     parent: manual

@@ -11,7 +11,8 @@ menu:
 
 The basic philosophy of Molecule is to think from the User's perspective towards a technical solution. 
 
-The priority is always to make it as easy as possible for the end User to make Datomic queries, no matter how challenging on the Molecule backend.
+The priority is always to make it as easy as possible for the end User to make Datomic queries, no matter 
+how challenging on the Molecule backend.
 
 When we asked
 
@@ -36,18 +37,10 @@ We can't think of a more minimal Scala representation of "finding persons".
 
 ### Generated boilerplate code
 
-The builder pattern has shown a surprising strong capacity to express a wide range of query constructs. But it also requires an extensive amount of boilerplace code to work.
+The builder pattern has shown a surprising strong capacity to express a wide range of query constructs. But it also
+ requires an extensive amount of boilerplace code to work.
 
 We therefore generate all boilerplate code automatically when we compile our project with `sbt compile`.
-
-From a minimal definition of for instance an attribute
-```scala
-val name = oneString.fullTextSearch // maybe more options...
-```
-we have enough information about type, cardinality and options to generate the following artifacts:
-
-1. [Schema transaction data](/developer/txdata) (in a Datomic format)
-2. [Scala code](/developer/boilerplate) to build molecules
 
 
 ### Scala macro transformations
@@ -85,6 +78,8 @@ The query would still be created at compile time and fetching data at runtime.
 
 ### Closed eco-system
 
-Since we create our molecules from our self-generated boilerplate code our macros have full knowledge about the possible constructs we can expect. We are therefore in full control of the entire "eco-system" from molecule to Datomic query. Non-valid molecules simply won't compile. And we can infer all type information from our molecules.
+Since we create our molecules from our self-generated boilerplate code our macros have full knowledge about the 
+possible constructs we can expect. We are therefore in full control of the entire "eco-system" from molecule
+ to Datomic query. Non-valid molecules simply won't compile. And we can infer all type information from our molecules.
 
 [Read more about the macro transformations...](/developer/transformation)

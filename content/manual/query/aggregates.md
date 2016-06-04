@@ -9,6 +9,8 @@ menu:
 
 # Aggregates
 
+(See [aggregates tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala))
+
 Datomic offers some built-in aggregate functions to aggregate attribute values. 
 
 ### Aggregates returning a single value

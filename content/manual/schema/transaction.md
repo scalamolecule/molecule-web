@@ -1,45 +1,23 @@
 ---
-date: 2014-05-14T02:13:50Z
-title: "Schema transaction"
-weight: 10
+date: 2015-01-02T22:06:44+01:00
+title: "Transaction"
+weight: 30
 menu:
   main:
-    parent: developer
+    parent: schema
     identifier: schema-transaction
 ---
 
 # Schema transaction
 
-In [Schema definition files](/manual/schema/attributes) like the 
-[Seattle example definition](https://github.com/scalamolecule/molecule/blob/master/examples/src/main/scala/molecule/examples/seattle/schema/SeattleDefinition.scala)
-```scala
-object SeattleDefinition {
-  trait Community {
-    val name = oneString.fullTextSearch
-    // more attributes...
-  }
-}
-```
-we define a number of namespaces each containing some attributes that can be of various types as we saw in 
-[Define Attributes in a Schema](http://www.scalamolecule.org/manual/schema/attributes/). 
-
-Above we see the 
-definition of a `name` attribute of the `Community` namespace that gives us the following information:
-
-- name of the attribute ("name")
-- cardinality ("one")
-- type (String)
-- options (fullTextSearch)
+To create our Datomic database we need to transact some schema transaction data.
 
 
-### Schema transaction data
+## Schema transaction data
 
-In order to transact our desired Datomic schema, Molecule transforms our schema definition file to
-basically a `java.util.List` containing a `java.util.Map` 
-of information for each attribute that we want.
-
-Our `name` attribute 
-for instance requires the following map of information to be transacted in Datomic:
+Molecule transforms our [Schema definition file](/manual/schema) to
+basically a `java.util.List` containing a `java.util.Map` of schema transaction data for each attribute defined. 
+Our `name` and `url` attributes for instance requires the following map of information to be transacted in Datomic:
 
 ```scala
 object SeattleSchema extends Transaction {
@@ -57,12 +35,19 @@ object SeattleSchema extends Transaction {
              ":db/index"             , true.asInstanceOf[Object],
              ":db/id"                , Peer.tempid(":db.part/db"),
              ":db.install/_attribute", ":db.part/db"),
+
+    Util.map(":db/ident"             , ":community/url",
+             ":db/valueType"         , ":db.type/string",
+             ":db/cardinality"       , ":db.cardinality/one",
+             ":db/index"             , true.asInstanceOf[Object],
+             ":db/id"                , Peer.tempid(":db.part/db"),
+             ":db.install/_attribute", ":db.part/db"),
              
     // etc...
 }
 ```
-If you look closely, you'll see that the `Community` namespace information is present in the
-value of the first pair in the map, namely 
+As you see, the `Community` namespace information is present in the value of the first pair in the map for 
+the `name` attribute: 
 
 ```scala
 ":db/ident", ":community/name",
@@ -88,17 +73,35 @@ Util.map(":db/ident"             , ":gen",
 Partition examples:
 
 - [partitioned schema definition](https://github.com/scalamolecule/molecule/blob/master/coretest/src/main/scala/molecule/part/schema/PartitionTestDefinition.scala) 
-- [partition tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/main/scala/molecule/part/schema/PartitionTestDefinition.scala) 
+- [partition tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/part/Partition.scala) 
 
 
-### Transacting Partitions and Schema
+## Transact/create Datomic database
 
 Now we can simply pass the generated raw transaction data to Datomic in order to create our partitions/schema:
 
 ```scala
-val uri = "datomic:mem://your-db-name"
-val conn = datomic.Peer.connect(uri)
-conn.transact(SeattleSchema.partitions)
+import datomic._
+import molecule.DatomicFacade._
+
+// Setup database
+val uri = "datomic:mem://seattle"
+Peer.deleteDatabase(uri)
+Peer.createDatabase(uri)
+implicit val conn = Peer.connect(uri)
+
+// Transact partitions/schema
+conn.transact(SeattleSchema.partitions) // Optional
 conn.transact(SeattleSchema.namespaces)
 ```
-And voilá, the Datomic partitions and schema are created!
+
+(To be sure that we start off with a fresh in-memory database, we first delete any existing database for our URI).
+
+Alternatively we can do all the above with `recreateDbFrom`:
+
+```scala
+implicit val conn = recreateDbFrom(SeattleSchema)
+```
+
+After saving the Datomic in an implicit val we can start issuing Molecule queries.
+molecules for the loaded domain.

@@ -9,6 +9,8 @@ menu:
 
 # Expressions
 
+(See [expression tests](https://github.com/scalamolecule/molecule/tree/master/coretest/src/test/scala/molecule/expression))
+
 ### Equality
 
 We can apply values to Attributes in order to filter the data structures we are looking for. We could for instance look for names of female persons:

@@ -18,3 +18,8 @@ For more in-depth examples see
 or 
 [examples](https://github.com/scalamolecule/molecule/tree/master/examples/src/test/scala/molecule/examples)
 
+### Suggestions
+
+You're welcome to raise [documentation issues](https://github.com/scalamolecule/molecule-docs/issues) 
+and/or [Molecule code isues](https://github.com/scalamolecule/molecule/issues).
+

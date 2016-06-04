@@ -10,44 +10,50 @@ menu:
 
 # Molecule Queries
  
-[Build molecules](/manual/query/builder) with the builder pattern
+[Building molecules](/manual/query/builder) with the builder pattern 
+([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Attribute.scala))
 ```scala
 Person.name.age.gender  // require values
 Person.name.age_.gender // require but omit values ("tacet values")
 ```
 
-[Types](/manual/query/types) - all types inferred by IDE
+[Maped values](/manual/query/mapped) - mapped attribute values 
+([tests](https://github.com/scalamolecule/molecule/tree/master/coretest/src/test/scala/molecule/attrMap))
 ```scala
-val name   : String      = Person.name.one
-val age    : Int         = Person.age.one
-val hobbies: Set[String] = Person.hobbies.one // cardinality-many
-val gender : String      = Person.gender.one  // enum values
+Person.id.name.one === (
+  1, 
+  Map(
+    "en" -> "Dmitri Shostakovich",
+    "de" -> "Dmitri Schostakowitsch",
+    "fr" -> "Dmitri Chostakovitch",
+    "es" -> "Dmitri Shostakóvich"
+  )
+)
 ```
 
-[Expressions](/manual/query/expressions) - filter attribute values with expressions
+[Expressions](/manual/query/expressions) - filter attribute values with expressions 
+([tests](https://github.com/scalamolecule/molecule/tree/master/coretest/src/test/scala/molecule/expression))
 ```scala
-Person.age(42)               // equal value
-Person.age.!=(42)            // negate values
-Person.age.<(42)             // compare values
-Person.age.>(42)             // compare values
-Person.age.<=(42)            // compare values
-Person.age.>=(42)            // compare values
-Person.name.contains("John") // fulltext search
+Person.age(42)                  // equal value
+Person.age.!=(42)               // negate values
+Person.age.<(42)                // compare values
+Person.age.>(42)                // compare values
+Person.age.<=(42)               // compare values
+Person.age.>=(42)               // compare values
+Person.name.contains("John")    // fulltext search
+Person.name("John" or "Jonas")  // OR-logic
 ```
 
-[Aggregates](/manual/query/aggregates) - aggregate attribute values
+[Aggregates](/manual/query/aggregates) - aggregate attribute values 
+([tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala))
 ```scala
 Person.age(min) 
 Person.age(max) 
 // rand, sample, count, countDistinct, sum, avg, median, variance, stddev
 ```
 
-[OR-logic](/manual/query/or-logic) - apply OR logic to collect alternative values
-```scala
-Person.name("John" or "Jonas")
-```
-
-[Parameterize](/manual/query/parameterize) - re-use molecules and let Datomic cache queries and optimize performance
+[Parameterize](/manual/query/parameterize) - re-use molecules and let Datomic cache queries and optimize performance 
+([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Input.scala))
 ```scala
 val person = Person.name(?).age(?)
 
@@ -55,7 +61,8 @@ val person = Person.name(?).age(?)
 val Johan  = person("John", 33).one
 val Lisa   = person("Lisa", 27).one
 ```
-[Relationships](/manual/query/relationships) - Connect namespaces with relationships 
+[Relationships](/manual/query/relationships) - Connect namespaces with relationships ([relationship tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Relations.scala)
+and [self-join tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/SelfJoin.scala))
 
 ```scala
 Person.name.City.name.Country.name
