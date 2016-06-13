@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Parameterize"
-weight: 60
+weight: 50
 menu:
   main:
     parent: query
