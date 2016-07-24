@@ -95,3 +95,5 @@ be too happy about that.
 
 Compile time for molecules longer than about 14-16 attributes long tend to increase sharply, so simply 
 splitting up long molecules in 2 or more sub-molecules easily keeps compilation fast.
+
+See [Composite tests...](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/ref/Composite.scala)

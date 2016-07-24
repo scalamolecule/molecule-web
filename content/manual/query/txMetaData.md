@@ -10,7 +10,7 @@ menu:
 # Transaction meta data
 
 Transaction data in Datomic is basically a list of facts/datoms being asserted or retracted. If we take the 
-[Provenance](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala)
+[Provenance](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Provenance.scala)
 example we could add two Story entities each with two datoms (`title` and `url`) with this molecule:
 
 ```scala
@@ -167,3 +167,5 @@ Story.title.tx_(MetaData.usecase_(nil)).get === List(
   "Teach Yourself Programming in Ten Years"
 )
 ```
+
+See also [core tests...](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/transaction/TransactionMetaData.scala)
