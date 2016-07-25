@@ -11,8 +11,6 @@ menu:
 
 (See [bidirectional tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/bidirectional/))
 
-Molecule 
-
 
 ### Unidirectional reference limitations
 
@@ -93,9 +91,13 @@ reference from each namespace to the other:
 ```scala
 trait Person {
   val buddies = manyBi[Animal.buddies.type]
+  
+  val name = oneString
 }
 trait Animal {
   val buddies = manyBi[Person.buddies.type]
+  
+  val name = oneString
 }
 ```
 Each `manyBi` reference definitions takes a type parameter that points back to the other definition. This is so that
@@ -114,6 +116,8 @@ and we model that as a bidirectional cardinality-one reference:
 ```scala
 trait Person {
   val pet = oneBi[Animal.master.type]
+  
+  val name = oneString
 }
 trait Animal {
   val master = oneBi[Person.pet.type]
@@ -152,6 +156,8 @@ having a `weight` property:
 trait Person {
   // A ==> edge -- a
   val knows = manyBiEdge[Knows.person.type]
+  
+  val name = oneString
 }
 
 // Property edge
@@ -189,7 +195,9 @@ namespaces:
 trait Person {
   // Ref to edge
   // A ==> edge -- a
-  val knows = manyBiEdge[Knows.person.type]
+  val closeTo = manyBiEdge[CloseTo.animal.type]
+  
+  val name = oneString
 }
 
 // Property edge
@@ -211,6 +219,8 @@ trait Animal {
   // Ref to edge
   // a -- edge <== B
   val closeTo  = manyBiEdge[CloseTo.person.type]
+  
+  val name = oneString
 }
 ```
 Adding data from one end (we could as well have done it from the Animal end)
