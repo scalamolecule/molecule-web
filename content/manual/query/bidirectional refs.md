@@ -194,7 +194,7 @@ namespaces:
 // Entity A
 trait Person {
   // Ref to edge
-  // A ==> edge -- a
+  // A ==> edge -- b
   val closeTo = manyBiEdge[CloseTo.animal.type]
   
   val name = oneString
