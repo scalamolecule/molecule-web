@@ -74,7 +74,7 @@ A cardinality-one example would be
 val spouse = oneBi[Person]
 ```
 where the relationship goes in both directions but only between two persons. If Ann is spouse to Ben, then Ben 
-is also spouse to Ann and we want to be able to get query that information uniformly in both directions:
+is also spouse to Ann and we want to be able to query that information uniformly in both directions:
 
 ```scala
  Person.name_("Ann").Spouse.name.get === List("Ben")
@@ -84,26 +84,29 @@ is also spouse to Ann and we want to be able to get query that information unifo
 
 ### A <---> B
 
-In a zoo we could (admittedly a bit contrively) say that the caretakers are buddies with the animals thay take care of, 
-and reversely the caretakers would be "buddies" for the animals. We define such bidirectional relationship with a
+In a zoo we could (admittedly a bit contrively) say that the caretakers are buddies with the animals they take care of, 
+and reversely the caretakers would be "buddies" of the animals. We define such bidirectional relationship with a
 reference from each namespace to the other:
 
 ```scala
+object Person extends Person
 trait Person {
   val buddies = manyBi[Animal.buddies.type]
   
   val name = oneString
 }
+
+object Animal extends Animal
 trait Animal {
   val buddies = manyBi[Person.buddies.type]
   
   val name = oneString
 }
 ```
-Each `manyBi` reference definitions takes a type parameter that points back to the other definition. This is so that
+Each `manyBi` reference definition takes a type parameter that points back to the other definition. This is so that
  Molecule can keep track of the references back and forth.
 
-As with friends we can now query uniformly no matter from which end the data was entered:
+As with friends we can now query uniformly no matter from which end the reference was entered:
 
 ```scala
  Person.name_("Joe").Buddies.name.get === List("Leo", "Gus")
@@ -114,11 +117,14 @@ An interesting aspect is that we can give the reference attributes different nam
 and we model that as a bidirectional cardinality-one reference:
 
 ```scala
+object Person extends Person
 trait Person {
   val pet = oneBi[Animal.master.type]
   
   val name = oneString
 }
+
+object Animal extends Animal
 trait Animal {
   val master = oneBi[Person.pet.type]
 }
@@ -143,7 +149,7 @@ between two vertices/entities has some property values attached to it. Molecule 
 and a (property edge) entity, and then between this property edge entity and another entity.
 
 This is actually what we do all the time with references except that they are normally unidirectional! In order to make them bidirectional
-Molecule offers a conveniant solution:
+Molecule offers a convenient solution:
 
 
 ### A <---> Edge.properties... <---> A
@@ -153,6 +159,7 @@ having a `weight` property:
 
 ```scala
 // Entity
+object Person extends Person
 trait Person {
   // A ==> edge -- a
   val knows = manyBiEdge[Knows.person.type]
@@ -161,6 +168,7 @@ trait Person {
 }
 
 // Property edge
+object Knows extends Knows
 trait Knows {
   // a --- edge ==> a
   val person: AnyRef = target[Person.knows.type]
@@ -192,6 +200,7 @@ namespaces:
 
 ```scala
 // Entity A
+object Person extends Person
 trait Person {
   // Ref to edge
   // A ==> edge -- b
@@ -201,6 +210,7 @@ trait Person {
 }
 
 // Property edge
+object CloseTo extends CloseTo
 trait CloseTo {
   // Ref to Person
   // a <== edge --- b
@@ -215,6 +225,7 @@ trait CloseTo {
 }
 
 // Entity B
+object Animal extends Animal
 trait Animal {
   // Ref to edge
   // a -- edge <== B
@@ -255,8 +266,8 @@ Ann --> annLovesBen (7) -->  Ben
     <-- benLovesAnn (7) <--       // reverse edge
 ```
 
-Since Molecule is a closed eco-system it can manage this redundancy with 100% control in a logically controlled way. The advantages 
-of uniform queries should easily outweigh the impact of a bit of additional information for the reverse references
+Since Molecule is a closed eco-system it can manage this redundancy with 100% control. The advantages 
+of uniform queries should easily outweigh the impact of a bit of additional information for the reverse references.
 
 
 ### More exampes...

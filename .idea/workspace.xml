@@ -4,6 +4,7 @@
     <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public" afterPath="$PROJECT_DIR$/public" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/manual/getting-started.md" afterPath="$PROJECT_DIR$/content/manual/getting-started.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/manual/query/bidirectional refs.md" afterPath="$PROJECT_DIR$/content/manual/query/bidirectional refs.md" />
     </list>
     <ignored path="molecule-docs.iws" />
@@ -25,34 +26,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="composites.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/composites.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/home/about.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
@@ -68,8 +43,21 @@
         <entry file="file://$PROJECT_DIR$/content/home/front.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
+              <first_editor relative-caret-position="-1783">
                 <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/home/about.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="247">
+                <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -81,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/content/home/introduction.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
+              <first_editor relative-caret-position="-13">
                 <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                 <folding />
               </first_editor>
@@ -94,13 +82,13 @@
         <entry file="file://$PROJECT_DIR$/content/manual/getting-started.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1222">
-                <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <first_editor relative-caret-position="611">
+                <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
                 <folding>
-                  <marker date="1469356117000" expanded="true" signature="740:1206" ph="(...)" />
-                  <marker date="1469356117000" expanded="true" signature="763:981" ph="(...)" />
-                  <marker date="1469356117000" expanded="true" signature="1014:1122" ph="(...)" />
-                  <marker date="1469356117000" expanded="true" signature="2661:2790" ph="(...)" />
+                  <marker date="1476863451000" expanded="true" signature="740:1207" ph="(...)" />
+                  <marker date="1476863451000" expanded="true" signature="763:981" ph="(...)" />
+                  <marker date="1476863451000" expanded="true" signature="1014:1123" ph="(...)" />
+                  <marker date="1476863451000" expanded="true" signature="2663:2792" ph="(...)" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -108,91 +96,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="relationships.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/relationships.md">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layouts/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overview.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/manual/overview.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                <folding>
-                  <marker date="1465070750000" expanded="true" signature="1636:1745" ph="(...)" />
-                  <marker date="1465070750000" expanded="true" signature="1863:1972" ph="(...)" />
-                  <marker date="1465070750000" expanded="true" signature="2203:2383" ph="(...)" />
-                  <marker date="1465070750000" expanded="true" signature="2216:2380" ph="(...)" />
-                  <marker date="1465070750000" expanded="true" signature="2237:2286" ph="(...)" />
-                  <marker date="1465070750000" expanded="true" signature="2308:2375" ph="(...)" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bidirectional refs.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/bidirectional refs.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1001">
-                <caret line="196" column="20" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
-                <folding>
-                  <marker date="1469475769000" expanded="true" signature="2871:2943" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="2871:2944" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="2958:3031" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="3692:3759" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="3773:3814" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="4944:5038" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="5069:5182" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="6095:6210" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="6099:6133" ph="..." />
-                  <marker date="1469475769000" expanded="true" signature="6243:6472" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="6247:6285" ph="..." />
-                  <marker date="1469475769000" expanded="true" signature="6342:6380" ph="..." />
-                  <marker date="1469475769000" expanded="true" signature="6499:6615" ph="{...}" />
-                  <marker date="1469475769000" expanded="true" signature="6503:6538" ph="..." />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builder.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/builder.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="104">
-                <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                <folding>
-                  <marker date="1465070750000" expanded="true" signature="3601:3686" ph="(...)" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="txMetaData.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/txMetaData.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="286">
-                <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-                <folding>
-                  <marker date="1465848923000" expanded="true" signature="518:662" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="734:832" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="2123:2267" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="3345:3409" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="3559:3623" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="3774:3838" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="3982:4068" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="4217:4323" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="4425:4489" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="4638:4702" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="4976:5010" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="5424:5702" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="6183:6280" ph="(...)" />
-                  <marker date="1465848923000" expanded="true" signature="6453:6549" ph="(...)" />
-                </folding>
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
               </first_editor>
               <second_editor />
             </state>
@@ -236,8 +156,8 @@
         <option value="$PROJECT_DIR$/content/manual/query/transaction-annotation.md" />
         <option value="$PROJECT_DIR$/content/manual/query/composites.md" />
         <option value="$PROJECT_DIR$/content/manual/query/txMetaData.md" />
-        <option value="$PROJECT_DIR$/content/manual/getting-started.md" />
         <option value="$PROJECT_DIR$/content/manual/query/bidirectional refs.md" />
+        <option value="$PROJECT_DIR$/content/manual/getting-started.md" />
       </list>
     </option>
   </component>
@@ -276,7 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -292,6 +211,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -391,6 +338,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -563,7 +512,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -579,7 +527,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="Push.Settings">
     <excluded-roots>
@@ -817,12 +765,12 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295756" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -861,14 +809,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/content/manual/schema/transaction.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" column="80" selection-start-line="12" selection-start-column="80" selection-end-line="12" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/home/setup.md" />
     <entry file="file://$PROJECT_DIR$/content/manual/query.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -953,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/overview.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -968,6 +901,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/manual/query/composites.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1274">
+          <caret line="98" column="132" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -977,14 +916,113 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1274">
-          <caret line="98" column="132" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="132" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="342" column="12" selection-start-line="342" selection-start-column="12" selection-end-line="342" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/query/bidirectional refs.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="481">
+            <caret line="226" column="11" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
+            <folding>
+              <marker date="1470677942000" expanded="true" signature="2895:2967" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="2895:2968" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="3012:3085" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="3779:3846" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="3890:3931" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="5090:5184" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="5242:5355" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="6297:6412" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="6301:6335" ph="..." />
+              <marker date="1470677942000" expanded="true" signature="6301:6336" ph="..." />
+              <marker date="1470677942000" expanded="true" signature="6476:6705" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="6480:6518" ph="..." />
+              <marker date="1470677942000" expanded="true" signature="6575:6613" ph="..." />
+              <marker date="1470677942000" expanded="true" signature="6761:6877" ph="{...}" />
+              <marker date="1470677942000" expanded="true" signature="6765:6800" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/query/builder.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="104">
+            <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <folding>
+              <marker date="1465070750000" expanded="true" signature="3601:3686" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/query/relationships.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
+          <folding>
+            <marker date="1465070750000" expanded="true" signature="1636:1745" ph="(...)" />
+            <marker date="1465070750000" expanded="true" signature="1863:1972" ph="(...)" />
+            <marker date="1465070750000" expanded="true" signature="2203:2383" ph="(...)" />
+            <marker date="1465070750000" expanded="true" signature="2216:2380" ph="(...)" />
+            <marker date="1465070750000" expanded="true" signature="2237:2286" ph="(...)" />
+            <marker date="1465070750000" expanded="true" signature="2308:2375" ph="(...)" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <folding>
+              <marker date="1465070750000" expanded="true" signature="1636:1745" ph="(...)" />
+              <marker date="1465070750000" expanded="true" signature="1863:1972" ph="(...)" />
+              <marker date="1465070750000" expanded="true" signature="2203:2383" ph="(...)" />
+              <marker date="1465070750000" expanded="true" signature="2216:2380" ph="(...)" />
+              <marker date="1465070750000" expanded="true" signature="2237:2286" ph="(...)" />
+              <marker date="1465070750000" expanded="true" signature="2308:2375" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/content/manual/query/txMetaData.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1201">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+          <folding>
+            <marker date="1465848923000" expanded="true" signature="518:662" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="734:832" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="2123:2267" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="3345:3409" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="3559:3623" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="3774:3838" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="3982:4068" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="4217:4323" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="4425:4489" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="4638:4702" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="4976:5010" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="5424:5702" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="6183:6280" ph="(...)" />
+            <marker date="1465848923000" expanded="true" signature="6453:6549" ph="(...)" />
+          </folding>
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="286">
@@ -1009,78 +1047,14 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1201">
-          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
-          <folding>
-            <marker date="1465848923000" expanded="true" signature="518:662" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="734:832" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="2123:2267" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="3345:3409" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="3559:3623" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="3774:3838" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="3982:4068" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="4217:4323" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="4425:4489" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="4638:4702" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="4976:5010" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="5424:5702" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="6183:6280" ph="(...)" />
-            <marker date="1465848923000" expanded="true" signature="6453:6549" ph="(...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/query/relationships.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-            <folding>
-              <marker date="1465070750000" expanded="true" signature="1636:1745" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="1863:1972" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2203:2383" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2216:2380" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2237:2286" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2308:2375" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
-          <folding>
-            <marker date="1465070750000" expanded="true" signature="1636:1745" ph="(...)" />
-            <marker date="1465070750000" expanded="true" signature="1863:1972" ph="(...)" />
-            <marker date="1465070750000" expanded="true" signature="2203:2383" ph="(...)" />
-            <marker date="1465070750000" expanded="true" signature="2216:2380" ph="(...)" />
-            <marker date="1465070750000" expanded="true" signature="2237:2286" ph="(...)" />
-            <marker date="1465070750000" expanded="true" signature="2308:2375" ph="(...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/query/builder.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="104">
-            <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-            <folding>
-              <marker date="1465070750000" expanded="true" signature="3601:3686" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -1090,17 +1064,68 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/home/about.md">
+    <entry file="file://$PROJECT_DIR$/content/manual/overview.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/getting-started.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+          <folding>
+            <marker date="1476863451000" expanded="true" signature="740:1207" ph="(...)" />
+            <marker date="1476863451000" expanded="true" signature="763:981" ph="(...)" />
+            <marker date="1476863451000" expanded="true" signature="1014:1123" ph="(...)" />
+            <marker date="1476863451000" expanded="true" signature="2663:2792" ph="(...)" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="611">
+            <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+            <folding>
+              <marker date="1476863451000" expanded="true" signature="740:1207" ph="(...)" />
+              <marker date="1476863451000" expanded="true" signature="763:981" ph="(...)" />
+              <marker date="1476863451000" expanded="true" signature="1014:1123" ph="(...)" />
+              <marker date="1476863451000" expanded="true" signature="2663:2792" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/home/introduction.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-13">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
@@ -1109,87 +1134,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/home/front.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2132">
           <caret line="164" column="82" selection-start-line="164" selection-start-column="82" selection-end-line="164" selection-end-column="82" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/home/introduction.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
+          <first_editor relative-caret-position="-1783">
             <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/getting-started.md">
+    <entry file="file://$PROJECT_DIR$/content/home/about.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1222">
-            <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-            <folding>
-              <marker date="1469356117000" expanded="true" signature="740:1206" ph="(...)" />
-              <marker date="1469356117000" expanded="true" signature="763:981" ph="(...)" />
-              <marker date="1469356117000" expanded="true" signature="1014:1122" ph="(...)" />
-              <marker date="1469356117000" expanded="true" signature="2661:2790" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
-          <folding>
-            <marker date="1469356117000" expanded="true" signature="740:1206" ph="(...)" />
-            <marker date="1469356117000" expanded="true" signature="763:981" ph="(...)" />
-            <marker date="1469356117000" expanded="true" signature="1014:1122" ph="(...)" />
-            <marker date="1469356117000" expanded="true" signature="2661:2790" ph="(...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/query/bidirectional refs.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1001">
-            <caret line="196" column="20" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
-            <folding>
-              <marker date="1469475769000" expanded="true" signature="2871:2943" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="2871:2944" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="2958:3031" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="3692:3759" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="3773:3814" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="4944:5038" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="5069:5182" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="6095:6210" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="6099:6133" ph="..." />
-              <marker date="1469475769000" expanded="true" signature="6243:6472" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="6247:6285" ph="..." />
-              <marker date="1469475769000" expanded="true" signature="6342:6380" ph="..." />
-              <marker date="1469475769000" expanded="true" signature="6499:6615" ph="{...}" />
-              <marker date="1469475769000" expanded="true" signature="6503:6538" ph="..." />
-            </folding>
+          <first_editor relative-caret-position="247">
+            <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <folding />
           </first_editor>
           <second_editor />
         </state>
