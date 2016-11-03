@@ -30,7 +30,7 @@ for instance create 2 Article entities each with 2 tags:
 
 ```scala
 insert(
-  Article.name.author ~ Tag.name.weight
+  Article.name.author, Tag.name.weight
 )(
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
   (("Best jokes ever", "John Cleese"), ("fun", 3))
@@ -45,7 +45,7 @@ We could add tags to any other part of our domain - and even some transaction me
 
 ```scala
 insert(
-  Review.title.text ~ Tag.name.weight
+  Review.title.text, Tag.name.weight
 )(
   (("Okay", "Well, maybe"), ("noise", 1)),
   (("Excellent", "Go buy it!"), ("serious", 4))
