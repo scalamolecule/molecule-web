@@ -22,7 +22,7 @@ val personMolecule = m(Person.name.age)
 An implicit macro method `get` will at compile time translate our molecule to a Datalog query. And at runtime it will get executed against Datomic to retrieve a type-inferred result set of tuples:
 
 ```scala
-val persons: Seq[(String, Int)]         = Person.name.age.get
+val persons: Seq[(String, Int)] = Person.name.age.get
 ```
 
 The attributes of our domain directly form our molecules. Furthermore the compiler prevents us from making any invalid queries since all molecules are type-infered already in our IDE.
