@@ -91,11 +91,11 @@ Person.age(max(3)) // 3 highest ages
 #### rand(n)
 
 ```scala
-Person.age(max(3)) // 3 random persons (with potential for duplicates!)
+Person.age(rand(3)) // 3 random persons (with potential for duplicates!)
 ```
 
 #### sample(n)
 
 ```scala
-Person.age(max(3)) // 3 sample persons (without duplicates!)
+Person.age(sample(3)) // 3 sample persons (without duplicates!)
 ```
