@@ -8,6 +8,11 @@ h1, h2, h3, .h1, .h2, .h3 {
   font-weight: 100;
 }
 
+a {
+    /*color: #00ADE3;*/
+    color: #00A0D6;
+}
+
 
 h1, .h1 { margin-top: 20px; margin-bottom: 15px; }
 h2, .h2 { margin-top: 44px; margin-bottom: 24px; }
@@ -29,6 +34,10 @@ pre {
 .hljs {
   background: none; 
   padding: 0;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #00ADE3
 }
 
 .nav>li>a {
@@ -164,10 +173,10 @@ nav .nav li {
     left: 0;
     bottom: 0;
     width: 5%;
-    opacity: .5;
-    filter: alpha(opacity=50);
+    opacity: .7;
+    /*filter: alpha(opacity=50);*/
     font-size: 20px;
-    color: #20a1f2;
+    color: #00ADE3;
 }
 .carousel-control.left, .carousel-control.right {
     background-image: none;
@@ -247,4 +256,12 @@ nav .nav li {
 
 .sequence-block > .section > h4 {
     /*margin: 0;*/
+}
+
+.unbreakable {
+    margin: 0;
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
 }

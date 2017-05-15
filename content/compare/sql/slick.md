@@ -50,9 +50,9 @@ Person.age.>=(18).name("C. Vogt").get
 ```scala
 people.sortBy(p => (p.age.asc, p.name)).run
 ```
-Ordering is applied on the result set:
+Ordering is applied on the result set in the application code:
 ```scala
-Person.age.name.get sortBy(_._1)
+Person.age.name.get.toSeq sortBy(_._1)
 ```
 
 #### Aggregations
@@ -130,8 +130,8 @@ Person.name.Address.city.get
   .map{ case (a, p) => (p.map(_.name), a.city) }.run
 ```
 ```scala
-// TODO
-Person.name(maybe).Address.city.get
+// Add `$` to attribute name to get optional values
+Person.name$.Address.city.get
 ```
 
 #### Subquery
@@ -151,7 +151,7 @@ people.map(p => (p.name, p.age, p.addressId))
        .insert(("M Odersky",12345,1))
 ```
 ```scala
-Person.name("M Odersky").age(12345).address(1).add
+Person.name("M Odersky").age(12345).address(1).save
 ```
 
 #### update
@@ -162,8 +162,10 @@ people.filter(_.name === "M Odersky")
        .update(("M. Odersky",54321))
 ```
 ```scala
-val odersky = Person.name("M Odersky").get.id
-Person(odersky).name("M. Odersky").age(54321).update
+// Find entity id with generic Molecule attribute `e`
+// Omit `name` value by adding underscore `_` to attribute name   
+val oderskyId = Person.e.name_("M Odersky").get.head
+Person(oderskyId).name("M. Odersky").age(54321).update
 ```
 
 #### delete
@@ -173,7 +175,7 @@ people.filter(p => p.name === "M. Odersky")
        .delete
 ```
 ```scala
-Person.name("M. Odersky").get.id.delete
+Person.e.name_("M. Odersky").get.head.retract
 ```
 
 #### case
@@ -186,7 +188,7 @@ people.map(p =>
 ).list
 ```
 ```scala
-Person.Address.e(1 or 2).get map {
+Person.address(1 or 2).get map {
   case 1 => "A"
   case 2 => "B"
 }

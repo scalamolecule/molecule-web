@@ -21,6 +21,9 @@ your molecules.
 Let's look at the schema definition of the Seattle example:
 
 ```scala
+package yourpackage
+import molecule.schema.definition._  // import schema definition DSL
+
 @InOut(3, 8)
 object SeattleDefinition {
 
@@ -183,20 +186,21 @@ In the Seattle example we see the attributes being defined with the following ty
 We can define the following types of attributes:
 
 ```
-Cardinality one          Cardinality many              Mapped cardinality many
--------------------      -------------------------     --------------------------------
-oneString : String       manyString : Set[String]      mapString : Map[String, String]
-oneInt    : Int          manyInt    : Set[Int]         mapInt    : Map[String, Int]
-oneLong   : Long         manyLong   : Set[Long]        mapLong   : Map[String, Long]
-oneFloat  : Float        manyFloat  : Set[Float]       mapFloat  : Map[String, Float]
-oneDouble : Double       manyDouble : Set[Double]      mapDouble : Map[String, Double]
-oneBoolean: Boolean      manyBoolean: Set[Boolean]     mapBoolean: Map[String, Boolean]
-oneDate   : Date         manyDate   : Set[Date]        mapDate   : Map[String, Date]
-oneUUID   : UUID         manyUUID   : Set[UUID]        mapUUID   : Map[String, UUID]
-oneURI    : URI          manyURI    : Set[URI]         mapURI    : Map[String, URI]
-oneEnum   : String       manyEnum   : Set[String]
+Cardinality one              Cardinality many                 Mapped cardinality many
+-------------------          -------------------------        --------------------------------
+oneString     : String       manyString    : Set[String]      mapString     : Map[String, String]
+oneInt        : Int          manyInt       : Set[Int]         mapInt        : Map[String, Int]
+oneLong       : Long         manyLong      : Set[Long]        mapLong       : Map[String, Long]
+oneFloat      : Float        manyFloat     : Set[Float]       mapFloat      : Map[String, Float]
+oneDouble     : Double       manyDouble    : Set[Double]      mapDouble     : Map[String, Double]
+oneBigInt     : BigInt       manyBigInt    : Set[BigInt]      mapBigInt     : Map[String, BigInt]
+oneBigDecimal : BigDecimal   manyBigDecimal: Set[BigDecimal]  mapBigDecimal : Map[String, BigDecimal]
+oneBoolean    : Boolean      manyBoolean   : Set[Boolean]     mapBoolean    : Map[String, Boolean]
+oneDate       : Date         manyDate      : Set[Date]        mapDate       : Map[String, Date]
+oneUUID       : UUID         manyUUID      : Set[UUID]        mapUUID       : Map[String, UUID]
+oneURI        : URI          manyURI       : Set[URI]         mapURI        : Map[String, URI]
+oneEnum       : String       manyEnum      : Set[String]
 ```
-Datomic also has types `BigInt` and `Bytes` and those could later be implemented in Molecule if there's a need for those types.
 
 Cardinality-one attributes can have one value per entity.
 

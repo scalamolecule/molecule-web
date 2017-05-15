@@ -74,8 +74,7 @@ communityId(":community/url") === Some("http://eastballard.com/")
 ```
 This gives us an optional value back if an attribute value has been asserted for this entity.
 
-[See entity api example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L24-L52) and
-[tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/EntityAPI.scala)
+[See entity api example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L24-L52)
 
 
 ### Tacet attributes

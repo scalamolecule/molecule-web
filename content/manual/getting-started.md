@@ -27,7 +27,7 @@ sbt.version=0.13.13
 `project/buildinfo.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.3.2")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.3.3")
 ```
 
 `build.sbt`:
@@ -39,17 +39,16 @@ lazy val yourProject = project.in(file("demo"))
     resolvers ++= Seq(
       "datomic" at "http://files.datomic.com/maven",
       "clojars" at "http://clojars.org/repo",
-      Resolver.sonatypeRepo("releases"),
-      "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+      Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.10.2",
+      "org.scalamolecule" %% "molecule" % "0.11.0",
       "com.datomic" % "datomic-free" % "0.9.5561"
     ),
     moleculeSchemas := Seq("demo") // paths to your schema definition files...
   )
 ```
-Molecule 0.10.2 for Scala 2.12.1 is available at 
+Molecule 0.11.0 for Scala 2.12.1 is available at 
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 
@@ -132,10 +131,10 @@ With the implicit Datomic connection available we can start making molecules:
 import demo.dsl.yourDomain._
 
 // Insert data
-Person.name("John").age(26).gender("male").add
+Person.name("John").age(26).gender("male").save
 
 // Retrieve data
-val (person, age, gender) = Person.name.age.gender.one
+val (person, age, gender) = Person.name.age.gender.get.head
 ```
 
 #### Read more

@@ -17,10 +17,10 @@ PygmentsStyle = "perldoc"
     identifier = "compare"
     url = "/compare/overview"
 [[menu.main]]
-    name = "Tutorials"
+    name = "Learn"
     weight = -90
-    identifier = "tutorials"
-    url = "/tutorials/overview"
+    identifier = "learn"
+    url = "/learn/overview"
 
 [[menu.main]]
     name = "Manual"

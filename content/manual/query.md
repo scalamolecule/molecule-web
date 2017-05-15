@@ -11,7 +11,7 @@ menu:
 # Molecule Queries
  
 [Building molecules](/manual/query/builder) with the builder pattern 
-([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Attribute.scala))
+([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/Attribute.scala))
 ```scala
 Person.name.age.gender  // require values
 Person.name.age_.gender // require but omit values ("tacet values")
@@ -53,7 +53,7 @@ Person.age(max)
 ```
 
 [Parameterize](/manual/query/parameterize) - re-use molecules and let Datomic cache queries and optimize performance 
-([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Input.scala))
+([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/Input.scala))
 ```scala
 val person = Person.name(?).age(?)
 
@@ -61,8 +61,8 @@ val person = Person.name(?).age(?)
 val Johan  = person("John", 33).one
 val Lisa   = person("Lisa", 27).one
 ```
-[Relationships](/manual/query/relationships) - Connect namespaces with relationships ([relationship tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Relations.scala)
-and [self-join tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/SelfJoin.scala))
+[Relationships](/manual/query/relationships) - Connect namespaces with
+([tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/ref))
 
 ```scala
 Person.name.City.name.Country.name

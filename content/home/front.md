@@ -7,9 +7,12 @@ menu:
     parent: home
 ---
 
-# Molecule
+<br>
+![](/img/logo/MoleculeLogo697.png)
 
-#### _Write powerful [Datomic] queries with the words of your domain:_
+
+
+#### _Write powerful [Datomic] queries in Scala with the words of your domain:_
 
 
 
@@ -31,7 +34,7 @@ menu:
             <div class="carousel-caption">
               <h3>Type-inferred Queries</h3>
 <p>Build query molecules with your domain attributes</p>
-<pre><code class="language-scala">val persons: Seq[(String, Int)] = Person.name.age.get      
+<pre><code class="language-scala">val persons: Iterable[(String, Int)] = Person.name.age.get      
 </code></pre>
 <p><em>&ldquo;Name and age of Persons&rdquo;</em></p>
             </div>
@@ -128,8 +131,47 @@ menu:
 </div>
 
 
-Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to Datalog queries 
+Molecule is a Scala meta-DSL that translates "molecules" of your domain attributes to typed Datalog queries 
 for [Datomic](http://www.datomic.com) - the database of immutable facts. 
+
+
+### Videos
+
+Marc Grue presents his Molecule library in 4 parts:
+
+
+<div class="media">
+  <div class="media-left">
+    <a href="/learn/videos/2017-04-25_Marc_Grue">
+      <img class="media-object" src="/img/presentation.jpg" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+      <ol>
+          <li>
+            <a href="/learn/videos/2017-04-25_Marc_Grue#1:e8a80e11a9ea81b9e6071cec3c4864a9">Datomic data model</a>
+            <p>Introduction to the data model of Datomic that Molecule is based on.</p>
+          </li>
+          <li>
+            <a href="/learn/videos/2017-04-25_Marc_Grue#2:e8a80e11a9ea81b9e6071cec3c4864a9">Building a DSL with Scala macros</a>
+            <p>A look behind the scenes of how Molecule is build.</p>
+          </li>
+          <li>
+            <a href="/learn/videos/2017-04-25_Marc_Grue#3:e8a80e11a9ea81b9e6071cec3c4864a9">Molecule tour</a>
+            <p>A walk through of Molecule features.</p>
+          </li>
+          <li>
+            <a href="/learn/videos/2017-04-25_Marc_Grue#4:e8a80e11a9ea81b9e6071cec3c4864a9">Molecule domain modelling</a>
+            <p>Using Molecule in your domain modelling.</p>
+            <br>
+            <a href="/learn/videos/2017-04-25_Marc_Grue">More info</a>
+          </li>
+      </ol>
+  </div>
+</div>
+
+
+<br>
 
 
 ### How does it work?

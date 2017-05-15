@@ -29,7 +29,7 @@ We need an entity id to update data.
 
 ```scala
 // Grap entity id of the Belltown community
-val belltownId = Community.e.name_("belltown").one
+val belltownId = Community.e.name_("belltown").get.head
 
 // Update name of the Belltown entity
 Community(belltownId).name("Belltown 2").update
@@ -94,4 +94,4 @@ To delete a whole entity with all its attribute values we call `retract` on an e
 ```scala
 belltownId.retract
 ```
-Simple as that.
+<br>

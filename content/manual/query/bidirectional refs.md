@@ -188,9 +188,9 @@ Person.name.Knows.*(Knows.weight.Person.name).insert("Ann", List((7, "Ben"), (8,
 And uniformly retrieve that information from any end:
 
 ```scala
-Person.name_("Ann").Knows.*(Knows.weight.Person.name).one === List((7, "Ben"), (8, "Joe"))
-Person.name_("Ben").Knows.*(Knows.weight.Person.name).one === List((7, "Ann"))
-Person.name_("Joe").Knows.*(Knows.weight.Person.name).one === List((8, "Ann"))
+Person.name_("Ann").Knows.*(Knows.weight.Person.name).get.head === List((7, "Ben"), (8, "Joe"))
+Person.name_("Ben").Knows.*(Knows.weight.Person.name).get.head === List((7, "Ann"))
+Person.name_("Joe").Knows.*(Knows.weight.Person.name).get.head === List((8, "Ann"))
 ```
 
 ### A <---> Edge.properties... <---> B
@@ -243,11 +243,11 @@ We can now uniformly retrieve the weighed friendship information from any end:
 
 ```scala
 // Querying from Person
-Person.name_("Joe").CloseTo.*(CloseTo.weight.Animal.name).one === List((7, "Gus"), (8, "Leo"))
+Person.name_("Joe").CloseTo.*(CloseTo.weight.Animal.name).get.head === List((7, "Gus"), (8, "Leo"))
 
 // Querying from Animal
-Animal.name_("Gus").CloseTo.*(CloseTo.weight.Person.name).one === List((7, "Joe"))
-Animal.name_("Leo").CloseTo.*(CloseTo.weight.Person.name).one === List((8, "Joe"))
+Animal.name_("Gus").CloseTo.*(CloseTo.weight.Person.name).get.head === List((7, "Joe"))
+Animal.name_("Leo").CloseTo.*(CloseTo.weight.Person.name).get.head === List((8, "Joe"))
 ```
 
 ### How it works

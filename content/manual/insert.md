@@ -15,7 +15,7 @@ We basically have 3 ways of entering data with Molecule:
 ### 1. Data-molecule
 
 We can insert data by populating a molecule with data by applying a value to each 
-attribute and then simply `add` it. Molecule makes sure 
+attribute and then simply `save` it. Molecule makes sure 
 that each attribute only accepts values of the expected type.
 
 ```scala
@@ -26,7 +26,7 @@ Community.insert
   .orgtype("personal")
   .category("my", "favorites") // many cardinality allows multiple values
   .Neighborhood.name("myNeighborhood")
-  .District.name("myDistrict").region("nw").add
+  .District.name("myDistrict").region("nw").save
 ```
 
 Note also how we easily insert data across several namespaces in one go!

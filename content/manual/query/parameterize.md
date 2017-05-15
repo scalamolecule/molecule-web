@@ -9,7 +9,7 @@ menu:
 
 # Parameterized Input-molecules
 
-(See [parameterize tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Input.scala))
+(See [parameterize tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/Input.scala))
 
 Basically we can parameterize any molecule. Instead of a value we apply the placeholder `?` as a value. 
 This signals to Molecule that we intend to supply a value later as input.
@@ -21,8 +21,8 @@ similar data structures where only some data part varies:
 // 1 input parameter
 val person = m(Person.name(?))
 
-val john = person("John").one
-val lisa = person("Lisa").one
+val john = person("John").get.head
+val lisa = person("Lisa").get.head
 ```
 
 Of course more complex molecules would benefit even more from this approach.
@@ -45,7 +45,7 @@ them it seems likely that this will satisfy the majority of all parameterized qu
 
 ```scala
 val person      = m(Person.name(?).age(?))
-val john        = person("John" and 42).one // AND
+val john        = person("John" and 42).get.head // AND
 val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
 ```
 

@@ -19,7 +19,7 @@ sql"select * from PERSON".as[Person].list
 ```
 In molecule we would declare each attribute we are interested in also to infer the exact return type
 ```scala
-val persons: Seq[(String, Int)] = Person.name.age.get
+val persons: Iterable[(String, Int)] = Person.name.age.get
 ```
 
 #### SELECT
@@ -62,7 +62,7 @@ sql"select * from PERSON order by AGE asc, NAME".as[Person].list
 ```
 Ordering is applied on the result set:
 ```scala
-Person.age.name.get.sortBy(_._1)
+Person.age.name.get.toSeq.sortBy(_._1)
 ```
 
 #### Aggregations
@@ -104,7 +104,7 @@ sql"""
 """.as[Int].list
 ```
 ```scala
-Person.address.age(avg).get.filter(_._2 > 50)
+Person.address.age(avg).get.toSeq.filter(_._2 > 50)
 ```
 
 #### Implicit join
@@ -143,8 +143,8 @@ sql"""
 """.as[(Option[String],String)].list
 ```
 ```scala
-// TODO
-Person.name(maybe).Address.city.get
+// Add `$` to attribute name to get optional values
+val persons: Iterable[(Option[String], String)] = Person.name$.Address.city.get
 ```
 
 #### Subquery
@@ -170,7 +170,7 @@ sqlu"""
 """.first
 ```
 ```scala
-Person.name("M Odersky").age(12345).address(1).add
+Person.name("M Odersky").age(12345).address(1).save
 ```
 
 #### UPDATE
@@ -181,8 +181,10 @@ sqlu"""
 """.first
 ```
 ```scala
-val odersky = Person.name("M Odersky").get.id
-Person(odersky).name("M. Odersky").age(54321).update
+// Find entity id with generic Molecule attribute `e`
+// Omit `name` value by adding underscore `_` to attribute name   
+val oderskyId = Person.e.name_("M Odersky").get.head
+Person(oderskyId).name("M. Odersky").age(54321).update
 ```
 
 #### DELETE
@@ -193,7 +195,8 @@ sqlu"""
 """.first
 ```
 ```scala
-Person.name("M. Odersky").get.id.delete
+// Retract entity
+Person.e.name_("M. Odersky").get.head.retract
 ```
 
 #### CASE
@@ -209,7 +212,7 @@ sql"""
 """.as[Option[String]].list
 ```
 ```scala
-Person.Address.e(1 or 2).get map {
+Person.address(1 or 2).get map {
   case 1 => "A"
   case 2 => "B"
 }

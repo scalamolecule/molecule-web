@@ -9,8 +9,7 @@ menu:
 
 # Relationships
 
-(See [relationship tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Relations.scala)
-and [self-join tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/SelfJoin.scala))
+(See [relationship tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/ref))
 
 Relationships are modelled in Molecule as "references between namespaces".
 

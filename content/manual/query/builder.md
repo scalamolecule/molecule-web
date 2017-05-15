@@ -9,7 +9,7 @@ menu:
 
 # Attribute builder pattern
 
-(See [attribute tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/Attribute.scala))
+(See [attribute tests](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/Attribute.scala))
 
 When we have defined a schema, Molecule generates the necessary boilerplate code so that we can build "molecular data
  structures" by building sequences of Attributes separated with dots (the "builder pattern").
@@ -57,8 +57,8 @@ This will return names of person entities having both a name and age Attribute s
 longer returned from the type signatures:
 
 ```scala
-val persons: List[(String, Int)] = Person.name.age.get
-val names  : List[String]        = Person.name.age_.get
+val persons: Iterable[(String, Int)] = Person.name.age.get
+val names  : Iterable[String]        = Person.name.age_.get
 ```
 This way we can switch on and off individual attributes from the result set without affecting the data structures 
 we look for.
@@ -69,7 +69,7 @@ we look for.
 If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
 
 ```scala
-val names: List[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
+val names: Iterable[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
 ```
 That way we can get all person names with or without middleNames. As you can see from the return type, the middle 
 name is wrapped in an `Option`.
@@ -80,7 +80,7 @@ name is wrapped in an `Option`.
 Molecule returns all result sets as tuples of values (with `get`).
 
 ```scala
-val persons: List[(String, Int)] = Person.name.age.get
+val persons: Iterable[(String, Int)] = Person.name.age.get
 ```
 
 ## Molecule max size

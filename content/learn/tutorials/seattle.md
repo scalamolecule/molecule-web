@@ -22,8 +22,8 @@ menu:
 - [Update and/or delete data](#11:3d29aefa7257f22b89227d9f373cd5f9)
 
 _Credits: This tutorial is based on the original 
-[Datomic Seattle tutorial][seattle] and some text 
-passages have been quoted as-is or been slightly modified to describe 
+[Datomic Seattle tutorial][seattle] (there is also a [new tutorial](http://docs.datomic.com/tutorial.html)) 
+and some text passages have been quoted as-is or been slightly modified to describe 
 how Molecule works._
 
 
@@ -71,17 +71,17 @@ little more complex behind the scenes. That's because we want our IDE
 to be able to infer the type of each attribute. If we for instance had 
 an `age` attribute of type `Int` we could infer the return types of 
 calling the `get` method on a molecule. That would return
-a List of name/age tuples of type `Seq[(String, Int)]`:
+a List of name/age tuples of type `Iterable[(String, Int)]`:
 
 ```scala
-val nameAges: Seq[(String, Int)] = Community.name.age.get
+val nameAges: Iterable[(String, Int)] = Community.name.age.get
 ```
 
 A feature of Molecule is to omit the values of an attribute from the result set
 by adding an underscore to the attribute name:
 
 ```scala
-val names: Seq[String] = Community.name.age_.get
+val names: Iterable[String] = Community.name.age_.get
 ```
 
 This is handy if we want to query for entities that we want to be sure have an age and 
@@ -587,16 +587,16 @@ chronological order, and store the most recent two as dataTxDate
 and schemaTxDate, when we added our data and our schema, respectively.
 
 ```scala
-val txDates = Db.txInstant.get.sorted.reverse
+val txDates = Db.txInstant.get.toSeq.sorted.reverse
 val dataTxDate = txDates(0)
 val schemaTxDate = txDates(1)
 ```
 
-### Revisiting the past - asOf(PastDate)
+### Revisiting the past - `getAsOf(PastDate)`
 Once we have the relevant transaction times, we can look at the 
 database as of that point in time. To do this, we retrieve the 
-current database value by calling the molecule method `asOf`, 
-passing in the Date we're interested in. The `asOf` method 
+current database value by calling the molecule method `getAsOf`, 
+passing in the Date we're interested in. The `getAsOf` method 
 returns a new molecule based on the database value that is 
 "rewound" back to the requested date.
 
@@ -608,22 +608,25 @@ using a database value from before we ran the transaction to
 load seed data, the size is 0.
 
 ```scala
-communities.asOf(schemaTxDate).get.size === 0
+// Take all Community entities
+val communities = m(Community.e.name_)
+    
+communities.getAsOf(schemaTxDate).size === 0
 ```
 If we do the same thing using the date of our seed data 
 transaction, the query returns 150 results, because as of 
 that moment, the seed data is there.
 
 ```scala
-communities.asOf(dataTxDate).get.size === 150
+communities.getAsOf(dataTxDate).size === 150
 ```
 
-### Changes since a date - since(compareDate)
+### Changes since a date - `getSince(compareDate)`
 
-The `asOf` method allows us to look at a database value 
+The `getAsOf` method allows us to look at a database value 
 containing data changes up to a specific point in time. 
-There is another method `since` that allows us to look at 
-a database value containing data changes since a specific 
+There is another method `getSince` that allows us to look at 
+a database value containing data changes _since_ a specific 
 point in time.
 
 The code below gets the value of the database since our 
@@ -634,17 +637,17 @@ including the changes made when we loaded our seed data -
 the size is 150.
 
 ```scala
-communities.since(schemaTxDate).get.size === 150
+communities.getSince(schemaTxDate).size === 150
 ```
 If we do the same thing using the date of our seed data 
 transaction, the query returns 0 results, because we haven't 
 added any communities since that time.
 
 ```scala
-communities.since(dataTxDate).get.size === 0
+communities.getSince(dataTxDate).size === 0
 ```
-While we passed specific transaction dates to `asOf` 
-and `since`, you can pass any date. The system find the 
+While we passed specific transaction dates to `getAsOf` 
+and `getSince`, you can pass any date. The system find the 
 closest relevant transaction and use that as the basis for 
 filtering.
 
@@ -659,18 +662,22 @@ to a given entity's value for that attribute, you will not
 find any value for it.
 
 
-### Imagining the future - imagine(FutureDate)
+### Imagining the future - `getWith(TestTxData)`
 
 Revisiting the past is a very powerful feature. It's also 
-possible to imagine the future. The `asOf` and `since` 
+possible to imagine the future. The `getAsOf` and `getSince` 
 methods work by removing data from the current database value. 
 You can also _add_ data to a database value, using the 
-Molecule method `imagine` (called `with` in Datomic). 
+Molecule method `getWith`. 
 The result is a database value that's been modified without 
 submitting a transaction and changing the data stored 
 in the system. The modified database value can be used to 
 execute queries, allowing you to perform "what if" 
-calculations before committing to data changes.
+calculations before committing to data changes. 
+
+When a `getWith(TestTxData)` database object goes out of scope 
+it is simply garbage collected. So we don't need to do any tear
+down of some state as is common with normal database mockups.
 
 We can explore this feature using a second seed data file 
 provided with the sample application, 
@@ -684,15 +691,15 @@ val newDataTx = Util.readAll(data_rdr2).get(0).asInstanceOf[java.util.List[Objec
 Once we have this new data transaction, we can build a 
 database value that includes it. To do that, we simply 
 get the current database value (or one as of or since a 
-point in time) and call `imagine`, passing in the 
-transaction data. `imagine` returns a molecule based on 
+point in time) and call `getWith`, passing in the 
+transaction data. `getWith` returns a molecule based on 
 the new value of the database after the new data is added. 
 If we execute our community counting query against it, 
 we get 258 results.
 
 ```scala
-// future db
-communities.imagine(newDataTx).get.size === 258
+// test db
+communities.getWith(newDataTx).get.size === 258
 ```
 
 The actual data hasn't changed yet, so if we query the 
@@ -715,7 +722,7 @@ conn.transact(newDataTx)
 communities.get.size === 258
 
 // number of new transactions
-communities.since(dataTxDate).get.size === 108
+communities.getSince(dataTxDate).size === 108
 ```
 
 
@@ -739,7 +746,7 @@ Community
   .orgtype("personal")
   .category("my", "favorites")
   .Neighborhood.name("myNeighborhood")
-  .District.name("myDistrict").region("nw").add.eids === List(
+  .District.name("myDistrict").region("nw").save.eids === List(
     17592186045891L, 17592186045892L, 17592186045893L)
 ```
 Note how we can add values for referenced namespaces and multiple values for 
@@ -935,7 +942,7 @@ as described in [Database setup][setup].
 
 
 
-[seattle]: http://docs.datomic.com/tutorial.html
-[setup]: /manual/setup
-[populate]: /manual/populate-database
+[seattle]: https://web.archive.org/web/20161007085359/http://docs.datomic.com/tutorial.html
+[setup]: /manual/getting-started/
+[populate]: /manual/insert/
 

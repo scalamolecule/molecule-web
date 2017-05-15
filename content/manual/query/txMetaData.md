@@ -31,11 +31,11 @@ List(
 ```
 Each Datom has 4 - and soon 5 - pieces of information:
 
-- Operation (add/retract)
 - Entity id
 - Attribute
 - Value
-- Tx (not there yet...)
+- Tx
+- Operation (add/retract)
 
 Molecule simply passes our list to be transacted by Datomic. Datomic then creates a transaction entity and makes
  the association between all the datoms and this transaction id (the Tx part).
@@ -116,7 +116,7 @@ Story.title.tx_(MetaData.User.email_("stuarthalloway@datomic.com")).get === List
 )
 
 // Count of stories added by a user with email "stuarthalloway@datomic.com"
-Story.title(count).tx_(MetaData.User.email_("stuarthalloway@datomic.com")).one === 2
+Story.title(count).tx_(MetaData.User.email_("stuarthalloway@datomic.com")).get.head === 2
 
 // Emails of users who added stories
 Story.title_.tx_(MetaData.usecase_("AddStories").User.email).get === List(

@@ -347,7 +347,7 @@ Community
   .orgtype("personal")
   .category("my", "favorites")
   .Neighborhood.name("myNeighborhood")
-  .District.name("myDistrict").region("nw").add
+  .District.name("myDistrict").region("nw").save
 ```
 
 Multiple entities:
