@@ -14,7 +14,7 @@
         {{ if .HasChildren }}
           {{ range .Children }}
             {{if $currentNode.IsMenuCurrent "main" . }}
-              <li class="active" style="padding: 2px 9px;"><b>{{ .Name }}</b></li>
+              <li class="active" style=""><b>{{ .Name }}</b></li>
               {{if .HasChildren}}
                 <ul style="padding-left:25px;">{{ range .Children }}
                   <li><a href="{{.Url}}">{{ .Name }}</a></li>{{end}}

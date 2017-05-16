@@ -36,6 +36,8 @@ pre {
   padding: 0;
 }
 
+
+/* Top menu */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     background-color: #00ADE3
 }
@@ -50,9 +52,6 @@ nav .nav li {
 
 .dropdown:hover > .level1 {
 	display: block;
-    /*position: relative;*/
-
-
     top: 20px;
 }
 
@@ -92,6 +91,28 @@ nav .nav li {
 }
 .dropdown-submenu.pull-left {
     float: none;
+}
+
+
+/* Side menu */
+.bs-docs-sidenav {
+    list-style: none;
+    padding-left: 0;
+    padding-right:10px;
+}
+
+.bs-docs-sidenav > li {
+    padding-top: 15px;
+}
+
+.bs-docs-sidenav > ul.level2 {
+    font-size: 13px;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.bs-docs-sidenav > ul.level2 > li {
+    padding-top: 6px;
 }
 
 
