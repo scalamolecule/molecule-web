@@ -10,13 +10,13 @@ menu:
 
 # Schema
 
-A [Datomic `schema`](http://docs.datomic.com/schema.html) defines the set of possible `attributes` that we can use.
+A [Datomic schema](http://docs.datomic.com/schema.html) defines the set of possible attributes that we can use.
 
 ## Schema definition file
 
 Molecule provides an intuitive and type-safe dsl to model your schema in a Schema definition file. 
-After each change you make in this file you need to `sbt compile` to use your updated schema with 
-your molecules.
+After each change you make in this file you need to compile your project with `sbt compile` so that the
+sbt-plugin can create a Molecule DSL from your definitons.
 
 Let's look at the schema definition of the Seattle example:
 
@@ -49,7 +49,7 @@ object SeattleDefinition {
 ```
 
 The outer object `SeattleDefinition` encapsulates our schema definition. All such objects have to have a 
-named ending in "Definition" in order for the MoleculePlugin to be able to find it.
+named ending in "Definition" in order for the sbt-MoleculePlugin to be able to find it.
 
 
 ### Molecule arity
@@ -106,12 +106,11 @@ val toughCommunities = Community.name.Neighborhood.name("Tough").get
 
 we _shouldn't_ think of it like a
 
-"`Community` table with `name` field with a join to `Neighborhood` table with a `name` field set to "Tough" (wrong!)
+"`Community` table with `name` field with a join to `Neighborhood` table with a `name` field set to 'Tough'" (wrong!)
 
 but rather think it as
 
-"**_entities_** with a `communityName` attribute and a reference to an entity having a `neighborhoodName` value equalling 
-"Tough"
+"**_Entities_** with a `communityName` attribute having a reference to an entity with a `neighborhoodName` value 'Tough'"
 
 
 

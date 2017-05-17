@@ -226,7 +226,7 @@ Retrieving values of many-attributes like `category` gives us sets
 of values back
 
 ```scala
-Community.name_("belltown").category.one === Set("events", "news")
+Community.name_("belltown").category.get.head === Set("events", "news")
 ```
 Since we often want a single result back, Molecule supplies a `one` convenience method that calls `get.head`.
 

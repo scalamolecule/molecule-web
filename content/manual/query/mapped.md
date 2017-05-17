@@ -33,7 +33,7 @@ Person.id.name.insert(
 )
 
 // Retrieve mapped data
-Person.id.name.one === (1, 
+Person.id.name.get.head=== (1, 
   Map(
     "en" -> "Dmitri Shostakovich",
     "de" -> "Dmitri Schostakowitsch",
