@@ -4,37 +4,8 @@
 	{{ .Content }}
 </div>
 
-<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px">
-  <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
-    <ul class="bs-docs-sidenav">{{ $currentNode := . }}
-      {{ range where .Site.Menus.main "Identifier" .Section }}
-        {{ if .HasChildren }}
-          {{ range .Children }}
-            {{if $currentNode.IsMenuCurrent "main" . }}
-              <li class="active"><b>{{ .Name }}</b></li>
-              {{if .HasChildren}}
-                <ul class="level2">{{ range .Children }}
-                  <li><a href="{{.Url}}">{{ .Name }}</a></li>{{end}}
-                </ul>
-              {{end}}
-            {{else}}
-              <li><a href="{{.Url}}">{{ .Name }}</a></li>
-              {{if .HasChildren}}
-                <ul class="level2">{{ range .Children }}
-                  {{if $currentNode.IsMenuCurrent "main" . }}
-                  <li class="active"><b>{{ .Name }}</b></li>
-                  {{else}}
-                  <li><a href="{{.Url}}">{{ .Name }}</a></li>
-                  {{end}}
-                {{end}}
-                </ul>
-              {{end}}
-            {{end}}
-          {{end}}
-        {{end}}
-      {{end}}
-    </ul>
-  </nav>
+<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px;padding-right: 0px;">
+  {{ partial "submenu.html" . }}
 </div>
 
 {{ partial "footer.html" . }}

@@ -1,12 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Re-design and expansion of docs">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/fonts/Earth 2073.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/logo/Molecule-logo-600.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/logo/Molecule-logo-800.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo600.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo697.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/presentation.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/compare/gremlin.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/credits.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/attributes/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/attributes/basics.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/attributes/modes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/get.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/insert.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/retract.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/save.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/documentation/introduction.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/entities.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/getting-started/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/relationships/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/relationships/bidirectional.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/relationships/card-many.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/relationships/card-one.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/relationships/composites.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/time/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/time/asof-since.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/time/history.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/time/testing.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/time/with.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/docs/transactions/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/resources/_index.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/layouts/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archetypes/default.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/home/introduction.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/learn/overview.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/insert.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/overview.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/query.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/query/bidirectional refs.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/query/builder.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/query/composites.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content/manual/query/relationships.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layouts/partials/analytics.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layouts/partials/nav-tabs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/layouts/partials/tab-content.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/.nojekyll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/CNAME" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/45degreee_fabric.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/45degreee_fabric_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/bedge_grunge.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/bedge_grunge_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/escheresque.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/escheresque_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/furley_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/gray_jean.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/gray_jean_@2X.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/green_cup.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/halftone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/ricepaper2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/ricepaper2_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/sandpaper.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/seamless_paper_texture.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/subtle_white_mini_waves.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/swirl_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bg/whitey_@2X.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/community/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/community/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/community/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/datomic/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/sql/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/compare/sql/slick/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/arta.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/ascetic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-dune.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-dune.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-forest.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-forest.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-heath.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-heath.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-lakeside.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-lakeside.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-seaside.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/atelier-seaside.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/brown_paper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/brown_papersq.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/codepen-embed.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/color-brewer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/docco.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/far.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/foundation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/github.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/googlecode.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/hybrid.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/idea.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/ir_black.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/kimbie.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/kimbie.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/magula.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/mono-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/monokai.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/monokai_sublime.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/obsidian.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/paraiso.dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/paraiso.light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/pojoaque.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/pojoaque.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/railscasts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/rainbow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/school_book.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/school_book.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/solarized_dark.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/solarized_light.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/sunburst.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/tomorrow-night-blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/tomorrow-night-bright.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/tomorrow-night-eighties.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/tomorrow-night.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/tomorrow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/vs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/xcode.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/highlight/styles/zenburn.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/boilerplate/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/schema-transaction/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/transformation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/developer/txdata/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-ExtraBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-ExtraBoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-Light.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-LightItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/MerriweatherSans-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/about/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/front/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/introduction/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/home/setup/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/DatomicElements1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/DatomicElements2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/DatomicElements3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/apple-touch-icon-114-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/apple-touch-icon-144-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/apple-touch-icon-57-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/apple-touch-icon-72-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/definition-file.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/definition-file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/definition-file.png.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/definition-file1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/generated-files.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/generated-files.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/generated-files.png.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/generated-files1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/lib.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/boilerplate/project-files.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/dirs1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/dirs2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/jars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/logo/Molecule-logo-600.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/logo/Molecule-logo-800.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/logo/MoleculeLogo600.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/logo/MoleculeLogo697.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/mg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/presentation.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/smiths.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/highlight.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/jquery-1.11.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/jquery-1.11.2.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/jquery-2.1.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/less-1.3.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/scripts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/presentation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/presentation1/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/tutorials/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/tutorials/seattle/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/videos/2017-04-25 Marc Grue/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/videos/2017-04-25_Marc_Grue/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/videos/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/videos/presentation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/learn/videos/presentation1/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/alerts.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/badges.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/bootstrap.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/breadcrumbs.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/button-groups.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/buttons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/carousel.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/close.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/code.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/component-animations.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/dropdowns.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/forms.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/glyphicons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/grid.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/input-groups.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/jumbotron.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/labels.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/list-group.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/media.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/modals.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/navbar.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/navs.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/normalize.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/pager.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/pagination.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/panels.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/popovers.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/print.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/progress-bars.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/responsive-utilities.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/scaffolding.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/tables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/theme.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/thumbnails.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/tooltip.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/type.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/utilities.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/less/wells.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/getting-started/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/insert/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/insert/transaction-annotation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/aggregates/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/bidirectional refs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/builder/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/composites/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/expressions/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/mapped/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/parameterize/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/relationships/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/transaction-annotation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/txMetaData/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/query/types/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/attributes/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/boilerplate/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/datomic-schema/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/files/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/modelling/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/partitions/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/schema/transaction/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/setup/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/manual/update/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/sitemap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/index.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/presentation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/presentation1/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/seattle/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/video-presentation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tutorials/videos/index.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/community/overview.md" afterPath="$PROJECT_DIR$/content/community/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/compare/overview.md" afterPath="$PROJECT_DIR$/content/compare/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/developer/boilerplate.md" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/developer/overview.md" afterPath="$PROJECT_DIR$/content/dev/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/developer/transformation.md" afterPath="$PROJECT_DIR$/content/dev/transformation.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/home/about.md" afterPath="$PROJECT_DIR$/content/about.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/home/front.md" afterPath="$PROJECT_DIR$/content/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/learn/tutorials.md" afterPath="$PROJECT_DIR$/content/resources/tutorials.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/learn/tutorials/seattle.md" afterPath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/learn/videos.md" afterPath="$PROJECT_DIR$/content/resources/videos.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/learn/videos/2017-04-25_Marc_Grue.md" afterPath="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/getting-started.md" afterPath="$PROJECT_DIR$/content/docs/getting-started/setup.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/query/aggregates.md" afterPath="$PROJECT_DIR$/content/docs/attributes/aggregates.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/query/expressions.md" afterPath="$PROJECT_DIR$/content/docs/attributes/expressions.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/query/mapped.md" afterPath="$PROJECT_DIR$/content/docs/attributes/mapped.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/query/parameterize.md" afterPath="$PROJECT_DIR$/content/docs/attributes/parameterized.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/query/txMetaData.md" afterPath="$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/schema.md" afterPath="$PROJECT_DIR$/content/docs/schema/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/schema/transaction.md" afterPath="$PROJECT_DIR$/content/docs/schema/transaction.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/content/manual/update.md" afterPath="$PROJECT_DIR$/content/docs/crud/update.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public" afterPath="$PROJECT_DIR$/public" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/learn/tutorials/seattle.md" afterPath="$PROJECT_DIR$/content/learn/tutorials/seattle.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/manual/query.md" afterPath="$PROJECT_DIR$/content/manual/query.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/manual/query/mapped.md" afterPath="$PROJECT_DIR$/content/manual/query/mapped.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/manual/schema.md" afterPath="$PROJECT_DIR$/content/manual/schema.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.toml" afterPath="$PROJECT_DIR$/config.toml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/compare/datomic.md" afterPath="$PROJECT_DIR$/content/compare/datomic.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/_default/list.html" afterPath="$PROJECT_DIR$/layouts/_default/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/_default/single.html" afterPath="$PROJECT_DIR$/layouts/_default/single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/index.html" afterPath="$PROJECT_DIR$/layouts/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/partials/footer.html" afterPath="$PROJECT_DIR$/layouts/partials/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/partials/header.html" afterPath="$PROJECT_DIR$/layouts/partials/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/partials/menu.html" afterPath="$PROJECT_DIR$/layouts/partials/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" afterPath="$PROJECT_DIR$/layouts/partials/submenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,16 +353,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mapped.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/manual/query/mapped.md">
+      <file leaf-file-name="_index.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/_index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="455">
-                <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+              <first_editor relative-caret-position="923">
+                <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="91">
+                <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="credits.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/credits.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="169">
+                <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gremlin.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/compare/gremlin.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="1405">
+                <caret line="325" column="63" lean-forward="false" selection-start-line="325" selection-start-column="63" selection-end-line="325" selection-end-column="63" />
                 <folding>
-                  <marker date="1495041362000" expanded="true" signature="731:894" ph="(...)" />
-                  <marker date="1495041362000" expanded="true" signature="744:892" ph="(...)" />
-                  <marker date="1495041362000" expanded="true" signature="957:1105" ph="(...)" />
+                  <marker date="1496948414000" expanded="true" signature="1803:2096" ph="{...}" />
+                  <marker date="1496948414000" expanded="true" signature="1821:2020" ph="{...}" />
+                  <marker date="1496948414000" expanded="true" signature="2039:2094" ph="{...}" />
+                  <marker date="1496948414000" expanded="true" signature="2452:2495" ph="(...)" />
+                  <marker date="1496948414000" expanded="true" signature="2606:2726" ph="(...)" />
+                  <marker date="1496948414000" expanded="true" signature="7936:8043" ph="/.../" />
+                  <marker date="1496948414000" expanded="true" signature="8091:8262" ph="(...)" />
+                  <marker date="1496948414000" expanded="true" signature="8261:8262" ph="(...)" />
+                  <marker date="1496948414000" expanded="true" signature="8379:8446" ph="(...)" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -44,24 +415,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+      <file leaf-file-name="_index.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/docs/_index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="846">
-                <caret line="254" column="33" lean-forward="true" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="33" />
-                <folding>
-                  <marker date="1495042109000" expanded="true" signature="736:1299" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="757:1095" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="1118:1185" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="1204:1297" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4640:5228" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4656:4806" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4675:4754" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4821:5226" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4838:5174" ph="{...}" />
-                  <marker date="1495042109000" expanded="true" signature="4910:5069" ph="..." />
-                </folding>
+              <first_editor relative-caret-position="156">
+                <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+                <folding />
               </first_editor>
               <second_editor />
             </state>
@@ -72,56 +432,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>history.get</find>
-      <find>imagine</find>
-      <find>.</find>
-      <find>.toSeq.sorted</find>
-      <find>as part</find>
-      <find>t.tx</find>
-      <find>case</find>
-      <find>geta</find>
-      <find>e5</find>
-      <find>gethi</find>
-      <find>O6oWjZYtGks</find>
-      <find>YD7RDD5J_yg</find>
-      <find>26f76d021f70d815aa57f87d17a6736e</find>
-      <find>\d:3635bf43dbc96836f464b22b328c5f8e</find>
-      <find>&quot;#&quot;</find>
-      <find>false).ge</find>
-      <find>b</find>
-      <find>bs-</find>
-      <find>bs-dopc</find>
-      <find>bs-dop</find>
-      <find>bs-do</find>
-      <find>bs-docs</find>
-      <find>_hiIqyj5XcM</find>
-      <find>Seq</find>
-      <find>toSeq</find>
-      <find>.toSeq</find>
-      <find>sort</find>
-      <find>Seq[</find>
-      <find>d5_fEyY_W94</find>
-      <find>.one</find>
+      <find>de</find>
+      <find>dev</find>
+      <find>deve</find>
+      <find>devel</find>
+      <find>develo</find>
+      <find>develop</find>
+      <find>developer</find>
+      <find>learn</find>
+      <find>chess</find>
+      <find>bob</find>
+      <find>&quot;stars&quot;,</find>
+      <find>audi</find>
+      <find>aud</find>
+      <find>asof</find>
+      <find>t</find>
+      <find>txT</find>
+      <find>src/test/scala/molecule/</find>
+      <find>csrc/test/scala/molecule/</find>
+      <find>corsrc/test/scala/molecule/</find>
+      <find>coresrc/test/scala/molecule/</find>
+      <find>coretsrc/test/scala/molecule/</find>
+      <find>coretesrc/test/scala/molecule/</find>
+      <find>coretessrc/test/scala/molecule/</find>
+      <find>coretestsrc/test/scala/molecule/</find>
+      <find>coretest/src/test/scala/molecule/</find>
+      <find>part</find>
+      <find>:e8a80e11a9ea81b9e6071cec3c4864a9</find>
+      <find>25_Marc_Grue</find>
+      <find>:3d29aefa7257f22b89227d9f373cd5f9</find>
+      <find>add</find>
     </findStrings>
     <replaceStrings>
-      <replace>name</replace>
-      <replace>Person</replace>
-      <replace>O6oWjZYtGks</replace>
-      <replace>26f76d021f70d815aa57f87d17a6736e</replace>
-      <replace>- &lt;a onclick=&quot;player1.seekTo($2).playVideo()&quot; href=&quot;#&quot;&gt;$1&lt;/a&gt;</replace>
-      <replace>&lt;/</replace>
-      <replace>&lt;li&gt;&lt;</replace>
-      <replace>&lt;/a&gt;&lt;/li&gt;</replace>
-      <replace>&lt;li&gt;&lt;a onclick=&quot;player1.seekTo($2).playVideo()&quot; href=&quot;#&quot;&gt;$1&lt;/a&gt;&lt;/li&gt;</replace>
-      <replace>&lt;/a&gt;</replace>
-      <replace>&lt;/a</replace>
-      <replace>player2</replace>
-      <replace>player3</replace>
-      <replace>player4</replace>
-      <replace>#2:26f76d021f70d815aa57f87d17a6736e</replace>
-      <replace>#1:26f76d021f70d815aa57f87d17a6736e</replace>
-      <replace>#3:26f76d021f70d815aa57f87d17a6736e</replace>
-      <replace>#4:26f76d021f70d815aa57f87d17a6736e</replace>
       <replace>getHistory</replace>
       <replace>getWith</replace>
       <replace>get.toSeq.sorted</replace>
@@ -134,9 +476,30 @@
       <replace>Iterable[</replace>
       <replace>dxMK3jxmzj4</replace>
       <replace>.get.head</replace>
+      <replace>molecule</replace>
+      <replace>resources/</replace>
+      <replace>documentation/</replace>
+      <replace>parent: documentation</replace>
+      <replace>.URL</replace>
+      <replace>triangle</replace>
+      <replace>top</replace>
+      <replace>namespace</replace>
+      <replace>docs</replace>
+      <replace>/docs/</replace>
+      <replace>parent: docs</replace>
+      <replace>cars</replace>
+      <replace>fredId</replace>
+      <replace>t</replace>
+      <replace>src/test/scala/molecule/coretests/</replace>
+      <replace>coretests/src/test/scala/molecule/coretests/</replace>
+      <replace>25_marc_grue</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../molecule/coretest/src/test/scala/molecule/bidirectional</dir>
+      <dir>$PROJECT_DIR$/content/resources</dir>
+      <dir>$PROJECT_DIR$/content/documentation</dir>
+      <dir>$PROJECT_DIR$/content</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -150,32 +513,32 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/content/home/front.md" />
-        <option value="$PROJECT_DIR$/content/home/introduction.md" />
-        <option value="$PROJECT_DIR$/content/compare/overview.md" />
-        <option value="$PROJECT_DIR$/content/compare/datomic.md" />
-        <option value="$PROJECT_DIR$/content/compare/sql.md" />
-        <option value="$PROJECT_DIR$/content/compare/sql/slick.md" />
-        <option value="$PROJECT_DIR$/content/manual/getting-started.md" />
-        <option value="$PROJECT_DIR$/content/manual/insert.md" />
-        <option value="$PROJECT_DIR$/content/manual/update.md" />
-        <option value="$PROJECT_DIR$/content/manual/query/relationships.md" />
-        <option value="$PROJECT_DIR$/content/manual/query/builder.md" />
-        <option value="$PROJECT_DIR$/content/manual/query/parameterize.md" />
-        <option value="$PROJECT_DIR$/content/manual/query/bidirectional refs.md" />
-        <option value="$PROJECT_DIR$/content/manual/query/txMetaData.md" />
-        <option value="$PROJECT_DIR$/content/developer/boilerplate.md" />
-        <option value="$PROJECT_DIR$/deploycommands.md" />
-        <option value="$PROJECT_DIR$/content/learn/videos/2017-04-25_Marc_Grue.md" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/layouts/index.html" />
-        <option value="$PROJECT_DIR$/layouts/_default/singleOLD.html" />
-        <option value="$PROJECT_DIR$/layouts/_default/single.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/content/manual/query/mapped.md" />
-        <option value="$PROJECT_DIR$/content/manual/query.md" />
-        <option value="$PROJECT_DIR$/content/learn/tutorials/seattle.md" />
-        <option value="$PROJECT_DIR$/content/manual/schema.md" />
+        <option value="$PROJECT_DIR$/content/docs/attributes/parameterized.md" />
+        <option value="$PROJECT_DIR$/content/docs/relationships/card-many.md" />
+        <option value="$PROJECT_DIR$/content/docs/relationships/composites.md" />
+        <option value="$PROJECT_DIR$/content/docs/relationships/bidirectional.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/_index.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/save.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/insert.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/get.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/update.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/retract.md" />
+        <option value="$PROJECT_DIR$/content/docs/transactions/_index.md" />
+        <option value="$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md" />
+        <option value="$PROJECT_DIR$/content/docs/time/_index.md" />
+        <option value="$PROJECT_DIR$/content/docs/time/asof-since.md" />
+        <option value="$PROJECT_DIR$/content/docs/time/history.md" />
+        <option value="$PROJECT_DIR$/content/docs/time/with.md" />
+        <option value="$PROJECT_DIR$/content/compare/_index.md" />
+        <option value="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" />
+        <option value="$PROJECT_DIR$/content/resources/videos.md" />
+        <option value="$PROJECT_DIR$/content/resources/_index.md" />
+        <option value="$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
+        <option value="$PROJECT_DIR$/content/docs/getting-started/setup.md" />
+        <option value="$PROJECT_DIR$/content/credits.md" />
+        <option value="$PROJECT_DIR$/content/compare/gremlin.md" />
+        <option value="$PROJECT_DIR$/content/_index.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -186,12 +549,12 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-2560" />
-    <option name="width" value="2560" />
+    <option name="width" value="1280" />
     <option name="height" value="1600" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -205,6 +568,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -226,7 +591,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="static">
+            <PATH_ELEMENT USER_OBJECT="layouts">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -240,25 +605,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="static">
+            <PATH_ELEMENT USER_OBJECT="layouts">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="img">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="molecule-docs">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="content">
+            <PATH_ELEMENT USER_OBJECT="partials">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -276,7 +627,21 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="manual">
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="molecule-docs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="content">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -294,33 +659,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="manual">
+            <PATH_ELEMENT USER_OBJECT="resources">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="schema">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="molecule-docs">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="content">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="manual">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="query">
+            <PATH_ELEMENT USER_OBJECT="videos">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -338,7 +681,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="home">
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="tutorials">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -356,7 +703,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="developer">
+            <PATH_ELEMENT USER_OBJECT="docs">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -370,14 +717,79 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="archetypes">
+            <PATH_ELEMENT USER_OBJECT="content">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="docs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="getting-started">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="molecule-docs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="content">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="compare">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="molecule-docs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="content">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="compare">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="sql">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="molecule-docs">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="content">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="community">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -418,7 +830,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,7 +844,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,47 +866,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manual" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manual" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="overview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -536,11 +916,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_default" />
+              <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -558,7 +934,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manual" />
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -576,7 +952,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manual" />
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="transactions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="time" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -598,29 +1018,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manual" />
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="query" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
+              <option name="myItemId" value="relationships" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -638,33 +1040,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
+              <option name="myItemId" value="docs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="videos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="molecule-docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tutorials" />
+              <option name="myItemId" value="graphs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -682,7 +1062,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="getting-started" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -700,7 +1084,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="developer" />
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="documentation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -715,12 +1103,41 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="molecule-docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -743,19 +1160,19 @@
     </excluded-roots>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/layouts/_default" />
-      <recent name="$PROJECT_DIR$/content/learn" />
-      <recent name="$PROJECT_DIR$/content/tutorials" />
-      <recent name="$PROJECT_DIR$/content/manual/query" />
-      <recent name="$PROJECT_DIR$/content/manual/insert" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/learn" />
-      <recent name="$PROJECT_DIR$/content/info" />
-      <recent name="$PROJECT_DIR$/content/info/videos" />
-      <recent name="$PROJECT_DIR$/content/manual/query" />
-      <recent name="$PROJECT_DIR$/content/manual/schema" />
+      <recent name="$PROJECT_DIR$/content/documentation/documentation" />
+      <recent name="$PROJECT_DIR$/content/documentation/relationships" />
+      <recent name="$PROJECT_DIR$/content/documentation/transactions" />
+      <recent name="$PROJECT_DIR$/content/documentation/time" />
+      <recent name="$PROJECT_DIR$/content/documentation/schema" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/docs/relationships" />
+      <recent name="$PROJECT_DIR$/content/docs/time" />
+      <recent name="$PROJECT_DIR$/content/documentation" />
+      <recent name="$PROJECT_DIR$/content/documentation/getting-started" />
+      <recent name="$PROJECT_DIR$/static/vendor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1011,7 +1428,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2560" y="0" width="2560" height="1600" extended-state="6" />
+    <frame x="-2560" y="0" width="1280" height="1600" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1022,7 +1439,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295756" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119142175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1044,7 +1461,7 @@
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13065925" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564734" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1090,333 +1507,444 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/content/manual/update.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/relationships/_index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="546">
-            <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-            <folding>
-              <marker date="1494880136000" expanded="true" signature="1640:1712" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/insert.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="221">
-            <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            <folding>
-              <marker date="1494880090000" expanded="true" signature="1112:1444" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/schema/transaction.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="624">
-            <caret line="48" column="49" lean-forward="false" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-            <folding>
-              <marker date="1465070750000" expanded="true" signature="623:1607" ph="{...}" />
-              <marker date="1465070750000" expanded="true" signature="698:1577" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="792:1210" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="1225:1576" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2209:2368" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2220:2367" ph="(...)" />
-              <marker date="1465070750000" expanded="true" signature="2976:3017" ph="..." />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/manual/setup/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/getting-started.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="716">
-            <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-            <folding>
-              <marker date="1494878539000" expanded="true" signature="766:1161" ph="(...)" />
-              <marker date="1494878539000" expanded="true" signature="789:935" ph="(...)" />
-              <marker date="1494878539000" expanded="true" signature="968:1077" ph="(...)" />
-              <marker date="1494878539000" expanded="true" signature="2617:2746" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap-theme.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="9" column="6377" lean-forward="true" selection-start-line="9" selection-start-column="6377" selection-end-line="9" selection-end-column="6377" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/manual/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/learn/overview.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="312">
-            <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <first_editor relative-caret-position="663">
+            <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/manual/index.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3886">
-          <caret line="70" column="68" lean-forward="false" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/manual/overview/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="174" column="35" lean-forward="false" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
-          <folding>
-            <marker date="1494960031000" expanded="true" signature="9093:10269" ph="..." />
-            <marker date="1494960031000" expanded="true" signature="10784:11183" ph="..." />
-            <marker date="1494960031000" expanded="true" signature="11197:11361" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#nav#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#ul#0;n#nav#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#1;n#ul#0;n#nav#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/_default/singleOLD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="221" column="1" lean-forward="true" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/nav-tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/submenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/tab-content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/_default/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/learn/videos/2017-04-25_Marc_Grue.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/time/testing.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="508">
-            <caret line="129" column="33" lean-forward="false" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="33" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/learn/tutorials/seattle.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/_index.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="485">
-            <caret line="228" column="45" lean-forward="false" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="45" />
+          <first_editor relative-caret-position="1379">
+            <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="130" selection-end-column="35" />
             <folding>
-              <marker date="1495041362000" expanded="true" signature="1793:1863" ph="{...}" />
-              <marker date="1495041362000" expanded="true" signature="4550:5140" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="4900:5139" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="4970:5096" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="5909:5992" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="6123:6349" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="6665:6768" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="7088:7146" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="7706:7764" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="8251:8324" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="8776:8885" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="8995:9125" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="10216:10274" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="10313:10371" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="10538:10641" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="10834:10955" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="11617:11698" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="13301:13372" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="13388:13683" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="14400:14459" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="14680:14739" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="14878:14937" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="15478:15515" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="15677:15714" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="16155:16257" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="16418:16520" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="17202:17260" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="17398:17492" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="17616:17722" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="18005:18070" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="18119:18181" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="25773:25829" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="26647:26744" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="26864:26976" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="27478:27991" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="28090:28250" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="28880:28978" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="31304:31376" ph="(...)" />
+              <marker date="1496933344000" expanded="true" signature="1009:1083" ph="(...)" />
+              <marker date="1496933344000" expanded="true" signature="1256:1330" ph="(...)" />
+              <marker date="1496933344000" expanded="true" signature="2044:2116" ph="/.../" />
             </folding>
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/_default/single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/query.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/insert.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="286">
-            <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <first_editor relative-caret-position="1431">
+            <caret line="182" column="11" lean-forward="false" selection-start-line="182" selection-start-column="11" selection-end-line="182" selection-end-column="11" />
             <folding>
-              <marker date="1495041362000" expanded="true" signature="676:824" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="470:544" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="1081:1136" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="1363:1480" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="1797:1852" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="2243:2397" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="2932:3006" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="3401:3464" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="3464:3670" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="3468:3559" ph="..." />
+              <marker date="1496933388000" expanded="true" signature="3956:4019" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="4019:4225" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="4023:4114" ph="..." />
+              <marker date="1496933388000" expanded="true" signature="4225:4292" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="4698:4801" ph="(...)" />
+              <marker date="1496933388000" expanded="true" signature="4814:4861" ph="(...)" />
             </folding>
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/query/mapped.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/get.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="455">
-            <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <first_editor relative-caret-position="1431">
+            <caret line="118" column="7" lean-forward="false" selection-start-line="118" selection-start-column="7" selection-end-line="118" selection-end-column="7" />
             <folding>
-              <marker date="1495041362000" expanded="true" signature="731:894" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="744:892" ph="(...)" />
-              <marker date="1495041362000" expanded="true" signature="957:1105" ph="(...)" />
+              <marker date="1496933410000" expanded="true" signature="1877:2026" ph="(...)" />
+              <marker date="1496933410000" expanded="true" signature="2296:2379" ph="(...)" />
+              <marker date="1496933410000" expanded="true" signature="2893:3008" ph="(...)" />
             </folding>
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/retract.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="846">
-            <caret line="254" column="33" lean-forward="true" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="33" />
+          <first_editor relative-caret-position="1170">
+            <caret line="90" column="13" lean-forward="false" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
             <folding>
-              <marker date="1495042109000" expanded="true" signature="736:1299" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="757:1095" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="1118:1185" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="1204:1297" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4640:5228" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4656:4806" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4675:4754" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4821:5226" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4838:5174" ph="{...}" />
-              <marker date="1495042109000" expanded="true" signature="4910:5069" ph="..." />
+              <marker date="1496933462000" expanded="true" signature="1078:1133" ph="..." />
+              <marker date="1496933462000" expanded="true" signature="1414:1640" ph="{...}" />
+              <marker date="1496933462000" expanded="true" signature="1431:1533" ph="{...}" />
+              <marker date="1496933462000" expanded="true" signature="1552:1638" ph="{...}" />
+              <marker date="1496933462000" expanded="true" signature="1756:1809" ph="/.../" />
             </folding>
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/tutorials.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/transactions/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1365">
+            <caret line="105" column="11" lean-forward="false" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="625">
+            <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <folding>
+              <marker date="1496933558000" expanded="true" signature="939:988" ph="{...}" />
+              <marker date="1496933558000" expanded="true" signature="1610:1678" ph="/.../" />
+              <marker date="1496933558000" expanded="true" signature="2275:2343" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="2807:2870" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="2870:3076" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="2874:2965" ph="..." />
+              <marker date="1496933558000" expanded="true" signature="3076:3143" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="3206:3309" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="3322:3369" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="3926:4057" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="4732:4954" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="5572:6042" ph="(...)" />
+              <marker date="1496933558000" expanded="true" signature="5672:5752" ph="..." />
+              <marker date="1496933558000" expanded="true" signature="5877:5976" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/time/asof-since.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="936">
+            <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/time/with.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="586">
+            <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <folding>
+              <marker date="1496933673000" expanded="true" signature="1057:1172" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="1340:1422" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="1431:1489" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="1912:2252" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="2025:2111" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="2261:2423" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="2381:2421" ph="..." />
+              <marker date="1496933673000" expanded="true" signature="2392:2404" ph="..." />
+              <marker date="1496933673000" expanded="true" signature="2392:2421" ph="..." />
+              <marker date="1496933673000" expanded="true" signature="2725:3094" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="2805:2833" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="2950:3025" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="3023:3024" ph="..." />
+              <marker date="1496933673000" expanded="true" signature="3059:3094" ph="(...)" />
+              <marker date="1496933673000" expanded="true" signature="3138:3173" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/time/history.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1431">
+            <caret line="160" column="5" lean-forward="false" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+            <folding>
+              <marker date="1496933643000" expanded="true" signature="1700:1811" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="2324:2339" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="2324:2399" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="2522:2606" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="2696:2807" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="3057:3222" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="3057:3737" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="3339:3425" ph="/.../" />
+              <marker date="1496933643000" expanded="true" signature="3483:3530" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="3529:3530" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="3532:3572" ph="/.../" />
+              <marker date="1496933643000" expanded="true" signature="3532:3607" ph="/.../" />
+              <marker date="1496933643000" expanded="true" signature="3655:3736" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="4294:4572" ph="(...)" />
+              <marker date="1496933643000" expanded="true" signature="4768:4818" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/time/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1379">
+            <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="162" selection-end-column="40" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/update.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1431">
+            <caret line="156" column="17" lean-forward="false" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+            <folding>
+              <marker date="1496933434000" expanded="true" signature="3228:3276" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/crud/save.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1431">
+            <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+            <folding>
+              <marker date="1496933364000" expanded="true" signature="2453:2508" ph="(...)" />
+              <marker date="1496933364000" expanded="true" signature="2644:2710" ph="(...)" />
+              <marker date="1496933364000" expanded="true" signature="2772:2844" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="520">
+            <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1431">
+            <caret line="258" column="17" lean-forward="false" selection-start-line="258" selection-start-column="17" selection-end-line="258" selection-end-column="17" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/videos.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="169">
+            <caret line="13" column="92" lean-forward="false" selection-start-line="13" selection-start-column="80" selection-end-line="13" selection-end-column="92" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="325">
+            <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/tutorials/seattle.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="390">
+            <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+            <folding>
+              <marker date="1496945104000" expanded="true" signature="1404:1474" ph="{...}" />
+              <marker date="1496945104000" expanded="true" signature="4095:4685" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="4445:4684" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="4515:4641" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="5421:5504" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="5635:5861" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="6144:6247" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="6567:6625" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="7185:7243" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="7730:7803" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="8222:8331" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="8441:8571" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="9629:9687" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="9726:9784" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="9951:10054" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="10247:10368" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="11030:11111" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="12714:12785" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="12801:13096" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="13780:13839" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="14060:14119" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="14258:14317" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="14825:14862" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="15024:15061" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="15502:15604" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="15765:15867" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="16516:16574" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="16712:16806" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="16930:17036" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="17319:17384" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="17433:17495" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="25021:25077" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="25895:25992" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="26112:26224" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="26726:27239" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="27338:27498" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="28128:28226" ph="(...)" />
+              <marker date="1496945104000" expanded="true" signature="30519:30591" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/getting-started/setup.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="637">
+            <caret line="49" column="49" lean-forward="false" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <folding>
+              <marker date="1496946793000" expanded="true" signature="888:1283" ph="(...)" />
+              <marker date="1496946793000" expanded="true" signature="911:1057" ph="(...)" />
+              <marker date="1496946793000" expanded="true" signature="1090:1199" ph="(...)" />
+              <marker date="1496946793000" expanded="true" signature="2778:2907" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/credits.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="169">
+            <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/gremlin.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1405">
+            <caret line="325" column="63" lean-forward="false" selection-start-line="325" selection-start-column="63" selection-end-line="325" selection-end-column="63" />
+            <folding>
+              <marker date="1496948414000" expanded="true" signature="1803:2096" ph="{...}" />
+              <marker date="1496948414000" expanded="true" signature="1821:2020" ph="{...}" />
+              <marker date="1496948414000" expanded="true" signature="2039:2094" ph="{...}" />
+              <marker date="1496948414000" expanded="true" signature="2452:2495" ph="(...)" />
+              <marker date="1496948414000" expanded="true" signature="2606:2726" ph="(...)" />
+              <marker date="1496948414000" expanded="true" signature="7936:8043" ph="/.../" />
+              <marker date="1496948414000" expanded="true" signature="8091:8262" ph="(...)" />
+              <marker date="1496948414000" expanded="true" signature="8261:8262" ph="(...)" />
+              <marker date="1496948414000" expanded="true" signature="8379:8446" ph="(...)" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/docs/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="156">
+            <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="923">
+            <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="91">
+            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20000002" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

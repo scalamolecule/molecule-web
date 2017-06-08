@@ -1,46 +1,9 @@
-
-{{ range where .Data.Pages "Section" "home" }}
-	{{ if eq .Title "Home" }}
-		{{ partial "header.html" . }}
+{{ partial "header.html" . }}
 
 <div class="col-sm-10 column" style="padding-left:8px;">
 	{{ .Content }}
 </div>
 
-<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px">
-  <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
-    <ul class="nav bs-docs-sidenav" style="list-style: none; font-size:13px;">{{ $currentNode := . }}
-      {{ range where .Site.Menus.main "Identifier" .Section }}
-        {{ if .HasChildren }}
-          {{ range .Children }}
-            {{if $currentNode.IsMenuCurrent "main" . }}
-              <li class="active" style=""><b>{{ .Name }}</b></li>
-              {{if .HasChildren}}
-                <ul style="padding-left:25px;">{{ range .Children }}
-                  <li><a href="{{.Url}}">{{ .Name }}</a></li>{{end}}
-                </ul>
-              {{end}}
-            {{else}}
-              <li><a href="{{.Url}}">{{ .Name }}</a></li>
-              {{if .HasChildren}}
-                <ul style="padding-left:25px;">{{ range .Children }}
-                  {{if $currentNode.IsMenuCurrent "main" . }}
-                  <li class="active"><b>{{ .Name }}</b></li>
-                  {{else}}
-                  <li><a href="{{.Url}}">{{ .Name }}</a></li>
-                  {{end}}
-                {{end}}
-                </ul>
-              {{end}}
-            {{end}}
-          {{end}}
-        {{end}}
-      {{end}}
-    </ul>
-  </nav>
-</div>
-
-	{{ end }}
-{{ end }}
+<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px;padding-right: 0px;"></div>
 
 {{ partial "footer.html" . }}

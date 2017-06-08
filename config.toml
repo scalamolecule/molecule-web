@@ -1,40 +1,31 @@
-baseurl = "http://scalamolecule.org/"
-languageCode = "en-us"
 title = "Molecule"
-MetaDataFormat = "yaml"
-publishdir = "public"
+baseURL = "http://scalamolecule.org/"
+languageCode = "en-us"
+metaDataFormat = "yaml"
+pygmentsStyle = "perldoc"
 
-PygmentsStyle = "perldoc"
-
-[[menu.main]]
-    name = "Molecule"
-    weight = -110
-    identifier = "home"  
-    url = "/home/front"  
 [[menu.main]]
     name = "Compare"
-    weight = -100
+    weight = 10
     identifier = "compare"
-    url = "/compare/overview"
+    url = "/compare/"
 [[menu.main]]
-    name = "Learn"
-    weight = -90
-    identifier = "learn"
-    url = "/learn/overview"
-
+    name = "Resources"
+    weight = 20
+    identifier = "resources"
+    url = "/resources/"
 [[menu.main]]
-    name = "Manual"
-    weight = -70
-    identifier = "manual"
-    url = "/manual/overview"
-
+    name = "Docs"
+    weight = 30
+    identifier = "docs"
+    url = "/docs/"
 [[menu.main]]
-    name = "Developer"
-    weight = -60
-    identifier = "developer"
-    url = "/developer/overview"
+    name = "Dev"
+    weight = 40
+    identifier = "dev"
+    url = "/dev/"
 [[menu.main]]
     name = "Community"
-    weight = -50
+    weight = 50
     identifier = "community"
-    url = "/community/overview"
+    url = "/community/"

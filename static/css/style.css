@@ -3,6 +3,28 @@ body {
   background-image: url("/bg/furley_bg.png");
   color: #444;
 }
+.wrapper {
+    min-height: calc(100vh - 140px - 70px);
+}
+footer {
+    height: 140px;
+    background: aqua;
+}
+
+
+.bs-docs-footer {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-top: 70px;
+  /*margin-bottom: 10px;*/
+  color: #99979c;
+  /*text-align: center;*/
+  background-color: #2a2730;
+}
+
+/*.footer, .push {
+    height: 142px; *//**//* .push must be the same height as .footer *//*
+}*/
 
 h1, h2, h3, .h1, .h2, .h3 {
   font-weight: 100;
@@ -14,10 +36,32 @@ a {
 }
 
 
-h1, .h1 { margin-top: 20px; margin-bottom: 15px; }
-h2, .h2 { margin-top: 44px; margin-bottom: 24px; }
-h3, .h3 { margin-top: 28px; margin-bottom: 12px; }
-h4, .h4 { margin-top: 26px; margin-bottom: 10px; }
+h1, .h1 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: "Earth2073", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 42px;
+    color: #444;
+}
+h2, .h2 {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-family: "Earth2073", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    color: #444;
+}
+h3, .h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-family: "Earth2073", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    color: #444;
+}
+h4, .h4 {
+    margin-top: 26px;
+    margin-bottom: 10px;
+    color: #444;
+}
 
 code {
     padding: 1px 4px;
@@ -39,29 +83,29 @@ pre {
 
 /* Top menu */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-    background-color: #00ADE3
+    background-color: #00ADE3;
+    margin-top: 17px;
+    vertical-align: middle;
 }
-
 .nav>li>a {
     padding: 2px 9px;
+    margin-top: 17px;
+    vertical-align: middle;
 }
-
 nav .nav li {
     list-style: none;
 }
-
 .dropdown:hover > .level1 {
 	display: block;
-    top: 20px;
+    top: 36px;
 }
-
 .dropdown-submenu {
     position: relative;
 }
 .dropdown-submenu > .dropdown-menu {
-    top: 0;
+    /*top: 36;*/
     left: 100%;
-    margin-top: -6px;
+    margin-top: -32px;
     margin-left: -1px;
     -webkit-border-radius: 0 6px 6px 6px;
     -moz-border-radius: 0 6px 6px;
@@ -87,7 +131,7 @@ nav .nav li {
     margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
+    border-left-color: #00A0D6;
 }
 .dropdown-submenu.pull-left {
     float: none;
@@ -102,19 +146,68 @@ nav .nav li {
 }
 
 .bs-docs-sidenav > li {
-    padding-top: 15px;
+    padding-top: 14px;
 }
 
 .bs-docs-sidenav > ul.level2 {
-    font-size: 13px;
+    font-size: 12px;
     list-style: none;
     padding-left: 20px;
 }
 
 .bs-docs-sidenav > ul.level2 > li {
-    padding-top: 6px;
+    padding-top: 3px;
 }
 
+
+
+.navigation-control {
+    width: 5%;
+    opacity: .7;
+    font-size: 22px;
+    color: #00ADE3;
+}
+.navigation-control.left, .navigation-control.right {
+    background-image: none;
+}
+.navigation-control:hover, .navigation-control:focus {
+    outline: 0;
+    color: #20a1f2;
+    text-decoration: none;
+    opacity: .9;
+    filter: alpha(opacity=90)
+}
+
+/*
+ * Footer
+ *
+ * Separated section of content at the bottom of all pages, save the homepage.
+ */
+
+.bs-docs-footer a {
+  color: #ccc;
+}
+.bs-docs-footer-links {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.bs-docs-footer-links li {
+  display: inline-block;
+   margin-top: 17px;
+   vertical-align: middle;
+}
+.bs-docs-footer-links li + li {
+  margin-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .bs-docs-footer {
+    text-align: left;
+  }
+  .bs-docs-footer p {
+    margin-bottom: 0;
+  }
+}
 
 
 
@@ -201,7 +294,6 @@ nav .nav li {
 }
 .carousel-control.left, .carousel-control.right {
     background-image: none;
-
 }
 /*.carousel-indicators li {
   background-color: #999 !important;

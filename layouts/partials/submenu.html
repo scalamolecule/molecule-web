@@ -1,13 +1,55 @@
-<!-- 
-{{ $currentNode := . }}
-{{ .Data.Pages "Section" "post" }}
-<br>==============<br>
-{{ range .Site.Menus.main }}
-{{ .Name }} - {{ .Identifier }} 
-{{ if .HasChildren }}       
-  {{ range .Children }}
-  {{ end }}
-  <br>
-{{end}}
-  <br>
-{{end}} -->
+<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
+
+  <div style="position:absolute;top: -36px; left: 0px;">
+    {{ with .GetParam "up" }}
+    <a class="navigation-control up" href="{{.}}" style="position:absolute; top:0px; left: 56px">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    {{ end }}
+    {{ with .GetParam "prev" }}
+    <a class="navigation-control left" href="{{.}}" style="position:absolute; top: 15px; left: 20px">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    {{ end }}
+    {{ with .GetParam "next" }}
+    <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 15px; left: 89px">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+    {{ end }}
+    {{ with .GetParam "down" }}
+    <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 30px; left: 54px;">
+      <span class="glyphicon glyphicon-chevron-down"></span>
+    </a>
+    {{ end }}
+  </div>
+
+  <ul class="bs-docs-sidenav">{{ $currentNode := . }}
+    {{ range where .Site.Menus.main "Identifier" .Section }}
+    {{ if .HasChildren }}
+    {{ range .Children }}
+    {{if $currentNode.IsMenuCurrent "main" . }}
+    <li class="active"><b>{{ .Name }}</b></li>
+    {{if .HasChildren}}
+    <ul class="level2">{{ range .Children }}
+      <li><a href="{{.URL}}">{{ .Name }}</a></li>
+      {{end}}
+    </ul>
+    {{end}}
+    {{else}}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{if .HasChildren}}
+    <ul class="level2">{{ range .Children }}
+      {{if $currentNode.IsMenuCurrent "main" . }}
+      <li class="active"><b>{{ .Name }}</b></li>
+      {{else}}
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{end}}
+      {{end}}
+    </ul>
+    {{end}}
+    {{end}}
+    {{end}}
+    {{end}}
+    {{end}}
+  </ul>
+</nav>

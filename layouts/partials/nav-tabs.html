@@ -1,5 +1,0 @@
-<ul class="nav nav-tabs">{{ range .Site.Menus.main }}
-  <li{{ if eq .Name "Molecule" }} class="active"{{ end }}>
-    <a href="#panel-{{.Identifier}}" data-toggle="tab">{{ .Name }}</a>
-  </li>{{end}}
-</ul>

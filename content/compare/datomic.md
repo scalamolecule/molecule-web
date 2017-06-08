@@ -11,7 +11,7 @@ menu:
 
 Even though Molecule is adapting to Datomic we'll have a look the other way around to see how Datomic compares to Molecule. 
 
-[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleQueryTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
+[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/coretests/examples/seattle/SeattleQueryTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
 
 ### Querying _for_ attribute values
 
