@@ -7,7 +7,7 @@ menu:
     parent: crud
 up:   /docs/crud
 prev: /docs/crud/insert
-next: /docs/crud/update
+next: /docs/crud/getJson
 down: /docs/transactions
 ---
 
@@ -116,4 +116,4 @@ val rawData: Iterable[java.util.List[Object]] = Person.name.age.likes.getRaw
 
 ### Next
 
-[Update...](/docs/crud/update)
+[Get Json...](/docs/crud/getjson)

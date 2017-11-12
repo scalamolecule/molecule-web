@@ -27,7 +27,7 @@ val persons: Iterable[(String, Int)] = Person.name.age.get
 [Mandatory/Tacet/Optional](/docs/attributes/modes) attributes ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala))
 ```scala
 Person.name.age.get  // all required values              ("mandatory value")
-Person.name.age_.get // age is required but not returned ("tacet value")
+Person.name.age_.get // age is required but not returned ("tacit value")
 Person.name.age$.get // optional age returned            ("optional value")
 ```
 <br>

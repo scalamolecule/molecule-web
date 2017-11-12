@@ -79,7 +79,7 @@ This gives us an optional value back if an attribute value has been asserted for
 
 ### Tacet attributes
 
-The `name_` attributes are "tacet" attributes that cause a :where clause in the query but doesn't return any data 
+The `name_` attributes are "tacit" attributes that cause a :where clause in the query but doesn't return any data 
 (no variable in the :find section of the produced query). This is to be able to skip returning data of attributes 
 that we for instance apply a constant value to
 

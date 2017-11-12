@@ -31,7 +31,7 @@ Basically we look for **matches** to our molecule data structure.
 #### 2. Tacet `attr_`
 
 Sometimes we want to grap entities that we _know_ have certain attributes, but without returning those values. 
-We call the un-returning attributes "tacet attributes" (music term for "silent"). 
+We call the un-returning attributes "tacit attributes". 
 
 If for instance we wanted to find all names of Persons that have an age attribute set but we don't need to return those age 
  values, then we can add an underscore `_` after the `age` Attribute:

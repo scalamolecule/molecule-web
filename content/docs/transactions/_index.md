@@ -42,7 +42,7 @@ Since the transaction is itself an entity exactly as any other entity we can que
 
 Molecule offers a few generic attributes that makes it easy to access transaction data. In our example we could find the
 transaction entity id of the assertion of Freds `name` by adding the generic attribute `tx` right after the `name_` attribute (that we
-have made tacet with the underscore since we're not interested in value "Fred"): 
+have made tacit with the underscore since we're not interested in value "Fred"): 
 
 _"In what transaction was Freds name asserted?"_
 ```scala

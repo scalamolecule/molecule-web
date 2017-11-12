@@ -184,7 +184,7 @@ Prepending the generic attribute `e` before an attribute finds the entity that i
 Person.e.name_("marko").get.head === marko
 ```
 We also append an underscore `_` to the `name` attribute so that it becomes `name_`. In Molecule this makes
-the attribute "tacet", or "silent", meaning that we don't need to return its value "marko" since we're already
+the attribute "tacit", or "silent", meaning that we don't need to return its value "marko" since we're already
 applying it as a value that we expect the attribute to have.
 
 

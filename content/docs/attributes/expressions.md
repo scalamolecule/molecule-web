@@ -39,7 +39,7 @@ Person.name.likes("pizza").get === List(
   ("Ben", "pizza")
 )
 ```
-This is an ideomatic place to use a tacet attribute `likes_` to say "Give me names of persons that like pizza" without returning the `likes` value "pizza"
+This is an ideomatic place to use a tacit attribute `likes_` to say "Give me names of persons that like pizza" without returning the `likes` value "pizza"
 over and over again. Then we get a nice list of only the pizza likers:
 ```scala
 Person.name.likes_("pizza").get === List(
