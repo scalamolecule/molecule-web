@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/content/docs/crud/getJson.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/content/compare/gremlin.md" afterPath="$PROJECT_DIR$/content/compare/gremlin.md" />
-      <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/_index.md" afterPath="$PROJECT_DIR$/content/docs/attributes/_index.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/expressions.md" afterPath="$PROJECT_DIR$/content/docs/attributes/expressions.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/modes.md" afterPath="$PROJECT_DIR$/content/docs/attributes/modes.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/get.md" afterPath="$PROJECT_DIR$/content/docs/crud/get.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/update.md" afterPath="$PROJECT_DIR$/content/docs/crud/update.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/setup.md" afterPath="$PROJECT_DIR$/content/docs/getting-started/setup.md" />
-      <change beforePath="$PROJECT_DIR$/content/docs/transactions/_index.md" afterPath="$PROJECT_DIR$/content/docs/transactions/_index.md" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Earth2073.ttf" afterPath="" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +44,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="78">
-                <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+                <caret line="6" column="68" lean-forward="true" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -300,11 +288,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-  </component>
-  <component name="Push.Settings">
-    <excluded-roots>
-      <path value="$PROJECT_DIR$/public" />
-    </excluded-roots>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -646,7 +629,8 @@
     <MESSAGE value="v0.10.2 Obsolete `maybe` interfaces removed" />
     <MESSAGE value="v0.11.0" />
     <MESSAGE value="Re-design and expansion of docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-design and expansion of docs" />
+    <MESSAGE value="0.13.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.13.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -931,7 +915,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="78">
-            <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <caret line="6" column="68" lean-forward="true" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
             <folding />
           </first_editor>
           <second_editor />
