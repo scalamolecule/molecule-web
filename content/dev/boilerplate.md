@@ -15,7 +15,7 @@ An attribute definition like
 @InOut(3, 8)
 trait SeattleDefinition {
   trait Community {
-    val name = oneString.fullTextSearch
+    val name = oneString.fulltextSearch
   }
 }
 ```

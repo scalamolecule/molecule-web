@@ -43,14 +43,14 @@ trait that defines namespaces with attributes for your domain:
 
 ```scala
 trait Community {
-  val name = oneString.fullTextSearch
+  val name = oneString.fulltextSearch
   val url  = oneString
   ...
 }
 ```
 
 The `name` field defines an attribute of type String with cardinality one. Adding the
-`fullTextSearch` option will tell Datomic that we want to be able to make fulltext
+`fulltextSearch` option will tell Datomic that we want to be able to make fulltext
 searches on the values of this attribute.
 
 After defining the schema like this, we run `sbt compile` and Molecule will generate some

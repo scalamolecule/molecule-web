@@ -36,9 +36,9 @@ import molecule.schema.definition._  // import schema definition DSL
 object SeattleDefinition {
 
   trait Community {
-    val name         = oneString.fullTextSearch
+    val name         = oneString.fulltextSearch
     val url          = oneString
-    val category     = manyString.fullTextSearch
+    val category     = manyString.fulltextSearch
     val orgtype      = oneEnum('community, 'commercial, 'nonprofit, 'personal)
     val `type`       = oneEnum('email_list, 'twitter, 'facebook_page) // + more...
     val neighborhood = one[Neighborhood]
@@ -262,15 +262,15 @@ Each attribute can also have some extra options:
   <tr>
     <td valign="top">indexed</td>
     <td align="center" valign="top">✔︎</td>
-    <td>Generated index for this attribute.</td>
+    <td>Generated index for this attribute. By default all attributes are set with the indexed option automatically by Molecule, so you don't need to set this.</td>
   </tr>
   <tr>
-    <td valign="top">fullTextSearch</td>
+    <td valign="top">fulltextSearch</td>
     <td align="center" valign="top">✔︎</td>
     <td>Generate eventually consistent fulltext search index for this attribute.</td>
   </tr>
   <tr>
-    <td valign="top">isComponent</td>
+    <td valign="top">subComponent<br>subComponents</td>
     <td align="center" valign="top">✔︎</td>
     <td>Specifies that an attribute whose type is :db.type/ref refers to a subcomponent of the entity to which the attribute is applied.<br>
     <em>When you retract an entity with :db.fn/retractEntity, all subcomponents are also retracted. When you touch an entity, all its 

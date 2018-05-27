@@ -54,7 +54,7 @@ _Note that since we get an arity-1 result back it is simply a list of those valu
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/FulltextSearch.scala)
 
 
-If we add the `fullTextSearch` option to a String attribute definition Datomic will index the text strings saved so that we can do 
+If we add the `fulltextSearch` option to a String attribute definition Datomic will index the text strings saved so that we can do
 fulltext searches accross all values. We could for instance search for Community names containing the word "Town" in their name:
 ```scala
 Community.name.contains("Town")
