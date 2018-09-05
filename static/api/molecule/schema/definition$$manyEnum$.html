@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0 - molecule.schema.definition.manyEnum</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.schema.definition.manyEnum" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.schema.definition.manyEnum" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,7 +68,10 @@
         <a title="" href="../../index.html"><span class="name">root</span></a>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p><div class="fullcomment"><div class="comment cmt"><p>Molecule package</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="molecule.schema" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="schema"></a><a id="schema:schema"></a>
       <span class="permalink">
@@ -97,10 +164,10 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">schema</span></a>
+        <a title="Schema definition DSL and API." href="index.html"><span class="name">schema</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Schema definition DSL and API.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL and API.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.schema.definition" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="definition"></a><a id="definition:definition"></a>
       <span class="permalink">
@@ -113,206 +180,247 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$.html"><span class="name">definition</span></a>
+        <a title="Schema definition DSL." href="definition$.html"><span class="name">definition</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.schema">schema</a></dd></dl></div>
+      <p class="shortcomment cmt">Schema definition DSL.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL.
+<br><br>
+Define Datomic database schema in a Schema Definition file.
+<br><br>
+For small projects, the schema can be defined without partition definitions where
+all namespaces reside in a default tacit partition:</p><pre><span class="kw">package</span> path.to.your.project
+<span class="kw">import</span> molecule.schema.definition._       <span class="cmt">// import schema definition DSL</span>
+
+@InOut(<span class="num">1</span>, <span class="num">8</span>)                              <span class="cmt">// Set input/output arity</span>
+<span class="kw">object</span> SeattleDefinition {                <span class="cmt">// Schema definition object</span>
+
+  <span class="kw">trait</span> Person {                          <span class="cmt">// Namespace</span>
+    <span class="kw">val</span> name = oneString.fulltextSearch   <span class="cmt">// String attribute definition with fulltext search</span>
+    <span class="kw">val</span> age  = oneInt                     <span class="cmt">// Int attribute definition</span>
+  }
+
+  <span class="cmt">// Additional namespaces...</span>
+}</pre><p>For larger projects, it is recommended to group namespaces in partitions:</p><pre><span class="kw">package</span> path.to.your.project
+<span class="kw">import</span> molecule.schema.definition._
+
+@InOut(<span class="num">3</span>, <span class="num">15</span>)
+<span class="kw">object</span> SeattleDefinition {
+
+  <span class="kw">object</span> customer {
+    <span class="kw">trait</span> Person {
+      <span class="kw">val</span> name    = oneString.fulltextSearch
+      <span class="kw">val</span> age     = oneInt
+      <span class="kw">val</span> address = one[Address]
+      <span class="kw">val</span> bought  = many[products.Item]
+    }
+    <span class="kw">trait</span> Address {
+      <span class="kw">val</span> street = oneString.fulltextSearch
+      <span class="kw">val</span> city   = oneInt
+    }
+    <span class="cmt">// ..more namespaces in the `customer` partition</span>
+  }
+
+  <span class="kw">object</span> products {
+    <span class="kw">trait</span> Item {
+      <span class="kw">val</span> title   = oneString
+      <span class="kw">val</span> inStock = oneInt
+    }
+    <span class="cmt">// ..more namespaces in the `products` partition</span>
+  }
+
+  <span class="cmt">// Additional partitions...</span>
+}</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.schema">schema</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/schema/" target="_blank">Manual</a>
+    | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/util/schema/CoreTestDefinition.scala" target="_blank">Schema without partitions</a>,
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/schemaDef/schema/PartitionTestDefinition.scala" target="_blank">Schema with partitions</a>,
+    <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/bidirectionals" target="_blank">Bidirectionals</a></p></span></dd></dl></div>
     </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="trait" href="definition$$Bidirectional.html" title=""></a>
-                        <a href="definition$$Bidirectional.html" title="">Bidirectional</a>
+                        <a class="class" href="definition$$InOut.html" title="Arity annotation for number of molecule input/output attributes."></a>
+                        <a href="definition$$InOut.html" title="Arity annotation for number of molecule input/output attributes.">InOut</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="class" href="definition$$InOut.html" title=""></a>
-                        <a href="definition$$InOut.html" title="">InOut</a>
+                        <a class="object" href="definition$$many$.html" title="Card-many reference."></a>
+                        <a href="definition$$many$.html" title="Card-many reference.">many</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="definition$$many$.html" title=""></a>
-                        <a href="definition$$many$.html" title="">many</a>
+                        <a class="object" href="definition$$manyBi$.html" title="Card-many bi-directional reference."></a>
+                        <a href="definition$$manyBi$.html" title="Card-many bi-directional reference.">manyBi</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="definition$$manyBi$.html" title=""></a>
-                        <a href="definition$$manyBi$.html" title="">manyBi</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="object" href="definition$$manyBiEdge$.html" title=""></a>
-                        <a href="definition$$manyBiEdge$.html" title="">manyBiEdge</a>
+                        <a class="object" href="definition$$manyBiEdge$.html" title="Card-many bi-directional edge reference."></a>
+                        <a href="definition$$manyBiEdge$.html" title="Card-many bi-directional edge reference.">manyBiEdge</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyBigDecimal$.html" title=""></a>
-                        <a class="trait" href="definition$$manyBigDecimal.html" title=""></a>
-                        <a href="definition$$manyBigDecimal.html" title="">manyBigDecimal</a>
+                        <a class="trait" href="definition$$manyBigDecimal.html" title="Card-many BigDecimal attribute."></a>
+                        <a href="definition$$manyBigDecimal.html" title="Card-many BigDecimal attribute.">manyBigDecimal</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyBigInt$.html" title=""></a>
-                        <a class="trait" href="definition$$manyBigInt.html" title=""></a>
-                        <a href="definition$$manyBigInt.html" title="">manyBigInt</a>
+                        <a class="trait" href="definition$$manyBigInt.html" title="Card-many BigInt attribute."></a>
+                        <a href="definition$$manyBigInt.html" title="Card-many BigInt attribute.">manyBigInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyBoolean$.html" title=""></a>
-                        <a class="trait" href="definition$$manyBoolean.html" title=""></a>
-                        <a href="definition$$manyBoolean.html" title="">manyBoolean</a>
+                        <a class="trait" href="definition$$manyBoolean.html" title="Card-many Boolean attribute."></a>
+                        <a href="definition$$manyBoolean.html" title="Card-many Boolean attribute.">manyBoolean</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyByte$.html" title=""></a>
-                        <a class="trait" href="definition$$manyByte.html" title=""></a>
-                        <a href="definition$$manyByte.html" title="">manyByte</a>
+                        <a class="trait" href="definition$$manyByte.html" title="Card-many Bytes attribute."></a>
+                        <a href="definition$$manyByte.html" title="Card-many Bytes attribute.">manyByte</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyDate$.html" title=""></a>
-                        <a class="trait" href="definition$$manyDate.html" title=""></a>
-                        <a href="definition$$manyDate.html" title="">manyDate</a>
+                        <a class="trait" href="definition$$manyDate.html" title="Card-many Date attribute."></a>
+                        <a href="definition$$manyDate.html" title="Card-many Date attribute.">manyDate</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyDouble$.html" title=""></a>
-                        <a class="trait" href="definition$$manyDouble.html" title=""></a>
-                        <a href="definition$$manyDouble.html" title="">manyDouble</a>
+                        <a class="trait" href="definition$$manyDouble.html" title="Card-many Double attribute."></a>
+                        <a href="definition$$manyDouble.html" title="Card-many Double attribute.">manyDouble</a>
                       </li><li class="current-entities indented3">
-                        <span class="separator"></span>
                         <a class="object" href="" title=""></a>
-                        <a href="" title="">manyEnum</a>
+                        <a class="trait" href="definition$$manyEnum.html" title="Card-many Enum attribute."></a>
+                        <a href="definition$$manyEnum.html" title="Card-many Enum attribute.">manyEnum</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyFloat$.html" title=""></a>
-                        <a class="trait" href="definition$$manyFloat.html" title=""></a>
-                        <a href="definition$$manyFloat.html" title="">manyFloat</a>
+                        <a class="trait" href="definition$$manyFloat.html" title="Card-many Float attribute."></a>
+                        <a href="definition$$manyFloat.html" title="Card-many Float attribute.">manyFloat</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyInt$.html" title=""></a>
-                        <a class="trait" href="definition$$manyInt.html" title=""></a>
-                        <a href="definition$$manyInt.html" title="">manyInt</a>
+                        <a class="trait" href="definition$$manyInt.html" title="Card-many Int attribute."></a>
+                        <a href="definition$$manyInt.html" title="Card-many Int attribute.">manyInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyLong$.html" title=""></a>
-                        <a class="trait" href="definition$$manyLong.html" title=""></a>
-                        <a href="definition$$manyLong.html" title="">manyLong</a>
+                        <a class="trait" href="definition$$manyLong.html" title="Card-many Long attribute."></a>
+                        <a href="definition$$manyLong.html" title="Card-many Long attribute.">manyLong</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyString$.html" title=""></a>
-                        <a class="trait" href="definition$$manyString.html" title=""></a>
-                        <a href="definition$$manyString.html" title="">manyString</a>
+                        <a class="trait" href="definition$$manyString.html" title="Card-many String attribute."></a>
+                        <a href="definition$$manyString.html" title="Card-many String attribute.">manyString</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyURI$.html" title=""></a>
-                        <a class="trait" href="definition$$manyURI.html" title=""></a>
-                        <a href="definition$$manyURI.html" title="">manyURI</a>
+                        <a class="trait" href="definition$$manyURI.html" title="Card-many URI attribute."></a>
+                        <a href="definition$$manyURI.html" title="Card-many URI attribute.">manyURI</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$manyUUID$.html" title=""></a>
-                        <a class="trait" href="definition$$manyUUID.html" title=""></a>
-                        <a href="definition$$manyUUID.html" title="">manyUUID</a>
+                        <a class="trait" href="definition$$manyUUID.html" title="Card-many UUID attribute."></a>
+                        <a href="definition$$manyUUID.html" title="Card-many UUID attribute.">manyUUID</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapBigDecimal$.html" title=""></a>
-                        <a class="trait" href="definition$$mapBigDecimal.html" title=""></a>
-                        <a href="definition$$mapBigDecimal.html" title="">mapBigDecimal</a>
+                        <a class="trait" href="definition$$mapBigDecimal.html" title="BigDecimal map attribute."></a>
+                        <a href="definition$$mapBigDecimal.html" title="BigDecimal map attribute.">mapBigDecimal</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapBigInt$.html" title=""></a>
-                        <a class="trait" href="definition$$mapBigInt.html" title=""></a>
-                        <a href="definition$$mapBigInt.html" title="">mapBigInt</a>
+                        <a class="trait" href="definition$$mapBigInt.html" title="BigInt map attribute."></a>
+                        <a href="definition$$mapBigInt.html" title="BigInt map attribute.">mapBigInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapBoolean$.html" title=""></a>
-                        <a class="trait" href="definition$$mapBoolean.html" title=""></a>
-                        <a href="definition$$mapBoolean.html" title="">mapBoolean</a>
+                        <a class="trait" href="definition$$mapBoolean.html" title="Boolean map attribute."></a>
+                        <a href="definition$$mapBoolean.html" title="Boolean map attribute.">mapBoolean</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapByte$.html" title=""></a>
-                        <a class="trait" href="definition$$mapByte.html" title=""></a>
-                        <a href="definition$$mapByte.html" title="">mapByte</a>
+                        <a class="trait" href="definition$$mapByte.html" title="Bytes map attribute."></a>
+                        <a href="definition$$mapByte.html" title="Bytes map attribute.">mapByte</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapDate$.html" title=""></a>
-                        <a class="trait" href="definition$$mapDate.html" title=""></a>
-                        <a href="definition$$mapDate.html" title="">mapDate</a>
+                        <a class="trait" href="definition$$mapDate.html" title="Date map attribute."></a>
+                        <a href="definition$$mapDate.html" title="Date map attribute.">mapDate</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapDouble$.html" title=""></a>
-                        <a class="trait" href="definition$$mapDouble.html" title=""></a>
-                        <a href="definition$$mapDouble.html" title="">mapDouble</a>
+                        <a class="trait" href="definition$$mapDouble.html" title="Double map attribute."></a>
+                        <a href="definition$$mapDouble.html" title="Double map attribute.">mapDouble</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapFloat$.html" title=""></a>
-                        <a class="trait" href="definition$$mapFloat.html" title=""></a>
-                        <a href="definition$$mapFloat.html" title="">mapFloat</a>
+                        <a class="trait" href="definition$$mapFloat.html" title="Float map attribute."></a>
+                        <a href="definition$$mapFloat.html" title="Float map attribute.">mapFloat</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapInt$.html" title=""></a>
-                        <a class="trait" href="definition$$mapInt.html" title=""></a>
-                        <a href="definition$$mapInt.html" title="">mapInt</a>
+                        <a class="trait" href="definition$$mapInt.html" title="Int map attribute."></a>
+                        <a href="definition$$mapInt.html" title="Int map attribute.">mapInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapLong$.html" title=""></a>
-                        <a class="trait" href="definition$$mapLong.html" title=""></a>
-                        <a href="definition$$mapLong.html" title="">mapLong</a>
+                        <a class="trait" href="definition$$mapLong.html" title="Long map attribute."></a>
+                        <a href="definition$$mapLong.html" title="Long map attribute.">mapLong</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapString$.html" title=""></a>
-                        <a class="trait" href="definition$$mapString.html" title=""></a>
-                        <a href="definition$$mapString.html" title="">mapString</a>
+                        <a class="trait" href="definition$$mapString.html" title="String map attribute."></a>
+                        <a href="definition$$mapString.html" title="String map attribute.">mapString</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapURI$.html" title=""></a>
-                        <a class="trait" href="definition$$mapURI.html" title=""></a>
-                        <a href="definition$$mapURI.html" title="">mapURI</a>
+                        <a class="trait" href="definition$$mapURI.html" title="URI map attribute."></a>
+                        <a href="definition$$mapURI.html" title="URI map attribute.">mapURI</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$mapUUID$.html" title=""></a>
-                        <a class="trait" href="definition$$mapUUID.html" title=""></a>
-                        <a href="definition$$mapUUID.html" title="">mapUUID</a>
+                        <a class="trait" href="definition$$mapUUID.html" title="UUID map attribute."></a>
+                        <a href="definition$$mapUUID.html" title="UUID map attribute.">mapUUID</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="trait" href="definition$$number.html" title=""></a>
-                        <a href="definition$$number.html" title="">number</a>
+                        <a class="object" href="definition$$one$.html" title="Card-one reference."></a>
+                        <a href="definition$$one$.html" title="Card-one reference.">one</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="definition$$one$.html" title=""></a>
-                        <a href="definition$$one$.html" title="">one</a>
+                        <a class="object" href="definition$$oneBi$.html" title="Card-one bi-directional reference."></a>
+                        <a href="definition$$oneBi$.html" title="Card-one bi-directional reference.">oneBi</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="definition$$oneBi$.html" title=""></a>
-                        <a href="definition$$oneBi$.html" title="">oneBi</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="object" href="definition$$oneBiEdge$.html" title=""></a>
-                        <a href="definition$$oneBiEdge$.html" title="">oneBiEdge</a>
+                        <a class="object" href="definition$$oneBiEdge$.html" title="Card-one bi-directional edge reference."></a>
+                        <a href="definition$$oneBiEdge$.html" title="Card-one bi-directional edge reference.">oneBiEdge</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneBigDecimal$.html" title=""></a>
-                        <a class="trait" href="definition$$oneBigDecimal.html" title=""></a>
-                        <a href="definition$$oneBigDecimal.html" title="">oneBigDecimal</a>
+                        <a class="trait" href="definition$$oneBigDecimal.html" title="Card-one BigDecimal attribute."></a>
+                        <a href="definition$$oneBigDecimal.html" title="Card-one BigDecimal attribute.">oneBigDecimal</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneBigInt$.html" title=""></a>
-                        <a class="trait" href="definition$$oneBigInt.html" title=""></a>
-                        <a href="definition$$oneBigInt.html" title="">oneBigInt</a>
+                        <a class="trait" href="definition$$oneBigInt.html" title="Card-one BigInt attribute."></a>
+                        <a href="definition$$oneBigInt.html" title="Card-one BigInt attribute.">oneBigInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneBoolean$.html" title=""></a>
-                        <a class="trait" href="definition$$oneBoolean.html" title=""></a>
-                        <a href="definition$$oneBoolean.html" title="">oneBoolean</a>
+                        <a class="trait" href="definition$$oneBoolean.html" title="Card-one Boolean attribute."></a>
+                        <a href="definition$$oneBoolean.html" title="Card-one Boolean attribute.">oneBoolean</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneByte$.html" title=""></a>
-                        <a class="trait" href="definition$$oneByte.html" title=""></a>
-                        <a href="definition$$oneByte.html" title="">oneByte</a>
+                        <a class="trait" href="definition$$oneByte.html" title="Card-one Bytes attribute."></a>
+                        <a href="definition$$oneByte.html" title="Card-one Bytes attribute.">oneByte</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneDate$.html" title=""></a>
-                        <a class="trait" href="definition$$oneDate.html" title=""></a>
-                        <a href="definition$$oneDate.html" title="">oneDate</a>
+                        <a class="trait" href="definition$$oneDate.html" title="Card-one Date attribute."></a>
+                        <a href="definition$$oneDate.html" title="Card-one Date attribute.">oneDate</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneDouble$.html" title=""></a>
-                        <a class="trait" href="definition$$oneDouble.html" title=""></a>
-                        <a href="definition$$oneDouble.html" title="">oneDouble</a>
+                        <a class="trait" href="definition$$oneDouble.html" title="Card-one Double attribute."></a>
+                        <a href="definition$$oneDouble.html" title="Card-one Double attribute.">oneDouble</a>
                       </li><li class="current-entities indented3">
-                        <a class="object" href="definition$$oneEmail$.html" title=""></a>
-                        <a class="trait" href="definition$$oneEmail.html" title=""></a>
-                        <a href="definition$$oneEmail.html" title="">oneEmail</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
                         <a class="object" href="definition$$oneEnum$.html" title=""></a>
-                        <a href="definition$$oneEnum$.html" title="">oneEnum</a>
+                        <a class="trait" href="definition$$oneEnum.html" title="Card-one Enum attribute."></a>
+                        <a href="definition$$oneEnum.html" title="Card-one Enum attribute.">oneEnum</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneFloat$.html" title=""></a>
-                        <a class="trait" href="definition$$oneFloat.html" title=""></a>
-                        <a href="definition$$oneFloat.html" title="">oneFloat</a>
+                        <a class="trait" href="definition$$oneFloat.html" title="Card-one Float attribute."></a>
+                        <a href="definition$$oneFloat.html" title="Card-one Float attribute.">oneFloat</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneInt$.html" title=""></a>
-                        <a class="trait" href="definition$$oneInt.html" title=""></a>
-                        <a href="definition$$oneInt.html" title="">oneInt</a>
+                        <a class="trait" href="definition$$oneInt.html" title="Card-one Int attribute."></a>
+                        <a href="definition$$oneInt.html" title="Card-one Int attribute.">oneInt</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneLong$.html" title=""></a>
-                        <a class="trait" href="definition$$oneLong.html" title=""></a>
-                        <a href="definition$$oneLong.html" title="">oneLong</a>
+                        <a class="trait" href="definition$$oneLong.html" title="Card-one Long attribute."></a>
+                        <a href="definition$$oneLong.html" title="Card-one Long attribute.">oneLong</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneString$.html" title=""></a>
-                        <a class="trait" href="definition$$oneString.html" title=""></a>
-                        <a href="definition$$oneString.html" title="">oneString</a>
+                        <a class="trait" href="definition$$oneString.html" title="Card-one String attribute."></a>
+                        <a href="definition$$oneString.html" title="Card-one String attribute.">oneString</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneURI$.html" title=""></a>
-                        <a class="trait" href="definition$$oneURI.html" title=""></a>
-                        <a href="definition$$oneURI.html" title="">oneURI</a>
+                        <a class="trait" href="definition$$oneURI.html" title="Card-one URI attribute."></a>
+                        <a href="definition$$oneURI.html" title="Card-one URI attribute.">oneURI</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="definition$$oneUUID$.html" title=""></a>
-                        <a class="trait" href="definition$$oneUUID.html" title=""></a>
-                        <a href="definition$$oneUUID.html" title="">oneUUID</a>
+                        <a class="trait" href="definition$$oneUUID.html" title="Card-one UUID attribute."></a>
+                        <a href="definition$$oneUUID.html" title="Card-one UUID attribute.">oneUUID</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="object" href="definition$$target$.html" title=""></a>
-                        <a href="definition$$target$.html" title="">target</a>
+                        <a class="trait" href="definition$$optionBuilder.html" title="Attribute options."></a>
+                        <a href="definition$$optionBuilder.html" title="Attribute options.">optionBuilder</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="definition$$target$.html" title="Bi-directional edge target attribute."></a>
+                        <a href="definition$$target$.html" title="Bi-directional edge target attribute.">target</a>
                       </li>
               </ul>
             </div>
@@ -320,14 +428,16 @@
           <div id="content">
             <body class="object value">
       <div id="definition">
-        <div class="big-circle object">o</div>
+        <a href="definition$$manyEnum.html" title="See companion trait"><div class="big-circle object-companion-trait">o</div></a>
         <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.schema">schema</a>.<a href="definition$.html" class="extype" name="molecule.schema.definition">definition</a></p>
-        <h1>manyEnum<span class="permalink">
+        <h1><a href="definition$$manyEnum.html" title="See companion trait">manyEnum</a><span class="permalink">
       <a href="../../molecule/schema/definition$$manyEnum$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="definition$$manyEnum.html" title="See companion trait">trait manyEnum</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -336,16 +446,16 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">manyEnum</span><span class="result"> extends <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
+        <span class="name">manyEnum</span><span class="result"> extends <a href="definition$$manyEnum.html" class="extype" name="molecule.schema.definition.manyEnum">manyEnum</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/schema/definition.scala#L1" target="_blank">definition.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="molecule.schema.definition.enum">enum</span>, <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<span class="extype" name="molecule.schema.definition.enum">enum</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="definition$$manyEnum.html" class="extype" name="molecule.schema.definition.manyEnum">manyEnum</a>, <span class="extype" name="molecule.schema.definition.enum">enum</span>, <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<span class="extype" name="molecule.schema.definition.enum">enum</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -371,7 +481,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.schema.definition.manyEnum"><span>manyEnum</span></li><li class="in" name="molecule.schema.definition.enum"><span>enum</span></li><li class="in" name="molecule.schema.definition.scalarAttr"><span>scalarAttr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.schema.definition.manyEnum"><span>manyEnum</span></li><li class="in" name="molecule.schema.definition.manyEnum"><span>manyEnum</span></li><li class="in" name="molecule.schema.definition.enum"><span>enum</span></li><li class="in" name="molecule.schema.definition.optionBuilder"><span>optionBuilder</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -502,7 +612,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="molecule.schema.definition.scalarAttr#doc" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="molecule.schema.definition.optionBuilder#doc" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="doc(s:String):Nothing"></a><a id="doc(String):Nothing"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$$manyEnum$.html#doc(s:String):Nothing" title="Permalink">
@@ -517,7 +627,7 @@
         <span class="name">doc</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Nothing">Nothing</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>scalarAttr</dd></dl></div>
+      <p class="shortcomment cmt">Attribute description.</p><div class="fullcomment"><div class="comment cmt"><p>Attribute description.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -610,10 +720,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="molecule.schema.definition.scalarAttr#indexed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="indexed:Builder"></a><a id="indexed:enum"></a>
+    </li><li name="molecule.schema.definition.optionBuilder#indexed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="indexed:Self"></a><a id="indexed:enum"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$$manyEnum$.html#indexed:Builder" title="Permalink">
+      <a href="../../molecule/schema/definition$$manyEnum$.html#indexed:Self" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -625,7 +735,11 @@
         <span class="name">indexed</span><span class="result">: <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>scalarAttr</dd></dl></div>
+      <p class="shortcomment cmt">Indexed option (defaults to true).</p><div class="fullcomment"><div class="comment cmt"><p>Indexed option (defaults to true).
+<br><br>
+Generated index for this attribute. By default all attributes are set with
+the indexed option automatically by Molecule, so you don't need to set this.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -658,10 +772,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="molecule.schema.definition.scalarAttr#noHistory" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="noHistory:Builder"></a><a id="noHistory:enum"></a>
+    </li><li name="molecule.schema.definition.optionBuilder#noHistory" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="noHistory:Self"></a><a id="noHistory:enum"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$$manyEnum$.html#noHistory:Builder" title="Permalink">
+      <a href="../../molecule/schema/definition$$manyEnum$.html#noHistory:Self" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -673,7 +787,7 @@
         <span class="name">noHistory</span><span class="result">: <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>scalarAttr</dd></dl></div>
+      <p class="shortcomment cmt">No history option.</p><div class="fullcomment"><div class="comment cmt"><p>No history option.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a></dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
@@ -744,7 +858,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="molecule.schema.definition.scalarAttr#uniqueIdentity" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="molecule.schema.definition.optionBuilder#uniqueIdentity" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="uniqueIdentity:molecule.schema.definition.oneString"></a><a id="uniqueIdentity:oneString"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$$manyEnum$.html#uniqueIdentity:molecule.schema.definition.oneString" title="Permalink">
@@ -759,8 +873,15 @@
         <span class="name">uniqueIdentity</span><span class="result">: <a href="definition$$oneString.html" class="extype" name="molecule.schema.definition.oneString">oneString</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>scalarAttr</dd></dl></div>
-    </li><li name="molecule.schema.definition.scalarAttr#uniqueValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Unique identity option.</p><div class="fullcomment"><div class="comment cmt"><p>Unique identity option.
+<br><br>
+Attribute value is unique to each entity and &quot;upsert&quot; is enabled.
+<br><br>
+Attempts to insert a duplicate value for a temporary entity id will cause all
+attributes associated with that temporary id to be merged with the entity
+already in the database.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a></dd></dl></div>
+    </li><li name="molecule.schema.definition.optionBuilder#uniqueValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="uniqueValue:molecule.schema.definition.oneString"></a><a id="uniqueValue:oneString"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$$manyEnum$.html#uniqueValue:molecule.schema.definition.oneString" title="Permalink">
@@ -775,7 +896,12 @@
         <span class="name">uniqueValue</span><span class="result">: <a href="definition$$oneString.html" class="extype" name="molecule.schema.definition.oneString">oneString</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>scalarAttr</dd></dl></div>
+      <p class="shortcomment cmt">Unique value option.</p><div class="fullcomment"><div class="comment cmt"><p>Unique value option.
+<br><br>
+Attribute value is unique to each entity.
+<br><br>
+Attempts to insert a duplicate value for a different entity id will fail.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -854,10 +980,12 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="molecule.schema.definition.enum">
+        <div class="parent" name="molecule.schema.definition.manyEnum">
+              <h3>Inherited from <a href="definition$$manyEnum.html" class="extype" name="molecule.schema.definition.manyEnum">manyEnum</a></h3>
+            </div><div class="parent" name="molecule.schema.definition.enum">
               <h3>Inherited from <span class="extype" name="molecule.schema.definition.enum">enum</span></h3>
-            </div><div class="parent" name="molecule.schema.definition.scalarAttr">
-              <h3>Inherited from <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<span class="extype" name="molecule.schema.definition.enum">enum</span>]</h3>
+            </div><div class="parent" name="molecule.schema.definition.optionBuilder">
+              <h3>Inherited from <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<span class="extype" name="molecule.schema.definition.enum">enum</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

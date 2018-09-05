@@ -4,7 +4,7 @@ title: "Community"
 weight: 33
 menu:
   main:
-    identifier: communityx
+    parent: community
 ---
 
 # Community

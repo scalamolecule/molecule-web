@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0</title>
+          <meta name="description" content="Molecule 0.14.0" />
+          <meta name="keywords" content="Molecule 0.14.0" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="lib/scheduler.js"></script>
       <script type="text/javascript" src="lib/template.js"></script>
       <script type="text/javascript" src="lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="lib/modernizr.custom.js"></script><script type="text/javascript" src="lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,8 +68,11 @@
         <span class="name">root</span>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="molecule/schema/index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="molecule/facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="molecule/imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="molecule/action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="molecule/entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="molecule/exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="molecule/schema/index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="molecule/facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="molecule/imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="molecule/entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="molecule/action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="molecule/exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div></div>
-    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
       <a href="index.html#molecule" title="Permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="molecule/index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="molecule/index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="molecule/package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div></div>
     </li>
               </ul>
             </div>
@@ -113,7 +180,10 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="molecule/schema/index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="molecule/facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="molecule/imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="molecule/action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="molecule/entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="molecule/exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="molecule/schema/index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="molecule/facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="molecule/imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="molecule/composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="molecule/entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="molecule/action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="molecule/exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div></div>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div></div>
         
 
       

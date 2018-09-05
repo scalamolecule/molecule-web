@@ -5,15 +5,15 @@ weight: 70
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud/update
-next: /docs/transactions
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud/update
+next: /manual/transactions
+down: /manual/transactions
 ---
 
 # Retract data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/manipulation/Retract.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Retract.scala)
 
 
 ### Retract facts
@@ -45,7 +45,7 @@ retract(fredId)
 This `retract` method can also retract multiple entities
 
 ```scala
-val eids: Iterable[Long] = // some entity ids 
+val eids: List[Long] = // some entity ids 
 
 // Retract all supplied entity ids
 retract(eids)
@@ -87,4 +87,4 @@ was retracted - and so on down the hierarchy of subcomponents.
 
 ### Next
 
-[Transactions...](/docs/transactions)
+[Transactions...](/manual/transactions)

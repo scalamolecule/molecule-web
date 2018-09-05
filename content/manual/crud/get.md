@@ -5,24 +5,24 @@ weight: 40
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud/composite-insert
-next: /docs/crud/getJson
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud/composite-insert
+next: /manual/crud/getJson
+down: /manual/transactions
 ---
 
 # Get (read) Data
 
-We get/read data from the database by calling `get` on a molecule. This returns an `Iterable` of tuples that match 
+We get/read data from the database by calling `get` on a molecule. This returns a `List` of tuples that match 
 the molecule attributes (except for arity-1):
  
 
 ```scala
-val persons1attr: Iterable[String] = Person.name.get
+val persons1attr: List[String] = Person.name.get
 
-val persons2attrs: Iterable[(String, Int)] = Person.name.age.get
+val persons2attrs: List[(String, Int)] = Person.name.age.get
 
-val persons3attrs: Iterable[(String, Int, String)] = Person.name.age.likes.get
+val persons3attrs: List[(String, Int, String)] = Person.name.age.likes.get
 
 // Etc.. to arity 22
 ```
@@ -32,7 +32,7 @@ val persons3attrs: Iterable[(String, Int, String)] = Person.name.age.likes.get
 Attributes of some entity are easily fetched by applying an entity id to the first namespace in the molecule 
  
 ```scala
-Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza") // (Iterable implicitly converted to List
+Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza")
 ```
 The entity id is used for the first attribute of the molecule, here `name` having entity id `fredId`. 
 
@@ -42,7 +42,7 @@ The entity id is used for the first attribute of the molecule, here `name` havin
 
 The more attributes a molecule has, the longer it takes to compile. Once we get over 14-16 attributes we might start seeing compilation 
 slowing down depending on our hardware. There's an easy trick to split up large molecules into
-[composite](/docs/relationships/composites/) molecules consisting of smaller sub-molecules:
+[composite](/manual/relationships/composites/) molecules consisting of smaller sub-molecules:
  
 ```scala
 // Tough on the compiler
@@ -89,10 +89,10 @@ ask for optional data (`likes`) for each entity:
 
 ```scala
 // Step 1
-val seed: Iterable[(Long, String, Int)] = Person.e.name.age.get
+val seed: List[(Long, String, Int)] = Person.e.name.age.get
 
 // Step 2
-val data: Iterable[(String, Int, Option[String])] = seed.map { case (e, name, age) =>
+val data: List[(String, Int, Option[String])] = seed.map { case (e, name, age) =>
   // Add optional `likes` value via entity api
   (name, age, e[String](":person/likes"))
 }
@@ -108,7 +108,7 @@ can get raw data from a Datomic query by calling `getRaw` on a molecule:
 
 
 ```scala
-val rawData: Iterable[java.util.List[Object]] = Person.name.age.likes.getRaw
+val rawData: java.util.Collection[java.util.List[Object]] = Person.name.age.likes.getRaw
          //    rows         row      attrs
 ```
 
@@ -116,4 +116,4 @@ val rawData: Iterable[java.util.List[Object]] = Person.name.age.likes.getRaw
 
 ### Next
 
-[Get Json...](/docs/crud/getjson)
+[Get Json...](/manual/crud/getjson)

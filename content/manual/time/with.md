@@ -6,9 +6,9 @@ menu:
   main:
     parent: time
     identifier: with
-up:   /docs/time
-prev: /docs/time/history
-next: /docs/time/testing
+up:   /manual/time
+prev: /manual/time/history
+next: /manual/time/testing
 ---
 
 # With
@@ -32,18 +32,21 @@ Person.name.likes.getWith(<tx8Data>) === ... // Persons after applying tx8
 To make it easier to supply transaction data to the `getWith(txData)` method, you can simply add `Tx` to a
 Molecule transaction function to get some valid transaction data:
 
+Transaction data is supplied to `getWith(txData)` by calling a transaction data getter on a molecule:
+
 ```scala
-Person(fred).likes("sushi").updateTx === List(
+Person(fred).likes("sushi").getUpdateTx === List(
   [:db/retract, 17592186045445, :person/likes, "pasta"]
   [:db/add    , 17592186045445, :person/likes, "sushi"]
 ) 
 ```
-`updateTx` returns transaction data that we can apply to `getWith(txData)` to answer the question
+`getUpdateTx` returns the transaction data that would have been used to update Fred. In that way we
+can supply this data to the `getWith(txData)` method to answer the question _"What if we updated Fred?"_. 
 
-_"What if we updated Fred?"_
+When getting the transaction data from a simulated molecule transaction like this, we call it a "transaction molecule":
 ```scala
 Person.name.likes.getWith(
-  Person(fred).likes("sushi").updateTx // "Transaction molecule" with tx8 data
+  Person(fred).likes("sushi").getUpdateTx // "Transaction molecule" with tx8 data
 ) === List(
   ("Fred", "sushi") // Expected result if applying tx8
 )
@@ -54,23 +57,29 @@ Fred will remain unaffected in the live database after `getWith(tx8)` has been c
 ```scala
 Person.name.likes.get.head === ("Fred", "pasta") 
 ```
+The `getWith(txData)` works on a "branch" of the database and is automatically garbage collected. So there is no need to 
+set up and tear down database mockups!
 
 
-### Transaction molecules
+### 4 transaction data getters
 
-We can create transaction data by appending `Tx` to any Molecule transaction function. We call molecules used
-this way "transaction molecules" and we can apply multiple to the `getWith(txData)` function:
+We can generate transaction data by simulating any of the 4 transaction functions we have available in Molecule:
+
+- `getInsertTx`
+- `getSaveTx`
+- `getUpdateTx`
+- `getRetractTx`
 
 ```scala
 Person.name.age.getWith(
   // Transaction molecules:
-  Person.name("John").age(44).saveTx, // John saved
-  Person.name.age insertTx List(
+  Person.name("John").age(44).getSaveTx, // John saved
+  Person.name.age getInsertTx List(   // Get insert tx with supplied data
     ("Lisa", 23),                     // Lisa and Pete inserted
     ("Pete", 24)
   ),
-  Person(fred).age(43).updateTx,      // Fred updated
-  someOtherPerson.retractTx           // Some other person retracted (using id)    
+  Person(fred).age(43).getUpdateTx,   // Fred updated
+  someOtherPersonId.getRetractTx      // Some other person retracted (using id)    
 ) === List(
   // Expected result
   ("John", 44), // Saved
@@ -80,19 +89,20 @@ Person.name.age.getWith(
   // (other person retracted)
 )
 ```
-This allow us to test any complexity of transactions.
+This allow us to test any transactions and build complex "what-if" test scenarios without affecting our
+live database. 
 
 
 ### Modularizing tx data
 
-Saving transaction molecules in variables can help us modularize tests where we could for instance
-be interested in seeing if the various orders of transactions will produce the same result:
+Assigning transaction molecules to variables can help us modularize tests where we could for instance
+be interested in seeing if various orders of transactions will produce the same result:
 
 ```scala
-val save1    = Person.name("John").age(44).saveTx
-val insert2  = Person.name.age insertTx List(("Lisa", 23), ("Pete", 24))
-val update1  = Person(fred).age(43).updateTx
-val retract1 = someOtherPerson.retractTx
+val save    = Person.name("John").age(44).getSaveTx
+val insert  = Person.name.age getInsertTx List(("Lisa", 23), ("Pete", 24))
+val update  = Person(fred).age(43).getUpdateTx
+val retract = someOtherPersonId.getRetractTx
     
 val expectedResult = List(
     ("John", 44),
@@ -101,12 +111,12 @@ val expectedResult = List(
     ("Fred", 43) 
 )     
     
-Person.name.age.getWith(save1, insert2, update1, retract1) === expectedResult 
-Person.name.age.getWith(insert2, update1, retract1, save1) === expectedResult
+Person.name.age.getWith(save, insert, update, retract) === expectedResult 
+Person.name.age.getWith(insert, update, retract, save) === expectedResult
 // etc..
 ```
-Since you can apply any number of transaction molecules the testing options are extremely powerful.
+Since you can apply any number of transaction molecules, the testing options are extremely powerful.
 
 ### Next
 
-[Testing...](/docs/time/testing/)
+[Testing...](/manual/time/testing/)

@@ -5,10 +5,10 @@ weight: 30
 menu:
   main:
     parent: attributes
-up: /docs/attributes
-prev: /docs/attributes/modes
-next: /docs/attributes/expressions
-down: /docs/entities
+up: /manual/attributes
+prev: /manual/attributes/modes
+next: /manual/attributes/expressions
+down: /manual/entities
 ---
 
 # Map Attributes
@@ -37,7 +37,7 @@ Person.id.name.insert(
 )
 
 // Retrieve mapped data
-Person.id.name.get.head=== (1, 
+Person.id.name.get.head === (1, 
   Map(
     "en" -> "Dmitri Shostakovich",
     "de" -> "Dmitri Schostakowitsch",
@@ -59,4 +59,4 @@ the [`attrMap` test cases](https://github.com/scalamolecule/molecule/tree/master
 
 ### Next
 
-[Attribute expressions...](/docs/attributes/expressions)
+[Attribute expressions...](/manual/attributes/expressions)

@@ -6,8 +6,8 @@ menu:
   main:
     parent: time
     identifier: testing
-up:   /docs/time
-prev: /docs/time/with
+up:   /manual/time
+prev: /manual/time/with
 ---
 
 # Testing

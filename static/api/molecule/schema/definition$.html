@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0 - molecule.schema.definition</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.schema.definition" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.schema.definition" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,7 +68,10 @@
         <a title="" href="../../index.html"><span class="name">root</span></a>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p><div class="fullcomment"><div class="comment cmt"><p>Molecule package</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="molecule.schema" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="schema"></a><a id="schema:schema"></a>
       <span class="permalink">
@@ -97,14 +164,18 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">schema</span></a>
+        <a title="Schema definition DSL and API." href="index.html"><span class="name">schema</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Schema definition DSL and API.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL and API.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">definition</a>
+                        <a class="trait" href="SchemaTransaction.html" title="Schema transaction interface for auto-generated schema transaction data."></a>
+                        <a href="SchemaTransaction.html" title="Schema transaction interface for auto-generated schema transaction data.">SchemaTransaction</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="object" href="" title="Schema definition DSL."></a>
+                        <a href="" title="Schema definition DSL.">definition</a>
                       </li>
               </ul>
             </div>
@@ -133,12 +204,71 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Schema definition DSL.
+<br><br>
+Define Datomic database schema in a Schema Definition file.
+<br><br>
+For small projects, the schema can be defined without partition definitions where
+all namespaces reside in a default tacit partition:</p><pre><span class="kw">package</span> path.to.your.project
+<span class="kw">import</span> molecule.schema.definition._       <span class="cmt">// import schema definition DSL</span>
+
+@InOut(<span class="num">1</span>, <span class="num">8</span>)                              <span class="cmt">// Set input/output arity</span>
+<span class="kw">object</span> SeattleDefinition {                <span class="cmt">// Schema definition object</span>
+
+  <span class="kw">trait</span> Person {                          <span class="cmt">// Namespace</span>
+    <span class="kw">val</span> name = oneString.fulltextSearch   <span class="cmt">// String attribute definition with fulltext search</span>
+    <span class="kw">val</span> age  = oneInt                     <span class="cmt">// Int attribute definition</span>
+  }
+
+  <span class="cmt">// Additional namespaces...</span>
+}</pre><p>For larger projects, it is recommended to group namespaces in partitions:</p><pre><span class="kw">package</span> path.to.your.project
+<span class="kw">import</span> molecule.schema.definition._
+
+@InOut(<span class="num">3</span>, <span class="num">15</span>)
+<span class="kw">object</span> SeattleDefinition {
+
+  <span class="kw">object</span> customer {
+    <span class="kw">trait</span> Person {
+      <span class="kw">val</span> name    = oneString.fulltextSearch
+      <span class="kw">val</span> age     = oneInt
+      <span class="kw">val</span> address = one[Address]
+      <span class="kw">val</span> bought  = many[products.Item]
+    }
+    <span class="kw">trait</span> Address {
+      <span class="kw">val</span> street = oneString.fulltextSearch
+      <span class="kw">val</span> city   = oneInt
+    }
+    <span class="cmt">// ..more namespaces in the `customer` partition</span>
+  }
+
+  <span class="kw">object</span> products {
+    <span class="kw">trait</span> Item {
+      <span class="kw">val</span> title   = oneString
+      <span class="kw">val</span> inStock = oneInt
+    }
+    <span class="cmt">// ..more namespaces in the `products` partition</span>
+  }
+
+  <span class="cmt">// Additional partitions...</span>
+}</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/schema/definition.scala#L1" target="_blank">definition.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/schema/" target="_blank">Manual</a>
+    | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/util/schema/CoreTestDefinition.scala" target="_blank">Schema without partitions</a>,
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/schemaDef/schema/PartitionTestDefinition.scala" target="_blank">Schema with partitions</a>,
+    <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/bidirectionals" target="_blank">Bidirectionals</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 3739.00 158.00" height="158pt" width="3739pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 3735,-154 3735,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node object" id="graph1_0"><g id="a_object|graph1_0"><a xlink:title="molecule.schema.definition.manyEnum" xlink:href="definition$$manyEnum$.html#inheritance-diagram"><path d="M75.3333,-88C75.3333,-88 8.66667,-88 8.66667,-88 4.33333,-88 0,-83.6667 0,-79.3333 0,-79.3333 0,-70.6667 0,-70.6667 0,-66.3333 4.33333,-62 8.66667,-62 8.66667,-62 75.3333,-62 75.3333,-62 79.6667,-62 84,-66.3333 84,-70.6667 84,-70.6667 84,-79.3333 84,-79.3333 84,-83.6667 79.6667,-88 75.3333,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="31.6582" text-anchor="start">manyEnum</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.schema.definition.manyEnum" xlink:href="definition$$manyEnum.html#inheritance-diagram"><path d="M75.3333,-150C75.3333,-150 8.66667,-150 8.66667,-150 4.33333,-150 0,-145.667 0,-141.333 0,-141.333 0,-132.667 0,-132.667 0,-128.333 4.33333,-124 8.66667,-124 8.66667,-124 75.3333,-124 75.3333,-124 79.6667,-124 84,-128.333 84,-132.667 84,-132.667 84,-141.333 84,-141.333 84,-145.667 79.6667,-150 75.3333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="31.6582" text-anchor="start">manyEnum</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="manyEnum is a subtype of manyEnum"><path d="M42,-116.753C42,-107.355 42,-96.3336 42,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="39.5501,-116.858 42,-123.858 44.4501,-116.858 39.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node object" id="graph1_2"><g id="a_object|graph1_2"><a xlink:title="molecule.schema.definition.oneEnum" xlink:href="definition$$oneEnum$.html#inheritance-diagram"><path d="M171.333,-88C171.333,-88 110.667,-88 110.667,-88 106.333,-88 102,-83.6667 102,-79.3333 102,-79.3333 102,-70.6667 102,-70.6667 102,-66.3333 106.333,-62 110.667,-62 110.667,-62 171.333,-62 171.333,-62 175.667,-62 180,-66.3333 180,-70.6667 180,-70.6667 180,-79.3333 180,-79.3333 180,-83.6667 175.667,-88 171.333,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="114" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="133.766" text-anchor="start">oneEnum</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.schema.definition.oneEnum" xlink:href="definition$$oneEnum.html#inheritance-diagram"><path d="M171.333,-150C171.333,-150 110.667,-150 110.667,-150 106.333,-150 102,-145.667 102,-141.333 102,-141.333 102,-132.667 102,-132.667 102,-128.333 106.333,-124 110.667,-124 110.667,-124 171.333,-124 171.333,-124 175.667,-124 180,-128.333 180,-132.667 180,-132.667 180,-141.333 180,-141.333 180,-145.667 175.667,-150 171.333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="114" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="133.766" text-anchor="start">oneEnum</text></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="oneEnum is a subtype of oneEnum"><path d="M141,-116.753C141,-107.355 141,-96.3336 141,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="138.55,-116.858 141,-123.858 143.45,-116.858 138.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node object" id="graph1_4"><g id="a_object|graph1_4"><a xlink:title="molecule.schema.definition.mapByte" xlink:href="definition$$mapByte$.html#inheritance-diagram"><path d="M264.583,-26C264.583,-26 207.417,-26 207.417,-26 203.083,-26 198.75,-21.6667 198.75,-17.3333 198.75,-17.3333 198.75,-8.66667 198.75,-8.66667 198.75,-4.33333 203.083,-0 207.417,-0 207.417,-0 264.583,-0 264.583,-0 268.917,-0 273.25,-4.33333 273.25,-8.66667 273.25,-8.66667 273.25,-17.3333 273.25,-17.3333 273.25,-21.6667 268.917,-26 264.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="211" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="230.604" text-anchor="start">mapByte</text></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.schema.definition.mapByte" xlink:href="definition$$mapByte.html#inheritance-diagram"><path d="M264.583,-88C264.583,-88 207.417,-88 207.417,-88 203.083,-88 198.75,-83.6667 198.75,-79.3333 198.75,-79.3333 198.75,-70.6667 198.75,-70.6667 198.75,-66.3333 203.083,-62 207.417,-62 207.417,-62 264.583,-62 264.583,-62 268.917,-62 273.25,-66.3333 273.25,-70.6667 273.25,-70.6667 273.25,-79.3333 273.25,-79.3333 273.25,-83.6667 268.917,-88 264.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="211" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="230.604" text-anchor="start">mapByte</text></a></g></g><!-- node5&#45;&gt;node4 --><g class="edge inheritance" id="graph1_5_4"><g id="a_inheritance|graph1_5_4"><a xlink:title="mapByte is a subtype of mapByte"><path d="M236,-54.7534C236,-45.3549 236,-34.3336 236,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="233.55,-54.8581 236,-61.8581 238.45,-54.8581 233.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node object" id="graph1_6"><g id="a_object|graph1_6"><a xlink:title="molecule.schema.definition.manyByte" xlink:href="definition$$manyByte$.html#inheritance-diagram"><path d="M361.583,-26C361.583,-26 300.417,-26 300.417,-26 296.083,-26 291.75,-21.6667 291.75,-17.3333 291.75,-17.3333 291.75,-8.66667 291.75,-8.66667 291.75,-4.33333 296.083,-0 300.417,-0 300.417,-0 361.583,-0 361.583,-0 365.917,-0 370.25,-4.33333 370.25,-8.66667 370.25,-8.66667 370.25,-17.3333 370.25,-17.3333 370.25,-21.6667 365.917,-26 361.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="304" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="323.604" text-anchor="start">manyByte</text></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.schema.definition.manyByte" xlink:href="definition$$manyByte.html#inheritance-diagram"><path d="M361.583,-88C361.583,-88 300.417,-88 300.417,-88 296.083,-88 291.75,-83.6667 291.75,-79.3333 291.75,-79.3333 291.75,-70.6667 291.75,-70.6667 291.75,-66.3333 296.083,-62 300.417,-62 300.417,-62 361.583,-62 361.583,-62 365.917,-62 370.25,-66.3333 370.25,-70.6667 370.25,-70.6667 370.25,-79.3333 370.25,-79.3333 370.25,-83.6667 365.917,-88 361.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="304" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="323.604" text-anchor="start">manyByte</text></a></g></g><!-- node7&#45;&gt;node6 --><g class="edge inheritance" id="graph1_7_6"><g id="a_inheritance|graph1_7_6"><a xlink:title="manyByte is a subtype of manyByte"><path d="M331,-54.7534C331,-45.3549 331,-34.3336 331,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="328.55,-54.8581 331,-61.8581 333.45,-54.8581 328.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node object" id="graph1_8"><g id="a_object|graph1_8"><a xlink:title="molecule.schema.definition.oneByte" xlink:href="definition$$oneByte$.html#inheritance-diagram"><path d="M452.583,-26C452.583,-26 397.417,-26 397.417,-26 393.083,-26 388.75,-21.6667 388.75,-17.3333 388.75,-17.3333 388.75,-8.66667 388.75,-8.66667 388.75,-4.33333 393.083,-0 397.417,-0 397.417,-0 452.583,-0 452.583,-0 456.917,-0 461.25,-4.33333 461.25,-8.66667 461.25,-8.66667 461.25,-17.3333 461.25,-17.3333 461.25,-21.6667 456.917,-26 452.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="401" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="420.711" text-anchor="start">oneByte</text></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="molecule.schema.definition.oneByte" xlink:href="definition$$oneByte.html#inheritance-diagram"><path d="M452.583,-88C452.583,-88 397.417,-88 397.417,-88 393.083,-88 388.75,-83.6667 388.75,-79.3333 388.75,-79.3333 388.75,-70.6667 388.75,-70.6667 388.75,-66.3333 393.083,-62 397.417,-62 397.417,-62 452.583,-62 452.583,-62 456.917,-62 461.25,-66.3333 461.25,-70.6667 461.25,-70.6667 461.25,-79.3333 461.25,-79.3333 461.25,-83.6667 456.917,-88 452.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="401" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="420.711" text-anchor="start">oneByte</text></a></g></g><!-- node9&#45;&gt;node8 --><g class="edge inheritance" id="graph1_9_8"><g id="a_inheritance|graph1_9_8"><a xlink:title="oneByte is a subtype of oneByte"><path d="M425,-54.7534C425,-45.3549 425,-34.3336 425,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="422.55,-54.8581 425,-61.8581 427.45,-54.8581 422.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node object" id="graph1_10"><g id="a_object|graph1_10"><a xlink:title="molecule.schema.definition.mapURI" xlink:href="definition$$mapURI$.html#inheritance-diagram"><path d="M543.583,-26C543.583,-26 488.417,-26 488.417,-26 484.083,-26 479.75,-21.6667 479.75,-17.3333 479.75,-17.3333 479.75,-8.66667 479.75,-8.66667 479.75,-4.33333 484.083,-0 488.417,-0 488.417,-0 543.583,-0 543.583,-0 547.917,-0 552.25,-4.33333 552.25,-8.66667 552.25,-8.66667 552.25,-17.3333 552.25,-17.3333 552.25,-21.6667 547.917,-26 543.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="492" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="511.719" text-anchor="start">mapURI</text></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="molecule.schema.definition.mapURI" xlink:href="definition$$mapURI.html#inheritance-diagram"><path d="M543.583,-88C543.583,-88 488.417,-88 488.417,-88 484.083,-88 479.75,-83.6667 479.75,-79.3333 479.75,-79.3333 479.75,-70.6667 479.75,-70.6667 479.75,-66.3333 484.083,-62 488.417,-62 488.417,-62 543.583,-62 543.583,-62 547.917,-62 552.25,-66.3333 552.25,-70.6667 552.25,-70.6667 552.25,-79.3333 552.25,-79.3333 552.25,-83.6667 547.917,-88 543.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="492" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="511.719" text-anchor="start">mapURI</text></a></g></g><!-- node11&#45;&gt;node10 --><g class="edge inheritance" id="graph1_11_10"><g id="a_inheritance|graph1_11_10"><a xlink:title="mapURI is a subtype of mapURI"><path d="M516,-54.7534C516,-45.3549 516,-34.3336 516,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="513.55,-54.8581 516,-61.8581 518.45,-54.8581 513.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node object" id="graph1_12"><g id="a_object|graph1_12"><a xlink:title="molecule.schema.definition.manyURI" xlink:href="definition$$manyURI$.html#inheritance-diagram"><path d="M638.583,-26C638.583,-26 579.417,-26 579.417,-26 575.083,-26 570.75,-21.6667 570.75,-17.3333 570.75,-17.3333 570.75,-8.66667 570.75,-8.66667 570.75,-4.33333 575.083,-0 579.417,-0 579.417,-0 638.583,-0 638.583,-0 642.917,-0 647.25,-4.33333 647.25,-8.66667 647.25,-8.66667 647.25,-17.3333 647.25,-17.3333 647.25,-21.6667 642.917,-26 638.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="583" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="602.719" text-anchor="start">manyURI</text></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="molecule.schema.definition.manyURI" xlink:href="definition$$manyURI.html#inheritance-diagram"><path d="M638.583,-88C638.583,-88 579.417,-88 579.417,-88 575.083,-88 570.75,-83.6667 570.75,-79.3333 570.75,-79.3333 570.75,-70.6667 570.75,-70.6667 570.75,-66.3333 575.083,-62 579.417,-62 579.417,-62 638.583,-62 638.583,-62 642.917,-62 647.25,-66.3333 647.25,-70.6667 647.25,-70.6667 647.25,-79.3333 647.25,-79.3333 647.25,-83.6667 642.917,-88 638.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="583" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="602.719" text-anchor="start">manyURI</text></a></g></g><!-- node13&#45;&gt;node12 --><g class="edge inheritance" id="graph1_13_12"><g id="a_inheritance|graph1_13_12"><a xlink:title="manyURI is a subtype of manyURI"><path d="M609,-54.7534C609,-45.3549 609,-34.3336 609,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="606.55,-54.8581 609,-61.8581 611.45,-54.8581 606.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node object" id="graph1_14"><g id="a_object|graph1_14"><a xlink:title="molecule.schema.definition.oneURI" xlink:href="definition$$oneURI$.html#inheritance-diagram"><path d="M727.583,-26C727.583,-26 674.417,-26 674.417,-26 670.083,-26 665.75,-21.6667 665.75,-17.3333 665.75,-17.3333 665.75,-8.66667 665.75,-8.66667 665.75,-4.33333 670.083,-0 674.417,-0 674.417,-0 727.583,-0 727.583,-0 731.917,-0 736.25,-4.33333 736.25,-8.66667 736.25,-8.66667 736.25,-17.3333 736.25,-17.3333 736.25,-21.6667 731.917,-26 727.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="678" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="697.826" text-anchor="start">oneURI</text></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="molecule.schema.definition.oneURI" xlink:href="definition$$oneURI.html#inheritance-diagram"><path d="M727.583,-88C727.583,-88 674.417,-88 674.417,-88 670.083,-88 665.75,-83.6667 665.75,-79.3333 665.75,-79.3333 665.75,-70.6667 665.75,-70.6667 665.75,-66.3333 670.083,-62 674.417,-62 674.417,-62 727.583,-62 727.583,-62 731.917,-62 736.25,-66.3333 736.25,-70.6667 736.25,-70.6667 736.25,-79.3333 736.25,-79.3333 736.25,-83.6667 731.917,-88 727.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="678" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="697.826" text-anchor="start">oneURI</text></a></g></g><!-- node15&#45;&gt;node14 --><g class="edge inheritance" id="graph1_15_14"><g id="a_inheritance|graph1_15_14"><a xlink:title="oneURI is a subtype of oneURI"><path d="M701,-54.7534C701,-45.3549 701,-34.3336 701,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="698.55,-54.8581 701,-61.8581 703.45,-54.8581 698.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node16 --><g class="node object" id="graph1_16"><g id="a_object|graph1_16"><a xlink:title="molecule.schema.definition.mapUUID" xlink:href="definition$$mapUUID$.html#inheritance-diagram"><path d="M824.583,-26C824.583,-26 763.417,-26 763.417,-26 759.083,-26 754.75,-21.6667 754.75,-17.3333 754.75,-17.3333 754.75,-8.66667 754.75,-8.66667 754.75,-4.33333 759.083,-0 763.417,-0 763.417,-0 824.583,-0 824.583,-0 828.917,-0 833.25,-4.33333 833.25,-8.66667 833.25,-8.66667 833.25,-17.3333 833.25,-17.3333 833.25,-21.6667 828.917,-26 824.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="767" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="786.83" text-anchor="start">mapUUID</text></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="molecule.schema.definition.mapUUID" xlink:href="definition$$mapUUID.html#inheritance-diagram"><path d="M824.583,-88C824.583,-88 763.417,-88 763.417,-88 759.083,-88 754.75,-83.6667 754.75,-79.3333 754.75,-79.3333 754.75,-70.6667 754.75,-70.6667 754.75,-66.3333 759.083,-62 763.417,-62 763.417,-62 824.583,-62 824.583,-62 828.917,-62 833.25,-66.3333 833.25,-70.6667 833.25,-70.6667 833.25,-79.3333 833.25,-79.3333 833.25,-83.6667 828.917,-88 824.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="767" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="786.83" text-anchor="start">mapUUID</text></a></g></g><!-- node17&#45;&gt;node16 --><g class="edge inheritance" id="graph1_17_16"><g id="a_inheritance|graph1_17_16"><a xlink:title="mapUUID is a subtype of mapUUID"><path d="M794,-54.7534C794,-45.3549 794,-34.3336 794,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="791.55,-54.8581 794,-61.8581 796.45,-54.8581 791.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18 --><g class="node object" id="graph1_18"><g id="a_object|graph1_18"><a xlink:title="molecule.schema.definition.manyUUID" xlink:href="definition$$manyUUID$.html#inheritance-diagram"><path d="M925.583,-26C925.583,-26 860.417,-26 860.417,-26 856.083,-26 851.75,-21.6667 851.75,-17.3333 851.75,-17.3333 851.75,-8.66667 851.75,-8.66667 851.75,-4.33333 856.083,-0 860.417,-0 860.417,-0 925.583,-0 925.583,-0 929.917,-0 934.25,-4.33333 934.25,-8.66667 934.25,-8.66667 934.25,-17.3333 934.25,-17.3333 934.25,-21.6667 929.917,-26 925.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="864" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="883.83" text-anchor="start">manyUUID</text></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="molecule.schema.definition.manyUUID" xlink:href="definition$$manyUUID.html#inheritance-diagram"><path d="M925.583,-88C925.583,-88 860.417,-88 860.417,-88 856.083,-88 851.75,-83.6667 851.75,-79.3333 851.75,-79.3333 851.75,-70.6667 851.75,-70.6667 851.75,-66.3333 856.083,-62 860.417,-62 860.417,-62 925.583,-62 925.583,-62 929.917,-62 934.25,-66.3333 934.25,-70.6667 934.25,-70.6667 934.25,-79.3333 934.25,-79.3333 934.25,-83.6667 929.917,-88 925.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="864" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="883.83" text-anchor="start">manyUUID</text></a></g></g><!-- node19&#45;&gt;node18 --><g class="edge inheritance" id="graph1_19_18"><g id="a_inheritance|graph1_19_18"><a xlink:title="manyUUID is a subtype of manyUUID"><path d="M893,-54.7534C893,-45.3549 893,-34.3336 893,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="890.55,-54.8581 893,-61.8581 895.45,-54.8581 890.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node20 --><g class="node object" id="graph1_20"><g id="a_object|graph1_20"><a xlink:title="molecule.schema.definition.oneUUID" xlink:href="definition$$oneUUID$.html#inheritance-diagram"><path d="M1020.58,-26C1020.58,-26 961.417,-26 961.417,-26 957.083,-26 952.75,-21.6667 952.75,-17.3333 952.75,-17.3333 952.75,-8.66667 952.75,-8.66667 952.75,-4.33333 957.083,-0 961.417,-0 961.417,-0 1020.58,-0 1020.58,-0 1024.92,-0 1029.25,-4.33333 1029.25,-8.66667 1029.25,-8.66667 1029.25,-17.3333 1029.25,-17.3333 1029.25,-21.6667 1024.92,-26 1020.58,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="965" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="984.938" text-anchor="start">oneUUID</text></a></g></g><!-- node21 --><g class="node trait" id="graph1_21"><g id="a_trait|graph1_21"><a xlink:title="molecule.schema.definition.oneUUID" xlink:href="definition$$oneUUID.html#inheritance-diagram"><path d="M1020.58,-88C1020.58,-88 961.417,-88 961.417,-88 957.083,-88 952.75,-83.6667 952.75,-79.3333 952.75,-79.3333 952.75,-70.6667 952.75,-70.6667 952.75,-66.3333 957.083,-62 961.417,-62 961.417,-62 1020.58,-62 1020.58,-62 1024.92,-62 1029.25,-66.3333 1029.25,-70.6667 1029.25,-70.6667 1029.25,-79.3333 1029.25,-79.3333 1029.25,-83.6667 1024.92,-88 1020.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="965" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="984.938" text-anchor="start">oneUUID</text></a></g></g><!-- node21&#45;&gt;node20 --><g class="edge inheritance" id="graph1_21_20"><g id="a_inheritance|graph1_21_20"><a xlink:title="oneUUID is a subtype of oneUUID"><path d="M991,-54.7534C991,-45.3549 991,-34.3336 991,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="988.55,-54.8581 991,-61.8581 993.45,-54.8581 988.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node22 --><g class="node object" id="graph1_22"><g id="a_object|graph1_22"><a xlink:title="molecule.schema.definition.mapDate" xlink:href="definition$$mapDate$.html#inheritance-diagram"><path d="M1115.33,-26C1115.33,-26 1056.67,-26 1056.67,-26 1052.33,-26 1048,-21.6667 1048,-17.3333 1048,-17.3333 1048,-8.66667 1048,-8.66667 1048,-4.33333 1052.33,-0 1056.67,-0 1056.67,-0 1115.33,-0 1115.33,-0 1119.67,-0 1124,-4.33333 1124,-8.66667 1124,-8.66667 1124,-17.3333 1124,-17.3333 1124,-21.6667 1119.67,-26 1115.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1060" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1079.66" text-anchor="start">mapDate</text></a></g></g><!-- node23 --><g class="node trait" id="graph1_23"><g id="a_trait|graph1_23"><a xlink:title="molecule.schema.definition.mapDate" xlink:href="definition$$mapDate.html#inheritance-diagram"><path d="M1115.33,-88C1115.33,-88 1056.67,-88 1056.67,-88 1052.33,-88 1048,-83.6667 1048,-79.3333 1048,-79.3333 1048,-70.6667 1048,-70.6667 1048,-66.3333 1052.33,-62 1056.67,-62 1056.67,-62 1115.33,-62 1115.33,-62 1119.67,-62 1124,-66.3333 1124,-70.6667 1124,-70.6667 1124,-79.3333 1124,-79.3333 1124,-83.6667 1119.67,-88 1115.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1060" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1079.66" text-anchor="start">mapDate</text></a></g></g><!-- node23&#45;&gt;node22 --><g class="edge inheritance" id="graph1_23_22"><g id="a_inheritance|graph1_23_22"><a xlink:title="mapDate is a subtype of mapDate"><path d="M1086,-54.7534C1086,-45.3549 1086,-34.3336 1086,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1083.55,-54.8581 1086,-61.8581 1088.45,-54.8581 1083.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node24 --><g class="node object" id="graph1_24"><g id="a_object|graph1_24"><a xlink:title="molecule.schema.definition.manyDate" xlink:href="definition$$manyDate$.html#inheritance-diagram"><path d="M1213.33,-26C1213.33,-26 1150.67,-26 1150.67,-26 1146.33,-26 1142,-21.6667 1142,-17.3333 1142,-17.3333 1142,-8.66667 1142,-8.66667 1142,-4.33333 1146.33,-0 1150.67,-0 1150.67,-0 1213.33,-0 1213.33,-0 1217.67,-0 1222,-4.33333 1222,-8.66667 1222,-8.66667 1222,-17.3333 1222,-17.3333 1222,-21.6667 1217.67,-26 1213.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1154" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1173.66" text-anchor="start">manyDate</text></a></g></g><!-- node25 --><g class="node trait" id="graph1_25"><g id="a_trait|graph1_25"><a xlink:title="molecule.schema.definition.manyDate" xlink:href="definition$$manyDate.html#inheritance-diagram"><path d="M1213.33,-88C1213.33,-88 1150.67,-88 1150.67,-88 1146.33,-88 1142,-83.6667 1142,-79.3333 1142,-79.3333 1142,-70.6667 1142,-70.6667 1142,-66.3333 1146.33,-62 1150.67,-62 1150.67,-62 1213.33,-62 1213.33,-62 1217.67,-62 1222,-66.3333 1222,-70.6667 1222,-70.6667 1222,-79.3333 1222,-79.3333 1222,-83.6667 1217.67,-88 1213.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1154" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1173.66" text-anchor="start">manyDate</text></a></g></g><!-- node25&#45;&gt;node24 --><g class="edge inheritance" id="graph1_25_24"><g id="a_inheritance|graph1_25_24"><a xlink:title="manyDate is a subtype of manyDate"><path d="M1182,-54.7534C1182,-45.3549 1182,-34.3336 1182,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1179.55,-54.8581 1182,-61.8581 1184.45,-54.8581 1179.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node26 --><g class="node object" id="graph1_26"><g id="a_object|graph1_26"><a xlink:title="molecule.schema.definition.oneDate" xlink:href="definition$$oneDate$.html#inheritance-diagram"><path d="M1305.33,-26C1305.33,-26 1248.67,-26 1248.67,-26 1244.33,-26 1240,-21.6667 1240,-17.3333 1240,-17.3333 1240,-8.66667 1240,-8.66667 1240,-4.33333 1244.33,-0 1248.67,-0 1248.67,-0 1305.33,-0 1305.33,-0 1309.67,-0 1314,-4.33333 1314,-8.66667 1314,-8.66667 1314,-17.3333 1314,-17.3333 1314,-21.6667 1309.67,-26 1305.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1252" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1271.77" text-anchor="start">oneDate</text></a></g></g><!-- node27 --><g class="node trait" id="graph1_27"><g id="a_trait|graph1_27"><a xlink:title="molecule.schema.definition.oneDate" xlink:href="definition$$oneDate.html#inheritance-diagram"><path d="M1305.33,-88C1305.33,-88 1248.67,-88 1248.67,-88 1244.33,-88 1240,-83.6667 1240,-79.3333 1240,-79.3333 1240,-70.6667 1240,-70.6667 1240,-66.3333 1244.33,-62 1248.67,-62 1248.67,-62 1305.33,-62 1305.33,-62 1309.67,-62 1314,-66.3333 1314,-70.6667 1314,-70.6667 1314,-79.3333 1314,-79.3333 1314,-83.6667 1309.67,-88 1305.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1252" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1271.77" text-anchor="start">oneDate</text></a></g></g><!-- node27&#45;&gt;node26 --><g class="edge inheritance" id="graph1_27_26"><g id="a_inheritance|graph1_27_26"><a xlink:title="oneDate is a subtype of oneDate"><path d="M1277,-54.7534C1277,-45.3549 1277,-34.3336 1277,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1274.55,-54.8581 1277,-61.8581 1279.45,-54.8581 1274.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28 --><g class="node object" id="graph1_28"><g id="a_object|graph1_28"><a xlink:title="molecule.schema.definition.mapBigDecimal" xlink:href="definition$$mapBigDecimal$.html#inheritance-diagram"><path d="M2042.33,-88C2042.33,-88 1959.67,-88 1959.67,-88 1955.33,-88 1951,-83.6667 1951,-79.3333 1951,-79.3333 1951,-70.6667 1951,-70.6667 1951,-66.3333 1955.33,-62 1959.67,-62 1959.67,-62 2042.33,-62 2042.33,-62 2046.67,-62 2051,-66.3333 2051,-70.6667 2051,-70.6667 2051,-79.3333 2051,-79.3333 2051,-83.6667 2046.67,-88 2042.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="1963" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1982.88" text-anchor="start">mapBigDecimal</text></a></g></g><!-- node29 --><g class="node trait" id="graph1_29"><g id="a_trait|graph1_29"><a xlink:title="molecule.schema.definition.mapBigDecimal" xlink:href="definition$$mapBigDecimal.html#inheritance-diagram"><path d="M2042.33,-150C2042.33,-150 1959.67,-150 1959.67,-150 1955.33,-150 1951,-145.667 1951,-141.333 1951,-141.333 1951,-132.667 1951,-132.667 1951,-128.333 1955.33,-124 1959.67,-124 1959.67,-124 2042.33,-124 2042.33,-124 2046.67,-124 2051,-128.333 2051,-132.667 2051,-132.667 2051,-141.333 2051,-141.333 2051,-145.667 2046.67,-150 2042.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="1963" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1982.88" text-anchor="start">mapBigDecimal</text></a></g></g><!-- node29&#45;&gt;node28 --><g class="edge inheritance" id="graph1_29_28"><g id="a_inheritance|graph1_29_28"><a xlink:title="mapBigDecimal is a subtype of mapBigDecimal"><path d="M2001,-116.753C2001,-107.355 2001,-96.3336 2001,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1998.55,-116.858 2001,-123.858 2003.45,-116.858 1998.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30 --><g class="node object" id="graph1_30"><g id="a_object|graph1_30"><a xlink:title="molecule.schema.definition.manyBigDecimal" xlink:href="definition$$manyBigDecimal$.html#inheritance-diagram"><path d="M2164.33,-88C2164.33,-88 2077.67,-88 2077.67,-88 2073.33,-88 2069,-83.6667 2069,-79.3333 2069,-79.3333 2069,-70.6667 2069,-70.6667 2069,-66.3333 2073.33,-62 2077.67,-62 2077.67,-62 2164.33,-62 2164.33,-62 2168.67,-62 2173,-66.3333 2173,-70.6667 2173,-70.6667 2173,-79.3333 2173,-79.3333 2173,-83.6667 2168.67,-88 2164.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2081" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2100.88" text-anchor="start">manyBigDecimal</text></a></g></g><!-- node31 --><g class="node trait" id="graph1_31"><g id="a_trait|graph1_31"><a xlink:title="molecule.schema.definition.manyBigDecimal" xlink:href="definition$$manyBigDecimal.html#inheritance-diagram"><path d="M2164.33,-150C2164.33,-150 2077.67,-150 2077.67,-150 2073.33,-150 2069,-145.667 2069,-141.333 2069,-141.333 2069,-132.667 2069,-132.667 2069,-128.333 2073.33,-124 2077.67,-124 2077.67,-124 2164.33,-124 2164.33,-124 2168.67,-124 2173,-128.333 2173,-132.667 2173,-132.667 2173,-141.333 2173,-141.333 2173,-145.667 2168.67,-150 2164.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2081" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2100.88" text-anchor="start">manyBigDecimal</text></a></g></g><!-- node31&#45;&gt;node30 --><g class="edge inheritance" id="graph1_31_30"><g id="a_inheritance|graph1_31_30"><a xlink:title="manyBigDecimal is a subtype of manyBigDecimal"><path d="M2121,-116.753C2121,-107.355 2121,-96.3336 2121,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2118.55,-116.858 2121,-123.858 2123.45,-116.858 2118.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32 --><g class="node object" id="graph1_32"><g id="a_object|graph1_32"><a xlink:title="molecule.schema.definition.oneBigDecimal" xlink:href="definition$$oneBigDecimal$.html#inheritance-diagram"><path d="M2280.33,-88C2280.33,-88 2199.67,-88 2199.67,-88 2195.33,-88 2191,-83.6667 2191,-79.3333 2191,-79.3333 2191,-70.6667 2191,-70.6667 2191,-66.3333 2195.33,-62 2199.67,-62 2199.67,-62 2280.33,-62 2280.33,-62 2284.67,-62 2289,-66.3333 2289,-70.6667 2289,-70.6667 2289,-79.3333 2289,-79.3333 2289,-83.6667 2284.67,-88 2280.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2203" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2222.99" text-anchor="start">oneBigDecimal</text></a></g></g><!-- node33 --><g class="node trait" id="graph1_33"><g id="a_trait|graph1_33"><a xlink:title="molecule.schema.definition.oneBigDecimal" xlink:href="definition$$oneBigDecimal.html#inheritance-diagram"><path d="M2280.33,-150C2280.33,-150 2199.67,-150 2199.67,-150 2195.33,-150 2191,-145.667 2191,-141.333 2191,-141.333 2191,-132.667 2191,-132.667 2191,-128.333 2195.33,-124 2199.67,-124 2199.67,-124 2280.33,-124 2280.33,-124 2284.67,-124 2289,-128.333 2289,-132.667 2289,-132.667 2289,-141.333 2289,-141.333 2289,-145.667 2284.67,-150 2280.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2203" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2222.99" text-anchor="start">oneBigDecimal</text></a></g></g><!-- node33&#45;&gt;node32 --><g class="edge inheritance" id="graph1_33_32"><g id="a_inheritance|graph1_33_32"><a xlink:title="oneBigDecimal is a subtype of oneBigDecimal"><path d="M2240,-116.753C2240,-107.355 2240,-96.3336 2240,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2237.55,-116.858 2240,-123.858 2242.45,-116.858 2237.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node34 --><g class="node object" id="graph1_34"><g id="a_object|graph1_34"><a xlink:title="molecule.schema.definition.mapBigInt" xlink:href="definition$$mapBigInt$.html#inheritance-diagram"><path d="M2378.33,-88C2378.33,-88 2315.67,-88 2315.67,-88 2311.33,-88 2307,-83.6667 2307,-79.3333 2307,-79.3333 2307,-70.6667 2307,-70.6667 2307,-66.3333 2311.33,-62 2315.67,-62 2315.67,-62 2378.33,-62 2378.33,-62 2382.67,-62 2387,-66.3333 2387,-70.6667 2387,-70.6667 2387,-79.3333 2387,-79.3333 2387,-83.6667 2382.67,-88 2378.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2319" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2338.88" text-anchor="start">mapBigInt</text></a></g></g><!-- node35 --><g class="node trait" id="graph1_35"><g id="a_trait|graph1_35"><a xlink:title="molecule.schema.definition.mapBigInt" xlink:href="definition$$mapBigInt.html#inheritance-diagram"><path d="M2378.33,-150C2378.33,-150 2315.67,-150 2315.67,-150 2311.33,-150 2307,-145.667 2307,-141.333 2307,-141.333 2307,-132.667 2307,-132.667 2307,-128.333 2311.33,-124 2315.67,-124 2315.67,-124 2378.33,-124 2378.33,-124 2382.67,-124 2387,-128.333 2387,-132.667 2387,-132.667 2387,-141.333 2387,-141.333 2387,-145.667 2382.67,-150 2378.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2319" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2338.88" text-anchor="start">mapBigInt</text></a></g></g><!-- node35&#45;&gt;node34 --><g class="edge inheritance" id="graph1_35_34"><g id="a_inheritance|graph1_35_34"><a xlink:title="mapBigInt is a subtype of mapBigInt"><path d="M2347,-116.753C2347,-107.355 2347,-96.3336 2347,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2344.55,-116.858 2347,-123.858 2349.45,-116.858 2344.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node36 --><g class="node object" id="graph1_36"><g id="a_object|graph1_36"><a xlink:title="molecule.schema.definition.manyBigInt" xlink:href="definition$$manyBigInt$.html#inheritance-diagram"><path d="M2480.33,-88C2480.33,-88 2413.67,-88 2413.67,-88 2409.33,-88 2405,-83.6667 2405,-79.3333 2405,-79.3333 2405,-70.6667 2405,-70.6667 2405,-66.3333 2409.33,-62 2413.67,-62 2413.67,-62 2480.33,-62 2480.33,-62 2484.67,-62 2489,-66.3333 2489,-70.6667 2489,-70.6667 2489,-79.3333 2489,-79.3333 2489,-83.6667 2484.67,-88 2480.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2417" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2436.88" text-anchor="start">manyBigInt</text></a></g></g><!-- node37 --><g class="node trait" id="graph1_37"><g id="a_trait|graph1_37"><a xlink:title="molecule.schema.definition.manyBigInt" xlink:href="definition$$manyBigInt.html#inheritance-diagram"><path d="M2480.33,-150C2480.33,-150 2413.67,-150 2413.67,-150 2409.33,-150 2405,-145.667 2405,-141.333 2405,-141.333 2405,-132.667 2405,-132.667 2405,-128.333 2409.33,-124 2413.67,-124 2413.67,-124 2480.33,-124 2480.33,-124 2484.67,-124 2489,-128.333 2489,-132.667 2489,-132.667 2489,-141.333 2489,-141.333 2489,-145.667 2484.67,-150 2480.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2417" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2436.88" text-anchor="start">manyBigInt</text></a></g></g><!-- node37&#45;&gt;node36 --><g class="edge inheritance" id="graph1_37_36"><g id="a_inheritance|graph1_37_36"><a xlink:title="manyBigInt is a subtype of manyBigInt"><path d="M2447,-116.753C2447,-107.355 2447,-96.3336 2447,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2444.55,-116.858 2447,-123.858 2449.45,-116.858 2444.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38 --><g class="node object" id="graph1_38"><g id="a_object|graph1_38"><a xlink:title="molecule.schema.definition.oneBigInt" xlink:href="definition$$oneBigInt$.html#inheritance-diagram"><path d="M2576.33,-88C2576.33,-88 2515.67,-88 2515.67,-88 2511.33,-88 2507,-83.6667 2507,-79.3333 2507,-79.3333 2507,-70.6667 2507,-70.6667 2507,-66.3333 2511.33,-62 2515.67,-62 2515.67,-62 2576.33,-62 2576.33,-62 2580.67,-62 2585,-66.3333 2585,-70.6667 2585,-70.6667 2585,-79.3333 2585,-79.3333 2585,-83.6667 2580.67,-88 2576.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2519" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2538.99" text-anchor="start">oneBigInt</text></a></g></g><!-- node39 --><g class="node trait" id="graph1_39"><g id="a_trait|graph1_39"><a xlink:title="molecule.schema.definition.oneBigInt" xlink:href="definition$$oneBigInt.html#inheritance-diagram"><path d="M2576.33,-150C2576.33,-150 2515.67,-150 2515.67,-150 2511.33,-150 2507,-145.667 2507,-141.333 2507,-141.333 2507,-132.667 2507,-132.667 2507,-128.333 2511.33,-124 2515.67,-124 2515.67,-124 2576.33,-124 2576.33,-124 2580.67,-124 2585,-128.333 2585,-132.667 2585,-132.667 2585,-141.333 2585,-141.333 2585,-145.667 2580.67,-150 2576.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2519" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2538.99" text-anchor="start">oneBigInt</text></a></g></g><!-- node39&#45;&gt;node38 --><g class="edge inheritance" id="graph1_39_38"><g id="a_inheritance|graph1_39_38"><a xlink:title="oneBigInt is a subtype of oneBigInt"><path d="M2546,-116.753C2546,-107.355 2546,-96.3336 2546,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2543.55,-116.858 2546,-123.858 2548.45,-116.858 2543.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node40 --><g class="node object" id="graph1_40"><g id="a_object|graph1_40"><a xlink:title="molecule.schema.definition.mapBoolean" xlink:href="definition$$mapBoolean$.html#inheritance-diagram"><path d="M1412.58,-26C1412.58,-26 1341.42,-26 1341.42,-26 1337.08,-26 1332.75,-21.6667 1332.75,-17.3333 1332.75,-17.3333 1332.75,-8.66667 1332.75,-8.66667 1332.75,-4.33333 1337.08,-0 1341.42,-0 1341.42,-0 1412.58,-0 1412.58,-0 1416.92,-0 1421.25,-4.33333 1421.25,-8.66667 1421.25,-8.66667 1421.25,-17.3333 1421.25,-17.3333 1421.25,-21.6667 1416.92,-26 1412.58,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1345" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1364.93" text-anchor="start">mapBoolean</text></a></g></g><!-- node41 --><g class="node trait" id="graph1_41"><g id="a_trait|graph1_41"><a xlink:title="molecule.schema.definition.mapBoolean" xlink:href="definition$$mapBoolean.html#inheritance-diagram"><path d="M1412.58,-88C1412.58,-88 1341.42,-88 1341.42,-88 1337.08,-88 1332.75,-83.6667 1332.75,-79.3333 1332.75,-79.3333 1332.75,-70.6667 1332.75,-70.6667 1332.75,-66.3333 1337.08,-62 1341.42,-62 1341.42,-62 1412.58,-62 1412.58,-62 1416.92,-62 1421.25,-66.3333 1421.25,-70.6667 1421.25,-70.6667 1421.25,-79.3333 1421.25,-79.3333 1421.25,-83.6667 1416.92,-88 1412.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1345" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1364.93" text-anchor="start">mapBoolean</text></a></g></g><!-- node41&#45;&gt;node40 --><g class="edge inheritance" id="graph1_41_40"><g id="a_inheritance|graph1_41_40"><a xlink:title="mapBoolean is a subtype of mapBoolean"><path d="M1377,-54.7534C1377,-45.3549 1377,-34.3336 1377,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1374.55,-54.8581 1377,-61.8581 1379.45,-54.8581 1374.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node42 --><g class="node object" id="graph1_42"><g id="a_object|graph1_42"><a xlink:title="molecule.schema.definition.manyBoolean" xlink:href="definition$$manyBoolean$.html#inheritance-diagram"><path d="M1523.58,-26C1523.58,-26 1448.42,-26 1448.42,-26 1444.08,-26 1439.75,-21.6667 1439.75,-17.3333 1439.75,-17.3333 1439.75,-8.66667 1439.75,-8.66667 1439.75,-4.33333 1444.08,-0 1448.42,-0 1448.42,-0 1523.58,-0 1523.58,-0 1527.92,-0 1532.25,-4.33333 1532.25,-8.66667 1532.25,-8.66667 1532.25,-17.3333 1532.25,-17.3333 1532.25,-21.6667 1527.92,-26 1523.58,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1452" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1471.93" text-anchor="start">manyBoolean</text></a></g></g><!-- node43 --><g class="node trait" id="graph1_43"><g id="a_trait|graph1_43"><a xlink:title="molecule.schema.definition.manyBoolean" xlink:href="definition$$manyBoolean.html#inheritance-diagram"><path d="M1523.58,-88C1523.58,-88 1448.42,-88 1448.42,-88 1444.08,-88 1439.75,-83.6667 1439.75,-79.3333 1439.75,-79.3333 1439.75,-70.6667 1439.75,-70.6667 1439.75,-66.3333 1444.08,-62 1448.42,-62 1448.42,-62 1523.58,-62 1523.58,-62 1527.92,-62 1532.25,-66.3333 1532.25,-70.6667 1532.25,-70.6667 1532.25,-79.3333 1532.25,-79.3333 1532.25,-83.6667 1527.92,-88 1523.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1452" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1471.93" text-anchor="start">manyBoolean</text></a></g></g><!-- node43&#45;&gt;node42 --><g class="edge inheritance" id="graph1_43_42"><g id="a_inheritance|graph1_43_42"><a xlink:title="manyBoolean is a subtype of manyBoolean"><path d="M1486,-54.7534C1486,-45.3549 1486,-34.3336 1486,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1483.55,-54.8581 1486,-61.8581 1488.45,-54.8581 1483.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node44 --><g class="node object" id="graph1_44"><g id="a_object|graph1_44"><a xlink:title="molecule.schema.definition.oneBoolean" xlink:href="definition$$oneBoolean$.html#inheritance-diagram"><path d="M1628.33,-26C1628.33,-26 1559.67,-26 1559.67,-26 1555.33,-26 1551,-21.6667 1551,-17.3333 1551,-17.3333 1551,-8.66667 1551,-8.66667 1551,-4.33333 1555.33,-0 1559.67,-0 1559.67,-0 1628.33,-0 1628.33,-0 1632.67,-0 1637,-4.33333 1637,-8.66667 1637,-8.66667 1637,-17.3333 1637,-17.3333 1637,-21.6667 1632.67,-26 1628.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1563" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1582.54" text-anchor="start">oneBoolean</text></a></g></g><!-- node45 --><g class="node trait" id="graph1_45"><g id="a_trait|graph1_45"><a xlink:title="molecule.schema.definition.oneBoolean" xlink:href="definition$$oneBoolean.html#inheritance-diagram"><path d="M1628.33,-88C1628.33,-88 1559.67,-88 1559.67,-88 1555.33,-88 1551,-83.6667 1551,-79.3333 1551,-79.3333 1551,-70.6667 1551,-70.6667 1551,-66.3333 1555.33,-62 1559.67,-62 1559.67,-62 1628.33,-62 1628.33,-62 1632.67,-62 1637,-66.3333 1637,-70.6667 1637,-70.6667 1637,-79.3333 1637,-79.3333 1637,-83.6667 1632.67,-88 1628.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1563" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1582.54" text-anchor="start">oneBoolean</text></a></g></g><!-- node45&#45;&gt;node44 --><g class="edge inheritance" id="graph1_45_44"><g id="a_inheritance|graph1_45_44"><a xlink:title="oneBoolean is a subtype of oneBoolean"><path d="M1594,-54.7534C1594,-45.3549 1594,-34.3336 1594,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1591.55,-54.8581 1594,-61.8581 1596.45,-54.8581 1591.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node46 --><g class="node object" id="graph1_46"><g id="a_object|graph1_46"><a xlink:title="molecule.schema.definition.mapDouble" xlink:href="definition$$mapDouble$.html#inheritance-diagram"><path d="M2679.58,-88C2679.58,-88 2612.42,-88 2612.42,-88 2608.08,-88 2603.75,-83.6667 2603.75,-79.3333 2603.75,-79.3333 2603.75,-70.6667 2603.75,-70.6667 2603.75,-66.3333 2608.08,-62 2612.42,-62 2612.42,-62 2679.58,-62 2679.58,-62 2683.92,-62 2688.25,-66.3333 2688.25,-70.6667 2688.25,-70.6667 2688.25,-79.3333 2688.25,-79.3333 2688.25,-83.6667 2683.92,-88 2679.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2616" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2635.93" text-anchor="start">mapDouble</text></a></g></g><!-- node47 --><g class="node trait" id="graph1_47"><g id="a_trait|graph1_47"><a xlink:title="molecule.schema.definition.mapDouble" xlink:href="definition$$mapDouble.html#inheritance-diagram"><path d="M2679.58,-150C2679.58,-150 2612.42,-150 2612.42,-150 2608.08,-150 2603.75,-145.667 2603.75,-141.333 2603.75,-141.333 2603.75,-132.667 2603.75,-132.667 2603.75,-128.333 2608.08,-124 2612.42,-124 2612.42,-124 2679.58,-124 2679.58,-124 2683.92,-124 2688.25,-128.333 2688.25,-132.667 2688.25,-132.667 2688.25,-141.333 2688.25,-141.333 2688.25,-145.667 2683.92,-150 2679.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2616" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2635.93" text-anchor="start">mapDouble</text></a></g></g><!-- node47&#45;&gt;node46 --><g class="edge inheritance" id="graph1_47_46"><g id="a_inheritance|graph1_47_46"><a xlink:title="mapDouble is a subtype of mapDouble"><path d="M2646,-116.753C2646,-107.355 2646,-96.3336 2646,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2643.55,-116.858 2646,-123.858 2648.45,-116.858 2643.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node48 --><g class="node object" id="graph1_48"><g id="a_object|graph1_48"><a xlink:title="molecule.schema.definition.manyDouble" xlink:href="definition$$manyDouble$.html#inheritance-diagram"><path d="M2786.58,-88C2786.58,-88 2715.42,-88 2715.42,-88 2711.08,-88 2706.75,-83.6667 2706.75,-79.3333 2706.75,-79.3333 2706.75,-70.6667 2706.75,-70.6667 2706.75,-66.3333 2711.08,-62 2715.42,-62 2715.42,-62 2786.58,-62 2786.58,-62 2790.92,-62 2795.25,-66.3333 2795.25,-70.6667 2795.25,-70.6667 2795.25,-79.3333 2795.25,-79.3333 2795.25,-83.6667 2790.92,-88 2786.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2719" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2738.93" text-anchor="start">manyDouble</text></a></g></g><!-- node49 --><g class="node trait" id="graph1_49"><g id="a_trait|graph1_49"><a xlink:title="molecule.schema.definition.manyDouble" xlink:href="definition$$manyDouble.html#inheritance-diagram"><path d="M2786.58,-150C2786.58,-150 2715.42,-150 2715.42,-150 2711.08,-150 2706.75,-145.667 2706.75,-141.333 2706.75,-141.333 2706.75,-132.667 2706.75,-132.667 2706.75,-128.333 2711.08,-124 2715.42,-124 2715.42,-124 2786.58,-124 2786.58,-124 2790.92,-124 2795.25,-128.333 2795.25,-132.667 2795.25,-132.667 2795.25,-141.333 2795.25,-141.333 2795.25,-145.667 2790.92,-150 2786.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2719" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2738.93" text-anchor="start">manyDouble</text></a></g></g><!-- node49&#45;&gt;node48 --><g class="edge inheritance" id="graph1_49_48"><g id="a_inheritance|graph1_49_48"><a xlink:title="manyDouble is a subtype of manyDouble"><path d="M2751,-116.753C2751,-107.355 2751,-96.3336 2751,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2748.55,-116.858 2751,-123.858 2753.45,-116.858 2748.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node50 --><g class="node object" id="graph1_50"><g id="a_object|graph1_50"><a xlink:title="molecule.schema.definition.oneDouble" xlink:href="definition$$oneDouble$.html#inheritance-diagram"><path d="M2887.33,-88C2887.33,-88 2822.67,-88 2822.67,-88 2818.33,-88 2814,-83.6667 2814,-79.3333 2814,-79.3333 2814,-70.6667 2814,-70.6667 2814,-66.3333 2818.33,-62 2822.67,-62 2822.67,-62 2887.33,-62 2887.33,-62 2891.67,-62 2896,-66.3333 2896,-70.6667 2896,-70.6667 2896,-79.3333 2896,-79.3333 2896,-83.6667 2891.67,-88 2887.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2826" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2845.54" text-anchor="start">oneDouble</text></a></g></g><!-- node51 --><g class="node trait" id="graph1_51"><g id="a_trait|graph1_51"><a xlink:title="molecule.schema.definition.oneDouble" xlink:href="definition$$oneDouble.html#inheritance-diagram"><path d="M2887.33,-150C2887.33,-150 2822.67,-150 2822.67,-150 2818.33,-150 2814,-145.667 2814,-141.333 2814,-141.333 2814,-132.667 2814,-132.667 2814,-128.333 2818.33,-124 2822.67,-124 2822.67,-124 2887.33,-124 2887.33,-124 2891.67,-124 2896,-128.333 2896,-132.667 2896,-132.667 2896,-141.333 2896,-141.333 2896,-145.667 2891.67,-150 2887.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2826" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2845.54" text-anchor="start">oneDouble</text></a></g></g><!-- node51&#45;&gt;node50 --><g class="edge inheritance" id="graph1_51_50"><g id="a_inheritance|graph1_51_50"><a xlink:title="oneDouble is a subtype of oneDouble"><path d="M2855,-116.753C2855,-107.355 2855,-96.3336 2855,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2852.55,-116.858 2855,-123.858 2857.45,-116.858 2852.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node52 --><g class="node object" id="graph1_52"><g id="a_object|graph1_52"><a xlink:title="molecule.schema.definition.mapFloat" xlink:href="definition$$mapFloat$.html#inheritance-diagram"><path d="M2982.58,-88C2982.58,-88 2923.42,-88 2923.42,-88 2919.08,-88 2914.75,-83.6667 2914.75,-79.3333 2914.75,-79.3333 2914.75,-70.6667 2914.75,-70.6667 2914.75,-66.3333 2919.08,-62 2923.42,-62 2923.42,-62 2982.58,-62 2982.58,-62 2986.92,-62 2991.25,-66.3333 2991.25,-70.6667 2991.25,-70.6667 2991.25,-79.3333 2991.25,-79.3333 2991.25,-83.6667 2986.92,-88 2982.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="2927" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2946.71" text-anchor="start">mapFloat</text></a></g></g><!-- node53 --><g class="node trait" id="graph1_53"><g id="a_trait|graph1_53"><a xlink:title="molecule.schema.definition.mapFloat" xlink:href="definition$$mapFloat.html#inheritance-diagram"><path d="M2982.58,-150C2982.58,-150 2923.42,-150 2923.42,-150 2919.08,-150 2914.75,-145.667 2914.75,-141.333 2914.75,-141.333 2914.75,-132.667 2914.75,-132.667 2914.75,-128.333 2919.08,-124 2923.42,-124 2923.42,-124 2982.58,-124 2982.58,-124 2986.92,-124 2991.25,-128.333 2991.25,-132.667 2991.25,-132.667 2991.25,-141.333 2991.25,-141.333 2991.25,-145.667 2986.92,-150 2982.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2927" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2946.71" text-anchor="start">mapFloat</text></a></g></g><!-- node53&#45;&gt;node52 --><g class="edge inheritance" id="graph1_53_52"><g id="a_inheritance|graph1_53_52"><a xlink:title="mapFloat is a subtype of mapFloat"><path d="M2953,-116.753C2953,-107.355 2953,-96.3336 2953,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2950.55,-116.858 2953,-123.858 2955.45,-116.858 2950.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node54 --><g class="node object" id="graph1_54"><g id="a_object|graph1_54"><a xlink:title="molecule.schema.definition.manyFloat" xlink:href="definition$$manyFloat$.html#inheritance-diagram"><path d="M3081.58,-88C3081.58,-88 3018.42,-88 3018.42,-88 3014.08,-88 3009.75,-83.6667 3009.75,-79.3333 3009.75,-79.3333 3009.75,-70.6667 3009.75,-70.6667 3009.75,-66.3333 3014.08,-62 3018.42,-62 3018.42,-62 3081.58,-62 3081.58,-62 3085.92,-62 3090.25,-66.3333 3090.25,-70.6667 3090.25,-70.6667 3090.25,-79.3333 3090.25,-79.3333 3090.25,-83.6667 3085.92,-88 3081.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3022" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3041.71" text-anchor="start">manyFloat</text></a></g></g><!-- node55 --><g class="node trait" id="graph1_55"><g id="a_trait|graph1_55"><a xlink:title="molecule.schema.definition.manyFloat" xlink:href="definition$$manyFloat.html#inheritance-diagram"><path d="M3081.58,-150C3081.58,-150 3018.42,-150 3018.42,-150 3014.08,-150 3009.75,-145.667 3009.75,-141.333 3009.75,-141.333 3009.75,-132.667 3009.75,-132.667 3009.75,-128.333 3014.08,-124 3018.42,-124 3018.42,-124 3081.58,-124 3081.58,-124 3085.92,-124 3090.25,-128.333 3090.25,-132.667 3090.25,-132.667 3090.25,-141.333 3090.25,-141.333 3090.25,-145.667 3085.92,-150 3081.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3022" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3041.71" text-anchor="start">manyFloat</text></a></g></g><!-- node55&#45;&gt;node54 --><g class="edge inheritance" id="graph1_55_54"><g id="a_inheritance|graph1_55_54"><a xlink:title="manyFloat is a subtype of manyFloat"><path d="M3050,-116.753C3050,-107.355 3050,-96.3336 3050,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3047.55,-116.858 3050,-123.858 3052.45,-116.858 3047.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node56 --><g class="node object" id="graph1_56"><g id="a_object|graph1_56"><a xlink:title="molecule.schema.definition.oneFloat" xlink:href="definition$$oneFloat$.html#inheritance-diagram"><path d="M3174.58,-88C3174.58,-88 3117.42,-88 3117.42,-88 3113.08,-88 3108.75,-83.6667 3108.75,-79.3333 3108.75,-79.3333 3108.75,-70.6667 3108.75,-70.6667 3108.75,-66.3333 3113.08,-62 3117.42,-62 3117.42,-62 3174.58,-62 3174.58,-62 3178.92,-62 3183.25,-66.3333 3183.25,-70.6667 3183.25,-70.6667 3183.25,-79.3333 3183.25,-79.3333 3183.25,-83.6667 3178.92,-88 3174.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3121" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3140.82" text-anchor="start">oneFloat</text></a></g></g><!-- node57 --><g class="node trait" id="graph1_57"><g id="a_trait|graph1_57"><a xlink:title="molecule.schema.definition.oneFloat" xlink:href="definition$$oneFloat.html#inheritance-diagram"><path d="M3174.58,-150C3174.58,-150 3117.42,-150 3117.42,-150 3113.08,-150 3108.75,-145.667 3108.75,-141.333 3108.75,-141.333 3108.75,-132.667 3108.75,-132.667 3108.75,-128.333 3113.08,-124 3117.42,-124 3117.42,-124 3174.58,-124 3174.58,-124 3178.92,-124 3183.25,-128.333 3183.25,-132.667 3183.25,-132.667 3183.25,-141.333 3183.25,-141.333 3183.25,-145.667 3178.92,-150 3174.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3121" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3140.82" text-anchor="start">oneFloat</text></a></g></g><!-- node57&#45;&gt;node56 --><g class="edge inheritance" id="graph1_57_56"><g id="a_inheritance|graph1_57_56"><a xlink:title="oneFloat is a subtype of oneFloat"><path d="M3146,-116.753C3146,-107.355 3146,-96.3336 3146,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3143.55,-116.858 3146,-123.858 3148.45,-116.858 3143.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node58 --><g class="node object" id="graph1_58"><g id="a_object|graph1_58"><a xlink:title="molecule.schema.definition.mapLong" xlink:href="definition$$mapLong$.html#inheritance-diagram"><path d="M3269.58,-88C3269.58,-88 3210.42,-88 3210.42,-88 3206.08,-88 3201.75,-83.6667 3201.75,-79.3333 3201.75,-79.3333 3201.75,-70.6667 3201.75,-70.6667 3201.75,-66.3333 3206.08,-62 3210.42,-62 3210.42,-62 3269.58,-62 3269.58,-62 3273.92,-62 3278.25,-66.3333 3278.25,-70.6667 3278.25,-70.6667 3278.25,-79.3333 3278.25,-79.3333 3278.25,-83.6667 3273.92,-88 3269.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3214" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3233.71" text-anchor="start">mapLong</text></a></g></g><!-- node59 --><g class="node trait" id="graph1_59"><g id="a_trait|graph1_59"><a xlink:title="molecule.schema.definition.mapLong" xlink:href="definition$$mapLong.html#inheritance-diagram"><path d="M3269.58,-150C3269.58,-150 3210.42,-150 3210.42,-150 3206.08,-150 3201.75,-145.667 3201.75,-141.333 3201.75,-141.333 3201.75,-132.667 3201.75,-132.667 3201.75,-128.333 3206.08,-124 3210.42,-124 3210.42,-124 3269.58,-124 3269.58,-124 3273.92,-124 3278.25,-128.333 3278.25,-132.667 3278.25,-132.667 3278.25,-141.333 3278.25,-141.333 3278.25,-145.667 3273.92,-150 3269.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3214" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3233.71" text-anchor="start">mapLong</text></a></g></g><!-- node59&#45;&gt;node58 --><g class="edge inheritance" id="graph1_59_58"><g id="a_inheritance|graph1_59_58"><a xlink:title="mapLong is a subtype of mapLong"><path d="M3240,-116.753C3240,-107.355 3240,-96.3336 3240,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3237.55,-116.858 3240,-123.858 3242.45,-116.858 3237.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node60 --><g class="node object" id="graph1_60"><g id="a_object|graph1_60"><a xlink:title="molecule.schema.definition.manyLong" xlink:href="definition$$manyLong$.html#inheritance-diagram"><path d="M3368.58,-88C3368.58,-88 3305.42,-88 3305.42,-88 3301.08,-88 3296.75,-83.6667 3296.75,-79.3333 3296.75,-79.3333 3296.75,-70.6667 3296.75,-70.6667 3296.75,-66.3333 3301.08,-62 3305.42,-62 3305.42,-62 3368.58,-62 3368.58,-62 3372.92,-62 3377.25,-66.3333 3377.25,-70.6667 3377.25,-70.6667 3377.25,-79.3333 3377.25,-79.3333 3377.25,-83.6667 3372.92,-88 3368.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3309" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3328.71" text-anchor="start">manyLong</text></a></g></g><!-- node61 --><g class="node trait" id="graph1_61"><g id="a_trait|graph1_61"><a xlink:title="molecule.schema.definition.manyLong" xlink:href="definition$$manyLong.html#inheritance-diagram"><path d="M3368.58,-150C3368.58,-150 3305.42,-150 3305.42,-150 3301.08,-150 3296.75,-145.667 3296.75,-141.333 3296.75,-141.333 3296.75,-132.667 3296.75,-132.667 3296.75,-128.333 3301.08,-124 3305.42,-124 3305.42,-124 3368.58,-124 3368.58,-124 3372.92,-124 3377.25,-128.333 3377.25,-132.667 3377.25,-132.667 3377.25,-141.333 3377.25,-141.333 3377.25,-145.667 3372.92,-150 3368.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3309" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3328.71" text-anchor="start">manyLong</text></a></g></g><!-- node61&#45;&gt;node60 --><g class="edge inheritance" id="graph1_61_60"><g id="a_inheritance|graph1_61_60"><a xlink:title="manyLong is a subtype of manyLong"><path d="M3337,-116.753C3337,-107.355 3337,-96.3336 3337,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3334.55,-116.858 3337,-123.858 3339.45,-116.858 3334.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node62 --><g class="node object" id="graph1_62"><g id="a_object|graph1_62"><a xlink:title="molecule.schema.definition.oneLong" xlink:href="definition$$oneLong$.html#inheritance-diagram"><path d="M3461.58,-88C3461.58,-88 3404.42,-88 3404.42,-88 3400.08,-88 3395.75,-83.6667 3395.75,-79.3333 3395.75,-79.3333 3395.75,-70.6667 3395.75,-70.6667 3395.75,-66.3333 3400.08,-62 3404.42,-62 3404.42,-62 3461.58,-62 3461.58,-62 3465.92,-62 3470.25,-66.3333 3470.25,-70.6667 3470.25,-70.6667 3470.25,-79.3333 3470.25,-79.3333 3470.25,-83.6667 3465.92,-88 3461.58,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3408" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3427.82" text-anchor="start">oneLong</text></a></g></g><!-- node63 --><g class="node trait" id="graph1_63"><g id="a_trait|graph1_63"><a xlink:title="molecule.schema.definition.oneLong" xlink:href="definition$$oneLong.html#inheritance-diagram"><path d="M3461.58,-150C3461.58,-150 3404.42,-150 3404.42,-150 3400.08,-150 3395.75,-145.667 3395.75,-141.333 3395.75,-141.333 3395.75,-132.667 3395.75,-132.667 3395.75,-128.333 3400.08,-124 3404.42,-124 3404.42,-124 3461.58,-124 3461.58,-124 3465.92,-124 3470.25,-128.333 3470.25,-132.667 3470.25,-132.667 3470.25,-141.333 3470.25,-141.333 3470.25,-145.667 3465.92,-150 3461.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3408" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3427.82" text-anchor="start">oneLong</text></a></g></g><!-- node63&#45;&gt;node62 --><g class="edge inheritance" id="graph1_63_62"><g id="a_inheritance|graph1_63_62"><a xlink:title="oneLong is a subtype of oneLong"><path d="M3433,-116.753C3433,-107.355 3433,-96.3336 3433,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3430.55,-116.858 3433,-123.858 3435.45,-116.858 3430.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node64 --><g class="node object" id="graph1_64"><g id="a_object|graph1_64"><a xlink:title="molecule.schema.definition.mapInt" xlink:href="definition$$mapInt$.html#inheritance-diagram"><path d="M3548.33,-88C3548.33,-88 3497.67,-88 3497.67,-88 3493.33,-88 3489,-83.6667 3489,-79.3333 3489,-79.3333 3489,-70.6667 3489,-70.6667 3489,-66.3333 3493.33,-62 3497.67,-62 3497.67,-62 3548.33,-62 3548.33,-62 3552.67,-62 3557,-66.3333 3557,-70.6667 3557,-70.6667 3557,-79.3333 3557,-79.3333 3557,-83.6667 3552.67,-88 3548.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3501" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3520.66" text-anchor="start">mapInt</text></a></g></g><!-- node65 --><g class="node trait" id="graph1_65"><g id="a_trait|graph1_65"><a xlink:title="molecule.schema.definition.mapInt" xlink:href="definition$$mapInt.html#inheritance-diagram"><path d="M3548.33,-150C3548.33,-150 3497.67,-150 3497.67,-150 3493.33,-150 3489,-145.667 3489,-141.333 3489,-141.333 3489,-132.667 3489,-132.667 3489,-128.333 3493.33,-124 3497.67,-124 3497.67,-124 3548.33,-124 3548.33,-124 3552.67,-124 3557,-128.333 3557,-132.667 3557,-132.667 3557,-141.333 3557,-141.333 3557,-145.667 3552.67,-150 3548.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3501" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3520.66" text-anchor="start">mapInt</text></a></g></g><!-- node65&#45;&gt;node64 --><g class="edge inheritance" id="graph1_65_64"><g id="a_inheritance|graph1_65_64"><a xlink:title="mapInt is a subtype of mapInt"><path d="M3523,-116.753C3523,-107.355 3523,-96.3336 3523,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3520.55,-116.858 3523,-123.858 3525.45,-116.858 3520.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node66 --><g class="node object" id="graph1_66"><g id="a_object|graph1_66"><a xlink:title="molecule.schema.definition.manyInt" xlink:href="definition$$manyInt$.html#inheritance-diagram"><path d="M3638.33,-88C3638.33,-88 3583.67,-88 3583.67,-88 3579.33,-88 3575,-83.6667 3575,-79.3333 3575,-79.3333 3575,-70.6667 3575,-70.6667 3575,-66.3333 3579.33,-62 3583.67,-62 3583.67,-62 3638.33,-62 3638.33,-62 3642.67,-62 3647,-66.3333 3647,-70.6667 3647,-70.6667 3647,-79.3333 3647,-79.3333 3647,-83.6667 3642.67,-88 3638.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3587" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3606.66" text-anchor="start">manyInt</text></a></g></g><!-- node67 --><g class="node trait" id="graph1_67"><g id="a_trait|graph1_67"><a xlink:title="molecule.schema.definition.manyInt" xlink:href="definition$$manyInt.html#inheritance-diagram"><path d="M3638.33,-150C3638.33,-150 3583.67,-150 3583.67,-150 3579.33,-150 3575,-145.667 3575,-141.333 3575,-141.333 3575,-132.667 3575,-132.667 3575,-128.333 3579.33,-124 3583.67,-124 3583.67,-124 3638.33,-124 3638.33,-124 3642.67,-124 3647,-128.333 3647,-132.667 3647,-132.667 3647,-141.333 3647,-141.333 3647,-145.667 3642.67,-150 3638.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3587" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3606.66" text-anchor="start">manyInt</text></a></g></g><!-- node67&#45;&gt;node66 --><g class="edge inheritance" id="graph1_67_66"><g id="a_inheritance|graph1_67_66"><a xlink:title="manyInt is a subtype of manyInt"><path d="M3611,-116.753C3611,-107.355 3611,-96.3336 3611,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3608.55,-116.858 3611,-123.858 3613.45,-116.858 3608.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node68 --><g class="node object" id="graph1_68"><g id="a_object|graph1_68"><a xlink:title="molecule.schema.definition.oneInt" xlink:href="definition$$oneInt$.html#inheritance-diagram"><path d="M3722.33,-88C3722.33,-88 3673.67,-88 3673.67,-88 3669.33,-88 3665,-83.6667 3665,-79.3333 3665,-79.3333 3665,-70.6667 3665,-70.6667 3665,-66.3333 3669.33,-62 3673.67,-62 3673.67,-62 3722.33,-62 3722.33,-62 3726.67,-62 3731,-66.3333 3731,-70.6667 3731,-70.6667 3731,-79.3333 3731,-79.3333 3731,-83.6667 3726.67,-88 3722.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="3677" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3696.77" text-anchor="start">oneInt</text></a></g></g><!-- node69 --><g class="node trait" id="graph1_69"><g id="a_trait|graph1_69"><a xlink:title="molecule.schema.definition.oneInt" xlink:href="definition$$oneInt.html#inheritance-diagram"><path d="M3722.33,-150C3722.33,-150 3673.67,-150 3673.67,-150 3669.33,-150 3665,-145.667 3665,-141.333 3665,-141.333 3665,-132.667 3665,-132.667 3665,-128.333 3669.33,-124 3673.67,-124 3673.67,-124 3722.33,-124 3722.33,-124 3726.67,-124 3731,-128.333 3731,-132.667 3731,-132.667 3731,-141.333 3731,-141.333 3731,-145.667 3726.67,-150 3722.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="3677" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="3696.77" text-anchor="start">oneInt</text></a></g></g><!-- node69&#45;&gt;node68 --><g class="edge inheritance" id="graph1_69_68"><g id="a_inheritance|graph1_69_68"><a xlink:title="oneInt is a subtype of oneInt"><path d="M3698,-116.753C3698,-107.355 3698,-96.3336 3698,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3695.55,-116.858 3698,-123.858 3700.45,-116.858 3695.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node70 --><g class="node object" id="graph1_70"><g id="a_object|graph1_70"><a xlink:title="molecule.schema.definition.mapString" xlink:href="definition$$mapString$.html#inheritance-diagram"><path d="M1726.33,-26C1726.33,-26 1663.67,-26 1663.67,-26 1659.33,-26 1655,-21.6667 1655,-17.3333 1655,-17.3333 1655,-8.66667 1655,-8.66667 1655,-4.33333 1659.33,-0 1663.67,-0 1663.67,-0 1726.33,-0 1726.33,-0 1730.67,-0 1735,-4.33333 1735,-8.66667 1735,-8.66667 1735,-17.3333 1735,-17.3333 1735,-21.6667 1730.67,-26 1726.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1667" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1686.66" text-anchor="start">mapString</text></a></g></g><!-- node71 --><g class="node trait" id="graph1_71"><g id="a_trait|graph1_71"><a xlink:title="molecule.schema.definition.mapString" xlink:href="definition$$mapString.html#inheritance-diagram"><path d="M1726.33,-88C1726.33,-88 1663.67,-88 1663.67,-88 1659.33,-88 1655,-83.6667 1655,-79.3333 1655,-79.3333 1655,-70.6667 1655,-70.6667 1655,-66.3333 1659.33,-62 1663.67,-62 1663.67,-62 1726.33,-62 1726.33,-62 1730.67,-62 1735,-66.3333 1735,-70.6667 1735,-70.6667 1735,-79.3333 1735,-79.3333 1735,-83.6667 1730.67,-88 1726.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1667" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1686.66" text-anchor="start">mapString</text></a></g></g><!-- node71&#45;&gt;node70 --><g class="edge inheritance" id="graph1_71_70"><g id="a_inheritance|graph1_71_70"><a xlink:title="mapString is a subtype of mapString"><path d="M1695,-54.7534C1695,-45.3549 1695,-34.3336 1695,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1692.55,-54.8581 1695,-61.8581 1697.45,-54.8581 1692.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node72 --><g class="node object" id="graph1_72"><g id="a_object|graph1_72"><a xlink:title="molecule.schema.definition.manyString" xlink:href="definition$$manyString$.html#inheritance-diagram"><path d="M1828.33,-26C1828.33,-26 1761.67,-26 1761.67,-26 1757.33,-26 1753,-21.6667 1753,-17.3333 1753,-17.3333 1753,-8.66667 1753,-8.66667 1753,-4.33333 1757.33,-0 1761.67,-0 1761.67,-0 1828.33,-0 1828.33,-0 1832.67,-0 1837,-4.33333 1837,-8.66667 1837,-8.66667 1837,-17.3333 1837,-17.3333 1837,-21.6667 1832.67,-26 1828.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1765" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1784.66" text-anchor="start">manyString</text></a></g></g><!-- node73 --><g class="node trait" id="graph1_73"><g id="a_trait|graph1_73"><a xlink:title="molecule.schema.definition.manyString" xlink:href="definition$$manyString.html#inheritance-diagram"><path d="M1828.33,-88C1828.33,-88 1761.67,-88 1761.67,-88 1757.33,-88 1753,-83.6667 1753,-79.3333 1753,-79.3333 1753,-70.6667 1753,-70.6667 1753,-66.3333 1757.33,-62 1761.67,-62 1761.67,-62 1828.33,-62 1828.33,-62 1832.67,-62 1837,-66.3333 1837,-70.6667 1837,-70.6667 1837,-79.3333 1837,-79.3333 1837,-83.6667 1832.67,-88 1828.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1765" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1784.66" text-anchor="start">manyString</text></a></g></g><!-- node73&#45;&gt;node72 --><g class="edge inheritance" id="graph1_73_72"><g id="a_inheritance|graph1_73_72"><a xlink:title="manyString is a subtype of manyString"><path d="M1795,-54.7534C1795,-45.3549 1795,-34.3336 1795,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1792.55,-54.8581 1795,-61.8581 1797.45,-54.8581 1792.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node74 --><g class="node object" id="graph1_74"><g id="a_object|graph1_74"><a xlink:title="molecule.schema.definition.oneString" xlink:href="definition$$oneString$.html#inheritance-diagram"><path d="M1924.33,-26C1924.33,-26 1863.67,-26 1863.67,-26 1859.33,-26 1855,-21.6667 1855,-17.3333 1855,-17.3333 1855,-8.66667 1855,-8.66667 1855,-4.33333 1859.33,-0 1863.67,-0 1863.67,-0 1924.33,-0 1924.33,-0 1928.67,-0 1933,-4.33333 1933,-8.66667 1933,-8.66667 1933,-17.3333 1933,-17.3333 1933,-21.6667 1928.67,-26 1924.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1867" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1886.77" text-anchor="start">oneString</text></a></g></g><!-- node75 --><g class="node trait" id="graph1_75"><g id="a_trait|graph1_75"><a xlink:title="molecule.schema.definition.oneString" xlink:href="definition$$oneString.html#inheritance-diagram"><path d="M1924.33,-88C1924.33,-88 1863.67,-88 1863.67,-88 1859.33,-88 1855,-83.6667 1855,-79.3333 1855,-79.3333 1855,-70.6667 1855,-70.6667 1855,-66.3333 1859.33,-62 1863.67,-62 1863.67,-62 1924.33,-62 1924.33,-62 1928.67,-62 1933,-66.3333 1933,-70.6667 1933,-70.6667 1933,-79.3333 1933,-79.3333 1933,-83.6667 1928.67,-88 1924.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1867" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1886.77" text-anchor="start">oneString</text></a></g></g><!-- node75&#45;&gt;node74 --><g class="edge inheritance" id="graph1_75_74"><g id="a_inheritance|graph1_75_74"><a xlink:title="oneString is a subtype of oneString"><path d="M1894,-54.7534C1894,-45.3549 1894,-34.3336 1894,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1891.55,-54.8581 1894,-61.8581 1896.45,-54.8581 1891.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76 --><g class="node trait" id="graph1_76"><g id="a_trait|graph1_76"><a xlink:title="molecule.schema.definition.optionBuilder" xlink:href="definition$$optionBuilder.html#inheritance-diagram"><path d="M1083.58,-150C1083.58,-150 992.417,-150 992.417,-150 988.083,-150 983.75,-145.667 983.75,-141.333 983.75,-141.333 983.75,-132.667 983.75,-132.667 983.75,-128.333 988.083,-124 992.417,-124 992.417,-124 1083.58,-124 1083.58,-124 1087.92,-124 1092.25,-128.333 1092.25,-132.667 1092.25,-132.667 1092.25,-141.333 1092.25,-141.333 1092.25,-145.667 1087.92,-150 1083.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="996" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1015.92" text-anchor="start">optionBuilder[Self]</text></a></g></g><!-- node76&#45;&gt;node5 --><g class="edge inheritance" id="graph1_76_5"><g id="a_inheritance|graph1_76_5"><a xlink:title="mapByte is a subtype of optionBuilder[Self]"><path d="M976.37,-136.073C846.903,-135.353 537.517,-129.05 282,-88 279.148,-87.5418 276.216,-86.9846 273.279,-86.364" stroke="#d4d4d4" fill="none"></path><polygon points="976.507,-138.523 983.518,-136.108 976.531,-133.623 976.507,-138.523" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node7 --><g class="edge inheritance" id="graph1_76_7"><g id="a_inheritance|graph1_76_7"><a xlink:title="manyByte is a subtype of optionBuilder[Self]"><path d="M976.221,-135.041C859.04,-132.442 596.731,-122.879 379,-88 376.201,-87.5516 373.326,-87.0194 370.441,-86.4325" stroke="#d4d4d4" fill="none"></path><polygon points="976.337,-137.494 983.388,-135.196 976.443,-132.595 976.337,-137.494" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node9 --><g class="edge inheritance" id="graph1_76_9"><g id="a_inheritance|graph1_76_9"><a xlink:title="oneByte is a subtype of optionBuilder[Self]"><path d="M976.521,-134.351C871.821,-130.754 652.509,-119.79 470,-88 467.292,-87.5283 464.509,-86.9701 461.72,-86.3569" stroke="#d4d4d4" fill="none"></path><polygon points="976.476,-136.801 983.554,-134.588 976.641,-131.904 976.476,-136.801" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node11 --><g class="edge inheritance" id="graph1_76_11"><g id="a_inheritance|graph1_76_11"><a xlink:title="mapURI is a subtype of optionBuilder[Self]"><path d="M976.365,-132.961C885.045,-127.747 708.682,-114.942 561,-88 558.296,-87.5066 555.516,-86.9326 552.728,-86.3081" stroke="#d4d4d4" fill="none"></path><polygon points="976.469,-135.421 983.595,-133.368 976.744,-130.529 976.469,-135.421" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node13 --><g class="edge inheritance" id="graph1_76_13"><g id="a_inheritance|graph1_76_13"><a xlink:title="manyURI is a subtype of optionBuilder[Self]"><path d="M976.422,-130.653C900.612,-123.521 768.126,-109.272 656,-88 653.187,-87.4663 650.292,-86.8627 647.387,-86.2172" stroke="#d4d4d4" fill="none"></path><polygon points="976.382,-133.109 983.579,-131.321 976.837,-128.231 976.382,-133.109" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node15 --><g class="edge inheritance" id="graph1_76_15"><g id="a_inheritance|graph1_76_15"><a xlink:title="oneURI is a subtype of optionBuilder[Self]"><path d="M976.587,-127.833C917.06,-119.473 824.375,-105.277 745,-88 742.215,-87.3938 739.343,-86.7207 736.463,-86.0117" stroke="#d4d4d4" fill="none"></path><polygon points="976.408,-130.282 983.679,-128.824 977.085,-125.429 976.408,-130.282" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node17 --><g class="edge inheritance" id="graph1_76_17"><g id="a_inheritance|graph1_76_17"><a xlink:title="mapUUID is a subtype of optionBuilder[Self]"><path d="M981.303,-122.191C942.155,-112.638 888.902,-99.6058 842,-88 839.165,-87.2985 836.236,-86.5716 833.289,-85.8386" stroke="#d4d4d4" fill="none"></path><polygon points="981.062,-124.654 988.444,-123.933 982.224,-119.894 981.062,-124.654" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node19 --><g class="edge inheritance" id="graph1_76_19"><g id="a_inheritance|graph1_76_19"><a xlink:title="manyUUID is a subtype of optionBuilder[Self]"><path d="M1001.94,-121.08C977.384,-110.917 945.283,-97.6342 922.299,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1001.25,-123.445 1008.66,-123.858 1003.13,-118.918 1001.25,-123.445" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node21 --><g class="edge inheritance" id="graph1_76_21"><g id="a_inheritance|graph1_76_21"><a xlink:title="oneUUID is a subtype of optionBuilder[Self]"><path d="M1024.01,-118.137C1016.42,-108.453 1007.25,-96.7401 1000.5,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1022.24,-119.858 1028.49,-123.858 1026.1,-116.837 1022.24,-119.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node23 --><g class="edge inheritance" id="graph1_76_23"><g id="a_inheritance|graph1_76_23"><a xlink:title="mapDate is a subtype of optionBuilder[Self]"><path d="M1052.29,-118.137C1060.04,-108.453 1069.41,-96.7401 1076.3,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1050.17,-116.861 1047.71,-123.858 1054,-119.923 1050.17,-116.861" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node25 --><g class="edge inheritance" id="graph1_76_25"><g id="a_inheritance|graph1_76_25"><a xlink:title="manyDate is a subtype of optionBuilder[Self]"><path d="M1073.81,-121.08C1098.2,-110.917 1130.08,-97.6342 1152.9,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1072.66,-118.904 1067.14,-123.858 1074.54,-123.427 1072.66,-118.904" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node27 --><g class="edge inheritance" id="graph1_76_27"><g id="a_inheritance|graph1_76_27"><a xlink:title="oneDate is a subtype of optionBuilder[Self]"><path d="M1094.25,-122.19C1132.77,-112.688 1185.01,-99.7166 1231,-88 1233.88,-87.2664 1236.86,-86.5019 1239.85,-85.7296" stroke="#d4d4d4" fill="none"></path><polygon points="1093.43,-119.869 1087.22,-123.923 1094.6,-124.626 1093.43,-119.869" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node41 --><g class="edge inheritance" id="graph1_76_41"><g id="a_inheritance|graph1_76_41"><a xlink:title="mapBoolean is a subtype of optionBuilder[Self]"><path d="M1099.5,-126.585C1157.34,-117.508 1246.26,-102.979 1323,-88 1326.11,-87.3929 1329.32,-86.7429 1332.54,-86.0711" stroke="#d4d4d4" fill="none"></path><polygon points="1098.79,-124.216 1092.26,-127.719 1099.55,-129.057 1098.79,-124.216" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node43 --><g class="edge inheritance" id="graph1_76_43"><g id="a_inheritance|graph1_76_43"><a xlink:title="manyBoolean is a subtype of optionBuilder[Self]"><path d="M1099.74,-130.16C1177.18,-122.441 1313.9,-107.508 1430,-88 1433.14,-87.4728 1436.37,-86.8899 1439.61,-86.2734" stroke="#d4d4d4" fill="none"></path><polygon points="1099.16,-127.756 1092.44,-130.885 1099.65,-132.632 1099.16,-127.756" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node45 --><g class="edge inheritance" id="graph1_76_45"><g id="a_inheritance|graph1_76_45"><a xlink:title="oneBoolean is a subtype of optionBuilder[Self]"><path d="M1099.5,-132.666C1194.61,-126.94 1382.93,-113.332 1541,-88 1544.26,-87.4775 1547.62,-86.8736 1550.99,-86.2203" stroke="#d4d4d4" fill="none"></path><polygon points="1099.1,-130.235 1092.25,-133.098 1099.39,-135.127 1099.1,-130.235" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node71 --><g class="edge inheritance" id="graph1_76_71"><g id="a_inheritance|graph1_76_71"><a xlink:title="mapString is a subtype of optionBuilder[Self]"><path d="M1099.51,-134.421C1209.71,-130.866 1447.8,-119.878 1646,-88 1648.94,-87.5271 1651.96,-86.9682 1655,-86.3544" stroke="#d4d4d4" fill="none"></path><polygon points="1099.36,-131.975 1092.44,-134.645 1099.51,-136.872 1099.36,-131.975" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node73 --><g class="edge inheritance" id="graph1_76_73"><g id="a_inheritance|graph1_76_73"><a xlink:title="manyString is a subtype of optionBuilder[Self]"><path d="M1099.52,-135.186C1222.58,-132.818 1507.57,-123.609 1744,-88 1746.88,-87.5665 1749.83,-87.0539 1752.8,-86.4887" stroke="#d4d4d4" fill="none"></path><polygon points="1099.31,-132.74 1092.36,-135.32 1099.4,-137.639 1099.31,-132.74" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node76&#45;&gt;node75 --><g class="edge inheritance" id="graph1_76_75"><g id="a_inheritance|graph1_76_75"><a xlink:title="oneString is a subtype of optionBuilder[Self]"><path d="M1099.35,-136.224C1234.87,-135.876 1569.67,-130.373 1846,-88 1848.89,-87.5573 1851.85,-87.0206 1854.83,-86.4225" stroke="#d4d4d4" fill="none"></path><polygon points="1099.26,-133.774 1092.26,-136.238 1099.27,-138.674 1099.26,-133.774" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -154,7 +284,7 @@
           <div id="order">
             <span class="filtertype">Ordering</span>
             <ol>
-              
+              <li class="group out"><span>Grouped</span></li>
               <li class="alpha in"><span>Alphabetic</span></li>
               <li class="inherit out"><span>By Inheritance</span></li>
             </ol>
@@ -185,23 +315,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="molecule.schema.definition.Bidirectional" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="BidirectionalextendsAnyRef"></a><a id="Bidirectional:Bidirectional"></a>
-      <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#BidirectionalextendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="definition$$Bidirectional.html"><span class="name">Bidirectional</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      
-      
-    </li><li name="molecule.schema.definition.InOut" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="molecule.schema.definition.InOut" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="setup">
       <a id="InOutextendsAnnotationwithStaticAnnotation"></a><a id="InOut:InOut"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#InOutextendsAnnotationwithStaticAnnotation" title="Permalink">
@@ -213,11 +327,11 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$InOut.html"><span class="name">InOut</span></a><span class="result"> extends <span class="extype" name="scala.annotation.Annotation">Annotation</span> with <span class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</span></span>
+        <a title="Arity annotation for number of molecule input/output attributes." href="definition$$InOut.html"><span class="name">InOut</span></a><span class="result"> extends <span class="extype" name="scala.annotation.Annotation">Annotation</span> with <span class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</span></span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Arity annotation for number of molecule input/output attributes.</p>
+    </li><li name="molecule.schema.definition.manyBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyBigDecimalextendsdefinition.number[molecule.schema.definition.manyBigDecimal,BigDecimal]"></a><a id="manyBigDecimal:manyBigDecimal"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyBigDecimalextendsdefinition.number[molecule.schema.definition.manyBigDecimal,BigDecimal]" title="Permalink">
@@ -229,11 +343,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyBigDecimal.html"><span class="name">manyBigDecimal</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyBigDecimal.html" class="extype" name="molecule.schema.definition.manyBigDecimal">manyBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
+        <a title="Card-many BigDecimal attribute." href="definition$$manyBigDecimal.html"><span class="name">manyBigDecimal</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyBigDecimal.html" class="extype" name="molecule.schema.definition.manyBigDecimal">manyBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many BigDecimal attribute.</p>
+    </li><li name="molecule.schema.definition.manyBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyBigIntextendsdefinition.number[molecule.schema.definition.manyBigInt,BigInt]"></a><a id="manyBigInt:manyBigInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyBigIntextendsdefinition.number[molecule.schema.definition.manyBigInt,BigInt]" title="Permalink">
@@ -245,14 +359,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyBigInt.html"><span class="name">manyBigInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyBigInt.html" class="extype" name="molecule.schema.definition.manyBigInt">manyBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
+        <a title="Card-many BigInt attribute." href="definition$$manyBigInt.html"><span class="name">manyBigInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyBigInt.html" class="extype" name="molecule.schema.definition.manyBigInt">manyBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyBooleanextendsdefinition.scalarAttr[molecule.schema.definition.manyBoolean]"></a><a id="manyBoolean:manyBoolean"></a>
+      <p class="shortcomment cmt">Card-many BigInt attribute.</p>
+    </li><li name="molecule.schema.definition.manyBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyBooleanextendsdefinition.optionBuilder[molecule.schema.definition.manyBoolean]"></a><a id="manyBoolean:manyBoolean"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyBooleanextendsdefinition.scalarAttr[molecule.schema.definition.manyBoolean]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyBooleanextendsdefinition.optionBuilder[molecule.schema.definition.manyBoolean]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -261,14 +375,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyBoolean.html"><span class="name">manyBoolean</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyBoolean.html" class="extype" name="molecule.schema.definition.manyBoolean">manyBoolean</a>]</span>
+        <a title="Card-many Boolean attribute." href="definition$$manyBoolean.html"><span class="name">manyBoolean</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyBoolean.html" class="extype" name="molecule.schema.definition.manyBoolean">manyBoolean</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyByteextendsdefinition.scalarAttr[molecule.schema.definition.manyByte]"></a><a id="manyByte:manyByte"></a>
+      <p class="shortcomment cmt">Card-many Boolean attribute.</p>
+    </li><li name="molecule.schema.definition.manyByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyByteextendsdefinition.optionBuilder[molecule.schema.definition.manyByte]"></a><a id="manyByte:manyByte"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyByteextendsdefinition.scalarAttr[molecule.schema.definition.manyByte]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyByteextendsdefinition.optionBuilder[molecule.schema.definition.manyByte]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -277,14 +391,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyByte.html"><span class="name">manyByte</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyByte.html" class="extype" name="molecule.schema.definition.manyByte">manyByte</a>]</span>
+        <a title="Card-many Bytes attribute." href="definition$$manyByte.html"><span class="name">manyByte</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyByte.html" class="extype" name="molecule.schema.definition.manyByte">manyByte</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyDateextendsdefinition.scalarAttr[molecule.schema.definition.manyDate]"></a><a id="manyDate:manyDate"></a>
+      <p class="shortcomment cmt">Card-many Bytes attribute.</p>
+    </li><li name="molecule.schema.definition.manyDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyDateextendsdefinition.optionBuilder[molecule.schema.definition.manyDate]"></a><a id="manyDate:manyDate"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyDateextendsdefinition.scalarAttr[molecule.schema.definition.manyDate]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyDateextendsdefinition.optionBuilder[molecule.schema.definition.manyDate]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -293,11 +407,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyDate.html"><span class="name">manyDate</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyDate.html" class="extype" name="molecule.schema.definition.manyDate">manyDate</a>]</span>
+        <a title="Card-many Date attribute." href="definition$$manyDate.html"><span class="name">manyDate</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyDate.html" class="extype" name="molecule.schema.definition.manyDate">manyDate</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many Date attribute.</p>
+    </li><li name="molecule.schema.definition.manyDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyDoubleextendsdefinition.number[molecule.schema.definition.manyDouble,Double]"></a><a id="manyDouble:manyDouble"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyDoubleextendsdefinition.number[molecule.schema.definition.manyDouble,Double]" title="Permalink">
@@ -309,11 +423,27 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyDouble.html"><span class="name">manyDouble</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyDouble.html" class="extype" name="molecule.schema.definition.manyDouble">manyDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
+        <a title="Card-many Double attribute." href="definition$$manyDouble.html"><span class="name">manyDouble</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyDouble.html" class="extype" name="molecule.schema.definition.manyDouble">manyDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
+      <p class="shortcomment cmt">Card-many Double attribute.</p>
+    </li><li name="molecule.schema.definition.manyEnum" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyEnumextendsdefinition.enum"></a><a id="manyEnum:manyEnum"></a>
+      <span class="permalink">
+      <a href="../../molecule/schema/definition$.html#manyEnumextendsdefinition.enum" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Card-many Enum attribute." href="definition$$manyEnum.html"><span class="name">manyEnum</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
+      </span>
       
-    </li><li name="molecule.schema.definition.manyFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many Enum attribute.</p>
+    </li><li name="molecule.schema.definition.manyFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyFloatextendsdefinition.number[molecule.schema.definition.manyFloat,Float]"></a><a id="manyFloat:manyFloat"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyFloatextendsdefinition.number[molecule.schema.definition.manyFloat,Float]" title="Permalink">
@@ -325,11 +455,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyFloat.html"><span class="name">manyFloat</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyFloat.html" class="extype" name="molecule.schema.definition.manyFloat">manyFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
+        <a title="Card-many Float attribute." href="definition$$manyFloat.html"><span class="name">manyFloat</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyFloat.html" class="extype" name="molecule.schema.definition.manyFloat">manyFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many Float attribute.</p>
+    </li><li name="molecule.schema.definition.manyInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyIntextendsdefinition.number[molecule.schema.definition.manyInt,Int]"></a><a id="manyInt:manyInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyIntextendsdefinition.number[molecule.schema.definition.manyInt,Int]" title="Permalink">
@@ -341,11 +471,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyInt.html"><span class="name">manyInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyInt.html" class="extype" name="molecule.schema.definition.manyInt">manyInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
+        <a title="Card-many Int attribute." href="definition$$manyInt.html"><span class="name">manyInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyInt.html" class="extype" name="molecule.schema.definition.manyInt">manyInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many Int attribute.</p>
+    </li><li name="molecule.schema.definition.manyLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
       <a id="manyLongextendsdefinition.number[molecule.schema.definition.manyLong,Long]"></a><a id="manyLong:manyLong"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyLongextendsdefinition.number[molecule.schema.definition.manyLong,Long]" title="Permalink">
@@ -357,14 +487,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyLong.html"><span class="name">manyLong</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$manyLong.html" class="extype" name="molecule.schema.definition.manyLong">manyLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
+        <a title="Card-many Long attribute." href="definition$$manyLong.html"><span class="name">manyLong</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$manyLong.html" class="extype" name="molecule.schema.definition.manyLong">manyLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyStringextendsdefinition.scalarAttr[molecule.schema.definition.manyString]"></a><a id="manyString:manyString"></a>
+      <p class="shortcomment cmt">Card-many Long attribute.</p>
+    </li><li name="molecule.schema.definition.manyString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyStringextendsdefinition.optionBuilder[molecule.schema.definition.manyString]"></a><a id="manyString:manyString"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyStringextendsdefinition.scalarAttr[molecule.schema.definition.manyString]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyStringextendsdefinition.optionBuilder[molecule.schema.definition.manyString]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -373,14 +503,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyString.html"><span class="name">manyString</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyString.html" class="extype" name="molecule.schema.definition.manyString">manyString</a>]</span>
+        <a title="Card-many String attribute." href="definition$$manyString.html"><span class="name">manyString</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyString.html" class="extype" name="molecule.schema.definition.manyString">manyString</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyURIextendsdefinition.scalarAttr[molecule.schema.definition.manyURI]"></a><a id="manyURI:manyURI"></a>
+      <p class="shortcomment cmt">Card-many String attribute.</p>
+    </li><li name="molecule.schema.definition.manyURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyURIextendsdefinition.optionBuilder[molecule.schema.definition.manyURI]"></a><a id="manyURI:manyURI"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyURIextendsdefinition.scalarAttr[molecule.schema.definition.manyURI]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyURIextendsdefinition.optionBuilder[molecule.schema.definition.manyURI]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -389,14 +519,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyURI.html"><span class="name">manyURI</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyURI.html" class="extype" name="molecule.schema.definition.manyURI">manyURI</a>]</span>
+        <a title="Card-many URI attribute." href="definition$$manyURI.html"><span class="name">manyURI</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyURI.html" class="extype" name="molecule.schema.definition.manyURI">manyURI</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="manyUUIDextendsdefinition.scalarAttr[molecule.schema.definition.manyUUID]"></a><a id="manyUUID:manyUUID"></a>
+      <p class="shortcomment cmt">Card-many URI attribute.</p>
+    </li><li name="molecule.schema.definition.manyUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="many">
+      <a id="manyUUIDextendsdefinition.optionBuilder[molecule.schema.definition.manyUUID]"></a><a id="manyUUID:manyUUID"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#manyUUIDextendsdefinition.scalarAttr[molecule.schema.definition.manyUUID]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#manyUUIDextendsdefinition.optionBuilder[molecule.schema.definition.manyUUID]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -405,11 +535,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyUUID.html"><span class="name">manyUUID</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$manyUUID.html" class="extype" name="molecule.schema.definition.manyUUID">manyUUID</a>]</span>
+        <a title="Card-many UUID attribute." href="definition$$manyUUID.html"><span class="name">manyUUID</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$manyUUID.html" class="extype" name="molecule.schema.definition.manyUUID">manyUUID</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many UUID attribute.</p>
+    </li><li name="molecule.schema.definition.mapBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapBigDecimalextendsdefinition.number[molecule.schema.definition.mapBigDecimal,BigDecimal]"></a><a id="mapBigDecimal:mapBigDecimal"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapBigDecimalextendsdefinition.number[molecule.schema.definition.mapBigDecimal,BigDecimal]" title="Permalink">
@@ -421,11 +551,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapBigDecimal.html"><span class="name">mapBigDecimal</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapBigDecimal.html" class="extype" name="molecule.schema.definition.mapBigDecimal">mapBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
+        <a title="BigDecimal map attribute." href="definition$$mapBigDecimal.html"><span class="name">mapBigDecimal</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapBigDecimal.html" class="extype" name="molecule.schema.definition.mapBigDecimal">mapBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">BigDecimal map attribute.</p>
+    </li><li name="molecule.schema.definition.mapBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapBigIntextendsdefinition.number[molecule.schema.definition.mapBigInt,BigInt]"></a><a id="mapBigInt:mapBigInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapBigIntextendsdefinition.number[molecule.schema.definition.mapBigInt,BigInt]" title="Permalink">
@@ -437,14 +567,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapBigInt.html"><span class="name">mapBigInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapBigInt.html" class="extype" name="molecule.schema.definition.mapBigInt">mapBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
+        <a title="BigInt map attribute." href="definition$$mapBigInt.html"><span class="name">mapBigInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapBigInt.html" class="extype" name="molecule.schema.definition.mapBigInt">mapBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapBooleanextendsdefinition.scalarAttr[molecule.schema.definition.mapBoolean]"></a><a id="mapBoolean:mapBoolean"></a>
+      <p class="shortcomment cmt">BigInt map attribute.</p>
+    </li><li name="molecule.schema.definition.mapBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapBooleanextendsdefinition.optionBuilder[molecule.schema.definition.mapBoolean]"></a><a id="mapBoolean:mapBoolean"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapBooleanextendsdefinition.scalarAttr[molecule.schema.definition.mapBoolean]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapBooleanextendsdefinition.optionBuilder[molecule.schema.definition.mapBoolean]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -453,14 +583,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapBoolean.html"><span class="name">mapBoolean</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapBoolean.html" class="extype" name="molecule.schema.definition.mapBoolean">mapBoolean</a>]</span>
+        <a title="Boolean map attribute." href="definition$$mapBoolean.html"><span class="name">mapBoolean</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapBoolean.html" class="extype" name="molecule.schema.definition.mapBoolean">mapBoolean</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapByteextendsdefinition.scalarAttr[molecule.schema.definition.mapByte]"></a><a id="mapByte:mapByte"></a>
+      <p class="shortcomment cmt">Boolean map attribute.</p>
+    </li><li name="molecule.schema.definition.mapByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapByteextendsdefinition.optionBuilder[molecule.schema.definition.mapByte]"></a><a id="mapByte:mapByte"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapByteextendsdefinition.scalarAttr[molecule.schema.definition.mapByte]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapByteextendsdefinition.optionBuilder[molecule.schema.definition.mapByte]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -469,14 +599,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapByte.html"><span class="name">mapByte</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapByte.html" class="extype" name="molecule.schema.definition.mapByte">mapByte</a>]</span>
+        <a title="Bytes map attribute." href="definition$$mapByte.html"><span class="name">mapByte</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapByte.html" class="extype" name="molecule.schema.definition.mapByte">mapByte</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapDateextendsdefinition.scalarAttr[molecule.schema.definition.mapDate]"></a><a id="mapDate:mapDate"></a>
+      <p class="shortcomment cmt">Bytes map attribute.</p>
+    </li><li name="molecule.schema.definition.mapDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapDateextendsdefinition.optionBuilder[molecule.schema.definition.mapDate]"></a><a id="mapDate:mapDate"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapDateextendsdefinition.scalarAttr[molecule.schema.definition.mapDate]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapDateextendsdefinition.optionBuilder[molecule.schema.definition.mapDate]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -485,11 +615,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapDate.html"><span class="name">mapDate</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapDate.html" class="extype" name="molecule.schema.definition.mapDate">mapDate</a>]</span>
+        <a title="Date map attribute." href="definition$$mapDate.html"><span class="name">mapDate</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapDate.html" class="extype" name="molecule.schema.definition.mapDate">mapDate</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Date map attribute.</p>
+    </li><li name="molecule.schema.definition.mapDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapDoubleextendsdefinition.number[molecule.schema.definition.mapDouble,Double]"></a><a id="mapDouble:mapDouble"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapDoubleextendsdefinition.number[molecule.schema.definition.mapDouble,Double]" title="Permalink">
@@ -501,11 +631,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapDouble.html"><span class="name">mapDouble</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapDouble.html" class="extype" name="molecule.schema.definition.mapDouble">mapDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
+        <a title="Double map attribute." href="definition$$mapDouble.html"><span class="name">mapDouble</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapDouble.html" class="extype" name="molecule.schema.definition.mapDouble">mapDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Double map attribute.</p>
+    </li><li name="molecule.schema.definition.mapFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapFloatextendsdefinition.number[molecule.schema.definition.mapFloat,Float]"></a><a id="mapFloat:mapFloat"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapFloatextendsdefinition.number[molecule.schema.definition.mapFloat,Float]" title="Permalink">
@@ -517,11 +647,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapFloat.html"><span class="name">mapFloat</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapFloat.html" class="extype" name="molecule.schema.definition.mapFloat">mapFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
+        <a title="Float map attribute." href="definition$$mapFloat.html"><span class="name">mapFloat</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapFloat.html" class="extype" name="molecule.schema.definition.mapFloat">mapFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Float map attribute.</p>
+    </li><li name="molecule.schema.definition.mapInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapIntextendsdefinition.number[molecule.schema.definition.mapInt,Int]"></a><a id="mapInt:mapInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapIntextendsdefinition.number[molecule.schema.definition.mapInt,Int]" title="Permalink">
@@ -533,11 +663,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapInt.html"><span class="name">mapInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapInt.html" class="extype" name="molecule.schema.definition.mapInt">mapInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
+        <a title="Int map attribute." href="definition$$mapInt.html"><span class="name">mapInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapInt.html" class="extype" name="molecule.schema.definition.mapInt">mapInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Int map attribute.</p>
+    </li><li name="molecule.schema.definition.mapLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
       <a id="mapLongextendsdefinition.number[molecule.schema.definition.mapLong,Long]"></a><a id="mapLong:mapLong"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#mapLongextendsdefinition.number[molecule.schema.definition.mapLong,Long]" title="Permalink">
@@ -549,14 +679,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapLong.html"><span class="name">mapLong</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$mapLong.html" class="extype" name="molecule.schema.definition.mapLong">mapLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
+        <a title="Long map attribute." href="definition$$mapLong.html"><span class="name">mapLong</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$mapLong.html" class="extype" name="molecule.schema.definition.mapLong">mapLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapStringextendsdefinition.scalarAttr[molecule.schema.definition.mapString]"></a><a id="mapString:mapString"></a>
+      <p class="shortcomment cmt">Long map attribute.</p>
+    </li><li name="molecule.schema.definition.mapString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapStringextendsdefinition.optionBuilder[molecule.schema.definition.mapString]"></a><a id="mapString:mapString"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapStringextendsdefinition.scalarAttr[molecule.schema.definition.mapString]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapStringextendsdefinition.optionBuilder[molecule.schema.definition.mapString]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -565,14 +695,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapString.html"><span class="name">mapString</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapString.html" class="extype" name="molecule.schema.definition.mapString">mapString</a>]</span>
+        <a title="String map attribute." href="definition$$mapString.html"><span class="name">mapString</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapString.html" class="extype" name="molecule.schema.definition.mapString">mapString</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapURIextendsdefinition.scalarAttr[molecule.schema.definition.mapURI]"></a><a id="mapURI:mapURI"></a>
+      <p class="shortcomment cmt">String map attribute.</p>
+    </li><li name="molecule.schema.definition.mapURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapURIextendsdefinition.optionBuilder[molecule.schema.definition.mapURI]"></a><a id="mapURI:mapURI"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapURIextendsdefinition.scalarAttr[molecule.schema.definition.mapURI]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapURIextendsdefinition.optionBuilder[molecule.schema.definition.mapURI]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -581,14 +711,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapURI.html"><span class="name">mapURI</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapURI.html" class="extype" name="molecule.schema.definition.mapURI">mapURI</a>]</span>
+        <a title="URI map attribute." href="definition$$mapURI.html"><span class="name">mapURI</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapURI.html" class="extype" name="molecule.schema.definition.mapURI">mapURI</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.mapUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="mapUUIDextendsdefinition.scalarAttr[molecule.schema.definition.mapUUID]"></a><a id="mapUUID:mapUUID"></a>
+      <p class="shortcomment cmt">URI map attribute.</p>
+    </li><li name="molecule.schema.definition.mapUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="map">
+      <a id="mapUUIDextendsdefinition.optionBuilder[molecule.schema.definition.mapUUID]"></a><a id="mapUUID:mapUUID"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#mapUUIDextendsdefinition.scalarAttr[molecule.schema.definition.mapUUID]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#mapUUIDextendsdefinition.optionBuilder[molecule.schema.definition.mapUUID]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -597,27 +727,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$mapUUID.html"><span class="name">mapUUID</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$mapUUID.html" class="extype" name="molecule.schema.definition.mapUUID">mapUUID</a>]</span>
+        <a title="UUID map attribute." href="definition$$mapUUID.html"><span class="name">mapUUID</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$mapUUID.html" class="extype" name="molecule.schema.definition.mapUUID">mapUUID</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.number" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="number[Builder,T]extendsdefinition.scalarAttr[Builder]"></a><a id="number[Builder,T]:number[Builder,T]"></a>
-      <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#number[Builder,T]extendsdefinition.scalarAttr[Builder]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="definition$$number.html"><span class="name">number</span></a><span class="tparams">[<span name="Builder">Builder</span>, <span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<span class="extype" name="molecule.schema.definition.number.Builder">Builder</span>]</span>
-      </span>
-      
-      
-    </li><li name="molecule.schema.definition.oneBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">UUID map attribute.</p>
+    </li><li name="molecule.schema.definition.oneBigDecimal" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneBigDecimalextendsdefinition.number[molecule.schema.definition.oneBigDecimal,BigDecimal]"></a><a id="oneBigDecimal:oneBigDecimal"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneBigDecimalextendsdefinition.number[molecule.schema.definition.oneBigDecimal,BigDecimal]" title="Permalink">
@@ -629,11 +743,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneBigDecimal.html"><span class="name">oneBigDecimal</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneBigDecimal.html" class="extype" name="molecule.schema.definition.oneBigDecimal">oneBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
+        <a title="Card-one BigDecimal attribute." href="definition$$oneBigDecimal.html"><span class="name">oneBigDecimal</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneBigDecimal.html" class="extype" name="molecule.schema.definition.oneBigDecimal">oneBigDecimal</a>, <span class="extype" name="scala.BigDecimal">BigDecimal</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one BigDecimal attribute.</p>
+    </li><li name="molecule.schema.definition.oneBigInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneBigIntextendsdefinition.number[molecule.schema.definition.oneBigInt,BigInt]"></a><a id="oneBigInt:oneBigInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneBigIntextendsdefinition.number[molecule.schema.definition.oneBigInt,BigInt]" title="Permalink">
@@ -645,14 +759,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneBigInt.html"><span class="name">oneBigInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneBigInt.html" class="extype" name="molecule.schema.definition.oneBigInt">oneBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
+        <a title="Card-one BigInt attribute." href="definition$$oneBigInt.html"><span class="name">oneBigInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneBigInt.html" class="extype" name="molecule.schema.definition.oneBigInt">oneBigInt</a>, <span class="extype" name="scala.BigInt">BigInt</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneBooleanextendsdefinition.scalarAttr[molecule.schema.definition.oneBoolean]"></a><a id="oneBoolean:oneBoolean"></a>
+      <p class="shortcomment cmt">Card-one BigInt attribute.</p>
+    </li><li name="molecule.schema.definition.oneBoolean" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneBooleanextendsdefinition.optionBuilder[molecule.schema.definition.oneBoolean]"></a><a id="oneBoolean:oneBoolean"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneBooleanextendsdefinition.scalarAttr[molecule.schema.definition.oneBoolean]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneBooleanextendsdefinition.optionBuilder[molecule.schema.definition.oneBoolean]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -661,14 +775,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneBoolean.html"><span class="name">oneBoolean</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneBoolean.html" class="extype" name="molecule.schema.definition.oneBoolean">oneBoolean</a>]</span>
+        <a title="Card-one Boolean attribute." href="definition$$oneBoolean.html"><span class="name">oneBoolean</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneBoolean.html" class="extype" name="molecule.schema.definition.oneBoolean">oneBoolean</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneByteextendsdefinition.scalarAttr[molecule.schema.definition.oneByte]"></a><a id="oneByte:oneByte"></a>
+      <p class="shortcomment cmt">Card-one Boolean attribute.</p>
+    </li><li name="molecule.schema.definition.oneByte" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneByteextendsdefinition.optionBuilder[molecule.schema.definition.oneByte]"></a><a id="oneByte:oneByte"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneByteextendsdefinition.scalarAttr[molecule.schema.definition.oneByte]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneByteextendsdefinition.optionBuilder[molecule.schema.definition.oneByte]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -677,14 +791,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneByte.html"><span class="name">oneByte</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneByte.html" class="extype" name="molecule.schema.definition.oneByte">oneByte</a>]</span>
+        <a title="Card-one Bytes attribute." href="definition$$oneByte.html"><span class="name">oneByte</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneByte.html" class="extype" name="molecule.schema.definition.oneByte">oneByte</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneDateextendsdefinition.scalarAttr[molecule.schema.definition.oneDate]"></a><a id="oneDate:oneDate"></a>
+      <p class="shortcomment cmt">Card-one Bytes attribute.</p>
+    </li><li name="molecule.schema.definition.oneDate" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneDateextendsdefinition.optionBuilder[molecule.schema.definition.oneDate]"></a><a id="oneDate:oneDate"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneDateextendsdefinition.scalarAttr[molecule.schema.definition.oneDate]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneDateextendsdefinition.optionBuilder[molecule.schema.definition.oneDate]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -693,11 +807,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneDate.html"><span class="name">oneDate</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneDate.html" class="extype" name="molecule.schema.definition.oneDate">oneDate</a>]</span>
+        <a title="Card-one Date attribute." href="definition$$oneDate.html"><span class="name">oneDate</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneDate.html" class="extype" name="molecule.schema.definition.oneDate">oneDate</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one Date attribute.</p>
+    </li><li name="molecule.schema.definition.oneDouble" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneDoubleextendsdefinition.number[molecule.schema.definition.oneDouble,Double]"></a><a id="oneDouble:oneDouble"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneDoubleextendsdefinition.number[molecule.schema.definition.oneDouble,Double]" title="Permalink">
@@ -709,14 +823,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneDouble.html"><span class="name">oneDouble</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneDouble.html" class="extype" name="molecule.schema.definition.oneDouble">oneDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
+        <a title="Card-one Double attribute." href="definition$$oneDouble.html"><span class="name">oneDouble</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneDouble.html" class="extype" name="molecule.schema.definition.oneDouble">oneDouble</a>, <span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneEmail" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneEmailextendsdefinition.oneString"></a><a id="oneEmail:oneEmail"></a>
+      <p class="shortcomment cmt">Card-one Double attribute.</p>
+    </li><li name="molecule.schema.definition.oneEnum" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneEnumextendsdefinition.enum"></a><a id="oneEnum:oneEnum"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneEmailextendsdefinition.oneString" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneEnumextendsdefinition.enum" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -725,11 +839,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneEmail.html"><span class="name">oneEmail</span></a><span class="result"> extends <a href="definition$$oneString.html" class="extype" name="molecule.schema.definition.oneString">oneString</a></span>
+        <a title="Card-one Enum attribute." href="definition$$oneEnum.html"><span class="name">oneEnum</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one Enum attribute.</p>
+    </li><li name="molecule.schema.definition.oneFloat" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneFloatextendsdefinition.number[molecule.schema.definition.oneFloat,Float]"></a><a id="oneFloat:oneFloat"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneFloatextendsdefinition.number[molecule.schema.definition.oneFloat,Float]" title="Permalink">
@@ -741,11 +855,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneFloat.html"><span class="name">oneFloat</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneFloat.html" class="extype" name="molecule.schema.definition.oneFloat">oneFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
+        <a title="Card-one Float attribute." href="definition$$oneFloat.html"><span class="name">oneFloat</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneFloat.html" class="extype" name="molecule.schema.definition.oneFloat">oneFloat</a>, <span class="extype" name="scala.Float">Float</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one Float attribute.</p>
+    </li><li name="molecule.schema.definition.oneInt" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneIntextendsdefinition.number[molecule.schema.definition.oneInt,Int]"></a><a id="oneInt:oneInt"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneIntextendsdefinition.number[molecule.schema.definition.oneInt,Int]" title="Permalink">
@@ -757,11 +871,11 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneInt.html"><span class="name">oneInt</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneInt.html" class="extype" name="molecule.schema.definition.oneInt">oneInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
+        <a title="Card-one Int attribute." href="definition$$oneInt.html"><span class="name">oneInt</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneInt.html" class="extype" name="molecule.schema.definition.oneInt">oneInt</a>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one Int attribute.</p>
+    </li><li name="molecule.schema.definition.oneLong" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
       <a id="oneLongextendsdefinition.number[molecule.schema.definition.oneLong,Long]"></a><a id="oneLong:oneLong"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneLongextendsdefinition.number[molecule.schema.definition.oneLong,Long]" title="Permalink">
@@ -773,14 +887,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneLong.html"><span class="name">oneLong</span></a><span class="result"> extends <a href="definition$$number.html" class="extype" name="molecule.schema.definition.number">number</a>[<a href="definition$$oneLong.html" class="extype" name="molecule.schema.definition.oneLong">oneLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
+        <a title="Card-one Long attribute." href="definition$$oneLong.html"><span class="name">oneLong</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.number">number</span>[<a href="definition$$oneLong.html" class="extype" name="molecule.schema.definition.oneLong">oneLong</a>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneStringextendsdefinition.scalarAttr[molecule.schema.definition.oneString]"></a><a id="oneString:oneString"></a>
+      <p class="shortcomment cmt">Card-one Long attribute.</p>
+    </li><li name="molecule.schema.definition.oneString" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneStringextendsdefinition.optionBuilder[molecule.schema.definition.oneString]"></a><a id="oneString:oneString"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneStringextendsdefinition.scalarAttr[molecule.schema.definition.oneString]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneStringextendsdefinition.optionBuilder[molecule.schema.definition.oneString]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -789,14 +903,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneString.html"><span class="name">oneString</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneString.html" class="extype" name="molecule.schema.definition.oneString">oneString</a>]</span>
+        <a title="Card-one String attribute." href="definition$$oneString.html"><span class="name">oneString</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneString.html" class="extype" name="molecule.schema.definition.oneString">oneString</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneURIextendsdefinition.scalarAttr[molecule.schema.definition.oneURI]"></a><a id="oneURI:oneURI"></a>
+      <p class="shortcomment cmt">Card-one String attribute.</p>
+    </li><li name="molecule.schema.definition.oneURI" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneURIextendsdefinition.optionBuilder[molecule.schema.definition.oneURI]"></a><a id="oneURI:oneURI"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneURIextendsdefinition.scalarAttr[molecule.schema.definition.oneURI]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneURIextendsdefinition.optionBuilder[molecule.schema.definition.oneURI]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -805,14 +919,14 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneURI.html"><span class="name">oneURI</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneURI.html" class="extype" name="molecule.schema.definition.oneURI">oneURI</a>]</span>
+        <a title="Card-one URI attribute." href="definition$$oneURI.html"><span class="name">oneURI</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneURI.html" class="extype" name="molecule.schema.definition.oneURI">oneURI</a>]</span>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="oneUUIDextendsdefinition.scalarAttr[molecule.schema.definition.oneUUID]"></a><a id="oneUUID:oneUUID"></a>
+      <p class="shortcomment cmt">Card-one URI attribute.</p>
+    </li><li name="molecule.schema.definition.oneUUID" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="one">
+      <a id="oneUUIDextendsdefinition.optionBuilder[molecule.schema.definition.oneUUID]"></a><a id="oneUUID:oneUUID"></a>
       <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneUUIDextendsdefinition.scalarAttr[molecule.schema.definition.oneUUID]" title="Permalink">
+      <a href="../../molecule/schema/definition$.html#oneUUIDextendsdefinition.optionBuilder[molecule.schema.definition.oneUUID]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -821,10 +935,26 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneUUID.html"><span class="name">oneUUID</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.scalarAttr">scalarAttr</span>[<a href="definition$$oneUUID.html" class="extype" name="molecule.schema.definition.oneUUID">oneUUID</a>]</span>
+        <a title="Card-one UUID attribute." href="definition$$oneUUID.html"><span class="name">oneUUID</span></a><span class="result"> extends <a href="definition$$optionBuilder.html" class="extype" name="molecule.schema.definition.optionBuilder">optionBuilder</a>[<a href="definition$$oneUUID.html" class="extype" name="molecule.schema.definition.oneUUID">oneUUID</a>]</span>
       </span>
       
+      <p class="shortcomment cmt">Card-one UUID attribute.</p>
+    </li><li name="molecule.schema.definition.optionBuilder" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="opt">
+      <a id="optionBuilder[Self]extendsAnyRef"></a><a id="optionBuilder[Self]:optionBuilder[Self]"></a>
+      <span class="permalink">
+      <a href="../../molecule/schema/definition$.html#optionBuilder[Self]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Attribute options." href="definition$$optionBuilder.html"><span class="name">optionBuilder</span></a><span class="tparams">[<span name="Self">Self</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
       
+      <p class="shortcomment cmt">Attribute options.</p>
     </li></ol>
             </div>
 
@@ -1183,7 +1313,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="molecule.schema.definition.many" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.schema.definition.many" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="ref">
       <a id="many"></a><a id="many:many"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#many" title="Permalink">
@@ -1195,11 +1325,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$many$.html"><span class="name">many</span></a>
+        <a title="Card-many reference." href="definition$$many$.html"><span class="name">many</span></a>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyBi" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-many reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/card-many/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/util/schema/CoreTestDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
+    </li><li name="molecule.schema.definition.manyBi" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="bi">
       <a id="manyBi"></a><a id="manyBi:manyBi"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyBi" title="Permalink">
@@ -1211,11 +1343,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyBi$.html"><span class="name">manyBi</span></a>
+        <a title="Card-many bi-directional reference." href="definition$$manyBi$.html"><span class="name">manyBi</span></a>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.manyBiEdge" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-many bi-directional reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-many bi-directional reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/bidirectional/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/bidirectionals/schema/BidirectionalDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
+    </li><li name="molecule.schema.definition.manyBiEdge" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="edge">
       <a id="manyBiEdge"></a><a id="manyBiEdge:manyBiEdge"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#manyBiEdge" title="Permalink">
@@ -1227,10 +1361,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyBiEdge$.html"><span class="name">manyBiEdge</span></a>
+        <a title="Card-many bi-directional edge reference." href="definition$$manyBiEdge$.html"><span class="name">manyBiEdge</span></a>
       </span>
       
-      
+      <p class="shortcomment cmt">Card-many bi-directional edge reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-many bi-directional edge reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/bidirectional/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/bidirectionals/schema/BidirectionalDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
     </li><li name="molecule.schema.definition.manyBigDecimal" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="manyBigDecimal"></a><a id="manyBigDecimal:manyBigDecimal"></a>
       <span class="permalink">
@@ -1339,7 +1475,7 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$manyEnum$.html"><span class="name">manyEnum</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
+        <a title="" href="definition$$manyEnum$.html"><span class="name">manyEnum</span></a><span class="result"> extends <a href="definition$$manyEnum.html" class="extype" name="molecule.schema.definition.manyEnum">manyEnum</a></span>
       </span>
       
       
@@ -1631,7 +1767,7 @@
       </span>
       
       
-    </li><li name="molecule.schema.definition.one" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.schema.definition.one" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="ref">
       <a id="one"></a><a id="one:one"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#one" title="Permalink">
@@ -1643,11 +1779,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$one$.html"><span class="name">one</span></a>
+        <a title="Card-one reference." href="definition$$one$.html"><span class="name">one</span></a>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneBi" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-one reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/card-one/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/util/schema/CoreTestDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
+    </li><li name="molecule.schema.definition.oneBi" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="bi">
       <a id="oneBi"></a><a id="oneBi:oneBi"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneBi" title="Permalink">
@@ -1659,11 +1797,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneBi$.html"><span class="name">oneBi</span></a>
+        <a title="Card-one bi-directional reference." href="definition$$oneBi$.html"><span class="name">oneBi</span></a>
       </span>
       
-      
-    </li><li name="molecule.schema.definition.oneBiEdge" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Card-one bi-directional reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-one bi-directional reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/bidirectional/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/bidirectionals/schema/BidirectionalDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
+    </li><li name="molecule.schema.definition.oneBiEdge" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="edge">
       <a id="oneBiEdge"></a><a id="oneBiEdge:oneBiEdge"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#oneBiEdge" title="Permalink">
@@ -1675,10 +1815,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneBiEdge$.html"><span class="name">oneBiEdge</span></a>
+        <a title="Card-one bi-directional edge reference." href="definition$$oneBiEdge$.html"><span class="name">oneBiEdge</span></a>
       </span>
       
-      
+      <p class="shortcomment cmt">Card-one bi-directional edge reference.</p><div class="fullcomment"><div class="comment cmt"><p>Card-one bi-directional edge reference.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/bidirectional/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/bidirectionals/schema/BidirectionalDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
     </li><li name="molecule.schema.definition.oneBigDecimal" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="oneBigDecimal"></a><a id="oneBigDecimal:oneBigDecimal"></a>
       <span class="permalink">
@@ -1775,22 +1917,6 @@
       </span>
       
       
-    </li><li name="molecule.schema.definition.oneEmail" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="oneEmail"></a><a id="oneEmail:oneEmail"></a>
-      <span class="permalink">
-      <a href="../../molecule/schema/definition$.html#oneEmail" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="definition$$oneEmail$.html"><span class="name">oneEmail</span></a><span class="result"> extends <a href="definition$$oneEmail.html" class="extype" name="molecule.schema.definition.oneEmail">oneEmail</a></span>
-      </span>
-      
-      
     </li><li name="molecule.schema.definition.oneEnum" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="oneEnum"></a><a id="oneEnum:oneEnum"></a>
       <span class="permalink">
@@ -1803,7 +1929,7 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$oneEnum$.html"><span class="name">oneEnum</span></a><span class="result"> extends <span class="extype" name="molecule.schema.definition.enum">enum</span></span>
+        <a title="" href="definition$$oneEnum$.html"><span class="name">oneEnum</span></a><span class="result"> extends <a href="definition$$oneEnum.html" class="extype" name="molecule.schema.definition.oneEnum">oneEnum</a></span>
       </span>
       
       
@@ -1903,7 +2029,7 @@
       </span>
       
       
-    </li><li name="molecule.schema.definition.target" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.schema.definition.target" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="edge">
       <a id="target"></a><a id="target:target"></a>
       <span class="permalink">
       <a href="../../molecule/schema/definition$.html#target" title="Permalink">
@@ -1915,10 +2041,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="definition$$target$.html"><span class="name">target</span></a>
+        <a title="Bi-directional edge target attribute." href="definition$$target$.html"><span class="name">target</span></a>
       </span>
       
-      
+      <p class="shortcomment cmt">Bi-directional edge target attribute.</p><div class="fullcomment"><div class="comment cmt"><p>Bi-directional edge target attribute.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/relationships/bidirectional/" target="_blank">Manual</a> |
+    <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/bidirectionals/schema/BidirectionalDefinition.scala" target="_blank">Example</a></p></span></dd></dl></div>
     </li>
               </ol>
             </div>
@@ -1938,7 +2066,31 @@
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="Ungrouped">
+        <div class="group" name="setup">
+              <h3>Setup</h3>
+              
+            </div><div class="group" name="opt">
+              <h3>Options</h3>
+              
+            </div><div class="group" name="one">
+              <h3>Cardinality-one attributes</h3>
+              
+            </div><div class="group" name="many">
+              <h3>Cardinality-many attributes</h3>
+              
+            </div><div class="group" name="map">
+              <h3>Map attributes</h3>
+              
+            </div><div class="group" name="ref">
+              <h3>References</h3>
+              
+            </div><div class="group" name="bi">
+              <h3>Bidirectional references</h3>
+              
+            </div><div class="group" name="edge">
+              <h3>Bidirectional edge references</h3>
+              
+            </div><div class="group" name="Ungrouped">
               <h3>Ungrouped</h3>
               
             </div>

@@ -5,10 +5,10 @@ weight: 20
 menu:
   main:
     parent: relationships
-up:   /docs/relationships
-prev: /docs/relationships/card-one
-next: /docs/relationships/composites
-down: /docs/crud
+up:   /manual/relationships
+prev: /manual/relationships/card-one
+next: /manual/relationships/composites
+down: /manual/crud
 ---
 
 # Card-many relationships
@@ -35,7 +35,7 @@ object OrderDefinition {
 An `Order` can have multiple `LineItem`s so we define a cardinality-many ref attribute `items` that points to the `LineItem` namespace.
 
 Note how we also make LineItems a component with the `isComponent` option. That means that `LineItem`s are _owned_ by an `Order` and will get automatically
-retracted if the `Order` is retracted.
+retracted if the `Order` is retracted. Subsequent component-defined referenced entities will be recursively retracted too.
 
 Now we can get an Order and its Line Items:
 
@@ -51,7 +51,7 @@ The Order data is repeated for each line Item which is kind of redundant. We can
 
 ## Nested results
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Nested.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/NestedRef.scala)
 
 We can nest the result with the Molecule syntax `*` indicating "with many":
 
@@ -97,4 +97,4 @@ orderId.touch === Map(
 
 ### Next
 
-[Composites...](/docs/relationships/composites)
+[Composites...](/manual/relationships/composites)

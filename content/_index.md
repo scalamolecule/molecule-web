@@ -23,7 +23,7 @@ title: "Home"
             <div class="carousel-caption">
               <h3>Type-inferred Queries</h3>
 <p>Build query molecules with your domain attributes</p>
-<pre><code class="language-scala">val persons: Iterable[(String, Int)] = Person.name.age.get      
+<pre><code class="language-scala">val persons: List[(String, Int)] = Person.name.age.get      
 </code></pre>
 <p><em>&ldquo;Name and age of Persons&rdquo;</em></p>
             </div>
@@ -103,8 +103,8 @@ title: "Home"
             <div class="carousel-caption">                   
             	<h3 id="more-up-the-sleeve:ffcff61ab3a11ef1d50900901a24ec54">More..</h3>
 <ul>
-    <li><a href="/docs/documentation/introduction">Introduction</a></li>
-    <li><a href="/docs/getting-started/setup">Setup</a></li>
+    <li><a href="/manual/quick-start/introduction/">Introduction</a></li>
+    <li><a href="/manual/setup">Setup</a></li>
     <li><a href="/resources/tutorials/seattle">Seattle Tutorial</a></li>
 </ul>
             </div>

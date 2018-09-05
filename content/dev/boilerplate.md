@@ -77,7 +77,7 @@ This gives us an optional value back if an attribute value has been asserted for
 [See entity api example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L24-L52)
 
 
-### Tacet attributes
+### Tacit attributes
 
 The `name_` attributes are "tacit" attributes that cause a :where clause in the query but doesn't return any data 
 (no variable in the :find section of the produced query). This is to be able to skip returning data of attributes 

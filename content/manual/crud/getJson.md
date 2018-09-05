@@ -5,13 +5,15 @@ weight: 50
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud/get
-next: /docs/crud/update
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud/get
+next: /manual/crud/update
+down: /manual/transactions
 ---
 
 # Get Json formatted Data
+
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/json)
 
 We can get data in json format directly from the database by calling `getJson` on a molecule. So instead of converting tuples of data to 
 json with some 3rd party library we can call `getJson` and pass the json data string directly to an Angular table for instance.
@@ -72,4 +74,4 @@ Various render strategies could rather easily be added if necessary. In that cas
 
 ### Next
 
-[Update...](/docs/crud/update)
+[Update...](/manual/crud/update)

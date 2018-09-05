@@ -36,7 +36,7 @@ The 5 ways of getting data have the following semantics:
 ## Point in time {#pointintime}
 
 The two methods `getAsOf(t)` and `getSince(t)` takes a _point in time_ in the database that can be supplied in
-3 different ways:
+4 different ways:
 
 
 ### 1. `tx` Transaction entity id 
@@ -88,7 +88,24 @@ datomic.Peer.toT(tx2) === t2
 ```
 
 
-### 3. `java.util.Date`
+### 3. Transaction report
+
+Each transaction returns a `TxReport` with information about the transaction and we can use the report itself as a point in time:
+
+
+```scala
+val txReport1 = Person.name("Fred").likes("pizza").save
+val fred = txReport1.eid // Getting created entity id from tx report
+
+val txReport2 = Person(fred).likes("sushi").update
+
+Person(fred).likes.get === List("sushi")
+Person(fred).likes.getAsOf(txReport1) === List("pizza")
+```
+
+
+
+### 4. `java.util.Date`
 
 Lastly we can also supply a human time/date of type `java.util.Date` 
 
@@ -100,6 +117,7 @@ Person(e5).likes.getAsOf(criticalDate) === List("pizza")
 
 
 ## Data getters
+
 
 ### `get` current view
 
@@ -125,7 +143,7 @@ Person.name.age.getAsOf(nov5date) === ... // Persons as of November 5 (inclusive
 
 ### [☞ `getSince(t)`](/manual/time/asof-since/)
 
-Likewise we might want to know what Persons have been added _after_ or _since_ 5th of November. When
+Likewise we might want to know what Persons have been added _after_ or _since_ 5th of November. Whn
 we call `getSince(nov5date)` we will get a snapshot of the current
 database filtered with only the data added/retracted after November 5:
 
@@ -155,6 +173,51 @@ Person.name.age.getWith(<testTxData>) === ... // Persons including some new data
 
 The "test db" that such query works on is simply garbage collected when it goes out of scope. We therefore don't need
 to any tear-down as we would normally need to testing with a mutable database.
+
+
+
+## 3 return types
+
+Each data getter has 3 interfaces that return data in different ways:
+
+### Typed
+
+The standard getters return Lists of tuples of type-casted data.
+
+`:List[<tuple>]`
+
+- `get`
+- `getAsOf(t)`
+- `getSince(t)`
+- `getHistory`
+- `getWith(txData)`
+
+### Lazily typed
+
+If large data sets are expected, an Iterable of tuples of lazily type-cased data can be retrieved instead. 
+Data is type-casted on each call to `next` on the iterator.
+
+`:Iterable[<tuple>]`
+
+- `getIterable`
+- `getIterableAsOf(t)`
+- `getIterableSince(t)`
+- `getIterableHistory`
+- `getIterableWith(txData)`
+
+
+### Untyped
+
+If typed data is not required we can get the raw untyped java collections of Lists of objects.
+
+`:java.util.Collection[java.util.List[AnyRef]]`
+
+- `getRaw`
+- `getRawAsOf(t)`
+- `getRawSince(t)`
+- `getRawHistory`
+- `getRawWith(txData)`
+
 
 
 

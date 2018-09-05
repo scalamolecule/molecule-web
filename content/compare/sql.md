@@ -19,7 +19,7 @@ sql"select * from PERSON".as[Person].list
 ```
 In molecule we would declare each attribute we are interested in also to infer the exact return type
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 
 #### SELECT
@@ -144,7 +144,7 @@ sql"""
 ```
 ```scala
 // Add `$` to attribute name to get optional values
-val persons: Iterable[(Option[String], String)] = Person.name$.Address.city.get
+val persons: List[(Option[String], String)] = Person.name$.Address.city.get
 ```
 
 #### Subquery

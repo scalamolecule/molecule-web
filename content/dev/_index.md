@@ -47,7 +47,7 @@ We therefore generate all boilerplate code automatically when we compile our pro
 Our generated boilerplate code allow us to build molecules attribute by attribute:
 
 ```scala
-val molecule = m(Person.name.age)
+val personsMolecule = m(Person.name.age)
 ```
 
 The `m`olecule method transforms our source code _at compile time_ through a series of states:

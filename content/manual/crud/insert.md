@@ -5,15 +5,15 @@ weight: 20
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud/save
-next: /docs/crud/composite-insert
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud/save
+next: /manual/crud/composite-insert
+down: /manual/transactions
 ---
 
 # Insert
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/manipulation/Insert.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Insert.scala)
 
 Multiple rows of data can be inserted by making a molecule that matches the values of each row:
 
@@ -120,4 +120,4 @@ insertPerson(personsData)
 
 ### Next
 
-[Composite insert...](/docs/crud/composite-insert)
+[Composite insert...](/manual/crud/composite-insert)

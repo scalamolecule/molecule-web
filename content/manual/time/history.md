@@ -6,9 +6,9 @@ menu:
   main:
     parent: time
     identifier: history
-up:   /docs/time
-prev: /docs/time/asof-since
-next: /docs/time/with
+up:   /manual/time
+prev: /manual/time/asof-since
+next: /manual/time/with
 ---
 
 # History
@@ -158,4 +158,4 @@ Story.url_(ecURL).title.op_(false).tx_(MetaData.usecase.User.firstName_("Ed")).g
 
 ### Next
 
-[With...](/docs/time/with)
+[With...](/manual/time/with)

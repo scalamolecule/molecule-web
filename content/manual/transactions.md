@@ -40,7 +40,7 @@ for that fact.
 
 Since the transaction is itself an entity exactly as any other entity we can query it as we query our own domain data.
 
-Molecule offers a few generic attributes that makes it easy to access transaction data. In our example we could find the
+Molecule offers some generic attributes that makes it easy to access transaction data. In our example we could find the
 transaction entity id of the assertion of Freds `name` by adding the generic attribute `tx` right after the `name_` attribute (that we
 have made tacit with the underscore since we're not interested in value "Fred"): 
 

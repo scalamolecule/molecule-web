@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0 - molecule.facade.Conn</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.facade.Conn" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.facade.Conn" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,7 +68,10 @@
         <a title="" href="../../index.html"><span class="name">root</span></a>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p><div class="fullcomment"><div class="comment cmt"><p>Molecule package</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="molecule.facade" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="facade"></a><a id="facade:facade"></a>
       <span class="permalink">
@@ -97,18 +164,42 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">facade</span></a>
+        <a title="Molecule facades to Datomic." href="index.html"><span class="name">facade</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Molecule facades to Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Molecule facades to Datomic.
+<br><br>
+Facades are not trying to cover all Datomic methods but rather
+only interfaces relevant to Molecule.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.facade.exception" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exception"></a><a id="exception:exception"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/index.html#exception" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="exception/index.html"><span class="name">exception</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.facade">facade</a></dd></dl></div>
     </li><li class="current-entities indented2">
-                        <a class="object" href="Conn$.html" title=""></a>
-                        <a class="class" href="" title=""></a>
-                        <a href="" title="">Conn</a>
+                        <a class="object" href="Conn$.html" title="Factory methods to create facade to Datomic Connection."></a>
+                        <a class="class" href="" title="Facade to Datomic Connection."></a>
+                        <a href="" title="Facade to Datomic Connection.">Conn</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="Datomic.html" title="Facade to Datomic with selected methods"></a>
-                        <a href="Datomic.html" title="Facade to Datomic with selected methods">Datomic</a>
+                        <a class="trait" href="Datomic.html" title="Facade to Datomic with selected methods."></a>
+                        <a href="Datomic.html" title="Facade to Datomic with selected methods.">Datomic</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="TxReport.html" title="Facade to Datomic transaction report facade with convenience methods to access tx data."></a>
+                        <a href="TxReport.html" title="Facade to Datomic transaction report facade with convenience methods to access tx data.">TxReport</a>
                       </li>
               </ul>
             </div>
@@ -139,12 +230,26 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Facade to Datomic Connection.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/facade/Conn.scala#L1" target="_blank">Conn.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/testing/" target="_blank">Manual</a>
+    | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbAsOf.scala#L1" target="_blank">testDbAsOf</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala#L1" target="_blank">testDbSince</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala#L1" target="_blank">testDbWith</a>,</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 120.00 120.00" height="120pt" width="120pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 116,-116 116,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="molecule.facade.Conn (this class)" xlink:href="#inheritance-diagram"><path d="M78.5833,-50C78.5833,-50 33.4167,-50 33.4167,-50 29.0833,-50 24.75,-45.6667 24.75,-41.3333 24.75,-41.3333 24.75,-32.6667 24.75,-32.6667 24.75,-28.3333 29.0833,-24 33.4167,-24 33.4167,-24 78.5833,-24 78.5833,-24 82.9167,-24 87.25,-28.3333 87.25,-32.6667 87.25,-32.6667 87.25,-41.3333 87.25,-41.3333 87.25,-45.6667 82.9167,-50 78.5833,-50" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43" x="37" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="56.8262" text-anchor="start">Conn</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.AnyRef"><path d="M82.3333,-112C82.3333,-112 29.6667,-112 29.6667,-112 25.3333,-112 21,-107.667 21,-103.333 21,-103.333 21,-94.6667 21,-94.6667 21,-90.3333 25.3333,-86 29.6667,-86 29.6667,-86 82.3333,-86 82.3333,-86 86.6667,-86 91,-90.3333 91,-94.6667 91,-94.6667 91,-103.333 91,-103.333 91,-107.667 86.6667,-112 82.3333,-112" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-105" x="33" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="52.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Conn is a subtype of AnyRef"><path d="M56,-78.7534C56,-69.3549 56,-58.3336 56,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="53.5501,-78.8581 56,-85.8581 58.4501,-78.8581 53.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -303,7 +408,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="molecule.facade.Conn#db" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.facade.Conn#db" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="db:datomic.Database"></a><a id="db:Database"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#db:datomic.Database" title="Permalink">
@@ -318,7 +423,7 @@
         <span class="name">db</span><span class="result">: <span class="extype" name="datomic.Database">Database</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Get current test/live db.</p><div class="fullcomment"><div class="comment cmt"><p>Get current test/live db. Test db has preference.</p></div></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -481,10 +586,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="molecule.facade.Conn#q" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="q(query:String,db:datomic.Database,inputs:AnyRef*):java.util.Collection[java.util.List[AnyRef]]"></a><a id="q(String,Database,AnyRef*):Collection[List[AnyRef]]"></a>
+    </li><li name="molecule.facade.Conn#q" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="q(db:datomic.Database,query:String,inputs:Seq[Any]):List[List[AnyRef]]"></a><a id="q(Database,String,Seq[Any]):List[List[AnyRef]]"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#q(query:String,db:datomic.Database,inputs:AnyRef*):java.util.Collection[java.util.List[AnyRef]]" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#q(db:datomic.Database,query:String,inputs:Seq[Any]):List[List[AnyRef]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -493,14 +598,42 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">q</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="db">db: <span class="extype" name="datomic.Database">Database</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.AnyRef">AnyRef</span>*</span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
+        <span class="name">q</span><span class="params">(<span name="db">db: <span class="extype" name="datomic.Database">Database</span></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#q" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="q(query:String,inputs:AnyRef*):java.util.Collection[java.util.List[AnyRef]]"></a><a id="q(String,AnyRef*):Collection[List[AnyRef]]"></a>
+      <p class="shortcomment cmt">Query Datomic directly with db value and optional Scala inputs.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic directly with db value and optional Scala inputs.</p><pre><span class="cmt">// Sample data</span>
+Ns.str.int.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+)
+
+<span class="cmt">// Start out easily with a Datomic query from debug output</span>
+Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
+
+<span class="cmt">// Paste Datomic query into `q` call and use some db value</span>
+conn.q(conn.db,
+       <span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
+  <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
+)
+
+<span class="cmt">// Modify Datomic query to see result, for instance</span>
+<span class="cmt">// by adding input to query and applying input value</span>
+conn.q(conn.db,
+       <span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :in    $ ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
+       <span class="std">Seq</span>(<span class="num">42</span>) <span class="cmt">// input values in list</span>
+ ) === <span class="std">List</span>(
+  <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
+)</pre></div><dl class="paramcmts block"><dt class="param">db</dt><dd class="cmt"><p>Any Datomic Database value (could be asOf(x) etc)</p></dd><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Seq of optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>List[List[AnyRef]]</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#q" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="q(query:String,inputs:Any*):List[List[AnyRef]]"></a><a id="q(String,Any*):List[List[AnyRef]]"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#q(query:String,inputs:AnyRef*):java.util.Collection[java.util.List[AnyRef]]" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#q(query:String,inputs:Any*):List[List[AnyRef]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -509,11 +642,111 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">q</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.AnyRef">AnyRef</span>*</span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
+        <span class="name">q</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.Any">Any</span>*</span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
       </span>
       
+      <p class="shortcomment cmt">Query Datomic directly with optional Scala inputs.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic directly with optional Scala inputs.</p><pre><span class="cmt">// Sample data</span>
+Ns.str.int.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+)
+
+<span class="cmt">// Start out easily with a Datomic query from debug output</span>
+Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
+
+<span class="cmt">// Paste Datomic query into `q` call</span>
+conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
+  <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
+)
+
+<span class="cmt">// Modify Datomic query to see result, for instance</span>
+<span class="cmt">// by adding input to query and applying input value</span>
+conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :in    $ ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>) === <span class="std">List</span>(
+  <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
+)</pre></div><dl class="paramcmts block"><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>List[List[AnyRef]]</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#qRaw" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="qRaw(db:datomic.Database,query:String,inputs:Seq[Any]):java.util.Collection[java.util.List[AnyRef]]"></a><a id="qRaw(Database,String,Seq[Any]):Collection[List[AnyRef]]"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/Conn.html#qRaw(db:datomic.Database,query:String,inputs:Seq[Any]):java.util.Collection[java.util.List[AnyRef]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">qRaw</span><span class="params">(<span name="db">db: <span class="extype" name="datomic.Database">Database</span></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
+      </span>
       
-    </li><li name="molecule.facade.Conn#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Query Datomic directly with db value and optional Scala inputs and get raw Java result.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic directly with db value and optional Scala inputs and get raw Java result.</p><pre><span class="cmt">// Sample data</span>
+Ns.str.int.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+)
+
+<span class="cmt">// Start out easily with a Datomic query from debug output</span>
+Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
+
+<span class="cmt">// Paste Datomic query into `q` call and use some db value</span>
+conn.q(conn.db,
+       <span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
+    .toString === <span class="lit">""</span><span class="lit">"[["</span>Liz<span class="lit">" 37], ["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span>
+
+<span class="cmt">// Modify Datomic query to see result, for instance</span>
+<span class="cmt">// by adding input to query and applying input value</span>
+conn.q(conn.db,
+       <span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :in    $ ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
+       <span class="std">Seq</span>(<span class="num">42</span>) <span class="cmt">// input values in list</span>
+ ).toString === <span class="lit">""</span><span class="lit">"[["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span></pre></div><dl class="paramcmts block"><dt class="param">db</dt><dd class="cmt"><p>Any Datomic Database value (could be asOf(x) etc)</p></dd><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Seq of optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#qRaw" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="qRaw(query:String,inputs:Any*):java.util.Collection[java.util.List[AnyRef]]"></a><a id="qRaw(String,Any*):Collection[List[AnyRef]]"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/Conn.html#qRaw(query:String,inputs:Any*):java.util.Collection[java.util.List[AnyRef]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">qRaw</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inputs">inputs: <span class="extype" name="scala.Any">Any</span>*</span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Query Datomic directly with optional Scala inputs and get raw Java result.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic directly with optional Scala inputs and get raw Java result.</p><pre><span class="cmt">// Sample data</span>
+Ns.str.int.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+)
+
+<span class="cmt">// Start out easily with a Datomic query from debug output</span>
+Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
+
+<span class="cmt">// Paste Datomic query into `q` call</span>
+conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
+    .toString === <span class="lit">""</span><span class="lit">"[["</span>Liz<span class="lit">" 37], ["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span>
+
+<span class="cmt">// Modify Datomic query to see result, for instance</span>
+<span class="cmt">// by adding input to query and applying input value</span>
+conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
+         | :in    $ ?c
+         | :where [?a :ns/str ?b]
+         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>).toString === <span class="lit">""</span><span class="lit">"[["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span></pre></div><dl class="paramcmts block"><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="query(m:molecule.ast.model.Model,q:molecule.ast.query.Query):java.util.Collection[java.util.List[AnyRef]]"></a><a id="query(Model,Query):Collection[List[AnyRef]]"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#query(m:molecule.ast.model.Model,q:molecule.ast.query.Query):java.util.Collection[java.util.List[AnyRef]]" title="Permalink">
@@ -525,10 +758,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">query</span><span class="params">(<span name="m">m: <span class="extype" name="molecule.ast.model.Model">Model</span></span>, <span name="q">q: <span class="extype" name="molecule.ast.query.Query">Query</span></span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
+        <span class="name">query</span><span class="params">(<span name="m">m: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>, <span name="q">q: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
       </span>
       
-      
+      <p class="shortcomment cmt">Query Datomic with Model and Query and get raw Java data.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic with Model and Query and get raw Java data.
+<br><br>
+Main query method that Molecule macros use.
+</p></div><dl class="paramcmts block"><dt class="param">m</dt><dd class="cmt"><p><a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a> instance</p></dd><dt class="param">q</dt><dd class="cmt"><p><a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a> instance</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -560,11 +796,11 @@
         <span class="name">testDb</span><span class="params">(<span name="db">db: <span class="extype" name="datomic.Database">Database</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="testDbAsOf(txR:molecule.action.TxReport):Unit"></a><a id="testDbAsOf(TxReport):Unit"></a>
+      <p class="shortcomment cmt">Manually apply a database to use.</p>
+    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="testDbAsOf(txR:molecule.facade.TxReport):Unit"></a><a id="testDbAsOf(TxReport):Unit"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#testDbAsOf(txR:molecule.action.TxReport):Unit" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#testDbAsOf(txR:molecule.facade.TxReport):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -573,11 +809,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">testDbAsOf</span><span class="params">(<span name="txR">txR: <a href="../action/TxReport.html" class="extype" name="molecule.action.TxReport">TxReport</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">testDbAsOf</span><span class="params">(<span name="txR">txR: <a href="TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Use test database as of transaction report.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database as of transaction report.
+</p></div><dl class="paramcmts block"><dt class="param">txR</dt><dd class="cmt"><p>Transaction report</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="testDbAsOf(d:java.util.Date):Unit"></a><a id="testDbAsOf(Date):Unit"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#testDbAsOf(d:java.util.Date):Unit" title="Permalink">
@@ -592,8 +829,9 @@
         <span class="name">testDbAsOf</span><span class="params">(<span name="d">d: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Use test database as of date.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database as of date.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>Date</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#testDbAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="testDbAsOf(t:Long):Unit"></a><a id="testDbAsOf(Long):Unit"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#testDbAsOf(t:Long):Unit" title="Permalink">
@@ -608,7 +846,8 @@
         <span class="name">testDbAsOf</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Use test database as of time t.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database as of time t.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Long</p></dd></dl></div>
     </li><li name="molecule.facade.Conn#testDbAsOfNow" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="testDbAsOfNow:Unit"></a>
       <span class="permalink">
@@ -624,11 +863,11 @@
         <span class="name">testDbAsOfNow</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="testDbSince(txR:molecule.action.TxReport):Unit"></a><a id="testDbSince(TxReport):Unit"></a>
+      <p class="shortcomment cmt">Use test database as of now.</p>
+    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="testDbSince(txR:molecule.facade.TxReport):Unit"></a><a id="testDbSince(TxReport):Unit"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#testDbSince(txR:molecule.action.TxReport):Unit" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#testDbSince(txR:molecule.facade.TxReport):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -637,11 +876,12 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">testDbSince</span><span class="params">(<span name="txR">txR: <a href="../action/TxReport.html" class="extype" name="molecule.action.TxReport">TxReport</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">testDbSince</span><span class="params">(<span name="txR">txR: <a href="TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Use test database since transaction report.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database since transaction report.
+</p></div><dl class="paramcmts block"><dt class="param">txR</dt><dd class="cmt"><p>Transaction report</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="testDbSince(d:java.util.Date):Unit"></a><a id="testDbSince(Date):Unit"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#testDbSince(d:java.util.Date):Unit" title="Permalink">
@@ -656,8 +896,9 @@
         <span class="name">testDbSince</span><span class="params">(<span name="d">d: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Use test database since date.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database since date.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>Date</p></dd></dl></div>
+    </li><li name="molecule.facade.Conn#testDbSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="testDbSince(t:Long):Unit"></a><a id="testDbSince(Long):Unit"></a>
       <span class="permalink">
       <a href="../../molecule/facade/Conn.html#testDbSince(t:Long):Unit" title="Permalink">
@@ -672,11 +913,12 @@
         <span class="name">testDbSince</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Use test database since time t.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database since time t.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Long</p></dd></dl></div>
     </li><li name="molecule.facade.Conn#testDbWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="testDbWith(txData:java.util.List[java.util.List[AnyRef]]):Unit"></a><a id="testDbWith(List[List[AnyRef]]):Unit"></a>
+      <a id="testDbWith(txDataJava:java.util.List[java.util.List[AnyRef]]):Unit"></a><a id="testDbWith(List[List[AnyRef]]):Unit"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#testDbWith(txData:java.util.List[java.util.List[AnyRef]]):Unit" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#testDbWith(txDataJava:java.util.List[java.util.List[AnyRef]]):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -685,14 +927,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">testDbWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">testDbWith</span><span class="params">(<span name="txDataJava">txDataJava: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Conn#testDbWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="testDbWith(txMolecules:Seq[Seq[molecule.ast.transaction.Statement]]*):Unit"></a><a id="testDbWith(Seq[Seq[Statement]]*):Unit"></a>
+      <p class="shortcomment cmt">Use test database with temporary raw Java transaction data.</p>
+    </li><li name="molecule.facade.Conn#testDbWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="testDbWith(txData:Seq[Seq[molecule.ast.transaction.Statement]]*):Unit"></a><a id="testDbWith(Seq[Seq[Statement]]*):Unit"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#testDbWith(txMolecules:Seq[Seq[molecule.ast.transaction.Statement]]*):Unit" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#testDbWith(txData:Seq[Seq[molecule.ast.transaction.Statement]]*):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -701,10 +943,27 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">testDbWith</span><span class="params">(<span name="txMolecules">txMolecules: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="molecule.ast.transaction.Statement">Statement</span>]]*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">testDbWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]]*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Use test database with temporary transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Use test database with temporary transaction data.
+<br><br>
+Transaction data can be supplied from any molecule:</p><pre><span class="kw">val</span> benId = Person.name(<span class="lit">"Ben"</span>).save.eid
+
+<span class="cmt">// Use temporary db with given transaction data applied</span>
+conn.testDbWith(
+  Person.name(<span class="lit">"liz"</span>).getSaveTx
+)
+
+<span class="cmt">// Query using temporary database including Liz</span>
+Person.name.get === <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>)
+
+<span class="cmt">// Multiple transactions can be applied</span>
+conn.testDbWith(
+  Person.name(<span class="lit">"Joe"</span>).getSaveTx,
+  benId.getRetractTx
+)
+Person.name.get === <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">txData</dt><dd class="cmt"><p>List of List of transaction <a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>'s</p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
@@ -721,10 +980,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="molecule.facade.Conn#transact" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="transact(tx:java.util.List[AnyRef]):molecule.action.TxReport"></a><a id="transact(List[AnyRef]):TxReport"></a>
+    </li><li name="molecule.facade.Conn#transact" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transact(tx:java.util.List[AnyRef]):molecule.facade.TxReport"></a><a id="transact(List[AnyRef]):TxReport"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn.html#transact(tx:java.util.List[AnyRef]):molecule.action.TxReport" title="Permalink">
+      <a href="../../molecule/facade/Conn.html#transact(tx:java.util.List[AnyRef]):molecule.facade.TxReport" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -733,10 +992,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">transact</span><span class="params">(<span name="tx">tx: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>)</span><span class="result">: <a href="../action/TxReport.html" class="extype" name="molecule.action.TxReport">TxReport</a></span>
+        <span class="name">transact</span><span class="params">(<span name="tx">tx: <span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>)</span><span class="result">: <a href="TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Transact edn files or other raw transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Transact edn files or other raw transaction data.</p><pre><span class="kw">val</span> data_rdr2 = <span class="kw">new</span> FileReader(<span class="lit">"examples/resources/seattle/seattle-data1a.dtm"</span>)
+<span class="kw">val</span> newDataTx = Util.readAll(data_rdr2).get(<span class="num">0</span>).asInstanceOf[java.util.<span class="std">List</span>[<span class="std">Object</span>]]
+
+<span class="cmt">// transact</span>
+conn.transact(newDataTx)</pre></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p>Raw transaction data, typically from edn file.</p></dd><dt>returns</dt><dd class="cmt"><p><a href="TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></p></dd></dl></div>
     </li><li name="molecule.facade.Conn#useLiveDb" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="useLiveDb:Unit"></a>
       <span class="permalink">
@@ -752,7 +1015,7 @@
         <span class="name">useLiveDb</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Get out of test mode and back to live db.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">

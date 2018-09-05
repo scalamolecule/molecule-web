@@ -71,17 +71,17 @@ little more complex behind the scenes. That's because we want our IDE
 to be able to infer the type of each attribute. If we for instance had 
 an `age` attribute of type `Int` we could infer the return types of 
 calling the `get` method on a molecule. That would return
-a List of name/age tuples of type `Iterable[(String, Int)]`:
+a List of name/age tuples of type `List[(String, Int)]`:
 
 ```scala
-val nameAges: Iterable[(String, Int)] = Community.name.age.get
+val nameAges: List[(String, Int)] = Community.name.age.get
 ```
 
 A feature of Molecule is to omit the values of an attribute from the result set
 by adding an underscore to the attribute name:
 
 ```scala
-val names: Iterable[String] = Community.name.age_.get
+val names: List[String] = Community.name.age_.get
 ```
 
 This is handy if we want to query for entities that we want to be sure have an age and 
@@ -736,7 +736,7 @@ You can add data in two ways with Molecule:
 
 ### "Data-molecule" with values
 To insert a single data structure you can populate a 
-molecule with values and then `add` it:
+molecule with values and then `save` it:
 
 ```scala
 Community
@@ -758,7 +758,7 @@ we can reference them.
 
 In Datomic there is no requirement that we add a "complete" 
 set of namespace attributes to create an entity. For instance, we could add 
-a community only with `Community.name("My community").add`. 
+a community only with `Community.name("My community").save`. 
 
 ### "Insert-molecule" + matching values
 
@@ -772,7 +772,7 @@ val insertCommunity = m(
   Community.name.url.`type`.orgtype.category
     .Neighborhood.name
     .District.name.region
-) insert
+).insert
 ```
 We can then create a new Community by applying a matching set of attribute values:
 
@@ -819,7 +819,7 @@ as we can format it as a list of tuples of values each matching
 our template molecule. 
 
 We use an insert-molecule also when we initially [populate 
-the Seattle database](https://github.com/scalamolecule/blob/master/examples/src/test/scala/examples/seattle/SeattleSpec.scala#L43). 
+the Seattle database](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L43). 
 
 ### Optional attribute values
 
@@ -861,7 +861,7 @@ attribute won't compile and our IDE will infer that we have an invalid data set.
 
 
 
-## [☝︎](#contents) Update and/or delete data {#11}
+## [☝︎](#contents) Update and/or retract data {#11}
 
 To update data with Molecule, we first need the id of the entity 
 that we want to update.
@@ -876,8 +876,8 @@ Community(belltown).name("belltown 2").url("url 2").update
 ```
 
 What really happens is not a mutation of data since no 
-data is ever deleted or over-written in Datomic. Instead a 
-_new fact for the attribute is asserted_. The new fact will 
+data is ever deleted or over-written in Datomic. Instead the old/current data is
+retracted and the _new fact for the attribute is asserted_. The new fact will 
 turn up when queried for. But if we go back in time we can see 
 the previous value at that point in time - many updates could 
 have been performed over time, and all previous values are stored.
@@ -903,23 +903,23 @@ Community(belltown).category(
   "events" -> "Super cool events").update
 ```
 
-### Adding/removing values of cardinality-many attributes
+### Asserting/retracting values of cardinality-many attributes
 
-If we want to add or remove values of a cardinality-many attribute 
-we can use the following mehtods:
+If we want to assert or retract values of a cardinality-many attribute 
+we can use the following methods:
 
 ```scala
 // add
-Community(belltown).category.add("extra category").update
+Community(belltown).category.assert("extra category").update
 
 // remove
-Community(belltown).category.remove("Super cool events").update
+Community(belltown).category.retract("Super cool events").update
 ```
 
-### Delete/retract values
+### Retract values
 
 When you update a molecule you can apply an empty value `apply()` 
-or simply `()` after an attribute name to delete/retract the 
+or simply `()` after an attribute name to retract ("delete") the 
 attributes value(s). We can mix updates and retractions:
 
 ```scala
@@ -929,14 +929,14 @@ Community(belltown).name("belltown 3").url().category().update
 `category` attributes have their values retracted.
 
 There are a couple of important things to know about retracting data. 
-The first is that we must specify the value of the attribute being 
-retracted. When applying the empty value, Molecule therefore first 
+The first is that Datomic expects to know the value of the attribute being 
+retracted. When applying the empty value, Molecule therefore internally first 
 looks up the current value in order to be able to retract it.
 
 The other thing to know is that, because we can access database 
 values as they existed at specific points in time, we can retrieve 
 retracted data by looking in the past. In other words, the data 
-isn't really gone. If we want data to really be gone after we 
+is not gone as in a mutable database. If we want data to really be gone after we 
 retract it, we have to disable history for the specific attribute, 
 as described in [Database setup][setup].
 

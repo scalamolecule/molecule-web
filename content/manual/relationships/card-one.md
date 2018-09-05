@@ -5,17 +5,17 @@ weight: 10
 menu:
   main:
     parent: relationships
-up:   /docs/relationships
-prev: /docs/relationships
-next: /docs/relationships/card-many
-down: /docs/crud
+up:   /manual/relationships
+prev: /manual/relationships
+next: /manual/relationships/card-many
+down: /manual/crud
 ---
 
 # Card-one relationships
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Relations.scala)
 
-In Molecule we model a cardinality-one relationship in our [schema definition file](/docs/schema/) with the `one[<RefNamespace>]` syntax: 
+In Molecule we model a cardinality-one relationship in our [schema definition file](/manual/schema/) with the `one[<RefNamespace>]` syntax:
 
 ```scala
 object YourDomainDefinition {
@@ -29,8 +29,8 @@ object YourDomainDefinition {
   }
 }
 ```
-The ref attribute `home` has a card-one relationship to namespace `Addr`. When our schema is then translated to 
-Molecule boilerplate code our `home` ref attribute is accessible as a value:
+The ref attribute `home` is a card-one relationship to namespace `Addr`. When our schema is then translated to 
+Molecule boilerplate code our `home` ref attribute is accessible as a value by using its lower case name (`home` instead of `Home`):
 
 ```scala
 Person.name.home.get === List(("Fred", 102))
@@ -41,7 +41,7 @@ This can be practical when we want to get a related entity id like `102` in this
 ### Ref namespace
 
 More often though we want to collect the values of the referenced entity attributes. Molecule therefore also creates an Uppercase method `Home` that allow us to
-jump to the `Home` (`Addr`) namespace and collect values of the entity `102` attributes:
+add attributes from the `Home` (`Addr`) namespace:
 
 ```scala
 Person.name.Home.street.city.get.head === ("Fred", "Baker St. 7", "Boston")
@@ -81,4 +81,4 @@ And so on...
 
 ### Next
 
-[Card-many relationships...](/docs/relationships/card-many/)
+[Card-many relationships...](/manual/relationships/card-many/)

@@ -5,10 +5,10 @@ weight: 50
 menu:
   main:
     parent: attributes
-up: /docs/attributes
-prev: /docs/attributes/expressions
-next: /docs/attributes/parameterized
-down: /docs/entities
+up: /manual/attributes
+prev: /manual/attributes/expressions
+next: /manual/attributes/parameterized
+down: /manual/entities
 ---
 
 # Aggregates
@@ -113,4 +113,4 @@ Person.age(sample(3)) // 3 sample persons (without duplicates)
 
 ### Next
 
-[Parameterized attributes...](/docs/attributes/parameterized)
+[Parameterized attributes...](/manual/attributes/parameterized)

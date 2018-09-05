@@ -2,41 +2,272 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/content/_presentation/presentation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/_presentation/presentation1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/crud/composite-insert.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/relationships/self-join.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/abstract_type.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/class.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/class_comp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/class_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/diagrams.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/diagrams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.mousewheel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.panzoom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/modernizr.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/object.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/object_comp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/object_comp_trait.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/object_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/ownderbg2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/ownerbg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/ownerbg2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/package.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/ref-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/scheduler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/template.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/tools.tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/trait.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/trait_comp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/trait_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/lib/type_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/CompositeInserts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/Molecule$checkInsertModel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/Molecule.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/composition/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/exceptions/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Conn$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Conn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Datomic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$InOut.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$many$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBi$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBiEdge$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigDecimal$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigDecimal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBoolean$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBoolean.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyByte$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyByte.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDate$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDouble$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDouble.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyEnum$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyFloat$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyFloat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyLong$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyLong.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyString$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyString.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyURI$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyURI.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyUUID$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyUUID.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigDecimal$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigDecimal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBoolean$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBoolean.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapByte$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapByte.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDate$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDouble$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDouble.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapFloat$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapFloat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapLong$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapLong.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapString$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapString.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapURI$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapURI.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapUUID$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapUUID.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$one$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBi$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBiEdge$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigDecimal$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigDecimal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBoolean$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBoolean.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneByte$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneByte.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDate$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDouble$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDouble.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneEnum$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneFloat$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneFloat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneInt$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneInt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneLong$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneLong.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneString$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneString.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneURI$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneURI.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneUUID$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneUUID.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$target$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/util/JavaFunctions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/api/molecule/util/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/faviconOLD.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/generator_config.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/specimen_files/grid_12-825-55-15.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/specimen_files/specimen_stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/earth/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/about/mg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/compare/tinkerpop-modern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/entity/entity1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/entity/entity2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/entity/entity3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/entity/entity4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/entity/entity5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/favicon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityref.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityrefs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityrefs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/ref.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/relationships/ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/all.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/as-of.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/history.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/old/all.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/old/as-of.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/old/since.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/old/with.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/since.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/time/with.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/transactions/5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/community/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/compare/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/compare/datomic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/datomic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/compare/sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/sql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/compare/sql/slick.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/sql/slick.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/_index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/attributes/expressions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/getting-started/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/schema/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/schema/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/aggregates.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/expressions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/mapped.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/mapped.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/modes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/modes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/attributes/parameterized.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/getJson.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/getJson.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/insert.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/insert.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/retract.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/retract.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/save.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/save.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/crud/update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/update.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/documentation/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/entities.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/entities.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/relationships/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/relationships/bidirectional.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/bidirectional.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/relationships/card-many.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/card-many.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/relationships/card-one.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/card-one.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/relationships/composites.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/composites.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/schema/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/schema/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema/transaction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/time/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/time/asof-since.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/asof-since.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/time/history.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/history.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/time/testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/time/with.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/with.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/transactions/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dev/boilerplate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dev/boilerplate/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dev/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/dev/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/boilerplate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/developer/boilerplate/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/developer/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/expressions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/attributes/expressions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/getting-started/setup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/getting-started/setup/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/schema/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/docs/schema/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/expressions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/attributes/expressions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/attributes/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/crud/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/getting-started/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/project-setup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/getting-started/project-setup/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/quickstart/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/getting-started/quickstart/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/graphs/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/relationships/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/schema/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/schema/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/schema/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/schema/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/time/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/time/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/transactions/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/documentation/transactions/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/tutorials/seattle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/tutorials/seattle/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploycommands.md" beforeDir="false" afterPath="$PROJECT_DIR$/deploycommands.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/dirs1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/dirs1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/dirs2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/dirs2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/jars.png" beforeDir="false" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,82 +276,86 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1390596998">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="19" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="9" />
+          <entry key="md" value="113" />
+          <entry key="sh" value="5" />
+          <entry key="toml" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Bash" value="1" />
+          <entry key="HTML" value="9" />
+          <entry key="Markdown" value="57" />
+          <entry key="PLAIN_TEXT" value="65" />
+          <entry key="TOML file" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="283" />
+          <entry key="md" value="8917" />
+          <entry key="sh" value="122" />
+          <entry key="toml" value="1159" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="283" />
+          <entry key="Markdown" value="7963" />
+          <entry key="PLAIN_TEXT" value="1267" />
+          <entry key="Scala" value="7" />
+          <entry key="TOML file" value="961" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="molecule-docs" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/docs/getting-started/setup.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_index.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/_index.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1902" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deploycommands.md" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deploycommands.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaction.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/docs/schema/transaction.md">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="_index.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/content/docs/schema/_index.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="264" column="102" selection-start-line="264" selection-start-column="102" selection-end-line="264" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/documentation/getting-started/index.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="109" column="19" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/docs/getting-started/setup/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="190" column="3" lean-forward="true" selection-start-line="190" selection-start-column="3" selection-end-line="190" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.toml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.toml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -129,54 +364,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;stars&quot;,</find>
-      <find>audi</find>
-      <find>aud</find>
-      <find>asof</find>
-      <find>t</find>
-      <find>txT</find>
-      <find>src/test/scala/molecule/</find>
-      <find>csrc/test/scala/molecule/</find>
-      <find>corsrc/test/scala/molecule/</find>
-      <find>coresrc/test/scala/molecule/</find>
-      <find>coretsrc/test/scala/molecule/</find>
-      <find>coretesrc/test/scala/molecule/</find>
-      <find>coretessrc/test/scala/molecule/</find>
-      <find>coretestsrc/test/scala/molecule/</find>
-      <find>coretest/src/test/scala/molecule/</find>
-      <find>part</find>
-      <find>:e8a80e11a9ea81b9e6071cec3c4864a9</find>
-      <find>25_Marc_Grue</find>
-      <find>:3d29aefa7257f22b89227d9f373cd5f9</find>
+      <find>&quot;0.4.5&quot;</find>
+      <find>0.13.2</find>
+      <find>subComponents</find>
+      <find>.subComponents</find>
+      <find>.subComponent</find>
+      <find>subComponent</find>
+      <find>.Impo</find>
+      <find>prev\: \/docs\/crud\/update\n</find>
+      <find>import molecule.</find>
+      <find>/docs/</find>
+      <find>parent: docs</find>
+      <find>identifier: doc</find>
+      <find>doc</find>
+      <find>Doc</find>
+      <find>manual</find>
+      <find>: main</find>
+      <find>: manual</find>
+      <find>api</find>
+      <find>docs</find>
       <find>add</find>
-      <find>Earth2073</find>
+      <find>remove</find>
+      <find>Transaction</find>
+      <find>self-join</find>
+      <find>Iterable</find>
       <find>tacet</find>
-      <find>music</find>
-      <find>mus</find>
-      <find>0.12</find>
-      <find>0.13.0</find>
-      <find>0.13.1</find>
-      <find>fullTextSearch</find>
-      <find>0.13.13</find>
-      <find>0.13.</find>
+      <find>/manipulation/</find>
+      <find>tx_</find>
+      <find>toSe</find>
+      <find>toSeq</find>
+      <find>.toSeq</find>
     </findStrings>
     <replaceStrings>
-      <replace>bIhVAMd3-EU</replace>
-      <replace>3635bf43dbc96836f464b22b328c5f8e</replace>
-      <replace>&quot;#;void;&quot;</replace>
-      <replace>Y0ttNN_JA1s</replace>
-      <replace>Iterable[</replace>
-      <replace>dxMK3jxmzj4</replace>
-      <replace>.get.head</replace>
-      <replace>molecule</replace>
-      <replace>resources/</replace>
-      <replace>documentation/</replace>
       <replace>parent: documentation</replace>
       <replace>.URL</replace>
       <replace>triangle</replace>
       <replace>top</replace>
       <replace>namespace</replace>
-      <replace>docs</replace>
       <replace>/docs/</replace>
       <replace>parent: docs</replace>
       <replace>cars</replace>
@@ -191,11 +415,23 @@
       <replace>0.13.2</replace>
       <replace>fulltextSearch</replace>
       <replace>0.13.16</replace>
+      <replace>&quot;0.4.6&quot;</replace>
+      <replace>.isComponent</replace>
+      <replace>/manual/</replace>
+      <replace>parent: manual</replace>
+      <replace>identifier: manual</replace>
+      <replace>docs</replace>
+      <replace>assert</replace>
+      <replace>retract</replace>
+      <replace>List</replace>
+      <replace>/crud/</replace>
+      <replace>Tx</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../molecule/coretest/src/test/scala/molecule/bidirectional</dir>
       <dir>$PROJECT_DIR$/content/resources</dir>
       <dir>$PROJECT_DIR$/content/documentation</dir>
+      <dir>$PROJECT_DIR$/content/manual</dir>
       <dir>$PROJECT_DIR$/content</dir>
     </dirStrings>
   </component>
@@ -210,35 +446,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/content/docs/relationships/bidirectional.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/_index.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/save.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/insert.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/retract.md" />
-        <option value="$PROJECT_DIR$/content/docs/transactions/_index.md" />
-        <option value="$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md" />
-        <option value="$PROJECT_DIR$/content/docs/time/_index.md" />
-        <option value="$PROJECT_DIR$/content/docs/time/asof-since.md" />
-        <option value="$PROJECT_DIR$/content/docs/time/history.md" />
-        <option value="$PROJECT_DIR$/content/docs/time/with.md" />
-        <option value="$PROJECT_DIR$/content/compare/_index.md" />
-        <option value="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" />
-        <option value="$PROJECT_DIR$/content/resources/videos.md" />
-        <option value="$PROJECT_DIR$/content/resources/_index.md" />
-        <option value="$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
-        <option value="$PROJECT_DIR$/content/credits.md" />
-        <option value="$PROJECT_DIR$/content/compare/gremlin.md" />
-        <option value="$PROJECT_DIR$/content/_index.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/get.md" />
-        <option value="$PROJECT_DIR$/content/docs/crud/update.md" />
         <option value="$PROJECT_DIR$/content/docs/crud/getJson.md" />
-        <option value="$PROJECT_DIR$/content/docs/attributes/modes.md" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/content/docs/getting-started/setup.md" />
-        <option value="$PROJECT_DIR$/public/documentation/getting-started/index.xml" />
-        <option value="$PROJECT_DIR$/public/docs/getting-started/setup/index.html" />
-        <option value="$PROJECT_DIR$/content/docs/schema/_index.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/update.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/retract.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/composite-insert.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/get.md" />
+        <option value="$PROJECT_DIR$/content/docs/crud/insert.md" />
+        <option value="$PROJECT_DIR$/content/manual/time/history.md" />
+        <option value="$PROJECT_DIR$/copy-api.sh" />
+        <option value="$PROJECT_DIR$/deploycommands.md" />
+        <option value="$PROJECT_DIR$/layouts/partials/menu2.html" />
+        <option value="$PROJECT_DIR$/content/manual/documentation/introduction.md" />
+        <option value="$PROJECT_DIR$/content/manual/getting-started/_index.md" />
+        <option value="$PROJECT_DIR$/content/manual.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/aggregates.md" />
+        <option value="$PROJECT_DIR$/layouts/partials/menu.html" />
+        <option value="$PROJECT_DIR$/content/manual/crud/composite-insert.md" />
+        <option value="$PROJECT_DIR$/content/dev/_index.md" />
+        <option value="$PROJECT_DIR$/content/community/_index.md" />
+        <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/content/manual/_index.md" />
+        <option value="$PROJECT_DIR$/content/manual/quick-start/introduction.md" />
+        <option value="$PROJECT_DIR$/content/manual/setup.md" />
+        <option value="$PROJECT_DIR$/content/manual/schema/transaction.md" />
+        <option value="$PROJECT_DIR$/content/manual/schema.md" />
+        <option value="$PROJECT_DIR$/content/dev/boilerplate.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/basics.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/mapped.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/modes.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/expressions.md" />
+        <option value="$PROJECT_DIR$/content/manual/attributes/parameterized.md" />
+        <option value="$PROJECT_DIR$/content/manual/entities.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships/card-one.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships/card-many.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships/composites.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships/bidirectional.md" />
+        <option value="$PROJECT_DIR$/content/manual/relationships/self-join.md" />
+        <option value="$PROJECT_DIR$/content/manual/crud.md" />
+        <option value="$PROJECT_DIR$/content/manual/crud/save.md" />
+        <option value="$PROJECT_DIR$/content/manual/crud/getJson.md" />
+        <option value="$PROJECT_DIR$/content/manual/crud/update.md" />
+        <option value="$PROJECT_DIR$/content/manual/transactions.md" />
+        <option value="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" />
+        <option value="$PROJECT_DIR$/content/manual/time/with.md" />
+        <option value="$PROJECT_DIR$/content/_index.md" />
+        <option value="$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
+        <option value="$PROJECT_DIR$/content/compare/datomic.md" />
+        <option value="$PROJECT_DIR$/content/compare/sql/slick.md" />
+        <option value="$PROJECT_DIR$/config.toml" />
+        <option value="$PROJECT_DIR$/content/manual/time.md" />
       </list>
     </option>
   </component>
@@ -255,13 +513,29 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+    <navigator proportions="" version="1">
       <autoscrollToSource Scope="true" ProjectPane="true" />
       <autoscrollFromSource Scope="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="molecule-docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-docs" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -331,7 +605,21 @@
               <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
               <item name="content" type="cbb8eebc:String" user="content" />
               <item name="docs" type="cbb8eebc:String" user="docs" />
+              <item name="relationships" type="cbb8eebc:String" user="relationships" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="content" type="cbb8eebc:String" user="content" />
+              <item name="docs" type="cbb8eebc:String" user="docs" />
               <item name="schema" type="cbb8eebc:String" user="schema" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="content" type="cbb8eebc:String" user="content" />
+              <item name="docs" type="cbb8eebc:String" user="docs" />
+              <item name="transactions" type="cbb8eebc:String" user="transactions" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -353,13 +641,44 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="docs" type="cbb8eebc:String" user="docs" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="docs" type="cbb8eebc:String" user="docs" />
+              <item name="getting-started" type="cbb8eebc:String" user="getting-started" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+              <item name="docs" type="cbb8eebc:String" user="docs" />
+              <item name="getting-started" type="cbb8eebc:String" user="getting-started" />
+              <item name="setup" type="cbb8eebc:String" user="setup" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
               <item name="static" type="cbb8eebc:String" user="static" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="molecule-docs" type="cbb8eebc:String" user="molecule-docs" />
+              <item name="static" type="cbb8eebc:String" user="static" />
+              <item name="css" type="cbb8eebc:String" user="css" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,22 +695,22 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown.Preview" />
+    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/manual/relationships" />
+      <recent name="$PROJECT_DIR$/layouts/partials" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/content/docs/crud" />
       <recent name="$PROJECT_DIR$/content/docs/relationships" />
-      <recent name="$PROJECT_DIR$/content/docs/time" />
-      <recent name="$PROJECT_DIR$/content/documentation" />
-      <recent name="$PROJECT_DIR$/content/documentation/getting-started" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/documentation/documentation" />
-      <recent name="$PROJECT_DIR$/content/documentation/relationships" />
-      <recent name="$PROJECT_DIR$/content/documentation/transactions" />
-      <recent name="$PROJECT_DIR$/content/documentation/time" />
-      <recent name="$PROJECT_DIR$/content/documentation/schema" />
+      <recent name="$PROJECT_DIR$/content/community" />
+      <recent name="$PROJECT_DIR$/layouts" />
+      <recent name="$PROJECT_DIR$/content/manual" />
+      <recent name="$PROJECT_DIR$/content/manual/setup" />
+      <recent name="$PROJECT_DIR$/content" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -407,24 +726,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -460,55 +761,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="molecule-docs" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
       <module name="" />
@@ -593,6 +845,53 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SbtLocalSettings">
     <option name="modificationStamps">
@@ -614,6 +913,15 @@
       </map>
     </option>
   </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1530693114682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530693114682</updated>
+    </task>
+    <servers />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -625,50 +933,49 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="0" width="2560" height="1600" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13706183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.094525404" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="TODO" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891247" />
-      <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3295756" />
-      <window_info id="Structure" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="1" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="right" id="REPL" order="3" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.3295756" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32891247" />
+      <window_info anchor="bottom" id="Messages" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="right" id="Leiningen" order="4" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="REPL" order="6" side_tool="true" />
+      <window_info anchor="right" id="Leiningen" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.3295756" />
+      <window_info id="Designer" order="0" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1564734" />
       <window_info id="Structure" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TODO" order="0" />
-      <window_info anchor="right" id="REPL" order="3" side_tool="true" />
-      <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Leiningen" order="4" />
-      <window_info anchor="bottom" id="Debug" order="7" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="0" />
-      <window_info anchor="bottom" id="Run" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="3" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32891247" />
-      <window_info anchor="bottom" id="Terminal" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.3295756" />
+      <window_info anchor="bottom" id="Messages" order="3" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32891247" />
+      <window_info anchor="bottom" id="Debug" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="REPL" order="3" side_tool="true" />
+      <window_info anchor="right" id="Leiningen" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,132 +1015,549 @@
     <MESSAGE value="Re-design and expansion of docs" />
     <MESSAGE value="0.13.0" />
     <MESSAGE value="0.13.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.13.1" />
+    <MESSAGE value="0.13.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.13.2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/layouts/partials/submenu.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/menu2.html" />
+    <entry file="file://$PROJECT_DIR$/content/_presentation/presentation1.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/_index.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/getting-started/_index.md" />
+    <entry file="file://$PROJECT_DIR$/content/credits.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="234">
+          <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.toml">
+    <entry file="file://$PROJECT_DIR$/content/about.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        <state relative-caret-position="468">
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/getting-started/setup.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="44" column="52" lean-forward="true" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.toml">
+    <entry file="file://$PROJECT_DIR$/content/dev/_index.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/compare/_index.md" />
-    <entry file="file://$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" />
-    <entry file="file://$PROJECT_DIR$/content/resources/videos.md" />
-    <entry file="file://$PROJECT_DIR$/content/resources/_index.md" />
-    <entry file="file://$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
-    <entry file="file://$PROJECT_DIR$/content/compare/gremlin.md" />
-    <entry file="file://$PROJECT_DIR$/public/index.xml">
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/composite-insert.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        <state relative-caret-position="1014">
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/_index.md" />
-    <entry file="file://$PROJECT_DIR$/content/credits.md" />
-    <entry file="file://$PROJECT_DIR$/content/docs/crud/get.md" />
-    <entry file="file://$PROJECT_DIR$/content/docs/crud/insert.md" />
-    <entry file="file://$PROJECT_DIR$/content/docs/crud/update.md" />
-    <entry file="file://$PROJECT_DIR$/content/docs/attributes/modes.md" />
-    <entry file="file://$PROJECT_DIR$/public/docs/attributes/modes/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2249">
-          <caret line="173" column="68" selection-start-line="173" selection-start-column="68" selection-end-line="173" selection-end-column="68" />
+    <entry file="file://$PROJECT_DIR$/content/community/_index.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/getting-started/_index.md" />
-    <entry file="file://$PROJECT_DIR$/static/fonts/earth/earth2073-demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+    <entry file="file://$PROJECT_DIR$/content/_presentation/presentation.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-16861">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1432">
+            <caret line="1352" selection-start-line="1352" selection-end-line="1366" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+    <entry file="file://$PROJECT_DIR$/public/_presentation/presentation/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/schema/transaction.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1380">
+            <caret line="127" selection-start-line="127" selection-end-line="127" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/dev/boilerplate.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1027">
+            <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/basics.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1144">
+            <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="598">
+            <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/_index.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="442">
+            <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/expressions.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="457">
+            <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships/composites.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="951">
+            <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships/self-join.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="286">
+            <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships/bidirectional.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="507">
+            <caret line="39" column="8" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships/card-many.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="884">
+            <caret line="68" column="48" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships/card-one.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="468">
+            <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/relationships.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="663">
+            <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/entities.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="546">
+            <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/aggregates.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="459">
+            <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/modes.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="897">
+            <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="923">
+            <caret line="71" selection-start-line="71" selection-end-line="74" selection-end-column="117" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/mapped.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="793">
+            <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time/with.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="652">
+            <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1703">
+          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="561">
+            <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <folding>
+              <element signature="n#!!doc" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/transactions.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="364">
+            <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/update.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="699">
+            <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/getJson.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="845">
+            <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/insert.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="377">
+            <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/save.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="351">
+            <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1313">
+          <caret line="101" column="143" selection-start-line="101" selection-start-column="143" selection-end-line="101" selection-end-column="143" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="483">
+            <caret line="63" column="35" lean-forward="true" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/quick-start/introduction.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="780">
+            <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="818">
+            <caret line="105" column="13" lean-forward="true" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
+            <folding>
+              <element signature="e#0#21#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.toml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        <state relative-caret-position="664">
+          <caret line="276" column="44" selection-start-line="276" selection-start-column="44" selection-end-line="276" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/getting-started/setup.md">
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes/parameterized.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="650">
+            <caret line="50" selection-start-line="50" selection-end-line="50" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time/asof-since.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="392">
+            <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="390">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/_index.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1902" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="505">
+            <caret line="68" selection-start-line="68" selection-end-line="68" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/tutorials/seattle.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="587">
+            <caret line="887" column="32" selection-start-line="887" selection-start-column="32" selection-end-line="887" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/datomic.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="833">
+            <caret line="205" column="19" selection-start-line="205" selection-start-column="19" selection-end-line="205" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/sql/slick.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="368">
+            <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploycommands.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/schema/transaction.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/documentation/getting-started/index.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="109" column="19" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/docs/getting-started/setup/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="190" column="3" lean-forward="true" selection-start-line="190" selection-start-column="3" selection-end-line="190" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/docs/schema/_index.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="264" column="102" selection-start-line="264" selection-start-column="102" selection-end-line="264" selection-end-column="102" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>

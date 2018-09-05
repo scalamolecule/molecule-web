@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Relationships"
-weight: 50
+weight: 60
 menu:
   main:
     parent: manual
@@ -22,7 +22,7 @@ To understand how Molecule treats relationships it is valuable to get an idea of
 
 ### Ref attributes connect entities
 
-A relationship in Datomic is simply when a ref attribute in entity A has an entity B id value. Then there is a relationship from A to B!
+A relationship in Datomic is simply when a ref attribute of entity A has an entity B id value. Then there is a relationship from A to B!
 
 In the following example, entity `101` has a ref attribute `:person/home` with a value `102`. That makes the relationship between 
 entity `101` and entity `102`, or that Fred has an Address:

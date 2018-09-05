@@ -1,15 +1,15 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Entities"
-weight: 40
+weight: 50
 menu:
   main:
-    parent: docs
+    parent: manual
     identifier: entities
-up:   /docs/attributes
-prev: /docs/attributes/parameterized
-next: /docs/relationships
-down: /docs/relationships
+up:   /manual/attributes
+prev: /manual/attributes/parameterized
+next: /manual/relationships
+down: /manual/relationships
 ---
 
 # Entities
@@ -23,7 +23,9 @@ Attributes with any seemingly unrelated namespaces can group as entities by simp
 
 ![](/img/entity/entity5.jpg)
 
-
+This demonstrates that Datomic/Molecule Namespaces are not like Tables in SQL. The above entity for 
+instance has attributes asserted from 2 different namespaces that could be completely unrelated/have no reference to each other.
+Attributes from any number of namespaces could be asserted sharing the same entity id.
 
 ## Entity API
 
@@ -39,6 +41,8 @@ At runtime we can see the facts of an entity by calling `touch` on the entity id
   ":site/cat"     -> "customer"
 )
 ```
+
+
 
 ### Optional attribute values
 
@@ -73,7 +77,7 @@ orderId.touch === Map(
 The entity attributes graph might be deep and wide so we can apply a max level to `touch(<maxLevel>)`:
 
 ```scala
-fredId.touch(2) === Map(
+fredId.touchMax(2) === Map(
   ":db/id" -> fredId,
   ":person/name" -> "Fred"
   ":person/friends" -> List(
@@ -98,5 +102,5 @@ fredId.touch(2) === Map(
 
 ### Next
 
-The entity API is not type-safe so in [Relationships](/docs/relationships/) we will look at various ways of 
+The entity API is not type-safe so in [Relationships](/manual/relationships/) we will look at various ways of
 traversing referenced data in type-safe ways with Molecule.

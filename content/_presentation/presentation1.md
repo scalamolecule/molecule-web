@@ -597,12 +597,12 @@ Person.name.get === List(
 )
 ```
 ```scala
-Person.name.get: Iterable[String] === List(
+Person.name.get: List[String] === List(
   "Fred", "Lisa", "Ben"
 )
 ```
 ```scala
-Person.name.age.get: Iterable[(String, Int)] === List(
+Person.name.age.get: List[(String, Int)] === List(
   ("Fred", 38),
   ("Lisa", 7),
   ("Ben", 5)
@@ -636,7 +636,7 @@ Person.e(101).name.likes.age.get === List(
 Person.name.age
 ```
 ```scala
-val persons: Iterable[(String, Option[String])] = Person.name.age_.likes$.get
+val persons: List[(String, Option[String])] = Person.name.age_.likes$.get
 ```
 ```scala
 Person.name.age.get
@@ -669,10 +669,10 @@ object YourDomainDefinition {
 
 ```scala
 trait M1[A] {
-  def get: Iterable[A] = ???
+  def get: List[A] = ???
 }
 trait M2[A, B] {
-  def get: Iterable[(A, B)] = ???
+  def get: List[(A, B)] = ???
 }
 
 object Person {
@@ -698,9 +698,9 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
   val query = ??? // todo
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
-          case Iterable(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
+          case List(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
       )
     }
@@ -720,7 +720,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
   
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
           case Seq(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
@@ -811,7 +811,7 @@ val persons = datomic.Peer.q(
 
 
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 ```scala
 val persons: java.util.Collection[java.util.List[Object]] = datomic.Peer.q(
@@ -825,7 +825,7 @@ val persons: java.util.Collection[java.util.List[Object]] = datomic.Peer.q(
 
 
 ```scala
-val persons: Iterable[(String, Int)] = datomic.Peer.q(
+val persons: List[(String, Int)] = datomic.Peer.q(
   """
     |[:find ?name ?age
     | :where
@@ -845,7 +845,7 @@ val personsMolecule: Molecule2[String, Int] = m(Person.name.age)
 
 ```scala
 new Molecule2[String, Int] {
-  def get: Iterable[(String, Int)] = datomic.Peer.q(
+  def get: List[(String, Int)] = datomic.Peer.q(
     """
       |[:find ?name ?age
       | :where
@@ -861,7 +861,7 @@ new Molecule2[String, Int] {
 
 ```scala
 val personM: Molecule2[String, Int] = m(Person.name.age)
-val persons: Iterable[(String, Int)] = personM.get
+val persons: List[(String, Int)] = personM.get
 ```
 
 ```scala
@@ -869,7 +869,7 @@ val persons: Iterable[(String, Int)] = personM.get
 val personMolecule: Molecule2[String, Int] = m(Person.name.age)
 
 // runtime
-val persons: Iterable[(String, Int)] = personMolecule.get
+val persons: List[(String, Int)] = personMolecule.get
 ```
 
 ```scala
@@ -879,10 +879,10 @@ implicit def m[A, B](dsl: M2[A, B]) = macro MakeMolecule.from2attr[A, B]
 val personMolecule: Molecule2[String, Int] = m(Person.name.age)
 
 // runtime
-val persons: Iterable[(String, Int)] = personMolecule.get
+val persons: List[(String, Int)] = personMolecule.get
 
 // compile-time + runtime
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 
 ```scala
@@ -890,7 +890,7 @@ val persons: Iterable[(String, Int)] = Person.name.age.get
 implicit def m[A, B](dsl: M2[A, B]) = macro MakeMolecule.from2attr[A, B]
 
 // compile-time + runtime
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 
 ```scala
@@ -901,10 +901,10 @@ implicit def m[A, B](dsl: M2[A, B]): Molecule2[String, Int] = macro from2attr[A,
 val personMolecule: Molecule2[String, Int] = m(Person.name.age)
 
 // runtime
-val persons: Iterable[(String, Int)] = personMolecule.get
+val persons: List[(String, Int)] = personMolecule.get
 
 // compile-time + runtime
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 
 

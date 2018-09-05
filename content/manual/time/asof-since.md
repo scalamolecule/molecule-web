@@ -6,9 +6,9 @@ menu:
   main:
     parent: time
     identifier: asof-since
-up:   /docs/time
-prev: /docs/time
-next: /docs/time/history
+up:   /manual/time
+prev: /manual/time
+next: /manual/time/history
 ---
 
 # AsOf / Since
@@ -29,7 +29,7 @@ Calling `getAsOf(t)` on a molecule gives us the data as of a certain point in ti
 
 <br>
 
-As we saw in [point in time](/docs/time#pointintime), a `t` can be either a transaction entity
+As we saw in [point in time](/manual/time#pointintime), a `t` can be either a transaction entity
 id like `tx4`, a transaction number `t4` or a `java.util.Date` like `date4`. So we could get to 
 the same data in 3 different ways:
 
@@ -70,4 +70,4 @@ Person.name.age.getSince(date4) === ... // Persons added since/after some Date `
 
 ### Next
 
-[History...](/docs/time/history)
+[History...](/manual/time/history)

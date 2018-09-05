@@ -1,14 +1,14 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Schema"
-weight: 20
+weight: 30
 menu:
   main:
     parent: manual
     identifier: schema
     
-up:   /manual/getting-started
-prev: /manual/getting-started/setup
+up:   /manual/setup
+prev: /manual/setup
 next: /manual/schema/transaction
 down: /manual/attributes
 ---
@@ -17,8 +17,7 @@ down: /manual/attributes
 
 A [Datomic schema](http://docs.datomic.com/schema.html) defines the set of possible attributes that we can use. 
 
-In Molecule we make this definition 
-in a Schema definition file:
+In Molecule we make this definition in a Schema definition file:
 
 ## Schema definition file
 
@@ -29,14 +28,14 @@ sbt-plugin can create a Molecule DSL from your definitions.
 Let's look at the schema definition from the [Seattle tutorial](/resources/tutorials/seattle):
 
 ```scala
-package yourpackage
+package path.to.your.project
 import molecule.schema.definition._  // import schema definition DSL
 
 @InOut(3, 8)
 object SeattleDefinition {
 
   trait Community {
-    val name         = oneString.fulltextSearch
+    val name         = oneString.fulltextSearch.doc("A community's name") // optional doc text
     val url          = oneString
     val category     = manyString.fulltextSearch
     val orgtype      = oneEnum('community, 'commercial, 'nonprofit, 'personal)
@@ -56,13 +55,24 @@ object SeattleDefinition {
 }
 ```
 
-The outer object `SeattleDefinition` encapsulates our schema definition. All such objects have to have a 
-named ending in "Definition" in order for the sbt-MoleculePlugin to be able to find it.
+The outer object `SeattleDefinition` encapsulates our schema definition. The name of this object has to end with "Definition"
+in order for the sbt-MoleculePlugin to recognize it.
+
+
+### Custom Scala Doc generation
+
+The sbt-MoleculePlugin even generates ScalaDoc documentation for the custom DSL generated form the schema definition file! 
+Attribute types are explained and an optional `doc(<text...>)` can be added to give a hint about the attribute when
+working with the code in the IDE. Given the `doc` text above for the `Community.name` attribute we can see this in our
+IDE:
+
+![Attribute Scala docs](/img/schema/attr-doc.png)
+
 
 
 ### Molecule arity
 
-The `@InOut(3, 8)` arity annotation instructs Molecule to generate boilerplate code with the ability to create
+The `@InOut(3, 8)` arity annotation instructs the sbt-MoleculePlugin to generate boilerplate code with the ability to create
 molecules with up to 8 attributes including up to 3 [input attributes](/manual/attributes/parameterized).
 
 When developing your schema you might just set the first arity annotation variable for input attributes to `0` and
@@ -74,29 +84,20 @@ The second arity annotation parameter basically tells how long molecules you can
  how many attributes you can _define_ in each namespace). Generally you want to keep this number as low as possible
  not to generate more boilerplate code than necessary. The maximum arity is 22, the same as for tuples. 
  
-If you at some point need to make molecules with more than 22 attributes
-  you can insert/query in two steps as described in [attribute basics](/manual/attributes/basics).
+If you at some point need to make molecules with more than 22 attributes you can use 
+[composite molecules](/manual/relationships/composites) or insert/query in two steps as 
+described in [attribute basics](/manual/attributes/basics).
 
 
 ### Namespaces
 
-Attribute names in Datomic are namespaced keywords with the lexical form `<namespace>/<name>`. Molecule lets you
-define the `<namespace>` part with the name of the trait, like `Community` in the Seattle 
-example above. In this way Molecule can construct the full name of the `community/category` attribute etc.
+Attribute names in Datomic are namespaced keywords with the lexical form `<Namespace>.<attribute>`. Molecule lets you
+define the `<Namespace>` part with the name of the trait, like `Community` in the Seattle 
+example above. In this way Molecule can construct the full name of the `Community.category` attribute etc.
 
 ![Schema](/img/DatomicElements1.png)
 
-We might as well have defined a list of attributes manually adding a namespace 
-part to each attribute:
 
-```
-val communityName
-val communityUrl
-//...
-
-val neighborhoodName
-// etc...
-```
 
 ### Namespace != Table
 
@@ -136,7 +137,7 @@ Entities you'll often query across - like the community-related entities in our 
 to increase query performance. Different logical groups of entities should be in different partitions. Partitions are discussed 
 in more detail in the Indexes topic."
 
-In Molecule we can organize namespaces in partitions with objects:
+In the schema definition file we can organize namespaces in partitions with objects:
 
 ### 
 
@@ -166,8 +167,8 @@ object PartitionTestDefinition {
 }
 ```
 Here we have a `gen` (general) partition and a `lit` (litterature) partition. Each partition can contain as many 
-namespaces as you want. This can be a way also to structure large domains conceptually. The partition name is 
-prepended to the namespaces it contains. 
+namespaces as you want. This can be a way also to structure large domains conceptually. The partition name has to be
+lowercase and is prepended to the namespaces it contains. 
 
 When we build molecules the partition name is prepended to the namespace like this:
 
@@ -214,7 +215,7 @@ Cardinality-one attributes can have one value per entity.
 Cardinality-many attributes can have a _Set of unique values_ per entity. Often we choose instead to model many-values as a 
 many-reference to another entity that could have more than one attribute.
 
-Mapped cardinality many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/manual/query/mapped)...
+Mapped cardinality many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/manual/attributes/mapped)...
 
 
 ### Reference types

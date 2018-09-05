@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0 - molecule.action.Molecule.checkInsertModel</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.action.Molecule.checkInsertModel" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.action.Molecule.checkInsertModel" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,7 +68,10 @@
         <a title="" href="../../index.html"><span class="name">root</span></a>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="../facade/index.html" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p><div class="fullcomment"><div class="comment cmt"><p>Molecule package</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="molecule.action" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="action"></a><a id="action:action"></a>
       <span class="permalink">
@@ -97,14 +164,14 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="index.html"><span class="name">action</span></a>
+        <a title="Various actions and operations on molecules and entities." href="index.html"><span class="name">action</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Various actions and operations on molecules and entities.</p><div class="fullcomment"><div class="comment cmt"><p>Various actions and operations on molecules and entities.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.action.Molecule" visbl="pub" class="indented3 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="MoleculeextendsMoleculeBase"></a><a id="Molecule:Molecule"></a>
+      <a id="Molecule[Tpl]extendsMoleculeBase"></a><a id="Molecule[Tpl]:Molecule[Tpl]"></a>
       <span class="permalink">
-      <a href="../../molecule/action/index.html#MoleculeextendsMoleculeBase" title="Permalink">
+      <a href="../../molecule/action/index.html#Molecule[Tpl]extendsMoleculeBase" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -113,14 +180,94 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="Molecule.html"><span class="name">Molecule</span></a><span class="result"> extends <span class="extype" name="molecule.action.MoleculeBase">MoleculeBase</span></span>
+        <a title="Core molecule interface defining actions that can be called on molecules." href="Molecule.html"><span class="name">Molecule</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <a href="../ast/MoleculeBase.html" class="extype" name="molecule.ast.MoleculeBase">MoleculeBase</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
+      <p class="shortcomment cmt">Core molecule interface defining actions that can be called on molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Core molecule interface defining actions that can be called on molecules.</p><p>Groups of interfaces:
+<table>
+<tr>
+<td><b>get</b><td>
+<td>Get molecule data.</td>
+</tr>
+<tr>
+<td><b>getAsOf</b><td>
+<td>Get molecule data <i>asOf</i> point in time.</td>
+</tr>
+<tr>
+<td><b>getSince</b><td>
+<td>Get molecule data <i>since</i> point in time.</td>
+</tr>
+<tr>
+<td><b>getWith</b><td>
+<td>Get molecule data <i>with</i> given data set.</td>
+</tr>
+<tr>
+<td><b>getHistory</b> &nbsp;&nbsp;&nbsp;<td>
+<td>Get molecule data from <i>history</i> of database.</td>
+</tr>
+<tr>
+<td><b>debugGet</b><td>
+<td>Debug getter methods.</td>
+</tr>
+<tr>
+<td><b>getJson</b><td>
+<td>Get molecule data as json.</td>
+</tr>
+<tr>
+<td><b>save</b><td>
+<td>Save molecule with applied data.</td>
+</tr>
+<tr>
+<td><b>insert</b><td>
+<td>Insert multiple rows of data matching molecule.</td>
+</tr>
+<tr>
+<td><b>update</b><td>
+<td>Update molecule with applied data.</td>
+</tr>
+</table>
+</p></div><dl class="paramcmts block"><dt class="tparam">Tpl</dt><dd class="cmt"><p>Type of molecule (tuple of its attribute types)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd><dt>See also</dt><dd><span class="cmt"><p>For retract (&quot;delete&quot;) methods, see <a href="EntityOps.html" class="extype" name="molecule.action.EntityOps">EntityOps</a> and <a href="Entity.html" class="extype" name="molecule.action.Entity">Entity</a>.</p></span><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/get/" target="_blank">get</a>,
+     <a href="http://www.scalamolecule.org/manual/time/" target="_blank">time</a>,
+     <a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">asOf/since</a>,
+     <a href="http://www.scalamolecule.org/manual/time/history/" target="_blank">history</a>,
+     <a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">with</a>,
+     <a href="http://www.scalamolecule.org/manual/crud/getjson/" target="_blank">getJson</a>,
+     <a href="http://www.scalamolecule.org/manual/time/testing/" target="_blank">debug/test</a>,
+     <a href="http://www.scalamolecule.org/manual/crud/save/" target="_blank">save</a>,
+     <a href="http://www.scalamolecule.org/manual/crud/insert/" target="_blank">insert</a>,
+     <a href="http://www.scalamolecule.org/manual/crud/update/" target="_blank">update</a>,
+     <a href="http://www.scalamolecule.org/manual/crud/retract/" target="_blank">retract</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala#L1" target="_blank">get</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetAsOf.scala#L1" target="_blank">asOf</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetSince.scala#L1" target="_blank">since</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetHistory.scala#L1" target="_blank">history</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala#L1" target="_blank">with</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbAsOf.scala#L1" target="_blank">test asOf</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala#L1" target="_blank">test since</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala#L1" target="_blank">test with</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/json/Attributes.scala#L1" target="_blank">getJson</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Save.scala#L1" target="_blank">save</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Insert.scala#L1" target="_blank">insert</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Retract.scala#L1" target="_blank">retract</a>,</p></span><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/update" target="_blank">update</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/updateMap" target="_blank">update map</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateRef.scala#L1" target="_blank">update ref</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleAttributes.scala#L1" target="_blank">update multiple attributes</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleEntities.scala#L1" target="_blank">update multiple entities</a></p></span></dd></dl></div>
     </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="trait" href="" title=""></a>
-                        <a href="" title="">checkInsertModel</a>
+                        <a class="trait" href="" title="Insert data is verified on instantiation of insert object in each arity molecule"></a>
+                        <a href="" title="Insert data is verified on instantiation of insert object in each arity molecule">checkInsertModel</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Molecule$debugInsert.html" title="Debug call to insert on a molecule (without affecting the db)."></a>
+                        <a href="Molecule$debugInsert.html" title="Debug call to insert on a molecule (without affecting the db).">debugInsert</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Molecule$getInsertTx.html" title="Get transaction statements of a call to insert on a molecule (without affecting the db)."></a>
+                        <a href="Molecule$getInsertTx.html" title="Get transaction statements of a call to insert on a molecule (without affecting the db).">getInsertTx</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Molecule$insert.html" title="Insert one or more rows of data matching molecule."></a>
+                        <a href="Molecule$insert.html" title="Insert one or more rows of data matching molecule.">insert</a>
                       </li>
               </ul>
             </div>
@@ -149,7 +296,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Insert data is verified on instantiation of <code>insert</code> object in each arity molecule</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/action/Molecule.scala#L1" target="_blank">Molecule.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -158,8 +305,18 @@
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="MoleculeOut$$Molecule01$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule01.insert">insert</a>, <a href="MoleculeOut$$Molecule01$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule01.insertD">insertD</a>, <a href="MoleculeOut$$Molecule01$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule01.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule02$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule02.insert">insert</a>, <a href="MoleculeOut$$Molecule02$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule02.insertD">insertD</a>, <a href="MoleculeOut$$Molecule02$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule02.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule03$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule03.insert">insert</a>, <a href="MoleculeOut$$Molecule03$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule03.insertD">insertD</a>, <a href="MoleculeOut$$Molecule03$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule03.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule04$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule04.insert">insert</a>, <a href="MoleculeOut$$Molecule04$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule04.insertD">insertD</a>, <a href="MoleculeOut$$Molecule04$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule04.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule05$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule05.insert">insert</a>, <a href="MoleculeOut$$Molecule05$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule05.insertD">insertD</a>, <a href="MoleculeOut$$Molecule05$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule05.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule06$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule06.insert">insert</a>, <a href="MoleculeOut$$Molecule06$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule06.insertD">insertD</a>, <a href="MoleculeOut$$Molecule06$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule06.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule07$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule07.insert">insert</a>, <a href="MoleculeOut$$Molecule07$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule07.insertD">insertD</a>, <a href="MoleculeOut$$Molecule07$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule07.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule08$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule08.insert">insert</a>, <a href="MoleculeOut$$Molecule08$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule08.insertD">insertD</a>, <a href="MoleculeOut$$Molecule08$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule08.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule09$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule09.insert">insert</a>, <a href="MoleculeOut$$Molecule09$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule09.insertD">insertD</a>, <a href="MoleculeOut$$Molecule09$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule09.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule10$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule10.insert">insert</a>, <a href="MoleculeOut$$Molecule10$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule10.insertD">insertD</a>, <a href="MoleculeOut$$Molecule10$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule10.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule11$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule11.insert">insert</a>, <a href="MoleculeOut$$Molecule11$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule11.insertD">insertD</a>, <a href="MoleculeOut$$Molecule11$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule11.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule12$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule12.insert">insert</a>, <a href="MoleculeOut$$Molecule12$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule12.insertD">insertD</a>, <a href="MoleculeOut$$Molecule12$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule12.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule13$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule13.insert">insert</a>, <a href="MoleculeOut$$Molecule13$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule13.insertD">insertD</a>, <a href="MoleculeOut$$Molecule13$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule13.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule14$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule14.insert">insert</a>, <a href="MoleculeOut$$Molecule14$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule14.insertD">insertD</a>, <a href="MoleculeOut$$Molecule14$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule14.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule15$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule15.insert">insert</a>, <a href="MoleculeOut$$Molecule15$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule15.insertD">insertD</a>, <a href="MoleculeOut$$Molecule15$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule15.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule16$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule16.insert">insert</a>, <a href="MoleculeOut$$Molecule16$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule16.insertD">insertD</a>, <a href="MoleculeOut$$Molecule16$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule16.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule17$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule17.insert">insert</a>, <a href="MoleculeOut$$Molecule17$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule17.insertD">insertD</a>, <a href="MoleculeOut$$Molecule17$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule17.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule18$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule18.insert">insert</a>, <a href="MoleculeOut$$Molecule18$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule18.insertD">insertD</a>, <a href="MoleculeOut$$Molecule18$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule18.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule19$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule19.insert">insert</a>, <a href="MoleculeOut$$Molecule19$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule19.insertD">insertD</a>, <a href="MoleculeOut$$Molecule19$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule19.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule20$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule20.insert">insert</a>, <a href="MoleculeOut$$Molecule20$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule20.insertD">insertD</a>, <a href="MoleculeOut$$Molecule20$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule20.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule21$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule21.insert">insert</a>, <a href="MoleculeOut$$Molecule21$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule21.insertD">insertD</a>, <a href="MoleculeOut$$Molecule21$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule21.insertTx">insertTx</a>, <a href="MoleculeOut$$Molecule22$insert$.html" class="extype" name="molecule.action.MoleculeOut.Molecule22.insert">insert</a>, <a href="MoleculeOut$$Molecule22$insertD$.html" class="extype" name="molecule.action.MoleculeOut.Molecule22.insertD">insertD</a>, <a href="MoleculeOut$$Molecule22$insertTx$.html" class="extype" name="molecule.action.MoleculeOut.Molecule22.insertTx">insertTx</a></div>
-          </div></div>
+            <div class="subClasses hiddenContent"><a href="Molecule$$Molecule01$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule01.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule01$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule01.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule01$insert$.html" class="extype" name="molecule.action.Molecule.Molecule01.insert">insert</a>, <a href="Molecule$$Molecule02$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule02.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule02$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule02.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule02$insert$.html" class="extype" name="molecule.action.Molecule.Molecule02.insert">insert</a>, <a href="Molecule$$Molecule03$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule03.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule03$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule03.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule03$insert$.html" class="extype" name="molecule.action.Molecule.Molecule03.insert">insert</a>, <a href="Molecule$$Molecule04$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule04.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule04$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule04.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule04$insert$.html" class="extype" name="molecule.action.Molecule.Molecule04.insert">insert</a>, <a href="Molecule$$Molecule05$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule05.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule05$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule05.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule05$insert$.html" class="extype" name="molecule.action.Molecule.Molecule05.insert">insert</a>, <a href="Molecule$$Molecule06$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule06.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule06$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule06.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule06$insert$.html" class="extype" name="molecule.action.Molecule.Molecule06.insert">insert</a>, <a href="Molecule$$Molecule07$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule07.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule07$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule07.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule07$insert$.html" class="extype" name="molecule.action.Molecule.Molecule07.insert">insert</a>, <a href="Molecule$$Molecule08$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule08.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule08$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule08.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule08$insert$.html" class="extype" name="molecule.action.Molecule.Molecule08.insert">insert</a>, <a href="Molecule$$Molecule09$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule09.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule09$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule09.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule09$insert$.html" class="extype" name="molecule.action.Molecule.Molecule09.insert">insert</a>, <a href="Molecule$$Molecule10$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule10.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule10$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule10.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule10$insert$.html" class="extype" name="molecule.action.Molecule.Molecule10.insert">insert</a>, <a href="Molecule$$Molecule11$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule11.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule11$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule11.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule11$insert$.html" class="extype" name="molecule.action.Molecule.Molecule11.insert">insert</a>, <a href="Molecule$$Molecule12$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule12.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule12$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule12.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule12$insert$.html" class="extype" name="molecule.action.Molecule.Molecule12.insert">insert</a>, <a href="Molecule$$Molecule13$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule13.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule13$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule13.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule13$insert$.html" class="extype" name="molecule.action.Molecule.Molecule13.insert">insert</a>, <a href="Molecule$$Molecule14$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule14.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule14$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule14.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule14$insert$.html" class="extype" name="molecule.action.Molecule.Molecule14.insert">insert</a>, <a href="Molecule$$Molecule15$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule15.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule15$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule15.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule15$insert$.html" class="extype" name="molecule.action.Molecule.Molecule15.insert">insert</a>, <a href="Molecule$$Molecule16$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule16.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule16$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule16.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule16$insert$.html" class="extype" name="molecule.action.Molecule.Molecule16.insert">insert</a>, <a href="Molecule$$Molecule17$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule17.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule17$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule17.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule17$insert$.html" class="extype" name="molecule.action.Molecule.Molecule17.insert">insert</a>, <a href="Molecule$$Molecule18$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule18.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule18$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule18.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule18$insert$.html" class="extype" name="molecule.action.Molecule.Molecule18.insert">insert</a>, <a href="Molecule$$Molecule19$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule19.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule19$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule19.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule19$insert$.html" class="extype" name="molecule.action.Molecule.Molecule19.insert">insert</a>, <a href="Molecule$$Molecule20$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule20.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule20$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule20.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule20$insert$.html" class="extype" name="molecule.action.Molecule.Molecule20.insert">insert</a>, <a href="Molecule$$Molecule21$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule21.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule21$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule21.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule21$insert$.html" class="extype" name="molecule.action.Molecule.Molecule21.insert">insert</a>, <a href="Molecule$$Molecule22$debugInsert$.html" class="extype" name="molecule.action.Molecule.Molecule22.debugInsert">debugInsert</a>, <a href="Molecule$$Molecule22$getInsertTx$.html" class="extype" name="molecule.action.Molecule.Molecule22.getInsertTx">getInsertTx</a>, <a href="Molecule$$Molecule22$insert$.html" class="extype" name="molecule.action.Molecule.Molecule22.insert">insert</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 162.00 156.00" height="156pt" width="162pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 152)" class="graph" id="graph0"><polygon points="-4,4 -4,-152 158,-152 158,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.action.Molecule.checkInsertModel (this trait)" xlink:href="#inheritance-diagram"><path d="M121.333,-86C121.333,-86 32.6667,-86 32.6667,-86 28.3333,-86 24,-81.6667 24,-77.3333 24,-77.3333 24,-68.6667 24,-68.6667 24,-64.3333 28.3333,-60 32.6667,-60 32.6667,-60 121.333,-60 121.333,-60 125.667,-60 130,-64.3333 130,-68.6667 130,-68.6667 130,-77.3333 130,-77.3333 130,-81.6667 125.667,-86 121.333,-86" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-79" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-70.6" x="55.541" text-anchor="start">checkInsertModel</text></a></g></g><!-- node1 --><g class="node default" id="graph1_1"><g id="a_default|graph1_1"><a xlink:title="debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, debugInsert, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, getInsertTx, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert, insert"><path d="M109.333,-23.5C109.333,-23.5 44.6667,-23.5 44.6667,-23.5 40.8333,-23.5 37,-19.6667 37,-15.8333 37,-15.8333 37,-8.16667 37,-8.16667 37,-4.33333 40.8333,-0.5 44.6667,-0.5 44.6667,-0.5 109.333,-0.5 109.333,-0.5 113.167,-0.5 117,-4.33333 117,-8.16667 117,-8.16667 117,-15.8333 117,-15.8333 117,-19.6667 113.167,-23.5 109.333,-23.5" stroke="#ababab" fill="#e1e1e1"></path><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-9.1" x="48.3223" text-anchor="start">66 classes/traits</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="66 classes/traits are subtypes of checkInsertModel"><path d="M77,-52.4967C77,-42.8764 77,-31.6474 77,-23.6268" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-52.7751 77,-59.7752 79.4501,-52.7752 74.5501,-52.7751" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M103.333,-148C103.333,-148 50.6667,-148 50.6667,-148 46.3333,-148 42,-143.667 42,-139.333 42,-139.333 42,-130.667 42,-130.667 42,-126.333 46.3333,-122 50.6667,-122 50.6667,-122 103.333,-122 103.333,-122 107.667,-122 112,-126.333 112,-130.667 112,-130.667 112,-139.333 112,-139.333 112,-143.667 107.667,-148 103.333,-148" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-141" x="54" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-132.6" x="73.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="checkInsertModel is a subtype of AnyRef"><path d="M77,-114.753C77,-105.355 77,-94.3336 77,-86.1238" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-114.858 77,-121.858 79.4501,-114.858 74.5501,-114.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">

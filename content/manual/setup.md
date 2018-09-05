@@ -1,14 +1,13 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Setup"
-weight: 10
+weight: 20
 menu:
   main:
     parent: manual
     identifier: setup
-    
 up:   /manual/
-prev: /manual/getting-started
+prev: /manual/quick-start/introduction
 next: /manual/schema
 down: /manual/schema
 ---
@@ -26,13 +25,13 @@ Add the following to your build files:
 `project/build.properties`:
 
 ```scala
-sbt.version=0.13.16
+sbt.version=1.1.2
 ```
 
 `project/buildinfo.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.4.6")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.5.0")
 ```
 
 `build.sbt`:
@@ -47,13 +46,13 @@ lazy val yourProject = project.in(file("demo"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.13.3",
+      "org.scalamolecule" %% "molecule" % "0.14.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
-    moleculeSchemas := Seq("demo") // paths to your schema definition files...
+    moleculeSchemas := Seq("app") // paths to directory with your schema definition file(s)
   )
 ```
-Molecule 0.13.3 for Scala 2.12.6 is available at
+Molecule 0.14.0 for Scala 2.12.6 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 
@@ -78,7 +77,7 @@ defining your database:
 
 ![](/img/dirs1.png)
 
-Then you simply add `moleculeSchemas := Seq("demo")` as we saw above.
+Then you simply add `moleculeSchemas := Seq("app")` as we saw above.
 
 ### Multiple schemas
 
@@ -118,33 +117,36 @@ The MoleculePlugin will now automatically as part of the compilation process do 
 The MoleculePlugin create the `jars` so that you can use the boilerplate code without having to recompile any 
 generated boilerplate code each time you recompile your project. In our demo example two jars are created:
 
-![](/img/jars.png)
+![](/img/dirs3.png)
 
 
 ## 4. Use Molecule
 
-The MoleculePlugin has now created all the necessary boilerplate code so that we can start using Molecule. We can
-create a fresh in-memory Datomic database by supplying the generated Schema transaction code in `YourDomainSchema` 
-(from the example above):
-
+The MoleculePlugin has now created all the necessary boilerplate code so that we can start using Molecule. 
+We need to import the Molecule api and our new auto-generated meta DSL to get going:
 ```scala
-import molecule.imports._
-implicit val conn = recreateDbFrom(demo.schema.YourDomainSchema)
+import molecule.api._
+import app.dsl.yourDomain._
 ```
+To make queries we need an implicit database connection. When initially developing our project
+we might make frequent changes to our schema and therefore recreate our database on each use (later, when
+our schema stabilizes we can retrieve the connection without recreating the database). The Molecule
+sbt-plugin creates a Schema transaction file that we can use now to transact our schema - simply by applying it
+to the `recreateDbFrom` method. 
 
-With the implicit Datomic connection available we can start making molecules:
+We assign the returned Connection to an implicit variable to have it available for our molecules to 
+access the connection implicitly.
 
 ```scala
-import demo.dsl.yourDomain._
+implicit val conn = recreateDbFrom(app.schema.YourDomainSchema)
 
-// Insert data
-Person.name("John").age(26).gender("male").save
+// Save data
+Person.name("John").age(26).gender("male").save // implicitly uses `conn`
 
-// Retrieve data
+// Get data
 val (person, age, gender) = Person.name.age.gender.get.head
 ```
 
 ### Next
 
-- [Schema definition](/manual/schema)
-- [Create Datomic database](/manual/schema/transaction)
+See how we can model our domain with attributes in [Schema](/manual/schema/)...

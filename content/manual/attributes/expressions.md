@@ -5,10 +5,10 @@ weight: 40
 menu:
   main:
     parent: attributes
-up: /docs/attributes
-prev: /docs/attributes/mapped
-next: /docs/attributes/aggregates
-down: /docs/entities
+up: /manual/attributes
+prev: /manual/attributes/mapped
+next: /manual/attributes/aggregates
+down: /manual/entities
 ---
 
 # Expressions
@@ -17,7 +17,7 @@ down: /docs/entities
 
 ### Equality
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Equality.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/equality)
 
 We can apply values to Attributes in order to filter the data structures we are looking for. We could for instance find people who like pizza:
 
@@ -48,6 +48,16 @@ Person.name.likes_("pizza").get === List(
 ```
 _Note that since we get an arity-1 result back it is simply a list of those values._
 
+We can apply OR-logic to find a selection of alternatives
+
+```scala
+Person.age(40 or 41 or 42)
+// .. same as
+Person.age(40, 41, 42)
+// .. same as
+Person.age(List(40, 41, 42))
+```
+
 
 ### Fulltext search
 
@@ -55,11 +65,11 @@ _Note that since we get an arity-1 result back it is simply a list of those valu
 
 
 If we add the `fulltextSearch` option to a String attribute definition Datomic will index the text strings saved so that we can do
-fulltext searches accross all values. We could for instance search for Community names containing the word "Town" in their name:
+fulltext searches across all values. We could for instance search for Community names containing the word "Town" in their name:
 ```scala
 Community.name.contains("Town")
 ```
-Note that only full words are considered, so "Tow" won't match. 
+Note that only full words are considered, so "Tow" won't match. Searches are case-insensitive.
 
 Also the following common words are not considered:
 
@@ -85,6 +95,14 @@ Person.age.!=(42)
 Person.age.not(42)
 ```
 
+Negate multiple values
+
+```scala
+Person.age.!=(40 or 41 or 42)
+Person.age.!=(40, 41, 42)
+Person.age.!=(List(40, 41, 42))
+```
+
 
 ### Comparison
 
@@ -103,41 +121,19 @@ Community.name.<("C").get(3) === List(
   "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
 ```
 
-### Nil (null)
+### Null
 
-We can look for non-asserted attributes (like Null values) as in "Persons that have no age asserted"
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Null.scala)
 
+We can look for non-asserted attributes (Null values) as in "Persons that have no age asserted" by applying an empty value to an attribute:
 ```scala
-Person.age(nil) === // all persons where age hasn't been asserted
+Person.name.age_() === // all persons where age hasn't been asserted
 ```
-`nil` is a Molecule keyword object made available with the `molecule._` import.
+Note that the `age_` attribute has to be tacit (with an underscore) since we naturally can't return missing values.
 
 
 
-### OR-logic
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Logic.scala)
-
-We can apply OR-logic to find a selection of alternatives
-
-```scala
-Person.age(40 or 41 or 42)
-// .. same as
-Person.age(40, 41, 42)
-// .. same as
-Person.age(List(40, 41, 42))
-```
-
-With negations we can again apply multiple values as alternatives
-
-```scala
-Person.age.!=(40 or 41 or 42)
-Person.age.!=(40, 41, 42)
-Person.age.!=(List(40, 41, 42))
-```
-
-
-## We can use variables too
+## Applying variables
 
 Even though Molecule introspects molecule constructions at compile time we can still use (runtime) variables for our expressions:
 
@@ -152,7 +148,8 @@ Person.age.!=(goodAge)
 Person.age.!=(youngAge or goodAge)
 ```
 
-Technically, Molecule saves the `TermName` like 'goodAge' of the variable for later resolution at runtime so that we can freely use variables in our expressions.
+Technically, Molecule saves the `TermName` like 'goodAge' of the variable for later resolution at runtime so that we can 
+freely use variables in our expressions.
 
 For now Molecule can't though evaluate arbitrary applied expressions like this one: 
 
@@ -170,4 +167,4 @@ Person.birthday(date)
 
 ### Next
 
-[Aggregate attributes...](/docs/attributes/aggregates)
+[Aggregate attributes...](/manual/attributes/aggregates)

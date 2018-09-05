@@ -7,22 +7,23 @@ menu:
     parent: manual
     identifier: crud
 up:   /manual/relationships
-prev: /manual/relationships/bidirectional
+prev: /manual/relationships/self-join
 next: /manual/crud/save
 down: /manual/transactions
 ---
 
 # CRUD
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/manipulation)
+[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud)
 
 
-The classical Create-Read-Update-Delete operations on data are a bit different using Datomic since it never overwrites or deletes data. Facts are only
+The classical Create-Read-Update-Delete operations on data are a bit different using Datomic since it never 
+overwrites or deletes data. Facts are only
 _asserted_ or _retracted_ in Datomic. 
 
 Molecule tries to bridge the vocabulary between these two worlds:
 
-## (Create)
+## Create
 
 In Molecule you can either `save` a populated molecule or `insert` multiple tuples of data that match an "insert-moleceule"
 
@@ -47,7 +48,7 @@ Person.name.age.likes insert List(
 More on [insert](/manual/crud/insert/)...
 
 
-## (Read)
+## Read / get
 
 To read data from the database we call `get` on a molecule
 
@@ -77,11 +78,12 @@ These are such cool features that we have a whole section about [time](/manual/t
 
 
 
-## Update
+## "Update" (retract + assert)
 
 In Datomic an update retracts the old fact and asserts the new fact. 
 
-For convenience, Molecule lets you think in terms of a classical "update" although two operations are performed in the background. The old fact is still 
+For convenience, Molecule lets you think in terms of a classical "update" although two operations are performed 
+in the background. The old fact is still 
 in the database and available with the time getters.
 
 #### `update`
@@ -97,11 +99,11 @@ Person(fredId).likes.get.head === "pasta"
 More on [update](/manual/crud/update/)...
 
 
-## (Delete)
+## Retract ("delete")
 
-As mentioned, data is not deleted in Datomic. So it would be outright wrong to say that we "delete" data. Therefore, Molecule goes along with the terminology of
-"retracting" data which is like saying "this is no longer valid". Retracted data is no longer showing up when we query with `get` but it will be visible with the
- time getters.
+As mentioned, data is not deleted in Datomic. So it would be outright wrong to say that we "delete" data. Therefore, 
+Molecule uses the Datomic terminology of "retracting" data which is like saying "this is no longer valid". 
+Retracted data is no longer showing up when we query with `get` but it will be visible with the time getters.
 
 To retract individual attribute values of an entity we apply an empty value and `update`:
 

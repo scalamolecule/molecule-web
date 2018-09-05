@@ -30,7 +30,7 @@ Whereas in Molecule, we only _declare_ which attributes we are interested in. Mo
 // Molecule
 val coffeeSupliers = Coffees.name.Suppliers.name.get
 ```
-We get the exact same type-inferred result back, a `Iterable[(String, String)]`
+We get the exact same type-inferred result back, a `List[(String, String)]`
 
 [Squeryl](http://squeryl.org/selects.html) also _consumes_ data objects, now in a DSL construct:
 

@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title></title>
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <title>Molecule 0.14.0 - molecule.facade</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.facade" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.facade" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title"><span id="doc-version"></span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -68,7 +68,10 @@
         <a title="" href="../../index.html"><span class="name">root</span></a>
       </span>
       
-      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a></p><p><a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a></p><p><a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p><h4> Quick jump to packages </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li><li><a href="" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>Mole</p><h4> 1. Define schema </h4><ul><li><a href="../schema/index.html" class="extype" name="molecule.schema">Define schema</a></li></ul><h4> 2. Setup </h4><ul><li><a href="" class="extype" name="molecule.facade">Connect to Datomic</a></li><li><a href="../imports$.html" class="extype" name="molecule.imports">Imports</a></li></ul><h4> 3. Compose molecules </h4><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a><ul><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li><li><a href="../composition/index.html" class="extype" name="molecule.composition">Compose molecules</a></li></ul></li><li><a href="../entity/index.html" class="extype" name="molecule.entity">Traverse entity graph</a></li></ul><h4> 4. Execute molecules </h4><ul><li><a href="../action/index.html" class="extype" name="molecule.action">Execute actions on molecule</a></li></ul><h4> 5. Misc </h4><ul><li><a href="../exceptions/index.html" class="extype" name="molecule.exceptions">Exceptions</a></li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="molecule"></a><a id="molecule:molecule"></a>
       <span class="permalink">
@@ -81,10 +84,74 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule package" href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt">Molecule package</p><div class="fullcomment"><div class="comment cmt"><p>Molecule package</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
     </li><li name="molecule.action" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="action"></a><a id="action:action"></a>
       <span class="permalink">
@@ -97,10 +164,46 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../action/index.html"><span class="name">action</span></a>
+        <a title="Various actions and operations on molecules and entities." href="../action/index.html"><span class="name">action</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Various actions and operations on molecules and entities.</p><div class="fullcomment"><div class="comment cmt"><p>Various actions and operations on molecules and entities.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ast"></a><a id="ast:ast"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#ast" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal Molecule ASTs." href="../ast/index.html"><span class="name">ast</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal Molecule ASTs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Molecule ASTs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.boilerplate" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boilerplate"></a><a id="boilerplate:boilerplate"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#boilerplate" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal interfaces for auto-generated DSL boilerplate code." href="../boilerplate/index.html"><span class="name">boilerplate</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal interfaces for auto-generated DSL boilerplate code.</p><div class="fullcomment"><div class="comment cmt"><p>Internal interfaces for auto-generated DSL boilerplate code.
+<br><br>
+Interfaces to the generated schema-defined DSL boilerplate code that the sbt-plugin generates when doing a <code>sbt-compile</code>.
+Molecule macros can then type-safely deduct the type structure of composed molecules.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.composition" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="composition"></a><a id="composition:composition"></a>
       <span class="permalink">
@@ -113,26 +216,10 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../composition/index.html"><span class="name">composition</span></a>
+        <a title="Methods to build transaction, composite and nested molecules." href="../composition/index.html"><span class="name">composition</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
-    </li><li name="molecule.entity" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="entity"></a><a id="entity:entity"></a>
-      <span class="permalink">
-      <a href="../molecule/index.html#entity" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">package</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="../entity/index.html"><span class="name">entity</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Methods to build transaction, composite and nested molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Methods to build transaction, composite and nested molecules.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.exceptions" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="exceptions"></a><a id="exceptions:exceptions"></a>
       <span class="permalink">
@@ -145,10 +232,62 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../exceptions/index.html"><span class="name">exceptions</span></a>
+        <a title="Exceptions thrown by Molecule." href="../exceptions/index.html"><span class="name">exceptions</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Exceptions thrown by Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions thrown by Molecule.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.expression" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="expression"></a><a id="expression:expression"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#expression" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Attribute expressions and operations." href="../expression/index.html"><span class="name">expression</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Attribute expressions and operations.</p><div class="fullcomment"><div class="comment cmt"><p>Attribute expressions and operations.
+<br><br>
+Refine attribute matches with various <a href="../expression/AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">attribute expressions</a>:</p><pre>Person.age(<span class="num">42</span>)                           <span class="cmt">// equality</span>
+Person.name.contains(<span class="lit">"John"</span>)             <span class="cmt">// fulltext search</span>
+Person.age.!=(<span class="num">42</span>)                        <span class="cmt">// negation (or `not`)</span>
+Person.age.&lt;(<span class="num">42</span>)                         <span class="cmt">// comparison (< > <= >=)</span>
+Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span>
+Person.age()                             <span class="cmt">// apply empty value to retract value(s) in updates</span>
+Person.hobbies.assert(<span class="lit">"golf"</span>)               <span class="cmt">// add value(s) to card-many attributes</span>
+Person.hobbies.retract(<span class="lit">"golf"</span>)            <span class="cmt">// retract value(s) of card-many attributes</span>
+Person.hobbies.replace(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>) <span class="cmt">// replace value(s) of card-many attributes</span>
+Person.tags.k(<span class="lit">"en"</span>)                      <span class="cmt">// match values of map attributes by key</span>
+Person.age(Nil)                          <span class="cmt">// match non-asserted datoms (null)</span>
+Person.name(?)                           <span class="cmt">// initiate input molecules awaiting input at runtime</span>
+Person.name(unify)                       <span class="cmt">// Unify attributes in self-joins</span></pre><p>Apply <a href="../expression/AggregateKeywords.html" class="extype" name="molecule.expression.AggregateKeywords">aggregate keywords</a> to aggregate attribute value(s):</p><pre><span class="cmt">// Aggregates on any attribute type</span>
+Person.age(count).get.head         === <span class="num">3</span>   <span class="cmt">// count of asserted `age` attribute values</span>
+Person.age(countDistinct).get.head === <span class="num">3</span>   <span class="cmt">// count of asserted distinct `age` attribute values</span>
+Person.age(max).get.head           === <span class="num">38</span>  <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(min).get.head           === <span class="num">5</span>   <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(rand).get.head          === <span class="num">25</span>  <span class="cmt">// single random `age` value</span>
+Person.age(sample).get.head        === <span class="num">27</span>  <span class="cmt">// single sample `age` value (when single value, same as random)</span>
+
+<span class="cmt">// Aggregates on any attribute type, returning multiple values</span>
+Person.age(distinct).get.head  === Vector(<span class="num">5</span>, <span class="num">7</span>, <span class="num">38</span>)  <span class="cmt">// distinct `age` values</span>
+Person.age(max(<span class="num">2</span>)).get.head    === Vector(<span class="num">38</span>, <span class="num">7</span>)     <span class="cmt">// 2 maximum `age` values</span>
+Person.age(min(<span class="num">2</span>)).get.head    === Vector(<span class="num">5</span>, <span class="num">7</span>)      <span class="cmt">// 2 minimum `age` values</span>
+Person.age(rand(<span class="num">2</span>)).get.head   === Stream(<span class="num">5</span>, ?)      <span class="cmt">// 2 random `age` values (values can re-occur)</span>
+Person.age(sample(<span class="num">2</span>)).get.head === Vector(<span class="num">7</span>, <span class="num">38</span>)     <span class="cmt">// 2 sample `age` values</span>
+
+<span class="cmt">// Aggregates on number attributes</span>
+Person.age(sum).get.head      === <span class="num">50</span>               <span class="cmt">// sum of all `age` numbers</span>
+Person.age(avg).get.head      === <span class="num">16.66666667</span>      <span class="cmt">// average of all `age` numbers</span>
+Person.age(median).get.head   === <span class="num">7</span>                <span class="cmt">// median of all `age` numbers</span>
+Person.age(stddev).get.head   === <span class="num">15.107025591499</span>  <span class="cmt">// standard deviation of all `age` numbers</span>
+Person.age(variance).get.head === <span class="num">228.2222222222</span>   <span class="cmt">// variance of all `age` numbers</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/attributes/expressions/" target="_blank">expressions</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/aggregates/" target="_blank">aggregates</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/parameterized/" target="_blank">input molecules</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression" target="_blank">expressions</a></p></span></dd></dl></div>
     </li><li name="molecule.facade" visbl="pub" class="indented2 current" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="facade"></a><a id="facade:facade"></a>
       <span class="permalink">
@@ -164,16 +303,147 @@
         <span class="name">facade</span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Molecule facades to Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Molecule facades to Datomic.
+<br><br>
+Facades are not trying to cover all Datomic methods but rather
+only interfaces relevant to Molecule.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.facade.exception" visbl="pub" class="indented3 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="exception"></a><a id="exception:exception"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/index.html#exception" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="exception/index.html"><span class="name">exception</span></a>
+      </span>
+      
+      
     </li><li class="current-entities indented2">
-                        <a class="object" href="Conn$.html" title=""></a>
-                        <a class="class" href="Conn.html" title=""></a>
-                        <a href="Conn.html" title="">Conn</a>
+                        <a class="object" href="Conn$.html" title="Factory methods to create facade to Datomic Connection."></a>
+                        <a class="class" href="Conn.html" title="Facade to Datomic Connection."></a>
+                        <a href="Conn.html" title="Facade to Datomic Connection.">Conn</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="Datomic.html" title="Facade to Datomic with selected methods"></a>
-                        <a href="Datomic.html" title="Facade to Datomic with selected methods">Datomic</a>
-                      </li><li name="molecule.schema" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+                        <a class="trait" href="Datomic.html" title="Facade to Datomic with selected methods."></a>
+                        <a href="Datomic.html" title="Facade to Datomic with selected methods.">Datomic</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="TxReport.html" title="Facade to Datomic transaction report facade with convenience methods to access tx data."></a>
+                        <a href="TxReport.html" title="Facade to Datomic transaction report facade with convenience methods to access tx data.">TxReport</a>
+                      </li><li name="molecule.factory" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="factory"></a><a id="factory:factory"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#factory" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Factory methods m to instantiate molecules from custom DSL molecule constructs." href="../factory/index.html"><span class="name">factory</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.generic" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generic"></a><a id="generic:generic"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#generic" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Interfaces to meta information about datoms and Datomic database." href="../generic/index.html"><span class="name">generic</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Interfaces to meta information about datoms and Datomic database.</p><div class="fullcomment"><div class="comment cmt"><p>Interfaces to meta information about datoms and Datomic database.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.input" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="input"></a><a id="input:input"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#input" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Input molecules awaiting input." href="../input/index.html"><span class="name">input</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Input molecules awaiting input.</p><div class="fullcomment"><div class="comment cmt"><p>Input molecules awaiting input.
+<br><br>
+Input molecules are molecules that awaits one or more inputs at runtime. When input value is applied,
+the input molecule is resolved and a standard molecule is returned that we can then call actions on.
+<br><br>
+Input molecule queries are cached by Datomic. So there is a runtime performance gain in using input molecules. Furthermore,
+input molecules are a good fit for re-use for queries where only a few parameters change.
+<br><br>
+Input molecules can await 1, 2 or 3 inputs and are constructed by applying the <a href="../expression/AttrExpressions$$qmark.html" class="extype" name="molecule.expression.AttrExpressions.?">?</a> marker
+to attributes. If one marker is applied, we get a <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_1</a>, 2 inputs creates
+an <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_3</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
+<br><br>
+The three input molecule interfaces come in arity-versions corresponding to the number of non-?-marked attributes
+in the input molecule. Let's see a simple example:</p><pre><span class="cmt">// Sample data</span>
+Person.name.age insert <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">34</span>))
+
+<span class="cmt">// Input molecule created at compile time. Awaits a name of type String</span>
+<span class="kw">val</span> ageOfPersons: InputMolecule_1.InputMolecule_1_01[<span class="std">String</span>, <span class="std">Int</span>] = m(Person.name_(?).age)
+
+<span class="cmt">// Resolved molecule. "Ben" input is matched against name attribute</span>
+<span class="kw">val</span> ageOfPersonsNamedBen: Molecule.Molecule01[<span class="std">Int</span>] = ageOfPersons.apply(<span class="lit">"Ben"</span>)
+
+<span class="cmt">// Calling action on resolved molecule.</span>
+<span class="cmt">// (Only age is returned since name was marked as tacit with the underscore notation)</span>
+ageOfPersonsNamedBen.get === <span class="std">List</span>(<span class="num">42</span>)
+
+<span class="cmt">// Or we can re-use the input molecule straight away</span>
+ageOfPersons(<span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="num">34</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.macros" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="macros"></a><a id="macros:macros"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#macros" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal macros generating molecule code from custom DSL molecule constructs." href="../macros/index.html"><span class="name">macros</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal macros generating molecule code from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal macros generating molecule code from custom DSL molecule constructs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ops" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ops"></a><a id="ops:ops"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#ops" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal operational helpers for transforming DSL to molecules." href="../ops/index.html"><span class="name">ops</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal operational helpers for transforming DSL to molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Internal operational helpers for transforming DSL to molecules.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.schema" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="schema"></a><a id="schema:schema"></a>
       <span class="permalink">
       <a href="../molecule/index.html#schema" title="Permalink">
@@ -185,10 +455,30 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../schema/index.html"><span class="name">schema</span></a>
+        <a title="Schema definition DSL and API." href="../schema/index.html"><span class="name">schema</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Schema definition DSL and API.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL and API.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.transform" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transform"></a><a id="transform:transform"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#transform" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal transformers from DSL to Model/Query/Transaction/Datomic." href="../transform/index.html"><span class="name">transform</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal transformers from DSL to Model/Query/Transaction/Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal transformers from DSL to Model/Query/Transaction/Datomic.
+<br><br>
+Molecule transforms custom boilerplate DSL constructs to Datomic queries in 3 steps:
+<br><br>
+Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/dev/transformation/" target="_blank">http://www.scalamolecule.org/dev/transformation/</a></p></span></dd></dl></div>
     </li><li name="molecule.util" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="util"></a><a id="util:util"></a>
       <span class="permalink">
@@ -201,10 +491,10 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../util/index.html"><span class="name">util</span></a>
+        <a title="Internal Java database functions for Datomic." href="../util/index.html"><span class="name">util</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Internal Java database functions for Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Java database functions for Datomic.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li>
               </ul>
             </div>
@@ -233,7 +523,16 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"></div>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Molecule facades to Datomic.
+<br><br>
+Facades are not trying to cover all Datomic methods but rather
+only interfaces relevant to Molecule.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/facade/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
         
 
       <div id="mbrsel">
@@ -251,10 +550,22 @@
             <ol>
               
               <li class="alpha in"><span>Alphabetic</span></li>
-              
+              <li class="inherit out"><span>By Inheritance</span></li>
             </ol>
           </div>
-          
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="molecule.facade"><span>facade</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
               <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
@@ -268,7 +579,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="molecule.facade.Conn" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="molecule.facade.Conn" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ConnextendsAnyRef"></a><a id="Conn:Conn"></a>
       <span class="permalink">
       <a href="../../molecule/facade/index.html#ConnextendsAnyRef" title="Permalink">
@@ -280,11 +591,15 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="Conn.html"><span class="name">Conn</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Facade to Datomic Connection." href="Conn.html"><span class="name">Conn</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.facade.Datomic" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Facade to Datomic Connection.</p><div class="fullcomment"><div class="comment cmt"><p>Facade to Datomic Connection.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/testing/" target="_blank">Manual</a>
+    | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbAsOf.scala#L1" target="_blank">testDbAsOf</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala#L1" target="_blank">testDbSince</a>,
+     <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala#L1" target="_blank">testDbWith</a>,</p></span></dd></dl></div>
+    </li><li name="molecule.facade.Datomic" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="DatomicextendsAnyRef"></a><a id="Datomic:Datomic"></a>
       <span class="permalink">
       <a href="../../molecule/facade/index.html#DatomicextendsAnyRef" title="Permalink">
@@ -296,11 +611,27 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Facade to Datomic with selected methods" href="Datomic.html"><span class="name">Datomic</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Facade to Datomic with selected methods." href="Datomic.html"><span class="name">Datomic</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Facade to Datomic with selected methods
-</p>
+      <p class="shortcomment cmt">Facade to Datomic with selected methods.</p><div class="fullcomment"><div class="comment cmt"><p>Facade to Datomic with selected methods.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/schema/transaction/" target="_blank">Manual</a></p></span></dd></dl></div>
+    </li><li name="molecule.facade.TxReport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TxReportextendsProductwithSerializable"></a><a id="TxReport:TxReport"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/index.html#TxReportextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Facade to Datomic transaction report facade with convenience methods to access tx data." href="TxReport.html"><span class="name">TxReport</span></a><span class="params">(<span name="txResult">txResult: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>, <span name="stmtss">stmtss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Facade to Datomic transaction report facade with convenience methods to access tx data.</p>
     </li></ol>
             </div>
 
@@ -321,10 +652,10 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="" href="Conn$.html"><span class="name">Conn</span></a>
+        <a title="Factory methods to create facade to Datomic Connection." href="Conn$.html"><span class="name">Conn</span></a>
       </span>
       
-      
+      <p class="shortcomment cmt">Factory methods to create facade to Datomic Connection.</p>
     </li>
               </ol>
             </div>
@@ -335,7 +666,11 @@
         </div>
 
         <div id="inheritedMembers">
-        
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
         
         </div>
 

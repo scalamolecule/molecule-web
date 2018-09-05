@@ -125,7 +125,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
   val query = ??? // todo
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
           case Seq(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
@@ -144,7 +144,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
   val query = ??? // todo
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
           case Seq(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
@@ -163,7 +163,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
   val query = ??? // todo
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
           case Seq(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
@@ -182,7 +182,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
 
   q"""
     new Molecule2[A, B] {
-      def get: Iterable[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
+      def get: List[(A, B)] = datomic.Peer.q(${query}, conn.db).asScala.map(
         _.asScala match {
           case Seq(a, b) => (a.asInstanceOf[A], b.asInstanceOf[B])
         }
@@ -1438,12 +1438,12 @@ Person.name.get === List(
 )
 ```
 ```scala
-Person.name.get: Iterable[String] === List(
+Person.name.get: List[String] === List(
   "Fred", "Lisa", "Ben"
 )
 ```
 ```scala
-Person.name.age.get: Iterable[(String, Int)] === List(
+Person.name.age.get: List[(String, Int)] === List(
   ("Fred", 38),
   ("Lisa", 7),
   ("Ben", 5)

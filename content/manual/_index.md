@@ -1,15 +1,16 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "Manual"
-weight: 5
+title: "Quick start"
+weight: 10
 menu:
   main:
-    identifier: manual
+    parent: manual
+    identifier: quick-start
 
 up: 
 prev: 
-next: /manual/documentation/introduction
-down: /manual/getting-started
+next: /manual/quick-start/introduction
+down: /manual/setup
 ---
 
 # Molecule manual
@@ -19,7 +20,7 @@ Welcome to the manual for Molecule, the type-safe Scala meta DSL to access the [
 It's highly recommended to watch the [Molecule videos](/resources/videos/2017-04-25_marc_grue/). 
 This will give you an overview of Molecule and an understanding of the underlying data model of [Datomic](http://www.datomic.com).
 
-## Quick start demo
+### Quick start demo
 
 The fastest way to build some molecules yourself is to clone the [molecule-demo](https://github.com/scalamolecule/molecule-demo)
 github repo and play around with the code in your IDE:
@@ -40,7 +41,7 @@ sbt compile
 
 ### Setup Molecule in your own project
 
-[Setup Molecule](/manual/getting-started/setup/) in your own project and try modelling your own domain with Molecule.
+[Setup Molecule](/manual/setup/) in your own project and try modelling your own domain with Molecule.
 
 
 ### Study example/core tests
@@ -51,21 +52,9 @@ your own code
 
 ```
 git clone https://github.com/scalamolecule/molecule.git
-cd molecule
-sbt compile // this can take a few minutes since there are thousands of molecules in the project :-)
-
-// open in your IDE and explore
+// open in IDE and explore core + tests
 ```
 
 ### Next
 
-A brief [Introduction](/manual/documentation/introduction/) to Molecule...
-
-or
-
-Straight on to [Getting started](/manual/getting-started/)...
-
-
-### Improvements
-
-[Issues and suggestions](https://github.com/scalamolecule/molecule-docs/issues/new) are welcome!
+A brief [Introduction](/manual/quick-start/introduction/) to Molecule...

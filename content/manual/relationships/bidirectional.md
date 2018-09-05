@@ -1,19 +1,19 @@
 ---
 date: 2016-07-24T22:06:44+01:00
 title: "Bidirectional"
-weight: 50
+weight: 40
 menu:
   main:
     parent: relationships
-up:   /docs/relationships
-prev: /docs/relationships/composites
-next: /docs/crud
-down: /docs/crud
+up:   /manual/relationships
+prev: /manual/relationships/composites
+next: /manual/relationships/self-join
+down: /manual/crud
 ---
 
 # Bidirectional references
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/bidirectional/self.md)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/bidirectionals/self/OneSelf.scala)
 
 
 ### Unidirectional reference limitations
@@ -69,8 +69,8 @@ And the graph example becomes easy
 
 Single direct references to another entity can either go to the same namespace or to another namespace:
 
-### A <---> A
-The friendship reference we saw above is a classic "self-reference" in that it's a cardinality-many relationship 
+### A <---> A / Self-join
+The friendship reference we saw above is a classic "self-join" in that it's a cardinality-many relationship 
 between same-kinds: Persons.
 
 A cardinality-one example would be
@@ -283,4 +283,4 @@ Please have a look at the implementation of the
 
 ### Next
 
-[CRUD operations...](/docs/crud)
+[Self-join...](/manual/relationships/self-join)

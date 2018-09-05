@@ -1,7 +1,7 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Attributes"
-weight: 30
+weight: 40
 menu:
   main:
     parent: manual
@@ -20,11 +20,11 @@ Examples from the sub pages:
 
 [Attribute basics](/manual/attributes/basics), return types, arity, cardinality ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala))
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
 <br>
 
-[Mandatory/Tacet/Optional](/manual/attributes/modes) attributes ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala))
+[Mandatory/Tacit/Optional](/manual/attributes/modes) attributes ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala))
 ```scala
 Person.name.age.get  // all required values              ("mandatory value")
 Person.name.age_.get // age is required but not returned ("tacit value")
@@ -69,11 +69,14 @@ Person.age(max)
 <br>
 
 [Parameterize](/manual/attributes/parameterized) - re-use molecules and let Datomic cache queries and optimize performance
-([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Input.scala))
+(tests: 
+[1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1),
+[2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2),
+[3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3))
 ```scala
-val person = Person.name(?).age(?)
+val person = m(Person.name(?).age(?))
 
-// Re-use `person`
+// Re-use `person` input molecule
 val Johan  = person("John", 33).get.head
 val Lisa   = person("Lisa", 27).get.head
 ```

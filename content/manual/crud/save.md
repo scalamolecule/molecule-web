@@ -5,15 +5,15 @@ weight: 10
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud
-next: /docs/crud/insert
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud
+next: /manual/crud/insert
+down: /manual/transactions
 ---
 
 # Save
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/manipulation/Save.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Save.scala)
 
 In Molecule we can populate a molecule with data and save it:
 
@@ -67,10 +67,6 @@ Person.hobbies(set).save
 // Seq/List
 val seq = Seq("golf", "chess")
 Person.hobbies(seq).save
-
-// Iterable
-val iterable = Iterable("golf", "chess")
-Person.hobbies(iterable).save
 ```
 
 
@@ -118,4 +114,4 @@ Person.name.likes$(None).age.get === List(
 
 ### Next
 
-[Create / Insert...](/docs/crud/insert)
+[Create / Insert...](/manual/crud/insert)

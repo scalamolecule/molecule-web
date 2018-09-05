@@ -460,7 +460,7 @@ List(
 ```
 
 ```scala
-Community(belltownId).category.add("extra category").update
+Community(belltownId).category.assert("extra category").update
 ```
 
 Remove value from a many-attribute
@@ -471,7 +471,7 @@ List(
 ```
 
 ```scala
-Community(belltownId).category.remove("Super cool events").update
+Community(belltownId).category.retract("Super cool events").update
 ```
 
 Mixing updates and deletes

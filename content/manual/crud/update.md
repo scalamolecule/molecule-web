@@ -5,15 +5,15 @@ weight: 60
 menu:
   main:
     parent: crud
-up:   /docs/crud
-prev: /docs/crud/getjson
-next: /docs/crud/retract
-down: /docs/transactions
+up:   /manual/crud
+prev: /manual/crud/getjson
+next: /manual/crud/retract
+down: /manual/transactions
 ---
 
 # Update data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/manipulation/)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/)
 
 An "update" is a two-step process in Datomic:
 
@@ -75,25 +75,25 @@ can only be discovered at runtime will throw an IllegalArgumentException at runt
 
 ### Operations on card-many attrs
 
-All operations generally accepts varargs or `Iterables` of the type of the attribute. So even if the attribute holds
-a `Set` of values we can also supply `Seq`, `List` or any `Iterable` of values.
+All operations generally accepts varargs or `Lists` of the type of the attribute. So even if the attribute holds
+a `Set` of values we can also supply a `Seq` of values.
 
 
-#### `add`
+#### `assert` ("add")
 
 
 ```scala
-// Add vararg values
-Person(fredId).hobbies.add("walks", "jogging").update
+// Assert vararg values
+Person(fredId).hobbies.assert("walks", "jogging").update
 Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging")
 
-// Add Set/Seq/Iterable of values
-Person(fredId).hobbies.add(Set("skating", "biking")).update
+// Add Set of values
+Person(fredId).hobbies.assert(Set("skating", "biking")).update
 Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "skating", "biking")
 ```
 
 
-#### `replace`
+#### `replace` (retract + assert)
 
 Since Cardinality-many attributes have multiple values we need to specify which of those values we want to replace:
 
@@ -115,15 +115,15 @@ Person(fredId).hobbies.get.head === Set("badminton", "trains", "walks", "jogging
 ```
 
 
-#### `remove`
+#### `retract`
 
-We can remove one or more values from the set of values
+We can retract one or more values from the set of values
 
 ```scala
-Person(fredId).hobbies.remove("badminton").update
+Person(fredId).hobbies.retract("badminton").update
 Person(fredId).hobbies.get.head === Set("trains", "walks", "jogging", "surfing", "biking")
 
-Person(fredId).hobbies.remove(List("walks", "surfing")).update
+Person(fredId).hobbies.retract(List("walks", "surfing")).update
 Person(fredId).hobbies.get.head === Set("trains", "jogging", "biking")
 ```
 The retracted facts can still be tracked in the history of the database.
@@ -154,4 +154,4 @@ Person(fredId).hobbies.get === Nil
 
 ### Next
 
-[Delete / retract...](/docs/crud/retract)
+[Delete / retract...](/manual/crud/retract)

@@ -1,21 +1,21 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Composites"
-weight: 40
+weight: 30
 menu:
   main:
     parent: relationships
-up:   /docs/relationships
-prev: /docs/relationships/card-many
-next: /docs/relationships/bidirectional
-down: /docs/crud
+up:   /manual/relationships
+prev: /manual/relationships/card-many
+next: /manual/relationships/bidirectional
+down: /manual/crud
 ---
 
 # Composites
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Composite.scala)
 
-As we saw earlier, [Entities](/docs/entities/) are simply groups of facts that share an entity id:
+As we saw earlier, [Entities](/manual/entities/) are simply groups of facts that share an entity id:
 
 ![](/img/entity/entity5.jpg)
 
@@ -84,7 +84,7 @@ tie _any_ attributes together as we see in the list of facts at the top of this 
 
 ## Composite modelling
 
-In Molecule we can model "loose associations" with the `~` ("Tilde") method:
+In Molecule we can model "associative relationships" - or "composites" with the `~` method:
 
 ```scala
 m(Person.name.likes.age ~ Site.cat).get === List(
@@ -142,14 +142,14 @@ be too happy about that.
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/perf/CompilationPerf.scala)
 
-Compile time for molecules longer than about 14-16 attributes tend to increase sharply, so simply 
+Compile time for molecules longer than about 12-15 attributes tend to increase sharply, so simply 
 splitting up long molecules in 2 or more sub-molecules composed into 1 composite molecule easily keeps compilation fast.
 
 It's also worth to remember that each mandatory attribute in a molecule is like a where clause. So having more than
- 14-16 where clauses seems also like a less frequent need.
+ 12-15 where clauses seems also like a less frequent need.
 
 
 
 ### Next
 
-[Bidirectional references...](/docs/relationships/bidirectional)
+[Bidirectional references...](/manual/relationships/bidirectional)

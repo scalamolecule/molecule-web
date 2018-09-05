@@ -1,16 +1,16 @@
 ---
 date: 2015-01-02T22:06:44+01:00
 title: "Transaction"
-weight: 30
+weight: 31
 menu:
   main:
     parent: schema
     identifier: schema-transaction
 
-up:   /docs/schema
-prev: /docs/schema
-next: /docs/attributes
-down: /docs/attributes
+up:   /manual/schema
+prev: /manual/schema
+next: /manual/attributes
+down: /manual/attributes
 ---
 
 # Schema transaction
@@ -21,12 +21,13 @@ defined attributes available in Datomic.
 
 ## Schema transaction data
 
-Molecule transforms our [Schema definition file](/docs/schema) to
+Apart from generating our molecule boilerplate code, the sbt-MoleculePlugin also prepares our schema transaction data in
+ a ready to transact format. It transforms our [Schema definition file](/manual/schema) to
 basically a `java.util.List` containing a `java.util.Map` of schema transaction data for each attribute defined. 
 Our `name` and `url` attributes for instance requires the following map of information to be transacted in Datomic:
 
 ```scala
-object SeattleSchema extends Transaction {
+object SeattleSchema extends SchemaTransaction {
   
   lazy val partitions = Util.list()
 
@@ -38,16 +39,14 @@ object SeattleSchema extends Transaction {
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
              ":db/fulltext"          , true.asInstanceOf[Object],
-             ":db/index"             , true.asInstanceOf[Object],
-             ":db/id"                , Peer.tempid(":db.part/db"),
-             ":db.install/_attribute", ":db.part/db"),
-
+             ":db/doc"               , "A community's name",
+             ":db/index"             , true.asInstanceOf[Object]),
+    
     Util.map(":db/ident"             , ":community/url",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
-             ":db/index"             , true.asInstanceOf[Object],
-             ":db/id"                , Peer.tempid(":db.part/db"),
-             ":db.install/_attribute", ":db.part/db"),
+             ":db/doc"               , "A community's url",
+             ":db/index"             , true.asInstanceOf[Object]),
              
     // etc...
 }
@@ -59,7 +58,7 @@ the `name` attribute:
 ":db/ident", ":community/name",
 ```
 The rest of the lines are pretty self-describing except from the last two that create and save the 
-internal id of the attribute in Datomic. [Datomic schemas](http://docs.datomic.com/schema.html) are 
+internal id of the attribute in Datomic. [Datomic schemas](https://docs.datomic.com/on-prem/schema.html) are 
 literally a set of datoms that have been transacted as any other data!
 
 
@@ -81,7 +80,7 @@ Partition examples with Molecule:
 - [partitioned schema definition](https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/schemaDef/schema/PartitionTestDefinition.scala) 
 - [partition tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/schemaDef/partition.scala) 
 
-More about [partitions in Datomic](http://docs.datomic.com/indexes.html#sec-3).
+More about [partitions in Datomic](https://docs.datomic.com/on-prem/indexes.html).
 
 
 ## Create new Datomic database
@@ -111,7 +110,7 @@ Then we can later - in another scope - establish a new connection to the existin
 
 ```scala
 // Create connection to the database 'myDatabase' 
-implicit val conn = Conn("myDatabase")
+implicit val conn = molecule.facade.Conn("myDatabase")
 ```
 
 ## Protocols
@@ -126,26 +125,3 @@ implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase", "mem")
 For more information on 
 db creation, please see the [Datomic documentation](http://docs.datomic.com/getting-started/connect-to-a-database.html).
 
-
-### Next...
-
-Since Molecule is in its early development (although started in 2014) a more thorough Molecule database management API hasn't been 
-created yet. It is though no problem to access Datomic directly for this purpose in the meanwhile. The `recreateDbFrom` method 
-is for instance just a wrapper around the following code:
-
-```scala
-import datomic._
-
-// Setup database
-val uri = "datomic:mem://seattle"
-Peer.deleteDatabase(uri)
-Peer.createDatabase(uri)
-implicit val conn = Conn(Peer.connect(uri))
-
-// Transact partitions/schema
-conn.transact(SeattleSchema.partitions) // Optional
-conn.transact(SeattleSchema.namespaces)
-```
-So if you need more functionality than currently provided in Molecule you can simply use the [datomic API](http://docs.datomic.com/javadoc/index.html) and 
-likely methods of the [Peer]( http://docs.datomic.com/javadoc/datomic/Peer.html). Or you can file an 
-[issue](https://github.com/scalamolecule/molecule/issues) or send a [pull request](https://github.com/scalamolecule/molecule/pulls) :-)

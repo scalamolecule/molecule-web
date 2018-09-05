@@ -5,10 +5,10 @@ weight: 10
 menu:
   main:
     parent: attributes
-up: /docs/attributes
-prev: /docs/attributes
-next: /docs/attributes/modes
-down: /docs/entities
+up: /manual/attributes
+prev: /manual/attributes
+next: /manual/attributes/modes
+down: /manual/entities
 ---
 
 # Attribute basics
@@ -32,11 +32,17 @@ As you see we start our molecule from some Namespace and then build on Attribute
 
 ### Tuples returned
 
-Molecule returns all result sets as tuples of values (with `get`).
+Molecule returns all result sets as a List of tuples of values (with `get`).
 
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.get
+val persons: List[(String, Int)] = Person.name.age.get
 ```
+
+For expected large result sets we can also return an `Iterable` of tuples:
+```scala
+val persons: Iterable[(String, Int)] = Person.name.age.getIterable
+```
+
 
 ### Molecule max size
 
@@ -75,9 +81,9 @@ multiple times, or that only unique values are saved. An example could be a card
 Person.name.hobbies.get.head === ("Fred", Set("Trains", "Chess"))
 ```
 
-In the [Update](/docs/crud/update/) section of CRUD we will see how multiple values are managed with Molecule.  
+In the [Update](/manual/crud/update/) section of CRUD we will see how multiple values are managed with Molecule.
 
 
 ### Next
 
-[Mandatory/Tacet/Optional attributes...](/docs/attributes/modes)
+[Mandatory/Tacit/Optional attributes...](/manual/attributes/modes)

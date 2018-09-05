@@ -52,7 +52,7 @@ people.sortBy(p => (p.age.asc, p.name)).run
 ```
 Ordering is applied on the result set in the application code:
 ```scala
-Person.age.name.get.toSeq sortBy(_._1)
+Person.age.name.get sortBy(_._1)
 ```
 
 #### Aggregations

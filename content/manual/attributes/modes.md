@@ -1,14 +1,14 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "Mandatory/Tacet/Optional"
+title: "Mandatory/Tacit/Optional"
 weight: 20
 menu:
   main:
     parent: attributes
-up: /docs/attributes
-prev: /docs/attributes/basics
-next: /docs/attributes/mapped
-down: /docs/entities
+up: /manual/attributes
+prev: /manual/attributes/basics
+next: /manual/attributes/mapped
+down: /manual/entities
 ---
 
 # 3 attribute modes
@@ -28,7 +28,7 @@ val persons = Person.name.age.get
 Basically we look for **matches** to our molecule data structure.
 
 
-#### 2. Tacet `attr_`
+#### 2. Tacit `attr_`
 
 Sometimes we want to grap entities that we _know_ have certain attributes, but without returning those values. 
 We call the un-returning attributes "tacit attributes". 
@@ -43,8 +43,8 @@ This will return names of person entities having both a name and age Attribute s
 longer returned from the type signatures:
 
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.get
-val names  : Iterable[String]        = Person.name.age_.get
+val persons: List[(String, Int)] = Person.name.age.get
+val names  : List[String]        = Person.name.age_.get
 ```
 This way we can switch on and off individual attributes from the result set without affecting the data structures 
 we look for.
@@ -52,13 +52,13 @@ we look for.
 
 #### 3. Optional `attr$` 
 
-[tests..](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala)
+[tests..](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala)
 
 
 If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
 
 ```scala
-val names: Iterable[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
+val names: List[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
 ```
 That way we can get all person names with or without middleNames. As you can see from the return type, the middle 
 name is wrapped in an `Option`.
@@ -67,4 +67,4 @@ name is wrapped in an `Option`.
 
 ### Next
 
-[Map attributes...](/docs/attributes/mapped)
+[Map attributes...](/manual/attributes/mapped)
