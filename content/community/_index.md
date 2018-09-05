@@ -1,10 +1,10 @@
 ---
 date: 2014-05-14T02:13:50Z
 title: "Community"
-weight: 10
+weight: 33
 menu:
   main:
-    parent: community
+    identifier: communityx
 ---
 
 # Community
