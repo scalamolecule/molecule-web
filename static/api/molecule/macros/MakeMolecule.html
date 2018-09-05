@@ -1,0 +1,2471 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Molecule 0.14.0 - molecule.macros.MakeMolecule</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.macros.MakeMolecule" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.macros.MakeMolecule" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../lib/index.js"></script>
+      <script type="text/javascript" src="../../index.js"></script>
+      <script type="text/javascript" src="../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule"></a><a id="molecule:molecule"></a>
+      <span class="permalink">
+      <a href="index.html#molecule" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="molecule.macros" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="macros"></a><a id="macros:macros"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#macros" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal macros generating molecule code from custom DSL molecule constructs." href="index.html"><span class="name">macros</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal macros generating molecule code from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal macros generating molecule code from custom DSL molecule constructs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.macros.exception" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exception"></a><a id="exception:exception"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/index.html#exception" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="exception/index.html"><span class="name">exception</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.macros">macros</a></dd></dl></div>
+    </li><li class="current-entities indented2">
+                        <a class="object" href="MakeComposite$.html" title="Macro calls of arity 1-22 to build composite molecules."></a>
+                        <a class="trait" href="MakeComposite.html" title="Macro to make composite molecules."></a>
+                        <a href="MakeComposite.html" title="Macro to make composite molecules.">MakeComposite</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="MakeComposite_In$.html" title="Macro calls of arity 1-22 for 1, 2 and 3 inputs to build composite input molecules."></a>
+                        <a class="trait" href="MakeComposite_In.html" title="Macro to make composite input molecules."></a>
+                        <a href="MakeComposite_In.html" title="Macro to make composite input molecules.">MakeComposite_In</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="MakeMolecule$.html" title="Macro calls of arity 1-22 to build molecules."></a>
+                        <a class="trait" href="" title="Macro to make molecules."></a>
+                        <a href="" title="Macro to make molecules.">MakeMolecule</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="MakeMolecule_In$.html" title="Macro calls of arity 1-22 for 1, 2 and 3 inputs to build input molecules."></a>
+                        <a class="trait" href="MakeMolecule_In.html" title="Macro to make input molecules."></a>
+                        <a href="MakeMolecule_In.html" title="Macro to make input molecules.">MakeMolecule_In</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="NestedJson.html" title="Builder for nested JSON output."></a>
+                        <a href="NestedJson.html" title="Builder for nested JSON output.">NestedJson</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="NestedTuples.html" title="Nested tuples helper methods."></a>
+                        <a href="NestedTuples.html" title="Nested tuples helper methods.">NestedTuples</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="trait type">
+      <div id="definition">
+        <a href="MakeMolecule$.html" title="See companion object"><div class="big-circle trait-companion-object">t</div></a>
+        <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.macros">macros</a></p>
+        <h1><a href="MakeMolecule$.html" title="See companion object">MakeMolecule</a><span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        <h3><span class="morelinks"><div>
+            Companion <a href="MakeMolecule$.html" title="See companion object">object MakeMolecule</a>
+          </div></span></h3>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MakeMolecule</span><span class="tparams">[<span name="Ctx">Ctx &lt;: <span class="extype" name="scala.reflect.macros.whitebox.Context">Context</span></span>]</span><span class="result"> extends <span class="extype" name="molecule.macros.GetTuples">GetTuples</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro to make molecules.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/macros/MakeMolecule.scala#L1" target="_blank">MakeMolecule.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="molecule.macros.GetTuples">GetTuples</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="molecule.macros.GetJson">GetJson</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="molecule.macros.Base">Base</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="molecule.ops.TreeOps">TreeOps</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="molecule.ops.Liftables">Liftables</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="molecule.util.MacroHelpers">MacroHelpers</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 168.00 120.00" height="120pt" width="168pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 164,-116 164,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.macros.MakeMolecule (this trait)" xlink:href="#inheritance-diagram"><path d="M127.333,-50C127.333,-50 32.6667,-50 32.6667,-50 28.3333,-50 24,-45.6667 24,-41.3333 24,-41.3333 24,-32.6667 24,-32.6667 24,-28.3333 28.3333,-24 32.6667,-24 32.6667,-24 127.333,-24 127.333,-24 131.667,-24 136,-28.3333 136,-32.6667 136,-32.6667 136,-41.3333 136,-41.3333 136,-45.6667 131.667,-50 127.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="55.877" text-anchor="start">MakeMolecule[Ctx]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.macros.GetTuples"><path d="M119.583,-112C119.583,-112 40.4167,-112 40.4167,-112 36.0833,-112 31.75,-107.667 31.75,-103.333 31.75,-103.333 31.75,-94.6667 31.75,-94.6667 31.75,-90.3333 36.0833,-86 40.4167,-86 40.4167,-86 119.583,-86 119.583,-86 123.917,-86 128.25,-90.3333 128.25,-94.6667 128.25,-94.6667 128.25,-103.333 128.25,-103.333 128.25,-107.667 123.917,-112 119.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="44" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="63.8594" text-anchor="start">GetTuples[Ctx]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="MakeMolecule[Ctx] is a subtype of GetTuples[Ctx]"><path d="M80,-78.7534C80,-69.3549 80,-58.3336 80,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="77.5501,-78.8581 80,-85.8581 82.4501,-78.8581 77.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="molecule.macros.MakeMolecule"><span>MakeMolecule</span></li><li class="in" name="molecule.macros.GetTuples"><span>GetTuples</span></li><li class="in" name="molecule.macros.GetJson"><span>GetJson</span></li><li class="in" name="molecule.macros.Base"><span>Base</span></li><li class="in" name="molecule.ops.TreeOps"><span>TreeOps</span></li><li class="in" name="molecule.ops.Liftables"><span>Liftables</span></li><li class="in" name="molecule.util.MacroHelpers"><span>MacroHelpers</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="molecule.util.MacroHelpers.DebugMacro" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DebugMacroextendsProductwithSerializable"></a><a id="DebugMacro:DebugMacro"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#DebugMacroextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DebugMacro</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.E" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="E=MacroHelpers.this.c.universe.Expr[_]"></a><a id="E:E"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#E=MacroHelpers.this.c.universe.Expr[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">E</span><span class="result alias"> = <span class="extype" name="scala.reflect.api.Exprs.Expr">scala.reflect.macros.Universe.Expr</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.PF" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PF[A,B]=PartialFunction[A,B]"></a><a id="PF[A,B]:PF[A,B]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#PF[A,B]=PartialFunction[A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PF</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result alias"> = <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="molecule.util.MacroHelpers.PF.A">A</span>, <span class="extype" name="molecule.util.MacroHelpers.PF.B">B</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.Regex" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RegexextendsAnyRef"></a><a id="Regex:Regex"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#RegexextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Regex</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.TreeHelper" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TreeHelperextendsAnyRef"></a><a id="TreeHelper:TreeHelper"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#TreeHelperextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TreeHelper</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.W" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="W[T]=MacroHelpers.this.c.WeakTypeTag[T]"></a><a id="W[T]:W[T]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#W[T]=MacroHelpers.this.c.WeakTypeTag[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">W</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <span class="extype" name="scala.reflect.api.TypeTags.WeakTypeTag">scala.reflect.macros.Universe.WeakTypeTag</span>[<span class="extype" name="molecule.util.MacroHelpers.W.T">T</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps.att" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="attextendsAnyRef"></a><a id="att:att"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#attextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">att</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps.nsp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nspextendsAnyRef"></a><a id="nsp:nsp"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nspextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nsp</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps.richTree" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="richTreeextendsAnyRef"></a><a id="richTree:richTree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#richTreeextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">richTree</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="molecule.util.MacroHelpers#c" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="c:Ctx"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#c:Ctx" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c</span><span class="result">: <span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol>
+                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#!=(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html###():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#==(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers#abort" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="abort(t:Any,i:Int):Nothing"></a><a id="abort(Any,Int):Nothing"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#abort(t:Any,i:Int):Nothing" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abort</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Any">Any</span></span>, <span name="i">i: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Nothing">Nothing</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers#abortTree" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="abortTree(tree:MacroHelpers.this.c.universe.Tree,msg:String,debug:Boolean):Nothing"></a><a id="abortTree(scala.reflect.macros.Universe.Tree,String,Boolean):Nothing"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#abortTree(tree:MacroHelpers.this.c.universe.Tree,msg:String,debug:Boolean):Nothing" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abortTree</span><span class="params">(<span name="tree">tree: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="debug">debug: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result">: <span class="extype" name="scala.Nothing">Nothing</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#any" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="any(v:Any):Liftables.this.c.universe.Tree"></a><a id="any(Any):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#any(v:Any):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">any</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#asInstanceOf[T0]:T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="molecule.macros.Base#basics" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="basics(dsl:Base.this.c.Expr[molecule.boilerplate.base.NS]):(molecule.ast.model.Model,Base.this.c.universe.Tree)"></a><a id="basics(Ctx.Expr[NS]):(Model,scala.reflect.macros.Universe.Tree)"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#basics(dsl:Base.this.c.Expr[molecule.boilerplate.base.NS]):(molecule.ast.model.Model,Base.this.c.universe.Tree)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">basics</span><span class="params">(<span name="dsl">dsl: <span class="extype" name="scala.reflect.macros.Aliases.Expr">Ctx.Expr</span>[<a href="../boilerplate/base$$NS.html" class="extype" name="molecule.boilerplate.base.NS">NS</a>]</span>)</span><span class="result">: (<a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a>, <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>)</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#cast" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cast(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type,i:GetTuples.this.c.universe.Tree):GetTuples.this.c.universe.Tree"></a><a id="cast(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type,scala.reflect.macros.Universe.Tree):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#cast(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type,i:GetTuples.this.c.universe.Tree):GetTuples.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cast</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>, <span name="i">i: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castMap(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Tree"></a><a id="castMap(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castMap(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castMap</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castOption" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castOption(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match"></a><a id="castOption(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castOption(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castOption</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castOptionMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castOptionMap(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match"></a><a id="castOptionMap(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castOptionMap(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castOptionMap</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castOptionSet" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castOptionSet(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match"></a><a id="castOptionSet(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castOptionSet(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castOptionSet</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castSet" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castSet(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Tree"></a><a id="castSet(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castSet(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castSet</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castType" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castType(query:GetTuples.this.c.universe.Tree,value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type,i:GetTuples.this.c.universe.Tree):GetTuples.this.c.universe.Match"></a><a id="castType(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type,scala.reflect.macros.Universe.Tree):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castType(query:GetTuples.this.c.universe.Tree,value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type,i:GetTuples.this.c.universe.Tree):GetTuples.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castType</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>, <span name="i">i: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#castVector" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="castVector(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match"></a><a id="castVector(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#castVector(value:GetTuples.this.c.universe.Tree,tpe:GetTuples.this.c.universe.Type):GetTuples.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">castVector</span><span class="params">(<span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#clone():Object" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.macros.GetJson#compositeJson" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compositeJson(model:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,rows:GetJson.this.c.universe.Tree,outerTypes:Seq[GetJson.this.c.universe.Type]):GetJson.this.c.universe.Tree"></a><a id="compositeJson(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#compositeJson(model:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,rows:GetJson.this.c.universe.Tree,outerTypes:Seq[GetJson.this.c.universe.Type]):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compositeJson</span><span class="params">(<span name="model">model: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="rows">rows: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="outerTypes">outerTypes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#compositeTuple" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compositeTuple(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,outerTypes:Seq[GetTuples.this.c.universe.Type]):Seq[GetTuples.this.c.universe.Tree]"></a><a id="compositeTuple(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):Seq[scala.reflect.macros.Universe.Tree]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#compositeTuple(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,outerTypes:Seq[GetTuples.this.c.universe.Type]):Seq[GetTuples.this.c.universe.Tree]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compositeTuple</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="outerTypes">outerTypes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#equals(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers#expr" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="expr(tree:MacroHelpers.this.c.universe.Tree):MacroHelpers.this.c.Expr[Nothing]"></a><a id="expr(scala.reflect.macros.Universe.Tree):Ctx.Expr[Nothing]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#expr(tree:MacroHelpers.this.c.universe.Tree):MacroHelpers.this.c.Expr[Nothing]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expr</span><span class="params">(<span name="tree">tree: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.macros.Aliases.Expr">Ctx.Expr</span>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#firstLow" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="firstLow(str:Any):String"></a><a id="firstLow(Any):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#firstLow(str:Any):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">firstLow</span><span class="params">(<span name="str">str: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.macros.MakeMolecule#generateMolecule" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="generateMolecule(dsl:MakeMolecule.this.c.Expr[molecule.boilerplate.base.NS],OutTypes:MakeMolecule.this.c.universe.Type*):MakeMolecule.this.c.Expr[Nothing]"></a><a id="generateMolecule(Ctx.Expr[NS],scala.reflect.macros.Universe.Type*):Ctx.Expr[Nothing]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#generateMolecule(dsl:MakeMolecule.this.c.Expr[molecule.boilerplate.base.NS],OutTypes:MakeMolecule.this.c.universe.Type*):MakeMolecule.this.c.Expr[Nothing]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generateMolecule</span><span class="params">(<span name="dsl">dsl: <span class="extype" name="scala.reflect.macros.Aliases.Expr">Ctx.Expr</span>[<a href="../boilerplate/base$$NS.html" class="extype" name="molecule.boilerplate.base.NS">NS</a>]</span>, <span name="OutTypes">OutTypes: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>*</span>)</span><span class="result">: <span class="extype" name="scala.reflect.macros.Aliases.Expr">Ctx.Expr</span>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+      </span>
+      
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#getClass():Class[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#hashCode():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.macros.Base#imports" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="imports:Base.this.c.universe.Tree"></a><a id="imports:scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#imports:Base.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">imports</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#inputMolecule_i_o" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputMolecule_i_o(inArity:Int,outArity:Int):TreeOps.this.c.universe.Select"></a><a id="inputMolecule_i_o(Int,Int):scala.reflect.macros.Universe.Select"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#inputMolecule_i_o(inArity:Int,outArity:Int):TreeOps.this.c.universe.Select" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inputMolecule_i_o</span><span class="params">(<span name="inArity">inArity: <span class="extype" name="scala.Int">Int</span></span>, <span name="outArity">outArity: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Select">scala.reflect.macros.Universe.Select</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#isInstanceOf[T0]:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#json" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="json(model:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,rows:GetJson.this.c.universe.Tree,tpes:Seq[GetJson.this.c.universe.Type]):GetJson.this.c.universe.Tree"></a><a id="json(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#json(model:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,rows:GetJson.this.c.universe.Tree,tpes:Seq[GetJson.this.c.universe.Type]):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">json</span><span class="params">(<span name="model">model: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="rows">rows: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonBase" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonBase:GetJson.this.c.universe.Tree"></a><a id="jsonBase:scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonBase:GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonBase</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonMap(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree"></a><a id="jsonMap(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonMap(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonMap</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonOptionMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonOptionMap(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match"></a><a id="jsonOptionMap(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonOptionMap(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonOptionMap</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonOptionSet" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonOptionSet(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match"></a><a id="jsonOptionSet(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonOptionSet(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonOptionSet</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="values">values: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonOptionValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonOptionValue(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match"></a><a id="jsonOptionValue(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Match"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonOptionValue(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Match" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonOptionValue</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Match">scala.reflect.macros.Universe.Match</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonPair" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonPair(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,fields:GetJson.this.c.universe.Tree,row:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type,offset:Int,index0:Int):GetJson.this.c.universe.Tree"></a><a id="jsonPair(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type,Int,Int):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonPair(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,fields:GetJson.this.c.universe.Tree,row:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type,offset:Int,index0:Int):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonPair</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="fields">fields: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>, <span name="offset">offset: <span class="extype" name="scala.Int">Int</span></span>, <span name="index0">index0: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonPairs" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonPairs(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,fields:GetJson.this.c.universe.Tree,row:GetJson.this.c.universe.Tree,tpes:Seq[GetJson.this.c.universe.Type],offset:Int):Seq[GetJson.this.c.universe.Tree]"></a><a id="jsonPairs(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type],Int):Seq[scala.reflect.macros.Universe.Tree]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonPairs(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,fields:GetJson.this.c.universe.Tree,row:GetJson.this.c.universe.Tree,tpes:Seq[GetJson.this.c.universe.Type],offset:Int):Seq[GetJson.this.c.universe.Tree]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonPairs</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="fields">fields: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>, <span name="offset">offset: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonSet" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonSet(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree"></a><a id="jsonSet(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonSet(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonSet</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonStream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonStream(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree"></a><a id="jsonStream(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonStream(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonStream</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonValue(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type,rowIndex:Int):GetJson.this.c.universe.Tree"></a><a id="jsonValue(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type,Int):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonValue(buf:GetJson.this.c.universe.Tree,query:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type,rowIndex:Int):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonValue</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>, <span name="rowIndex">rowIndex: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#jsonVector" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="jsonVector(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree"></a><a id="jsonVector(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Type):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#jsonVector(buf:GetJson.this.c.universe.Tree,value:GetJson.this.c.universe.Tree,tpe:GetJson.this.c.universe.Type):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jsonVector</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="value">value: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftAny" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftAny:Liftables.this.c.universe.Liftable[Any]"></a><a id="liftAny:scala.reflect.macros.Universe.Liftable[Any]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftAny:Liftables.this.c.universe.Liftable[Any]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftAny</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftAtom" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftAtom:Liftables.this.c.universe.Liftable[molecule.ast.model.Atom]"></a><a id="liftAtom:scala.reflect.macros.Universe.Liftable[Atom]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftAtom:Liftables.this.c.universe.Liftable[molecule.ast.model.Atom]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftAtom</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Atom.html" class="extype" name="molecule.ast.model.Atom">Atom</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftAttrKW" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftAttrKW:Liftables.this.c.universe.Liftable[molecule.ast.query.KW]"></a><a id="liftAttrKW:scala.reflect.macros.Universe.Liftable[KW]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftAttrKW:Liftables.this.c.universe.Liftable[molecule.ast.query.KW]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftAttrKW</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$KW.html" class="extype" name="molecule.ast.query.KW">KW</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftBidirectional" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftBidirectional:Liftables.this.c.universe.Liftable[molecule.ast.model.Bidirectional]"></a><a id="liftBidirectional:scala.reflect.macros.Universe.Liftable[Bidirectional]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftBidirectional:Liftables.this.c.universe.Liftable[molecule.ast.model.Bidirectional]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftBidirectional</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Bidirectional.html" class="extype" name="molecule.ast.model.Bidirectional">Bidirectional</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftBinding:Liftables.this.c.universe.Liftable[molecule.ast.query.Binding]"></a><a id="liftBinding:scala.reflect.macros.Universe.Liftable[Binding]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftBinding:Liftables.this.c.universe.Liftable[molecule.ast.query.Binding]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftBinding</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftBond" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftBond:Liftables.this.c.universe.Liftable[molecule.ast.model.Bond]"></a><a id="liftBond:scala.reflect.macros.Universe.Liftable[Bond]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftBond:Liftables.this.c.universe.Liftable[molecule.ast.model.Bond]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftBond</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Bond.html" class="extype" name="molecule.ast.model.Bond">Bond</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftClause:Liftables.this.c.universe.Liftable[molecule.ast.query.Clause]"></a><a id="liftClause:scala.reflect.macros.Universe.Liftable[Clause]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftClause:Liftables.this.c.universe.Liftable[molecule.ast.query.Clause]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftClause</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftComposite" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftComposite:Liftables.this.c.universe.Liftable[molecule.ast.model.Composite]"></a><a id="liftComposite:scala.reflect.macros.Universe.Liftable[Composite]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftComposite:Liftables.this.c.universe.Liftable[molecule.ast.model.Composite]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftComposite</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Composite.html" class="extype" name="molecule.ast.model.Composite">Composite</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftDataClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftDataClause:Liftables.this.c.universe.Liftable[molecule.ast.query.DataClause]"></a><a id="liftDataClause:scala.reflect.macros.Universe.Liftable[DataClause]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftDataClause:Liftables.this.c.universe.Liftable[molecule.ast.query.DataClause]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftDataClause</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$DataClause.html" class="extype" name="molecule.ast.query.DataClause">DataClause</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftDataSource" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftDataSource:Liftables.this.c.universe.Liftable[molecule.ast.query.DataSource]"></a><a id="liftDataSource:scala.reflect.macros.Universe.Liftable[DataSource]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftDataSource:Liftables.this.c.universe.Liftable[molecule.ast.query.DataSource]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftDataSource</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftElement" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftElement:Liftables.this.c.universe.Liftable[molecule.ast.model.Element]"></a><a id="liftElement:scala.reflect.macros.Universe.Liftable[Element]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftElement:Liftables.this.c.universe.Liftable[molecule.ast.model.Element]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftElement</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftFind" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftFind:Liftables.this.c.universe.Liftable[molecule.ast.query.Find]"></a><a id="liftFind:scala.reflect.macros.Universe.Liftable[Find]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftFind:Liftables.this.c.universe.Liftable[molecule.ast.query.Find]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftFind</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Find.html" class="extype" name="molecule.ast.query.Find">Find</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftFn" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftFn:Liftables.this.c.universe.Liftable[molecule.ast.model.Fn]"></a><a id="liftFn:scala.reflect.macros.Universe.Liftable[Fn]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftFn:Liftables.this.c.universe.Liftable[molecule.ast.model.Fn]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftFn</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Fn.html" class="extype" name="molecule.ast.model.Fn">Fn</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftFunct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftFunct:Liftables.this.c.universe.Liftable[molecule.ast.query.Funct]"></a><a id="liftFunct:scala.reflect.macros.Universe.Liftable[Funct]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftFunct:Liftables.this.c.universe.Liftable[molecule.ast.query.Funct]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftFunct</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Funct.html" class="extype" name="molecule.ast.query.Funct">Funct</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftGeneric" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftGeneric:Liftables.this.c.universe.Liftable[molecule.ast.model.Generic]"></a><a id="liftGeneric:scala.reflect.macros.Universe.Liftable[Generic]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftGeneric:Liftables.this.c.universe.Liftable[molecule.ast.model.Generic]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftGeneric</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftGroup" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftGroup:Liftables.this.c.universe.Liftable[molecule.ast.model.Nested]"></a><a id="liftGroup:scala.reflect.macros.Universe.Liftable[Nested]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftGroup:Liftables.this.c.universe.Liftable[molecule.ast.model.Nested]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftGroup</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Nested.html" class="extype" name="molecule.ast.model.Nested">Nested</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftIn" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftIn:Liftables.this.c.universe.Liftable[molecule.ast.query.In]"></a><a id="liftIn:scala.reflect.macros.Universe.Liftable[In]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftIn:Liftables.this.c.universe.Liftable[molecule.ast.query.In]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftIn</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$In.html" class="extype" name="molecule.ast.query.In">In</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftInput" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftInput:Liftables.this.c.universe.Liftable[molecule.ast.query.Input]"></a><a id="liftInput:scala.reflect.macros.Universe.Liftable[Input]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftInput:Liftables.this.c.universe.Liftable[molecule.ast.query.Input]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftInput</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Input.html" class="extype" name="molecule.ast.query.Input">Input</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftListOfClauses" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftListOfClauses:Liftables.this.c.universe.Liftable[Seq[molecule.ast.query.Clause]]"></a><a id="liftListOfClauses:scala.reflect.macros.Universe.Liftable[Seq[Clause]]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftListOfClauses:Liftables.this.c.universe.Liftable[Seq[molecule.ast.query.Clause]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftListOfClauses</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftListOfElements" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftListOfElements:Liftables.this.c.universe.Liftable[Seq[molecule.ast.model.Element]]"></a><a id="liftListOfElements:scala.reflect.macros.Universe.Liftable[Seq[Element]]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftListOfElements:Liftables.this.c.universe.Liftable[Seq[molecule.ast.model.Element]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftListOfElements</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a>]]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftMeta" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftMeta:Liftables.this.c.universe.Liftable[molecule.ast.model.Meta]"></a><a id="liftMeta:scala.reflect.macros.Universe.Liftable[Meta]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftMeta:Liftables.this.c.universe.Liftable[molecule.ast.model.Meta]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftMeta</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Meta.html" class="extype" name="molecule.ast.model.Meta">Meta</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftModel" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftModel:Liftables.this.c.universe.Liftable[molecule.ast.model.Model]"></a><a id="liftModel:scala.reflect.macros.Universe.Liftable[Model]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftModel:Liftables.this.c.universe.Liftable[molecule.ast.model.Model]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftModel</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftNotClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftNotClause:Liftables.this.c.universe.Liftable[molecule.ast.query.NotClause]"></a><a id="liftNotClause:scala.reflect.macros.Universe.Liftable[NotClause]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftNotClause:Liftables.this.c.universe.Liftable[molecule.ast.query.NotClause]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftNotClause</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$NotClause.html" class="extype" name="molecule.ast.query.NotClause">NotClause</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftNotClauses" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftNotClauses:Liftables.this.c.universe.Liftable[molecule.ast.query.NotClauses]"></a><a id="liftNotClauses:scala.reflect.macros.Universe.Liftable[NotClauses]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftNotClauses:Liftables.this.c.universe.Liftable[molecule.ast.query.NotClauses]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftNotClauses</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$NotClauses.html" class="extype" name="molecule.ast.query.NotClauses">NotClauses</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftNotJoinClauses" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftNotJoinClauses:Liftables.this.c.universe.Liftable[molecule.ast.query.NotJoinClauses]"></a><a id="liftNotJoinClauses:scala.reflect.macros.Universe.Liftable[NotJoinClauses]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftNotJoinClauses:Liftables.this.c.universe.Liftable[molecule.ast.query.NotJoinClauses]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftNotJoinClauses</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$NotJoinClauses.html" class="extype" name="molecule.ast.query.NotJoinClauses">NotJoinClauses</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftOutput" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftOutput:Liftables.this.c.universe.Liftable[molecule.ast.query.Output]"></a><a id="liftOutput:scala.reflect.macros.Universe.Liftable[Output]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftOutput:Liftables.this.c.universe.Liftable[molecule.ast.query.Output]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftOutput</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftQuery" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftQuery:Liftables.this.c.universe.Liftable[molecule.ast.query.Query]"></a><a id="liftQuery:scala.reflect.macros.Universe.Liftable[Query]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftQuery:Liftables.this.c.universe.Liftable[molecule.ast.query.Query]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftQuery</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftQueryTerm" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftQueryTerm:Liftables.this.c.universe.Liftable[molecule.ast.query.QueryTerm]"></a><a id="liftQueryTerm:scala.reflect.macros.Universe.Liftable[QueryTerm]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftQueryTerm:Liftables.this.c.universe.Liftable[molecule.ast.query.QueryTerm]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftQueryTerm</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftQueryValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftQueryValue:Liftables.this.c.universe.Liftable[molecule.ast.query.QueryValue]"></a><a id="liftQueryValue:scala.reflect.macros.Universe.Liftable[QueryValue]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftQueryValue:Liftables.this.c.universe.Liftable[molecule.ast.query.QueryValue]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftQueryValue</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftReBond" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftReBond:Liftables.this.c.universe.Liftable[molecule.ast.model.ReBond]"></a><a id="liftReBond:scala.reflect.macros.Universe.Liftable[ReBond]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftReBond:Liftables.this.c.universe.Liftable[molecule.ast.model.ReBond]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftReBond</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$ReBond.html" class="extype" name="molecule.ast.model.ReBond">ReBond</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftRule" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftRule:Liftables.this.c.universe.Liftable[molecule.ast.query.Rule]"></a><a id="liftRule:scala.reflect.macros.Universe.Liftable[Rule]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftRule:Liftables.this.c.universe.Liftable[molecule.ast.query.Rule]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftRule</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Rule.html" class="extype" name="molecule.ast.query.Rule">Rule</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftRuleInvocation" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftRuleInvocation:Liftables.this.c.universe.Liftable[molecule.ast.query.RuleInvocation]"></a><a id="liftRuleInvocation:scala.reflect.macros.Universe.Liftable[RuleInvocation]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftRuleInvocation:Liftables.this.c.universe.Liftable[molecule.ast.query.RuleInvocation]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftRuleInvocation</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$RuleInvocation.html" class="extype" name="molecule.ast.query.RuleInvocation">RuleInvocation</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftTransitive" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftTransitive:Liftables.this.c.universe.Liftable[molecule.ast.model.Transitive]"></a><a id="liftTransitive:scala.reflect.macros.Universe.Liftable[Transitive]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftTransitive:Liftables.this.c.universe.Liftable[molecule.ast.model.Transitive]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftTransitive</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Transitive.html" class="extype" name="molecule.ast.model.Transitive">Transitive</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftTuple2" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftTuple2:Liftables.this.c.universe.Liftable[Product]"></a><a id="liftTuple2:scala.reflect.macros.Universe.Liftable[Product]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftTuple2:Liftables.this.c.universe.Liftable[Product]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftTuple2</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<span class="extype" name="scala.Product">Product</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftTxMetaData" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftTxMetaData:Liftables.this.c.universe.Liftable[molecule.ast.model.TxMetaData]"></a><a id="liftTxMetaData:scala.reflect.macros.Universe.Liftable[TxMetaData]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftTxMetaData:Liftables.this.c.universe.Liftable[molecule.ast.model.TxMetaData]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftTxMetaData</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$TxMetaData.html" class="extype" name="molecule.ast.model.TxMetaData">TxMetaData</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftVal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftVal:Liftables.this.c.universe.Liftable[molecule.ast.query.Val]"></a><a id="liftVal:scala.reflect.macros.Universe.Liftable[Val]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftVal:Liftables.this.c.universe.Liftable[molecule.ast.query.Val]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftVal</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Val.html" class="extype" name="molecule.ast.query.Val">Val</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftValue:Liftables.this.c.universe.Liftable[molecule.ast.model.Value]"></a><a id="liftValue:scala.reflect.macros.Universe.Liftable[Value]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftValue:Liftables.this.c.universe.Liftable[molecule.ast.model.Value]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftValue</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftVar:Liftables.this.c.universe.Liftable[molecule.ast.query.Var]"></a><a id="liftVar:scala.reflect.macros.Universe.Liftable[Var]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftVar:Liftables.this.c.universe.Liftable[molecule.ast.query.Var]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftVar</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftWhere" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftWhere:Liftables.this.c.universe.Liftable[molecule.ast.query.Where]"></a><a id="liftWhere:scala.reflect.macros.Universe.Liftable[Where]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftWhere:Liftables.this.c.universe.Liftable[molecule.ast.query.Where]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftWhere</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$Where.html" class="extype" name="molecule.ast.query.Where">Where</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftWith:Liftables.this.c.universe.Liftable[molecule.ast.query.With]"></a><a id="liftWith:scala.reflect.macros.Universe.Liftable[With]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#liftWith:Liftables.this.c.universe.Liftable[molecule.ast.query.With]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftWith</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/query$$With.html" class="extype" name="molecule.ast.query.With">With</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.macros.Base#makeModelE" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeModelE(model:molecule.ast.model.Model):molecule.ast.model.Model"></a><a id="makeModelE(Model):Model"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#makeModelE(model:molecule.ast.model.Model):molecule.ast.model.Model" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeModelE</span><span class="params">(<span name="model">model: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>)</span><span class="result">: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.macros.Base#mapGenerics" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapGenerics(gs:Seq[molecule.ast.model.Generic]):Seq[Any]"></a><a id="mapGenerics(Seq[Generic]):Seq[Any]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mapGenerics(gs:Seq[molecule.ast.model.Generic]):Seq[Any]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapGenerics</span><span class="params">(<span name="gs">gs: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.macros.Base#mapIdentifiers" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapIdentifiers(elements:Seq[molecule.ast.model.Element],identifiers0:Seq[(String,Base.this.c.universe.Tree)]):Seq[(String,Base.this.c.universe.Tree)]"></a><a id="mapIdentifiers(Seq[Element],Seq[(String,scala.reflect.macros.Universe.Tree)]):Seq[(String,scala.reflect.macros.Universe.Tree)]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mapIdentifiers(elements:Seq[molecule.ast.model.Element],identifiers0:Seq[(String,Base.this.c.universe.Tree)]):Seq[(String,Base.this.c.universe.Tree)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapIdentifiers</span><span class="params">(<span name="elements">elements: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a>]</span>, <span name="identifiers0">identifiers0: <span class="extype" name="scala.Seq">Seq</span>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>)] = <span class="symbol">Seq()</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>)]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.macros.Base#mapIdents" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapIdents(idents:Seq[Any]):Seq[(String,Base.this.c.universe.Tree)]"></a><a id="mapIdents(Seq[Any]):Seq[(String,scala.reflect.macros.Universe.Tree)]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mapIdents(idents:Seq[Any]):Seq[(String,Base.this.c.universe.Tree)]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapIdents</span><span class="params">(<span name="idents">idents: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>)]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#mkBigDecimal" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkBigDecimal(bigDec:BigDecimal):Liftables.this.c.universe.Tree"></a><a id="mkBigDecimal(BigDecimal):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mkBigDecimal(bigDec:BigDecimal):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkBigDecimal</span><span class="params">(<span name="bigDec">bigDec: <span class="extype" name="scala.BigDecimal">BigDecimal</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#mkBigInt" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkBigInt(bigInt:BigInt):Liftables.this.c.universe.Tree"></a><a id="mkBigInt(BigInt):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mkBigInt(bigInt:BigInt):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkBigInt</span><span class="params">(<span name="bigInt">bigInt: <span class="extype" name="scala.BigInt">BigInt</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#mkDate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkDate(date:java.util.Date):Liftables.this.c.universe.Tree"></a><a id="mkDate(Date):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mkDate(date:java.util.Date):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkDate</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#mkURI" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkURI(uri:java.net.URI):Liftables.this.c.universe.Tree"></a><a id="mkURI(URI):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mkURI(uri:java.net.URI):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkURI</span><span class="params">(<span name="uri">uri: <span class="extype" name="java.net.URI">URI</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#mkUUID" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkUUID(uuid:java.util.UUID):Liftables.this.c.universe.Tree"></a><a id="mkUUID(UUID):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#mkUUID(uuid:java.util.UUID):Liftables.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkUUID</span><span class="params">(<span name="uuid">uuid: <span class="extype" name="java.util.UUID">UUID</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.macros.Base#modelResolver" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="modelResolver(model:molecule.ast.model.Model,modelE:molecule.ast.model.Model,valueResolver:Base.this.c.universe.Tree):Base.this.c.universe.ModuleDef"></a><a id="modelResolver(Model,Model,scala.reflect.macros.Universe.Tree):scala.reflect.macros.Universe.ModuleDef"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#modelResolver(model:molecule.ast.model.Model,modelE:molecule.ast.model.Model,valueResolver:Base.this.c.universe.Tree):Base.this.c.universe.ModuleDef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">modelResolver</span><span class="params">(<span name="model">model: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>, <span name="modelE">modelE: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>, <span name="valueResolver">valueResolver: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.ModuleDef">scala.reflect.macros.Universe.ModuleDef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#molecule_o" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule_o(outArity:Int):TreeOps.this.c.universe.Select"></a><a id="molecule_o(Int):scala.reflect.macros.Universe.Select"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#molecule_o(outArity:Int):TreeOps.this.c.universe.Select" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">molecule_o</span><span class="params">(<span name="outArity">outArity: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Select">scala.reflect.macros.Universe.Select</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#namespaceSymbol" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="namespaceSymbol(tree:TreeOps.this.c.universe.Tree):TreeOps.this.c.universe.Symbol"></a><a id="namespaceSymbol(scala.reflect.macros.Universe.Tree):scala.reflect.macros.Universe.Symbol"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#namespaceSymbol(tree:TreeOps.this.c.universe.Tree):TreeOps.this.c.universe.Symbol" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">namespaceSymbol</span><span class="params">(<span name="tree">tree: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Symbols.Symbol">scala.reflect.macros.Universe.Symbol</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#nestedTuples" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nestedTuples(query:GetTuples.this.c.universe.Tree,rows:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):GetTuples.this.c.universe.If"></a><a id="nestedTuples(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):scala.reflect.macros.Universe.If"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nestedTuples(query:GetTuples.this.c.universe.Tree,rows:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):GetTuples.this.c.universe.If" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nestedTuples</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="rows">rows: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.If">scala.reflect.macros.Universe.If</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#nestedTuples1" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nestedTuples1(query:GetTuples.this.c.universe.Tree,rows:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):GetTuples.this.c.universe.Tree"></a><a id="nestedTuples1(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nestedTuples1(query:GetTuples.this.c.universe.Tree,rows:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):GetTuples.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nestedTuples1</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="rows">rows: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#notify():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#notifyAll():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#nsString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nsString(ns:TreeOps.this.c.universe.Name):String"></a><a id="nsString(scala.reflect.macros.Universe.Name):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nsString(ns:TreeOps.this.c.universe.Name):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nsString</span><span class="params">(<span name="ns">ns: <span class="extype" name="scala.reflect.api.Names.Name">scala.reflect.macros.Universe.Name</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#nsString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nsString(ns:TreeOps.this.c.universe.Tree):String"></a><a id="nsString(scala.reflect.macros.Universe.Tree):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nsString(ns:TreeOps.this.c.universe.Tree):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nsString</span><span class="params">(<span name="ns">ns: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#nsString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nsString(ns:String):String"></a><a id="nsString(String):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nsString(ns:String):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nsString</span><span class="params">(<span name="ns">ns: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#renderArray" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="renderArray(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,quote:Boolean):GetJson.this.c.universe.Tree"></a><a id="renderArray(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Boolean):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#renderArray(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,quote:Boolean):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">renderArray</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="values">values: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="quote">quote: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetJson#renderObj" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="renderObj(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,quote:Boolean):GetJson.this.c.universe.Tree"></a><a id="renderObj(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Boolean):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#renderObj(buf:GetJson.this.c.universe.Tree,values:GetJson.this.c.universe.Tree,quote:Boolean):GetJson.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">renderObj</span><span class="params">(<span name="buf">buf: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="values">values: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="quote">quote: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetJson</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#resolveNested" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resolveNested(query:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type],prevTpl:GetTuples.this.c.universe.Tree,prevRow:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,entityIndex:Int,depth:Int,maxDepth:GetTuples.this.c.universe.Tree,shift:Int):GetTuples.this.c.universe.Tree"></a><a id="resolveNested(scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type],scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Int,Int,scala.reflect.macros.Universe.Tree,Int):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#resolveNested(query:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type],prevTpl:GetTuples.this.c.universe.Tree,prevRow:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,entityIndex:Int,depth:Int,maxDepth:GetTuples.this.c.universe.Tree,shift:Int):GetTuples.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resolveNested</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>, <span name="prevTpl">prevTpl: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="prevRow">prevRow: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="entityIndex">entityIndex: <span class="extype" name="scala.Int">Int</span></span>, <span name="depth">depth: <span class="extype" name="scala.Int">Int</span></span>, <span name="maxDepth">maxDepth: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="shift">shift: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#toString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps#tpe" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tpe(s:String):TreeOps.this.c.universe.Ident"></a><a id="tpe(String):scala.reflect.macros.Universe.Ident"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#tpe(s:String):TreeOps.this.c.universe.Ident" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tpe</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Ident">scala.reflect.macros.Universe.Ident</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.macros.GetTuples#tuple" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tuple(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):Seq[GetTuples.this.c.universe.Tree]"></a><a id="tuple(scala.reflect.macros.Universe.Tree,scala.reflect.macros.Universe.Tree,Seq[scala.reflect.macros.Universe.Type]):Seq[scala.reflect.macros.Universe.Tree]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#tuple(query:GetTuples.this.c.universe.Tree,row:GetTuples.this.c.universe.Tree,tpes:Seq[GetTuples.this.c.universe.Type]):Seq[GetTuples.this.c.universe.Tree]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tuple</span><span class="params">(<span name="query">query: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="row">row: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>, <span name="tpes">tpes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Types.Type">scala.reflect.macros.Universe.Type</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GetTuples</dd></dl></div>
+    </li><li name="molecule.macros.Base#valueResolver" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueResolver(identMap:Map[String,Base.this.c.universe.Tree]):Base.this.c.universe.Tree"></a><a id="valueResolver(Map[String,scala.reflect.macros.Universe.Tree]):scala.reflect.macros.Universe.Tree"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#valueResolver(identMap:Map[String,Base.this.c.universe.Tree]):Base.this.c.universe.Tree" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueResolver</span><span class="params">(<span name="identMap">identMap: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.macros.Universe.Tree</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#wait(x$1:Long):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers#warn" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="warn(t:Any,i:Int):Unit"></a><a id="warn(Any,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#warn(t:Any,i:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">warn</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Any">Any</span></span>, <span name="i">i: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li><li name="molecule.macros.Base#x" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="x:Base.this.DebugMacro"></a><a id="x:DebugMacro"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#x:Base.this.DebugMacro" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">x</span><span class="result">: <a href="#DebugMacroextendsProductwithSerializable" class="extmbr" name="molecule.macros.MakeMolecule.DebugMacro">DebugMacro</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Base</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#z" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="z:Liftables.this.DebugMacro"></a><a id="z:DebugMacro"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#z:Liftables.this.DebugMacro" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">z</span><span class="result">: <a href="#DebugMacroextendsProductwithSerializable" class="extmbr" name="molecule.macros.MakeMolecule.DebugMacro">DebugMacro</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps.att" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="att"></a><a id="att:att"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#att" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">att</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.ops.TreeOps.nsp" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nsp"></a><a id="nsp:nsp"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#nsp" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nsp</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeOps</dd></dl></div>
+    </li><li name="molecule.util.MacroHelpers.st" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="st"></a><a id="st:st"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeMolecule.html#st" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">st</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MacroHelpers</dd></dl></div>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="molecule.macros.GetTuples">
+              <h3>Inherited from <span class="extype" name="molecule.macros.GetTuples">GetTuples</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="molecule.macros.GetJson">
+              <h3>Inherited from <span class="extype" name="molecule.macros.GetJson">GetJson</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="molecule.macros.Base">
+              <h3>Inherited from <span class="extype" name="molecule.macros.Base">Base</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="molecule.ops.TreeOps">
+              <h3>Inherited from <span class="extype" name="molecule.ops.TreeOps">TreeOps</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="molecule.ops.Liftables">
+              <h3>Inherited from <span class="extype" name="molecule.ops.Liftables">Liftables</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="molecule.util.MacroHelpers">
+              <h3>Inherited from <span class="extype" name="molecule.util.MacroHelpers">MacroHelpers</span>[<span class="extype" name="molecule.macros.MakeMolecule.Ctx">Ctx</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>

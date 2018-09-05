@@ -1,0 +1,1500 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Molecule 0.14.0 - molecule.ast.query</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.ast.query" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.ast.query" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../lib/index.js"></script>
+      <script type="text/javascript" src="../../index.js"></script>
+      <script type="text/javascript" src="../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule"></a><a id="molecule:molecule"></a>
+      <span class="permalink">
+      <a href="index.html#molecule" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ast"></a><a id="ast:ast"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#ast" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal Molecule ASTs." href="index.html"><span class="name">ast</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal Molecule ASTs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Molecule ASTs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ast.exception" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exception"></a><a id="exception:exception"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/index.html#exception" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="exception/index.html"><span class="name">exception</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.ast">ast</a></dd></dl></div>
+    </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="MoleculeBase.html" title="Base Molecule interface shared by Molecule and InputMolecule."></a>
+                        <a href="MoleculeBase.html" title="Base Molecule interface shared by Molecule and InputMolecule.">MoleculeBase</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="object" href="model$.html" title="AST for molecule Model representation."></a>
+                        <a href="model$.html" title="AST for molecule Model representation.">model</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="object" href="" title="AST for molecule Query representation."></a>
+                        <a href="" title="AST for molecule Query representation.">query</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="object" href="transaction$.html" title="Datomic transaction representation and operations."></a>
+                        <a href="transaction$.html" title="Datomic transaction representation and operations.">transaction</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="object value">
+      <div id="definition">
+        <div class="big-circle object">o</div>
+        <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.ast">ast</a></p>
+        <h1>query<span class="permalink">
+      <a href="../../molecule/ast/query$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        <h3><span class="morelinks"></span></h3>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">query</span><span class="result"> extends <span class="extype" name="molecule.util.Helpers">Helpers</span></span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>AST for molecule <a href="query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a> representation.
+<br><br>
+Molecule transforms custom boilerplate DSL constructs to Datomic queries in 3 steps:
+<br><br>
+Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/ast/query.scala#L1" target="_blank">query.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="molecule.util.Helpers">Helpers</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1957.00 220.00" height="220pt" width="1957pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 216)" class="graph" id="graph0"><polygon points="-4,4 -4,-216 1953,-216 1953,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="molecule.ast.query.Funct" xlink:href="query$$Funct.html#inheritance-diagram"><path d="M77.3333,-26C77.3333,-26 30.6667,-26 30.6667,-26 26.3333,-26 22,-21.6667 22,-17.3333 22,-17.3333 22,-8.66667 22,-8.66667 22,-4.33333 26.3333,-0 30.6667,-0 30.6667,-0 77.3333,-0 77.3333,-0 81.6667,-0 86,-4.33333 86,-8.66667 86,-8.66667 86,-17.3333 86,-17.3333 86,-21.6667 81.6667,-26 77.3333,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="34" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="53.8848" text-anchor="start">Funct</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.ast.query.ExpressionClause" xlink:href="query$$ExpressionClause.html#inheritance-diagram"><path d="M99.3333,-88C99.3333,-88 8.66667,-88 8.66667,-88 4.33333,-88 0,-83.6667 0,-79.3333 0,-79.3333 0,-70.6667 0,-70.6667 0,-66.3333 4.33333,-62 8.66667,-62 8.66667,-62 99.3333,-62 99.3333,-62 103.667,-62 108,-66.3333 108,-70.6667 108,-70.6667 108,-79.3333 108,-79.3333 108,-83.6667 103.667,-88 99.3333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="31.6504" text-anchor="start">ExpressionClause</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Funct is a subtype of ExpressionClause"><path d="M54,-54.7534C54,-45.3549 54,-34.3336 54,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="51.5501,-54.8581 54,-61.8581 56.4501,-54.8581 51.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="molecule.ast.query.RuleInvocation" xlink:href="query$$RuleInvocation.html#inheritance-diagram"><path d="M214.583,-88C214.583,-88 135.417,-88 135.417,-88 131.083,-88 126.75,-83.6667 126.75,-79.3333 126.75,-79.3333 126.75,-70.6667 126.75,-70.6667 126.75,-66.3333 131.083,-62 135.417,-62 135.417,-62 214.583,-62 214.583,-62 218.917,-62 223.25,-66.3333 223.25,-70.6667 223.25,-70.6667 223.25,-79.3333 223.25,-79.3333 223.25,-83.6667 218.917,-88 214.583,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="139" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="158.928" text-anchor="start">RuleInvocation</text></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="molecule.ast.query.NotJoinClauses" xlink:href="query$$NotJoinClauses.html#inheritance-diagram"><path d="M333.333,-88C333.333,-88 250.667,-88 250.667,-88 246.333,-88 242,-83.6667 242,-79.3333 242,-79.3333 242,-70.6667 242,-70.6667 242,-66.3333 246.333,-62 250.667,-62 250.667,-62 333.333,-62 333.333,-62 337.667,-62 342,-66.3333 342,-70.6667 342,-70.6667 342,-79.3333 342,-79.3333 342,-83.6667 337.667,-88 333.333,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="254" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="273.875" text-anchor="start">NotJoinClauses</text></a></g></g><!-- node4 --><g class="node class" id="graph1_4"><g id="a_class|graph1_4"><a xlink:title="molecule.ast.query.NotClauses" xlink:href="query$$NotClauses.html#inheritance-diagram"><path d="M436.583,-88C436.583,-88 369.417,-88 369.417,-88 365.083,-88 360.75,-83.6667 360.75,-79.3333 360.75,-79.3333 360.75,-70.6667 360.75,-70.6667 360.75,-66.3333 365.083,-62 369.417,-62 369.417,-62 436.583,-62 436.583,-62 440.917,-62 445.25,-66.3333 445.25,-70.6667 445.25,-70.6667 445.25,-79.3333 445.25,-79.3333 445.25,-83.6667 440.917,-88 436.583,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="373" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="392.713" text-anchor="start">NotClauses</text></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="molecule.ast.query.NotClause" xlink:href="query$$NotClause.html#inheritance-diagram"><path d="M535.583,-88C535.583,-88 472.417,-88 472.417,-88 468.083,-88 463.75,-83.6667 463.75,-79.3333 463.75,-79.3333 463.75,-70.6667 463.75,-70.6667 463.75,-66.3333 468.083,-62 472.417,-62 472.417,-62 535.583,-62 535.583,-62 539.917,-62 544.25,-66.3333 544.25,-70.6667 544.25,-70.6667 544.25,-79.3333 544.25,-79.3333 544.25,-83.6667 539.917,-88 535.583,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="476" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="495.713" text-anchor="start">NotClause</text></a></g></g><!-- node6 --><g class="node class" id="graph1_6"><g id="a_class|graph1_6"><a xlink:title="molecule.ast.query.DataClause" xlink:href="query$$DataClause.html#inheritance-diagram"><path d="M640.333,-88C640.333,-88 571.667,-88 571.667,-88 567.333,-88 563,-83.6667 563,-79.3333 563,-79.3333 563,-70.6667 563,-70.6667 563,-66.3333 567.333,-62 571.667,-62 571.667,-62 640.333,-62 640.333,-62 644.667,-62 649,-66.3333 649,-70.6667 649,-70.6667 649,-79.3333 649,-79.3333 649,-83.6667 644.667,-88 640.333,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="575" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="594.988" text-anchor="start">DataClause</text></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.ast.query.Clause" xlink:href="query$$Clause.html#inheritance-diagram"><path d="M428.583,-150C428.583,-150 377.417,-150 377.417,-150 373.083,-150 368.75,-145.667 368.75,-141.333 368.75,-141.333 368.75,-132.667 368.75,-132.667 368.75,-128.333 373.083,-124 377.417,-124 377.417,-124 428.583,-124 428.583,-124 432.917,-124 437.25,-128.333 437.25,-132.667 437.25,-132.667 437.25,-141.333 437.25,-141.333 437.25,-145.667 432.917,-150 428.583,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="381" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="400.938" text-anchor="start">Clause</text></a></g></g><!-- node7&#45;&gt;node1 --><g class="edge inheritance" id="graph1_7_1"><g id="a_inheritance|graph1_7_1"><a xlink:title="ExpressionClause is a subtype of Clause"><path d="M361.4,-129.312C305.689,-120.288 203.795,-103.548 117,-88 114.15,-87.4896 111.23,-86.959 108.282,-86.4177" stroke="#d4d4d4" fill="none"></path><polygon points="361.318,-131.78 368.619,-130.48 362.1,-126.943 361.318,-131.78" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node2 --><g class="edge inheritance" id="graph1_7_2"><g id="a_inheritance|graph1_7_2"><a xlink:title="RuleInvocation is a subtype of Clause"><path d="M361.203,-125.001C321.527,-114.56 262.021,-98.9002 221.011,-88.108" stroke="#d4d4d4" fill="none"></path><polygon points="360.979,-127.475 368.372,-126.887 362.226,-122.736 360.979,-127.475" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node3 --><g class="edge inheritance" id="graph1_7_3"><g id="a_inheritance|graph1_7_3"><a xlink:title="NotJoinClauses is a subtype of Clause"><path d="M373.941,-120.292C355.341,-110.239 331.572,-97.3904 314.429,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="373.215,-122.685 380.537,-123.858 375.545,-118.374 373.215,-122.685" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node4 --><g class="edge inheritance" id="graph1_7_4"><g id="a_inheritance|graph1_7_4"><a xlink:title="NotClauses is a subtype of Clause"><path d="M403,-116.753C403,-107.355 403,-96.3336 403,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="400.55,-116.858 403,-123.858 405.45,-116.858 400.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node5 --><g class="edge inheritance" id="graph1_7_5"><g id="a_inheritance|graph1_7_5"><a xlink:title="NotClause is a subtype of Clause"><path d="M429.888,-120.027C446.744,-110.014 468.13,-97.3091 483.592,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="428.206,-118.177 423.439,-123.858 430.708,-122.389 428.206,-118.177" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node6 --><g class="edge inheritance" id="graph1_7_6"><g id="a_inheritance|graph1_7_6"><a xlink:title="DataClause is a subtype of Clause"><path d="M444.274,-123.801C479.521,-113.383 529.946,-98.4791 565.088,-88.0923" stroke="#d4d4d4" fill="none"></path><polygon points="443.455,-121.488 437.436,-125.822 444.844,-126.187 443.455,-121.488" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node class" id="graph1_8"><g id="a_class|graph1_8"><a xlink:title="molecule.ast.query.RelationBinding" xlink:href="query$$RelationBinding.html#inheritance-diagram"><path d="M1410.33,-26C1410.33,-26 1327.67,-26 1327.67,-26 1323.33,-26 1319,-21.6667 1319,-17.3333 1319,-17.3333 1319,-8.66667 1319,-8.66667 1319,-4.33333 1323.33,-0 1327.67,-0 1327.67,-0 1410.33,-0 1410.33,-0 1414.67,-0 1419,-4.33333 1419,-8.66667 1419,-8.66667 1419,-17.3333 1419,-17.3333 1419,-21.6667 1414.67,-26 1410.33,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1331" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1350.87" text-anchor="start">RelationBinding</text></a></g></g><!-- node9 --><g class="node class" id="graph1_9"><g id="a_class|graph1_9"><a xlink:title="molecule.ast.query.TupleBinding" xlink:href="query$$TupleBinding.html#inheritance-diagram"><path d="M957.333,-26C957.333,-26 884.667,-26 884.667,-26 880.333,-26 876,-21.6667 876,-17.3333 876,-17.3333 876,-8.66667 876,-8.66667 876,-4.33333 880.333,-0 884.667,-0 884.667,-0 957.333,-0 957.333,-0 961.667,-0 966,-4.33333 966,-8.66667 966,-8.66667 966,-17.3333 966,-17.3333 966,-21.6667 961.667,-26 957.333,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="888" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="907.686" text-anchor="start">TupleBinding</text></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="molecule.ast.query.CollectionBinding" xlink:href="query$$CollectionBinding.html#inheritance-diagram"><path d="M1081.33,-26C1081.33,-26 992.667,-26 992.667,-26 988.333,-26 984,-21.6667 984,-17.3333 984,-17.3333 984,-8.66667 984,-8.66667 984,-4.33333 988.333,-0 992.667,-0 992.667,-0 1081.33,-0 1081.33,-0 1085.67,-0 1090,-4.33333 1090,-8.66667 1090,-8.66667 1090,-17.3333 1090,-17.3333 1090,-21.6667 1085.67,-26 1081.33,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="996" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1015.98" text-anchor="start">CollectionBinding</text></a></g></g><!-- node11 --><g class="node class" id="graph1_11"><g id="a_class|graph1_11"><a xlink:title="molecule.ast.query.ScalarBinding" xlink:href="query$$ScalarBinding.html#inheritance-diagram"><path d="M1192.58,-26C1192.58,-26 1117.42,-26 1117.42,-26 1113.08,-26 1108.75,-21.6667 1108.75,-17.3333 1108.75,-17.3333 1108.75,-8.66667 1108.75,-8.66667 1108.75,-4.33333 1113.08,-0 1117.42,-0 1117.42,-0 1192.58,-0 1192.58,-0 1196.92,-0 1201.25,-4.33333 1201.25,-8.66667 1201.25,-8.66667 1201.25,-17.3333 1201.25,-17.3333 1201.25,-21.6667 1196.92,-26 1192.58,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1121" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1140.71" text-anchor="start">ScalarBinding</text></a></g></g><!-- node12 --><g class="node object" id="graph1_12"><g id="a_object|graph1_12"><a xlink:title="molecule.ast.query.NoBinding" xlink:href="query$$NoBinding$.html#inheritance-diagram"><path d="M1291.58,-26C1291.58,-26 1228.42,-26 1228.42,-26 1224.08,-26 1219.75,-21.6667 1219.75,-17.3333 1219.75,-17.3333 1219.75,-8.66667 1219.75,-8.66667 1219.75,-4.33333 1224.08,-0 1228.42,-0 1228.42,-0 1291.58,-0 1291.58,-0 1295.92,-0 1300.25,-4.33333 1300.25,-8.66667 1300.25,-8.66667 1300.25,-17.3333 1300.25,-17.3333 1300.25,-21.6667 1295.92,-26 1291.58,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1232" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1251.93" text-anchor="start">NoBinding</text></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="molecule.ast.query.Binding" xlink:href="query$$Binding.html#inheritance-diagram"><path d="M1234.33,-88C1234.33,-88 1181.67,-88 1181.67,-88 1177.33,-88 1173,-83.6667 1173,-79.3333 1173,-79.3333 1173,-70.6667 1173,-70.6667 1173,-66.3333 1177.33,-62 1181.67,-62 1181.67,-62 1234.33,-62 1234.33,-62 1238.67,-62 1243,-66.3333 1243,-70.6667 1243,-70.6667 1243,-79.3333 1243,-79.3333 1243,-83.6667 1238.67,-88 1234.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1185" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1204.54" text-anchor="start">Binding</text></a></g></g><!-- node13&#45;&gt;node8 --><g class="edge inheritance" id="graph1_13_8"><g id="a_inheritance|graph1_13_8"><a xlink:title="RelationBinding is a subtype of Binding"><path d="M1247.36,-59.3315C1274.81,-49.1008 1310.99,-35.617 1336.74,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="1246.28,-57.1178 1240.58,-61.8581 1248,-61.7093 1246.28,-57.1178" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node9 --><g class="edge inheritance" id="graph1_13_9"><g id="a_inheritance|graph1_13_9"><a xlink:title="TupleBinding is a subtype of Binding"><path d="M1165.89,-65.5295C1119.19,-56.0885 1041.65,-40.2694 975,-26 972.089,-25.3767 969.091,-24.7284 966.07,-24.0703" stroke="#d4d4d4" fill="none"></path><polygon points="1165.49,-67.9472 1172.83,-66.932 1166.46,-63.1442 1165.49,-67.9472" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node10 --><g class="edge inheritance" id="graph1_13_10"><g id="a_inheritance|graph1_13_10"><a xlink:title="CollectionBinding is a subtype of Binding"><path d="M1166.56,-59.4614C1137.36,-49.2151 1098.72,-35.6576 1071.26,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="1165.98,-61.8522 1173.4,-61.8581 1167.6,-57.2286 1165.98,-61.8522" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node11 --><g class="edge inheritance" id="graph1_13_11"><g id="a_inheritance|graph1_13_11"><a xlink:title="ScalarBinding is a subtype of Binding"><path d="M1192.46,-56.4102C1183.86,-46.6743 1173.39,-34.8214 1165.71,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1190.8,-58.2338 1197.27,-61.8581 1194.48,-54.9898 1190.8,-58.2338" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node12 --><g class="edge inheritance" id="graph1_13_12"><g id="a_inheritance|graph1_13_12"><a xlink:title="NoBinding is a subtype of Binding"><path d="M1223.24,-56.4102C1231.68,-46.6743 1241.95,-34.8214 1249.49,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1221.26,-54.9637 1218.52,-61.8581 1224.96,-58.1728 1221.26,-54.9637" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node class" id="graph1_14"><g id="a_class|graph1_14"><a xlink:title="molecule.ast.query.Placeholder" xlink:href="query$$Placeholder.html#inheritance-diagram"><path d="M1514.33,-26C1514.33,-26 1445.67,-26 1445.67,-26 1441.33,-26 1437,-21.6667 1437,-17.3333 1437,-17.3333 1437,-8.66667 1437,-8.66667 1437,-4.33333 1441.33,-0 1445.67,-0 1445.67,-0 1514.33,-0 1514.33,-0 1518.67,-0 1523,-4.33333 1523,-8.66667 1523,-8.66667 1523,-17.3333 1523,-17.3333 1523,-21.6667 1518.67,-26 1514.33,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1449" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1468.76" text-anchor="start">Placeholder</text></a></g></g><!-- node15 --><g class="node class" id="graph1_15"><g id="a_class|graph1_15"><a xlink:title="molecule.ast.query.InVar" xlink:href="query$$InVar.html#inheritance-diagram"><path d="M1594.33,-26C1594.33,-26 1549.67,-26 1549.67,-26 1545.33,-26 1541,-21.6667 1541,-17.3333 1541,-17.3333 1541,-8.66667 1541,-8.66667 1541,-4.33333 1545.33,-0 1549.67,-0 1549.67,-0 1594.33,-0 1594.33,-0 1598.67,-0 1603,-4.33333 1603,-8.66667 1603,-8.66667 1603,-17.3333 1603,-17.3333 1603,-21.6667 1598.67,-26 1594.33,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1553" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1572.62" text-anchor="start">InVar</text></a></g></g><!-- node16 --><g class="node class" id="graph1_16"><g id="a_class|graph1_16"><a xlink:title="molecule.ast.query.InDataSource" xlink:href="query$$InDataSource.html#inheritance-diagram"><path d="M1705.58,-26C1705.58,-26 1630.42,-26 1630.42,-26 1626.08,-26 1621.75,-21.6667 1621.75,-17.3333 1621.75,-17.3333 1621.75,-8.66667 1621.75,-8.66667 1621.75,-4.33333 1626.08,-0 1630.42,-0 1630.42,-0 1705.58,-0 1705.58,-0 1709.92,-0 1714.25,-4.33333 1714.25,-8.66667 1714.25,-8.66667 1714.25,-17.3333 1714.25,-17.3333 1714.25,-21.6667 1709.92,-26 1705.58,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1634" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1653.93" text-anchor="start">InDataSource</text></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="molecule.ast.query.Input" xlink:href="query$$Input.html#inheritance-diagram"><path d="M1531.33,-88C1531.33,-88 1486.67,-88 1486.67,-88 1482.33,-88 1478,-83.6667 1478,-79.3333 1478,-79.3333 1478,-70.6667 1478,-70.6667 1478,-66.3333 1482.33,-62 1486.67,-62 1486.67,-62 1531.33,-62 1531.33,-62 1535.67,-62 1540,-66.3333 1540,-70.6667 1540,-70.6667 1540,-79.3333 1540,-79.3333 1540,-83.6667 1535.67,-88 1531.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1490" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1509.99" text-anchor="start">Input</text></a></g></g><!-- node17&#45;&gt;node14 --><g class="edge inheritance" id="graph1_17_14"><g id="a_inheritance|graph1_17_14"><a xlink:title="Placeholder is a subtype of Input"><path d="M1499.97,-55.3097C1495.37,-45.7925 1489.91,-34.4962 1485.86,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1497.88,-56.6218 1503.13,-61.8581 1502.29,-54.4895 1497.88,-56.6218" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17&#45;&gt;node15 --><g class="edge inheritance" id="graph1_17_15"><g id="a_inheritance|graph1_17_15"><a xlink:title="InVar is a subtype of Input"><path d="M1526.9,-56.9539C1537.23,-47.1185 1549.97,-34.9839 1559.27,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1525.13,-55.2563 1521.75,-61.8581 1528.51,-58.8046 1525.13,-55.2563" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17&#45;&gt;node16 --><g class="edge inheritance" id="graph1_17_16"><g id="a_inheritance|graph1_17_16"><a xlink:title="InDataSource is a subtype of Input"><path d="M1546.74,-59.7602C1573.91,-49.5051 1610.18,-35.8187 1635.95,-26.0928" stroke="#d4d4d4" fill="none"></path><polygon points="1545.72,-57.5253 1540.03,-62.289 1547.45,-62.1097 1545.72,-57.5253" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18 --><g class="node class" id="graph1_18"><g id="a_class|graph1_18"><a xlink:title="molecule.ast.query.Rule" xlink:href="query$$Rule.html#inheritance-diagram"><path d="M1609.33,-88C1609.33,-88 1566.67,-88 1566.67,-88 1562.33,-88 1558,-83.6667 1558,-79.3333 1558,-79.3333 1558,-70.6667 1558,-70.6667 1558,-66.3333 1562.33,-62 1566.67,-62 1566.67,-62 1609.33,-62 1609.33,-62 1613.67,-62 1618,-66.3333 1618,-70.6667 1618,-70.6667 1618,-79.3333 1618,-79.3333 1618,-83.6667 1613.67,-88 1609.33,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="1570" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1589.66" text-anchor="start">Rule</text></a></g></g><!-- node19 --><g class="node object" id="graph1_19"><g id="a_object|graph1_19"><a xlink:title="molecule.ast.query.ImplDS" xlink:href="query$$ImplDS$.html#inheritance-diagram"><path d="M1794.33,-26C1794.33,-26 1741.67,-26 1741.67,-26 1737.33,-26 1733,-21.6667 1733,-17.3333 1733,-17.3333 1733,-8.66667 1733,-8.66667 1733,-4.33333 1737.33,-0 1741.67,-0 1741.67,-0 1794.33,-0 1794.33,-0 1798.67,-0 1803,-4.33333 1803,-8.66667 1803,-8.66667 1803,-17.3333 1803,-17.3333 1803,-21.6667 1798.67,-26 1794.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1745" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1764.78" text-anchor="start">ImplDS</text></a></g></g><!-- node20 --><g class="node object" id="graph1_20"><g id="a_object|graph1_20"><a xlink:title="molecule.ast.query.DS" xlink:href="query$$DS$.html#inheritance-diagram"><path d="M1867.58,-26C1867.58,-26 1830.42,-26 1830.42,-26 1826.08,-26 1821.75,-21.6667 1821.75,-17.3333 1821.75,-17.3333 1821.75,-8.66667 1821.75,-8.66667 1821.75,-4.33333 1826.08,-0 1830.42,-0 1830.42,-0 1867.58,-0 1867.58,-0 1871.92,-0 1876.25,-4.33333 1876.25,-8.66667 1876.25,-8.66667 1876.25,-17.3333 1876.25,-17.3333 1876.25,-21.6667 1871.92,-26 1867.58,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="1834" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1853.83" text-anchor="start">DS</text></a></g></g><!-- node21 --><g class="node class" id="graph1_21"><g id="a_class|graph1_21"><a xlink:title="molecule.ast.query.DS" xlink:href="query$$DS.html#inheritance-diagram"><path d="M1940.58,-26C1940.58,-26 1903.42,-26 1903.42,-26 1899.08,-26 1894.75,-21.6667 1894.75,-17.3333 1894.75,-17.3333 1894.75,-8.66667 1894.75,-8.66667 1894.75,-4.33333 1899.08,-0 1903.42,-0 1903.42,-0 1940.58,-0 1940.58,-0 1944.92,-0 1949.25,-4.33333 1949.25,-8.66667 1949.25,-8.66667 1949.25,-17.3333 1949.25,-17.3333 1949.25,-21.6667 1944.92,-26 1940.58,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="1907" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1926.83" text-anchor="start">DS</text></a></g></g><!-- node22 --><g class="node trait" id="graph1_22"><g id="a_trait|graph1_22"><a xlink:title="molecule.ast.query.DataSource" xlink:href="query$$DataSource.html#inheritance-diagram"><path d="M1772.33,-88C1772.33,-88 1703.67,-88 1703.67,-88 1699.33,-88 1695,-83.6667 1695,-79.3333 1695,-79.3333 1695,-70.6667 1695,-70.6667 1695,-66.3333 1699.33,-62 1703.67,-62 1703.67,-62 1772.33,-62 1772.33,-62 1776.67,-62 1781,-66.3333 1781,-70.6667 1781,-70.6667 1781,-79.3333 1781,-79.3333 1781,-83.6667 1776.67,-88 1772.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1707" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1726.77" text-anchor="start">DataSource</text></a></g></g><!-- node22&#45;&gt;node19 --><g class="edge inheritance" id="graph1_22_19"><g id="a_inheritance|graph1_22_19"><a xlink:title="ImplDS is a subtype of DataSource"><path d="M1747.21,-55.5864C1751.99,-46.0121 1757.71,-34.5775 1761.94,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1745.01,-54.5014 1744.07,-61.8581 1749.39,-56.6928 1745.01,-54.5014" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node22&#45;&gt;node20 --><g class="edge inheritance" id="graph1_22_20"><g id="a_inheritance|graph1_22_20"><a xlink:title="DS is a subtype of DataSource"><path d="M1767.06,-58.2924C1785.66,-48.2386 1809.43,-35.3904 1826.57,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1765.46,-56.3742 1760.46,-61.8581 1767.79,-60.6847 1765.46,-56.3742" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node22&#45;&gt;node21 --><g class="edge inheritance" id="graph1_22_21"><g id="a_inheritance|graph1_22_21"><a xlink:title="DS is a subtype of DataSource"><path d="M1782.06,-59.6325C1817.09,-48.2095 1864.99,-32.5904 1894.69,-22.9067" stroke="#d4d4d4" fill="none"></path><polygon points="1781.13,-57.3586 1775.24,-61.8581 1782.65,-62.0172 1781.13,-57.3586" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23 --><g class="node object" id="graph1_23"><g id="a_object|graph1_23"><a xlink:title="molecule.ast.query.NoVal" xlink:href="query$$NoVal$.html#inheritance-diagram"><path d="M848.583,-26C848.583,-26 801.417,-26 801.417,-26 797.083,-26 792.75,-21.6667 792.75,-17.3333 792.75,-17.3333 792.75,-8.66667 792.75,-8.66667 792.75,-4.33333 797.083,-0 801.417,-0 801.417,-0 848.583,-0 848.583,-0 852.917,-0 857.25,-4.33333 857.25,-8.66667 857.25,-8.66667 857.25,-17.3333 857.25,-17.3333 857.25,-21.6667 852.917,-26 848.583,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="805" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="824.789" text-anchor="start">NoVal</text></a></g></g><!-- node24 --><g class="node class" id="graph1_24"><g id="a_class|graph1_24"><a xlink:title="molecule.ast.query.Pull" xlink:href="query$$Pull.html#inheritance-diagram"><path d="M617.583,-26C617.583,-26 578.417,-26 578.417,-26 574.083,-26 569.75,-21.6667 569.75,-17.3333 569.75,-17.3333 569.75,-8.66667 569.75,-8.66667 569.75,-4.33333 574.083,-0 578.417,-0 578.417,-0 617.583,-0 617.583,-0 621.917,-0 626.25,-4.33333 626.25,-8.66667 626.25,-8.66667 626.25,-17.3333 626.25,-17.3333 626.25,-21.6667 621.917,-26 617.583,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="582" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="601.719" text-anchor="start">Pull</text></a></g></g><!-- node25 --><g class="node class" id="graph1_25"><g id="a_class|graph1_25"><a xlink:title="molecule.ast.query.Val" xlink:href="query$$Val.html#inheritance-diagram"><path d="M690.583,-26C690.583,-26 653.417,-26 653.417,-26 649.083,-26 644.75,-21.6667 644.75,-17.3333 644.75,-17.3333 644.75,-8.66667 644.75,-8.66667 644.75,-4.33333 649.083,-0 653.417,-0 653.417,-0 690.583,-0 690.583,-0 694.917,-0 699.25,-4.33333 699.25,-8.66667 699.25,-8.66667 699.25,-17.3333 699.25,-17.3333 699.25,-21.6667 694.917,-26 690.583,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="657" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="676.902" text-anchor="start">Val</text></a></g></g><!-- node26 --><g class="node class" id="graph1_26"><g id="a_class|graph1_26"><a xlink:title="molecule.ast.query.Var" xlink:href="query$$Var.html#inheritance-diagram"><path d="M765.333,-26C765.333,-26 726.667,-26 726.667,-26 722.333,-26 718,-21.6667 718,-17.3333 718,-17.3333 718,-8.66667 718,-8.66667 718,-4.33333 722.333,-0 726.667,-0 726.667,-0 765.333,-0 765.333,-0 769.667,-0 774,-4.33333 774,-8.66667 774,-8.66667 774,-17.3333 774,-17.3333 774,-21.6667 769.667,-26 765.333,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="730" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="749.959" text-anchor="start">Var</text></a></g></g><!-- node27 --><g class="node trait" id="graph1_27"><g id="a_trait|graph1_27"><a xlink:title="molecule.ast.query.QueryValue" xlink:href="query$$QueryValue.html#inheritance-diagram"><path d="M829.583,-88C829.583,-88 762.417,-88 762.417,-88 758.083,-88 753.75,-83.6667 753.75,-79.3333 753.75,-79.3333 753.75,-70.6667 753.75,-70.6667 753.75,-66.3333 758.083,-62 762.417,-62 762.417,-62 829.583,-62 829.583,-62 833.917,-62 838.25,-66.3333 838.25,-70.6667 838.25,-70.6667 838.25,-79.3333 838.25,-79.3333 838.25,-83.6667 833.917,-88 829.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="766" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="785.561" text-anchor="start">QueryValue</text></a></g></g><!-- node27&#45;&gt;node23 --><g class="edge inheritance" id="graph1_27_23"><g id="a_inheritance|graph1_27_23"><a xlink:title="NoVal is a subtype of QueryValue"><path d="M805.034,-55.3097C809.634,-45.7925 815.093,-34.4962 819.14,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="802.709,-54.4895 801.869,-61.8581 807.121,-56.6218 802.709,-54.4895" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node27&#45;&gt;node24 --><g class="edge inheritance" id="graph1_27_24"><g id="a_inheritance|graph1_27_24"><a xlink:title="Pull is a subtype of QueryValue"><path d="M747.487,-59.8643C715.485,-50.4589 672.672,-37.723 635,-26 632.163,-25.1171 629.208,-24.1833 626.26,-23.242" stroke="#d4d4d4" fill="none"></path><polygon points="747.148,-62.3183 754.555,-61.9392 748.529,-57.6167 747.148,-62.3183" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node27&#45;&gt;node25 --><g class="edge inheritance" id="graph1_27_25"><g id="a_inheritance|graph1_27_25"><a xlink:title="Val is a subtype of QueryValue"><path d="M764.355,-58.6877C743.46,-48.5774 716.459,-35.5123 697.056,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="763.538,-61.0145 770.907,-61.8581 765.673,-56.6037 763.538,-61.0145" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node27&#45;&gt;node26 --><g class="edge inheritance" id="graph1_27_26"><g id="a_inheritance|graph1_27_26"><a xlink:title="Var is a subtype of QueryValue"><path d="M781.342,-56.4102C773.229,-46.6743 763.351,-34.8214 756.103,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="779.518,-58.049 785.882,-61.8581 783.283,-54.9121 779.518,-58.049" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28 --><g class="node class" id="graph1_28"><g id="a_class|graph1_28"><a xlink:title="molecule.ast.query.KW" xlink:href="query$$KW.html#inheritance-diagram"><path d="M1847.58,-88C1847.58,-88 1808.42,-88 1808.42,-88 1804.08,-88 1799.75,-83.6667 1799.75,-79.3333 1799.75,-79.3333 1799.75,-70.6667 1799.75,-70.6667 1799.75,-66.3333 1804.08,-62 1808.42,-62 1808.42,-62 1847.58,-62 1847.58,-62 1851.92,-62 1856.25,-66.3333 1856.25,-70.6667 1856.25,-70.6667 1856.25,-79.3333 1856.25,-79.3333 1856.25,-83.6667 1851.92,-88 1847.58,-88" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-81" x="1812" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1831.95" text-anchor="start">KW</text></a></g></g><!-- node29 --><g class="node class" id="graph1_29"><g id="a_class|graph1_29"><a xlink:title="molecule.ast.query.AggrExpr" xlink:href="query$$AggrExpr.html#inheritance-diagram"><path d="M542.583,-26C542.583,-26 483.417,-26 483.417,-26 479.083,-26 474.75,-21.6667 474.75,-17.3333 474.75,-17.3333 474.75,-8.66667 474.75,-8.66667 474.75,-4.33333 479.083,-0 483.417,-0 483.417,-0 542.583,-0 542.583,-0 546.917,-0 551.25,-4.33333 551.25,-8.66667 551.25,-8.66667 551.25,-17.3333 551.25,-17.3333 551.25,-21.6667 546.917,-26 542.583,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="487" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="506.715" text-anchor="start">AggrExpr</text></a></g></g><!-- node30 --><g class="node trait" id="graph1_30"><g id="a_trait|graph1_30"><a xlink:title="molecule.ast.query.Output" xlink:href="query$$Output.html#inheritance-diagram"><path d="M726.333,-88C726.333,-88 675.667,-88 675.667,-88 671.333,-88 667,-83.6667 667,-79.3333 667,-79.3333 667,-70.6667 667,-70.6667 667,-66.3333 671.333,-62 675.667,-62 675.667,-62 726.333,-62 726.333,-62 730.667,-62 735,-66.3333 735,-70.6667 735,-70.6667 735,-79.3333 735,-79.3333 735,-83.6667 730.667,-88 726.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="679" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="698.881" text-anchor="start">Output</text></a></g></g><!-- node30&#45;&gt;node23 --><g class="edge inheritance" id="graph1_30_23"><g id="a_inheritance|graph1_30_23"><a xlink:title="NoVal is a subtype of Output"><path d="M732.645,-58.6877C753.54,-48.5774 780.541,-35.5123 799.944,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="731.327,-56.6037 726.093,-61.8581 733.462,-61.0145 731.327,-56.6037" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30&#45;&gt;node24 --><g class="edge inheritance" id="graph1_30_24"><g id="a_inheritance|graph1_30_24"><a xlink:title="Pull is a subtype of Output"><path d="M674.035,-58.2924C656.776,-48.2386 634.72,-35.3904 618.813,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="672.875,-60.4516 680.156,-61.8581 675.341,-56.2176 672.875,-60.4516" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30&#45;&gt;node25 --><g class="edge inheritance" id="graph1_30_25"><g id="a_inheritance|graph1_30_25"><a xlink:title="Val is a subtype of Output"><path d="M691.966,-55.3097C687.366,-45.7925 681.907,-34.4962 677.86,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="689.879,-56.6218 695.131,-61.8581 694.291,-54.4895 689.879,-56.6218" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30&#45;&gt;node26 --><g class="edge inheritance" id="graph1_30_26"><g id="a_inheritance|graph1_30_26"><a xlink:title="Var is a subtype of Output"><path d="M714.397,-56.1367C721.66,-46.453 730.445,-34.7401 736.907,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="712.346,-54.7881 710.106,-61.8581 716.266,-57.7281 712.346,-54.7881" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30&#45;&gt;node29 --><g class="edge inheritance" id="graph1_30_29"><g id="a_inheritance|graph1_30_29"><a xlink:title="AggrExpr is a subtype of Output"><path d="M660.208,-60.9813C627.644,-50.5886 582.377,-36.1417 550.665,-26.0207" stroke="#d4d4d4" fill="none"></path><polygon points="659.541,-63.3401 666.955,-63.1345 661.031,-58.6721 659.541,-63.3401" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node31 --><g class="node object" id="graph1_31"><g id="a_object|graph1_31"><a xlink:title="molecule.ast.query.Empty" xlink:href="query$$Empty$.html#inheritance-diagram"><path d="M1932.33,-88C1932.33,-88 1883.67,-88 1883.67,-88 1879.33,-88 1875,-83.6667 1875,-79.3333 1875,-79.3333 1875,-70.6667 1875,-70.6667 1875,-66.3333 1879.33,-62 1883.67,-62 1883.67,-62 1932.33,-62 1932.33,-62 1936.67,-62 1941,-66.3333 1941,-70.6667 1941,-70.6667 1941,-79.3333 1941,-79.3333 1941,-83.6667 1936.67,-88 1932.33,-88" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-81" x="1887" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1906.55" text-anchor="start">Empty</text></a></g></g><!-- node32 --><g class="node trait" id="graph1_32"><g id="a_trait|graph1_32"><a xlink:title="molecule.ast.query.QueryTerm" xlink:href="query$$QueryTerm.html#inheritance-diagram"><path d="M1541.58,-150C1541.58,-150 1476.42,-150 1476.42,-150 1472.08,-150 1467.75,-145.667 1467.75,-141.333 1467.75,-141.333 1467.75,-132.667 1467.75,-132.667 1467.75,-128.333 1472.08,-124 1476.42,-124 1476.42,-124 1541.58,-124 1541.58,-124 1545.92,-124 1550.25,-128.333 1550.25,-132.667 1550.25,-132.667 1550.25,-141.333 1550.25,-141.333 1550.25,-145.667 1545.92,-150 1541.58,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="1480" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1499.61" text-anchor="start">QueryTerm</text></a></g></g><!-- node32&#45;&gt;node13 --><g class="edge inheritance" id="graph1_32_13"><g id="a_inheritance|graph1_32_13"><a xlink:title="Binding is a subtype of QueryTerm"><path d="M1460.25,-126.283C1399.36,-114.145 1296.68,-93.6778 1243.03,-82.9834" stroke="#d4d4d4" fill="none"></path><polygon points="1460.12,-128.754 1467.46,-127.72 1461.08,-123.949 1460.12,-128.754" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node17 --><g class="edge inheritance" id="graph1_32_17"><g id="a_inheritance|graph1_32_17"><a xlink:title="Input is a subtype of QueryTerm"><path d="M1509,-116.753C1509,-107.355 1509,-96.3336 1509,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1506.55,-116.858 1509,-123.858 1511.45,-116.858 1506.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node18 --><g class="edge inheritance" id="graph1_32_18"><g id="a_inheritance|graph1_32_18"><a xlink:title="Rule is a subtype of QueryTerm"><path d="M1530.73,-119.493C1543.81,-109.565 1560.16,-97.1465 1572.04,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="1529.08,-117.673 1524.99,-123.858 1532.04,-121.575 1529.08,-117.673" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node22 --><g class="edge inheritance" id="graph1_32_22"><g id="a_inheritance|graph1_32_22"><a xlink:title="DataSource is a subtype of QueryTerm"><path d="M1557.36,-123.33C1598.06,-112.664 1655.74,-97.5518 1694.89,-87.2941" stroke="#d4d4d4" fill="none"></path><polygon points="1556.62,-120.99 1550.47,-125.134 1557.86,-125.73 1556.62,-120.99" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node27 --><g class="edge inheritance" id="graph1_32_27"><g id="a_inheritance|graph1_32_27"><a xlink:title="QueryValue is a subtype of QueryTerm"><path d="M1460.33,-131.904C1327.98,-120.767 963.123,-90.0636 838.427,-79.5703" stroke="#d4d4d4" fill="none"></path><polygon points="1460.4,-134.369 1467.58,-132.515 1460.81,-129.486 1460.4,-134.369" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node28 --><g class="edge inheritance" id="graph1_32_28"><g id="a_inheritance|graph1_32_28"><a xlink:title="KW is a subtype of QueryTerm"><path d="M1557.42,-124.317C1557.95,-124.209 1558.47,-124.104 1559,-124 1660.94,-103.859 1688.84,-111.712 1790,-88 1793.1,-87.2737 1796.31,-86.421 1799.49,-85.5107" stroke="#d4d4d4" fill="none"></path><polygon points="1556.76,-121.95 1550.41,-125.787 1557.77,-126.746 1556.76,-121.95" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node32&#45;&gt;node31 --><g class="edge inheritance" id="graph1_32_31"><g id="a_inheritance|graph1_32_31"><a xlink:title="Empty is a subtype of QueryTerm"><path d="M1557.41,-124.288C1557.94,-124.19 1558.47,-124.094 1559,-124 1693.81,-99.9791 1730.65,-114.484 1865,-88 1868.19,-87.3704 1871.5,-86.6245 1874.79,-85.8172" stroke="#d4d4d4" fill="none"></path><polygon points="1556.79,-121.913 1550.39,-125.667 1557.73,-126.722 1556.79,-121.913" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node33 --><g class="node class" id="graph1_33"><g id="a_class|graph1_33"><a xlink:title="molecule.ast.query.Where" xlink:href="query$$Where.html#inheritance-diagram"><path d="M1626.58,-150C1626.58,-150 1577.42,-150 1577.42,-150 1573.08,-150 1568.75,-145.667 1568.75,-141.333 1568.75,-141.333 1568.75,-132.667 1568.75,-132.667 1568.75,-128.333 1573.08,-124 1577.42,-124 1577.42,-124 1626.58,-124 1626.58,-124 1630.92,-124 1635.25,-128.333 1635.25,-132.667 1635.25,-132.667 1635.25,-141.333 1635.25,-141.333 1635.25,-145.667 1630.92,-150 1626.58,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="1581" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1600.61" text-anchor="start">Where</text></a></g></g><!-- node34 --><g class="node class" id="graph1_34"><g id="a_class|graph1_34"><a xlink:title="molecule.ast.query.In" xlink:href="query$$In.html#inheritance-diagram"><path d="M1695.33,-150C1695.33,-150 1662.67,-150 1662.67,-150 1658.33,-150 1654,-145.667 1654,-141.333 1654,-141.333 1654,-132.667 1654,-132.667 1654,-128.333 1658.33,-124 1662.67,-124 1662.67,-124 1695.33,-124 1695.33,-124 1699.67,-124 1704,-128.333 1704,-132.667 1704,-132.667 1704,-141.333 1704,-141.333 1704,-145.667 1699.67,-150 1695.33,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="1666" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1685.55" text-anchor="start">In</text></a></g></g><!-- node35 --><g class="node class" id="graph1_35"><g id="a_class|graph1_35"><a xlink:title="molecule.ast.query.With" xlink:href="query$$With.html#inheritance-diagram"><path d="M1773.33,-150C1773.33,-150 1730.67,-150 1730.67,-150 1726.33,-150 1722,-145.667 1722,-141.333 1722,-141.333 1722,-132.667 1722,-132.667 1722,-128.333 1726.33,-124 1730.67,-124 1730.67,-124 1773.33,-124 1773.33,-124 1777.67,-124 1782,-128.333 1782,-132.667 1782,-132.667 1782,-141.333 1782,-141.333 1782,-145.667 1777.67,-150 1773.33,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="1734" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1753.89" text-anchor="start">With</text></a></g></g><!-- node36 --><g class="node class" id="graph1_36"><g id="a_class|graph1_36"><a xlink:title="molecule.ast.query.Find" xlink:href="query$$Find.html#inheritance-diagram"><path d="M1850.58,-150C1850.58,-150 1809.42,-150 1809.42,-150 1805.08,-150 1800.75,-145.667 1800.75,-141.333 1800.75,-141.333 1800.75,-132.667 1800.75,-132.667 1800.75,-128.333 1805.08,-124 1809.42,-124 1809.42,-124 1850.58,-124 1850.58,-124 1854.92,-124 1859.25,-128.333 1859.25,-132.667 1859.25,-132.667 1859.25,-141.333 1859.25,-141.333 1859.25,-145.667 1854.92,-150 1850.58,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="1813" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1832.61" text-anchor="start">Find</text></a></g></g><!-- node37 --><g class="node class" id="graph1_37"><g id="a_class|graph1_37"><a xlink:title="molecule.ast.query.Query" xlink:href="query$$Query.html#inheritance-diagram"><path d="M1935.33,-150C1935.33,-150 1886.67,-150 1886.67,-150 1882.33,-150 1878,-145.667 1878,-141.333 1878,-141.333 1878,-132.667 1878,-132.667 1878,-128.333 1882.33,-124 1886.67,-124 1886.67,-124 1935.33,-124 1935.33,-124 1939.67,-124 1944,-128.333 1944,-132.667 1944,-132.667 1944,-141.333 1944,-141.333 1944,-145.667 1939.67,-150 1935.33,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="1890" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="1910" text-anchor="start">Query</text></a></g></g><!-- node38 --><g class="node trait" id="graph1_38"><g id="a_trait|graph1_38"><a xlink:title="molecule.ast.query.QueryExpr" xlink:href="query$$QueryExpr.html#inheritance-diagram"><path d="M1672.33,-212C1672.33,-212 1607.67,-212 1607.67,-212 1603.33,-212 1599,-207.667 1599,-203.333 1599,-203.333 1599,-194.667 1599,-194.667 1599,-190.333 1603.33,-186 1607.67,-186 1607.67,-186 1672.33,-186 1672.33,-186 1676.67,-186 1681,-190.333 1681,-194.667 1681,-194.667 1681,-203.333 1681,-203.333 1681,-207.667 1676.67,-212 1672.33,-212" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-205" x="1611" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-196.6" x="1630.77" text-anchor="start">QueryExpr</text></a></g></g><!-- node38&#45;&gt;node7 --><g class="edge inheritance" id="graph1_38_7"><g id="a_inheritance|graph1_38_7"><a xlink:title="Clause is a subtype of QueryExpr"><path d="M1591.59,-195.652C1388.88,-185.82 610.703,-148.075 437.36,-139.667" stroke="#d4d4d4" fill="none"></path><polygon points="1591.73,-198.112 1598.84,-196.004 1591.97,-193.217 1591.73,-198.112" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node30 --><g class="edge inheritance" id="graph1_38_30"><g id="a_inheritance|graph1_38_30"><a xlink:title="Output is a subtype of QueryExpr"><path d="M1591.56,-194.623C1456.41,-184.648 1064.09,-151.937 744,-88 741.112,-87.4231 738.134,-86.7531 735.156,-86.0303" stroke="#d4d4d4" fill="none"></path><polygon points="1591.41,-197.068 1598.57,-195.136 1591.77,-192.181 1591.41,-197.068" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node32 --><g class="edge inheritance" id="graph1_38_32"><g id="a_inheritance|graph1_38_32"><a xlink:title="QueryTerm is a subtype of QueryExpr"><path d="M1606.85,-182.819C1584.74,-172.691 1556.06,-159.553 1535.47,-150.124" stroke="#d4d4d4" fill="none"></path><polygon points="1606.11,-185.171 1613.49,-185.858 1608.15,-180.716 1606.11,-185.171" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node33 --><g class="edge inheritance" id="graph1_38_33"><g id="a_inheritance|graph1_38_33"><a xlink:title="Where is a subtype of QueryExpr"><path d="M1628.51,-179.862C1622.41,-170.232 1615.08,-158.659 1609.68,-150.124" stroke="#d4d4d4" fill="none"></path><polygon points="1626.49,-181.255 1632.31,-185.858 1630.63,-178.633 1626.49,-181.255" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node34 --><g class="edge inheritance" id="graph1_38_34"><g id="a_inheritance|graph1_38_34"><a xlink:title="In is a subtype of QueryExpr"><path d="M1651.79,-179.862C1658.05,-170.232 1665.57,-158.659 1671.12,-150.124" stroke="#d4d4d4" fill="none"></path><polygon points="1649.65,-178.654 1647.89,-185.858 1653.76,-181.324 1649.65,-178.654" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node35 --><g class="edge inheritance" id="graph1_38_35"><g id="a_inheritance|graph1_38_35"><a xlink:title="With is a subtype of QueryExpr"><path d="M1669.32,-182.292C1688.09,-172.239 1712.07,-159.39 1729.37,-150.124" stroke="#d4d4d4" fill="none"></path><polygon points="1667.68,-180.393 1662.66,-185.858 1669.99,-184.712 1667.68,-180.393" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node36 --><g class="edge inheritance" id="graph1_38_36"><g id="a_inheritance|graph1_38_36"><a xlink:title="Find is a subtype of QueryExpr"><path d="M1685.41,-183.66C1721.13,-172.379 1769.86,-156.993 1800.62,-147.277" stroke="#d4d4d4" fill="none"></path><polygon points="1684.39,-181.414 1678.45,-185.858 1685.86,-186.086 1684.39,-181.414" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38&#45;&gt;node37 --><g class="edge inheritance" id="graph1_38_37"><g id="a_inheritance|graph1_38_37"><a xlink:title="Query is a subtype of QueryExpr"><path d="M1688.29,-188.775C1734.58,-179.71 1806.33,-165.08 1868,-150 1871.16,-149.227 1874.44,-148.384 1877.72,-147.516" stroke="#d4d4d4" fill="none"></path><polygon points="1687.77,-186.38 1681.37,-190.126 1688.71,-191.19 1687.77,-186.38" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="molecule.ast.query"><span>query</span></li><li class="in" name="molecule.util.Helpers"><span>Helpers</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="molecule.ast.query.AggrExpr" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AggrExprextendsquery.OutputwithProductwithSerializable"></a><a id="AggrExpr:AggrExpr"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#AggrExprextendsquery.OutputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$AggrExpr.html"><span class="name">AggrExpr</span></a><span class="params">(<span name="fn">fn: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="args">args: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>, <span name="v">v: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>)</span><span class="result"> extends <a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Binding" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Bindingextendsquery.QueryTerm"></a><a id="Binding:Binding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Bindingextendsquery.QueryTerm" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Binding.html"><span class="name">Binding</span></a><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Clause" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Clauseextendsquery.QueryExpr"></a><a id="Clause:Clause"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Clauseextendsquery.QueryExpr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Clause.html"><span class="name">Clause</span></a><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.CollectionBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CollectionBindingextendsquery.BindingwithProductwithSerializable"></a><a id="CollectionBinding:CollectionBinding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#CollectionBindingextendsquery.BindingwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$CollectionBinding.html"><span class="name">CollectionBinding</span></a><span class="params">(<span name="v">v: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>)</span><span class="result"> extends <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.DS" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DSextendsquery.DataSourcewithProductwithSerializable"></a><a id="DS:DS"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#DSextendsquery.DataSourcewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$DS.html"><span class="name">DS</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.DataClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DataClauseextendsquery.ClausewithProductwithSerializable"></a><a id="DataClause:DataClause"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#DataClauseextendsquery.ClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$DataClause.html"><span class="name">DataClause</span></a><span class="params">(<span name="ds">ds: <a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a></span>, <span name="e">e: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>, <span name="a">a: <a href="query$$KW.html" class="extype" name="molecule.ast.query.KW">KW</a></span>, <span name="v">v: <a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a></span>, <span name="tx">tx: <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a></span>, <span name="op">op: <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a> = <span class="symbol"><span class="name"><a href="query$$NoBinding$.html">NoBinding</a></span></span></span>)</span><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.DataSource" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DataSourceextendsquery.QueryTerm"></a><a id="DataSource:DataSource"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#DataSourceextendsquery.QueryTerm" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$DataSource.html"><span class="name">DataSource</span></a><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.ExpressionClause" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ExpressionClauseextendsquery.Clause"></a><a id="ExpressionClause:ExpressionClause"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#ExpressionClauseextendsquery.Clause" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$ExpressionClause.html"><span class="name">ExpressionClause</span></a><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Find" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Findextendsquery.QueryExprwithProductwithSerializable"></a><a id="Find:Find"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Findextendsquery.QueryExprwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Find.html"><span class="name">Find</span></a><span class="params">(<span name="outputs">outputs: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a>]</span>)</span><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Funct" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Functextendsquery.ExpressionClausewithProductwithSerializable"></a><a id="Funct:Funct"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Functextendsquery.ExpressionClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Funct.html"><span class="name">Funct</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ins">ins: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a>]</span>, <span name="outs">outs: <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a></span>)</span><span class="result"> extends <a href="query$$ExpressionClause.html" class="extype" name="molecule.ast.query.ExpressionClause">ExpressionClause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.In" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Inextendsquery.QueryExprwithProductwithSerializable"></a><a id="In:In"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Inextendsquery.QueryExprwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$In.html"><span class="name">In</span></a><span class="params">(<span name="inputs">inputs: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Input.html" class="extype" name="molecule.ast.query.Input">Input</a>]</span>, <span name="rules">rules: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Rule.html" class="extype" name="molecule.ast.query.Rule">Rule</a>] = <span class="symbol">Seq()</span></span>, <span name="ds">ds: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a>] = <span class="symbol"><span class="name"><a href="query$$DS$.html">Seq(DS)</a></span></span></span>)</span><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.InDataSource" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InDataSourceextendsquery.InputwithProductwithSerializable"></a><a id="InDataSource:InDataSource"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#InDataSourceextendsquery.InputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$InDataSource.html"><span class="name">InDataSource</span></a><span class="params">(<span name="ds">ds: <a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a></span>, <span name="argss">argss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]] = <span class="symbol">Seq(Seq())</span></span>)</span><span class="result"> extends <a href="query$$Input.html" class="extype" name="molecule.ast.query.Input">Input</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.InVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InVarextendsquery.InputwithProductwithSerializable"></a><a id="InVar:InVar"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#InVarextendsquery.InputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$InVar.html"><span class="name">InVar</span></a><span class="params">(<span name="binding">binding: <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a></span>, <span name="argss">argss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]] = <span class="symbol">Seq(Seq())</span></span>)</span><span class="result"> extends <a href="query$$Input.html" class="extype" name="molecule.ast.query.Input">Input</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Input" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Inputextendsquery.QueryTerm"></a><a id="Input:Input"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Inputextendsquery.QueryTerm" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Input.html"><span class="name">Input</span></a><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.KW" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KWextendsquery.QueryTermwithProductwithSerializable"></a><a id="KW:KW"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#KWextendsquery.QueryTermwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$KW.html"><span class="name">KW</span></a><span class="params">(<span name="ns">ns: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="refNs">refNs: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.NotClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotClauseextendsquery.ClausewithProductwithSerializable"></a><a id="NotClause:NotClause"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#NotClauseextendsquery.ClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$NotClause.html"><span class="name">NotClause</span></a><span class="params">(<span name="e">e: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>, <span name="a">a: <a href="query$$KW.html" class="extype" name="molecule.ast.query.KW">KW</a></span>)</span><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.NotClauses" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotClausesextendsquery.ClausewithProductwithSerializable"></a><a id="NotClauses:NotClauses"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#NotClausesextendsquery.ClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$NotClauses.html"><span class="name">NotClauses</span></a><span class="params">(<span name="clauses">clauses: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]</span>)</span><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.NotJoinClauses" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotJoinClausesextendsquery.ClausewithProductwithSerializable"></a><a id="NotJoinClauses:NotJoinClauses"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#NotJoinClausesextendsquery.ClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$NotJoinClauses.html"><span class="name">NotJoinClauses</span></a><span class="params">(<span name="nonUnifyingVars">nonUnifyingVars: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a>]</span>, <span name="clauses">clauses: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]</span>)</span><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Output" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Outputextendsquery.QueryExpr"></a><a id="Output:Output"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Outputextendsquery.QueryExpr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Output.html"><span class="name">Output</span></a><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Placeholder" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Placeholderextendsquery.InputwithProductwithSerializable"></a><a id="Placeholder:Placeholder"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Placeholderextendsquery.InputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Placeholder.html"><span class="name">Placeholder</span></a><span class="params">(<span name="e">e: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>, <span name="kw">kw: <a href="query$$KW.html" class="extype" name="molecule.ast.query.KW">KW</a></span>, <span name="v">v: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>, <span name="enumPrefix">enumPrefix: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="query$$Input.html" class="extype" name="molecule.ast.query.Input">Input</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Pull" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Pullextendsquery.QueryValuewithquery.OutputwithProductwithSerializable"></a><a id="Pull:Pull"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Pullextendsquery.QueryValuewithquery.OutputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Pull.html"><span class="name">Pull</span></a><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ns">ns: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="enumPrefix">enumPrefix: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a> with <a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Queryextendsquery.QueryExprwithProductwithSerializable"></a><a id="Query:Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Queryextendsquery.QueryExprwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule Query representation." href="query$$Query.html"><span class="name">Query</span></a><span class="params">(<span name="f">f: <a href="query$$Find.html" class="extype" name="molecule.ast.query.Find">Find</a></span>, <span name="wi">wi: <a href="query$$With.html" class="extype" name="molecule.ast.query.With">With</a></span>, <span name="i">i: <a href="query$$In.html" class="extype" name="molecule.ast.query.In">In</a></span>, <span name="wh">wh: <a href="query$$Where.html" class="extype" name="molecule.ast.query.Where">Where</a></span>)</span><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Molecule Query representation.</p><div class="fullcomment"><div class="comment cmt"><p>Molecule Query representation.
+<br><br>
+Molecule transforms custom boilerplate DSL constructs to Datomic queries in 3 steps:
+<br><br>
+Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
+<br><br>
+Query is thus derived from <a href="model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a> representation.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>Find parameters</p></dd><dt class="param">wi</dt><dd class="cmt"><p>With parameters</p></dd><dt class="param">i</dt><dd class="cmt"><p>Input parameters</p></dd><dt class="param">wh</dt><dd class="cmt"><p>Where parameters: data clauses</p></dd></dl></div>
+    </li><li name="molecule.ast.query.QueryExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryExprextendsAnyRef"></a><a id="QueryExpr:QueryExpr"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#QueryExprextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$QueryExpr.html"><span class="name">QueryExpr</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.QueryTerm" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryTermextendsquery.QueryExpr"></a><a id="QueryTerm:QueryTerm"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#QueryTermextendsquery.QueryExpr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$QueryTerm.html"><span class="name">QueryTerm</span></a><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.QueryValue" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryValueextendsquery.QueryTerm"></a><a id="QueryValue:QueryValue"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#QueryValueextendsquery.QueryTerm" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$QueryValue.html"><span class="name">QueryValue</span></a><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.RelationBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RelationBindingextendsquery.BindingwithProductwithSerializable"></a><a id="RelationBinding:RelationBinding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#RelationBindingextendsquery.BindingwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$RelationBinding.html"><span class="name">RelationBinding</span></a><span class="params">(<span name="vs">vs: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a>]</span>)</span><span class="result"> extends <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Rule" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ruleextendsquery.QueryTermwithProductwithSerializable"></a><a id="Rule:Rule"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Ruleextendsquery.QueryTermwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Rule.html"><span class="name">Rule</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="args">args: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a>]</span>, <span name="clauses">clauses: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]</span>)</span><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.RuleInvocation" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RuleInvocationextendsquery.ClausewithProductwithSerializable"></a><a id="RuleInvocation:RuleInvocation"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#RuleInvocationextendsquery.ClausewithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$RuleInvocation.html"><span class="name">RuleInvocation</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="args">args: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a>]</span>)</span><span class="result"> extends <a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.ScalarBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ScalarBindingextendsquery.BindingwithProductwithSerializable"></a><a id="ScalarBinding:ScalarBinding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#ScalarBindingextendsquery.BindingwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$ScalarBinding.html"><span class="name">ScalarBinding</span></a><span class="params">(<span name="v">v: <a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>)</span><span class="result"> extends <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.TupleBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TupleBindingextendsquery.BindingwithProductwithSerializable"></a><a id="TupleBinding:TupleBinding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#TupleBindingextendsquery.BindingwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$TupleBinding.html"><span class="name">TupleBinding</span></a><span class="params">(<span name="vs">vs: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a>]</span>)</span><span class="result"> extends <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Val" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Valextendsquery.QueryValuewithquery.OutputwithProductwithSerializable"></a><a id="Val:Val"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Valextendsquery.QueryValuewithquery.OutputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Val.html"><span class="name">Val</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a> with <a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Var" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Varextendsquery.QueryValuewithquery.OutputwithProductwithSerializable"></a><a id="Var:Var"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Varextendsquery.QueryValuewithquery.OutputwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Var.html"><span class="name">Var</span></a><span class="params">(<span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a> with <a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Where" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Whereextendsquery.QueryExprwithProductwithSerializable"></a><a id="Where:Where"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Whereextendsquery.QueryExprwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Where.html"><span class="name">Where</span></a><span class="params">(<span name="clauses">clauses: <span class="extype" name="scala.Seq">Seq</span>[<a href="query$$Clause.html" class="extype" name="molecule.ast.query.Clause">Clause</a>]</span>)</span><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.With" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Withextendsquery.QueryExprwithProductwithSerializable"></a><a id="With:With"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Withextendsquery.QueryExprwithProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$With.html"><span class="name">With</span></a><span class="params">(<span name="variables">variables: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="query$$QueryExpr.html" class="extype" name="molecule.ast.query.QueryExpr">QueryExpr</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#!=(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html###():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#==(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#asInstanceOf[T0]:T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="molecule.util.Helpers#cast" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cast(value:Any):String"></a><a id="cast(Any):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#cast(value:Any):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cast</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#clone():Object" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#equals(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.util.Helpers#f" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="f(a:Any):Any"></a><a id="f(Any):Any"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#f(a:Any):Any" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">f</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="molecule.util.Helpers#f2" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="f2(a:Any):Any"></a><a id="f2(Any):Any"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#f2(a:Any):Any" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">f2</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.util.Helpers#format" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="format(date:java.util.Date):String"></a><a id="format(Date):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#format(date:java.util.Date):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">format</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="molecule.util.Helpers#format2" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="format2(date:java.util.Date):String"></a><a id="format2(Date):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#format2(date:java.util.Date):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">format2</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#getClass():Class[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#hashCode():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#notify():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#notifyAll():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.util.Helpers#o" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="o(opt:Option[Any]):String"></a><a id="o(Option[Any]):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#o(opt:Option[Any]):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">o</span><span class="params">(<span name="opt">opt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="molecule.util.Helpers#seq" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="seq[T](values:Seq[T]):String"></a><a id="seq[T](Seq[T]):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#seq[T](values:Seq[T]):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">seq</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="molecule.util.Helpers.seq.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#toString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.util.Helpers#tupleToSeq" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tupleToSeq(arg:Any):Seq[Any]"></a><a id="tupleToSeq(Any):Seq[Any]"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#tupleToSeq(arg:Any):Seq[Any]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tupleToSeq</span><span class="params">(<span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#wait(x$1:Long):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="molecule.ast.query.DS" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DS"></a><a id="DS:DS"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#DS" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$DS$.html"><span class="name">DS</span></a><span class="result"> extends <a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.DataClause" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DataClause"></a><a id="DataClause:DataClause"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#DataClause" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$DataClause$.html"><span class="name">DataClause</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Empty" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Empty"></a><a id="Empty:Empty"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Empty" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Empty$.html"><span class="name">Empty</span></a><span class="result"> extends <a href="query$$QueryTerm.html" class="extype" name="molecule.ast.query.QueryTerm">QueryTerm</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.ImplDS" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ImplDS"></a><a id="ImplDS:ImplDS"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#ImplDS" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$ImplDS$.html"><span class="name">ImplDS</span></a><span class="result"> extends <a href="query$$DataSource.html" class="extype" name="molecule.ast.query.DataSource">DataSource</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.NoBinding" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NoBinding"></a><a id="NoBinding:NoBinding"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#NoBinding" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$NoBinding$.html"><span class="name">NoBinding</span></a><span class="result"> extends <a href="query$$Binding.html" class="extype" name="molecule.ast.query.Binding">Binding</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.NoVal" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NoVal"></a><a id="NoVal:NoVal"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#NoVal" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$NoVal$.html"><span class="name">NoVal</span></a><span class="result"> extends <a href="query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a> with <a href="query$$Output.html" class="extype" name="molecule.ast.query.Output">Output</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.ast.query.Query" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Query"></a><a id="Query:Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="query$$Query$.html"><span class="name">Query</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      
+    </li><li name="molecule.util.Helpers.mkDate" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkDate"></a><a id="mkDate:mkDate"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/query$.html#mkDate" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkDate</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="molecule.util.Helpers">
+              <h3>Inherited from <span class="extype" name="molecule.util.Helpers">Helpers</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>

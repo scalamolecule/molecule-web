@@ -1,0 +1,1187 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.OneValueAttr$</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.OneValueAttr " />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.OneValueAttr " />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../lib/index.js"></script>
+      <script type="text/javascript" src="../../index.js"></script>
+      <script type="text/javascript" src="../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule"></a><a id="molecule:molecule"></a>
+      <span class="permalink">
+      <a href="index.html#molecule" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="molecule.boilerplate" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boilerplate"></a><a id="boilerplate:boilerplate"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#boilerplate" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal interfaces for auto-generated DSL boilerplate code." href="index.html"><span class="name">boilerplate</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal interfaces for auto-generated DSL boilerplate code.</p><div class="fullcomment"><div class="comment cmt"><p>Internal interfaces for auto-generated DSL boilerplate code.
+<br><br>
+Interfaces to the generated schema-defined DSL boilerplate code that the sbt-plugin generates when doing a <code>sbt-compile</code>.
+Molecule macros can then type-safely deduct the type structure of composed molecules.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.boilerplate.attributes" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="attributes"></a><a id="attributes:attributes"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/index.html#attributes" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Boilerplate interfaces for custom DSL generated from schema definition file." href="attributes$.html"><span class="name">attributes</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Boilerplate interfaces for custom DSL generated from schema definition file.</p><div class="fullcomment"><div class="comment cmt"><p>Boilerplate interfaces for custom DSL generated from schema definition file.
+<br><br>
+Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.boilerplate">boilerplate</a></dd></dl></div>
+    </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Attr.html" title=""></a>
+                        <a href="attributes$$Attr.html" title="">Attr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdgePropAttr_.html" title=""></a>
+                        <a href="attributes$$BiEdgePropAttr_.html" title="">BiEdgePropAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdgePropRefAttr_.html" title=""></a>
+                        <a href="attributes$$BiEdgePropRefAttr_.html" title="">BiEdgePropRefAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdgePropRef_.html" title=""></a>
+                        <a href="attributes$$BiEdgePropRef_.html" title="">BiEdgePropRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdgeRefAttr_.html" title=""></a>
+                        <a href="attributes$$BiEdgeRefAttr_.html" title="">BiEdgeRefAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdgeRef_.html" title=""></a>
+                        <a href="attributes$$BiEdgeRef_.html" title="">BiEdgeRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiEdge_.html" title=""></a>
+                        <a href="attributes$$BiEdge_.html" title="">BiEdge_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiOtherRefAttr_.html" title=""></a>
+                        <a href="attributes$$BiOtherRefAttr_.html" title="">BiOtherRefAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiOtherRef_.html" title=""></a>
+                        <a href="attributes$$BiOtherRef_.html" title="">BiOtherRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiSelfRefAttr_.html" title=""></a>
+                        <a href="attributes$$BiSelfRefAttr_.html" title="">BiSelfRefAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiSelfRef_.html" title=""></a>
+                        <a href="attributes$$BiSelfRef_.html" title="">BiSelfRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiTargetRefAttr_.html" title=""></a>
+                        <a href="attributes$$BiTargetRefAttr_.html" title="">BiTargetRefAttr_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
+                        <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="attributes$$Doc.html" title=""></a>
+                        <a href="attributes$$Doc.html" title="">Doc</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Enum.html" title=""></a>
+                        <a href="attributes$$Enum.html" title="">Enum</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Enum$.html" title=""></a>
+                        <a href="attributes$$Enum$.html" title="">Enum$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="attributes$$EnumValue$.html" title=""></a>
+                        <a href="attributes$$EnumValue$.html" title="">EnumValue</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$FulltextSearch.html" title=""></a>
+                        <a href="attributes$$FulltextSearch.html" title="">FulltextSearch</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Indexed.html" title=""></a>
+                        <a href="attributes$$Indexed.html" title="">Indexed</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$IsComponent.html" title=""></a>
+                        <a href="attributes$$IsComponent.html" title="">IsComponent</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Many.html" title=""></a>
+                        <a href="attributes$$Many.html" title="">Many</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBigDecimal.html" title=""></a>
+                        <a href="attributes$$ManyBigDecimal.html" title="">ManyBigDecimal</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBigDecimal$.html" title=""></a>
+                        <a href="attributes$$ManyBigDecimal$.html" title="">ManyBigDecimal$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBigInt.html" title=""></a>
+                        <a href="attributes$$ManyBigInt.html" title="">ManyBigInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBigInt$.html" title=""></a>
+                        <a href="attributes$$ManyBigInt$.html" title="">ManyBigInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBoolean.html" title=""></a>
+                        <a href="attributes$$ManyBoolean.html" title="">ManyBoolean</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyBoolean$.html" title=""></a>
+                        <a href="attributes$$ManyBoolean$.html" title="">ManyBoolean$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyByte.html" title=""></a>
+                        <a href="attributes$$ManyByte.html" title="">ManyByte</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyByte$.html" title=""></a>
+                        <a href="attributes$$ManyByte$.html" title="">ManyByte$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyDate.html" title=""></a>
+                        <a href="attributes$$ManyDate.html" title="">ManyDate</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyDate$.html" title=""></a>
+                        <a href="attributes$$ManyDate$.html" title="">ManyDate$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyDouble.html" title=""></a>
+                        <a href="attributes$$ManyDouble.html" title="">ManyDouble</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyDouble$.html" title=""></a>
+                        <a href="attributes$$ManyDouble$.html" title="">ManyDouble$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyEnums.html" title=""></a>
+                        <a href="attributes$$ManyEnums.html" title="">ManyEnums</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyEnums$.html" title=""></a>
+                        <a href="attributes$$ManyEnums$.html" title="">ManyEnums$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyFloat.html" title=""></a>
+                        <a href="attributes$$ManyFloat.html" title="">ManyFloat</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyFloat$.html" title=""></a>
+                        <a href="attributes$$ManyFloat$.html" title="">ManyFloat$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyInt.html" title=""></a>
+                        <a href="attributes$$ManyInt.html" title="">ManyInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyInt$.html" title=""></a>
+                        <a href="attributes$$ManyInt$.html" title="">ManyInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyLong.html" title=""></a>
+                        <a href="attributes$$ManyLong.html" title="">ManyLong</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyLong$.html" title=""></a>
+                        <a href="attributes$$ManyLong$.html" title="">ManyLong$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyRef.html" title=""></a>
+                        <a href="attributes$$ManyRef.html" title="">ManyRef</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyRefAttr.html" title=""></a>
+                        <a href="attributes$$ManyRefAttr.html" title="">ManyRefAttr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyRefAttr$.html" title=""></a>
+                        <a href="attributes$$ManyRefAttr$.html" title="">ManyRefAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyString.html" title=""></a>
+                        <a href="attributes$$ManyString.html" title="">ManyString</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyString$.html" title=""></a>
+                        <a href="attributes$$ManyString$.html" title="">ManyString$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyURI.html" title=""></a>
+                        <a href="attributes$$ManyURI.html" title="">ManyURI</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyURI$.html" title=""></a>
+                        <a href="attributes$$ManyURI$.html" title="">ManyURI$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyUUID.html" title=""></a>
+                        <a href="attributes$$ManyUUID.html" title="">ManyUUID</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyUUID$.html" title=""></a>
+                        <a href="attributes$$ManyUUID$.html" title="">ManyUUID$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ManyValueAttr$.html" title=""></a>
+                        <a href="attributes$$ManyValueAttr$.html" title="">ManyValueAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapAttr.html" title=""></a>
+                        <a href="attributes$$MapAttr.html" title="">MapAttr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapAttr$.html" title=""></a>
+                        <a href="attributes$$MapAttr$.html" title="">MapAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapAttrK.html" title=""></a>
+                        <a href="attributes$$MapAttrK.html" title="">MapAttrK</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBigDecimal.html" title=""></a>
+                        <a href="attributes$$MapBigDecimal.html" title="">MapBigDecimal</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBigDecimal$.html" title=""></a>
+                        <a href="attributes$$MapBigDecimal$.html" title="">MapBigDecimal$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBigInt.html" title=""></a>
+                        <a href="attributes$$MapBigInt.html" title="">MapBigInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBigInt$.html" title=""></a>
+                        <a href="attributes$$MapBigInt$.html" title="">MapBigInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBoolean.html" title=""></a>
+                        <a href="attributes$$MapBoolean.html" title="">MapBoolean</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapBoolean$.html" title=""></a>
+                        <a href="attributes$$MapBoolean$.html" title="">MapBoolean$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapByte.html" title=""></a>
+                        <a href="attributes$$MapByte.html" title="">MapByte</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapByte$.html" title=""></a>
+                        <a href="attributes$$MapByte$.html" title="">MapByte$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapDate.html" title=""></a>
+                        <a href="attributes$$MapDate.html" title="">MapDate</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapDate$.html" title=""></a>
+                        <a href="attributes$$MapDate$.html" title="">MapDate$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapDouble.html" title=""></a>
+                        <a href="attributes$$MapDouble.html" title="">MapDouble</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapDouble$.html" title=""></a>
+                        <a href="attributes$$MapDouble$.html" title="">MapDouble$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapFloat.html" title=""></a>
+                        <a href="attributes$$MapFloat.html" title="">MapFloat</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapFloat$.html" title=""></a>
+                        <a href="attributes$$MapFloat$.html" title="">MapFloat$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapInt.html" title=""></a>
+                        <a href="attributes$$MapInt.html" title="">MapInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapInt$.html" title=""></a>
+                        <a href="attributes$$MapInt$.html" title="">MapInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapLong.html" title=""></a>
+                        <a href="attributes$$MapLong.html" title="">MapLong</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapLong$.html" title=""></a>
+                        <a href="attributes$$MapLong$.html" title="">MapLong$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapString.html" title=""></a>
+                        <a href="attributes$$MapString.html" title="">MapString</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapString$.html" title=""></a>
+                        <a href="attributes$$MapString$.html" title="">MapString$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapURI.html" title=""></a>
+                        <a href="attributes$$MapURI.html" title="">MapURI</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapURI$.html" title=""></a>
+                        <a href="attributes$$MapURI$.html" title="">MapURI$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapUUID.html" title=""></a>
+                        <a href="attributes$$MapUUID.html" title="">MapUUID</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$MapUUID$.html" title=""></a>
+                        <a href="attributes$$MapUUID$.html" title="">MapUUID$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$NoHistory.html" title=""></a>
+                        <a href="attributes$$NoHistory.html" title="">NoHistory</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$One.html" title=""></a>
+                        <a href="attributes$$One.html" title="">One</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneAny.html" title=""></a>
+                        <a href="attributes$$OneAny.html" title="">OneAny</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBigDecimal.html" title=""></a>
+                        <a href="attributes$$OneBigDecimal.html" title="">OneBigDecimal</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBigDecimal$.html" title=""></a>
+                        <a href="attributes$$OneBigDecimal$.html" title="">OneBigDecimal$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBigInt.html" title=""></a>
+                        <a href="attributes$$OneBigInt.html" title="">OneBigInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBigInt$.html" title=""></a>
+                        <a href="attributes$$OneBigInt$.html" title="">OneBigInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBoolean.html" title=""></a>
+                        <a href="attributes$$OneBoolean.html" title="">OneBoolean</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneBoolean$.html" title=""></a>
+                        <a href="attributes$$OneBoolean$.html" title="">OneBoolean$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneByte.html" title=""></a>
+                        <a href="attributes$$OneByte.html" title="">OneByte</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneByte$.html" title=""></a>
+                        <a href="attributes$$OneByte$.html" title="">OneByte$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneDate.html" title=""></a>
+                        <a href="attributes$$OneDate.html" title="">OneDate</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneDate$.html" title=""></a>
+                        <a href="attributes$$OneDate$.html" title="">OneDate$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneDouble.html" title=""></a>
+                        <a href="attributes$$OneDouble.html" title="">OneDouble</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneDouble$.html" title=""></a>
+                        <a href="attributes$$OneDouble$.html" title="">OneDouble$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneEnum.html" title=""></a>
+                        <a href="attributes$$OneEnum.html" title="">OneEnum</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneEnum$.html" title=""></a>
+                        <a href="attributes$$OneEnum$.html" title="">OneEnum$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneFloat.html" title=""></a>
+                        <a href="attributes$$OneFloat.html" title="">OneFloat</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneFloat$.html" title=""></a>
+                        <a href="attributes$$OneFloat$.html" title="">OneFloat$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneInt.html" title=""></a>
+                        <a href="attributes$$OneInt.html" title="">OneInt</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneInt$.html" title=""></a>
+                        <a href="attributes$$OneInt$.html" title="">OneInt$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneLong.html" title=""></a>
+                        <a href="attributes$$OneLong.html" title="">OneLong</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneLong$.html" title=""></a>
+                        <a href="attributes$$OneLong$.html" title="">OneLong$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneRef.html" title=""></a>
+                        <a href="attributes$$OneRef.html" title="">OneRef</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneRefAttr.html" title=""></a>
+                        <a href="attributes$$OneRefAttr.html" title="">OneRefAttr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneRefAttr$.html" title=""></a>
+                        <a href="attributes$$OneRefAttr$.html" title="">OneRefAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneString.html" title=""></a>
+                        <a href="attributes$$OneString.html" title="">OneString</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneString$.html" title=""></a>
+                        <a href="attributes$$OneString$.html" title="">OneString$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneURI.html" title=""></a>
+                        <a href="attributes$$OneURI.html" title="">OneURI</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneURI$.html" title=""></a>
+                        <a href="attributes$$OneURI$.html" title="">OneURI$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneUUID.html" title=""></a>
+                        <a href="attributes$$OneUUID.html" title="">OneUUID</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$OneUUID$.html" title=""></a>
+                        <a href="attributes$$OneUUID$.html" title="">OneUUID$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="" title=""></a>
+                        <a href="" title="">OneValueAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Ref.html" title=""></a>
+                        <a href="attributes$$Ref.html" title="">Ref</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$RefAttr.html" title=""></a>
+                        <a href="attributes$$RefAttr.html" title="">RefAttr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$RefAttr$.html" title=""></a>
+                        <a href="attributes$$RefAttr$.html" title="">RefAttr$</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$SelfJoin.html" title=""></a>
+                        <a href="attributes$$SelfJoin.html" title="">SelfJoin</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$UniqueIdentity.html" title=""></a>
+                        <a href="attributes$$UniqueIdentity.html" title="">UniqueIdentity</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$UniqueValue.html" title=""></a>
+                        <a href="attributes$$UniqueValue.html" title="">UniqueValue</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ValueAttr.html" title=""></a>
+                        <a href="attributes$$ValueAttr.html" title="">ValueAttr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$ValueAttr$.html" title=""></a>
+                        <a href="attributes$$ValueAttr$.html" title="">ValueAttr$</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="trait type">
+      <div id="definition">
+        <div class="big-circle trait">t</div>
+        <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.boilerplate">boilerplate</a>.<a href="attributes$.html" class="extype" name="molecule.boilerplate.attributes">attributes</a></p>
+        <h1>OneValueAttr$<span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        <h3><span class="morelinks"></span></h3>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OneValueAttr$</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>] with <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>]</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/boilerplate/attributes.scala#L1" target="_blank">attributes.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>], <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">
+              Known Subclasses
+            </span>
+            <div class="subClasses hiddenContent"><a href="attributes$$OneBigDecimal$.html" class="extype" name="molecule.boilerplate.attributes.OneBigDecimal$">OneBigDecimal$</a>, <a href="attributes$$OneBigInt$.html" class="extype" name="molecule.boilerplate.attributes.OneBigInt$">OneBigInt$</a>, <a href="attributes$$OneBoolean$.html" class="extype" name="molecule.boilerplate.attributes.OneBoolean$">OneBoolean$</a>, <a href="attributes$$OneByte$.html" class="extype" name="molecule.boilerplate.attributes.OneByte$">OneByte$</a>, <a href="attributes$$OneDate$.html" class="extype" name="molecule.boilerplate.attributes.OneDate$">OneDate$</a>, <a href="attributes$$OneDouble$.html" class="extype" name="molecule.boilerplate.attributes.OneDouble$">OneDouble$</a>, <a href="attributes$$OneFloat$.html" class="extype" name="molecule.boilerplate.attributes.OneFloat$">OneFloat$</a>, <a href="attributes$$OneInt$.html" class="extype" name="molecule.boilerplate.attributes.OneInt$">OneInt$</a>, <a href="attributes$$OneLong$.html" class="extype" name="molecule.boilerplate.attributes.OneLong$">OneLong$</a>, <a href="attributes$$OneString$.html" class="extype" name="molecule.boilerplate.attributes.OneString$">OneString$</a>, <a href="attributes$$OneURI$.html" class="extype" name="molecule.boilerplate.attributes.OneURI$">OneURI$</a>, <a href="attributes$$OneUUID$.html" class="extype" name="molecule.boilerplate.attributes.OneUUID$">OneUUID$</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 1385.00 158.00" height="158pt" width="1385pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 1381,-154 1381,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.OneValueAttr$ (this trait)" xlink:href="#inheritance-diagram"><path d="M762.583,-88C762.583,-88 661.417,-88 661.417,-88 657.083,-88 652.75,-83.6667 652.75,-79.3333 652.75,-79.3333 652.75,-70.6667 652.75,-70.6667 652.75,-66.3333 657.083,-62 661.417,-62 661.417,-62 762.583,-62 762.583,-62 766.917,-62 771.25,-66.3333 771.25,-70.6667 771.25,-70.6667 771.25,-79.3333 771.25,-79.3333 771.25,-83.6667 766.917,-88 762.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="665" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="684.738" text-anchor="start">OneValueAttr$[Ns, T]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.OneBigDecimal$" xlink:href="attributes$$OneBigDecimal$.html#inheritance-diagram"><path d="M109.333,-26C109.333,-26 8.66667,-26 8.66667,-26 4.33333,-26 0,-21.6667 0,-17.3333 0,-17.3333 0,-8.66667 0,-8.66667 0,-4.33333 4.33333,-0 8.66667,-0 8.66667,-0 109.333,-0 109.333,-0 113.667,-0 118,-4.33333 118,-8.66667 118,-8.66667 118,-17.3333 118,-17.3333 118,-21.6667 113.667,-26 109.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.7637" text-anchor="start">OneBigDecimal$[Ns]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="OneBigDecimal$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M645.436,-70.5546C536.66,-64.4722 314.159,-50.1395 127,-26 124.147,-25.632 121.23,-25.2275 118.289,-24.7966" stroke="#d4d4d4" fill="none"></path><polygon points="645.31,-73.0013 652.435,-70.9433 645.582,-68.1088 645.31,-73.0013" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.OneBigInt$" xlink:href="attributes$$OneBigInt$.html#inheritance-diagram"><path d="M225.333,-26C225.333,-26 144.667,-26 144.667,-26 140.333,-26 136,-21.6667 136,-17.3333 136,-17.3333 136,-8.66667 136,-8.66667 136,-4.33333 140.333,-0 144.667,-0 144.667,-0 225.333,-0 225.333,-0 229.667,-0 234,-4.33333 234,-8.66667 234,-8.66667 234,-17.3333 234,-17.3333 234,-21.6667 229.667,-26 225.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="148" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="167.764" text-anchor="start">OneBigInt$[Ns]</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="OneBigInt$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M645.287,-69.326C554.093,-62.4467 385.555,-47.9834 243,-26 240.154,-25.5612 237.238,-25.0748 234.299,-24.5565" stroke="#d4d4d4" fill="none"></path><polygon points="645.36,-71.7883 652.524,-69.8682 645.726,-66.902 645.36,-71.7883" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.boilerplate.attributes.OneBoolean$" xlink:href="attributes$$OneBoolean$.html#inheritance-diagram"><path d="M350.583,-26C350.583,-26 261.417,-26 261.417,-26 257.083,-26 252.75,-21.6667 252.75,-17.3333 252.75,-17.3333 252.75,-8.66667 252.75,-8.66667 252.75,-4.33333 257.083,-0 261.417,-0 261.417,-0 350.583,-0 350.583,-0 354.917,-0 359.25,-4.33333 359.25,-8.66667 359.25,-8.66667 359.25,-17.3333 359.25,-17.3333 359.25,-21.6667 354.917,-26 350.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="265" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="284.812" text-anchor="start">OneBoolean$[Ns]</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="OneBoolean$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M645.71,-65.7059C576.515,-56.8185 464.928,-41.8383 369,-26 365.924,-25.4921 362.767,-24.9518 359.584,-24.3922" stroke="#d4d4d4" fill="none"></path><polygon points="645.432,-68.1403 652.686,-66.5998 646.055,-63.28 645.432,-68.1403" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="molecule.boilerplate.attributes.OneByte$" xlink:href="attributes$$OneByte$.html#inheritance-diagram"><path d="M463.333,-26C463.333,-26 386.667,-26 386.667,-26 382.333,-26 378,-21.6667 378,-17.3333 378,-17.3333 378,-8.66667 378,-8.66667 378,-4.33333 382.333,-0 386.667,-0 386.667,-0 463.333,-0 463.333,-0 467.667,-0 472,-4.33333 472,-8.66667 472,-8.66667 472,-17.3333 472,-17.3333 472,-21.6667 467.667,-26 463.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="390" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="409.988" text-anchor="start">OneByte$[Ns]</text></a></g></g><!-- node0&#45;&gt;node4 --><g class="edge inheritance" id="graph1_0_4"><g id="a_inheritance|graph1_0_4"><a xlink:title="OneByte$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M646.606,-60.5246C600.339,-50.9629 536.847,-37.7859 481,-26 478.081,-25.3841 475.078,-24.7477 472.049,-24.1041" stroke="#d4d4d4" fill="none"></path><polygon points="646.241,-62.9508 653.592,-61.9679 647.233,-58.1522 646.241,-62.9508" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.boilerplate.attributes.OneDate$" xlink:href="attributes$$OneDate$.html#inheritance-diagram"><path d="M575.333,-26C575.333,-26 498.667,-26 498.667,-26 494.333,-26 490,-21.6667 490,-17.3333 490,-17.3333 490,-8.66667 490,-8.66667 490,-4.33333 494.333,-0 498.667,-0 498.667,-0 575.333,-0 575.333,-0 579.667,-0 584,-4.33333 584,-8.66667 584,-8.66667 584,-17.3333 584,-17.3333 584,-21.6667 579.667,-26 575.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="502" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="521.543" text-anchor="start">OneDate$[Ns]</text></a></g></g><!-- node0&#45;&gt;node5 --><g class="edge inheritance" id="graph1_0_5"><g id="a_inheritance|graph1_0_5"><a xlink:title="OneDate$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M669.596,-59.4614C639.711,-49.2151 600.168,-35.6576 572.062,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="669.17,-61.9053 676.586,-61.8581 670.759,-57.2702 669.17,-61.9053" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="molecule.boilerplate.attributes.OneDouble$" xlink:href="attributes$$OneDouble$.html#inheritance-diagram"><path d="M696.583,-26C696.583,-26 611.417,-26 611.417,-26 607.083,-26 602.75,-21.6667 602.75,-17.3333 602.75,-17.3333 602.75,-8.66667 602.75,-8.66667 602.75,-4.33333 607.083,-0 611.417,-0 611.417,-0 696.583,-0 696.583,-0 700.917,-0 705.25,-4.33333 705.25,-8.66667 705.25,-8.66667 705.25,-17.3333 705.25,-17.3333 705.25,-21.6667 700.917,-26 696.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="615" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="634.816" text-anchor="start">OneDouble$[Ns]</text></a></g></g><!-- node0&#45;&gt;node6 --><g class="edge inheritance" id="graph1_0_6"><g id="a_inheritance|graph1_0_6"><a xlink:title="OneDouble$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M695.26,-56.6826C685.8,-46.8961 674.206,-34.9026 665.72,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="693.636,-58.528 700.263,-61.8581 697.159,-55.1223 693.636,-58.528" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.boilerplate.attributes.OneFloat$" xlink:href="attributes$$OneFloat$.html#inheritance-diagram"><path d="M809.583,-26C809.583,-26 732.417,-26 732.417,-26 728.083,-26 723.75,-21.6667 723.75,-17.3333 723.75,-17.3333 723.75,-8.66667 723.75,-8.66667 723.75,-4.33333 728.083,-0 732.417,-0 732.417,-0 809.583,-0 809.583,-0 813.917,-0 818.25,-4.33333 818.25,-8.66667 818.25,-8.66667 818.25,-17.3333 818.25,-17.3333 818.25,-21.6667 813.917,-26 809.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="736" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="755.6" text-anchor="start">OneFloat$[Ns]</text></a></g></g><!-- node0&#45;&gt;node7 --><g class="edge inheritance" id="graph1_0_7"><g id="a_inheritance|graph1_0_7"><a xlink:title="OneFloat$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M729.029,-56.6826C738.652,-46.8961 750.446,-34.9026 759.078,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="727.101,-55.1491 723.94,-61.8581 730.594,-58.5847 727.101,-55.1491" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="molecule.boilerplate.attributes.OneInt$" xlink:href="attributes$$OneInt$.html#inheritance-diagram"><path d="M914.333,-26C914.333,-26 845.667,-26 845.667,-26 841.333,-26 837,-21.6667 837,-17.3333 837,-17.3333 837,-8.66667 837,-8.66667 837,-4.33333 841.333,-0 845.667,-0 845.667,-0 914.333,-0 914.333,-0 918.667,-0 923,-4.33333 923,-8.66667 923,-8.66667 923,-17.3333 923,-17.3333 923,-21.6667 918.667,-26 914.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="849" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="868.545" text-anchor="start">OneInt$[Ns]</text></a></g></g><!-- node0&#45;&gt;node8 --><g class="edge inheritance" id="graph1_0_8"><g id="a_inheritance|graph1_0_8"><a xlink:title="OneInt$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M752.708,-59.4614C781.398,-49.2151 819.359,-35.6576 846.34,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="751.765,-57.1964 745.997,-61.8581 753.414,-61.811 751.765,-57.1964" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="molecule.boilerplate.attributes.OneLong$" xlink:href="attributes$$OneLong$.html#inheritance-diagram"><path d="M1027.58,-26C1027.58,-26 950.417,-26 950.417,-26 946.083,-26 941.75,-21.6667 941.75,-17.3333 941.75,-17.3333 941.75,-8.66667 941.75,-8.66667 941.75,-4.33333 946.083,-0 950.417,-0 950.417,-0 1027.58,-0 1027.58,-0 1031.92,-0 1036.25,-4.33333 1036.25,-8.66667 1036.25,-8.66667 1036.25,-17.3333 1036.25,-17.3333 1036.25,-21.6667 1031.92,-26 1027.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="954" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="973.594" text-anchor="start">OneLong$[Ns]</text></a></g></g><!-- node0&#45;&gt;node9 --><g class="edge inheritance" id="graph1_0_9"><g id="a_inheritance|graph1_0_9"><a xlink:title="OneLong$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M774.738,-60.4106C825.41,-49.4347 895.626,-34.2254 941.664,-24.2532" stroke="#d4d4d4" fill="none"></path><polygon points="774.045,-58.0539 767.722,-61.9303 775.082,-62.8428 774.045,-58.0539" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="molecule.boilerplate.attributes.OneString$" xlink:href="attributes$$OneString$.html#inheritance-diagram"><path d="M1144.33,-26C1144.33,-26 1063.67,-26 1063.67,-26 1059.33,-26 1055,-21.6667 1055,-17.3333 1055,-17.3333 1055,-8.66667 1055,-8.66667 1055,-4.33333 1059.33,-0 1063.67,-0 1063.67,-0 1144.33,-0 1144.33,-0 1148.67,-0 1153,-4.33333 1153,-8.66667 1153,-8.66667 1153,-17.3333 1153,-17.3333 1153,-21.6667 1148.67,-26 1144.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="1067" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1086.54" text-anchor="start">OneString$[Ns]</text></a></g></g><!-- node0&#45;&gt;node10 --><g class="edge inheritance" id="graph1_0_10"><g id="a_inheritance|graph1_0_10"><a xlink:title="OneString$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M778.615,-65.5441C845.966,-56.7257 952.966,-41.9789 1045,-26 1048.19,-25.4457 1051.48,-24.8497 1054.78,-24.2302" stroke="#d4d4d4" fill="none"></path><polygon points="778.037,-63.1486 771.413,-66.4842 778.672,-68.0074 778.037,-63.1486" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="molecule.boilerplate.attributes.OneURI$" xlink:href="attributes$$OneURI$.html#inheritance-diagram"><path d="M1253.58,-26C1253.58,-26 1180.42,-26 1180.42,-26 1176.08,-26 1171.75,-21.6667 1171.75,-17.3333 1171.75,-17.3333 1171.75,-8.66667 1171.75,-8.66667 1171.75,-4.33333 1176.08,-0 1180.42,-0 1180.42,-0 1253.58,-0 1253.58,-0 1257.92,-0 1262.25,-4.33333 1262.25,-8.66667 1262.25,-8.66667 1262.25,-17.3333 1262.25,-17.3333 1262.25,-21.6667 1257.92,-26 1253.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="1184" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1203.6" text-anchor="start">OneURI$[Ns]</text></a></g></g><!-- node0&#45;&gt;node11 --><g class="edge inheritance" id="graph1_0_11"><g id="a_inheritance|graph1_0_11"><a xlink:title="OneURI$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M778.6,-69.1693C866.699,-62.2606 1026.64,-47.9188 1162,-26 1165.09,-25.5001 1168.26,-24.9376 1171.45,-24.3361" stroke="#d4d4d4" fill="none"></path><polygon points="778.391,-66.7281 771.602,-69.7143 778.771,-71.6133 778.391,-66.7281" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="molecule.boilerplate.attributes.OneUUID$" xlink:href="attributes$$OneUUID$.html#inheritance-diagram"><path d="M1368.58,-26C1368.58,-26 1289.42,-26 1289.42,-26 1285.08,-26 1280.75,-21.6667 1280.75,-17.3333 1280.75,-17.3333 1280.75,-8.66667 1280.75,-8.66667 1280.75,-4.33333 1285.08,-0 1289.42,-0 1289.42,-0 1368.58,-0 1368.58,-0 1372.92,-0 1377.25,-4.33333 1377.25,-8.66667 1377.25,-8.66667 1377.25,-17.3333 1377.25,-17.3333 1377.25,-21.6667 1372.92,-26 1368.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="1293" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1312.71" text-anchor="start">OneUUID$[Ns]</text></a></g></g><!-- node0&#45;&gt;node12 --><g class="edge inheritance" id="graph1_0_12"><g id="a_inheritance|graph1_0_12"><a xlink:title="OneUUID$[Ns] is a subtype of OneValueAttr$[Ns, T]"><path d="M778.495,-70.8414C883.532,-65.2792 1094.1,-51.8024 1271,-26 1274.15,-25.5399 1277.4,-25.0153 1280.66,-24.4485" stroke="#d4d4d4" fill="none"></path><polygon points="778.285,-68.399 771.423,-71.2124 778.542,-73.2922 778.285,-68.399" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="molecule.boilerplate.attributes.ValueAttr$" xlink:href="attributes$$ValueAttr$.html#inheritance-diagram"><path d="M688.333,-150C688.333,-150 615.667,-150 615.667,-150 611.333,-150 607,-145.667 607,-141.333 607,-141.333 607,-132.667 607,-132.667 607,-128.333 611.333,-124 615.667,-124 615.667,-124 688.333,-124 688.333,-124 692.667,-124 697,-128.333 697,-132.667 697,-132.667 697,-141.333 697,-141.333 697,-145.667 692.667,-150 688.333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="619" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="638.84" text-anchor="start">ValueAttr$[T]</text></a></g></g><!-- node13&#45;&gt;node0 --><g class="edge inheritance" id="graph1_13_0"><g id="a_inheritance|graph1_13_0"><a xlink:title="OneValueAttr$[Ns, T] is a subtype of ValueAttr$[T]"><path d="M669.317,-118.683C679.104,-108.896 691.097,-96.9026 699.876,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="667.359,-117.176 664.142,-123.858 670.824,-120.641 667.359,-117.176" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="molecule.expression.AttrExpressions.OptionalExpr" xlink:href="../expression/AttrExpressions$$OptionalExpr.html#inheritance-diagram"><path d="M819.583,-150C819.583,-150 724.417,-150 724.417,-150 720.083,-150 715.75,-145.667 715.75,-141.333 715.75,-141.333 715.75,-132.667 715.75,-132.667 715.75,-128.333 720.083,-124 724.417,-124 724.417,-124 819.583,-124 819.583,-124 823.917,-124 828.25,-128.333 828.25,-132.667 828.25,-132.667 828.25,-141.333 828.25,-141.333 828.25,-145.667 823.917,-150 819.583,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="728" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="747.559" text-anchor="start">OptionalExpr[Ns, T]</text></a></g></g><!-- node14&#45;&gt;node0 --><g class="edge inheritance" id="graph1_14_0"><g id="a_inheritance|graph1_14_0"><a xlink:title="OneValueAttr$[Ns, T] is a subtype of OptionalExpr[Ns, T]"><path d="M754.683,-118.683C744.896,-108.896 732.903,-96.9026 724.124,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="753.176,-120.641 759.858,-123.858 756.641,-117.176 753.176,-120.641" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="molecule.boilerplate.attributes.OneValueAttr$"><span>OneValueAttr$</span></li><li class="in" name="molecule.expression.AttrExpressions.OptionalExpr"><span>OptionalExpr</span></li><li class="in" name="molecule.boilerplate.attributes.ValueAttr$"><span>ValueAttr$</span></li><li class="in" name="molecule.boilerplate.attributes.Attr"><span>Attr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#!=(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html###():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#==(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.OptionalExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(some:Option[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Option[T]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#apply(some:Option[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="some">some: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Apply optional attribute value in save molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Apply optional attribute value in save molecule.</p><pre><span class="kw">val</span> benAge = <span class="std">Some</span>(<span class="num">42</span>)
+<span class="kw">val</span> lizAge = <span class="std">None</span>
+
+<span class="cmt">// Save optional `age` values</span>
+Person.name(<span class="lit">"Ben"</span>).age$(benAge).save
+Person.name(<span class="lit">"Liz"</span>).age$(lizAge).save
+
+Person.name.age$.get === <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="std">Some</span>(<span class="num">42</span>)),
+  (<span class="lit">"Liz"</span>, <span class="std">None</span>),
+)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#asInstanceOf[T0]:T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#clone():Object" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#equals(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#getClass():Class[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#hashCode():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#notify():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#notifyAll():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#toString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneValueAttr$.html#wait(x$1:Long):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="molecule.expression.AttrExpressions.OptionalExpr">
+              <h3>Inherited from <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>]</h3>
+            </div><div class="parent" name="molecule.boilerplate.attributes.ValueAttr$">
+              <h3>Inherited from <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneValueAttr$.T">T</span>]</h3>
+            </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
+              <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>

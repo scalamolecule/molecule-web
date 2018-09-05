@@ -1,0 +1,1273 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Molecule 0.14.0 - molecule.generic</title>
+          <meta name="description" content="Molecule 0.14.0 - molecule.generic" />
+          <meta name="keywords" content="Molecule 0.14.0 molecule.generic" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../lib/index.js"></script>
+      <script type="text/javascript" src="../../index.js"></script>
+      <script type="text/javascript" src="../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule"></a><a id="molecule:molecule"></a>
+      <span class="permalink">
+      <a href="index.html#molecule" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
+<br><br>
+This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="action/index.html">action</a><td>
+    <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="molecule.action" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="action"></a><a id="action:action"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#action" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Various actions and operations on molecules and entities." href="../action/index.html"><span class="name">action</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Various actions and operations on molecules and entities.</p><div class="fullcomment"><div class="comment cmt"><p>Various actions and operations on molecules and entities.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ast"></a><a id="ast:ast"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#ast" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal Molecule ASTs." href="../ast/index.html"><span class="name">ast</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal Molecule ASTs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Molecule ASTs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.boilerplate" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boilerplate"></a><a id="boilerplate:boilerplate"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#boilerplate" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal interfaces for auto-generated DSL boilerplate code." href="../boilerplate/index.html"><span class="name">boilerplate</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal interfaces for auto-generated DSL boilerplate code.</p><div class="fullcomment"><div class="comment cmt"><p>Internal interfaces for auto-generated DSL boilerplate code.
+<br><br>
+Interfaces to the generated schema-defined DSL boilerplate code that the sbt-plugin generates when doing a <code>sbt-compile</code>.
+Molecule macros can then type-safely deduct the type structure of composed molecules.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.composition" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="composition"></a><a id="composition:composition"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#composition" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Methods to build transaction, composite and nested molecules." href="../composition/index.html"><span class="name">composition</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Methods to build transaction, composite and nested molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Methods to build transaction, composite and nested molecules.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.exceptions" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exceptions"></a><a id="exceptions:exceptions"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#exceptions" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Exceptions thrown by Molecule." href="../exceptions/index.html"><span class="name">exceptions</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Exceptions thrown by Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions thrown by Molecule.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.expression" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="expression"></a><a id="expression:expression"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#expression" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Attribute expressions and operations." href="../expression/index.html"><span class="name">expression</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Attribute expressions and operations.</p><div class="fullcomment"><div class="comment cmt"><p>Attribute expressions and operations.
+<br><br>
+Refine attribute matches with various <a href="../expression/AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">attribute expressions</a>:</p><pre>Person.age(<span class="num">42</span>)                           <span class="cmt">// equality</span>
+Person.name.contains(<span class="lit">"John"</span>)             <span class="cmt">// fulltext search</span>
+Person.age.!=(<span class="num">42</span>)                        <span class="cmt">// negation (or `not`)</span>
+Person.age.&lt;(<span class="num">42</span>)                         <span class="cmt">// comparison (< > <= >=)</span>
+Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span>
+Person.age()                             <span class="cmt">// apply empty value to retract value(s) in updates</span>
+Person.hobbies.assert(<span class="lit">"golf"</span>)               <span class="cmt">// add value(s) to card-many attributes</span>
+Person.hobbies.retract(<span class="lit">"golf"</span>)            <span class="cmt">// retract value(s) of card-many attributes</span>
+Person.hobbies.replace(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>) <span class="cmt">// replace value(s) of card-many attributes</span>
+Person.tags.k(<span class="lit">"en"</span>)                      <span class="cmt">// match values of map attributes by key</span>
+Person.age(Nil)                          <span class="cmt">// match non-asserted datoms (null)</span>
+Person.name(?)                           <span class="cmt">// initiate input molecules awaiting input at runtime</span>
+Person.name(unify)                       <span class="cmt">// Unify attributes in self-joins</span></pre><p>Apply <a href="../expression/AggregateKeywords.html" class="extype" name="molecule.expression.AggregateKeywords">aggregate keywords</a> to aggregate attribute value(s):</p><pre><span class="cmt">// Aggregates on any attribute type</span>
+Person.age(count).get.head         === <span class="num">3</span>   <span class="cmt">// count of asserted `age` attribute values</span>
+Person.age(countDistinct).get.head === <span class="num">3</span>   <span class="cmt">// count of asserted distinct `age` attribute values</span>
+Person.age(max).get.head           === <span class="num">38</span>  <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(min).get.head           === <span class="num">5</span>   <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(rand).get.head          === <span class="num">25</span>  <span class="cmt">// single random `age` value</span>
+Person.age(sample).get.head        === <span class="num">27</span>  <span class="cmt">// single sample `age` value (when single value, same as random)</span>
+
+<span class="cmt">// Aggregates on any attribute type, returning multiple values</span>
+Person.age(distinct).get.head  === Vector(<span class="num">5</span>, <span class="num">7</span>, <span class="num">38</span>)  <span class="cmt">// distinct `age` values</span>
+Person.age(max(<span class="num">2</span>)).get.head    === Vector(<span class="num">38</span>, <span class="num">7</span>)     <span class="cmt">// 2 maximum `age` values</span>
+Person.age(min(<span class="num">2</span>)).get.head    === Vector(<span class="num">5</span>, <span class="num">7</span>)      <span class="cmt">// 2 minimum `age` values</span>
+Person.age(rand(<span class="num">2</span>)).get.head   === Stream(<span class="num">5</span>, ?)      <span class="cmt">// 2 random `age` values (values can re-occur)</span>
+Person.age(sample(<span class="num">2</span>)).get.head === Vector(<span class="num">7</span>, <span class="num">38</span>)     <span class="cmt">// 2 sample `age` values</span>
+
+<span class="cmt">// Aggregates on number attributes</span>
+Person.age(sum).get.head      === <span class="num">50</span>               <span class="cmt">// sum of all `age` numbers</span>
+Person.age(avg).get.head      === <span class="num">16.66666667</span>      <span class="cmt">// average of all `age` numbers</span>
+Person.age(median).get.head   === <span class="num">7</span>                <span class="cmt">// median of all `age` numbers</span>
+Person.age(stddev).get.head   === <span class="num">15.107025591499</span>  <span class="cmt">// standard deviation of all `age` numbers</span>
+Person.age(variance).get.head === <span class="num">228.2222222222</span>   <span class="cmt">// variance of all `age` numbers</span></pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/attributes/expressions/" target="_blank">expressions</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/aggregates/" target="_blank">aggregates</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/parameterized/" target="_blank">input molecules</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression" target="_blank">expressions</a></p></span></dd></dl></div>
+    </li><li name="molecule.facade" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="facade"></a><a id="facade:facade"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#facade" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule facades to Datomic." href="../facade/index.html"><span class="name">facade</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Molecule facades to Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Molecule facades to Datomic.
+<br><br>
+Facades are not trying to cover all Datomic methods but rather
+only interfaces relevant to Molecule.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.factory" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="factory"></a><a id="factory:factory"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#factory" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Factory methods m to instantiate molecules from custom DSL molecule constructs." href="../factory/index.html"><span class="name">factory</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.generic" visbl="pub" class="indented2 current" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generic"></a><a id="generic:generic"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#generic" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generic</span>
+      </span>
+      
+      <p class="shortcomment cmt">Interfaces to meta information about datoms and Datomic database.</p><div class="fullcomment"><div class="comment cmt"><p>Interfaces to meta information about datoms and Datomic database.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li class="current-entities indented2">
+                        <a class="object" href="Datom$.html" title=""></a>
+                        <a class="trait" href="Datom.html" title="Meta attributes of Datoms."></a>
+                        <a href="Datom.html" title="Meta attributes of Datoms.">Datom</a>
+                      </li><li class="current-entities indented2">
+                        <a class="object" href="Db$.html" title="Datomic Db structure facade constructor"></a>
+                        <a class="trait" href="Db.html" title="Special API to query the Datomic Db structure."></a>
+                        <a href="Db.html" title="Special API to query the Datomic Db structure.">Db</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_0.html" title=""></a>
+                        <a href="Db_0.html" title="">Db_0</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_1.html" title=""></a>
+                        <a href="Db_1.html" title="">Db_1</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_2.html" title=""></a>
+                        <a href="Db_2.html" title="">Db_2</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_3.html" title=""></a>
+                        <a href="Db_3.html" title="">Db_3</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_4.html" title=""></a>
+                        <a href="Db_4.html" title="">Db_4</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_5.html" title=""></a>
+                        <a href="Db_5.html" title="">Db_5</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_6.html" title=""></a>
+                        <a href="Db_6.html" title="">Db_6</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_0.html" title="******* Input molecules awaiting 1 input ******************************"></a>
+                        <a href="Db_In_1_0.html" title="******* Input molecules awaiting 1 input ******************************">Db_In_1_0</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_1.html" title=""></a>
+                        <a href="Db_In_1_1.html" title="">Db_In_1_1</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_2.html" title=""></a>
+                        <a href="Db_In_1_2.html" title="">Db_In_1_2</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_3.html" title=""></a>
+                        <a href="Db_In_1_3.html" title="">Db_In_1_3</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_4.html" title=""></a>
+                        <a href="Db_In_1_4.html" title="">Db_In_1_4</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_5.html" title=""></a>
+                        <a href="Db_In_1_5.html" title="">Db_In_1_5</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_1_6.html" title=""></a>
+                        <a href="Db_In_1_6.html" title="">Db_In_1_6</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_0.html" title="******* Input molecules awaiting 2 inputs ******************************"></a>
+                        <a href="Db_In_2_0.html" title="******* Input molecules awaiting 2 inputs ******************************">Db_In_2_0</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_1.html" title=""></a>
+                        <a href="Db_In_2_1.html" title="">Db_In_2_1</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_2.html" title=""></a>
+                        <a href="Db_In_2_2.html" title="">Db_In_2_2</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_3.html" title=""></a>
+                        <a href="Db_In_2_3.html" title="">Db_In_2_3</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_4.html" title=""></a>
+                        <a href="Db_In_2_4.html" title="">Db_In_2_4</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_5.html" title=""></a>
+                        <a href="Db_In_2_5.html" title="">Db_In_2_5</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_2_6.html" title=""></a>
+                        <a href="Db_In_2_6.html" title="">Db_In_2_6</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_0.html" title="******* Input molecules awaiting 3 inputs ******************************"></a>
+                        <a href="Db_In_3_0.html" title="******* Input molecules awaiting 3 inputs ******************************">Db_In_3_0</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_1.html" title=""></a>
+                        <a href="Db_In_3_1.html" title="">Db_In_3_1</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_2.html" title=""></a>
+                        <a href="Db_In_3_2.html" title="">Db_In_3_2</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_3.html" title=""></a>
+                        <a href="Db_In_3_3.html" title="">Db_In_3_3</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_4.html" title=""></a>
+                        <a href="Db_In_3_4.html" title="">Db_In_3_4</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_5.html" title=""></a>
+                        <a href="Db_In_3_5.html" title="">Db_In_3_5</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="Db_In_3_6.html" title=""></a>
+                        <a href="Db_In_3_6.html" title="">Db_In_3_6</a>
+                      </li><li name="molecule.input" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="input"></a><a id="input:input"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#input" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Input molecules awaiting input." href="../input/index.html"><span class="name">input</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Input molecules awaiting input.</p><div class="fullcomment"><div class="comment cmt"><p>Input molecules awaiting input.
+<br><br>
+Input molecules are molecules that awaits one or more inputs at runtime. When input value is applied,
+the input molecule is resolved and a standard molecule is returned that we can then call actions on.
+<br><br>
+Input molecule queries are cached by Datomic. So there is a runtime performance gain in using input molecules. Furthermore,
+input molecules are a good fit for re-use for queries where only a few parameters change.
+<br><br>
+Input molecules can await 1, 2 or 3 inputs and are constructed by applying the <a href="../expression/AttrExpressions$$qmark.html" class="extype" name="molecule.expression.AttrExpressions.?">?</a> marker
+to attributes. If one marker is applied, we get a <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_1</a>, 2 inputs creates
+an <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_3</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
+<br><br>
+The three input molecule interfaces come in arity-versions corresponding to the number of non-?-marked attributes
+in the input molecule. Let's see a simple example:</p><pre><span class="cmt">// Sample data</span>
+Person.name.age insert <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">34</span>))
+
+<span class="cmt">// Input molecule created at compile time. Awaits a name of type String</span>
+<span class="kw">val</span> ageOfPersons: InputMolecule_1.InputMolecule_1_01[<span class="std">String</span>, <span class="std">Int</span>] = m(Person.name_(?).age)
+
+<span class="cmt">// Resolved molecule. "Ben" input is matched against name attribute</span>
+<span class="kw">val</span> ageOfPersonsNamedBen: Molecule.Molecule01[<span class="std">Int</span>] = ageOfPersons.apply(<span class="lit">"Ben"</span>)
+
+<span class="cmt">// Calling action on resolved molecule.</span>
+<span class="cmt">// (Only age is returned since name was marked as tacit with the underscore notation)</span>
+ageOfPersonsNamedBen.get === <span class="std">List</span>(<span class="num">42</span>)
+
+<span class="cmt">// Or we can re-use the input molecule straight away</span>
+ageOfPersons(<span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="num">34</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.macros" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="macros"></a><a id="macros:macros"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#macros" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal macros generating molecule code from custom DSL molecule constructs." href="../macros/index.html"><span class="name">macros</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal macros generating molecule code from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal macros generating molecule code from custom DSL molecule constructs.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ops" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ops"></a><a id="ops:ops"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#ops" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal operational helpers for transforming DSL to molecules." href="../ops/index.html"><span class="name">ops</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal operational helpers for transforming DSL to molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Internal operational helpers for transforming DSL to molecules.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.schema" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="schema"></a><a id="schema:schema"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#schema" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Schema definition DSL and API." href="../schema/index.html"><span class="name">schema</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Schema definition DSL and API.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL and API.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.transform" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transform"></a><a id="transform:transform"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#transform" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal transformers from DSL to Model/Query/Transaction/Datomic." href="../transform/index.html"><span class="name">transform</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal transformers from DSL to Model/Query/Transaction/Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal transformers from DSL to Model/Query/Transaction/Datomic.
+<br><br>
+Molecule transforms custom boilerplate DSL constructs to Datomic queries in 3 steps:
+<br><br>
+Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/dev/transformation/" target="_blank">http://www.scalamolecule.org/dev/transformation/</a></p></span></dd></dl></div>
+    </li><li name="molecule.util" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="util"></a><a id="util:util"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#util" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Internal Java database functions for Datomic." href="../util/index.html"><span class="name">util</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Internal Java database functions for Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Java database functions for Datomic.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="package value">
+      <div id="definition">
+        <div class="big-circle package">p</div>
+        <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a></p>
+        <h1>generic<span class="permalink">
+      <a href="../../molecule/generic/index.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generic</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Interfaces to meta information about datoms and Datomic database.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/generic/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 3971.00 158.00" height="158pt" width="3971pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 3967,-154 3967,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="molecule.generic.Db_In_3_6" xlink:href="Db_In_3_6.html#inheritance-diagram"><path d="M165.583,-88C165.583,-88 8.41667,-88 8.41667,-88 4.08333,-88 -0.25,-83.6667 -0.25,-79.3333 -0.25,-79.3333 -0.25,-70.6667 -0.25,-70.6667 -0.25,-66.3333 4.08333,-62 8.41667,-62 8.41667,-62 165.583,-62 165.583,-62 169.917,-62 174.25,-66.3333 174.25,-70.6667 174.25,-70.6667 174.25,-79.3333 174.25,-79.3333 174.25,-83.6667 169.917,-88 165.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="31.7988" text-anchor="start">Db_In_3_6[I1, I2, I3, A, B, C, D, E, F]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.generic.Db_In_3_5" xlink:href="Db_In_3_5.html#inheritance-diagram"><path d="M350.333,-88C350.333,-88 201.667,-88 201.667,-88 197.333,-88 193,-83.6667 193,-79.3333 193,-79.3333 193,-70.6667 193,-70.6667 193,-66.3333 197.333,-62 201.667,-62 201.667,-62 350.333,-62 350.333,-62 354.667,-62 359,-66.3333 359,-70.6667 359,-70.6667 359,-79.3333 359,-79.3333 359,-83.6667 354.667,-88 350.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="205" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="224.965" text-anchor="start">Db_In_3_5[I1, I2, I3, A, B, C, D, E]</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.generic.Db_In_3_4" xlink:href="Db_In_3_4.html#inheritance-diagram"><path d="M524.333,-88C524.333,-88 385.667,-88 385.667,-88 381.333,-88 377,-83.6667 377,-79.3333 377,-79.3333 377,-70.6667 377,-70.6667 377,-66.3333 381.333,-62 385.667,-62 385.667,-62 524.333,-62 524.333,-62 528.667,-62 533,-66.3333 533,-70.6667 533,-70.6667 533,-79.3333 533,-79.3333 533,-83.6667 528.667,-88 524.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="389" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="408.855" text-anchor="start">Db_In_3_4[I1, I2, I3, A, B, C, D]</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.generic.Db_In_3_3" xlink:href="Db_In_3_3.html#inheritance-diagram"><path d="M688.333,-88C688.333,-88 559.667,-88 559.667,-88 555.333,-88 551,-83.6667 551,-79.3333 551,-79.3333 551,-70.6667 551,-70.6667 551,-66.3333 555.333,-62 559.667,-62 559.667,-62 688.333,-62 688.333,-62 692.667,-62 697,-66.3333 697,-70.6667 697,-70.6667 697,-79.3333 697,-79.3333 697,-83.6667 692.667,-88 688.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="563" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="582.967" text-anchor="start">Db_In_3_3[I1, I2, I3, A, B, C]</text></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="molecule.generic.Db_In_3_2" xlink:href="Db_In_3_2.html#inheritance-diagram"><path d="M841.583,-88C841.583,-88 724.417,-88 724.417,-88 720.083,-88 715.75,-83.6667 715.75,-79.3333 715.75,-79.3333 715.75,-70.6667 715.75,-70.6667 715.75,-66.3333 720.083,-62 724.417,-62 724.417,-62 841.583,-62 841.583,-62 845.917,-62 850.25,-66.3333 850.25,-70.6667 850.25,-70.6667 850.25,-79.3333 850.25,-79.3333 850.25,-83.6667 845.917,-88 841.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="728" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="747.578" text-anchor="start">Db_In_3_2[I1, I2, I3, A, B]</text></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.generic.Db_In_3_1" xlink:href="Db_In_3_1.html#inheritance-diagram"><path d="M986.333,-88C986.333,-88 877.667,-88 877.667,-88 873.333,-88 869,-83.6667 869,-79.3333 869,-79.3333 869,-70.6667 869,-70.6667 869,-66.3333 873.333,-62 877.667,-62 877.667,-62 986.333,-62 986.333,-62 990.667,-62 995,-66.3333 995,-70.6667 995,-70.6667 995,-79.3333 995,-79.3333 995,-83.6667 990.667,-88 986.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="881" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="900.969" text-anchor="start">Db_In_3_1[I1, I2, I3, A]</text></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="molecule.generic.Db_In_3_0" xlink:href="Db_In_3_0.html#inheritance-diagram"><path d="M1120.33,-88C1120.33,-88 1021.67,-88 1021.67,-88 1017.33,-88 1013,-83.6667 1013,-79.3333 1013,-79.3333 1013,-70.6667 1013,-70.6667 1013,-66.3333 1017.33,-62 1021.67,-62 1021.67,-62 1120.33,-62 1120.33,-62 1124.67,-62 1129,-66.3333 1129,-70.6667 1129,-70.6667 1129,-79.3333 1129,-79.3333 1129,-83.6667 1124.67,-88 1120.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1025" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1044.64" text-anchor="start">Db_In_3_0[I1, I2, I3]</text></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.generic.Db_In_2_6" xlink:href="Db_In_2_6.html#inheritance-diagram"><path d="M1302.33,-88C1302.33,-88 1155.67,-88 1155.67,-88 1151.33,-88 1147,-83.6667 1147,-79.3333 1147,-79.3333 1147,-70.6667 1147,-70.6667 1147,-66.3333 1151.33,-62 1155.67,-62 1155.67,-62 1302.33,-62 1302.33,-62 1306.67,-62 1311,-66.3333 1311,-70.6667 1311,-70.6667 1311,-79.3333 1311,-79.3333 1311,-83.6667 1306.67,-88 1302.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1159" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1178.86" text-anchor="start">Db_In_2_6[I1, I2, A, B, C, D, E, F]</text></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="molecule.generic.Db_In_2_5" xlink:href="Db_In_2_5.html#inheritance-diagram"><path d="M1474.33,-88C1474.33,-88 1337.67,-88 1337.67,-88 1333.33,-88 1329,-83.6667 1329,-79.3333 1329,-79.3333 1329,-70.6667 1329,-70.6667 1329,-66.3333 1333.33,-62 1337.67,-62 1337.67,-62 1474.33,-62 1474.33,-62 1478.67,-62 1483,-66.3333 1483,-70.6667 1483,-70.6667 1483,-79.3333 1483,-79.3333 1483,-83.6667 1478.67,-88 1474.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1341" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1360.52" text-anchor="start">Db_In_2_5[I1, I2, A, B, C, D, E]</text></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="molecule.generic.Db_In_2_4" xlink:href="Db_In_2_4.html#inheritance-diagram"><path d="M1637.58,-88C1637.58,-88 1510.42,-88 1510.42,-88 1506.08,-88 1501.75,-83.6667 1501.75,-79.3333 1501.75,-79.3333 1501.75,-70.6667 1501.75,-70.6667 1501.75,-66.3333 1506.08,-62 1510.42,-62 1510.42,-62 1637.58,-62 1637.58,-62 1641.92,-62 1646.25,-66.3333 1646.25,-70.6667 1646.25,-70.6667 1646.25,-79.3333 1646.25,-79.3333 1646.25,-83.6667 1641.92,-88 1637.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1514" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1533.91" text-anchor="start">Db_In_2_4[I1, I2, A, B, C, D]</text></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="molecule.generic.Db_In_2_3" xlink:href="Db_In_2_3.html#inheritance-diagram"><path d="M1790.33,-88C1790.33,-88 1673.67,-88 1673.67,-88 1669.33,-88 1665,-83.6667 1665,-79.3333 1665,-79.3333 1665,-70.6667 1665,-70.6667 1665,-66.3333 1669.33,-62 1673.67,-62 1673.67,-62 1790.33,-62 1790.33,-62 1794.67,-62 1799,-66.3333 1799,-70.6667 1799,-70.6667 1799,-79.3333 1799,-79.3333 1799,-83.6667 1794.67,-88 1790.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1677" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1696.53" text-anchor="start">Db_In_2_3[I1, I2, A, B, C]</text></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="molecule.generic.Db_In_2_2" xlink:href="Db_In_2_2.html#inheritance-diagram"><path d="M1932.33,-88C1932.33,-88 1825.67,-88 1825.67,-88 1821.33,-88 1817,-83.6667 1817,-79.3333 1817,-79.3333 1817,-70.6667 1817,-70.6667 1817,-66.3333 1821.33,-62 1825.67,-62 1825.67,-62 1932.33,-62 1932.33,-62 1936.67,-62 1941,-66.3333 1941,-70.6667 1941,-70.6667 1941,-79.3333 1941,-79.3333 1941,-83.6667 1936.67,-88 1932.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1829" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1848.64" text-anchor="start">Db_In_2_2[I1, I2, A, B]</text></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="molecule.generic.Db_In_2_1" xlink:href="Db_In_2_1.html#inheritance-diagram"><path d="M2064.33,-88C2064.33,-88 1967.67,-88 1967.67,-88 1963.33,-88 1959,-83.6667 1959,-79.3333 1959,-79.3333 1959,-70.6667 1959,-70.6667 1959,-66.3333 1963.33,-62 1967.67,-62 1967.67,-62 2064.33,-62 2064.33,-62 2068.67,-62 2073,-66.3333 2073,-70.6667 2073,-70.6667 2073,-79.3333 2073,-79.3333 2073,-83.6667 2068.67,-88 2064.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="1971" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="1990.53" text-anchor="start">Db_In_2_1[I1, I2, A]</text></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="molecule.generic.Db_In_2_0" xlink:href="Db_In_2_0.html#inheritance-diagram"><path d="M2187.58,-88C2187.58,-88 2100.42,-88 2100.42,-88 2096.08,-88 2091.75,-83.6667 2091.75,-79.3333 2091.75,-79.3333 2091.75,-70.6667 2091.75,-70.6667 2091.75,-66.3333 2096.08,-62 2100.42,-62 2100.42,-62 2187.58,-62 2187.58,-62 2191.92,-62 2196.25,-66.3333 2196.25,-70.6667 2196.25,-70.6667 2196.25,-79.3333 2196.25,-79.3333 2196.25,-83.6667 2191.92,-88 2187.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2104" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2123.7" text-anchor="start">Db_In_2_0[I1, I2]</text></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="molecule.generic.Db_In_1_6" xlink:href="Db_In_1_6.html#inheritance-diagram"><path d="M2358.58,-88C2358.58,-88 2223.42,-88 2223.42,-88 2219.08,-88 2214.75,-83.6667 2214.75,-79.3333 2214.75,-79.3333 2214.75,-70.6667 2214.75,-70.6667 2214.75,-66.3333 2219.08,-62 2223.42,-62 2223.42,-62 2358.58,-62 2358.58,-62 2362.92,-62 2367.25,-66.3333 2367.25,-70.6667 2367.25,-70.6667 2367.25,-79.3333 2367.25,-79.3333 2367.25,-83.6667 2362.92,-88 2358.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2227" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2246.92" text-anchor="start">Db_In_1_6[I1, A, B, C, D, E, F]</text></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="molecule.generic.Db_In_1_5" xlink:href="Db_In_1_5.html#inheritance-diagram"><path d="M2519.58,-88C2519.58,-88 2394.42,-88 2394.42,-88 2390.08,-88 2385.75,-83.6667 2385.75,-79.3333 2385.75,-79.3333 2385.75,-70.6667 2385.75,-70.6667 2385.75,-66.3333 2390.08,-62 2394.42,-62 2394.42,-62 2519.58,-62 2519.58,-62 2523.92,-62 2528.25,-66.3333 2528.25,-70.6667 2528.25,-70.6667 2528.25,-79.3333 2528.25,-79.3333 2528.25,-83.6667 2523.92,-88 2519.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2398" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2417.58" text-anchor="start">Db_In_1_5[I1, A, B, C, D, E]</text></a></g></g><!-- node16 --><g class="node trait" id="graph1_16"><g id="a_trait|graph1_16"><a xlink:title="molecule.generic.Db_In_1_4" xlink:href="Db_In_1_4.html#inheritance-diagram"><path d="M2672.33,-88C2672.33,-88 2555.67,-88 2555.67,-88 2551.33,-88 2547,-83.6667 2547,-79.3333 2547,-79.3333 2547,-70.6667 2547,-70.6667 2547,-66.3333 2551.33,-62 2555.67,-62 2555.67,-62 2672.33,-62 2672.33,-62 2676.67,-62 2681,-66.3333 2681,-70.6667 2681,-70.6667 2681,-79.3333 2681,-79.3333 2681,-83.6667 2676.67,-88 2672.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2559" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2578.97" text-anchor="start">Db_In_1_4[I1, A, B, C, D]</text></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="molecule.generic.Db_In_1_3" xlink:href="Db_In_1_3.html#inheritance-diagram"><path d="M2813.58,-88C2813.58,-88 2708.42,-88 2708.42,-88 2704.08,-88 2699.75,-83.6667 2699.75,-79.3333 2699.75,-79.3333 2699.75,-70.6667 2699.75,-70.6667 2699.75,-66.3333 2704.08,-62 2708.42,-62 2708.42,-62 2813.58,-62 2813.58,-62 2817.92,-62 2822.25,-66.3333 2822.25,-70.6667 2822.25,-70.6667 2822.25,-79.3333 2822.25,-79.3333 2822.25,-83.6667 2817.92,-88 2813.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2712" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2731.58" text-anchor="start">Db_In_1_3[I1, A, B, C]</text></a></g></g><!-- node18 --><g class="node trait" id="graph1_18"><g id="a_trait|graph1_18"><a xlink:title="molecule.generic.Db_In_1_2" xlink:href="Db_In_1_2.html#inheritance-diagram"><path d="M2944.58,-88C2944.58,-88 2849.42,-88 2849.42,-88 2845.08,-88 2840.75,-83.6667 2840.75,-79.3333 2840.75,-79.3333 2840.75,-70.6667 2840.75,-70.6667 2840.75,-66.3333 2845.08,-62 2849.42,-62 2849.42,-62 2944.58,-62 2944.58,-62 2948.92,-62 2953.25,-66.3333 2953.25,-70.6667 2953.25,-70.6667 2953.25,-79.3333 2953.25,-79.3333 2953.25,-83.6667 2948.92,-88 2944.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2853" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2872.7" text-anchor="start">Db_In_1_2[I1, A, B]</text></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="molecule.generic.Db_In_1_1" xlink:href="Db_In_1_1.html#inheritance-diagram"><path d="M3065.58,-88C3065.58,-88 2980.42,-88 2980.42,-88 2976.08,-88 2971.75,-83.6667 2971.75,-79.3333 2971.75,-79.3333 2971.75,-70.6667 2971.75,-70.6667 2971.75,-66.3333 2976.08,-62 2980.42,-62 2980.42,-62 3065.58,-62 3065.58,-62 3069.92,-62 3074.25,-66.3333 3074.25,-70.6667 3074.25,-70.6667 3074.25,-79.3333 3074.25,-79.3333 3074.25,-83.6667 3069.92,-88 3065.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="2984" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3003.59" text-anchor="start">Db_In_1_1[I1, A]</text></a></g></g><!-- node20 --><g class="node trait" id="graph1_20"><g id="a_trait|graph1_20"><a xlink:title="molecule.generic.Db_In_1_0" xlink:href="Db_In_1_0.html#inheritance-diagram"><path d="M3178.33,-88C3178.33,-88 3101.67,-88 3101.67,-88 3097.33,-88 3093,-83.6667 3093,-79.3333 3093,-79.3333 3093,-70.6667 3093,-70.6667 3093,-66.3333 3097.33,-62 3101.67,-62 3101.67,-62 3178.33,-62 3178.33,-62 3182.67,-62 3187,-66.3333 3187,-70.6667 3187,-70.6667 3187,-79.3333 3187,-79.3333 3187,-83.6667 3182.67,-88 3178.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3105" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3124.76" text-anchor="start">Db_In_1_0[I1]</text></a></g></g><!-- node21 --><g class="node trait" id="graph1_21"><g id="a_trait|graph1_21"><a xlink:title="molecule.generic.Db_6" xlink:href="Db_6.html#inheritance-diagram"><path d="M3318.33,-88C3318.33,-88 3213.67,-88 3213.67,-88 3209.33,-88 3205,-83.6667 3205,-79.3333 3205,-79.3333 3205,-70.6667 3205,-70.6667 3205,-66.3333 3209.33,-62 3213.67,-62 3213.67,-62 3318.33,-62 3318.33,-62 3322.67,-62 3327,-66.3333 3327,-70.6667 3327,-70.6667 3327,-79.3333 3327,-79.3333 3327,-83.6667 3322.67,-88 3318.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3217" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3236.77" text-anchor="start">Db_6[A, B, C, D, E, F]</text></a></g></g><!-- node22 --><g class="node trait" id="graph1_22"><g id="a_trait|graph1_22"><a xlink:title="molecule.generic.Db_5" xlink:href="Db_5.html#inheritance-diagram"><path d="M3449.58,-88C3449.58,-88 3354.42,-88 3354.42,-88 3350.08,-88 3345.75,-83.6667 3345.75,-79.3333 3345.75,-79.3333 3345.75,-70.6667 3345.75,-70.6667 3345.75,-66.3333 3350.08,-62 3354.42,-62 3354.42,-62 3449.58,-62 3449.58,-62 3453.92,-62 3458.25,-66.3333 3458.25,-70.6667 3458.25,-70.6667 3458.25,-79.3333 3458.25,-79.3333 3458.25,-83.6667 3453.92,-88 3449.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3358" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3377.93" text-anchor="start">Db_5[A, B, C, D, E]</text></a></g></g><!-- node23 --><g class="node trait" id="graph1_23"><g id="a_trait|graph1_23"><a xlink:title="molecule.generic.Db_4" xlink:href="Db_4.html#inheritance-diagram"><path d="M3570.58,-88C3570.58,-88 3485.42,-88 3485.42,-88 3481.08,-88 3476.75,-83.6667 3476.75,-79.3333 3476.75,-79.3333 3476.75,-70.6667 3476.75,-70.6667 3476.75,-66.3333 3481.08,-62 3485.42,-62 3485.42,-62 3570.58,-62 3570.58,-62 3574.92,-62 3579.25,-66.3333 3579.25,-70.6667 3579.25,-70.6667 3579.25,-79.3333 3579.25,-79.3333 3579.25,-83.6667 3574.92,-88 3570.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3489" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3508.82" text-anchor="start">Db_4[A, B, C, D]</text></a></g></g><!-- node24 --><g class="node trait" id="graph1_24"><g id="a_trait|graph1_24"><a xlink:title="molecule.generic.Db_3" xlink:href="Db_3.html#inheritance-diagram"><path d="M3681.58,-88C3681.58,-88 3606.42,-88 3606.42,-88 3602.08,-88 3597.75,-83.6667 3597.75,-79.3333 3597.75,-79.3333 3597.75,-70.6667 3597.75,-70.6667 3597.75,-66.3333 3602.08,-62 3606.42,-62 3606.42,-62 3681.58,-62 3681.58,-62 3685.92,-62 3690.25,-66.3333 3690.25,-70.6667 3690.25,-70.6667 3690.25,-79.3333 3690.25,-79.3333 3690.25,-83.6667 3685.92,-88 3681.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3610" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3629.93" text-anchor="start">Db_3[A, B, C]</text></a></g></g><!-- node25 --><g class="node trait" id="graph1_25"><g id="a_trait|graph1_25"><a xlink:title="molecule.generic.Db_2" xlink:href="Db_2.html#inheritance-diagram"><path d="M3782.33,-88C3782.33,-88 3717.67,-88 3717.67,-88 3713.33,-88 3709,-83.6667 3709,-79.3333 3709,-79.3333 3709,-70.6667 3709,-70.6667 3709,-66.3333 3713.33,-62 3717.67,-62 3717.67,-62 3782.33,-62 3782.33,-62 3786.67,-62 3791,-66.3333 3791,-70.6667 3791,-70.6667 3791,-79.3333 3791,-79.3333 3791,-83.6667 3786.67,-88 3782.33,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3721" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3740.54" text-anchor="start">Db_2[A, B]</text></a></g></g><!-- node26 --><g class="node trait" id="graph1_26"><g id="a_trait|graph1_26"><a xlink:title="molecule.generic.Db_1" xlink:href="Db_1.html#inheritance-diagram"><path d="M3873.58,-88C3873.58,-88 3818.42,-88 3818.42,-88 3814.08,-88 3809.75,-83.6667 3809.75,-79.3333 3809.75,-79.3333 3809.75,-70.6667 3809.75,-70.6667 3809.75,-66.3333 3814.08,-62 3818.42,-62 3818.42,-62 3873.58,-62 3873.58,-62 3877.92,-62 3882.25,-66.3333 3882.25,-70.6667 3882.25,-70.6667 3882.25,-79.3333 3882.25,-79.3333 3882.25,-83.6667 3877.92,-88 3873.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3822" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3841.94" text-anchor="start">Db_1[A]</text></a></g></g><!-- node27 --><g class="node trait" id="graph1_27"><g id="a_trait|graph1_27"><a xlink:title="molecule.generic.Db_0" xlink:href="Db_0.html#inheritance-diagram"><path d="M3954.58,-88C3954.58,-88 3909.42,-88 3909.42,-88 3905.08,-88 3900.75,-83.6667 3900.75,-79.3333 3900.75,-79.3333 3900.75,-70.6667 3900.75,-70.6667 3900.75,-66.3333 3905.08,-62 3909.42,-62 3909.42,-62 3954.58,-62 3954.58,-62 3958.92,-62 3963.25,-66.3333 3963.25,-70.6667 3963.25,-70.6667 3963.25,-79.3333 3963.25,-79.3333 3963.25,-83.6667 3958.92,-88 3954.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="3913" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="3932.83" text-anchor="start">Db_0</text></a></g></g><!-- node29 --><g class="node object" id="graph1_29"><g id="a_object|graph1_29"><a xlink:title="molecule.generic.Db" xlink:href="Db$.html#inheritance-diagram"><path d="M3950.33,-26C3950.33,-26 3913.67,-26 3913.67,-26 3909.33,-26 3905,-21.6667 3905,-17.3333 3905,-17.3333 3905,-8.66667 3905,-8.66667 3905,-4.33333 3909.33,-0 3913.67,-0 3913.67,-0 3950.33,-0 3950.33,-0 3954.67,-0 3959,-4.33333 3959,-8.66667 3959,-8.66667 3959,-17.3333 3959,-17.3333 3959,-21.6667 3954.67,-26 3950.33,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="3917" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="3936.78" text-anchor="start">Db</text></a></g></g><!-- node27&#45;&gt;node29 --><g class="edge inheritance" id="graph1_27_29"><g id="a_inheritance|graph1_27_29"><a xlink:title="Db is a subtype of Db_0"><path d="M3932,-54.7534C3932,-45.3549 3932,-34.3336 3932,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="3929.55,-54.8581 3932,-61.8581 3934.45,-54.8581 3929.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28 --><g class="node trait" id="graph1_28"><g id="a_trait|graph1_28"><a xlink:title="molecule.generic.Db" xlink:href="Db.html#inheritance-diagram"><path d="M2235.33,-150C2235.33,-150 2198.67,-150 2198.67,-150 2194.33,-150 2190,-145.667 2190,-141.333 2190,-141.333 2190,-132.667 2190,-132.667 2190,-128.333 2194.33,-124 2198.67,-124 2198.67,-124 2235.33,-124 2235.33,-124 2239.67,-124 2244,-128.333 2244,-132.667 2244,-132.667 2244,-141.333 2244,-141.333 2244,-145.667 2239.67,-150 2235.33,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="2202" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="2221.78" text-anchor="start">Db</text></a></g></g><!-- node28&#45;&gt;node0 --><g class="edge inheritance" id="graph1_28_0"><g id="a_inheritance|graph1_28_0"><a xlink:title="Db_In_3_6[I1, I2, I3, A, B, C, D, E, F] is a subtype of Db"><path d="M2182.81,-135.659C1950.06,-133.27 595.451,-118.233 184,-88 180.869,-87.77 177.684,-87.5105 174.47,-87.2271" stroke="#d4d4d4" fill="none"></path><polygon points="2182.97,-138.111 2189.99,-135.733 2183.02,-133.211 2182.97,-138.111" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node1 --><g class="edge inheritance" id="graph1_28_1"><g id="a_inheritance|graph1_28_1"><a xlink:title="Db_In_3_5[I1, I2, I3, A, B, C, D, E] is a subtype of Db"><path d="M2182.83,-135.598C1962.58,-132.935 740.339,-117.037 368,-88 365.109,-87.7746 362.17,-87.5215 359.204,-87.2458" stroke="#d4d4d4" fill="none"></path><polygon points="2182.92,-138.049 2189.95,-135.684 2182.98,-133.15 2182.92,-138.049" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node2 --><g class="edge inheritance" id="graph1_28_2"><g id="a_inheritance|graph1_28_2"><a xlink:title="Db_In_3_4[I1, I2, I3, A, B, C, D] is a subtype of Db"><path d="M2182.81,-135.526C1974.84,-132.569 877.41,-115.855 542,-88 539.113,-87.7602 536.175,-87.49 533.21,-87.195" stroke="#d4d4d4" fill="none"></path><polygon points="2182.8,-137.976 2189.83,-135.626 2182.87,-133.077 2182.8,-137.976" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node3 --><g class="edge inheritance" id="graph1_28_3"><g id="a_inheritance|graph1_28_3"><a xlink:title="Db_In_3_3[I1, I2, I3, A, B, C] is a subtype of Db"><path d="M2182.19,-136.329C2016.94,-137.591 1295.33,-139.718 707,-88 703.809,-87.7195 700.554,-87.3986 697.269,-87.0463" stroke="#d4d4d4" fill="none"></path><polygon points="2182.65,-138.776 2189.63,-136.27 2182.61,-133.876 2182.65,-138.776" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node4 --><g class="edge inheritance" id="graph1_28_4"><g id="a_inheritance|graph1_28_4"><a xlink:title="Db_In_3_2[I1, I2, I3, A, B] is a subtype of Db"><path d="M2182.25,-136.292C2027.36,-137.273 1384.45,-137.962 860,-88 856.902,-87.7049 853.74,-87.3659 850.549,-86.9934" stroke="#d4d4d4" fill="none"></path><polygon points="2182.69,-138.739 2189.68,-136.242 2182.66,-133.839 2182.69,-138.739" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node5 --><g class="edge inheritance" id="graph1_28_5"><g id="a_inheritance|graph1_28_5"><a xlink:title="Db_In_3_1[I1, I2, I3, A] is a subtype of Db"><path d="M2182.22,-136.218C2037.44,-136.79 1468.46,-135.704 1004,-88 1001.1,-87.7022 998.141,-87.3611 995.155,-86.9868" stroke="#d4d4d4" fill="none"></path><polygon points="2182.59,-138.667 2189.58,-136.186 2182.57,-133.767 2182.59,-138.667" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node6 --><g class="edge inheritance" id="graph1_28_6"><g id="a_inheritance|graph1_28_6"><a xlink:title="Db_In_3_0[I1, I2, I3] is a subtype of Db"><path d="M2182.58,-136.127C2048.35,-136.273 1547.25,-133.548 1138,-88 1135.06,-87.6732 1132.06,-87.2958 1129.04,-86.8808" stroke="#d4d4d4" fill="none"></path><polygon points="2182.8,-138.577 2189.8,-136.116 2182.79,-133.677 2182.8,-138.577" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node7 --><g class="edge inheritance" id="graph1_28_7"><g id="a_inheritance|graph1_28_7"><a xlink:title="Db_In_2_6[I1, I2, A, B, C, D, E, F] is a subtype of Db"><path d="M2182.68,-135.123C2063.32,-131.87 1655.39,-119.04 1320,-88 1317.14,-87.7357 1314.24,-87.4492 1311.31,-87.145" stroke="#d4d4d4" fill="none"></path><polygon points="2182.73,-137.575 2189.79,-135.315 2182.86,-132.677 2182.73,-137.575" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node8 --><g class="edge inheritance" id="graph1_28_8"><g id="a_inheritance|graph1_28_8"><a xlink:title="Db_In_2_5[I1, I2, A, B, C, D, E] is a subtype of Db"><path d="M2182.89,-134.599C2079.1,-130.15 1757.96,-115.022 1493,-88 1489.81,-87.6751 1486.57,-87.3228 1483.29,-86.9497" stroke="#d4d4d4" fill="none"></path><polygon points="2182.89,-137.051 2189.99,-134.901 2183.1,-132.155 2182.89,-137.051" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node9 --><g class="edge inheritance" id="graph1_28_9"><g id="a_inheritance|graph1_28_9"><a xlink:title="Db_In_2_4[I1, I2, A, B, C, D] is a subtype of Db"><path d="M2182.76,-133.789C2095.02,-127.966 1855.05,-111.059 1656,-88 1652.86,-87.6357 1649.65,-87.2455 1646.41,-86.8364" stroke="#d4d4d4" fill="none"></path><polygon points="2182.65,-136.236 2189.79,-134.253 2182.97,-131.347 2182.65,-136.236" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node10 --><g class="edge inheritance" id="graph1_28_10"><g id="a_inheritance|graph1_28_10"><a xlink:title="Db_In_2_3[I1, I2, A, B, C] is a subtype of Db"><path d="M2182.34,-132.403C2111.77,-124.975 1946.38,-107.038 1808,-88 1805.09,-87.5995 1802.12,-87.1792 1799.12,-86.7455" stroke="#d4d4d4" fill="none"></path><polygon points="2182.45,-134.878 2189.67,-133.172 2182.96,-130.005 2182.45,-134.878" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node11 --><g class="edge inheritance" id="graph1_28_11"><g id="a_inheritance|graph1_28_11"><a xlink:title="Db_In_2_2[I1, I2, A, B] is a subtype of Db"><path d="M2182.98,-129.961C2126.41,-119.919 2012.21,-99.6473 1941.02,-87.01" stroke="#d4d4d4" fill="none"></path><polygon points="2182.59,-132.38 2189.91,-131.191 2183.45,-127.556 2182.59,-132.38" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node12 --><g class="edge inheritance" id="graph1_28_12"><g id="a_inheritance|graph1_28_12"><a xlink:title="Db_In_2_1[I1, I2, A] is a subtype of Db"><path d="M2183.18,-125.904C2148.26,-115.48 2093.77,-99.214 2056.55,-88.1058" stroke="#d4d4d4" fill="none"></path><polygon points="2182.48,-128.253 2189.89,-127.908 2183.89,-123.558 2182.48,-128.253" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node13 --><g class="edge inheritance" id="graph1_28_13"><g id="a_inheritance|graph1_28_13"><a xlink:title="Db_In_2_0[I1, I2] is a subtype of Db"><path d="M2196.59,-119.224C2184.57,-109.341 2169.63,-97.0652 2158.75,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2195.26,-121.306 2202.23,-123.858 2198.38,-117.521 2195.26,-121.306" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node14 --><g class="edge inheritance" id="graph1_28_14"><g id="a_inheritance|graph1_28_14"><a xlink:title="Db_In_1_6[I1, A, B, C, D, E, F] is a subtype of Db"><path d="M2237.69,-119.224C2249.88,-109.341 2265.02,-97.0652 2276.05,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2235.87,-117.546 2231.98,-123.858 2238.96,-121.353 2235.87,-117.546" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node15 --><g class="edge inheritance" id="graph1_28_15"><g id="a_inheritance|graph1_28_15"><a xlink:title="Db_In_1_5[I1, A, B, C, D, E] is a subtype of Db"><path d="M2250.93,-127.518C2292.2,-117.2 2362.13,-99.7163 2408.94,-88.0162" stroke="#d4d4d4" fill="none"></path><polygon points="2250.26,-125.159 2244.06,-129.234 2251.45,-129.913 2250.26,-125.159" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node16 --><g class="edge inheritance" id="graph1_28_16"><g id="a_inheritance|graph1_28_16"><a xlink:title="Db_In_1_4[I1, A, B, C, D] is a subtype of Db"><path d="M2251.58,-130.88C2310.27,-122.173 2433.15,-103.88 2537,-88 2540.21,-87.5092 2543.49,-87.0049 2546.81,-86.494" stroke="#d4d4d4" fill="none"></path><polygon points="2250.97,-128.493 2244.4,-131.943 2251.69,-133.34 2250.97,-128.493" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node17 --><g class="edge inheritance" id="graph1_28_17"><g id="a_inheritance|graph1_28_17"><a xlink:title="Db_In_1_3[I1, A, B, C] is a subtype of Db"><path d="M2251.18,-133.314C2329.16,-127.015 2526.17,-110.133 2690,-88 2693.1,-87.5816 2696.27,-87.1305 2699.46,-86.657" stroke="#d4d4d4" fill="none"></path><polygon points="2250.79,-130.888 2244.01,-133.891 2251.18,-135.772 2250.79,-130.888" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node18 --><g class="edge inheritance" id="graph1_28_18"><g id="a_inheritance|graph1_28_18"><a xlink:title="Db_In_1_2[I1, A, B] is a subtype of Db"><path d="M2251.23,-134.549C2344.54,-130.329 2611.1,-116.511 2831,-88 2834.12,-87.5957 2837.31,-87.1432 2840.53,-86.6571" stroke="#d4d4d4" fill="none"></path><polygon points="2250.92,-132.11 2244.03,-134.871 2251.14,-137.005 2250.92,-132.11" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node19 --><g class="edge inheritance" id="graph1_28_19"><g id="a_inheritance|graph1_28_19"><a xlink:title="Db_In_1_1[I1, A] is a subtype of Db"><path d="M2251.44,-135.37C2357.69,-133.088 2689.63,-123.412 2962,-88 2965.1,-87.5964 2968.29,-87.1303 2971.49,-86.621" stroke="#d4d4d4" fill="none"></path><polygon points="2251.13,-132.926 2244.18,-135.522 2251.23,-137.825 2251.13,-132.926" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node20 --><g class="edge inheritance" id="graph1_28_20"><g id="a_inheritance|graph1_28_20"><a xlink:title="Db_In_1_0[I1] is a subtype of Db"><path d="M2251.38,-135.968C2368.37,-135.459 2761.64,-130.482 3083,-88 3086.21,-87.5759 3089.5,-87.0703 3092.82,-86.5103" stroke="#d4d4d4" fill="none"></path><polygon points="2251.07,-133.519 2244.08,-135.995 2251.09,-138.419 2251.07,-133.519" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node21 --><g class="edge inheritance" id="graph1_28_21"><g id="a_inheritance|graph1_28_21"><a xlink:title="Db_6[A, B, C, D, E, F] is a subtype of Db"><path d="M2251.52,-135.813C2377.99,-134.811 2827.82,-128.435 3196,-88 3198.94,-87.677 3201.95,-87.309 3204.98,-86.9074" stroke="#d4d4d4" fill="none"></path><polygon points="2251.33,-133.365 2244.35,-135.867 2251.37,-138.265 2251.33,-133.365" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node22 --><g class="edge inheritance" id="graph1_28_22"><g id="a_inheritance|graph1_28_22"><a xlink:title="Db_5[A, B, C, D, E] is a subtype of Db"><path d="M2251.77,-136.239C2389.6,-136.821 2910.69,-135.56 3336,-88 3339.12,-87.6506 3342.32,-87.2413 3345.55,-86.7888" stroke="#d4d4d4" fill="none"></path><polygon points="2251.38,-133.787 2244.37,-136.204 2251.36,-138.687 2251.38,-133.787" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node23 --><g class="edge inheritance" id="graph1_28_23"><g id="a_inheritance|graph1_28_23"><a xlink:title="Db_4[A, B, C, D] is a subtype of Db"><path d="M2251.23,-135.408C2426.18,-132.271 3221.79,-116.65 3467,-88 3470.11,-87.6368 3473.3,-87.2018 3476.5,-86.7161" stroke="#d4d4d4" fill="none"></path><polygon points="2251.03,-132.961 2244.08,-135.535 2251.12,-137.86 2251.03,-132.961" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node24 --><g class="edge inheritance" id="graph1_28_24"><g id="a_inheritance|graph1_28_24"><a xlink:title="Db_3[A, B, C] is a subtype of Db"><path d="M2251.24,-135.619C2436.21,-133.437 3317.72,-121.425 3588,-88 3591.16,-87.6095 3594.4,-87.1291 3597.66,-86.5874" stroke="#d4d4d4" fill="none"></path><polygon points="2251.17,-133.17 2244.2,-135.701 2251.23,-138.069 2251.17,-133.17" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node25 --><g class="edge inheritance" id="graph1_28_25"><g id="a_inheritance|graph1_28_25"><a xlink:title="Db_2[A, B] is a subtype of Db"><path d="M2251.19,-135.815C2444.85,-134.63 3405.79,-126.851 3699,-88 3702.25,-87.5699 3705.59,-87.0234 3708.93,-86.4019" stroke="#d4d4d4" fill="none"></path><polygon points="2251.09,-133.366 2244.1,-135.858 2251.12,-138.266 2251.09,-133.366" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node26 --><g class="edge inheritance" id="graph1_28_26"><g id="a_inheritance|graph1_28_26"><a xlink:title="Db_1[A] is a subtype of Db"><path d="M2251.26,-136.008C2452.83,-135.898 3486.14,-133.11 3800,-88 3803.19,-87.5421 3806.47,-86.9452 3809.75,-86.2623" stroke="#d4d4d4" fill="none"></path><polygon points="2251.17,-133.558 2244.17,-136.011 2251.17,-138.458 2251.17,-133.558" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28&#45;&gt;node27 --><g class="edge inheritance" id="graph1_28_27"><g id="a_inheritance|graph1_28_27"><a xlink:title="Db_0 is a subtype of Db"><path d="M2251.25,-136.21C2459.58,-137.308 3558.76,-140.492 3891,-88 3894.08,-87.5139 3897.25,-86.8643 3900.4,-86.1179" stroke="#d4d4d4" fill="none"></path><polygon points="2251.23,-133.76 2244.22,-136.172 2251.2,-138.66 2251.23,-133.76" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="molecule.generic"><span>generic</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="molecule.generic.Datom" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DatomextendsAnyRef"></a><a id="Datom:Datom"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#DatomextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Meta attributes of Datoms." href="Datom.html"><span class="name">Datom</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Meta attributes of Datoms.</p><div class="fullcomment"><div class="comment cmt"><p>Meta attributes of Datoms.</p><pre><span class="cmt">// Get entity id with `e`</span>
+Person.e.name.get.head === (<span class="num">17592186045894</span>L, <span class="lit">"Ben"</span>)
+
+<span class="cmt">// Attributes of all Person entities having `age` asserted</span>
+Person.a.age_.get.sorted === <span class="std">List</span>(
+  <span class="lit">":person/name"</span>,
+  <span class="lit">":person/age"</span>,
+  <span class="lit">":tag/score"</span>,
+  <span class="lit">":tag/flags"</span>,
+  <span class="lit">":cat/name"</span>
+)
+
+<span class="cmt">// Namespace names of all Person entities having `age` asserted</span>
+Person.ns.age_.get.sorted === <span class="std">List</span>(
+  <span class="lit">"person"</span>,
+  <span class="lit">"tag"</span>,
+  <span class="lit">"cat"</span>
+)
+
+<span class="cmt">// Transaction time t, operation and value</span>
+Person.t.op.v.getHistory === <span class="std">List</span>(
+  (<span class="num">1031</span>, <span class="kw">true</span>, <span class="lit">"Benny"</span>),
+  (<span class="num">1033</span>, <span class="kw">false</span>, <span class="lit">"Benny"</span>),
+  (<span class="num">1033</span>, <span class="kw">true</span>, <span class="lit">"Ben"</span>)
+)
+
+<span class="cmt">// Transaction time as date</span>
+<span class="kw">val</span> date = java.util.Date(<span class="lit">"2018-08-04"</span>)
+Person.t.op.v.txInstant_(date).getHistory === <span class="std">List</span>(
+  (<span class="num">1033</span>, <span class="kw">true</span>, <span class="lit">"Ben"</span>)
+)
+
+<span class="cmt">// Transaction entity id</span>
+<span class="kw">val</span> txEntity = <span class="num">17592186045908</span>L
+Person.t.op.v.tx_(txEntity).getHistory === <span class="std">List</span>(
+  (<span class="num">1033</span>, <span class="kw">true</span>, <span class="lit">"Ben"</span>)
+)</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/history/" target="_blank">Manual</a>
+    | <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetHistory.scala#L1" target="_blank">Tests</a></p></span></dd></dl></div>
+    </li><li name="molecule.generic.Db" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DbextendsAnyRef"></a><a id="Db:Db"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#DbextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Special API to query the Datomic Db structure." href="Db.html"><span class="name">Db</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Special API to query the Datomic Db structure.</p><div class="fullcomment"><div class="comment cmt"><p>Special API to query the Datomic Db structure.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic/DbSchema.scala&quot;L1" target="_blank">Manual</a></p></span></dd></dl></div>
+    </li><li name="molecule.generic.Db_0" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_0extendsDbwithout.Out_0[molecule.generic.Db_0,molecule.generic.Db_1,molecule.generic.Db_In_1_0,molecule.generic.Db_In_1_1]"></a><a id="Db_0:Db_0"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_0extendsDbwithout.Out_0[molecule.generic.Db_0,molecule.generic.Db_1,molecule.generic.Db_In_1_0,molecule.generic.Db_In_1_1]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_0.html"><span class="name">Db_0</span></a><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_0.html" class="extype" name="molecule.boilerplate.out.Out_0">Out_0</a>[<a href="Db_0.html" class="extype" name="molecule.generic.Db_0">Db_0</a>, <a href="Db_1.html" class="extype" name="molecule.generic.Db_1">Db_1</a>, <a href="Db_In_1_0.html" class="extype" name="molecule.generic.Db_In_1_0">Db_In_1_0</a>, <a href="Db_In_1_1.html" class="extype" name="molecule.generic.Db_In_1_1">Db_In_1_1</a>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_1" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_1[A]extendsDbwithout.Out_1[molecule.generic.Db_1,molecule.generic.Db_2,molecule.generic.Db_In_1_1,molecule.generic.Db_In_1_2,A]"></a><a id="Db_1[A]:Db_1[A]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_1[A]extendsDbwithout.Out_1[molecule.generic.Db_1,molecule.generic.Db_2,molecule.generic.Db_In_1_1,molecule.generic.Db_In_1_2,A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_1.html"><span class="name">Db_1</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_1.html" class="extype" name="molecule.boilerplate.out.Out_1">Out_1</a>[<a href="Db_1.html" class="extype" name="molecule.generic.Db_1">Db_1</a>, <a href="Db_2.html" class="extype" name="molecule.generic.Db_2">Db_2</a>, <a href="Db_In_1_1.html" class="extype" name="molecule.generic.Db_In_1_1">Db_In_1_1</a>, <a href="Db_In_1_2.html" class="extype" name="molecule.generic.Db_In_1_2">Db_In_1_2</a>, <span class="extype" name="molecule.generic.Db_1.A">A</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_2" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_2[A,B]extendsDbwithout.Out_2[molecule.generic.Db_2,molecule.generic.Db_3,molecule.generic.Db_In_1_2,molecule.generic.Db_In_1_3,A,B]"></a><a id="Db_2[A,B]:Db_2[A,B]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_2[A,B]extendsDbwithout.Out_2[molecule.generic.Db_2,molecule.generic.Db_3,molecule.generic.Db_In_1_2,molecule.generic.Db_In_1_3,A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_2.html"><span class="name">Db_2</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_2.html" class="extype" name="molecule.boilerplate.out.Out_2">Out_2</a>[<a href="Db_2.html" class="extype" name="molecule.generic.Db_2">Db_2</a>, <a href="Db_3.html" class="extype" name="molecule.generic.Db_3">Db_3</a>, <a href="Db_In_1_2.html" class="extype" name="molecule.generic.Db_In_1_2">Db_In_1_2</a>, <a href="Db_In_1_3.html" class="extype" name="molecule.generic.Db_In_1_3">Db_In_1_3</a>, <span class="extype" name="molecule.generic.Db_2.A">A</span>, <span class="extype" name="molecule.generic.Db_2.B">B</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_3" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_3[A,B,C]extendsDbwithout.Out_3[molecule.generic.Db_3,molecule.generic.Db_4,molecule.generic.Db_In_1_3,molecule.generic.Db_In_1_4,A,B,C]"></a><a id="Db_3[A,B,C]:Db_3[A,B,C]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_3[A,B,C]extendsDbwithout.Out_3[molecule.generic.Db_3,molecule.generic.Db_4,molecule.generic.Db_In_1_3,molecule.generic.Db_In_1_4,A,B,C]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_3.html"><span class="name">Db_3</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_3.html" class="extype" name="molecule.boilerplate.out.Out_3">Out_3</a>[<a href="Db_3.html" class="extype" name="molecule.generic.Db_3">Db_3</a>, <a href="Db_4.html" class="extype" name="molecule.generic.Db_4">Db_4</a>, <a href="Db_In_1_3.html" class="extype" name="molecule.generic.Db_In_1_3">Db_In_1_3</a>, <a href="Db_In_1_4.html" class="extype" name="molecule.generic.Db_In_1_4">Db_In_1_4</a>, <span class="extype" name="molecule.generic.Db_3.A">A</span>, <span class="extype" name="molecule.generic.Db_3.B">B</span>, <span class="extype" name="molecule.generic.Db_3.C">C</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_4" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_4[A,B,C,D]extendsDbwithout.Out_4[molecule.generic.Db_4,molecule.generic.Db_5,molecule.generic.Db_In_1_4,molecule.generic.Db_In_1_5,A,B,C,D]"></a><a id="Db_4[A,B,C,D]:Db_4[A,B,C,D]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_4[A,B,C,D]extendsDbwithout.Out_4[molecule.generic.Db_4,molecule.generic.Db_5,molecule.generic.Db_In_1_4,molecule.generic.Db_In_1_5,A,B,C,D]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_4.html"><span class="name">Db_4</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_4.html" class="extype" name="molecule.boilerplate.out.Out_4">Out_4</a>[<a href="Db_4.html" class="extype" name="molecule.generic.Db_4">Db_4</a>, <a href="Db_5.html" class="extype" name="molecule.generic.Db_5">Db_5</a>, <a href="Db_In_1_4.html" class="extype" name="molecule.generic.Db_In_1_4">Db_In_1_4</a>, <a href="Db_In_1_5.html" class="extype" name="molecule.generic.Db_In_1_5">Db_In_1_5</a>, <span class="extype" name="molecule.generic.Db_4.A">A</span>, <span class="extype" name="molecule.generic.Db_4.B">B</span>, <span class="extype" name="molecule.generic.Db_4.C">C</span>, <span class="extype" name="molecule.generic.Db_4.D">D</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_5" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_5[A,B,C,D,E]extendsDbwithout.Out_5[molecule.generic.Db_5,molecule.generic.Db_6,molecule.generic.Db_In_1_5,molecule.generic.Db_In_1_6,A,B,C,D,E]"></a><a id="Db_5[A,B,C,D,E]:Db_5[A,B,C,D,E]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_5[A,B,C,D,E]extendsDbwithout.Out_5[molecule.generic.Db_5,molecule.generic.Db_6,molecule.generic.Db_In_1_5,molecule.generic.Db_In_1_6,A,B,C,D,E]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_5.html"><span class="name">Db_5</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_5.html" class="extype" name="molecule.boilerplate.out.Out_5">Out_5</a>[<a href="Db_5.html" class="extype" name="molecule.generic.Db_5">Db_5</a>, <a href="Db_6.html" class="extype" name="molecule.generic.Db_6">Db_6</a>, <a href="Db_In_1_5.html" class="extype" name="molecule.generic.Db_In_1_5">Db_In_1_5</a>, <a href="Db_In_1_6.html" class="extype" name="molecule.generic.Db_In_1_6">Db_In_1_6</a>, <span class="extype" name="molecule.generic.Db_5.A">A</span>, <span class="extype" name="molecule.generic.Db_5.B">B</span>, <span class="extype" name="molecule.generic.Db_5.C">C</span>, <span class="extype" name="molecule.generic.Db_5.D">D</span>, <span class="extype" name="molecule.generic.Db_5.E">E</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_6" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_6[A,B,C,D,E,F]extendsDbwithout.Out_6[molecule.generic.Db_6,molecule.boilerplate.dummyTypes.P7,molecule.generic.Db_In_1_6,molecule.boilerplate.dummyTypes.P8,A,B,C,D,E,F]"></a><a id="Db_6[A,B,C,D,E,F]:Db_6[A,B,C,D,E,F]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_6[A,B,C,D,E,F]extendsDbwithout.Out_6[molecule.generic.Db_6,molecule.boilerplate.dummyTypes.P7,molecule.generic.Db_In_1_6,molecule.boilerplate.dummyTypes.P8,A,B,C,D,E,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_6.html"><span class="name">Db_6</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/out$$Out_6.html" class="extype" name="molecule.boilerplate.out.Out_6">Out_6</a>[<a href="Db_6.html" class="extype" name="molecule.generic.Db_6">Db_6</a>, <a href="../boilerplate/dummyTypes$$P7.html" class="extype" name="molecule.boilerplate.dummyTypes.P7">P7</a>, <a href="Db_In_1_6.html" class="extype" name="molecule.generic.Db_In_1_6">Db_In_1_6</a>, <a href="../boilerplate/dummyTypes$$P8.html" class="extype" name="molecule.boilerplate.dummyTypes.P8">P8</a>, <span class="extype" name="molecule.generic.Db_6.A">A</span>, <span class="extype" name="molecule.generic.Db_6.B">B</span>, <span class="extype" name="molecule.generic.Db_6.C">C</span>, <span class="extype" name="molecule.generic.Db_6.D">D</span>, <span class="extype" name="molecule.generic.Db_6.E">E</span>, <span class="extype" name="molecule.generic.Db_6.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_0" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_0[I1]extendsDbwithin1.In_1_0[molecule.generic.Db_In_1_0,molecule.generic.Db_In_1_1,molecule.generic.Db_In_2_0,molecule.generic.Db_In_2_1,I1]"></a><a id="Db_In_1_0[I1]:Db_In_1_0[I1]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_0[I1]extendsDbwithin1.In_1_0[molecule.generic.Db_In_1_0,molecule.generic.Db_In_1_1,molecule.generic.Db_In_2_0,molecule.generic.Db_In_2_1,I1]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="******* Input molecules awaiting 1 input ******************************" href="Db_In_1_0.html"><span class="name">Db_In_1_0</span></a><span class="tparams">[<span name="I1">I1</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_0.html" class="extype" name="molecule.boilerplate.in1.In_1_0">In_1_0</a>[<a href="Db_In_1_0.html" class="extype" name="molecule.generic.Db_In_1_0">Db_In_1_0</a>, <a href="Db_In_1_1.html" class="extype" name="molecule.generic.Db_In_1_1">Db_In_1_1</a>, <a href="Db_In_2_0.html" class="extype" name="molecule.generic.Db_In_2_0">Db_In_2_0</a>, <a href="Db_In_2_1.html" class="extype" name="molecule.generic.Db_In_2_1">Db_In_2_1</a>, <span class="extype" name="molecule.generic.Db_In_1_0.I1">I1</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">******* Input molecules awaiting 1 input ******************************</p>
+    </li><li name="molecule.generic.Db_In_1_1" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_1[I1,A]extendsDbwithin1.In_1_1[molecule.generic.Db_In_1_1,molecule.generic.Db_In_1_2,molecule.generic.Db_In_2_1,molecule.generic.Db_In_2_2,I1,A]"></a><a id="Db_In_1_1[I1,A]:Db_In_1_1[I1,A]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_1[I1,A]extendsDbwithin1.In_1_1[molecule.generic.Db_In_1_1,molecule.generic.Db_In_1_2,molecule.generic.Db_In_2_1,molecule.generic.Db_In_2_2,I1,A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_1.html"><span class="name">Db_In_1_1</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_1.html" class="extype" name="molecule.boilerplate.in1.In_1_1">In_1_1</a>[<a href="Db_In_1_1.html" class="extype" name="molecule.generic.Db_In_1_1">Db_In_1_1</a>, <a href="Db_In_1_2.html" class="extype" name="molecule.generic.Db_In_1_2">Db_In_1_2</a>, <a href="Db_In_2_1.html" class="extype" name="molecule.generic.Db_In_2_1">Db_In_2_1</a>, <a href="Db_In_2_2.html" class="extype" name="molecule.generic.Db_In_2_2">Db_In_2_2</a>, <span class="extype" name="molecule.generic.Db_In_1_1.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_1.A">A</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_2" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_2[I1,A,B]extendsDbwithin1.In_1_2[molecule.generic.Db_In_1_2,molecule.generic.Db_In_1_3,molecule.generic.Db_In_2_2,molecule.generic.Db_In_2_3,I1,A,B]"></a><a id="Db_In_1_2[I1,A,B]:Db_In_1_2[I1,A,B]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_2[I1,A,B]extendsDbwithin1.In_1_2[molecule.generic.Db_In_1_2,molecule.generic.Db_In_1_3,molecule.generic.Db_In_2_2,molecule.generic.Db_In_2_3,I1,A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_2.html"><span class="name">Db_In_1_2</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_2.html" class="extype" name="molecule.boilerplate.in1.In_1_2">In_1_2</a>[<a href="Db_In_1_2.html" class="extype" name="molecule.generic.Db_In_1_2">Db_In_1_2</a>, <a href="Db_In_1_3.html" class="extype" name="molecule.generic.Db_In_1_3">Db_In_1_3</a>, <a href="Db_In_2_2.html" class="extype" name="molecule.generic.Db_In_2_2">Db_In_2_2</a>, <a href="Db_In_2_3.html" class="extype" name="molecule.generic.Db_In_2_3">Db_In_2_3</a>, <span class="extype" name="molecule.generic.Db_In_1_2.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_2.A">A</span>, <span class="extype" name="molecule.generic.Db_In_1_2.B">B</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_3" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_3[I1,A,B,C]extendsDbwithin1.In_1_3[molecule.generic.Db_In_1_3,molecule.generic.Db_In_1_4,molecule.generic.Db_In_2_3,molecule.generic.Db_In_2_4,I1,A,B,C]"></a><a id="Db_In_1_3[I1,A,B,C]:Db_In_1_3[I1,A,B,C]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_3[I1,A,B,C]extendsDbwithin1.In_1_3[molecule.generic.Db_In_1_3,molecule.generic.Db_In_1_4,molecule.generic.Db_In_2_3,molecule.generic.Db_In_2_4,I1,A,B,C]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_3.html"><span class="name">Db_In_1_3</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_3.html" class="extype" name="molecule.boilerplate.in1.In_1_3">In_1_3</a>[<a href="Db_In_1_3.html" class="extype" name="molecule.generic.Db_In_1_3">Db_In_1_3</a>, <a href="Db_In_1_4.html" class="extype" name="molecule.generic.Db_In_1_4">Db_In_1_4</a>, <a href="Db_In_2_3.html" class="extype" name="molecule.generic.Db_In_2_3">Db_In_2_3</a>, <a href="Db_In_2_4.html" class="extype" name="molecule.generic.Db_In_2_4">Db_In_2_4</a>, <span class="extype" name="molecule.generic.Db_In_1_3.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_3.A">A</span>, <span class="extype" name="molecule.generic.Db_In_1_3.B">B</span>, <span class="extype" name="molecule.generic.Db_In_1_3.C">C</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_4" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_4[I1,A,B,C,D]extendsDbwithin1.In_1_4[molecule.generic.Db_In_1_4,molecule.generic.Db_In_1_5,molecule.generic.Db_In_2_4,molecule.generic.Db_In_2_5,I1,A,B,C,D]"></a><a id="Db_In_1_4[I1,A,B,C,D]:Db_In_1_4[I1,A,B,C,D]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_4[I1,A,B,C,D]extendsDbwithin1.In_1_4[molecule.generic.Db_In_1_4,molecule.generic.Db_In_1_5,molecule.generic.Db_In_2_4,molecule.generic.Db_In_2_5,I1,A,B,C,D]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_4.html"><span class="name">Db_In_1_4</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_4.html" class="extype" name="molecule.boilerplate.in1.In_1_4">In_1_4</a>[<a href="Db_In_1_4.html" class="extype" name="molecule.generic.Db_In_1_4">Db_In_1_4</a>, <a href="Db_In_1_5.html" class="extype" name="molecule.generic.Db_In_1_5">Db_In_1_5</a>, <a href="Db_In_2_4.html" class="extype" name="molecule.generic.Db_In_2_4">Db_In_2_4</a>, <a href="Db_In_2_5.html" class="extype" name="molecule.generic.Db_In_2_5">Db_In_2_5</a>, <span class="extype" name="molecule.generic.Db_In_1_4.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_4.A">A</span>, <span class="extype" name="molecule.generic.Db_In_1_4.B">B</span>, <span class="extype" name="molecule.generic.Db_In_1_4.C">C</span>, <span class="extype" name="molecule.generic.Db_In_1_4.D">D</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_5" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_5[I1,A,B,C,D,E]extendsDbwithin1.In_1_5[molecule.generic.Db_In_1_5,molecule.generic.Db_In_1_6,molecule.generic.Db_In_2_5,molecule.generic.Db_In_2_6,I1,A,B,C,D,E]"></a><a id="Db_In_1_5[I1,A,B,C,D,E]:Db_In_1_5[I1,A,B,C,D,E]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_5[I1,A,B,C,D,E]extendsDbwithin1.In_1_5[molecule.generic.Db_In_1_5,molecule.generic.Db_In_1_6,molecule.generic.Db_In_2_5,molecule.generic.Db_In_2_6,I1,A,B,C,D,E]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_5.html"><span class="name">Db_In_1_5</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_5.html" class="extype" name="molecule.boilerplate.in1.In_1_5">In_1_5</a>[<a href="Db_In_1_5.html" class="extype" name="molecule.generic.Db_In_1_5">Db_In_1_5</a>, <a href="Db_In_1_6.html" class="extype" name="molecule.generic.Db_In_1_6">Db_In_1_6</a>, <a href="Db_In_2_5.html" class="extype" name="molecule.generic.Db_In_2_5">Db_In_2_5</a>, <a href="Db_In_2_6.html" class="extype" name="molecule.generic.Db_In_2_6">Db_In_2_6</a>, <span class="extype" name="molecule.generic.Db_In_1_5.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_5.A">A</span>, <span class="extype" name="molecule.generic.Db_In_1_5.B">B</span>, <span class="extype" name="molecule.generic.Db_In_1_5.C">C</span>, <span class="extype" name="molecule.generic.Db_In_1_5.D">D</span>, <span class="extype" name="molecule.generic.Db_In_1_5.E">E</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_1_6" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_1_6[I1,A,B,C,D,E,F]extendsDbwithin1.In_1_6[molecule.generic.Db_In_1_6,molecule.boilerplate.dummyTypes.P8,molecule.generic.Db_In_2_6,molecule.boilerplate.dummyTypes.P9,I1,A,B,C,D,E,F]"></a><a id="Db_In_1_6[I1,A,B,C,D,E,F]:Db_In_1_6[I1,A,B,C,D,E,F]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_1_6[I1,A,B,C,D,E,F]extendsDbwithin1.In_1_6[molecule.generic.Db_In_1_6,molecule.boilerplate.dummyTypes.P8,molecule.generic.Db_In_2_6,molecule.boilerplate.dummyTypes.P9,I1,A,B,C,D,E,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_1_6.html"><span class="name">Db_In_1_6</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in1$$In_1_6.html" class="extype" name="molecule.boilerplate.in1.In_1_6">In_1_6</a>[<a href="Db_In_1_6.html" class="extype" name="molecule.generic.Db_In_1_6">Db_In_1_6</a>, <a href="../boilerplate/dummyTypes$$P8.html" class="extype" name="molecule.boilerplate.dummyTypes.P8">P8</a>, <a href="Db_In_2_6.html" class="extype" name="molecule.generic.Db_In_2_6">Db_In_2_6</a>, <a href="../boilerplate/dummyTypes$$P9.html" class="extype" name="molecule.boilerplate.dummyTypes.P9">P9</a>, <span class="extype" name="molecule.generic.Db_In_1_6.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_1_6.A">A</span>, <span class="extype" name="molecule.generic.Db_In_1_6.B">B</span>, <span class="extype" name="molecule.generic.Db_In_1_6.C">C</span>, <span class="extype" name="molecule.generic.Db_In_1_6.D">D</span>, <span class="extype" name="molecule.generic.Db_In_1_6.E">E</span>, <span class="extype" name="molecule.generic.Db_In_1_6.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_0" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_0[I1,I2]extendsDbwithin2.In_2_0[molecule.generic.Db_In_2_0,molecule.generic.Db_In_2_1,molecule.generic.Db_In_3_0,molecule.generic.Db_In_3_1,I1,I2]"></a><a id="Db_In_2_0[I1,I2]:Db_In_2_0[I1,I2]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_0[I1,I2]extendsDbwithin2.In_2_0[molecule.generic.Db_In_2_0,molecule.generic.Db_In_2_1,molecule.generic.Db_In_3_0,molecule.generic.Db_In_3_1,I1,I2]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="******* Input molecules awaiting 2 inputs ******************************" href="Db_In_2_0.html"><span class="name">Db_In_2_0</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_0.html" class="extype" name="molecule.boilerplate.in2.In_2_0">In_2_0</a>[<a href="Db_In_2_0.html" class="extype" name="molecule.generic.Db_In_2_0">Db_In_2_0</a>, <a href="Db_In_2_1.html" class="extype" name="molecule.generic.Db_In_2_1">Db_In_2_1</a>, <a href="Db_In_3_0.html" class="extype" name="molecule.generic.Db_In_3_0">Db_In_3_0</a>, <a href="Db_In_3_1.html" class="extype" name="molecule.generic.Db_In_3_1">Db_In_3_1</a>, <span class="extype" name="molecule.generic.Db_In_2_0.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_0.I2">I2</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">******* Input molecules awaiting 2 inputs ******************************</p>
+    </li><li name="molecule.generic.Db_In_2_1" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_1[I1,I2,A]extendsDbwithin2.In_2_1[molecule.generic.Db_In_2_1,molecule.generic.Db_In_2_2,molecule.generic.Db_In_3_1,molecule.generic.Db_In_3_2,I1,I2,A]"></a><a id="Db_In_2_1[I1,I2,A]:Db_In_2_1[I1,I2,A]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_1[I1,I2,A]extendsDbwithin2.In_2_1[molecule.generic.Db_In_2_1,molecule.generic.Db_In_2_2,molecule.generic.Db_In_3_1,molecule.generic.Db_In_3_2,I1,I2,A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_1.html"><span class="name">Db_In_2_1</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_1.html" class="extype" name="molecule.boilerplate.in2.In_2_1">In_2_1</a>[<a href="Db_In_2_1.html" class="extype" name="molecule.generic.Db_In_2_1">Db_In_2_1</a>, <a href="Db_In_2_2.html" class="extype" name="molecule.generic.Db_In_2_2">Db_In_2_2</a>, <a href="Db_In_3_1.html" class="extype" name="molecule.generic.Db_In_3_1">Db_In_3_1</a>, <a href="Db_In_3_2.html" class="extype" name="molecule.generic.Db_In_3_2">Db_In_3_2</a>, <span class="extype" name="molecule.generic.Db_In_2_1.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_1.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_1.A">A</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_2" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_2[I1,I2,A,B]extendsDbwithin2.In_2_2[molecule.generic.Db_In_2_2,molecule.generic.Db_In_2_3,molecule.generic.Db_In_3_2,molecule.generic.Db_In_3_3,I1,I2,A,B]"></a><a id="Db_In_2_2[I1,I2,A,B]:Db_In_2_2[I1,I2,A,B]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_2[I1,I2,A,B]extendsDbwithin2.In_2_2[molecule.generic.Db_In_2_2,molecule.generic.Db_In_2_3,molecule.generic.Db_In_3_2,molecule.generic.Db_In_3_3,I1,I2,A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_2.html"><span class="name">Db_In_2_2</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_2.html" class="extype" name="molecule.boilerplate.in2.In_2_2">In_2_2</a>[<a href="Db_In_2_2.html" class="extype" name="molecule.generic.Db_In_2_2">Db_In_2_2</a>, <a href="Db_In_2_3.html" class="extype" name="molecule.generic.Db_In_2_3">Db_In_2_3</a>, <a href="Db_In_3_2.html" class="extype" name="molecule.generic.Db_In_3_2">Db_In_3_2</a>, <a href="Db_In_3_3.html" class="extype" name="molecule.generic.Db_In_3_3">Db_In_3_3</a>, <span class="extype" name="molecule.generic.Db_In_2_2.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_2.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_2.A">A</span>, <span class="extype" name="molecule.generic.Db_In_2_2.B">B</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_3" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_3[I1,I2,A,B,C]extendsDbwithin2.In_2_3[molecule.generic.Db_In_2_3,molecule.generic.Db_In_2_4,molecule.generic.Db_In_3_3,molecule.generic.Db_In_3_4,I1,I2,A,B,C]"></a><a id="Db_In_2_3[I1,I2,A,B,C]:Db_In_2_3[I1,I2,A,B,C]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_3[I1,I2,A,B,C]extendsDbwithin2.In_2_3[molecule.generic.Db_In_2_3,molecule.generic.Db_In_2_4,molecule.generic.Db_In_3_3,molecule.generic.Db_In_3_4,I1,I2,A,B,C]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_3.html"><span class="name">Db_In_2_3</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_3.html" class="extype" name="molecule.boilerplate.in2.In_2_3">In_2_3</a>[<a href="Db_In_2_3.html" class="extype" name="molecule.generic.Db_In_2_3">Db_In_2_3</a>, <a href="Db_In_2_4.html" class="extype" name="molecule.generic.Db_In_2_4">Db_In_2_4</a>, <a href="Db_In_3_3.html" class="extype" name="molecule.generic.Db_In_3_3">Db_In_3_3</a>, <a href="Db_In_3_4.html" class="extype" name="molecule.generic.Db_In_3_4">Db_In_3_4</a>, <span class="extype" name="molecule.generic.Db_In_2_3.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_3.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_3.A">A</span>, <span class="extype" name="molecule.generic.Db_In_2_3.B">B</span>, <span class="extype" name="molecule.generic.Db_In_2_3.C">C</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_4" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_4[I1,I2,A,B,C,D]extendsDbwithin2.In_2_4[molecule.generic.Db_In_2_4,molecule.generic.Db_In_2_5,molecule.generic.Db_In_3_4,molecule.generic.Db_In_3_5,I1,I2,A,B,C,D]"></a><a id="Db_In_2_4[I1,I2,A,B,C,D]:Db_In_2_4[I1,I2,A,B,C,D]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_4[I1,I2,A,B,C,D]extendsDbwithin2.In_2_4[molecule.generic.Db_In_2_4,molecule.generic.Db_In_2_5,molecule.generic.Db_In_3_4,molecule.generic.Db_In_3_5,I1,I2,A,B,C,D]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_4.html"><span class="name">Db_In_2_4</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_4.html" class="extype" name="molecule.boilerplate.in2.In_2_4">In_2_4</a>[<a href="Db_In_2_4.html" class="extype" name="molecule.generic.Db_In_2_4">Db_In_2_4</a>, <a href="Db_In_2_5.html" class="extype" name="molecule.generic.Db_In_2_5">Db_In_2_5</a>, <a href="Db_In_3_4.html" class="extype" name="molecule.generic.Db_In_3_4">Db_In_3_4</a>, <a href="Db_In_3_5.html" class="extype" name="molecule.generic.Db_In_3_5">Db_In_3_5</a>, <span class="extype" name="molecule.generic.Db_In_2_4.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_4.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_4.A">A</span>, <span class="extype" name="molecule.generic.Db_In_2_4.B">B</span>, <span class="extype" name="molecule.generic.Db_In_2_4.C">C</span>, <span class="extype" name="molecule.generic.Db_In_2_4.D">D</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_5" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_5[I1,I2,A,B,C,D,E]extendsDbwithin2.In_2_5[molecule.generic.Db_In_2_5,molecule.generic.Db_In_2_6,molecule.generic.Db_In_3_5,molecule.generic.Db_In_3_6,I1,I2,A,B,C,D,E]"></a><a id="Db_In_2_5[I1,I2,A,B,C,D,E]:Db_In_2_5[I1,I2,A,B,C,D,E]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_5[I1,I2,A,B,C,D,E]extendsDbwithin2.In_2_5[molecule.generic.Db_In_2_5,molecule.generic.Db_In_2_6,molecule.generic.Db_In_3_5,molecule.generic.Db_In_3_6,I1,I2,A,B,C,D,E]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_5.html"><span class="name">Db_In_2_5</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_5.html" class="extype" name="molecule.boilerplate.in2.In_2_5">In_2_5</a>[<a href="Db_In_2_5.html" class="extype" name="molecule.generic.Db_In_2_5">Db_In_2_5</a>, <a href="Db_In_2_6.html" class="extype" name="molecule.generic.Db_In_2_6">Db_In_2_6</a>, <a href="Db_In_3_5.html" class="extype" name="molecule.generic.Db_In_3_5">Db_In_3_5</a>, <a href="Db_In_3_6.html" class="extype" name="molecule.generic.Db_In_3_6">Db_In_3_6</a>, <span class="extype" name="molecule.generic.Db_In_2_5.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_5.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_5.A">A</span>, <span class="extype" name="molecule.generic.Db_In_2_5.B">B</span>, <span class="extype" name="molecule.generic.Db_In_2_5.C">C</span>, <span class="extype" name="molecule.generic.Db_In_2_5.D">D</span>, <span class="extype" name="molecule.generic.Db_In_2_5.E">E</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_2_6" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_2_6[I1,I2,A,B,C,D,E,F]extendsDbwithin2.In_2_6[molecule.generic.Db_In_2_6,molecule.boilerplate.dummyTypes.P9,molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P10,I1,I2,A,B,C,D,E,F]"></a><a id="Db_In_2_6[I1,I2,A,B,C,D,E,F]:Db_In_2_6[I1,I2,A,B,C,D,E,F]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_2_6[I1,I2,A,B,C,D,E,F]extendsDbwithin2.In_2_6[molecule.generic.Db_In_2_6,molecule.boilerplate.dummyTypes.P9,molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P10,I1,I2,A,B,C,D,E,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_2_6.html"><span class="name">Db_In_2_6</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in2$$In_2_6.html" class="extype" name="molecule.boilerplate.in2.In_2_6">In_2_6</a>[<a href="Db_In_2_6.html" class="extype" name="molecule.generic.Db_In_2_6">Db_In_2_6</a>, <a href="../boilerplate/dummyTypes$$P9.html" class="extype" name="molecule.boilerplate.dummyTypes.P9">P9</a>, <a href="Db_In_3_6.html" class="extype" name="molecule.generic.Db_In_3_6">Db_In_3_6</a>, <a href="../boilerplate/dummyTypes$$P10.html" class="extype" name="molecule.boilerplate.dummyTypes.P10">P10</a>, <span class="extype" name="molecule.generic.Db_In_2_6.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_2_6.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_2_6.A">A</span>, <span class="extype" name="molecule.generic.Db_In_2_6.B">B</span>, <span class="extype" name="molecule.generic.Db_In_2_6.C">C</span>, <span class="extype" name="molecule.generic.Db_In_2_6.D">D</span>, <span class="extype" name="molecule.generic.Db_In_2_6.E">E</span>, <span class="extype" name="molecule.generic.Db_In_2_6.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_0" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_0[I1,I2,I3]extendsDbwithin3.In_3_0[molecule.generic.Db_In_3_0,molecule.generic.Db_In_3_1,molecule.boilerplate.dummyTypes.P4,molecule.boilerplate.dummyTypes.P5,I1,I2,I3]"></a><a id="Db_In_3_0[I1,I2,I3]:Db_In_3_0[I1,I2,I3]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_0[I1,I2,I3]extendsDbwithin3.In_3_0[molecule.generic.Db_In_3_0,molecule.generic.Db_In_3_1,molecule.boilerplate.dummyTypes.P4,molecule.boilerplate.dummyTypes.P5,I1,I2,I3]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="******* Input molecules awaiting 3 inputs ******************************" href="Db_In_3_0.html"><span class="name">Db_In_3_0</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_0.html" class="extype" name="molecule.boilerplate.in3.In_3_0">In_3_0</a>[<a href="Db_In_3_0.html" class="extype" name="molecule.generic.Db_In_3_0">Db_In_3_0</a>, <a href="Db_In_3_1.html" class="extype" name="molecule.generic.Db_In_3_1">Db_In_3_1</a>, <a href="../boilerplate/dummyTypes$$P4.html" class="extype" name="molecule.boilerplate.dummyTypes.P4">P4</a>, <a href="../boilerplate/dummyTypes$$P5.html" class="extype" name="molecule.boilerplate.dummyTypes.P5">P5</a>, <span class="extype" name="molecule.generic.Db_In_3_0.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_0.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_0.I3">I3</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">******* Input molecules awaiting 3 inputs ******************************</p>
+    </li><li name="molecule.generic.Db_In_3_1" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_1[I1,I2,I3,A]extendsDbwithin3.In_3_1[molecule.generic.Db_In_3_1,molecule.generic.Db_In_3_2,molecule.boilerplate.dummyTypes.P5,molecule.boilerplate.dummyTypes.P6,I1,I2,I3,A]"></a><a id="Db_In_3_1[I1,I2,I3,A]:Db_In_3_1[I1,I2,I3,A]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_1[I1,I2,I3,A]extendsDbwithin3.In_3_1[molecule.generic.Db_In_3_1,molecule.generic.Db_In_3_2,molecule.boilerplate.dummyTypes.P5,molecule.boilerplate.dummyTypes.P6,I1,I2,I3,A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_1.html"><span class="name">Db_In_3_1</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_1.html" class="extype" name="molecule.boilerplate.in3.In_3_1">In_3_1</a>[<a href="Db_In_3_1.html" class="extype" name="molecule.generic.Db_In_3_1">Db_In_3_1</a>, <a href="Db_In_3_2.html" class="extype" name="molecule.generic.Db_In_3_2">Db_In_3_2</a>, <a href="../boilerplate/dummyTypes$$P5.html" class="extype" name="molecule.boilerplate.dummyTypes.P5">P5</a>, <a href="../boilerplate/dummyTypes$$P6.html" class="extype" name="molecule.boilerplate.dummyTypes.P6">P6</a>, <span class="extype" name="molecule.generic.Db_In_3_1.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_1.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_1.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_1.A">A</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_2" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_2[I1,I2,I3,A,B]extendsDbwithin3.In_3_2[molecule.generic.Db_In_3_2,molecule.generic.Db_In_3_3,molecule.boilerplate.dummyTypes.P6,molecule.boilerplate.dummyTypes.P7,I1,I2,I3,A,B]"></a><a id="Db_In_3_2[I1,I2,I3,A,B]:Db_In_3_2[I1,I2,I3,A,B]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_2[I1,I2,I3,A,B]extendsDbwithin3.In_3_2[molecule.generic.Db_In_3_2,molecule.generic.Db_In_3_3,molecule.boilerplate.dummyTypes.P6,molecule.boilerplate.dummyTypes.P7,I1,I2,I3,A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_2.html"><span class="name">Db_In_3_2</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_2.html" class="extype" name="molecule.boilerplate.in3.In_3_2">In_3_2</a>[<a href="Db_In_3_2.html" class="extype" name="molecule.generic.Db_In_3_2">Db_In_3_2</a>, <a href="Db_In_3_3.html" class="extype" name="molecule.generic.Db_In_3_3">Db_In_3_3</a>, <a href="../boilerplate/dummyTypes$$P6.html" class="extype" name="molecule.boilerplate.dummyTypes.P6">P6</a>, <a href="../boilerplate/dummyTypes$$P7.html" class="extype" name="molecule.boilerplate.dummyTypes.P7">P7</a>, <span class="extype" name="molecule.generic.Db_In_3_2.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_2.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_2.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_2.A">A</span>, <span class="extype" name="molecule.generic.Db_In_3_2.B">B</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_3" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_3[I1,I2,I3,A,B,C]extendsDbwithin3.In_3_3[molecule.generic.Db_In_3_3,molecule.generic.Db_In_3_4,molecule.boilerplate.dummyTypes.P7,molecule.boilerplate.dummyTypes.P8,I1,I2,I3,A,B,C]"></a><a id="Db_In_3_3[I1,I2,I3,A,B,C]:Db_In_3_3[I1,I2,I3,A,B,C]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_3[I1,I2,I3,A,B,C]extendsDbwithin3.In_3_3[molecule.generic.Db_In_3_3,molecule.generic.Db_In_3_4,molecule.boilerplate.dummyTypes.P7,molecule.boilerplate.dummyTypes.P8,I1,I2,I3,A,B,C]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_3.html"><span class="name">Db_In_3_3</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_3.html" class="extype" name="molecule.boilerplate.in3.In_3_3">In_3_3</a>[<a href="Db_In_3_3.html" class="extype" name="molecule.generic.Db_In_3_3">Db_In_3_3</a>, <a href="Db_In_3_4.html" class="extype" name="molecule.generic.Db_In_3_4">Db_In_3_4</a>, <a href="../boilerplate/dummyTypes$$P7.html" class="extype" name="molecule.boilerplate.dummyTypes.P7">P7</a>, <a href="../boilerplate/dummyTypes$$P8.html" class="extype" name="molecule.boilerplate.dummyTypes.P8">P8</a>, <span class="extype" name="molecule.generic.Db_In_3_3.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_3.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_3.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_3.A">A</span>, <span class="extype" name="molecule.generic.Db_In_3_3.B">B</span>, <span class="extype" name="molecule.generic.Db_In_3_3.C">C</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_4" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_4[I1,I2,I3,A,B,C,D]extendsDbwithin3.In_3_4[molecule.generic.Db_In_3_4,molecule.generic.Db_In_3_5,molecule.boilerplate.dummyTypes.P8,molecule.boilerplate.dummyTypes.P9,I1,I2,I3,A,B,C,D]"></a><a id="Db_In_3_4[I1,I2,I3,A,B,C,D]:Db_In_3_4[I1,I2,I3,A,B,C,D]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_4[I1,I2,I3,A,B,C,D]extendsDbwithin3.In_3_4[molecule.generic.Db_In_3_4,molecule.generic.Db_In_3_5,molecule.boilerplate.dummyTypes.P8,molecule.boilerplate.dummyTypes.P9,I1,I2,I3,A,B,C,D]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_4.html"><span class="name">Db_In_3_4</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_4.html" class="extype" name="molecule.boilerplate.in3.In_3_4">In_3_4</a>[<a href="Db_In_3_4.html" class="extype" name="molecule.generic.Db_In_3_4">Db_In_3_4</a>, <a href="Db_In_3_5.html" class="extype" name="molecule.generic.Db_In_3_5">Db_In_3_5</a>, <a href="../boilerplate/dummyTypes$$P8.html" class="extype" name="molecule.boilerplate.dummyTypes.P8">P8</a>, <a href="../boilerplate/dummyTypes$$P9.html" class="extype" name="molecule.boilerplate.dummyTypes.P9">P9</a>, <span class="extype" name="molecule.generic.Db_In_3_4.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_4.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_4.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_4.A">A</span>, <span class="extype" name="molecule.generic.Db_In_3_4.B">B</span>, <span class="extype" name="molecule.generic.Db_In_3_4.C">C</span>, <span class="extype" name="molecule.generic.Db_In_3_4.D">D</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_5" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_5[I1,I2,I3,A,B,C,D,E]extendsDbwithin3.In_3_5[molecule.generic.Db_In_3_5,molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P9,molecule.boilerplate.dummyTypes.P10,I1,I2,I3,A,B,C,D,E]"></a><a id="Db_In_3_5[I1,I2,I3,A,B,C,D,E]:Db_In_3_5[I1,I2,I3,A,B,C,D,E]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_5[I1,I2,I3,A,B,C,D,E]extendsDbwithin3.In_3_5[molecule.generic.Db_In_3_5,molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P9,molecule.boilerplate.dummyTypes.P10,I1,I2,I3,A,B,C,D,E]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_5.html"><span class="name">Db_In_3_5</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_5.html" class="extype" name="molecule.boilerplate.in3.In_3_5">In_3_5</a>[<a href="Db_In_3_5.html" class="extype" name="molecule.generic.Db_In_3_5">Db_In_3_5</a>, <a href="Db_In_3_6.html" class="extype" name="molecule.generic.Db_In_3_6">Db_In_3_6</a>, <a href="../boilerplate/dummyTypes$$P9.html" class="extype" name="molecule.boilerplate.dummyTypes.P9">P9</a>, <a href="../boilerplate/dummyTypes$$P10.html" class="extype" name="molecule.boilerplate.dummyTypes.P10">P10</a>, <span class="extype" name="molecule.generic.Db_In_3_5.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_5.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_5.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_5.A">A</span>, <span class="extype" name="molecule.generic.Db_In_3_5.B">B</span>, <span class="extype" name="molecule.generic.Db_In_3_5.C">C</span>, <span class="extype" name="molecule.generic.Db_In_3_5.D">D</span>, <span class="extype" name="molecule.generic.Db_In_3_5.E">E</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db_In_3_6" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Db_In_3_6[I1,I2,I3,A,B,C,D,E,F]extendsDbwithin3.In_3_6[molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P10,molecule.boilerplate.dummyTypes.P10,molecule.boilerplate.dummyTypes.P11,I1,I2,I3,A,B,C,D,E,F]"></a><a id="Db_In_3_6[I1,I2,I3,A,B,C,D,E,F]:Db_In_3_6[I1,I2,I3,A,B,C,D,E,F]"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db_In_3_6[I1,I2,I3,A,B,C,D,E,F]extendsDbwithin3.In_3_6[molecule.generic.Db_In_3_6,molecule.boilerplate.dummyTypes.P10,molecule.boilerplate.dummyTypes.P10,molecule.boilerplate.dummyTypes.P11,I1,I2,I3,A,B,C,D,E,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Db_In_3_6.html"><span class="name">Db_In_3_6</span></a><span class="tparams">[<span name="I1">I1</span>, <span name="I2">I2</span>, <span name="I3">I3</span>, <span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Db.html" class="extype" name="molecule.generic.Db">Db</a> with <a href="../boilerplate/in3$$In_3_6.html" class="extype" name="molecule.boilerplate.in3.In_3_6">In_3_6</a>[<a href="Db_In_3_6.html" class="extype" name="molecule.generic.Db_In_3_6">Db_In_3_6</a>, <a href="../boilerplate/dummyTypes$$P10.html" class="extype" name="molecule.boilerplate.dummyTypes.P10">P10</a>, <a href="../boilerplate/dummyTypes$$P10.html" class="extype" name="molecule.boilerplate.dummyTypes.P10">P10</a>, <a href="../boilerplate/dummyTypes$$P11.html" class="extype" name="molecule.boilerplate.dummyTypes.P11">P11</a>, <span class="extype" name="molecule.generic.Db_In_3_6.I1">I1</span>, <span class="extype" name="molecule.generic.Db_In_3_6.I2">I2</span>, <span class="extype" name="molecule.generic.Db_In_3_6.I3">I3</span>, <span class="extype" name="molecule.generic.Db_In_3_6.A">A</span>, <span class="extype" name="molecule.generic.Db_In_3_6.B">B</span>, <span class="extype" name="molecule.generic.Db_In_3_6.C">C</span>, <span class="extype" name="molecule.generic.Db_In_3_6.D">D</span>, <span class="extype" name="molecule.generic.Db_In_3_6.E">E</span>, <span class="extype" name="molecule.generic.Db_In_3_6.F">F</span>]</span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="molecule.generic.Datom" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Datom"></a><a id="Datom:Datom"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Datom" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Datom$.html"><span class="name">Datom</span></a>
+      </span>
+      
+      
+    </li><li name="molecule.generic.Db" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Db"></a><a id="Db:Db"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#Db" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="Datomic Db structure facade constructor" href="Db$.html"><span class="name">Db</span></a><span class="result"> extends <a href="Db_0.html" class="extype" name="molecule.generic.Db_0">Db_0</a> with <a href="../boilerplate/base$$FirstNS.html" class="extype" name="molecule.boilerplate.base.FirstNS">FirstNS</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Datomic Db structure facade constructor</p>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
