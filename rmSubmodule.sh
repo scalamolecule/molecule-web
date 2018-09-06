@@ -1,10 +1,13 @@
 #!/bin/sh
+
+# See https://davidwalsh.name/git-remove-submodule
+
 path="$1"
-if [ ! -f "$path/.git" ]; then
+if [ ! -d "./$path.git" ]; then
   echo "$path is no valid git submodule"
   exit 1
 fi
-git submodule deinit -f $path &&
+git submodule deinit -f --all $path &&
 git rm --cached $path &&
 rm -rf .git/modules/$path &&
 rm -rf $path &&

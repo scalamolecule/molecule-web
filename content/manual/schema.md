@@ -56,12 +56,12 @@ object SeattleDefinition {
 ```
 
 The outer object `SeattleDefinition` encapsulates our schema definition. The name of this object has to end with "Definition"
-in order for the sbt-MoleculePlugin to recognize it.
+in order for the sbt-molecule plugin to recognize it.
 
 
 ### Custom Scala Doc generation
 
-The sbt-MoleculePlugin even generates ScalaDoc documentation for the custom DSL generated form the schema definition file! 
+The sbt-molecule plugin even generates ScalaDoc documentation for the custom DSL generated form the schema definition file! 
 Attribute types are explained and an optional `doc(<text...>)` can be added to give a hint about the attribute when
 working with the code in the IDE. Given the `doc` text above for the `Community.name` attribute we can see this in our
 IDE:
@@ -72,7 +72,7 @@ IDE:
 
 ### Molecule arity
 
-The `@InOut(3, 8)` arity annotation instructs the sbt-MoleculePlugin to generate boilerplate code with the ability to create
+The `@InOut(3, 8)` arity annotation instructs the sbt-molecule plugin to generate boilerplate code with the ability to create
 molecules with up to 8 attributes including up to 3 [input attributes](/manual/attributes/parameterized).
 
 When developing your schema you might just set the first arity annotation variable for input attributes to `0` and

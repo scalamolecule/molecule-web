@@ -1,268 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/content/_presentation/presentation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/_presentation/presentation1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/_index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/crud/composite-insert.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/relationships/self-join.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/MaterialIcons-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/abstract_type.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/class.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/class_comp.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/class_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/diagrams.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/diagrams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.mousewheel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/jquery.panzoom.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-100.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/lato-v11-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/modernizr.custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/object.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/object_comp.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/object_comp_trait.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/object_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-400i.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-700i.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/open-sans-v13-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/ownderbg2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/ownerbg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/ownerbg2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/package.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/ref-index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/scheduler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/source-code-pro-v6-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/template.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/template.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/tools.tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/trait.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/trait_comp.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/trait_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/lib/type_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/CompositeInserts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/Molecule$checkInsertModel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/Molecule.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/action/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/composition/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/exceptions/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Conn$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Conn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/Datomic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/facade/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$InOut.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$many$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBi$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBiEdge$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigDecimal$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigDecimal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBigInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBoolean$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyBoolean.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyByte$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyByte.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDate$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDouble$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyDouble.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyEnum$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyFloat$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyFloat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyLong$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyLong.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyString$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyURI$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyURI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyUUID$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$manyUUID.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigDecimal$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigDecimal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBigInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBoolean$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapBoolean.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapByte$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapByte.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDate$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDouble$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapDouble.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapFloat$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapFloat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapLong$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapLong.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapString$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapURI$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapURI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapUUID$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$mapUUID.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$one$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBi$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBiEdge$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigDecimal$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigDecimal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBigInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBoolean$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneBoolean.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneByte$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneByte.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDate$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDouble$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneDouble.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneEnum$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneFloat$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneFloat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneInt$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneInt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneLong$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneLong.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneString$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneURI$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneURI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneUUID$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$oneUUID.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$$target$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/definition$.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/schema/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/util/JavaFunctions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/api/molecule/util/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/faviconOLD.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/earth2073.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/generator_config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/specimen_files/grid_12-825-55-15.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/specimen_files/specimen_stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/earth/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/about/mg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/compare/tinkerpop-modern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/entity/entity1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/entity/entity2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/entity/entity3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/entity/entity4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/entity/entity5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo/MoleculeLogo200.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo/favicon.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityref.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityref.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityrefs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/entityrefs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/ref.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/relationships/ref.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/all.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/as-of.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/old/all.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/old/as-of.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/old/since.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/old/with.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/since.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/time/with.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/transactions/5.png" afterDir="false" />
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.14.0">
+      <change afterPath="$PROJECT_DIR$/public" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/community/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/community/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/compare/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/compare/datomic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/datomic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/compare/sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/sql.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/compare/sql/slick.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/sql/slick.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/dev/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/aggregates.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/expressions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/mapped.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/mapped.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/modes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/modes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/attributes/parameterized.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/getJson.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/getJson.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/insert.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/insert.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/retract.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/retract.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/save.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/save.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/crud/update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/update.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/documentation/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/entities.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/entities.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/getting-started/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/relationships/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/relationships/bidirectional.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/bidirectional.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/relationships/card-many.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/card-many.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/relationships/card-one.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/card-one.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/relationships/composites.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/composites.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/schema/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/schema/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema/transaction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/time/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/time/asof-since.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/asof-since.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/time/history.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/history.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/time/testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/testing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/time/with.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/with.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/transactions/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/transactions/tx-meta-data.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploycommands.md" beforeDir="false" afterPath="$PROJECT_DIR$/deploycommands.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/dirs1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/dirs1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/dirs2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/dirs2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/jars.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rmSubmodule.sh" beforeDir="false" afterPath="$PROJECT_DIR$/rmSubmodule.sh" afterDir="false" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -301,34 +47,38 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="9" />
-          <entry key="md" value="113" />
-          <entry key="sh" value="5" />
+          <entry key="html" value="10" />
+          <entry key="md" value="115" />
+          <entry key="sh" value="7" />
           <entry key="toml" value="7" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="1" />
-          <entry key="HTML" value="9" />
-          <entry key="Markdown" value="57" />
+          <entry key="Bash" value="3" />
+          <entry key="HTML" value="10" />
+          <entry key="Markdown" value="59" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="TOML file" value="2" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="283" />
           <entry key="md" value="8917" />
-          <entry key="sh" value="122" />
+          <entry key="sh" value="142" />
           <entry key="toml" value="1159" />
+          <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Bash" value="20" />
           <entry key="HTML" value="283" />
           <entry key="Markdown" value="7963" />
-          <entry key="PLAIN_TEXT" value="1267" />
+          <entry key="PLAIN_TEXT" value="1270" />
           <entry key="Scala" value="7" />
           <entry key="TOML file" value="961" />
         </counts>
@@ -339,32 +89,55 @@
     <favorites_list name="molecule-docs" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/deploycommands.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="91">
+                    <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="702">
+                    <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/deploycommands.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="91">
+                    <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;0.4.5&quot;</find>
       <find>0.13.2</find>
       <find>subComponents</find>
       <find>.subComponents</find>
@@ -394,9 +167,9 @@
       <find>toSe</find>
       <find>toSeq</find>
       <find>.toSeq</find>
+      <find>sbt-MoleculePlugin</find>
     </findStrings>
     <replaceStrings>
-      <replace>parent: documentation</replace>
       <replace>.URL</replace>
       <replace>triangle</replace>
       <replace>top</replace>
@@ -426,6 +199,7 @@
       <replace>List</replace>
       <replace>/crud/</replace>
       <replace>Tx</replace>
+      <replace>sbt-molecule plugin</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../molecule/coretest/src/test/scala/molecule/bidirectional</dir>
@@ -446,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/content/docs/crud/getJson.md" />
         <option value="$PROJECT_DIR$/content/docs/crud/update.md" />
         <option value="$PROJECT_DIR$/content/docs/crud/retract.md" />
         <option value="$PROJECT_DIR$/content/docs/crud/composite-insert.md" />
@@ -464,12 +237,10 @@
         <option value="$PROJECT_DIR$/content/manual/crud/composite-insert.md" />
         <option value="$PROJECT_DIR$/content/dev/_index.md" />
         <option value="$PROJECT_DIR$/content/community/_index.md" />
-        <option value="$PROJECT_DIR$/deploy.sh" />
         <option value="$PROJECT_DIR$/content/manual/_index.md" />
         <option value="$PROJECT_DIR$/content/manual/quick-start/introduction.md" />
         <option value="$PROJECT_DIR$/content/manual/setup.md" />
         <option value="$PROJECT_DIR$/content/manual/schema/transaction.md" />
-        <option value="$PROJECT_DIR$/content/manual/schema.md" />
         <option value="$PROJECT_DIR$/content/dev/boilerplate.md" />
         <option value="$PROJECT_DIR$/content/manual/attributes/basics.md" />
         <option value="$PROJECT_DIR$/content/manual/attributes/mapped.md" />
@@ -497,6 +268,9 @@
         <option value="$PROJECT_DIR$/content/compare/sql/slick.md" />
         <option value="$PROJECT_DIR$/config.toml" />
         <option value="$PROJECT_DIR$/content/manual/time.md" />
+        <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/rmSubmodule.sh" />
+        <option value="$PROJECT_DIR$/content/manual/schema.md" />
       </list>
     </option>
   </component>
@@ -507,8 +281,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2560" />
-    <option name="width" value="2560" />
+    <option name="x" value="-2012" />
+    <option name="width" value="1280" />
     <option name="height" value="1600" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -530,6 +304,17 @@
               <item name="molecule-docs" type="b2602c69:ProjectViewProjectNode" />
               <item name="molecule-docs" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-docs" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-docs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-docs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -920,6 +705,14 @@
       <option name="presentableId" value="Default" />
       <updated>1530693114682</updated>
     </task>
+    <task id="LOCAL-00001" summary="0.14.0">
+      <created>1536184441649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536184441649</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -933,6 +726,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="0" width="2560" height="1600" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.094525404" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -1016,16 +810,10 @@
     <MESSAGE value="0.13.0" />
     <MESSAGE value="0.13.1" />
     <MESSAGE value="0.13.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.13.2" />
+    <MESSAGE value="0.14.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.14.0" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/layouts/partials/submenu.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/menu2.html" />
-    <entry file="file://$PROJECT_DIR$/content/_presentation/presentation1.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/resources/_index.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1120,21 +908,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="1144">
             <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="598">
-            <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
           </first_editor>
           <second_editor />
         </state>
@@ -1488,13 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/_index.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1540,11 +1306,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/public/api/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="179" column="11" lean-forward="true" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/categories/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rmSubmodule.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
@@ -1556,7 +1342,34 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor />
+          <first_editor relative-caret-position="91">
+            <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="91">
+            <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="702">
+            <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
