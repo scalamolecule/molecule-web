@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.facade.Conn</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.facade.Conn" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.facade.Conn" />
+          <title>Molecule 0.15.0 - molecule.facade.Conn</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.facade.Conn" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.facade.Conn" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -761,7 +763,7 @@ conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
         <span class="name">query</span><span class="params">(<span name="m">m: <a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a></span>, <span name="q">q: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>)</span><span class="result">: <span class="extype" name="java.util.Collection">Collection</span>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Query Datomic with Model and Query and get raw Java data.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic with Model and Query and get raw Java data.
+      <p class="shortcomment cmt">Query Datomic with Model and Query to get raw Java data.</p><div class="fullcomment"><div class="comment cmt"><p>Query Datomic with Model and Query to get raw Java data.
 <br><br>
 Main query method that Molecule macros use.
 </p></div><dl class="paramcmts block"><dt class="param">m</dt><dd class="cmt"><p><a href="../ast/model$$Model.html" class="extype" name="molecule.ast.model.Model">Model</a> instance</p></dd><dt class="param">q</dt><dd class="cmt"><p><a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a> instance</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>

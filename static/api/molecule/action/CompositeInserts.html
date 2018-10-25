@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action.CompositeInserts</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action.CompositeInserts" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action.CompositeInserts" />
+          <title>Molecule 0.15.0 - molecule.action.CompositeInserts</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action.CompositeInserts" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action.CompositeInserts" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -184,10 +186,31 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
+    </li><li name="molecule.action.get" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="get"></a><a id="get:get"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/index.html#get" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Package with various synchronous getter methods to retrieve data from Datomic with molecules." href="get/index.html"><span class="name">get</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><p>For the Datomic Peer model, Datomic returns data synchronously.
+The Peer lives in application memory and caches data aggressively to save roundtrips to
+disk or memcached. Query results that can fit in memory will therefore have near-zero latency
+and return extremely fast.</p><p>Molecule has not yet addressed the Client api although the query engine would be the same
+as for the current Peer version.</p><p>Molecule has 5 groups of getters each returning data in various formats:</p><ul><li><a href="get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a> - default getter returning Lists of tuples. Convenient typed data, suitable for smaller data sets</li><li><a href="get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a> - fastest retrieved typed data set. Can be traversed with a fast <code>while</code> loop</li><li><a href="get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a> - for lazily traversing row by row</li><li><a href="get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> - fastest retrieved raw un-typed data from Datomic</li><li><a href="get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> - data formatted as Json string</li></ul><p>Getters in each of the 5 groups come with 5 time-dependent variations:</p><ul><li>get [current data]</li><li>getAsOf</li><li>getSince</li><li>getWith</li><li>getHistory</li></ul><p>Each time variation has various overloads taking different parameters (see each group for more info).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples."></a>
-                        <a href="" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.">CompositeInserts</a>
+                        <a class="trait" href="" title="Insert methods to create composite entities containing multiple sub-molecules/tuples."></a>
+                        <a href="" title="Insert methods to create composite entities containing multiple sub-molecules/tuples.">CompositeInserts</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="Entity$.html" title="Entity wrapper factory."></a>
                         <a class="class" href="Entity.html" title="Entity wrapper with actions on entity."></a>
@@ -204,6 +227,10 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
                         <span class="separator"></span>
                         <a class="trait" href="OptionalMapOps.html" title="Container of implicit for optional Map operations."></a>
                         <a href="OptionalMapOps.html" title="Container of implicit for optional Map operations.">OptionalMapOps</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="ShowDebug.html" title="Debug methods"></a>
+                        <a href="ShowDebug.html" title="Debug methods">ShowDebug</a>
                       </li>
               </ul>
             </div>
@@ -232,9 +259,7 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.
-<br><br>
-Molecules with more than 10 attributes are good candidates to split up in order to keep compile time fast.</p><h4> Insert composite data </h4><pre>insert(
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Insert methods to create composite entities containing multiple sub-molecules/tuples.</p><h4> Insert composite data </h4><pre>insert(
   <span class="cmt">// 2 sub-molecules</span>
   Article.name.author, Tag.name.weight
 )(
@@ -250,8 +275,7 @@ Molecules with more than 10 attributes are good candidates to split up in order 
 <span class="cmt">// In queries we tie composite sub-molecules together with `~`</span>
 m(Article.name.author ~ Tag.weight.&gt;=(<span class="num">4</span>).Tx(MetaData.submitter_(<span class="lit">"Brenda Johnson"</span>))).get === <span class="std">List</span>(
   ((<span class="lit">"Battle of Waterloo"</span>, <span class="lit">"Ben Bridge"</span>), <span class="num">5</span>)
-)</pre><h4> Debug a composite insert </h4><p>Without affecting the database, a composite insert can be debugged by adding a 'D' to
-your composite insert method and see the produced output:</p><pre>debugInsert(
+)</pre><h4> Debug a composite insert </h4><p>Without affecting the database, a composite insert can be debugged with <code>debugInsert</code> to see the produced output:</p><pre>debugInsert(
   Article.name.author, Tag.name.weight
 )(
   <span class="std">List</span>(
@@ -299,8 +323,9 @@ outputs:
     <span class="num">2</span>      :db/add    #db/id[:db.part/tx -<span class="num">1000100</span>]      :metaData/usecase      AddReviews            Card(<span class="num">1</span>)))
 ========================================================================</pre><p>The two first sections are internal Molecule representations.
 <br><br>
-The third section shows the transactional data sent to Datomic, in this case two rows of data and one row of transaction data.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/action/CompositeInserts.scala#L1" target="_blank">CompositeInserts.scala</a></dd><dt>Note</dt><dd><span class="cmt"><p>For faster compilation less than 10 attributes per sub-molecule is recommended.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/composite-insert/" target="_blank">composite inserts</a>
+The third section shows the transactional data sent to Datomic (except the line indexing numbers in the
+left column) - in this case two rows of data and one row of transaction data.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/action/CompositeInserts.scala#L1" target="_blank">CompositeInserts.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/composite-insert/" target="_blank">composite inserts</a>
      | <a href="http://www.scalamolecule.org/manual/relationships/composites/" target="_blank">composites</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Composite.scala#L1" target="_blank">composite inserts</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -310,12 +335,12 @@ The third section shows the transactional data sent to Datomic, in this case two
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="../package$$api$.html" class="extype" name="molecule.api">api</a></div>
+            <div class="subClasses hiddenContent"><a href="../api/in1_out1$.html" class="extype" name="molecule.api.in1_out1">in1_out1</a>, <a href="../api/in1_out10$.html" class="extype" name="molecule.api.in1_out10">in1_out10</a>, <a href="../api/in1_out11$.html" class="extype" name="molecule.api.in1_out11">in1_out11</a>, <a href="../api/in1_out12$.html" class="extype" name="molecule.api.in1_out12">in1_out12</a>, <a href="../api/in1_out13$.html" class="extype" name="molecule.api.in1_out13">in1_out13</a>, <a href="../api/in1_out14$.html" class="extype" name="molecule.api.in1_out14">in1_out14</a>, <a href="../api/in1_out15$.html" class="extype" name="molecule.api.in1_out15">in1_out15</a>, <a href="../api/in1_out16$.html" class="extype" name="molecule.api.in1_out16">in1_out16</a>, <a href="../api/in1_out17$.html" class="extype" name="molecule.api.in1_out17">in1_out17</a>, <a href="../api/in1_out18$.html" class="extype" name="molecule.api.in1_out18">in1_out18</a>, <a href="../api/in1_out19$.html" class="extype" name="molecule.api.in1_out19">in1_out19</a>, <a href="../api/in1_out2$.html" class="extype" name="molecule.api.in1_out2">in1_out2</a>, <a href="../api/in1_out20$.html" class="extype" name="molecule.api.in1_out20">in1_out20</a>, <a href="../api/in1_out21$.html" class="extype" name="molecule.api.in1_out21">in1_out21</a>, <a href="../api/in1_out22$.html" class="extype" name="molecule.api.in1_out22">in1_out22</a>, <a href="../api/in1_out3$.html" class="extype" name="molecule.api.in1_out3">in1_out3</a>, <a href="../api/in1_out4$.html" class="extype" name="molecule.api.in1_out4">in1_out4</a>, <a href="../api/in1_out5$.html" class="extype" name="molecule.api.in1_out5">in1_out5</a>, <a href="../api/in1_out6$.html" class="extype" name="molecule.api.in1_out6">in1_out6</a>, <a href="../api/in1_out7$.html" class="extype" name="molecule.api.in1_out7">in1_out7</a>, <a href="../api/in1_out8$.html" class="extype" name="molecule.api.in1_out8">in1_out8</a>, <a href="../api/in1_out9$.html" class="extype" name="molecule.api.in1_out9">in1_out9</a>, <a href="../api/in2_out1$.html" class="extype" name="molecule.api.in2_out1">in2_out1</a>, <a href="../api/in2_out10$.html" class="extype" name="molecule.api.in2_out10">in2_out10</a>, <a href="../api/in2_out11$.html" class="extype" name="molecule.api.in2_out11">in2_out11</a>, <a href="../api/in2_out12$.html" class="extype" name="molecule.api.in2_out12">in2_out12</a>, <a href="../api/in2_out13$.html" class="extype" name="molecule.api.in2_out13">in2_out13</a>, <a href="../api/in2_out14$.html" class="extype" name="molecule.api.in2_out14">in2_out14</a>, <a href="../api/in2_out15$.html" class="extype" name="molecule.api.in2_out15">in2_out15</a>, <a href="../api/in2_out16$.html" class="extype" name="molecule.api.in2_out16">in2_out16</a>, <a href="../api/in2_out17$.html" class="extype" name="molecule.api.in2_out17">in2_out17</a>, <a href="../api/in2_out18$.html" class="extype" name="molecule.api.in2_out18">in2_out18</a>, <a href="../api/in2_out19$.html" class="extype" name="molecule.api.in2_out19">in2_out19</a>, <a href="../api/in2_out2$.html" class="extype" name="molecule.api.in2_out2">in2_out2</a>, <a href="../api/in2_out20$.html" class="extype" name="molecule.api.in2_out20">in2_out20</a>, <a href="../api/in2_out21$.html" class="extype" name="molecule.api.in2_out21">in2_out21</a>, <a href="../api/in2_out22$.html" class="extype" name="molecule.api.in2_out22">in2_out22</a>, <a href="../api/in2_out3$.html" class="extype" name="molecule.api.in2_out3">in2_out3</a>, <a href="../api/in2_out4$.html" class="extype" name="molecule.api.in2_out4">in2_out4</a>, <a href="../api/in2_out5$.html" class="extype" name="molecule.api.in2_out5">in2_out5</a>, <a href="../api/in2_out6$.html" class="extype" name="molecule.api.in2_out6">in2_out6</a>, <a href="../api/in2_out7$.html" class="extype" name="molecule.api.in2_out7">in2_out7</a>, <a href="../api/in2_out8$.html" class="extype" name="molecule.api.in2_out8">in2_out8</a>, <a href="../api/in2_out9$.html" class="extype" name="molecule.api.in2_out9">in2_out9</a>, <a href="../api/in3_out1$.html" class="extype" name="molecule.api.in3_out1">in3_out1</a>, <a href="../api/in3_out10$.html" class="extype" name="molecule.api.in3_out10">in3_out10</a>, <a href="../api/in3_out11$.html" class="extype" name="molecule.api.in3_out11">in3_out11</a>, <a href="../api/in3_out12$.html" class="extype" name="molecule.api.in3_out12">in3_out12</a>, <a href="../api/in3_out13$.html" class="extype" name="molecule.api.in3_out13">in3_out13</a>, <a href="../api/in3_out14$.html" class="extype" name="molecule.api.in3_out14">in3_out14</a>, <a href="../api/in3_out15$.html" class="extype" name="molecule.api.in3_out15">in3_out15</a>, <a href="../api/in3_out16$.html" class="extype" name="molecule.api.in3_out16">in3_out16</a>, <a href="../api/in3_out17$.html" class="extype" name="molecule.api.in3_out17">in3_out17</a>, <a href="../api/in3_out18$.html" class="extype" name="molecule.api.in3_out18">in3_out18</a>, <a href="../api/in3_out19$.html" class="extype" name="molecule.api.in3_out19">in3_out19</a>, <a href="../api/in3_out2$.html" class="extype" name="molecule.api.in3_out2">in3_out2</a>, <a href="../api/in3_out20$.html" class="extype" name="molecule.api.in3_out20">in3_out20</a>, <a href="../api/in3_out21$.html" class="extype" name="molecule.api.in3_out21">in3_out21</a>, <a href="../api/in3_out22$.html" class="extype" name="molecule.api.in3_out22">in3_out22</a>, <a href="../api/in3_out3$.html" class="extype" name="molecule.api.in3_out3">in3_out3</a>, <a href="../api/in3_out4$.html" class="extype" name="molecule.api.in3_out4">in3_out4</a>, <a href="../api/in3_out5$.html" class="extype" name="molecule.api.in3_out5">in3_out5</a>, <a href="../api/in3_out6$.html" class="extype" name="molecule.api.in3_out6">in3_out6</a>, <a href="../api/in3_out7$.html" class="extype" name="molecule.api.in3_out7">in3_out7</a>, <a href="../api/in3_out8$.html" class="extype" name="molecule.api.in3_out8">in3_out8</a>, <a href="../api/in3_out9$.html" class="extype" name="molecule.api.in3_out9">in3_out9</a>, <a href="../api/out1$.html" class="extype" name="molecule.api.out1">out1</a>, <a href="../api/out10$.html" class="extype" name="molecule.api.out10">out10</a>, <a href="../api/out11$.html" class="extype" name="molecule.api.out11">out11</a>, <a href="../api/out12$.html" class="extype" name="molecule.api.out12">out12</a>, <a href="../api/out13$.html" class="extype" name="molecule.api.out13">out13</a>, <a href="../api/out14$.html" class="extype" name="molecule.api.out14">out14</a>, <a href="../api/out15$.html" class="extype" name="molecule.api.out15">out15</a>, <a href="../api/out16$.html" class="extype" name="molecule.api.out16">out16</a>, <a href="../api/out17$.html" class="extype" name="molecule.api.out17">out17</a>, <a href="../api/out18$.html" class="extype" name="molecule.api.out18">out18</a>, <a href="../api/out19$.html" class="extype" name="molecule.api.out19">out19</a>, <a href="../api/out2$.html" class="extype" name="molecule.api.out2">out2</a>, <a href="../api/out20$.html" class="extype" name="molecule.api.out20">out20</a>, <a href="../api/out21$.html" class="extype" name="molecule.api.out21">out21</a>, <a href="../api/out22$.html" class="extype" name="molecule.api.out22">out22</a>, <a href="../api/out3$.html" class="extype" name="molecule.api.out3">out3</a>, <a href="../api/out4$.html" class="extype" name="molecule.api.out4">out4</a>, <a href="../api/out5$.html" class="extype" name="molecule.api.out5">out5</a>, <a href="../api/out6$.html" class="extype" name="molecule.api.out6">out6</a>, <a href="../api/out7$.html" class="extype" name="molecule.api.out7">out7</a>, <a href="../api/out8$.html" class="extype" name="molecule.api.out8">out8</a>, <a href="../api/out9$.html" class="extype" name="molecule.api.out9">out9</a></div>
           </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 162.00 158.00" height="158pt" width="162pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 158,-154 158,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.action.CompositeInserts (this trait)" xlink:href="#inheritance-diagram"><path d="M121.333,-88C121.333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 121.333,-62 121.333,-62 125.667,-62 130,-66.3333 130,-70.6667 130,-70.6667 130,-79.3333 130,-79.3333 130,-83.6667 125.667,-88 121.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.7656" text-anchor="start">CompositeInserts</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="molecule.api" xlink:href="../package$$api$.html#inheritance-diagram"><path d="M95.3333,-26C95.3333,-26 58.6667,-26 58.6667,-26 54.3333,-26 50,-21.6667 50,-17.3333 50,-17.3333 50,-8.66667 50,-8.66667 50,-4.33333 54.3333,-0 58.6667,-0 58.6667,-0 95.3333,-0 95.3333,-0 99.6667,-0 104,-4.33333 104,-8.66667 104,-8.66667 104,-17.3333 104,-17.3333 104,-21.6667 99.6667,-26 95.3333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="62" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="81.5508" text-anchor="start">api</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="api is a subtype of CompositeInserts"><path d="M77,-54.7534C77,-45.3549 77,-34.3336 77,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-54.8581 77,-61.8581 79.4501,-54.8581 74.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.util.Helpers"><path d="M103.583,-150C103.583,-150 50.4167,-150 50.4167,-150 46.0833,-150 41.75,-145.667 41.75,-141.333 41.75,-141.333 41.75,-132.667 41.75,-132.667 41.75,-128.333 46.0833,-124 50.4167,-124 50.4167,-124 103.583,-124 103.583,-124 107.917,-124 112.25,-128.333 112.25,-132.667 112.25,-132.667 112.25,-141.333 112.25,-141.333 112.25,-145.667 107.917,-150 103.583,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="54" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="73.6055" text-anchor="start">Helpers</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="CompositeInserts is a subtype of Helpers"><path d="M77,-116.753C77,-107.355 77,-96.3336 77,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-116.858 77,-123.858 79.4501,-116.858 74.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 162.00 156.00" height="156pt" width="162pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 152)" class="graph" id="graph0"><polygon points="-4,4 -4,-152 158,-152 158,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.action.CompositeInserts (this trait)" xlink:href="#inheritance-diagram"><path d="M121.333,-86C121.333,-86 32.6667,-86 32.6667,-86 28.3333,-86 24,-81.6667 24,-77.3333 24,-77.3333 24,-68.6667 24,-68.6667 24,-64.3333 28.3333,-60 32.6667,-60 32.6667,-60 121.333,-60 121.333,-60 125.667,-60 130,-64.3333 130,-68.6667 130,-68.6667 130,-77.3333 130,-77.3333 130,-81.6667 125.667,-86 121.333,-86" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-79" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-70.6" x="55.7656" text-anchor="start">CompositeInserts</text></a></g></g><!-- node1 --><g class="node default" id="graph1_1"><g id="a_default|graph1_1"><a xlink:title="in1_out1, in1_out10, in1_out11, in1_out12, in1_out13, in1_out14, in1_out15, in1_out16, in1_out17, in1_out18, in1_out19, in1_out2, in1_out20, in1_out21, in1_out22, in1_out3, in1_out4, in1_out5, in1_out6, in1_out7, in1_out8, in1_out9, in2_out1, in2_out10, in2_out11, in2_out12, in2_out13, in2_out14, in2_out15, in2_out16, in2_out17, in2_out18, in2_out19, in2_out2, in2_out20, in2_out21, in2_out22, in2_out3, in2_out4, in2_out5, in2_out6, in2_out7, in2_out8, in2_out9, in3_out1, in3_out10, in3_out11, in3_out12, in3_out13, in3_out14, in3_out15, in3_out16, in3_out17, in3_out18, in3_out19, in3_out2, in3_out20, in3_out21, in3_out22, in3_out3, in3_out4, in3_out5, in3_out6, in3_out7, in3_out8, in3_out9, out1, out10, out11, out12, out13, out14, out15, out16, out17, out18, out19, out2, out20, out21, out22, out3, out4, out5, out6, out7, out8, out9"><path d="M109.333,-23.5C109.333,-23.5 44.6667,-23.5 44.6667,-23.5 40.8333,-23.5 37,-19.6667 37,-15.8333 37,-15.8333 37,-8.16667 37,-8.16667 37,-4.33333 40.8333,-0.5 44.6667,-0.5 44.6667,-0.5 109.333,-0.5 109.333,-0.5 113.167,-0.5 117,-4.33333 117,-8.16667 117,-8.16667 117,-15.8333 117,-15.8333 117,-19.6667 113.167,-23.5 109.333,-23.5" stroke="#ababab" fill="#e1e1e1"></path><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-9.1" x="48.3223" text-anchor="start">88 classes/traits</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="88 classes/traits are subtypes of CompositeInserts"><path d="M77,-52.4967C77,-42.8764 77,-31.6474 77,-23.6268" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-52.7751 77,-59.7752 79.4501,-52.7752 74.5501,-52.7751" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.util.Helpers"><path d="M103.583,-148C103.583,-148 50.4167,-148 50.4167,-148 46.0833,-148 41.75,-143.667 41.75,-139.333 41.75,-139.333 41.75,-130.667 41.75,-130.667 41.75,-126.333 46.0833,-122 50.4167,-122 50.4167,-122 103.583,-122 103.583,-122 107.917,-122 112.25,-126.333 112.25,-130.667 112.25,-130.667 112.25,-139.333 112.25,-139.333 112.25,-143.667 107.917,-148 103.583,-148" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-141" x="54" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-132.6" x="73.6055" text-anchor="start">Helpers</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="CompositeInserts is a subtype of Helpers"><path d="M77,-114.753C77,-105.355 77,-94.3336 77,-86.1238" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-114.858 77,-121.858 79.4501,-114.858 74.5501,-114.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -445,7 +470,7 @@ The third section shows the transactional data sent to Datomic, in this case two
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -477,6 +502,22 @@ The third section shows the transactional data sent to Datomic, in this case two
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="molecule.util.Helpers#date" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="date(s:String):java.util.Date"></a><a id="date(String):Date"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/CompositeInserts.html#date(s:String):java.util.Date" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">date</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.util.Date">Date</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
     </li><li name="molecule.action.CompositeInserts#debugInsert" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="debugInsert[T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,T17,T18,T19,T20,T21,T22](m1:molecule.action.Molecule[T1],m2:molecule.action.Molecule[T2],m3:molecule.action.Molecule[T3],m4:molecule.action.Molecule[T4],m5:molecule.action.Molecule[T5],m6:molecule.action.Molecule[T6],m7:molecule.action.Molecule[T7],m8:molecule.action.Molecule[T8],m9:molecule.action.Molecule[T9],m10:molecule.action.Molecule[T10],m11:molecule.action.Molecule[T11],m12:molecule.action.Molecule[T12],m13:molecule.action.Molecule[T13],m14:molecule.action.Molecule[T14],m15:molecule.action.Molecule[T15],m16:molecule.action.Molecule[T16],m17:molecule.action.Molecule[T17],m18:molecule.action.Molecule[T18],m19:molecule.action.Molecule[T19],m20:molecule.action.Molecule[T20],m21:molecule.action.Molecule[T21],m22:molecule.action.Molecule[T22])(data:Seq[(T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,T17,T18,T19,T20,T21,T22)])(txMolecules:molecule.ast.MoleculeBase*)(implicitconn:molecule.facade.Conn):Unit"></a><a id="debugInsert[T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,T17,T18,T19,T20,T21,T22](Molecule[T1],Molecule[T2],Molecule[T3],Molecule[T4],Molecule[T5],Molecule[T6],Molecule[T7],Molecule[T8],Molecule[T9],Molecule[T10],Molecule[T11],Molecule[T12],Molecule[T13],Molecule[T14],Molecule[T15],Molecule[T16],Molecule[T17],Molecule[T18],Molecule[T19],Molecule[T20],Molecule[T21],Molecule[T22])(Seq[(T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,T17,T18,T19,T20,T21,T22)])(MoleculeBase*)(Conn):Unit"></a>
       <span class="permalink">
@@ -898,7 +939,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -914,7 +955,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -952,7 +993,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -968,7 +1009,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -1437,11 +1478,27 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
         <span class="name">o</span><span class="params">(<span name="opt">opt: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
+    </li><li name="molecule.util.Helpers#sdf" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sdf:java.text.SimpleDateFormat"></a><a id="sdf:SimpleDateFormat"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/CompositeInserts.html#sdf:java.text.SimpleDateFormat" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sdf</span><span class="result">: <span class="extype" name="java.text.SimpleDateFormat">SimpleDateFormat</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
@@ -1453,7 +1510,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
@@ -1477,6 +1534,22 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="molecule.util.Helpers#time" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="time(n:Int,prev:Int):Unit"></a><a id="time(Int,Int):Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/CompositeInserts.html#time(n:Int,prev:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">time</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>, <span name="prev">prev: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
@@ -1501,7 +1574,7 @@ The third shows the transactional data sent to Datomic, in this case two rows of
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">

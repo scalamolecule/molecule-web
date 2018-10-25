@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.OneDouble$</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.OneDouble " />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.OneDouble " />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.OneDouble$</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.OneDouble " />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.OneDouble " />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -699,7 +705,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="attributes$$OneValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.OneValueAttr$">OneValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>], <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>], <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Double">Double</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="attributes$$OneValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.OneValueAttr$">OneValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>], <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>], <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Double">Double</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
@@ -835,7 +841,7 @@ Person.name(<span class="lit">"Liz"</span>).age$(lizAge).save
 Person.name.age$.get === <span class="std">List</span>(
   (<span class="lit">"Ben"</span>, <span class="std">Some</span>(<span class="num">42</span>)),
   (<span class="lit">"Liz"</span>, <span class="std">None</span>),
-)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
+)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1151,7 +1157,7 @@ Person.name.age$.get === <span class="std">List</span>(
         <div class="parent" name="molecule.boilerplate.attributes.OneValueAttr$">
               <h3>Inherited from <a href="attributes$$OneValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.OneValueAttr$">OneValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>]</h3>
             </div><div class="parent" name="molecule.expression.AttrExpressions.OptionalExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>]</h3>
+              <h3>Inherited from <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneDouble$.Ns">Ns</span>, <span class="extype" name="scala.Double">Double</span>]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.ValueAttr$">
               <h3>Inherited from <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Double">Double</span>]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.Attr">

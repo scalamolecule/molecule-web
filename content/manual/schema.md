@@ -31,7 +31,7 @@ Let's look at the schema definition from the [Seattle tutorial](/resources/tutor
 package path.to.your.project
 import molecule.schema.definition._  // import schema definition DSL
 
-@InOut(3, 8)
+@InOut(2, 8)
 object SeattleDefinition {
 
   trait Community {
@@ -72,8 +72,8 @@ IDE:
 
 ### Molecule arity
 
-The `@InOut(3, 8)` arity annotation instructs the sbt-molecule plugin to generate boilerplate code with the ability to create
-molecules with up to 8 attributes including up to 3 [input attributes](/manual/attributes/parameterized).
+The `@InOut(2, 8)` arity annotation instructs the sbt-molecule plugin to generate boilerplate code with the ability to create
+molecules with up to 8 attributes including up to 2 [input attributes](/manual/attributes/parameterized).
 
 When developing your schema you might just set the first arity annotation variable for input attributes to `0` and
 then later when your schema is stabilizing add the ability to make input molecules by setting it to 1, 2 or 3 (the maximum). 
@@ -81,8 +81,7 @@ Using parameterized input attributes can be a performance
 optimization since using input values in Datalog queries allow Datomic to cache the query. 
 
 The second arity annotation parameter basically tells how long molecules you can build (this doesn't affect
- how many attributes you can _define_ in each namespace). Generally you want to keep this number as low as possible
- not to generate more boilerplate code than necessary. The maximum arity is 22, the same as for tuples. 
+ how many attributes you can _define_ in each namespace). The maximum arity is 22, the same as for tuples. 
  
 If you at some point need to make molecules with more than 22 attributes you can use 
 [composite molecules](/manual/relationships/composites) or insert/query in two steps as 

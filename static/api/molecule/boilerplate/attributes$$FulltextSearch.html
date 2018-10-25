@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.FulltextSearch</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.FulltextSearch" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.FulltextSearch" />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.FulltextSearch</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.FulltextSearch" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.FulltextSearch" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -690,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">FulltextSearch</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../expression/AttrExpressions$$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>]</span>
+        <span class="name">FulltextSearch</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../api/core$.html#FulltextSearchExpr[Ns,In]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.FulltextSearchExpr">api.core.FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>]</span>
       </span>
       </h4>
 
@@ -699,12 +705,12 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="../expression/AttrExpressions$$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../api/core$.html#FulltextSearchExpr[Ns,In]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.FulltextSearchExpr">api.core.FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 176.00 120.00" height="120pt" width="176pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 172,-116 172,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.FulltextSearch (this trait)" xlink:href="#inheritance-diagram"><path d="M135.333,-50C135.333,-50 32.6667,-50 32.6667,-50 28.3333,-50 24,-45.6667 24,-41.3333 24,-41.3333 24,-32.6667 24,-32.6667 24,-28.3333 28.3333,-24 32.6667,-24 32.6667,-24 135.333,-24 135.333,-24 139.667,-24 144,-28.3333 144,-32.6667 144,-32.6667 144,-41.3333 144,-41.3333 144,-45.6667 139.667,-50 135.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="55.6523" text-anchor="start">FulltextSearch[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.FulltextSearchExpr" xlink:href="../expression/AttrExpressions$$FulltextSearchExpr.html#inheritance-diagram"><path d="M143.583,-112C143.583,-112 24.4167,-112 24.4167,-112 20.0833,-112 15.75,-107.667 15.75,-103.333 15.75,-103.333 15.75,-94.6667 15.75,-94.6667 15.75,-90.3333 20.0833,-86 24.4167,-86 24.4167,-86 143.583,-86 143.583,-86 147.917,-86 152.25,-90.3333 152.25,-94.6667 152.25,-94.6667 152.25,-103.333 152.25,-103.333 152.25,-107.667 147.917,-112 143.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="28" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="47.9277" text-anchor="start">FulltextSearchExpr[Ns, In]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="FulltextSearch[Ns, In] is a subtype of FulltextSearchExpr[Ns, In]"><path d="M84,-78.7534C84,-69.3549 84,-58.3336 84,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="81.5501,-78.8581 84,-85.8581 86.4501,-78.8581 81.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 176.00 120.00" height="120pt" width="176pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 172,-116 172,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.FulltextSearch (this trait)" xlink:href="#inheritance-diagram"><path d="M135.333,-50C135.333,-50 32.6667,-50 32.6667,-50 28.3333,-50 24,-45.6667 24,-41.3333 24,-41.3333 24,-32.6667 24,-32.6667 24,-28.3333 28.3333,-24 32.6667,-24 32.6667,-24 135.333,-24 135.333,-24 139.667,-24 144,-28.3333 144,-32.6667 144,-32.6667 144,-41.3333 144,-41.3333 144,-45.6667 139.667,-50 135.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="55.6523" text-anchor="start">FulltextSearch[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.FulltextSearchExpr" xlink:href="../expression/AttrExpressions$FulltextSearchExpr.html#inheritance-diagram"><path d="M158.583,-112C158.583,-112 9.41667,-112 9.41667,-112 5.08333,-112 0.75,-107.667 0.75,-103.333 0.75,-103.333 0.75,-94.6667 0.75,-94.6667 0.75,-90.3333 5.08333,-86 9.41667,-86 9.41667,-86 158.583,-86 158.583,-86 162.917,-86 167.25,-90.3333 167.25,-94.6667 167.25,-94.6667 167.25,-103.333 167.25,-103.333 167.25,-107.667 162.917,-112 158.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="13" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="32.5859" text-anchor="start">api.core.FulltextSearchExpr[Ns, In]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="FulltextSearch[Ns, In] is a subtype of api.core.FulltextSearchExpr[Ns, In]"><path d="M84,-78.7534C84,-69.3549 84,-58.3336 84,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="81.5501,-78.8581 84,-85.8581 86.4501,-78.8581 81.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -851,9 +857,9 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
               
         </dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.FulltextSearchExpr#contains" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="contains(words:molecule.api.?):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="contains(api.?):InwithAttr"></a>
+      <a id="contains(words:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="contains(api.core.??):InwithAttr"></a>
       <span class="permalink">
-      <a href="../../molecule/boilerplate/attributes$$FulltextSearch.html#contains(words:molecule.api.?):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+      <a href="../../molecule/boilerplate/attributes$$FulltextSearch.html#contains(words:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -862,7 +868,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">contains</span><span class="params">(<span name="words">words: <a href="../package$$api$.html#?extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.?">api.?</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+        <span class="name">contains</span><span class="params">(<span name="words">words: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
       </span>
       
       <p class="shortcomment cmt">Mark as input molecule with String attribute word search.</p><div class="fullcomment"><div class="comment cmt"><p>Mark as input molecule with String attribute word search.
@@ -892,7 +898,7 @@ phraseFinder(<span class="lit">"   jumps   "</span>).get === <span class="std">L
 phraseFinder(<span class="lit">"jumps"</span>, <span class="lit">"slow"</span>).get === <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>)
 
 <span class="cmt">// Common words ignored</span>
-phraseFinder(<span class="lit">"The"</span>).get === Nil</pre></div><dl class="paramcmts block"><dt class="param">words</dt><dd class="cmt"><p>Search words</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule awaiting search word(s)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a></dd><dt>Note</dt><dd><span class="cmt"><p>Fulltext search is constrained by several defaults (which cannot be altered):
+phraseFinder(<span class="lit">"The"</span>).get === Nil</pre></div><dl class="paramcmts block"><dt class="param">words</dt><dd class="cmt"><p>Search words</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule awaiting search word(s)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a></dd><dt>Note</dt><dd><span class="cmt"><p>Fulltext search is constrained by several defaults (which cannot be altered):
       searches are case insensitive, remove apostrophe or apostrophe and s sequences,
       and filter out the following common English stop words:
       &quot;a&quot;, &quot;an&quot;, &quot;and&quot;, &quot;are&quot;, &quot;as&quot;, &quot;at&quot;, &quot;be&quot;, &quot;but&quot;, &quot;by&quot;,
@@ -937,7 +943,7 @@ Phrase.id.txt_.contains(<span class="lit">"   jumps   "</span>).get === <span cl
 Phrase.id.txt_.contains(<span class="lit">"jumps"</span>, <span class="lit">"slow"</span>).get === <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>)
 
 <span class="cmt">// Common words ignored</span>
-Phrase.id.txt_.contains(<span class="lit">"The"</span>).get === Nil</pre></div><dl class="paramcmts block"><dt class="param">moreWords</dt><dd class="cmt"><p>Optional additional search words</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a></dd><dt>Note</dt><dd><span class="cmt"><p>Fulltext search is constrained by several defaults (which cannot be altered):
+Phrase.id.txt_.contains(<span class="lit">"The"</span>).get === Nil</pre></div><dl class="paramcmts block"><dt class="param">moreWords</dt><dd class="cmt"><p>Optional additional search words</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a></dd><dt>Note</dt><dd><span class="cmt"><p>Fulltext search is constrained by several defaults (which cannot be altered):
       searches are case insensitive, remove apostrophe or apostrophe and s sequences,
       and filter out the following common English stop words:
       &quot;a&quot;, &quot;an&quot;, &quot;and&quot;, &quot;are&quot;, &quot;as&quot;, &quot;at&quot;, &quot;be&quot;, &quot;but&quot;, &quot;by&quot;,
@@ -1218,7 +1224,7 @@ Phrase.id.txt_.contains(<span class="lit">"The"</span>).get === Nil</pre></div><
 
         <div id="inheritedMembers">
         <div class="parent" name="molecule.expression.AttrExpressions.FulltextSearchExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$FulltextSearchExpr.html" class="extype" name="molecule.expression.AttrExpressions.FulltextSearchExpr">FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>]</h3>
+              <h3>Inherited from <a href="../api/core$.html#FulltextSearchExpr[Ns,In]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.FulltextSearchExpr">api.core.FulltextSearchExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.FulltextSearch.In">In</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

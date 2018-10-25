@@ -25,19 +25,19 @@ Add the following to your build files:
 `project/build.properties`:
 
 ```scala
-sbt.version=1.1.2
+sbt.version=1.1.6
 ```
 
 `project/buildinfo.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.5.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.6.0")
 ```
 
 `build.sbt`:
 
 ```scala
-lazy val yourProject = project.in(file("demo"))
+lazy val yourProject = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
     resolvers ++= Seq(
@@ -46,13 +46,13 @@ lazy val yourProject = project.in(file("demo"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.14.0",
+      "org.scalamolecule" %% "molecule" % "0.15.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to directory with your schema definition file(s)
   )
 ```
-Molecule 0.14.0 for Scala 2.12.6 is available at
+Molecule 0.15.0 for Scala 2.12.7 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 
@@ -123,11 +123,24 @@ generated boilerplate code each time you recompile your project. In our demo exa
 ## 4. Use Molecule
 
 The MoleculePlugin has now created all the necessary boilerplate code so that we can start using Molecule. 
-We need to import the Molecule api and our new auto-generated meta DSL to get going:
+We need to import our newly created meta DSL and the Molecule api. Molecule uses implicit macro methods to
+transform our custom molecules to Datomic queries and we want to have as few of those in scope in order
+to compile as fast as possible. So we therefore try to import only the implicits we need. If you for
+instance are building molecules with maximum 10 attributes, you can therefore import the `out10` ("out"
+for outputs):
 ```scala
-import molecule.api._
 import app.dsl.yourDomain._
+import molecule.api.out10._ // (or other arity)
 ```
+If you use input molecules awaiting an input then you can add `inX` where X is
+how many [inputs](/manual/attributes/parameterized/) (1, 2 or 3) you will use, for instance:
+```scala
+import molecule.api.in2_out10._
+```
+
+
+## 5. Connecting to the database
+
 To make queries we need an implicit database connection. When initially developing our project
 we might make frequent changes to our schema and therefore recreate our database on each use (later, when
 our schema stabilizes we can retrieve the connection without recreating the database). The Molecule

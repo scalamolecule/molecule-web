@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action.exception</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action.exception" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action.exception" />
+          <title>Molecule 0.15.0 - molecule.action.exception</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action.exception" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action.exception" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -192,7 +194,28 @@ This base package includes a single <a href="../../package$$api$.html" class="ex
                         <span class="separator"></span>
                         <a class="class" href="EntityException.html" title=""></a>
                         <a href="EntityException.html" title="">EntityException</a>
-                      </li>
+                      </li><li name="molecule.action.get" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="get"></a><a id="get:get"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/index.html#get" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Package with various synchronous getter methods to retrieve data from Datomic with molecules." href="../get/index.html"><span class="name">get</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><p>For the Datomic Peer model, Datomic returns data synchronously.
+The Peer lives in application memory and caches data aggressively to save roundtrips to
+disk or memcached. Query results that can fit in memory will therefore have near-zero latency
+and return extremely fast.</p><p>Molecule has not yet addressed the Client api although the query engine would be the same
+as for the current Peer version.</p><p>Molecule has 5 groups of getters each returning data in various formats:</p><ul><li><a href="../get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a> - default getter returning Lists of tuples. Convenient typed data, suitable for smaller data sets</li><li><a href="../get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a> - fastest retrieved typed data set. Can be traversed with a fast <code>while</code> loop</li><li><a href="../get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a> - for lazily traversing row by row</li><li><a href="../get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> - fastest retrieved raw un-typed data from Datomic</li><li><a href="../get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> - data formatted as Json string</li></ul><p>Getters in each of the 5 groups come with 5 time-dependent variations:</p><ul><li>get [current data]</li><li>getAsOf</li><li>getSince</li><li>getWith</li><li>getHistory</li></ul><p>Each time variation has various overloads taking different parameters (see each group for more info).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
+    </li>
               </ul>
             </div>
           </div>

@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.OneRefAttr</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.OneRefAttr" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.OneRefAttr" />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.OneRefAttr</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.OneRefAttr" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.OneRefAttr" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -690,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">OneRefAttr</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../expression/AttrExpressions$$OneRefAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr">OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>] with <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</span>
+        <span class="name">OneRefAttr</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../api/core$.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" class="extmbr" name="molecule.expression.AttrExpressions.OneRefAttrExpr">api.core.OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>] with <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>]</span>
       </span>
       </h4>
 
@@ -699,12 +705,12 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <a href="../expression/AttrExpressions$$OneRefAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr">OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>], <a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <a href="../api/core$.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" class="extmbr" name="molecule.expression.AttrExpressions.OneRefAttrExpr">api.core.OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>], <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 257.00 120.00" height="120pt" width="257pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 253,-116 253,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.OneRefAttr (this trait)" xlink:href="#inheritance-diagram"><path d="M175.583,-50C175.583,-50 84.4167,-50 84.4167,-50 80.0833,-50 75.75,-45.6667 75.75,-41.3333 75.75,-41.3333 75.75,-32.6667 75.75,-32.6667 75.75,-28.3333 80.0833,-24 84.4167,-24 84.4167,-24 175.583,-24 175.583,-24 179.917,-24 184.25,-28.3333 184.25,-32.6667 184.25,-32.6667 184.25,-41.3333 184.25,-41.3333 184.25,-45.6667 179.917,-50 175.583,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="88" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="107.711" text-anchor="start">OneRefAttr[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.OneRefAttrExpr" xlink:href="../expression/AttrExpressions$$OneRefAttrExpr.html#inheritance-diagram"><path d="M117.333,-112C117.333,-112 8.66667,-112 8.66667,-112 4.33333,-112 0,-107.667 0,-103.333 0,-103.333 0,-94.6667 0,-94.6667 0,-90.3333 4.33333,-86 8.66667,-86 8.66667,-86 117.333,-86 117.333,-86 121.667,-86 126,-90.3333 126,-94.6667 126,-94.6667 126,-103.333 126,-103.333 126,-107.667 121.667,-112 117.333,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.9863" text-anchor="start">OneRefAttrExpr[Ns, In]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="OneRefAttr[Ns, In] is a subtype of OneRefAttrExpr[Ns, In]"><path d="M82.0348,-80.9539C93.0177,-71.1185 106.568,-58.9839 116.462,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="80.1387,-79.3631 76.5584,-85.8581 83.4076,-83.0134 80.1387,-79.3631" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.RefAttr" xlink:href="attributes$$RefAttr.html#inheritance-diagram"><path d="M240.583,-112C240.583,-112 153.417,-112 153.417,-112 149.083,-112 144.75,-107.667 144.75,-103.333 144.75,-103.333 144.75,-94.6667 144.75,-94.6667 144.75,-90.3333 149.083,-86 153.417,-86 153.417,-86 240.583,-86 240.583,-86 244.917,-86 249.25,-90.3333 249.25,-94.6667 249.25,-94.6667 249.25,-103.333 249.25,-103.333 249.25,-107.667 244.917,-112 240.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="157" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="176.709" text-anchor="start">RefAttr[Ns, Long]</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="OneRefAttr[Ns, In] is a subtype of RefAttr[Ns, Long]"><path d="M177.965,-80.9539C166.982,-71.1185 153.432,-58.9839 143.538,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="176.592,-83.0134 183.442,-85.8581 179.861,-79.3631 176.592,-83.0134" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 265.00 120.00" height="120pt" width="265pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 261,-116 261,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.OneRefAttr (this trait)" xlink:href="#inheritance-diagram"><path d="M192.583,-50C192.583,-50 101.417,-50 101.417,-50 97.0833,-50 92.75,-45.6667 92.75,-41.3333 92.75,-41.3333 92.75,-32.6667 92.75,-32.6667 92.75,-28.3333 97.0833,-24 101.417,-24 101.417,-24 192.583,-24 192.583,-24 196.917,-24 201.25,-28.3333 201.25,-32.6667 201.25,-32.6667 201.25,-41.3333 201.25,-41.3333 201.25,-45.6667 196.917,-50 192.583,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="105" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="124.711" text-anchor="start">OneRefAttr[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.OneRefAttrExpr" xlink:href="../expression/AttrExpressions$OneRefAttrExpr.html#inheritance-diagram"><path d="M147.333,-112C147.333,-112 8.66667,-112 8.66667,-112 4.33333,-112 0,-107.667 0,-103.333 0,-103.333 0,-94.6667 0,-94.6667 0,-90.3333 4.33333,-86 8.66667,-86 8.66667,-86 147.333,-86 147.333,-86 151.667,-86 156,-90.3333 156,-94.6667 156,-94.6667 156,-103.333 156,-103.333 156,-107.667 151.667,-112 147.333,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.6445" text-anchor="start">api.core.OneRefAttrExpr[Ns, In]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="OneRefAttr[Ns, In] is a subtype of api.core.OneRefAttrExpr[Ns, In]"><path d="M97.2924,-81.224C108.657,-71.3414 122.775,-59.0652 133.058,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="95.6378,-79.416 91.9632,-85.8581 98.8531,-83.1136 95.6378,-79.416" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.RefAttr" xlink:href="attributes$$RefAttr.html#inheritance-diagram"><path d="M248.583,-112C248.583,-112 183.417,-112 183.417,-112 179.083,-112 174.75,-107.667 174.75,-103.333 174.75,-103.333 174.75,-94.6667 174.75,-94.6667 174.75,-90.3333 179.083,-86 183.417,-86 183.417,-86 248.583,-86 248.583,-86 252.917,-86 257.25,-90.3333 257.25,-94.6667 257.25,-94.6667 257.25,-103.333 257.25,-103.333 257.25,-107.667 252.917,-112 248.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="187" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="206.83" text-anchor="start">RefAttr[Ns]</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="OneRefAttr[Ns, In] is a subtype of RefAttr[Ns]"><path d="M196.708,-81.224C185.343,-71.3414 171.225,-59.0652 160.942,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="195.147,-83.1136 202.037,-85.8581 198.362,-79.416 195.147,-83.1136" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -783,7 +789,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
 Person.name.!=(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)
 
 <span class="cmt">// same as</span>
-Person.name.not(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person.name.not(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(value:T):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Long):NswithAttr"></a>
       <span class="permalink">
@@ -805,7 +811,7 @@ Person.name.not(<span class="std">List</span>(<span class="lit">"Ben"</span>, <s
 Person.name.!=(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="lit">"Joe"</span>)
 
 <span class="cmt">// same as</span>
-Person.name.not(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person.name.not(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(value:T,value2:T,moreValues:T*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Long,Long,Long*):NswithAttr"></a>
       <span class="permalink">
@@ -830,7 +836,7 @@ Person.name.!=(<span class="lit">"Ben"</span>).get === <span class="std">List</s
 Person.name.!=(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)
 
 <span class="cmt">// same as</span>
-Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
@@ -880,9 +886,9 @@ Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(unifyer:molecule.api.unify):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(api.unify):NswithAttr"></a>
+      <a id="apply(unifyer:AttrExpressions.this.unify):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(api.core.unify):NswithAttr"></a>
       <span class="permalink">
-      <a href="../../molecule/boilerplate/attributes$$OneRefAttr.html#apply(unifyer:molecule.api.unify):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+      <a href="../../molecule/boilerplate/attributes$$OneRefAttr.html#apply(unifyer:AttrExpressions.this.unify):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -891,7 +897,7 @@ Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="unifyer">unifyer: <a href="../package$$api$.html#unifyextendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.unify">api.unify</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+        <span class="name">apply</span><span class="params">(<span name="unifyer">unifyer: <a href="../api/core$.html#unifyextendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.unify">api.core.unify</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
       </span>
       
       <p class="shortcomment cmt">Mark tacit attribute to be unified in self-join.</p><div class="fullcomment"><div class="comment cmt"><p>Mark tacit attribute to be unified in self-join.
@@ -905,7 +911,7 @@ Find 23-year olds liking the same beverage as 25-year olds (unifying by beverage
         (<span class="lit">"Liz"</span>, <span class="num">23</span>, <span class="lit">"Coffee"</span>, <span class="lit">"Ben"</span>, <span class="num">25</span>),  <span class="cmt">// Liz (23) and Ben(25) both like coffee</span>
         (<span class="lit">"Liz"</span>, <span class="num">23</span>, <span class="lit">"Tea"</span>, <span class="lit">"Ben"</span>, <span class="num">25</span>)      <span class="cmt">// Liz (23) and Ben(25) both like tea</span>
       )</pre><p><code>unify</code> marker can only be applied to tacit attribute (with underscore).
-</p></div><dl class="paramcmts block"><dt class="param">unifyer</dt><dd class="cmt"><p><code>unify</code> marker to unify self-join by this attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Self-join molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">unifyer</dt><dd class="cmt"><p><code>unify</code> marker to unify self-join by this attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Self-join molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(values:Seq[T],moreValues:Seq[T]*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Seq[Long],Seq[Long]*):NswithAttr"></a>
       <span class="permalink">
@@ -953,7 +959,7 @@ Person(benId).age(<span class="std">List</span>(<span class="num">43</span>)).up
 Person(benId).hobbies(<span class="std">Seq</span>(<span class="lit">"reading"</span>, <span class="lit">"walking"</span>)).update
 
 <span class="cmt">// Multiple Iterables can be applied</span>
-Person(benId).hobbies(<span class="std">Seq</span>(<span class="lit">"reading"</span>, <span class="lit">"walking"</span>), <span class="std">Set</span>(<span class="lit">"stamps"</span>)).update</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of attribute values to be matched</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional Iterables of attribute values to be matched</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person(benId).hobbies(<span class="std">Seq</span>(<span class="lit">"reading"</span>, <span class="lit">"walking"</span>), <span class="std">Set</span>(<span class="lit">"stamps"</span>)).update</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of attribute values to be matched</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional Iterables of attribute values to be matched</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(value:T,moreValues:T*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Long,Long*):NswithAttr"></a>
       <span class="permalink">
@@ -989,7 +995,7 @@ Person(benId).age(<span class="num">43</span>).update
 
 <span class="cmt">// Replacing multiple values for card-many attributes (all old values are retracted).</span>
 <span class="cmt">// (Replacing multiple values not allowed for card-one attributes)</span>
-Person(benId).hobbies(<span class="lit">"reading"</span>, <span class="lit">"walking"</span>).update</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Attribute values to be matched</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional attribute values to be matched</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person(benId).hobbies(<span class="lit">"reading"</span>, <span class="lit">"walking"</span>).update</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Attribute values to be matched</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional attribute values to be matched</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply():Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply():NswithAttr"></a>
       <span class="permalink">
@@ -1011,7 +1017,7 @@ Person.name.age$ === <span class="std">List</span>((<span class="lit">"Ben"</spa
 <span class="cmt">// Retract Ben's age</span>
 Person(benId).age().update
 Person.name.age$ === <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="std">None</span>))</pre><p>For cardinality-many attributes, <i>all</i> values of the attribute are retracted.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1197,7 +1203,7 @@ Person.name.age$ === <span class="std">List</span>((<span class="lit">"Ben"</spa
 Person.name.not(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)
 
 <span class="cmt">// same as</span>
-Person.name.!=(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person.name.!=(<span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Joe"</span>)).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">values</dt><dd class="cmt"><p>Iterable of negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="not(value:T,moreValues:T*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="not(Long,Long*):NswithAttr"></a>
       <span class="permalink">
@@ -1222,7 +1228,7 @@ Person.name.not(<span class="lit">"Ben"</span>).get === <span class="std">List</
 Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)
 
 <span class="cmt">// same as</span>
-Person.name.!=(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
+Person.name.!=(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="lit">"Joe"</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Negated attribute value</p></dd><dt class="param">moreValues</dt><dd class="cmt"><p>Optional additional negated attribute values</p></dd><dt>returns</dt><dd class="cmt"><p>Filtered molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a></dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
@@ -1372,13 +1378,13 @@ Person.name.!=(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).g
 
         <div id="inheritedMembers">
         <div class="parent" name="molecule.boilerplate.attributes.RefAttr">
-              <h3>Inherited from <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
+              <h3>Inherited from <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
               <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
             </div><div class="parent" name="molecule.expression.AttrExpressions.OneRefAttrExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$OneRefAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr">OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>]</h3>
+              <h3>Inherited from <a href="../api/core$.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" class="extmbr" name="molecule.expression.AttrExpressions.OneRefAttrExpr">api.core.OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>]</h3>
             </div><div class="parent" name="molecule.expression.AttrExpressions.AttrExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
+              <h3>Inherited from <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

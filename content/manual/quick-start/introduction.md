@@ -28,12 +28,26 @@ This fetches a List of tuples of Strings/Int's that are the types of the `name` 
 we asked for. We can continue adding more and more Attributes as with the builder pattern to define what data
 we are interested in.
 
-For expected large result sets we can return an Iterable instead:
+Data can be returned in 5 different formats:
+
 ```scala
-val aLotOfPersons: Iterable[(String, Int)] = m(Person.name.age).getIterable
+// List for convenient access to smaller data sets
+val list : List[(String, Int)] = m(Person.name.age).get
+
+// Mutable Array for fastest retrieval and traversing
+val array: Array[(String, Int)] = m(Person.name.age).getArray
+
+// Iterable for lazy traversing with an Iterator
+val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
+
+// Json formatted string 
+val json: String = m(Person.name.age).getJson
+
+// Raw untyped Datomic data if data doesn't need to be typed
+val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getJson
 ```
-The difference between returning a List or an Iterable is that all tuples in the list have been type-casted
-while type-casting for Iterables is lazily performed only on each call to `next` on the Iterator.
+
+### Building blocks
 
 Attributes are atomic pieces of information that are prefixed by a Namespace, in this case `Person`. Namespaces
 are not like SQL tables but just a common meaningful prefix to Attributes that have something in common. 
@@ -51,17 +65,32 @@ That way, we can use our domain terms directly in our code in a type-safe and se
  any invalid queries.
 
 
-### Save and update
+### Adding and updating data
 
-We also save and update data with molecules:
+For single entities we can populate a molecule with data to save it:
 
 ```scala
 // Save Lisa entity and retrieve new entity id
 val lisaId = Person.name("Lisa").age("27").save.eid
+```
+Or we can add data for multiple entities with an `insert`:
 
+```scala
+// Save Lisa entity and retrieve new entity id
+Person.name.age insert List(
+  ("Lisa", 27),
+  ("Jhn", 32)
+)
+```
+Using an entity id we can update an entity:
+```scala
 // Update
 Person(lisaId).age("28").update
 ```
+In Datomic, an update is actually a retraction of the old data and an assertion of the new data. In this example, 
+Lisa's age 27 is retracted and her new age 28 asserted. With this information model, Datomic allow us to go
+back in time and see when Lisa's age was changed to 28. 
+
 
 ### Expressive powers
 

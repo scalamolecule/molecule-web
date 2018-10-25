@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.RefAttr$</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.RefAttr " />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.RefAttr " />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.RefAttr$</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.RefAttr " />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.RefAttr " />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -690,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">RefAttr$</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a> with <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.RefAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.RefAttr$.T">T</span>]</span>
+        <span class="name">RefAttr$</span><span class="tparams">[<span name="Ns">Ns</span>]</span><span class="result"> extends <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
       </span>
       </h4>
 
@@ -699,7 +705,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.RefAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.RefAttr$.T">T</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -709,7 +715,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 235.00 158.00" height="158pt" width="235pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 231,-154 231,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.RefAttr$ (this trait)" xlink:href="#inheritance-diagram"><path d="M153.333,-88C153.333,-88 74.6667,-88 74.6667,-88 70.3333,-88 66,-83.6667 66,-79.3333 66,-79.3333 66,-70.6667 66,-70.6667 66,-66.3333 70.3333,-62 74.6667,-62 74.6667,-62 153.333,-62 153.333,-62 157.667,-62 162,-66.3333 162,-70.6667 162,-70.6667 162,-79.3333 162,-79.3333 162,-83.6667 157.667,-88 153.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="78" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="97.5098" text-anchor="start">RefAttr$[Ns, T]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.ManyRefAttr$" xlink:href="attributes$$ManyRefAttr$.html#inheritance-diagram"><path d="M97.5833,-26C97.5833,-26 8.41667,-26 8.41667,-26 4.08333,-26 -0.25,-21.6667 -0.25,-17.3333 -0.25,-17.3333 -0.25,-8.66667 -0.25,-8.66667 -0.25,-4.33333 4.08333,-0 8.41667,-0 8.41667,-0 97.5833,-0 97.5833,-0 101.917,-0 106.25,-4.33333 106.25,-8.66667 106.25,-8.66667 106.25,-17.3333 106.25,-17.3333 106.25,-21.6667 101.917,-26 97.5833,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8242" text-anchor="start">ManyRefAttr$[Ns]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="ManyRefAttr$[Ns] is a subtype of RefAttr$[Ns, T]"><path d="M96.394,-56.6826C86.4444,-46.8961 74.251,-34.9026 65.3259,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="94.9472,-58.6961 101.656,-61.8581 98.3833,-55.2027 94.9472,-58.6961" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.OneRefAttr$" xlink:href="attributes$$OneRefAttr$.html#inheritance-diagram"><path d="M218.333,-26C218.333,-26 133.667,-26 133.667,-26 129.333,-26 125,-21.6667 125,-17.3333 125,-17.3333 125,-8.66667 125,-8.66667 125,-4.33333 129.333,-0 133.667,-0 133.667,-0 218.333,-0 218.333,-0 222.667,-0 227,-4.33333 227,-8.66667 227,-8.66667 227,-17.3333 227,-17.3333 227,-21.6667 222.667,-26 218.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="137" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="156.545" text-anchor="start">OneRefAttr$[Ns]</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="OneRefAttr$[Ns] is a subtype of RefAttr$[Ns, T]"><path d="M131.614,-56.9539C141.778,-47.1185 154.317,-34.9839 163.472,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="129.873,-55.2295 126.547,-61.8581 133.281,-58.7507 129.873,-55.2295" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.boilerplate.attributes.Attr" xlink:href="attributes$$Attr.html#inheritance-diagram"><path d="M82.3333,-150C82.3333,-150 43.6667,-150 43.6667,-150 39.3333,-150 35,-145.667 35,-141.333 35,-141.333 35,-132.667 35,-132.667 35,-128.333 39.3333,-124 43.6667,-124 43.6667,-124 82.3333,-124 82.3333,-124 86.6667,-124 91,-128.333 91,-132.667 91,-132.667 91,-141.333 91,-141.333 91,-145.667 86.6667,-150 82.3333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="47" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="66.666" text-anchor="start">Attr</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="RefAttr$[Ns, T] is a subtype of Attr"><path d="M77.9513,-118.41C86.2269,-108.674 96.3018,-96.8214 103.695,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="75.9874,-116.938 73.3206,-123.858 79.7209,-120.111 75.9874,-116.938" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="molecule.expression.AttrExpressions.OptionalExpr" xlink:href="../expression/AttrExpressions$$OptionalExpr.html#inheritance-diagram"><path d="M213.583,-150C213.583,-150 118.417,-150 118.417,-150 114.083,-150 109.75,-145.667 109.75,-141.333 109.75,-141.333 109.75,-132.667 109.75,-132.667 109.75,-128.333 114.083,-124 118.417,-124 118.417,-124 213.583,-124 213.583,-124 217.917,-124 222.25,-128.333 222.25,-132.667 222.25,-132.667 222.25,-141.333 222.25,-141.333 222.25,-145.667 217.917,-150 213.583,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="122" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="141.559" text-anchor="start">OptionalExpr[Ns, T]</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="RefAttr$[Ns, T] is a subtype of OptionalExpr[Ns, T]"><path d="M150.756,-118.41C142.318,-108.674 132.045,-96.8214 124.507,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="149.041,-120.173 155.477,-123.858 152.744,-116.964 149.041,-120.173" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 235.00 158.00" height="158pt" width="235pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 231,-154 231,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.RefAttr$ (this trait)" xlink:href="#inheritance-diagram"><path d="M148.583,-88C148.583,-88 79.4167,-88 79.4167,-88 75.0833,-88 70.75,-83.6667 70.75,-79.3333 70.75,-79.3333 70.75,-70.6667 70.75,-70.6667 70.75,-66.3333 75.0833,-62 79.4167,-62 79.4167,-62 148.583,-62 148.583,-62 152.917,-62 157.25,-66.3333 157.25,-70.6667 157.25,-70.6667 157.25,-79.3333 157.25,-79.3333 157.25,-83.6667 152.917,-88 148.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="83" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="102.605" text-anchor="start">RefAttr$[Ns]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.ManyRefAttr$" xlink:href="attributes$$ManyRefAttr$.html#inheritance-diagram"><path d="M97.5833,-26C97.5833,-26 8.41667,-26 8.41667,-26 4.08333,-26 -0.25,-21.6667 -0.25,-17.3333 -0.25,-17.3333 -0.25,-8.66667 -0.25,-8.66667 -0.25,-4.33333 4.08333,-0 8.41667,-0 8.41667,-0 97.5833,-0 97.5833,-0 101.917,-0 106.25,-4.33333 106.25,-8.66667 106.25,-8.66667 106.25,-17.3333 106.25,-17.3333 106.25,-21.6667 101.917,-26 97.5833,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8242" text-anchor="start">ManyRefAttr$[Ns]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="ManyRefAttr$[Ns] is a subtype of RefAttr$[Ns]"><path d="M96.394,-56.6826C86.4444,-46.8961 74.251,-34.9026 65.3259,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="94.9472,-58.6961 101.656,-61.8581 98.3833,-55.2027 94.9472,-58.6961" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.OneRefAttr$" xlink:href="attributes$$OneRefAttr$.html#inheritance-diagram"><path d="M218.333,-26C218.333,-26 133.667,-26 133.667,-26 129.333,-26 125,-21.6667 125,-17.3333 125,-17.3333 125,-8.66667 125,-8.66667 125,-4.33333 129.333,-0 133.667,-0 133.667,-0 218.333,-0 218.333,-0 222.667,-0 227,-4.33333 227,-8.66667 227,-8.66667 227,-17.3333 227,-17.3333 227,-21.6667 222.667,-26 218.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="137" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="156.545" text-anchor="start">OneRefAttr$[Ns]</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="OneRefAttr$[Ns] is a subtype of RefAttr$[Ns]"><path d="M131.614,-56.9539C141.778,-47.1185 154.317,-34.9839 163.472,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="129.873,-55.2295 126.547,-61.8581 133.281,-58.7507 129.873,-55.2295" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.boilerplate.attributes.Attr" xlink:href="attributes$$Attr.html#inheritance-diagram"><path d="M133.333,-150C133.333,-150 94.6667,-150 94.6667,-150 90.3333,-150 86,-145.667 86,-141.333 86,-141.333 86,-132.667 86,-132.667 86,-128.333 90.3333,-124 94.6667,-124 94.6667,-124 133.333,-124 133.333,-124 137.667,-124 142,-128.333 142,-132.667 142,-132.667 142,-141.333 142,-141.333 142,-145.667 137.667,-150 133.333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="98" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="117.666" text-anchor="start">Attr</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="RefAttr$[Ns] is a subtype of Attr"><path d="M114,-116.753C114,-107.355 114,-96.3336 114,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="111.55,-116.858 114,-123.858 116.45,-116.858 111.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -740,7 +746,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.boilerplate.attributes.RefAttr$"><span>RefAttr$</span></li><li class="in" name="molecule.expression.AttrExpressions.OptionalExpr"><span>OptionalExpr</span></li><li class="in" name="molecule.boilerplate.attributes.Attr"><span>Attr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.boilerplate.attributes.RefAttr$"><span>RefAttr$</span></li><li class="in" name="molecule.boilerplate.attributes.Attr"><span>Attr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -815,32 +821,6 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="molecule.expression.AttrExpressions.OptionalExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(some:Option[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Option[T]):NswithAttr"></a>
-      <span class="permalink">
-      <a href="../../molecule/boilerplate/attributes$$RefAttr$.html#apply(some:Option[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="some">some: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="molecule.boilerplate.attributes.RefAttr$.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.RefAttr$.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Apply optional attribute value in save molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Apply optional attribute value in save molecule.</p><pre><span class="kw">val</span> benAge = <span class="std">Some</span>(<span class="num">42</span>)
-<span class="kw">val</span> lizAge = <span class="std">None</span>
-
-<span class="cmt">// Save optional `age` values</span>
-Person.name(<span class="lit">"Ben"</span>).age$(benAge).save
-Person.name(<span class="lit">"Liz"</span>).age$(lizAge).save
-
-Person.name.age$.get === <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="std">Some</span>(<span class="num">42</span>)),
-  (<span class="lit">"Liz"</span>, <span class="std">None</span>),
-)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1153,9 +1133,7 @@ Person.name.age$.get === <span class="std">List</span>(
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="molecule.expression.AttrExpressions.OptionalExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.RefAttr$.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.RefAttr$.T">T</span>]</h3>
-            </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
+        <div class="parent" name="molecule.boilerplate.attributes.Attr">
               <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>

@@ -25,275 +25,296 @@ disablePathToLower = true
     url = "/manual/"
 
 
-# API ============================================================
+# Docs ============================================================
 
 [[menu.main]]
-    name = "API docs"
+    name = "Docs"
     weight = 40
-    identifier = "api"
+    identifier = "docs"
     url = "/api/molecule"
 
 [[menu.main]]
     name = "action"
-    weight = 1
-    parent = "api"
-    identifier = "api-action"
+    parent = "docs"
+    identifier = "docs-action"
     url = "/api/molecule/action"
 [[menu.main]]
+    name = "get"
+    parent = "docs-action"
+    weight = 1
+    identifier = "docs-action-get"
+    url = "/api/molecule/action/get/"
+[[menu.main]]
     name = "CompositeInserts"
-    parent = "api-action"
-    identifier = "api-action-CompositeInserts"
+    parent = "docs-action"
+    identifier = "docs-action-CompositeInserts"
     url = "/api/molecule/action/CompositeInserts.html"
 [[menu.main]]
     name = "Entity"
-    parent = "api-action"
-    identifier = "api-action-Entity"
+    parent = "docs-action"
+    identifier = "docs-action-Entity"
     url = "/api/molecule/action/Entity.html"
 [[menu.main]]
     name = "EntityOps"
-    parent = "api-action"
-    identifier = "api-action-EntityOps"
+    parent = "docs-action"
+    identifier = "docs-action-EntityOps"
     url = "/api/molecule/action/EntityOps.html"
 [[menu.main]]
     name = "Molecule"
-    parent = "api-action"
-    identifier = "api-action-Molecule"
+    parent = "docs-action"
+    identifier = "docs-action-Molecule"
     url = "/api/molecule/action/Molecule.html"
 [[menu.main]]
     name = "OptionalMapOps"
-    parent = "api-action"
-    identifier = "api-action-OptionalMapOps"
+    parent = "docs-action"
+    identifier = "docs-action-OptionalMapOps"
     url = "/api/molecule/action/OptionalMapOps.html"
+[[menu.main]]
+    name = "OptionalMapOps"
+    parent = "docs-action"
+    identifier = "docs-action-OptionalMapOps"
+    url = "/api/molecule/action/ShowDebug.html"
+
+[[menu.main]]
+    name = "api"
+    parent = "docs"
+    identifier = "docs-api"
+    url = "/api/molecule/api"
 
 [[menu.main]]
     name = "composition"
-    parent = "api"
-    identifier = "api-composition"
+    parent = "docs"
+    identifier = "docs-composition"
     url = "/api/molecule/composition"
 [[menu.main]]
     name = "Composite"
-    parent = "api-composition"
-    identifier = "api-composition-Composite"
+    parent = "docs-composition"
+    identifier = "docs-composition-Composite"
     url = "/api/molecule/composition/Composite.html"
 [[menu.main]]
     name = "CompositeInit"
-    parent = "api-composition"
-    identifier = "api-composition-CompositeInit"
+    parent = "docs-composition"
+    identifier = "docs-composition-CompositeInit"
     url = "/api/molecule/composition/CompositeInit.html"
 [[menu.main]]
     name = "CompositeInit_In_1"
-    parent = "api-composition"
-    identifier = "api-composition-CompositeInit_In_1"
+    parent = "docs-composition"
+    identifier = "docs-composition-CompositeInit_In_1"
     url = "/api/molecule/composition/CompositeInit_In_1.html"
 [[menu.main]]
     name = "CompositeInit_In_2"
-    parent = "api-composition"
-    identifier = "api-composition-CompositeInit_In_2"
+    parent = "docs-composition"
+    identifier = "docs-composition-CompositeInit_In_2"
     url = "/api/molecule/composition/CompositeInit_In_2.html"
 [[menu.main]]
     name = "CompositeInit_In_3"
-    parent = "api-composition"
-    identifier = "api-composition-CompositeInit_In_3"
+    parent = "docs-composition"
+    identifier = "docs-composition-CompositeInit_In_3"
     url = "/api/molecule/composition/CompositeInit_In_3.html"
 [[menu.main]]
     name = "Composite_In_1"
-    parent = "api-composition"
-    identifier = "api-composition-Composite_In_1"
+    parent = "docs-composition"
+    identifier = "docs-composition-Composite_In_1"
     url = "/api/molecule/composition/Composite_In_1.html"
 [[menu.main]]
     name = "Composite_In_2"
-    parent = "api-composition"
-    identifier = "api-composition-Composite_In_2"
+    parent = "docs-composition"
+    identifier = "docs-composition-Composite_In_2"
     url = "/api/molecule/composition/Composite_In_2.html"
 [[menu.main]]
     name = "Composite_In_3"
-    parent = "api-composition"
-    identifier = "api-composition-Composite_In_3"
+    parent = "docs-composition"
+    identifier = "docs-composition-Composite_In_3"
     url = "/api/molecule/composition/Composite_In_3.html"
 [[menu.main]]
     name = "Nested"
-    parent = "api-composition"
-    identifier = "api-composition-Nested"
+    parent = "docs-composition"
+    identifier = "docs-composition-Nested"
     url = "/api/molecule/composition/Nested.html"
 [[menu.main]]
     name = "Nested_In_1"
-    parent = "api-composition"
-    identifier = "api-composition-Nested_In_1"
+    parent = "docs-composition"
+    identifier = "docs-composition-Nested_In_1"
     url = "/api/molecule/composition/Nested_In_1.html"
 [[menu.main]]
     name = "Nested_In_2"
-    parent = "api-composition"
-    identifier = "api-composition-Nested_In_2"
+    parent = "docs-composition"
+    identifier = "docs-composition-Nested_In_2"
     url = "/api/molecule/composition/Nested_In_2.html"
 [[menu.main]]
     name = "Nested_In_3"
-    parent = "api-composition"
-    identifier = "api-composition-Nested_In_3"
+    parent = "docs-composition"
+    identifier = "docs-composition-Nested_In_3"
     url = "/api/molecule/composition/Nested_In_3.html"
 [[menu.main]]
     name = "Tx"
-    parent = "api-composition"
-    identifier = "api-composition-Tx"
+    parent = "docs-composition"
+    identifier = "docs-composition-Tx"
     url = "/api/molecule/composition/Tx.html"
 
 [[menu.main]]
     name = "exceptions"
-    parent = "api"
-    identifier = "api-exceptions"
+    parent = "docs"
+    identifier = "docs-exceptions"
     url = "/api/molecule/exceptions"
 [[menu.main]]
     name = "MoleculeException"
-    parent = "api-exceptions"
-    identifier = "api-exceptions-MoleculeException"
+    parent = "docs-exceptions"
+    identifier = "docs-exceptions-MoleculeException"
     url = "/api/molecule/exceptions/package%24?%24?MoleculeException.html"
 [[menu.main]]
     name = "QueryException"
-    parent = "api-exceptions"
-    identifier = "api-exceptions-QueryException"
+    parent = "docs-exceptions"
+    identifier = "docs-exceptions-QueryException"
     url = "/api/molecule/exceptions/package%24?%24?QueryException.html"
 
 [[menu.main]]
     name = "expression"
-    parent = "api"
-    identifier = "api-expression"
+    parent = "docs"
+    identifier = "docs-expression"
     url = "/api/molecule/expression"
 [[menu.main]]
     name = "AggregateKeywords"
-    parent = "api-expression"
-    identifier = "api-expression-AggregateKeywords"
+    parent = "docs-expression"
+    identifier = "docs-expression-AggregateKeywords"
     url = "/api/molecule/expression/AggregateKeywords.html"
 [[menu.main]]
     name = "AttrExpressions"
-    parent = "api-expression"
-    identifier = "api-expression-AttrExpressions"
+    parent = "docs-expression"
+    identifier = "docs-expression-AttrExpressions"
     url = "/api/molecule/expression/AttrExpressions.html"
+[[menu.main]]
+    name = "AttrExpressions"
+    parent = "docs-expression"
+    identifier = "docs-expression-AttrExpressions"
+    url = "/api/molecule/expression/LogicImplicits.html"
 
 [[menu.main]]
     name = "facade"
-    parent = "api"
-    identifier = "api-facade"
+    parent = "docs"
+    identifier = "docs-facade"
     url = "/api/molecule/facade"
 [[menu.main]]
     name = "Conn"
-    parent = "api-facade"
-    identifier = "api-facade-Conn"
+    parent = "docs-facade"
+    identifier = "docs-facade-Conn"
     url = "/api/molecule/facade/Conn.html"
 [[menu.main]]
     name = "Datomic"
-    parent = "api-facade"
-    identifier = "api-facade-Datomic"
+    parent = "docs-facade"
+    identifier = "docs-facade-Datomic"
     url = "/api/molecule/facade/Datomic.html"
 [[menu.main]]
     name = "TxReport"
-    parent = "api-facade"
-    identifier = "api-facade-TxReport"
+    parent = "docs-facade"
+    identifier = "docs-facade-TxReport"
     url = "/api/molecule/facade/TxReport.html"
 
 [[menu.main]]
     name = "factory"
-    parent = "api"
-    identifier = "api-factory"
+    parent = "docs"
+    identifier = "docs-factory"
     url = "/api/molecule/factory"
 [[menu.main]]
     name = "Composite_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Composite_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Composite_Factory"
     url = "/api/molecule/factory/Composite_Factory.html"
 [[menu.main]]
     name = "Composite_In_1_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Composite_In_1_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Composite_In_1_Factory"
     url = "/api/molecule/factory/Composite_In_1_Factory.html"
 [[menu.main]]
     name = "Composite_In_2_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Composite_In_2_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Composite_In_2_Factory"
     url = "/api/molecule/factory/Composite_In_2_Factory.html"
 [[menu.main]]
     name = "Composite_In_3_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Composite_In_3_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Composite_In_3_Factory"
     url = "/api/molecule/factory/Composite_In_3_Factory.html"
 [[menu.main]]
     name = "Molecule_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Molecule_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Molecule_Factory"
     url = "/api/molecule/factory/Molecule_Factory.html"
 [[menu.main]]
     name = "Molecule_In_1_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Molecule_In_1_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Molecule_In_1_Factory"
     url = "/api/molecule/factory/Molecule_In_1_Factory.html"
 [[menu.main]]
     name = "Molecule_In_2_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Molecule_In_2_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Molecule_In_2_Factory"
     url = "/api/molecule/factory/Molecule_In_2_Factory.html"
 [[menu.main]]
     name = "Molecule_In_3_Factory"
-    parent = "api-factory"
-    identifier = "api-factory-Molecule_In_3_Factory"
+    parent = "docs-factory"
+    identifier = "docs-factory-Molecule_In_3_Factory"
     url = "/api/molecule/factory/Molecule_In_3_Factory.html"
 
 [[menu.main]]
     name = "generic"
-    parent = "api"
-    identifier = "api-generic"
+    parent = "docs"
+    identifier = "docs-generic"
     url = "/api/molecule/generic"
 [[menu.main]]
     name = "Datom"
-    parent = "api-generic"
-    identifier = "api-generic-Datom"
+    parent = "docs-generic"
+    identifier = "docs-generic-Datom"
     url = "/api/molecule/generic/Datom.html"
 [[menu.main]]
     name = "Db"
-    parent = "api-generic"
-    identifier = "api-generic-Db"
+    parent = "docs-generic"
+    identifier = "docs-generic-Db"
     url = "/api/molecule/generic/Db.html"
 
 [[menu.main]]
     name = "input"
-    parent = "api"
-    identifier = "api-input"
+    parent = "docs"
+    identifier = "docs-input"
     url = "/api/molecule/input"
 [[menu.main]]
     name = "InputMolecule"
-    parent = "api-input"
-    identifier = "api-input-InputMolecule"
+    parent = "docs-input"
+    identifier = "docs-input-InputMolecule"
     url = "/api/molecule/input/InputMolecule.html"
 [[menu.main]]
     name = "InputMolecule_1"
-    parent = "api-input"
-    identifier = "api-input-InputMolecule_1"
+    parent = "docs-input"
+    identifier = "docs-input-InputMolecule_1"
     url = "/api/molecule/input/InputMolecule_1.html"
 [[menu.main]]
     name = "InputMolecule_2"
-    parent = "api-input"
-    identifier = "api-input-InputMolecule_2"
+    parent = "docs-input"
+    identifier = "docs-input-InputMolecule_2"
     url = "/api/molecule/input/InputMolecule_2.html"
 [[menu.main]]
     name = "InputMolecule_3"
-    parent = "api-input"
-    identifier = "api-input-InputMolecule_3"
+    parent = "docs-input"
+    identifier = "docs-input-InputMolecule_3"
     url = "/api/molecule/input/InputMolecule_3.html"
 
 [[menu.main]]
     name = "schema"
-    parent = "api"
-    identifier = "api-schema"
+    parent = "docs"
+    identifier = "docs-schema"
     url = "/api/molecule/schema"
 [[menu.main]]
     name = "SchemaTransaction"
-    parent = "api-schema"
-    identifier = "api-schema-SchemaTransaction"
+    parent = "docs-schema"
+    identifier = "docs-schema-SchemaTransaction"
     url = "/api/molecule/schema/SchemaTransaction.html"
 [[menu.main]]
     name = "definition"
-    parent = "api-schema"
-    identifier = "api-schema-definition"
+    parent = "docs-schema"
+    identifier = "docs-schema-definition"
     url = "/api/molecule/schema/definition%24?.html"
 
-# end of API ============================================================
+# end of Docs ============================================================
 
 
 [[menu.main]]

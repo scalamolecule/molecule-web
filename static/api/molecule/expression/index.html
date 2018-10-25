@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.expression</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.expression" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.expression" />
+          <title>Molecule 0.15.0 - molecule.expression</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.expression" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.expression" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -168,6 +170,29 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       </span>
       
       <p class="shortcomment cmt">Various actions and operations on molecules and entities.</p><div class="fullcomment"><div class="comment cmt"><p>Various actions and operations on molecules and entities.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.api" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="api"></a><a id="api:api"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#api" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Public interfaces to be imported to use Molecule." href="../api/index.html"><span class="name">api</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Public interfaces to be imported to use Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Public interfaces to be imported to use Molecule.</p><p>To make the Molecule macro materializations as fast as possible we try to
+import as few macro implicits as possible. If your application code build molecules
+with at the most 10 attributes, then you can do the following import to start using Molecule:</p><pre><span class="kw">import</span> molecule.api.out10._</pre><p><code>out</code> means &quot;output molecule&quot; , and <code>10</code> the maximum arity or number of attributes
+of your molecules.</p><p>If you use input molecules awaiting an input then you can add <code>inX</code> where X is
+how many inputs (1, 2 or 3) you will use, for instance:</p><pre><span class="kw">import</span> molecule.api.in2_out10._</pre><p>This way we keep the implicit macro def lookups to a minimum and compilation speed
+as fast as possible.</p><p>Arities can be changed anytime you like. But not to a lower arity than that of the
+molecules you use in scope of the import.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ast"></a><a id="ast:ast"></a>
       <span class="permalink">
@@ -293,9 +318,13 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                         <a class="trait" href="AggregateKeywords.html" title="Aggregate keywords to mark aggregate expressions on attributes."></a>
                         <a href="AggregateKeywords.html" title="Aggregate keywords to mark aggregate expressions on attributes.">AggregateKeywords</a>
                       </li><li class="current-entities indented2">
-                        <a class="object" href="AttrExpressions$.html" title="Attribute expression methods."></a>
+                        <a class="object" href="AttrExpressions$.html" title=""></a>
                         <a class="trait" href="AttrExpressions.html" title="Attribute expression markers and methods."></a>
                         <a href="AttrExpressions.html" title="Attribute expression markers and methods.">AttrExpressions</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic."></a>
+                        <a href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic.">LogicImplicits</a>
                       </li><li name="molecule.facade" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="facade"></a><a id="facade:facade"></a>
       <span class="permalink">
@@ -373,7 +402,7 @@ input molecules are a good fit for re-use for queries where only a few parameter
 <br><br>
 Input molecules can await 1, 2 or 3 inputs and are constructed by applying the <a href="AttrExpressions$$qmark.html" class="extype" name="molecule.expression.AttrExpressions.?">?</a> marker
 to attributes. If one marker is applied, we get a <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_1</a>, 2 inputs creates
-an <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_3</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
+an <a href="../input/InputMolecule_2.html" class="extype" name="molecule.input.InputMolecule_2">InputMolecule_2</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
 <br><br>
 The three input molecule interfaces come in arity-versions corresponding to the number of non-?-marked attributes
 in the input molecule. Let's see a simple example:</p><pre><span class="cmt">// Sample data</span>
@@ -544,7 +573,17 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 242.00 96.00" height="96pt" width="242pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 92)" class="graph" id="graph0"><polygon points="-4,4 -4,-92 238,-92 238,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node object" id="graph1_0"><g id="a_object|graph1_0"><a xlink:title="molecule.expression.AttrExpressions" xlink:href="AttrExpressions$.html#inheritance-diagram"><path d="M91.3333,-26C91.3333,-26 8.66667,-26 8.66667,-26 4.33333,-26 0,-21.6667 0,-17.3333 0,-17.3333 0,-8.66667 0,-8.66667 0,-4.33333 4.33333,-0 8.66667,-0 8.66667,-0 91.3333,-0 91.3333,-0 95.6667,-0 100,-4.33333 100,-8.66667 100,-8.66667 100,-17.3333 100,-17.3333 100,-21.6667 95.6667,-26 91.3333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8789" text-anchor="start">AttrExpressions</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions" xlink:href="AttrExpressions.html#inheritance-diagram"><path d="M91.3333,-88C91.3333,-88 8.66667,-88 8.66667,-88 4.33333,-88 0,-83.6667 0,-79.3333 0,-79.3333 0,-70.6667 0,-70.6667 0,-66.3333 4.33333,-62 8.66667,-62 8.66667,-62 91.3333,-62 91.3333,-62 95.6667,-62 100,-66.3333 100,-70.6667 100,-70.6667 100,-79.3333 100,-79.3333 100,-83.6667 95.6667,-88 91.3333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="31.8789" text-anchor="start">AttrExpressions</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="AttrExpressions is a subtype of AttrExpressions"><path d="M50,-54.7534C50,-45.3549 50,-34.3336 50,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="47.5501,-54.8581 50,-61.8581 52.4501,-54.8581 47.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node object" id="graph1_2"><g id="a_object|graph1_2"><a xlink:title="molecule.expression.AggregateKeywords" xlink:href="AggregateKeywords$.html#inheritance-diagram"><path d="M225.333,-26C225.333,-26 126.667,-26 126.667,-26 122.333,-26 118,-21.6667 118,-17.3333 118,-17.3333 118,-8.66667 118,-8.66667 118,-4.33333 122.333,-0 126.667,-0 126.667,-0 225.333,-0 225.333,-0 229.667,-0 234,-4.33333 234,-8.66667 234,-8.66667 234,-17.3333 234,-17.3333 234,-21.6667 229.667,-26 225.333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="130" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="149.867" text-anchor="start">AggregateKeywords</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.expression.AggregateKeywords" xlink:href="AggregateKeywords.html#inheritance-diagram"><path d="M225.333,-88C225.333,-88 126.667,-88 126.667,-88 122.333,-88 118,-83.6667 118,-79.3333 118,-79.3333 118,-70.6667 118,-70.6667 118,-66.3333 122.333,-62 126.667,-62 126.667,-62 225.333,-62 225.333,-62 229.667,-62 234,-66.3333 234,-70.6667 234,-70.6667 234,-79.3333 234,-79.3333 234,-83.6667 229.667,-88 225.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="130" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="149.867" text-anchor="start">AggregateKeywords</text></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="AggregateKeywords is a subtype of AggregateKeywords"><path d="M176,-54.7534C176,-45.3549 176,-34.3336 176,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="173.55,-54.8581 176,-61.8581 178.45,-54.8581 173.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -647,7 +686,6 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
 Person.name.contains(<span class="lit">"John"</span>)             <span class="cmt">// fulltext search</span>
 Person.age.!=(<span class="num">42</span>)                        <span class="cmt">// negation (or `not`)</span>
 Person.age.&lt;(<span class="num">42</span>)                         <span class="cmt">// comparison (< > <= >=)</span>
-Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span>
 Person.age().get                         <span class="cmt">// match non-asserted datoms (null) in query</span>
 Person(benId).age().update               <span class="cmt">// apply empty value to retract value(s) in updates</span>
 Person.hobbies.assert(<span class="lit">"golf"</span>)            <span class="cmt">// assert card-many value(s)</span>
@@ -659,6 +697,26 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
      <a href="http://www.scalamolecule.org/manual/attributes/aggregates/" target="_blank">aggregates</a>,
      <a href="http://www.scalamolecule.org/manual/attributes/parameterized/" target="_blank">input molecules</a>,
      <a href="http://www.scalamolecule.org/manual/relationships/self-join/" target="_blank">self-join</a>
+    | Tests: <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression" target="_blank">expressions</a>,
+    <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input1String.scala#L1" target="_blank">input1</a>,
+    <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input2.scala#L1" target="_blank">input2</a>,
+    <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input3.scala#L1" target="_blank">input3</a></p></span></dd></dl></div>
+    </li><li name="molecule.expression.LogicImplicits" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="LogicImplicitsextendsAnyRef"></a><a id="LogicImplicits:LogicImplicits"></a>
+      <span class="permalink">
+      <a href="../../molecule/expression/index.html#LogicImplicitsextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Logic expression implicits to build OR/AND logic." href="LogicImplicits.html"><span class="name">LogicImplicits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Logic expression implicits to build OR/AND logic.</p><div class="fullcomment"><div class="comment cmt"><p>Logic expression implicits to build OR/AND logic.</p><pre>Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span></pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/attributes/expressions/" target="_blank">expressions</a>,
     | Tests: <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression" target="_blank">expressions</a>,
     <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input1String.scala#L1" target="_blank">input1</a>,
     <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input2.scala#L1" target="_blank">input2</a>,
@@ -683,7 +741,7 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Apply methods of arity 1-22 taking aggregate keywords." href="AggregateKeywords$.html"><span class="name">AggregateKeywords</span></a>
+        <a title="Apply methods of arity 1-22 taking aggregate keywords." href="AggregateKeywords$.html"><span class="name">AggregateKeywords</span></a><span class="result"> extends <a href="AggregateKeywords.html" class="extype" name="molecule.expression.AggregateKeywords">AggregateKeywords</a></span>
       </span>
       
       <p class="shortcomment cmt">Apply methods of arity 1-22 taking aggregate keywords.</p>
@@ -699,10 +757,10 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Attribute expression methods." href="AttrExpressions$.html"><span class="name">AttrExpressions</span></a>
+        <a title="" href="AttrExpressions$.html"><span class="name">AttrExpressions</span></a><span class="result"> extends <a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></span>
       </span>
       
-      <p class="shortcomment cmt">Attribute expression methods.</p>
+      
     </li>
               </ol>
             </div>

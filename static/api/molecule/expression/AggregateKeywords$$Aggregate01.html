@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.expression.AggregateKeywords.Aggregate01</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.expression.AggregateKeywords.Aggregate01" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.expression.AggregateKeywords.Aggregate01" />
+          <title>Molecule 0.15.0 - molecule.expression.AggregateKeywords.Aggregate01</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.expression.AggregateKeywords.Aggregate01" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.expression.AggregateKeywords.Aggregate01" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -216,7 +218,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a title="Apply methods of arity 1-22 taking aggregate keywords." href="AggregateKeywords$.html"><span class="name">AggregateKeywords</span></a>
+        <a title="Apply methods of arity 1-22 taking aggregate keywords." href="AggregateKeywords$.html"><span class="name">AggregateKeywords</span></a><span class="result"> extends <a href="AggregateKeywords.html" class="extype" name="molecule.expression.AggregateKeywords">AggregateKeywords</a></span>
       </span>
       
       <p class="shortcomment cmt">Apply methods of arity 1-22 taking aggregate keywords.</p><div class="fullcomment"><div class="comment cmt"><p>Apply methods of arity 1-22 taking aggregate keywords.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.expression">expression</a></dd></dl></div>
@@ -312,6 +314,70 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                         <span class="separator"></span>
                         <a class="trait" href="AggregateKeywords$$Aggregate22.html" title=""></a>
                         <a href="AggregateKeywords$$Aggregate22.html" title="">Aggregate22</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$avg.html" title="Average of attribute values."></a>
+                        <a href="AggregateKeywords$avg.html" title="Average of attribute values.">avg</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$count.html" title="Count of attribute values."></a>
+                        <a href="AggregateKeywords$count.html" title="Count of attribute values.">count</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$countDistinct.html" title="Count of distinct attribute values."></a>
+                        <a href="AggregateKeywords$countDistinct.html" title="Count of distinct attribute values.">countDistinct</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$distinct.html" title="Distinct attribute values."></a>
+                        <a href="AggregateKeywords$distinct.html" title="Distinct attribute values.">distinct</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$max.html" title="Maximum attribute value(s)."></a>
+                        <a href="AggregateKeywords$max.html" title="Maximum attribute value(s).">max</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$maxs.html" title=""></a>
+                        <a href="AggregateKeywords$maxs.html" title="">maxs</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$median.html" title="Median of attribute values."></a>
+                        <a href="AggregateKeywords$median.html" title="Median of attribute values.">median</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$min.html" title="Minimum attribute value(s)."></a>
+                        <a href="AggregateKeywords$min.html" title="Minimum attribute value(s).">min</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$mins.html" title=""></a>
+                        <a href="AggregateKeywords$mins.html" title="">mins</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$rand.html" title="Random attribute value(s)."></a>
+                        <a href="AggregateKeywords$rand.html" title="Random attribute value(s).">rand</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$rands.html" title=""></a>
+                        <a href="AggregateKeywords$rands.html" title="">rands</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$sample.html" title="Sample attribute value(s)."></a>
+                        <a href="AggregateKeywords$sample.html" title="Sample attribute value(s).">sample</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$samples.html" title=""></a>
+                        <a href="AggregateKeywords$samples.html" title="">samples</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$stddev.html" title="Variance of attribute values."></a>
+                        <a href="AggregateKeywords$stddev.html" title="Variance of attribute values.">stddev</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$sum.html" title="Sum of attribute values."></a>
+                        <a href="AggregateKeywords$sum.html" title="Sum of attribute values.">sum</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AggregateKeywords$variance.html" title="Variance of attribute values."></a>
+                        <a href="AggregateKeywords$variance.html" title="Variance of attribute values.">variance</a>
                       </li>
               </ul>
             </div>
@@ -354,7 +420,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 174.00 158.00" height="158pt" width="174pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 170,-154 170,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AggregateKeywords.Aggregate01 (this trait)" xlink:href="#inheritance-diagram"><path d="M133.333,-88C133.333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 133.333,-62 133.333,-62 137.667,-62 142,-66.3333 142,-70.6667 142,-70.6667 142,-79.3333 142,-79.3333 142,-83.6667 137.667,-88 133.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.9727" text-anchor="start">Aggregate01[Ns1, A]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.out.Out_1" xlink:href="../boilerplate/out$$Out_1.html#inheritance-diagram"><path d="M154.583,-26C154.583,-26 11.4167,-26 11.4167,-26 7.08333,-26 2.75,-21.6667 2.75,-17.3333 2.75,-17.3333 2.75,-8.66667 2.75,-8.66667 2.75,-4.33333 7.08333,-0 11.4167,-0 11.4167,-0 154.583,-0 154.583,-0 158.917,-0 163.25,-4.33333 163.25,-8.66667 163.25,-8.66667 163.25,-17.3333 163.25,-17.3333 163.25,-21.6667 158.917,-26 154.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="34.6836" text-anchor="start">Out_1[Ns1, Ns2, In1_1, In1_2, A]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Out_1[Ns1, Ns2, In1_1, In1_2, A] is a subtype of Aggregate01[Ns1, A]"><path d="M83,-54.7534C83,-45.3549 83,-34.3336 83,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="80.5501,-54.8581 83,-61.8581 85.4501,-54.8581 80.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M109.333,-150C109.333,-150 56.6667,-150 56.6667,-150 52.3333,-150 48,-145.667 48,-141.333 48,-141.333 48,-132.667 48,-132.667 48,-128.333 52.3333,-124 56.6667,-124 56.6667,-124 109.333,-124 109.333,-124 113.667,-124 118,-128.333 118,-132.667 118,-132.667 118,-141.333 118,-141.333 118,-145.667 113.667,-150 109.333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="60" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="79.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Aggregate01[Ns1, A] is a subtype of AnyRef"><path d="M83,-116.753C83,-107.355 83,-96.3336 83,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="80.5501,-116.858 83,-123.858 85.4501,-116.858 80.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 174.00 158.00" height="158pt" width="174pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 170,-154 170,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AggregateKeywords.Aggregate01 (this trait)" xlink:href="#inheritance-diagram"><path d="M133.333,-88C133.333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 133.333,-62 133.333,-62 137.667,-62 142,-66.3333 142,-70.6667 142,-70.6667 142,-79.3333 142,-79.3333 142,-83.6667 137.667,-88 133.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.9727" text-anchor="start">Aggregate01[Ns1, A]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.out.Out_1" xlink:href="../boilerplate/out$$Out_1.html#inheritance-diagram"><path d="M154.583,-26C154.583,-26 11.4167,-26 11.4167,-26 7.08333,-26 2.75,-21.6667 2.75,-17.3333 2.75,-17.3333 2.75,-8.66667 2.75,-8.66667 2.75,-4.33333 7.08333,-0 11.4167,-0 11.4167,-0 154.583,-0 154.583,-0 158.917,-0 163.25,-4.33333 163.25,-8.66667 163.25,-8.66667 163.25,-17.3333 163.25,-17.3333 163.25,-21.6667 158.917,-26 154.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="15" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="34.6836" text-anchor="start">Out_1[Ns1, Ns2, In1_1, In1_2, A]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Out_1[Ns1, Ns2, In1_1, In1_2, A] is a subtype of Aggregate01[Ns1, A]"><path d="M83,-54.7534C83,-45.3549 83,-34.3336 83,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="80.5501,-54.8581 83,-61.8581 85.4501,-54.8581 80.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M109.333,-150C109.333,-150 56.6667,-150 56.6667,-150 52.3333,-150 48,-145.667 48,-141.333 48,-141.333 48,-132.667 48,-132.667 48,-128.333 52.3333,-124 56.6667,-124 56.6667,-124 109.333,-124 109.333,-124 113.667,-124 118,-128.333 118,-132.667 118,-132.667 118,-141.333 118,-141.333 118,-145.667 113.667,-150 109.333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="60" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="79.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Aggregate01[Ns1, A] is a subtype of AnyRef"><path d="M83,-116.753C83,-107.355 83,-96.3336 83,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="80.5501,-116.858 83,-123.858 85.4501,-116.858 80.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -461,9 +527,9 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.stddev):Ns1[Double]"></a><a id="apply(api.stddev):Ns1[Double]"></a>
+      <a id="apply(v:molecule.api.core.stddev):Ns1[Double]"></a><a id="apply(api.core.stddev):Ns1[Double]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.stddev):Ns1[Double]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.stddev):Ns1[Double]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -472,14 +538,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#stddevextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.stddev">api.stddev</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#stddevextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.stddev">api.core.stddev</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.variance):Ns1[Double]"></a><a id="apply(api.variance):Ns1[Double]"></a>
+      <a id="apply(v:molecule.api.core.variance):Ns1[Double]"></a><a id="apply(api.core.variance):Ns1[Double]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.variance):Ns1[Double]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.variance):Ns1[Double]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -488,14 +554,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#varianceextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.variance">api.variance</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#varianceextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.variance">api.core.variance</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.median):Ns1[A]"></a><a id="apply(api.median):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.median):Ns1[A]"></a><a id="apply(api.core.median):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.median):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.median):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -504,14 +570,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#medianextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.median">api.median</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#medianextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.median">api.core.median</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.avg):Ns1[Double]"></a><a id="apply(api.avg):Ns1[Double]"></a>
+      <a id="apply(v:molecule.api.core.avg):Ns1[Double]"></a><a id="apply(api.core.avg):Ns1[Double]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.avg):Ns1[Double]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.avg):Ns1[Double]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -520,14 +586,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#avgextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.avg">api.avg</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#avgextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.avg">api.core.avg</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.sum):Ns1[A]"></a><a id="apply(api.sum):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.sum):Ns1[A]"></a><a id="apply(api.core.sum):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.sum):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.sum):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -536,14 +602,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#sumextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.sum">api.sum</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#sumextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.sum">api.core.sum</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.countDistinct):Ns1[Int]"></a><a id="apply(api.countDistinct):Ns1[Int]"></a>
+      <a id="apply(v:molecule.api.core.countDistinct):Ns1[Int]"></a><a id="apply(api.core.countDistinct):Ns1[Int]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.countDistinct):Ns1[Int]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.countDistinct):Ns1[Int]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -552,14 +618,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#countDistinctextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.countDistinct">api.countDistinct</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#countDistinctextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.countDistinct">api.core.countDistinct</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.count):Ns1[Int]"></a><a id="apply(api.count):Ns1[Int]"></a>
+      <a id="apply(v:molecule.api.core.count):Ns1[Int]"></a><a id="apply(api.core.count):Ns1[Int]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.count):Ns1[Int]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.count):Ns1[Int]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -568,14 +634,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#countextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.count">api.count</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#countextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.count">api.core.count</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Int">Int</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.samples):Ns1[Vector[A]]"></a><a id="apply(api.samples):Ns1[Vector[A]]"></a>
+      <a id="apply(v:molecule.api.core.samples):Ns1[List[A]]"></a><a id="apply(api.core.samples):Ns1[List[A]]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.samples):Ns1[Vector[A]]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.samples):Ns1[List[A]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -584,14 +650,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#samplesextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.samples">api.samples</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#samplesextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.samples">api.core.samples</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.rands):Ns1[Stream[A]]"></a><a id="apply(api.rands):Ns1[Stream[A]]"></a>
+      <a id="apply(v:molecule.api.core.rands):Ns1[List[A]]"></a><a id="apply(api.core.rands):Ns1[List[A]]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.rands):Ns1[Stream[A]]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.rands):Ns1[List[A]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -600,14 +666,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#randsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.rands">api.rands</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Stream">Stream</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#randsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.rands">api.core.rands</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.distinct):Ns1[Vector[A]]"></a><a id="apply(api.distinct):Ns1[Vector[A]]"></a>
+      <a id="apply(v:molecule.api.core.distinct):Ns1[List[A]]"></a><a id="apply(api.core.distinct):Ns1[List[A]]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.distinct):Ns1[Vector[A]]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.distinct):Ns1[List[A]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -616,14 +682,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#distinctextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.distinct">api.distinct</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#distinctextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.distinct">api.core.distinct</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.maxs):Ns1[Vector[A]]"></a><a id="apply(api.maxs):Ns1[Vector[A]]"></a>
+      <a id="apply(v:molecule.api.core.maxs):Ns1[List[A]]"></a><a id="apply(api.core.maxs):Ns1[List[A]]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.maxs):Ns1[Vector[A]]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.maxs):Ns1[List[A]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -632,14 +698,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#maxsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.maxs">api.maxs</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#maxsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.maxs">api.core.maxs</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.mins):Ns1[Vector[A]]"></a><a id="apply(api.mins):Ns1[Vector[A]]"></a>
+      <a id="apply(v:molecule.api.core.mins):Ns1[List[A]]"></a><a id="apply(api.core.mins):Ns1[List[A]]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.mins):Ns1[Vector[A]]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.mins):Ns1[List[A]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -648,14 +714,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#minsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.mins">api.mins</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#minsextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.mins">api.core.mins</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.sample):Ns1[A]"></a><a id="apply(api.sample):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.sample):Ns1[A]"></a><a id="apply(api.core.sample):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.sample):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.sample):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -664,14 +730,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#sampleextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.sample">api.sample</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#sampleextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.sample">api.core.sample</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.rand):Ns1[A]"></a><a id="apply(api.rand):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.rand):Ns1[A]"></a><a id="apply(api.core.rand):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.rand):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.rand):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -680,14 +746,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#randextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.rand">api.rand</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#randextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.rand">api.core.rand</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.max):Ns1[A]"></a><a id="apply(api.max):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.max):Ns1[A]"></a><a id="apply(api.core.max):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.max):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.max):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -696,14 +762,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#maxextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.max">api.max</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#maxextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.max">api.core.max</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
     </li><li name="molecule.expression.AggregateKeywords.Aggregate01#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(v:molecule.api.min):Ns1[A]"></a><a id="apply(api.min):Ns1[A]"></a>
+      <a id="apply(v:molecule.api.core.min):Ns1[A]"></a><a id="apply(api.core.min):Ns1[A]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.min):Ns1[A]" title="Permalink">
+      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#apply(v:molecule.api.core.min):Ns1[A]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -712,7 +778,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../package$$api$.html#minextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.min">api.min</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
+        <span class="name">apply</span><span class="params">(<span name="v">v: <a href="../api/core$.html#minextendsAnyRef" class="extmbr" name="molecule.expression.AggregateKeywords.min">api.core.min</a></span>)</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.A">A</span>]</span>
       </span>
       
       
@@ -864,22 +930,6 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.Aggregate01#length" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="length:Ns1[Int]"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords$$Aggregate01.html#length:Ns1[Int]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">length</span><span class="result">: <span class="extype" name="molecule.expression.AggregateKeywords.Aggregate01.Ns1">Ns1</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">

@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.expression.AttrExpressions</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.expression.AttrExpressions" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.expression.AttrExpressions" />
+          <title>Molecule 0.15.0 - molecule.expression.AttrExpressions</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.expression.AttrExpressions" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.expression.AttrExpressions" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -209,9 +211,13 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                         <a class="trait" href="AggregateKeywords.html" title="Aggregate keywords to mark aggregate expressions on attributes."></a>
                         <a href="AggregateKeywords.html" title="Aggregate keywords to mark aggregate expressions on attributes.">AggregateKeywords</a>
                       </li><li class="current-entities indented2">
-                        <a class="object" href="" title="Attribute expression methods."></a>
+                        <a class="object" href="" title=""></a>
                         <a class="trait" href="AttrExpressions.html" title="Attribute expression markers and methods."></a>
                         <a href="AttrExpressions.html" title="Attribute expression markers and methods.">AttrExpressions</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic."></a>
+                        <a href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic.">LogicImplicits</a>
                       </li>
               </ul>
             </div>
@@ -237,21 +243,21 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">AttrExpressions</span>
+        <span class="name">AttrExpressions</span><span class="result"> extends <a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Attribute expression methods.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/expression/AttrExpressions.scala#L1" target="_blank">AttrExpressions.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/expression/AttrExpressions.scala#L1" target="_blank">AttrExpressions.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
                 <span class="toggle diagram-link">
                   Content Hierarchy
                 </span>
-                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 629.00 158.00" height="158pt" width="629pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 625,-154 625,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="molecule.expression.AttrExpressions.MapAttrExpr" xlink:href="AttrExpressions$$MapAttrExpr.html#inheritance-diagram"><path d="M374.583,-26C374.583,-26 269.417,-26 269.417,-26 265.083,-26 260.75,-21.6667 260.75,-17.3333 260.75,-17.3333 260.75,-8.66667 260.75,-8.66667 260.75,-4.33333 265.083,-0 269.417,-0 269.417,-0 374.583,-0 374.583,-0 378.917,-0 383.25,-4.33333 383.25,-8.66667 383.25,-8.66667 383.25,-17.3333 383.25,-17.3333 383.25,-21.6667 378.917,-26 374.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="273" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="292.895" text-anchor="start">MapAttrExpr[Ns, In, T]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.ManyExpr" xlink:href="AttrExpressions$$ManyExpr.html#inheritance-diagram"><path d="M233.333,-26C233.333,-26 136.667,-26 136.667,-26 132.333,-26 128,-21.6667 128,-17.3333 128,-17.3333 128,-8.66667 128,-8.66667 128,-4.33333 132.333,-0 136.667,-0 136.667,-0 233.333,-0 233.333,-0 237.667,-0 242,-4.33333 242,-8.66667 242,-8.66667 242,-17.3333 242,-17.3333 242,-21.6667 237.667,-26 233.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="140" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="159.617" text-anchor="start">ManyExpr[Ns, In, T]</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.expression.AttrExpressions.OneExpr" xlink:href="AttrExpressions$$OneExpr.html#inheritance-diagram"><path d="M101.333,-26C101.333,-26 8.66667,-26 8.66667,-26 4.33333,-26 0,-21.6667 0,-17.3333 0,-17.3333 0,-8.66667 0,-8.66667 0,-4.33333 4.33333,-0 8.66667,-0 8.66667,-0 101.333,-0 101.333,-0 105.667,-0 110,-4.33333 110,-8.66667 110,-8.66667 110,-17.3333 110,-17.3333 110,-21.6667 105.667,-26 101.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8379" text-anchor="start">OneExpr[Ns, In, T]</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.expression.AttrExpressions.ValueAttrExpr" xlink:href="AttrExpressions$$ValueAttrExpr.html#inheritance-diagram"><path d="M233.583,-88C233.583,-88 124.417,-88 124.417,-88 120.083,-88 115.75,-83.6667 115.75,-79.3333 115.75,-79.3333 115.75,-70.6667 115.75,-70.6667 115.75,-66.3333 120.083,-62 124.417,-62 124.417,-62 233.583,-62 233.583,-62 237.917,-62 242.25,-66.3333 242.25,-70.6667 242.25,-70.6667 242.25,-79.3333 242.25,-79.3333 242.25,-83.6667 237.917,-88 233.583,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="128" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="147.74" text-anchor="start">ValueAttrExpr[Ns, In, T]</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="MapAttrExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M214.559,-59.0801C238.78,-48.9173 270.438,-35.6342 293.105,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="213.445,-56.8905 207.938,-61.8581 215.341,-61.4089 213.445,-56.8905" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph1_3_1"><g id="a_inheritance|graph1_3_1"><a xlink:title="ManyExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M180.925,-54.7534C181.865,-45.3549 182.967,-34.3336 183.788,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="178.473,-54.649 180.214,-61.8581 183.349,-55.1367 178.473,-54.649" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="OneExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M147.355,-58.6877C126.46,-48.5774 99.4587,-35.5123 80.0559,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="146.538,-61.0145 153.907,-61.8581 148.673,-56.6037 146.538,-61.0145" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="molecule.expression.AttrExpressions.ManyRefAttrExpr" xlink:href="AttrExpressions$$ManyRefAttrExpr.html#inheritance-diagram"><path d="M523.333,-26C523.333,-26 410.667,-26 410.667,-26 406.333,-26 402,-21.6667 402,-17.3333 402,-17.3333 402,-8.66667 402,-8.66667 402,-4.33333 406.333,-0 410.667,-0 410.667,-0 523.333,-0 523.333,-0 527.667,-0 532,-4.33333 532,-8.66667 532,-8.66667 532,-17.3333 532,-17.3333 532,-21.6667 527.667,-26 523.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="414" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="433.766" text-anchor="start">ManyRefAttrExpr[Ns, In]</text></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.expression.AttrExpressions.OneRefAttrExpr" xlink:href="AttrExpressions$$OneRefAttrExpr.html#inheritance-diagram"><path d="M612.333,-88C612.333,-88 503.667,-88 503.667,-88 499.333,-88 495,-83.6667 495,-79.3333 495,-79.3333 495,-70.6667 495,-70.6667 495,-66.3333 499.333,-62 503.667,-62 503.667,-62 612.333,-62 612.333,-62 616.667,-62 621,-66.3333 621,-70.6667 621,-70.6667 621,-79.3333 621,-79.3333 621,-83.6667 616.667,-88 612.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="507" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="526.986" text-anchor="start">OneRefAttrExpr[Ns, In]</text></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="molecule.expression.AttrExpressions.ManyAttrExpr" xlink:href="AttrExpressions$$ManyAttrExpr.html#inheritance-diagram"><path d="M430.333,-88C430.333,-88 269.667,-88 269.667,-88 265.333,-88 261,-83.6667 261,-79.3333 261,-79.3333 261,-70.6667 261,-70.6667 261,-66.3333 265.333,-62 269.667,-62 269.667,-62 430.333,-62 430.333,-62 434.667,-62 439,-66.3333 439,-70.6667 439,-70.6667 439,-79.3333 439,-79.3333 439,-83.6667 434.667,-88 430.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="273" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="292.529" text-anchor="start">ManyAttrExpr[Ns, Add, OldNew, Rem]</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="MapAttrExpr[Ns, In, T] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M341.278,-55.3097C336.836,-45.7925 331.565,-34.4962 327.658,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="339.153,-56.5509 344.334,-61.8581 343.594,-54.4787 339.153,-56.5509" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node1 --><g class="edge inheritance" id="graph1_6_1"><g id="a_inheritance|graph1_6_1"><a xlink:title="ManyExpr[Ns, In, T] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M310.019,-59.4614C281.842,-49.2151 244.558,-35.6576 218.059,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="309.194,-61.7683 316.61,-61.8581 310.869,-57.1633 309.194,-61.7683" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node4 --><g class="edge inheritance" id="graph1_6_4"><g id="a_inheritance|graph1_6_4"><a xlink:title="ManyRefAttrExpr[Ns, In] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M380.115,-58.5563C399.795,-48.4643 425.13,-35.4716 443.359,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="378.787,-56.4838 373.677,-61.8581 381.023,-60.8439 378.787,-56.4838" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.expression.AttrExpressions.AttrExpr" xlink:href="AttrExpressions$$AttrExpr.html#inheritance-diagram"><path d="M506.333,-150C506.333,-150 427.667,-150 427.667,-150 423.333,-150 419,-145.667 419,-141.333 419,-141.333 419,-132.667 419,-132.667 419,-128.333 423.333,-124 427.667,-124 427.667,-124 506.333,-124 506.333,-124 510.667,-124 515,-128.333 515,-132.667 515,-132.667 515,-141.333 515,-141.333 515,-145.667 510.667,-150 506.333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="431" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="450.734" text-anchor="start">AttrExpr[Ns, T]</text></a></g></g><!-- node7&#45;&gt;node3 --><g class="edge inheritance" id="graph1_7_3"><g id="a_inheritance|graph1_7_3"><a xlink:title="ValueAttrExpr[Ns, In, T] is a subtype of AttrExpr[Ns, T]"><path d="M411.874,-124.515C361.676,-114.058 287.818,-98.6704 236.801,-88.0418" stroke="#d4d4d4" fill="none"></path><polygon points="411.443,-126.928 418.795,-125.957 412.442,-122.131 411.443,-126.928" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node4 --><g class="edge inheritance" id="graph1_7_4"><g id="a_inheritance|graph1_7_4"><a xlink:title="ManyRefAttrExpr[Ns, In] is a subtype of AttrExpr[Ns, T]"><path d="M467,-116.596C467,-91.1464 467,-47.2522 467,-26.0947" stroke="#d4d4d4" fill="none"></path><polygon points="464.55,-116.856 467,-123.856 469.45,-116.856 464.55,-116.856" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node5 --><g class="edge inheritance" id="graph1_7_5"><g id="a_inheritance|graph1_7_5"><a xlink:title="OneRefAttrExpr[Ns, In] is a subtype of AttrExpr[Ns, T]"><path d="M491.63,-119.761C506.753,-109.789 525.805,-97.2278 539.612,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="489.911,-117.959 485.415,-123.858 492.608,-122.05 489.911,-117.959" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 629.00 158.00" height="158pt" width="629pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 625,-154 625,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node outside trait" id="graph1_0"><g id="a_outside trait|graph1_0"><a xlink:title="molecule.expression.AttrExpressions.MapAttrExpr" xlink:href="AttrExpressions$MapAttrExpr.html#inheritance-diagram"><path d="M374.583,-26C374.583,-26 269.417,-26 269.417,-26 265.083,-26 260.75,-21.6667 260.75,-17.3333 260.75,-17.3333 260.75,-8.66667 260.75,-8.66667 260.75,-4.33333 265.083,-0 269.417,-0 269.417,-0 374.583,-0 374.583,-0 378.917,-0 383.25,-4.33333 383.25,-8.66667 383.25,-8.66667 383.25,-17.3333 383.25,-17.3333 383.25,-21.6667 378.917,-26 374.583,-26" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="273" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="292.895" text-anchor="start">MapAttrExpr[Ns, In, T]</text></a></g></g><!-- node1 --><g class="node outside trait" id="graph1_1"><g id="a_outside trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.ManyExpr" xlink:href="AttrExpressions$ManyExpr.html#inheritance-diagram"><path d="M233.333,-26C233.333,-26 136.667,-26 136.667,-26 132.333,-26 128,-21.6667 128,-17.3333 128,-17.3333 128,-8.66667 128,-8.66667 128,-4.33333 132.333,-0 136.667,-0 136.667,-0 233.333,-0 233.333,-0 237.667,-0 242,-4.33333 242,-8.66667 242,-8.66667 242,-17.3333 242,-17.3333 242,-21.6667 237.667,-26 233.333,-26" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="140" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="159.617" text-anchor="start">ManyExpr[Ns, In, T]</text></a></g></g><!-- node2 --><g class="node outside trait" id="graph1_2"><g id="a_outside trait|graph1_2"><a xlink:title="molecule.expression.AttrExpressions.OneExpr" xlink:href="AttrExpressions$OneExpr.html#inheritance-diagram"><path d="M101.333,-26C101.333,-26 8.66667,-26 8.66667,-26 4.33333,-26 0,-21.6667 0,-17.3333 0,-17.3333 0,-8.66667 0,-8.66667 0,-4.33333 4.33333,-0 8.66667,-0 8.66667,-0 101.333,-0 101.333,-0 105.667,-0 110,-4.33333 110,-8.66667 110,-8.66667 110,-17.3333 110,-17.3333 110,-21.6667 105.667,-26 101.333,-26" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8379" text-anchor="start">OneExpr[Ns, In, T]</text></a></g></g><!-- node3 --><g class="node outside trait" id="graph1_3"><g id="a_outside trait|graph1_3"><a xlink:title="molecule.expression.AttrExpressions.ValueAttrExpr" xlink:href="AttrExpressions$ValueAttrExpr.html#inheritance-diagram"><path d="M233.583,-88C233.583,-88 124.417,-88 124.417,-88 120.083,-88 115.75,-83.6667 115.75,-79.3333 115.75,-79.3333 115.75,-70.6667 115.75,-70.6667 115.75,-66.3333 120.083,-62 124.417,-62 124.417,-62 233.583,-62 233.583,-62 237.917,-62 242.25,-66.3333 242.25,-70.6667 242.25,-70.6667 242.25,-79.3333 242.25,-79.3333 242.25,-83.6667 237.917,-88 233.583,-88" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="128" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="147.74" text-anchor="start">ValueAttrExpr[Ns, In, T]</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="MapAttrExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M214.559,-59.0801C238.78,-48.9173 270.438,-35.6342 293.105,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="213.445,-56.8905 207.938,-61.8581 215.341,-61.4089 213.445,-56.8905" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph1_3_1"><g id="a_inheritance|graph1_3_1"><a xlink:title="ManyExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M180.925,-54.7534C181.865,-45.3549 182.967,-34.3336 183.788,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="178.473,-54.649 180.214,-61.8581 183.349,-55.1367 178.473,-54.649" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="OneExpr[Ns, In, T] is a subtype of ValueAttrExpr[Ns, In, T]"><path d="M147.355,-58.6877C126.46,-48.5774 99.4587,-35.5123 80.0559,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="146.538,-61.0145 153.907,-61.8581 148.673,-56.6037 146.538,-61.0145" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node outside trait" id="graph1_4"><g id="a_outside trait|graph1_4"><a xlink:title="molecule.expression.AttrExpressions.ManyRefAttrExpr" xlink:href="AttrExpressions$ManyRefAttrExpr.html#inheritance-diagram"><path d="M523.333,-26C523.333,-26 410.667,-26 410.667,-26 406.333,-26 402,-21.6667 402,-17.3333 402,-17.3333 402,-8.66667 402,-8.66667 402,-4.33333 406.333,-0 410.667,-0 410.667,-0 523.333,-0 523.333,-0 527.667,-0 532,-4.33333 532,-8.66667 532,-8.66667 532,-17.3333 532,-17.3333 532,-21.6667 527.667,-26 523.333,-26" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="414" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="433.766" text-anchor="start">ManyRefAttrExpr[Ns, In]</text></a></g></g><!-- node5 --><g class="node outside trait" id="graph1_5"><g id="a_outside trait|graph1_5"><a xlink:title="molecule.expression.AttrExpressions.OneRefAttrExpr" xlink:href="AttrExpressions$OneRefAttrExpr.html#inheritance-diagram"><path d="M612.333,-88C612.333,-88 503.667,-88 503.667,-88 499.333,-88 495,-83.6667 495,-79.3333 495,-79.3333 495,-70.6667 495,-70.6667 495,-66.3333 499.333,-62 503.667,-62 503.667,-62 612.333,-62 612.333,-62 616.667,-62 621,-66.3333 621,-70.6667 621,-70.6667 621,-79.3333 621,-79.3333 621,-83.6667 616.667,-88 612.333,-88" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="507" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="526.986" text-anchor="start">OneRefAttrExpr[Ns, In]</text></a></g></g><!-- node6 --><g class="node outside trait" id="graph1_6"><g id="a_outside trait|graph1_6"><a xlink:title="molecule.expression.AttrExpressions.ManyAttrExpr" xlink:href="AttrExpressions$ManyAttrExpr.html#inheritance-diagram"><path d="M430.333,-88C430.333,-88 269.667,-88 269.667,-88 265.333,-88 261,-83.6667 261,-79.3333 261,-79.3333 261,-70.6667 261,-70.6667 261,-66.3333 265.333,-62 269.667,-62 269.667,-62 430.333,-62 430.333,-62 434.667,-62 439,-66.3333 439,-70.6667 439,-70.6667 439,-79.3333 439,-79.3333 439,-83.6667 434.667,-88 430.333,-88" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="273" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="292.529" text-anchor="start">ManyAttrExpr[Ns, Add, OldNew, Rem]</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="MapAttrExpr[Ns, In, T] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M341.278,-55.3097C336.836,-45.7925 331.565,-34.4962 327.658,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="339.153,-56.5509 344.334,-61.8581 343.594,-54.4787 339.153,-56.5509" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node1 --><g class="edge inheritance" id="graph1_6_1"><g id="a_inheritance|graph1_6_1"><a xlink:title="ManyExpr[Ns, In, T] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M310.019,-59.4614C281.842,-49.2151 244.558,-35.6576 218.059,-26.0213" stroke="#d4d4d4" fill="none"></path><polygon points="309.194,-61.7683 316.61,-61.8581 310.869,-57.1633 309.194,-61.7683" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node4 --><g class="edge inheritance" id="graph1_6_4"><g id="a_inheritance|graph1_6_4"><a xlink:title="ManyRefAttrExpr[Ns, In] is a subtype of ManyAttrExpr[Ns, Add, OldNew, Rem]"><path d="M380.115,-58.5563C399.795,-48.4643 425.13,-35.4716 443.359,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="378.787,-56.4838 373.677,-61.8581 381.023,-60.8439 378.787,-56.4838" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node outside trait" id="graph1_7"><g id="a_outside trait|graph1_7"><a xlink:title="molecule.expression.AttrExpressions.AttrExpr" xlink:href="AttrExpressions$AttrExpr.html#inheritance-diagram"><path d="M506.333,-150C506.333,-150 427.667,-150 427.667,-150 423.333,-150 419,-145.667 419,-141.333 419,-141.333 419,-132.667 419,-132.667 419,-128.333 423.333,-124 427.667,-124 427.667,-124 506.333,-124 506.333,-124 510.667,-124 515,-128.333 515,-132.667 515,-132.667 515,-141.333 515,-141.333 515,-145.667 510.667,-150 506.333,-150" stroke="#ababab" fill="#e1e1e1"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="431" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#7d7d7d" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="450.734" text-anchor="start">AttrExpr[Ns, T]</text></a></g></g><!-- node7&#45;&gt;node3 --><g class="edge inheritance" id="graph1_7_3"><g id="a_inheritance|graph1_7_3"><a xlink:title="ValueAttrExpr[Ns, In, T] is a subtype of AttrExpr[Ns, T]"><path d="M411.874,-124.515C361.676,-114.058 287.818,-98.6704 236.801,-88.0418" stroke="#d4d4d4" fill="none"></path><polygon points="411.443,-126.928 418.795,-125.957 412.442,-122.131 411.443,-126.928" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node4 --><g class="edge inheritance" id="graph1_7_4"><g id="a_inheritance|graph1_7_4"><a xlink:title="ManyRefAttrExpr[Ns, In] is a subtype of AttrExpr[Ns, T]"><path d="M467,-116.596C467,-91.1464 467,-47.2522 467,-26.0947" stroke="#d4d4d4" fill="none"></path><polygon points="464.55,-116.856 467,-123.856 469.45,-116.856 464.55,-116.856" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node5 --><g class="edge inheritance" id="graph1_7_5"><g id="a_inheritance|graph1_7_5"><a xlink:title="OneRefAttrExpr[Ns, In] is a subtype of AttrExpr[Ns, T]"><path d="M491.63,-119.761C506.753,-109.789 525.805,-97.2278 539.612,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="489.911,-117.959 485.415,-123.858 492.608,-122.05 489.911,-117.959" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -273,7 +279,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
           <div id="order">
             <span class="filtertype">Ordering</span>
             <ol>
-              
+              <li class="group out"><span>Grouped</span></li>
               <li class="alpha in"><span>Alphabetic</span></li>
               <li class="inherit out"><span>By Inheritance</span></li>
             </ol>
@@ -282,7 +288,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.expression.AttrExpressions"><span>AttrExpressions</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.expression.AttrExpressions"><span>AttrExpressions</span></li><li class="in" name="molecule.expression.AttrExpressions"><span>AttrExpressions</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -304,10 +310,51 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="molecule.expression.AttrExpressions.AttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="molecule.expression.AttrExpressions.?" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="attrMarker">
+      <a id="?extendsAnyRef"></a><a id="?:?"></a>
+      <span class="permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#?extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Turn molecule into input molecule awaiting input." href="AttrExpressions$$qmark.html"><span title="gt4s: $qmark" class="name">?</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Turn molecule into input molecule awaiting input.</p><div class="fullcomment"><div class="comment cmt"><p>Turn molecule into input molecule awaiting input.
+<br><br>
+Apply input marker <code>?</code> to attribute to turn molecule into an 'input molecule'.
+<br><br>
+At runtime the input molecule expects input for the attribute in place of the <code>?</code> marker.</p><pre><span class="cmt">// Input molecule created at compile time.</span>
+<span class="kw">val</span> ageOfPersons = m(Person.name_(?).age) <span class="cmt">// awaiting name of type String</span>
+
+<span class="cmt">// At runtime, "Ben" is applied as input replacing the `?` placeholder and we can get the age.</span>
+ageOfPersons(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="num">42</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd><dt>Note</dt><dd><span class="cmt"><p>Data can only be retrieved from input molecules once they have been resolved with input.<br>
+      Input molecule queries are cached and optimized by Datomic.</p></span></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.??" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="??=molecule.expression.AttrExpressions.?"></a><a id="??:??"></a>
+      <span class="permalink">
+      <a href="../../molecule/expression/AttrExpressions$.html#??=molecule.expression.AttrExpressions.?" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $qmark$qmark" class="name">??</span><span class="result alias"> = <a href="#?extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.?">?</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.AttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="AttrExpr[Ns,T]extendsAnyRef"></a><a id="AttrExpr[Ns,T]:AttrExpr[Ns,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#AttrExpr[Ns,T]extendsAnyRef" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#AttrExpr[Ns,T]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -316,14 +363,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods common for all attributes." href="AttrExpressions$$AttrExpr.html"><span class="name">AttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Expression methods common for all attributes." href="AttrExpressions$AttrExpr.html"><span class="name">AttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods common for all attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.FulltextSearchExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Expression methods common for all attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods common for all attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.FulltextSearchExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="FulltextSearchExpr[Ns,In]extendsAnyRef"></a><a id="FulltextSearchExpr[Ns,In]:FulltextSearchExpr[Ns,In]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#FulltextSearchExpr[Ns,In]extendsAnyRef" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#FulltextSearchExpr[Ns,In]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -332,14 +379,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of String attributes with fulltext search." href="AttrExpressions$$FulltextSearchExpr.html"><span class="name">FulltextSearchExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Expression methods of String attributes with fulltext search." href="AttrExpressions$FulltextSearchExpr.html"><span class="name">FulltextSearchExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of String attributes with fulltext search.</p>
-    </li><li name="molecule.expression.AttrExpressions.ManyAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Expression methods of String attributes with fulltext search.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of String attributes with fulltext search.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef"></a><a id="ManyAttrExpr[Ns,Add,OldNew,Rem]:ManyAttrExpr[Ns,Add,OldNew,Rem]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -348,14 +395,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Value update methods for card-many attributes." href="AttrExpressions$$ManyAttrExpr.html"><span class="name">ManyAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="Add">Add</span>, <span name="OldNew">OldNew</span>, <span name="Rem">Rem</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Value update methods for card-many attributes." href="AttrExpressions$ManyAttrExpr.html"><span class="name">ManyAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="Add">Add</span>, <span name="OldNew">OldNew</span>, <span name="Rem">Rem</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Value update methods for card-many attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.ManyExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ManyExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]withAttrExpressions.ManyAttrExpr[Ns,T,(T,T),T]"></a><a id="ManyExpr[Ns,In,T]:ManyExpr[Ns,In,T]"></a>
+      <p class="shortcomment cmt">Value update methods for card-many attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Value update methods for card-many attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]"></a><a id="ManyExpr[Ns,In,T]:ManyExpr[Ns,In,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#ManyExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]withAttrExpressions.ManyAttrExpr[Ns,T,(T,T),T]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -364,14 +411,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of card-many attributes." href="AttrExpressions$$ManyExpr.html"><span class="name">ManyExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>] with <a href="AttrExpressions$$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>, (<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>), <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>]</span>
+        <a title="Expression methods of card-many attributes." href="AttrExpressions$ManyExpr.html"><span class="name">ManyExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>] with <a href="AttrExpressions$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>, (<span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>, <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>), <span class="extype" name="molecule.expression.AttrExpressions.ManyExpr.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of card-many attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.ManyRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ManyRefAttrExpr[Ns,In]extendsAttrExpressions.AttrExpr[Ns,Long]withAttrExpressions.ManyAttrExpr[Ns,Long,(Long,Long),Long]"></a><a id="ManyRefAttrExpr[Ns,In]:ManyRefAttrExpr[Ns,In]"></a>
+      <p class="shortcomment cmt">Expression methods of card-many attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of card-many attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]"></a><a id="ManyRefAttrExpr[Ns,In]:ManyRefAttrExpr[Ns,In]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.AttrExpr[Ns,Long]withAttrExpressions.ManyAttrExpr[Ns,Long,(Long,Long),Long]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -380,14 +427,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of card-many ref attributes." href="AttrExpressions$$ManyRefAttrExpr.html"><span class="name">ManyRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>] with <a href="AttrExpressions$$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>]</span>
+        <a title="Expression methods of card-many ref attributes." href="AttrExpressions$ManyRefAttrExpr.html"><span class="name">ManyRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>] with <a href="AttrExpressions$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of card-many ref attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.MapAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="MapAttrExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]withAttrExpressions.ManyAttrExpr[Ns,(String,T),(String,T),String]"></a><a id="MapAttrExpr[Ns,In,T]:MapAttrExpr[Ns,In,T]"></a>
+      <p class="shortcomment cmt">Expression methods of card-many ref attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of card-many ref attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.MapAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MapAttrExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,(String,T),(String,T),String]"></a><a id="MapAttrExpr[Ns,In,T]:MapAttrExpr[Ns,In,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#MapAttrExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]withAttrExpressions.ManyAttrExpr[Ns,(String,T),(String,T),String]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#MapAttrExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,(String,T),(String,T),String]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -396,14 +443,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of map attributes." href="AttrExpressions$$MapAttrExpr.html"><span class="name">MapAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>] with <a href="AttrExpressions$$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.Ns">Ns</span>, (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>), (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>), <span class="extype" name="scala.Predef.String">String</span>]</span>
+        <a title="Expression methods of map attributes." href="AttrExpressions$MapAttrExpr.html"><span class="name">MapAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>] with <a href="AttrExpressions$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.Ns">Ns</span>, (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>), (<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="molecule.expression.AttrExpressions.MapAttrExpr.T">T</span>), <span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of map attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.OneExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="OneExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]"></a><a id="OneExpr[Ns,In,T]:OneExpr[Ns,In,T]"></a>
+      <p class="shortcomment cmt">Expression methods of map attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of map attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.OneExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OneExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]"></a><a id="OneExpr[Ns,In,T]:OneExpr[Ns,In,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#OneExpr[Ns,In,T]extendsAttrExpressions.ValueAttrExpr[Ns,In,T]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#OneExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -412,14 +459,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of card-one attributes." href="AttrExpressions$$OneExpr.html"><span class="name">OneExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.OneExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.OneExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.OneExpr.T">T</span>]</span>
+        <a title="Expression methods of card-one attributes." href="AttrExpressions$OneExpr.html"><span class="name">OneExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.OneExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.OneExpr.In">In</span>, <span class="extype" name="molecule.expression.AttrExpressions.OneExpr.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of card-one attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.OneRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="OneRefAttrExpr[Ns,In]extendsAttrExpressions.AttrExpr[Ns,Long]"></a><a id="OneRefAttrExpr[Ns,In]:OneRefAttrExpr[Ns,In]"></a>
+      <p class="shortcomment cmt">Expression methods of card-one attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of card-one attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.OneRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]"></a><a id="OneRefAttrExpr[Ns,In]:OneRefAttrExpr[Ns,In]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.AttrExpr[Ns,Long]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -428,14 +475,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of card-one ref attributes." href="AttrExpressions$$OneRefAttrExpr.html"><span class="name">OneRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</span>
+        <a title="Expression methods of card-one ref attributes." href="AttrExpressions$OneRefAttrExpr.html"><span class="name">OneRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of card-one ref attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.OptionalExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Expression methods of card-one ref attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of card-one ref attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.OptionalExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="OptionalExpr[Ns,T]extendsAnyRef"></a><a id="OptionalExpr[Ns,T]:OptionalExpr[Ns,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#OptionalExpr[Ns,T]extendsAnyRef" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#OptionalExpr[Ns,T]extendsAnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -444,14 +491,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of optional attributes." href="AttrExpressions$$OptionalExpr.html"><span class="name">OptionalExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Expression methods of optional attributes." href="AttrExpressions$OptionalExpr.html"><span class="name">OptionalExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of optional attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ValueAttrExpr[Ns,In,T]extendsAttrExpressions.AttrExpr[Ns,T]"></a><a id="ValueAttrExpr[Ns,In,T]:ValueAttrExpr[Ns,In,T]"></a>
+      <p class="shortcomment cmt">Expression methods of optional attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of optional attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ValueAttrExpr[Ns,In,T]extendsAttrExpressions.this.AttrExpr[Ns,T]"></a><a id="ValueAttrExpr[Ns,In,T]:ValueAttrExpr[Ns,In,T]"></a>
       <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions$.html#ValueAttrExpr[Ns,In,T]extendsAttrExpressions.AttrExpr[Ns,T]" title="Permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#ValueAttrExpr[Ns,In,T]extendsAttrExpressions.this.AttrExpr[Ns,T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -460,10 +507,40 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Expression methods of value attributes." href="AttrExpressions$$ValueAttrExpr.html"><span class="name">ValueAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr.T">T</span>]</span>
+        <a title="Expression methods of value attributes." href="AttrExpressions$ValueAttrExpr.html"><span class="name">ValueAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr.Ns">Ns</span>, <span class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Expression methods of value attributes.</p>
+      <p class="shortcomment cmt">Expression methods of value attributes.</p><div class="fullcomment"><div class="comment cmt"><p>Expression methods of value attributes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.unify" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="attrMarker">
+      <a id="unifyextendsAnyRef"></a><a id="unify:unify"></a>
+      <span class="permalink">
+      <a href="../../molecule/expression/AttrExpressions.html#unifyextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Unify attribute value in self-join." href="AttrExpressions$unify.html"><span class="name">unify</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Unify attribute value in self-join.</p><div class="fullcomment"><div class="comment cmt"><p>Unify attribute value in self-join.
+<br><br>
+Apply <code>unify</code> marker to attribute to unify its value with previous values of the same attribute in the molecule in a self-join.</p><pre>m(Person.age.name.Beverages * Beverage.name.rating) insert <span class="std">List</span>(
+    (<span class="num">23</span>, <span class="lit">"Joe"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">3</span>), (<span class="lit">"Cola"</span>, <span class="num">2</span>), (<span class="lit">"Pepsi"</span>, <span class="num">3</span>))),
+    (<span class="num">25</span>, <span class="lit">"Ben"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">2</span>), (<span class="lit">"Tea"</span>, <span class="num">3</span>))),
+    (<span class="num">23</span>, <span class="lit">"Liz"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">1</span>), (<span class="lit">"Tea"</span>, <span class="num">3</span>), (<span class="lit">"Pepsi"</span>, <span class="num">1</span>))))
+
+<span class="cmt">// What beverages do pairs of 23- AND 25-year-olds like in common?</span>
+<span class="cmt">// Drink name is unified - Joe and Ben both drink coffee, etc..</span>
+Person.age_(<span class="num">23</span>).name.Beverages.name._Ns.Self
+      .age_(<span class="num">25</span>).name.Beverages.name_(unify).get.sorted === <span class="std">List</span>(
+  (<span class="lit">"Joe"</span>, <span class="lit">"Coffee"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Coffee"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Tea"</span>, <span class="lit">"Ben"</span>)
+)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></dd></dl></div>
     </li></ol>
             </div>
 
@@ -832,7 +909,9 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="molecule.expression.AttrExpressions">
+              <h3>Inherited from <a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
@@ -841,7 +920,10 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="Ungrouped">
+        <div class="group" name="attrMarker">
+              <h3>Attribute markers</h3>
+              <div class="comment cmt"><p>Markers applied to attributes that change the semantics of the attribute/molecule.</p></div>
+            </div><div class="group" name="Ungrouped">
               <h3>Ungrouped</h3>
               
             </div>

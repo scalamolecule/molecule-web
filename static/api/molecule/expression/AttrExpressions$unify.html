@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.expression.AttrExpressions.unify</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.expression.AttrExpressions.unify" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.expression.AttrExpressions.unify" />
+          <title>Molecule 0.15.0 - molecule.expression.AttrExpressions.unify</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.expression.AttrExpressions.unify" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.expression.AttrExpressions.unify" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -223,7 +225,6 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
 Person.name.contains(<span class="lit">"John"</span>)             <span class="cmt">// fulltext search</span>
 Person.age.!=(<span class="num">42</span>)                        <span class="cmt">// negation (or `not`)</span>
 Person.age.&lt;(<span class="num">42</span>)                         <span class="cmt">// comparison (< > <= >=)</span>
-Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span>
 Person.age().get                         <span class="cmt">// match non-asserted datoms (null) in query</span>
 Person(benId).age().update               <span class="cmt">// apply empty value to retract value(s) in updates</span>
 Person.hobbies.assert(<span class="lit">"golf"</span>)            <span class="cmt">// assert card-many value(s)</span>
@@ -240,13 +241,53 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
     <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input2.scala#L1" target="_blank">input2</a>,
     <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/input/Input3.scala#L1" target="_blank">input3</a></p></span></dd></dl></div>
     </li><li class="current-entities indented3">
-                        <a class="object" href="AttrExpressions$$qmark$.html" title="Turn molecule into input molecule awaiting input."></a>
-                        <a class="trait" href="AttrExpressions$$qmark.html" title=""></a>
-                        <a href="AttrExpressions$$qmark.html" title="">?</a>
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$$qmark.html" title="Turn molecule into input molecule awaiting input."></a>
+                        <a href="AttrExpressions$$qmark.html" title="Turn molecule into input molecule awaiting input.">?</a>
                       </li><li class="current-entities indented3">
-                        <a class="object" href="AttrExpressions$unify$.html" title="Unify attribute value in self-join."></a>
-                        <a class="trait" href="" title=""></a>
-                        <a href="" title="">unify</a>
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$AttrExpr.html" title="Expression methods common for all attributes."></a>
+                        <a href="AttrExpressions$AttrExpr.html" title="Expression methods common for all attributes.">AttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$FulltextSearchExpr.html" title="Expression methods of String attributes with fulltext search."></a>
+                        <a href="AttrExpressions$FulltextSearchExpr.html" title="Expression methods of String attributes with fulltext search.">FulltextSearchExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$ManyAttrExpr.html" title="Value update methods for card-many attributes."></a>
+                        <a href="AttrExpressions$ManyAttrExpr.html" title="Value update methods for card-many attributes.">ManyAttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$ManyExpr.html" title="Expression methods of card-many attributes."></a>
+                        <a href="AttrExpressions$ManyExpr.html" title="Expression methods of card-many attributes.">ManyExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$ManyRefAttrExpr.html" title="Expression methods of card-many ref attributes."></a>
+                        <a href="AttrExpressions$ManyRefAttrExpr.html" title="Expression methods of card-many ref attributes.">ManyRefAttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$MapAttrExpr.html" title="Expression methods of map attributes."></a>
+                        <a href="AttrExpressions$MapAttrExpr.html" title="Expression methods of map attributes.">MapAttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$OneExpr.html" title="Expression methods of card-one attributes."></a>
+                        <a href="AttrExpressions$OneExpr.html" title="Expression methods of card-one attributes.">OneExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$OneRefAttrExpr.html" title="Expression methods of card-one ref attributes."></a>
+                        <a href="AttrExpressions$OneRefAttrExpr.html" title="Expression methods of card-one ref attributes.">OneRefAttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$OptionalExpr.html" title="Expression methods of optional attributes."></a>
+                        <a href="AttrExpressions$OptionalExpr.html" title="Expression methods of optional attributes.">OptionalExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AttrExpressions$ValueAttrExpr.html" title="Expression methods of value attributes."></a>
+                        <a href="AttrExpressions$ValueAttrExpr.html" title="Expression methods of value attributes.">ValueAttrExpr</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="" title="Unify attribute value in self-join."></a>
+                        <a href="" title="Unify attribute value in self-join.">unify</a>
                       </li>
               </ul>
             </div>
@@ -254,16 +295,14 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
           <div id="content">
             <body class="trait type">
       <div id="definition">
-        <a href="AttrExpressions$unify$.html" title="See companion object"><div class="big-circle trait-companion-object">t</div></a>
+        <div class="big-circle trait">t</div>
         <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.expression">expression</a>.<a href="AttrExpressions.html" class="extype" name="molecule.expression.AttrExpressions">AttrExpressions</a></p>
-        <h1><a href="AttrExpressions$unify$.html" title="See companion object">unify</a><span class="permalink">
+        <h1>unify<span class="permalink">
       <a href="../../molecule/expression/AttrExpressions$unify.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"><div>
-            Companion <a href="AttrExpressions$unify$.html" title="See companion object">object unify</a>
-          </div></span></h3>
+        <h3><span class="morelinks"></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -277,21 +316,30 @@ Person.name(unify)                       <span class="cmt">// Unify attributes i
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/expression/AttrExpressions.scala#L1" target="_blank">AttrExpressions.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Unify attribute value in self-join.
+<br><br>
+Apply <code>unify</code> marker to attribute to unify its value with previous values of the same attribute in the molecule in a self-join.</p><pre>m(Person.age.name.Beverages * Beverage.name.rating) insert <span class="std">List</span>(
+    (<span class="num">23</span>, <span class="lit">"Joe"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">3</span>), (<span class="lit">"Cola"</span>, <span class="num">2</span>), (<span class="lit">"Pepsi"</span>, <span class="num">3</span>))),
+    (<span class="num">25</span>, <span class="lit">"Ben"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">2</span>), (<span class="lit">"Tea"</span>, <span class="num">3</span>))),
+    (<span class="num">23</span>, <span class="lit">"Liz"</span>, <span class="std">List</span>((<span class="lit">"Coffee"</span>, <span class="num">1</span>), (<span class="lit">"Tea"</span>, <span class="num">3</span>), (<span class="lit">"Pepsi"</span>, <span class="num">1</span>))))
+
+<span class="cmt">// What beverages do pairs of 23- AND 25-year-olds like in common?</span>
+<span class="cmt">// Drink name is unified - Joe and Ben both drink coffee, etc..</span>
+Person.age_(<span class="num">23</span>).name.Beverages.name._Ns.Self
+      .age_(<span class="num">25</span>).name.Beverages.name_(unify).get.sorted === <span class="std">List</span>(
+  (<span class="lit">"Joe"</span>, <span class="lit">"Coffee"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Coffee"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Tea"</span>, <span class="lit">"Ben"</span>)
+)</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/expression/AttrExpressions.scala#L1" target="_blank">AttrExpressions.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-            <span class="toggle">
-              Known Subclasses
-            </span>
-            <div class="subClasses hiddenContent"><a href="AttrExpressions$unify$.html" class="extype" name="molecule.expression.AttrExpressions.unify">unify</a></div>
-          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 118.00 158.00" height="158pt" width="118pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 114,-154 114,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AttrExpressions.unify (this trait)" xlink:href="#inheritance-diagram"><path d="M76.5833,-88C76.5833,-88 33.4167,-88 33.4167,-88 29.0833,-88 24.75,-83.6667 24.75,-79.3333 24.75,-79.3333 24.75,-70.6667 24.75,-70.6667 24.75,-66.3333 29.0833,-62 33.4167,-62 33.4167,-62 76.5833,-62 76.5833,-62 80.9167,-62 85.25,-66.3333 85.25,-70.6667 85.25,-70.6667 85.25,-79.3333 85.25,-79.3333 85.25,-83.6667 80.9167,-88 76.5833,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="37" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="56.9395" text-anchor="start">unify</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.unify" xlink:href="AttrExpressions$unify$.html#inheritance-diagram"><path d="M76.5833,-26C76.5833,-26 33.4167,-26 33.4167,-26 29.0833,-26 24.75,-21.6667 24.75,-17.3333 24.75,-17.3333 24.75,-8.66667 24.75,-8.66667 24.75,-4.33333 29.0833,-0 33.4167,-0 33.4167,-0 76.5833,-0 76.5833,-0 80.9167,-0 85.25,-4.33333 85.25,-8.66667 85.25,-8.66667 85.25,-17.3333 85.25,-17.3333 85.25,-21.6667 80.9167,-26 76.5833,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="37" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="56.9395" text-anchor="start">unify</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="unify is a subtype of unify"><path d="M55,-54.7534C55,-45.3549 55,-34.3336 55,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="52.5501,-54.8581 55,-61.8581 57.4501,-54.8581 52.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M81.3333,-150C81.3333,-150 28.6667,-150 28.6667,-150 24.3333,-150 20,-145.667 20,-141.333 20,-141.333 20,-132.667 20,-132.667 20,-128.333 24.3333,-124 28.6667,-124 28.6667,-124 81.3333,-124 81.3333,-124 85.6667,-124 90,-128.333 90,-132.667 90,-132.667 90,-141.333 90,-141.333 90,-145.667 85.6667,-150 81.3333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="32" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="51.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="unify is a subtype of AnyRef"><path d="M55,-116.753C55,-107.355 55,-96.3336 55,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="52.5501,-116.858 55,-123.858 57.4501,-116.858 52.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 118.00 120.00" height="120pt" width="118pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 114,-116 114,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AttrExpressions.unify (this trait)" xlink:href="#inheritance-diagram"><path d="M76.5833,-50C76.5833,-50 33.4167,-50 33.4167,-50 29.0833,-50 24.75,-45.6667 24.75,-41.3333 24.75,-41.3333 24.75,-32.6667 24.75,-32.6667 24.75,-28.3333 29.0833,-24 33.4167,-24 33.4167,-24 76.5833,-24 76.5833,-24 80.9167,-24 85.25,-28.3333 85.25,-32.6667 85.25,-32.6667 85.25,-41.3333 85.25,-41.3333 85.25,-45.6667 80.9167,-50 76.5833,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="37" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="56.9395" text-anchor="start">unify</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.AnyRef"><path d="M81.3333,-112C81.3333,-112 28.6667,-112 28.6667,-112 24.3333,-112 20,-107.667 20,-103.333 20,-103.333 20,-94.6667 20,-94.6667 20,-90.3333 24.3333,-86 28.6667,-86 28.6667,-86 81.3333,-86 81.3333,-86 85.6667,-86 90,-90.3333 90,-94.6667 90,-94.6667 90,-103.333 90,-103.333 90,-107.667 85.6667,-112 81.3333,-112" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-105" x="32" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="51.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="unify is a subtype of AnyRef"><path d="M55,-78.7534C55,-69.3549 55,-58.3336 55,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="52.5501,-78.8581 55,-85.8581 57.4501,-78.8581 52.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>

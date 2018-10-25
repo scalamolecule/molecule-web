@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action.Molecule.Molecule01.getInsertTx</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action.Molecule.Molecule01.getInsertTx" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action.Molecule.Molecule01.getInsertTx" />
+          <title>Molecule 0.15.0 - molecule.action.Molecule.Molecule01.getInsertTx</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action.Molecule.Molecule01.getInsertTx" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action.Molecule.Molecule01.getInsertTx" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -228,6 +230,10 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
                         <span class="separator"></span>
                         <a class="object" href="Molecule$$Molecule01$insert$.html" title="See insert"></a>
                         <a href="Molecule$$Molecule01$insert$.html" title="See insert">insert</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
+                        <a class="object" href="Molecule$$Molecule01$mkDate$.html" title=""></a>
+                        <a href="Molecule$$Molecule01$mkDate$.html" title="">mkDate</a>
                       </li>
               </ul>
             </div>
@@ -362,9 +368,9 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="molecule.action.Molecule.Molecule01.getInsertTx#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(data:Iterable[A])(implicitconn:molecule.facade.Conn):Molecule01.this.Stmtss"></a><a id="apply(Iterable[A])(Conn):Molecule01.Stmtss"></a>
+      <a id="apply(data:Iterable[A])(implicitconn:molecule.facade.Conn):Seq[Seq[molecule.ast.transaction.Statement]]"></a><a id="apply(Iterable[A])(Conn):Seq[Seq[Statement]]"></a>
       <span class="permalink">
-      <a href="../../molecule/action/Molecule$$Molecule01$getInsertTx$.html#apply(data:Iterable[A])(implicitconn:molecule.facade.Conn):Molecule01.this.Stmtss" title="Permalink">
+      <a href="../../molecule/action/Molecule$$Molecule01$getInsertTx$.html#apply(data:Iterable[A])(implicitconn:molecule.facade.Conn):Seq[Seq[molecule.ast.transaction.Statement]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -373,14 +379,14 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="data">data: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <a href="Molecule$$Molecule01.html#Stmtss=Seq[Seq[molecule.ast.transaction.Statement]]" class="extmbr" name="molecule.action.Molecule.Molecule01.Stmtss">Molecule01.Stmtss</a></span>
+        <span class="name">apply</span><span class="params">(<span name="data">data: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]]</span>
       </span>
       
       <p class="shortcomment cmt">See <a href="Molecule$getInsertTx.html" class="extype" name="molecule.action.Molecule.getInsertTx">getInsertTx</a></p>
     </li><li name="molecule.action.Molecule.Molecule01.getInsertTx#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(a:A,ax:A*)(implicitconn:molecule.facade.Conn):Molecule01.this.Stmtss"></a><a id="apply(A,A*)(Conn):Molecule01.Stmtss"></a>
+      <a id="apply(a:A,ax:A*)(implicitconn:molecule.facade.Conn):Seq[Seq[molecule.ast.transaction.Statement]]"></a><a id="apply(A,A*)(Conn):Seq[Seq[Statement]]"></a>
       <span class="permalink">
-      <a href="../../molecule/action/Molecule$$Molecule01$getInsertTx$.html#apply(a:A,ax:A*)(implicitconn:molecule.facade.Conn):Molecule01.this.Stmtss" title="Permalink">
+      <a href="../../molecule/action/Molecule$$Molecule01$getInsertTx$.html#apply(a:A,ax:A*)(implicitconn:molecule.facade.Conn):Seq[Seq[molecule.ast.transaction.Statement]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -389,7 +395,7 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="a">a: <span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span></span>, <span name="ax">ax: <span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span>*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <a href="Molecule$$Molecule01.html#Stmtss=Seq[Seq[molecule.ast.transaction.Statement]]" class="extmbr" name="molecule.action.Molecule.Molecule01.Stmtss">Molecule01.Stmtss</a></span>
+        <span class="name">apply</span><span class="params">(<span name="a">a: <span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span></span>, <span name="ax">ax: <span class="extype" name="molecule.action.Molecule.Molecule01.A">A</span>*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]]</span>
       </span>
       
       <p class="shortcomment cmt">See <a href="Molecule$getInsertTx.html" class="extype" name="molecule.action.Molecule.getInsertTx">getInsertTx</a></p>

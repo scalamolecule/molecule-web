@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action.EntityOps</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action.EntityOps" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action.EntityOps" />
+          <title>Molecule 0.15.0 - molecule.action.EntityOps</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action.EntityOps" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action.EntityOps" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -184,10 +186,31 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
+    </li><li name="molecule.action.get" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="get"></a><a id="get:get"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/index.html#get" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Package with various synchronous getter methods to retrieve data from Datomic with molecules." href="get/index.html"><span class="name">get</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><p>For the Datomic Peer model, Datomic returns data synchronously.
+The Peer lives in application memory and caches data aggressively to save roundtrips to
+disk or memcached. Query results that can fit in memory will therefore have near-zero latency
+and return extremely fast.</p><p>Molecule has not yet addressed the Client api although the query engine would be the same
+as for the current Peer version.</p><p>Molecule has 5 groups of getters each returning data in various formats:</p><ul><li><a href="get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a> - default getter returning Lists of tuples. Convenient typed data, suitable for smaller data sets</li><li><a href="get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a> - fastest retrieved typed data set. Can be traversed with a fast <code>while</code> loop</li><li><a href="get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a> - for lazily traversing row by row</li><li><a href="get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> - fastest retrieved raw un-typed data from Datomic</li><li><a href="get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> - data formatted as Json string</li></ul><p>Getters in each of the 5 groups come with 5 time-dependent variations:</p><ul><li>get [current data]</li><li>getAsOf</li><li>getSince</li><li>getWith</li><li>getHistory</li></ul><p>Each time variation has various overloads taking different parameters (see each group for more info).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="CompositeInserts.html" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples."></a>
-                        <a href="CompositeInserts.html" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.">CompositeInserts</a>
+                        <a class="trait" href="CompositeInserts.html" title="Insert methods to create composite entities containing multiple sub-molecules/tuples."></a>
+                        <a href="CompositeInserts.html" title="Insert methods to create composite entities containing multiple sub-molecules/tuples.">CompositeInserts</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="Entity$.html" title="Entity wrapper factory."></a>
                         <a class="class" href="Entity.html" title="Entity wrapper with actions on entity."></a>
@@ -204,6 +227,10 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
                         <span class="separator"></span>
                         <a class="trait" href="OptionalMapOps.html" title="Container of implicit for optional Map operations."></a>
                         <a href="OptionalMapOps.html" title="Container of implicit for optional Map operations.">OptionalMapOps</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="ShowDebug.html" title="Debug methods"></a>
+                        <a href="ShowDebug.html" title="Debug methods">ShowDebug</a>
                       </li>
               </ul>
             </div>
@@ -238,16 +265,11 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-            <span class="toggle">
-              Known Subclasses
-            </span>
-            <div class="subClasses hiddenContent"><a href="../package$$api$.html" class="extype" name="molecule.api">api</a></div>
-          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 134.00 158.00" height="158pt" width="134pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 130,-154 130,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.action.EntityOps (this trait)" xlink:href="#inheritance-diagram"><path d="M93.3333,-88C93.3333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 93.3333,-62 93.3333,-62 97.6667,-62 102,-66.3333 102,-70.6667 102,-70.6667 102,-79.3333 102,-79.3333 102,-83.6667 97.6667,-88 93.3333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.5488" text-anchor="start">EntityOps</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="molecule.api" xlink:href="../package$$api$.html#inheritance-diagram"><path d="M81.3333,-26C81.3333,-26 44.6667,-26 44.6667,-26 40.3333,-26 36,-21.6667 36,-17.3333 36,-17.3333 36,-8.66667 36,-8.66667 36,-4.33333 40.3333,-0 44.6667,-0 44.6667,-0 81.3333,-0 81.3333,-0 85.6667,-0 90,-4.33333 90,-8.66667 90,-8.66667 90,-17.3333 90,-17.3333 90,-21.6667 85.6667,-26 81.3333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="48" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="67.5508" text-anchor="start">api</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="api is a subtype of EntityOps"><path d="M63,-54.7534C63,-45.3549 63,-34.3336 63,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="60.5501,-54.8581 63,-61.8581 65.4501,-54.8581 60.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M89.3333,-150C89.3333,-150 36.6667,-150 36.6667,-150 32.3333,-150 28,-145.667 28,-141.333 28,-141.333 28,-132.667 28,-132.667 28,-128.333 32.3333,-124 36.6667,-124 36.6667,-124 89.3333,-124 89.3333,-124 93.6667,-124 98,-128.333 98,-132.667 98,-132.667 98,-141.333 98,-141.333 98,-145.667 93.6667,-150 89.3333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="40" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="59.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="EntityOps is a subtype of AnyRef"><path d="M63,-116.753C63,-107.355 63,-96.3336 63,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="60.5501,-116.858 63,-123.858 65.4501,-116.858 60.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 134.00 120.00" height="120pt" width="134pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 130,-116 130,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.action.EntityOps (this trait)" xlink:href="#inheritance-diagram"><path d="M93.3333,-50C93.3333,-50 32.6667,-50 32.6667,-50 28.3333,-50 24,-45.6667 24,-41.3333 24,-41.3333 24,-32.6667 24,-32.6667 24,-28.3333 28.3333,-24 32.6667,-24 32.6667,-24 93.3333,-24 93.3333,-24 97.6667,-24 102,-28.3333 102,-32.6667 102,-32.6667 102,-41.3333 102,-41.3333 102,-45.6667 97.6667,-50 93.3333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="55.5488" text-anchor="start">EntityOps</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.AnyRef"><path d="M89.3333,-112C89.3333,-112 36.6667,-112 36.6667,-112 32.3333,-112 28,-107.667 28,-103.333 28,-103.333 28,-94.6667 28,-94.6667 28,-90.3333 32.3333,-86 36.6667,-86 36.6667,-86 89.3333,-86 89.3333,-86 93.6667,-86 98,-90.3333 98,-94.6667 98,-94.6667 98,-103.333 98,-103.333 98,-107.667 93.6667,-112 89.3333,-112" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-105" x="40" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="59.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="EntityOps is a subtype of AnyRef"><path d="M63,-78.7534C63,-69.3549 63,-58.3336 63,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="60.5501,-78.8581 63,-85.8581 65.4501,-78.8581 60.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -543,7 +565,7 @@ Here we debug a possible retraction of two comment entities with transaction met
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
+        <span class="modifier">implicit final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">

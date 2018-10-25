@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.ManyLong$</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.ManyLong " />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.ManyLong " />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.ManyLong$</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.ManyLong " />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.ManyLong " />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -690,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">ManyLong$</span><span class="tparams">[<span name="Ns">Ns</span>]</span><span class="result"> extends <a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</span>
+        <span class="name">ManyLong$</span><span class="tparams">[<span name="Ns">Ns</span>]</span><span class="result"> extends <a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       </h4>
 
@@ -699,12 +705,12 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]], <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]], <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.Long">Long</span>], <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]], <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Long">Long</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 160.00 120.00" height="120pt" width="160pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 156,-116 156,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.ManyLong$ (this trait)" xlink:href="#inheritance-diagram"><path d="M117.333,-50C117.333,-50 34.6667,-50 34.6667,-50 30.3333,-50 26,-45.6667 26,-41.3333 26,-41.3333 26,-32.6667 26,-32.6667 26,-28.3333 30.3333,-24 34.6667,-24 34.6667,-24 117.333,-24 117.333,-24 121.667,-24 126,-28.3333 126,-32.6667 126,-32.6667 126,-41.3333 126,-41.3333 126,-45.6667 121.667,-50 117.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="38" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="57.873" text-anchor="start">ManyLong$[Ns]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.ManyValueAttr$" xlink:href="attributes$$ManyValueAttr$.html#inheritance-diagram"><path d="M143.583,-112C143.583,-112 8.41667,-112 8.41667,-112 4.08333,-112 -0.25,-107.667 -0.25,-103.333 -0.25,-103.333 -0.25,-94.6667 -0.25,-94.6667 -0.25,-90.3333 4.08333,-86 8.41667,-86 8.41667,-86 143.583,-86 143.583,-86 147.917,-86 152.25,-90.3333 152.25,-94.6667 152.25,-94.6667 152.25,-103.333 152.25,-103.333 152.25,-107.667 147.917,-112 143.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.7656" text-anchor="start">ManyValueAttr$[Ns, Set[Long]]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ManyLong$[Ns] is a subtype of ManyValueAttr$[Ns, Set[Long]]"><path d="M76,-78.7534C76,-69.3549 76,-58.3336 76,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="73.5501,-78.8581 76,-85.8581 78.4501,-78.8581 73.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 182.00 120.00" height="120pt" width="182pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 178,-116 178,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.ManyLong$ (this trait)" xlink:href="#inheritance-diagram"><path d="M128.333,-50C128.333,-50 45.6667,-50 45.6667,-50 41.3333,-50 37,-45.6667 37,-41.3333 37,-41.3333 37,-32.6667 37,-32.6667 37,-28.3333 41.3333,-24 45.6667,-24 45.6667,-24 128.333,-24 128.333,-24 132.667,-24 137,-28.3333 137,-32.6667 137,-32.6667 137,-41.3333 137,-41.3333 137,-45.6667 132.667,-50 128.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="49" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="68.873" text-anchor="start">ManyLong$[Ns]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.ManyValueAttr$" xlink:href="attributes$$ManyValueAttr$.html#inheritance-diagram"><path d="M165.583,-112C165.583,-112 8.41667,-112 8.41667,-112 4.08333,-112 -0.25,-107.667 -0.25,-103.333 -0.25,-103.333 -0.25,-94.6667 -0.25,-94.6667 -0.25,-90.3333 4.08333,-86 8.41667,-86 8.41667,-86 165.583,-86 165.583,-86 169.917,-86 174.25,-90.3333 174.25,-94.6667 174.25,-94.6667 174.25,-103.333 174.25,-103.333 174.25,-107.667 169.917,-112 165.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.6445" text-anchor="start">ManyValueAttr$[Ns, Set[Long], Long]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ManyLong$[Ns] is a subtype of ManyValueAttr$[Ns, Set[Long], Long]"><path d="M87,-78.7534C87,-69.3549 87,-58.3336 87,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="84.5501,-78.8581 87,-85.8581 89.4501,-78.8581 84.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -835,7 +841,7 @@ Person.name(<span class="lit">"Liz"</span>).age$(lizAge).save
 Person.name.age$.get === <span class="std">List</span>(
   (<span class="lit">"Ben"</span>, <span class="std">Some</span>(<span class="num">42</span>)),
   (<span class="lit">"Liz"</span>, <span class="std">None</span>),
-)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
+)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1149,11 +1155,11 @@ Person.name.age$.get === <span class="std">List</span>(
 
         <div id="inheritedMembers">
         <div class="parent" name="molecule.boilerplate.attributes.ManyValueAttr$">
-              <h3>Inherited from <a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</h3>
+              <h3>Inherited from <a href="attributes$$ManyValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ManyValueAttr$">ManyValueAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.Long">Long</span>]</h3>
             </div><div class="parent" name="molecule.expression.AttrExpressions.OptionalExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</h3>
+              <h3>Inherited from <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyLong$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.ValueAttr$">
-              <h3>Inherited from <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</h3>
+              <h3>Inherited from <a href="attributes$$ValueAttr$.html" class="extype" name="molecule.boilerplate.attributes.ValueAttr$">ValueAttr$</a>[<span class="extype" name="scala.Long">Long</span>]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
               <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
             </div><div class="parent" name="scala.AnyRef">

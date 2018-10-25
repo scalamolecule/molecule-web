@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action" />
+          <title>Molecule 0.15.0 - molecule.action</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -184,10 +186,31 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       </span>
       
       
+    </li><li name="molecule.action.get" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="get"></a><a id="get:get"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/index.html#get" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Package with various synchronous getter methods to retrieve data from Datomic with molecules." href="get/index.html"><span class="name">get</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Package with various synchronous getter methods to retrieve data from Datomic with molecules.</p><p>For the Datomic Peer model, Datomic returns data synchronously.
+The Peer lives in application memory and caches data aggressively to save roundtrips to
+disk or memcached. Query results that can fit in memory will therefore have near-zero latency
+and return extremely fast.</p><p>Molecule has not yet addressed the Client api although the query engine would be the same
+as for the current Peer version.</p><p>Molecule has 5 groups of getters each returning data in various formats:</p><ul><li><a href="get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a> - default getter returning Lists of tuples. Convenient typed data, suitable for smaller data sets</li><li><a href="get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a> - fastest retrieved typed data set. Can be traversed with a fast <code>while</code> loop</li><li><a href="get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a> - for lazily traversing row by row</li><li><a href="get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> - fastest retrieved raw un-typed data from Datomic</li><li><a href="get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> - data formatted as Json string</li></ul><p>Getters in each of the 5 groups come with 5 time-dependent variations:</p><ul><li>get [current data]</li><li>getAsOf</li><li>getSince</li><li>getWith</li><li>getHistory</li></ul><p>Each time variation has various overloads taking different parameters (see each group for more info).
+</p></div></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="CompositeInserts.html" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples."></a>
-                        <a href="CompositeInserts.html" title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.">CompositeInserts</a>
+                        <a class="trait" href="CompositeInserts.html" title="Insert methods to create composite entities containing multiple sub-molecules/tuples."></a>
+                        <a href="CompositeInserts.html" title="Insert methods to create composite entities containing multiple sub-molecules/tuples.">CompositeInserts</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="Entity$.html" title="Entity wrapper factory."></a>
                         <a class="class" href="Entity.html" title="Entity wrapper with actions on entity."></a>
@@ -204,7 +227,34 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
                         <span class="separator"></span>
                         <a class="trait" href="OptionalMapOps.html" title="Container of implicit for optional Map operations."></a>
                         <a href="OptionalMapOps.html" title="Container of implicit for optional Map operations.">OptionalMapOps</a>
-                      </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="ShowDebug.html" title="Debug methods"></a>
+                        <a href="ShowDebug.html" title="Debug methods">ShowDebug</a>
+                      </li><li name="molecule.api" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="api"></a><a id="api:api"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#api" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Public interfaces to be imported to use Molecule." href="../api/index.html"><span class="name">api</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Public interfaces to be imported to use Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Public interfaces to be imported to use Molecule.</p><p>To make the Molecule macro materializations as fast as possible we try to
+import as few macro implicits as possible. If your application code build molecules
+with at the most 10 attributes, then you can do the following import to start using Molecule:</p><pre><span class="kw">import</span> molecule.api.out10._</pre><p><code>out</code> means &quot;output molecule&quot; , and <code>10</code> the maximum arity or number of attributes
+of your molecules.</p><p>If you use input molecules awaiting an input then you can add <code>inX</code> where X is
+how many inputs (1, 2 or 3) you will use, for instance:</p><pre><span class="kw">import</span> molecule.api.in2_out10._</pre><p>This way we keep the implicit macro def lookups to a minimum and compilation speed
+as fast as possible.</p><p>Arities can be changed anytime you like. But not to a lower arity than that of the
+molecules you use in scope of the import.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.ast" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ast"></a><a id="ast:ast"></a>
       <span class="permalink">
       <a href="../molecule/index.html#ast" title="Permalink">
@@ -401,7 +451,7 @@ input molecules are a good fit for re-use for queries where only a few parameter
 <br><br>
 Input molecules can await 1, 2 or 3 inputs and are constructed by applying the <a href="../expression/AttrExpressions$$qmark.html" class="extype" name="molecule.expression.AttrExpressions.?">?</a> marker
 to attributes. If one marker is applied, we get a <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_1</a>, 2 inputs creates
-an <a href="../input/InputMolecule_1.html" class="extype" name="molecule.input.InputMolecule_1">InputMolecule_3</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
+an <a href="../input/InputMolecule_2.html" class="extype" name="molecule.input.InputMolecule_2">InputMolecule_2</a> and 3 an <a href="../input/InputMolecule_3.html" class="extype" name="molecule.input.InputMolecule_3">InputMolecule_3</a>.
 <br><br>
 The three input molecule interfaces come in arity-versions corresponding to the number of non-?-marked attributes
 in the input molecule. Let's see a simple example:</p><pre><span class="cmt">// Sample data</span>
@@ -536,7 +586,17 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 110.00 96.00" height="96pt" width="110pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 92)" class="graph" id="graph0"><polygon points="-4,4 -4,-92 106,-92 106,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="molecule.action.ShowDebug" xlink:href="ShowDebug.html#inheritance-diagram"><path d="M93.5833,-88C93.5833,-88 8.41667,-88 8.41667,-88 4.08333,-88 -0.25,-83.6667 -0.25,-79.3333 -0.25,-79.3333 -0.25,-70.6667 -0.25,-70.6667 -0.25,-66.3333 4.08333,-62 8.41667,-62 8.41667,-62 93.5833,-62 93.5833,-62 97.9167,-62 102.25,-66.3333 102.25,-70.6667 102.25,-70.6667 102.25,-79.3333 102.25,-79.3333 102.25,-83.6667 97.9167,-88 93.5833,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="31.8164" text-anchor="start">ShowDebug[Tpl]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.action.Molecule" xlink:href="Molecule.html#inheritance-diagram"><path d="M87.5833,-26C87.5833,-26 14.4167,-26 14.4167,-26 10.0833,-26 5.75,-21.6667 5.75,-17.3333 5.75,-17.3333 5.75,-8.66667 5.75,-8.66667 5.75,-4.33333 10.0833,-0 14.4167,-0 14.4167,-0 87.5833,-0 87.5833,-0 91.9167,-0 96.25,-4.33333 96.25,-8.66667 96.25,-8.66667 96.25,-17.3333 96.25,-17.3333 96.25,-21.6667 91.9167,-26 87.5833,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="18" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="37.6016" text-anchor="start">Molecule[Tpl]</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Molecule[Tpl] is a subtype of ShowDebug[Tpl]"><path d="M51,-54.7534C51,-45.3549 51,-34.3336 51,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="48.5501,-54.8581 51,-61.8581 53.4501,-54.8581 48.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -595,12 +655,10 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples." href="CompositeInserts.html"><span class="name">CompositeInserts</span></a><span class="result"> extends <span class="extype" name="molecule.util.Helpers">Helpers</span></span>
+        <a title="Insert methods to create composite entities containing multiple sub-molecules/tuples." href="CompositeInserts.html"><span class="name">CompositeInserts</span></a><span class="result"> extends <span class="extype" name="molecule.util.Helpers">Helpers</span></span>
       </span>
       
-      <p class="shortcomment cmt">Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.</p><div class="fullcomment"><div class="comment cmt"><p>Split big and compile-time heavy molecule inserts into composite inserts with smaller sub-molecules/tuples.
-<br><br>
-Molecules with more than 10 attributes are good candidates to split up in order to keep compile time fast.</p><h4> Insert composite data </h4><pre>insert(
+      <p class="shortcomment cmt">Insert methods to create composite entities containing multiple sub-molecules/tuples.</p><div class="fullcomment"><div class="comment cmt"><p>Insert methods to create composite entities containing multiple sub-molecules/tuples.</p><h4> Insert composite data </h4><pre>insert(
   <span class="cmt">// 2 sub-molecules</span>
   Article.name.author, Tag.name.weight
 )(
@@ -616,8 +674,7 @@ Molecules with more than 10 attributes are good candidates to split up in order 
 <span class="cmt">// In queries we tie composite sub-molecules together with `~`</span>
 m(Article.name.author ~ Tag.weight.&gt;=(<span class="num">4</span>).Tx(MetaData.submitter_(<span class="lit">"Brenda Johnson"</span>))).get === <span class="std">List</span>(
   ((<span class="lit">"Battle of Waterloo"</span>, <span class="lit">"Ben Bridge"</span>), <span class="num">5</span>)
-)</pre><h4> Debug a composite insert </h4><p>Without affecting the database, a composite insert can be debugged by adding a 'D' to
-your composite insert method and see the produced output:</p><pre>debugInsert(
+)</pre><h4> Debug a composite insert </h4><p>Without affecting the database, a composite insert can be debugged with <code>debugInsert</code> to see the produced output:</p><pre>debugInsert(
   Article.name.author, Tag.name.weight
 )(
   <span class="std">List</span>(
@@ -665,8 +722,9 @@ outputs:
     <span class="num">2</span>      :db/add    #db/id[:db.part/tx -<span class="num">1000100</span>]      :metaData/usecase      AddReviews            Card(<span class="num">1</span>)))
 ========================================================================</pre><p>The two first sections are internal Molecule representations.
 <br><br>
-The third section shows the transactional data sent to Datomic, in this case two rows of data and one row of transaction data.
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>For faster compilation less than 10 attributes per sub-molecule is recommended.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/composite-insert/" target="_blank">composite inserts</a>
+The third section shows the transactional data sent to Datomic (except the line indexing numbers in the
+left column) - in this case two rows of data and one row of transaction data.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/composite-insert/" target="_blank">composite inserts</a>
      | <a href="http://www.scalamolecule.org/manual/relationships/composites/" target="_blank">composites</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Composite.scala#L1" target="_blank">composite inserts</a></p></span></dd></dl></div>
     </li><li name="molecule.action.Entity" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="EntityextendsAnyRef"></a><a id="Entity:Entity"></a>
@@ -703,9 +761,9 @@ The third section shows the transactional data sent to Datomic, in this case two
       
       <p class="shortcomment cmt">Operations on multiple entities.</p>
     </li><li name="molecule.action.Molecule" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="Molecule[Tpl]extendsMoleculeBase"></a><a id="Molecule[Tpl]:Molecule[Tpl]"></a>
+      <a id="Molecule[Tpl]extendsMoleculeBasewithCastHelpers[Tpl]withJsonBuilderwithGetArray[Tpl]withGetIterable[Tpl]withGetList[Tpl]withGetRawwithGetJsonwithShowDebug[Tpl]"></a><a id="Molecule[Tpl]:Molecule[Tpl]"></a>
       <span class="permalink">
-      <a href="../../molecule/action/index.html#Molecule[Tpl]extendsMoleculeBase" title="Permalink">
+      <a href="../../molecule/action/index.html#Molecule[Tpl]extendsMoleculeBasewithCastHelpers[Tpl]withJsonBuilderwithGetArray[Tpl]withGetIterable[Tpl]withGetList[Tpl]withGetRawwithGetJsonwithShowDebug[Tpl]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -714,7 +772,7 @@ The third section shows the transactional data sent to Datomic, in this case two
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Core molecule interface defining actions that can be called on molecules." href="Molecule.html"><span class="name">Molecule</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <a href="../ast/MoleculeBase.html" class="extype" name="molecule.ast.MoleculeBase">MoleculeBase</a></span>
+        <a title="Core molecule interface defining actions that can be called on molecules." href="Molecule.html"><span class="name">Molecule</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <a href="../ast/MoleculeBase.html" class="extype" name="molecule.ast.MoleculeBase">MoleculeBase</a> with <a href="../transform/CastHelpers.html" class="extype" name="molecule.transform.CastHelpers">CastHelpers</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <span class="extype" name="molecule.transform.JsonBuilder">JsonBuilder</span> with <a href="get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> with <a href="get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> with <a href="ShowDebug.html" class="extype" name="molecule.action.ShowDebug">ShowDebug</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Core molecule interface defining actions that can be called on molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Core molecule interface defining actions that can be called on molecules.</p><p>Groups of interfaces:
@@ -736,16 +794,8 @@ The third section shows the transactional data sent to Datomic, in this case two
 <td>Get molecule data <i>with</i> given data set.</td>
 </tr>
 <tr>
-<td><b>getHistory</b> &nbsp;&nbsp;&nbsp;<td>
+<td><b>getHistory</b><td>
 <td>Get molecule data from <i>history</i> of database.</td>
-</tr>
-<tr>
-<td><b>debugGet</b><td>
-<td>Debug getter methods.</td>
-</tr>
-<tr>
-<td><b>getJson</b><td>
-<td>Get molecule data as json.</td>
 </tr>
 <tr>
 <td><b>save</b><td>
@@ -758,6 +808,19 @@ The third section shows the transactional data sent to Datomic, in this case two
 <tr>
 <td><b>update</b><td>
 <td>Update molecule with applied data.</td>
+</tr>
+<tr>
+<tr>
+<td><b>tx</b><td>
+<td>Molecule transaction data (input to `getWith`).</td>
+</tr>
+<tr>
+<td><b>debug get</b><td>
+<td>Debug calling get method on molecule.</td>
+</tr>
+<tr>
+<td><b>debug action</b> &nbsp;&nbsp;&nbsp;<td>
+<td>Debug calling save/insert/update method on molecule.</td>
 </tr>
 </table>
 </p></div><dl class="paramcmts block"><dt class="tparam">Tpl</dt><dd class="cmt"><p>Type of molecule (tuple of its attribute types)</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>For retract (&quot;delete&quot;) methods, see <a href="EntityOps.html" class="extype" name="molecule.action.EntityOps">EntityOps</a> and <a href="Entity.html" class="extype" name="molecule.action.Entity">Entity</a>.</p></span><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/get/" target="_blank">get</a>,
@@ -803,6 +866,24 @@ The third section shows the transactional data sent to Datomic, in this case two
       
       <p class="shortcomment cmt">Container of implicit for optional Map operations.</p><div class="fullcomment"><div class="comment cmt"><p>Container of implicit for optional Map operations.
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attrMap/Optional.scala#L1" target="_blank">Tests</a></p></span></dd></dl></div>
+    </li><li name="molecule.action.ShowDebug" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ShowDebug[Tpl]extendsAnyRef"></a><a id="ShowDebug[Tpl]:ShowDebug[Tpl]"></a>
+      <span class="permalink">
+      <a href="../../molecule/action/index.html#ShowDebug[Tpl]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Debug methods" href="ShowDebug.html"><span class="name">ShowDebug</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Debug methods</p><div class="fullcomment"><div class="comment cmt"><p>Debug methods</p><p>Call a debug method on a molecule to see the internal transformations and
+produced transaction statements or sample data.
+</p></div></div>
     </li></ol>
             </div>
 

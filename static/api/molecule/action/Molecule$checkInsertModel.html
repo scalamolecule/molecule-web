@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.action.Molecule.checkInsertModel</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.action.Molecule.checkInsertModel" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.action.Molecule.checkInsertModel" />
+          <title>Molecule 0.15.0 - molecule.action.Molecule.checkInsertModel</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.action.Molecule.checkInsertModel" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.action.Molecule.checkInsertModel" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -169,9 +171,9 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
       
       <p class="shortcomment cmt">Various actions and operations on molecules and entities.</p><div class="fullcomment"><div class="comment cmt"><p>Various actions and operations on molecules and entities.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.action.Molecule" visbl="pub" class="indented3 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="Molecule[Tpl]extendsMoleculeBase"></a><a id="Molecule[Tpl]:Molecule[Tpl]"></a>
+      <a id="Molecule[Tpl]extendsMoleculeBasewithCastHelpers[Tpl]withJsonBuilderwithGetArray[Tpl]withGetIterable[Tpl]withGetList[Tpl]withGetRawwithGetJsonwithShowDebug[Tpl]"></a><a id="Molecule[Tpl]:Molecule[Tpl]"></a>
       <span class="permalink">
-      <a href="../../molecule/action/index.html#Molecule[Tpl]extendsMoleculeBase" title="Permalink">
+      <a href="../../molecule/action/index.html#Molecule[Tpl]extendsMoleculeBasewithCastHelpers[Tpl]withJsonBuilderwithGetArray[Tpl]withGetIterable[Tpl]withGetList[Tpl]withGetRawwithGetJsonwithShowDebug[Tpl]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -180,7 +182,7 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Core molecule interface defining actions that can be called on molecules." href="Molecule.html"><span class="name">Molecule</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <a href="../ast/MoleculeBase.html" class="extype" name="molecule.ast.MoleculeBase">MoleculeBase</a></span>
+        <a title="Core molecule interface defining actions that can be called on molecules." href="Molecule.html"><span class="name">Molecule</span></a><span class="tparams">[<span name="Tpl">Tpl</span>]</span><span class="result"> extends <a href="../ast/MoleculeBase.html" class="extype" name="molecule.ast.MoleculeBase">MoleculeBase</a> with <a href="../transform/CastHelpers.html" class="extype" name="molecule.transform.CastHelpers">CastHelpers</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <span class="extype" name="molecule.transform.JsonBuilder">JsonBuilder</span> with <a href="get/GetArray.html" class="extype" name="molecule.action.get.GetArray">GetArray</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetIterable.html" class="extype" name="molecule.action.get.GetIterable">GetIterable</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetList.html" class="extype" name="molecule.action.get.GetList">GetList</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>] with <a href="get/GetRaw.html" class="extype" name="molecule.action.get.GetRaw">GetRaw</a> with <a href="get/GetJson.html" class="extype" name="molecule.action.get.GetJson">GetJson</a> with <a href="ShowDebug.html" class="extype" name="molecule.action.ShowDebug">ShowDebug</a>[<span class="extype" name="molecule.action.Molecule.Tpl">Tpl</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Core molecule interface defining actions that can be called on molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Core molecule interface defining actions that can be called on molecules.</p><p>Groups of interfaces:
@@ -202,16 +204,8 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
 <td>Get molecule data <i>with</i> given data set.</td>
 </tr>
 <tr>
-<td><b>getHistory</b> &nbsp;&nbsp;&nbsp;<td>
+<td><b>getHistory</b><td>
 <td>Get molecule data from <i>history</i> of database.</td>
-</tr>
-<tr>
-<td><b>debugGet</b><td>
-<td>Debug getter methods.</td>
-</tr>
-<tr>
-<td><b>getJson</b><td>
-<td>Get molecule data as json.</td>
 </tr>
 <tr>
 <td><b>save</b><td>
@@ -224,6 +218,19 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
 <tr>
 <td><b>update</b><td>
 <td>Update molecule with applied data.</td>
+</tr>
+<tr>
+<tr>
+<td><b>tx</b><td>
+<td>Molecule transaction data (input to `getWith`).</td>
+</tr>
+<tr>
+<td><b>debug get</b><td>
+<td>Debug calling get method on molecule.</td>
+</tr>
+<tr>
+<td><b>debug action</b> &nbsp;&nbsp;&nbsp;<td>
+<td>Debug calling save/insert/update method on molecule.</td>
 </tr>
 </table>
 </p></div><dl class="paramcmts block"><dt class="tparam">Tpl</dt><dd class="cmt"><p>Type of molecule (tuple of its attribute types)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.action">action</a></dd><dt>See also</dt><dd><span class="cmt"><p>For retract (&quot;delete&quot;) methods, see <a href="EntityOps.html" class="extype" name="molecule.action.EntityOps">EntityOps</a> and <a href="Entity.html" class="extype" name="molecule.action.Entity">Entity</a>.</p></span><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/crud/get/" target="_blank">get</a>,
@@ -268,6 +275,10 @@ This base package includes a single <a href="../package$$api$.html" class="extyp
                         <span class="separator"></span>
                         <a class="trait" href="Molecule$insert.html" title="Insert one or more rows of data matching molecule."></a>
                         <a href="Molecule$insert.html" title="Insert one or more rows of data matching molecule.">insert</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="Molecule$mkDate$.html" title=""></a>
+                        <a href="Molecule$mkDate$.html" title="">mkDate</a>
                       </li>
               </ul>
             </div>

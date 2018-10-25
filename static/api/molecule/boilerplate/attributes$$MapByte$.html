@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.boilerplate.attributes.MapByte$</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.boilerplate.attributes.MapByte " />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.boilerplate.attributes.MapByte " />
+          <title>Molecule 0.15.0 - molecule.boilerplate.attributes.MapByte$</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.boilerplate.attributes.MapByte " />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.boilerplate.attributes.MapByte " />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -243,6 +245,10 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                         <span class="separator"></span>
                         <a class="trait" href="attributes$$BiTargetRef_.html" title=""></a>
                         <a href="attributes$$BiTargetRef_.html" title="">BiTargetRef_</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="attributes$$Bidirectional_.html" title=""></a>
+                        <a href="attributes$$Bidirectional_.html" title="">Bidirectional_</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="attributes$$Doc.html" title=""></a>
@@ -690,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">MapByte$</span><span class="tparams">[<span name="Ns">Ns</span>]</span><span class="result"> extends <a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]]</span>
+        <span class="name">MapByte$</span><span class="tparams">[<span name="Ns">Ns</span>]</span><span class="result"> extends <a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>], <span class="extype" name="scala.Byte">Byte</span>]</span>
       </span>
       </h4>
 
@@ -699,12 +705,12 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]], <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>], <span class="extype" name="scala.Byte">Byte</span>], <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 164.00 120.00" height="120pt" width="164pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 160,-116 160,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.MapByte$ (this trait)" xlink:href="#inheritance-diagram"><path d="M116.333,-50C116.333,-50 39.6667,-50 39.6667,-50 35.3333,-50 31,-45.6667 31,-41.3333 31,-41.3333 31,-32.6667 31,-32.6667 31,-28.3333 35.3333,-24 39.6667,-24 39.6667,-24 116.333,-24 116.333,-24 120.667,-24 125,-28.3333 125,-32.6667 125,-32.6667 125,-41.3333 125,-41.3333 125,-45.6667 120.667,-50 116.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="43" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="62.7676" text-anchor="start">MapByte$[Ns]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.MapAttr$" xlink:href="attributes$$MapAttr$.html#inheritance-diagram"><path d="M147.333,-112C147.333,-112 8.66667,-112 8.66667,-112 4.33333,-112 0,-107.667 0,-103.333 0,-103.333 0,-94.6667 0,-94.6667 0,-90.3333 4.33333,-86 8.66667,-86 8.66667,-86 147.333,-86 147.333,-86 151.667,-86 156,-90.3333 156,-94.6667 156,-94.6667 156,-103.333 156,-103.333 156,-107.667 151.667,-112 147.333,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.6465" text-anchor="start">MapAttr$[Ns, Map[String, Byte]]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="MapByte$[Ns] is a subtype of MapAttr$[Ns, Map[String, Byte]]"><path d="M78,-78.7534C78,-69.3549 78,-58.3336 78,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="75.5501,-78.8581 78,-85.8581 80.4501,-78.8581 75.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 184.00 120.00" height="120pt" width="184pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 180,-116 180,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.MapByte$ (this trait)" xlink:href="#inheritance-diagram"><path d="M126.333,-50C126.333,-50 49.6667,-50 49.6667,-50 45.3333,-50 41,-45.6667 41,-41.3333 41,-41.3333 41,-32.6667 41,-32.6667 41,-28.3333 45.3333,-24 49.6667,-24 49.6667,-24 126.333,-24 126.333,-24 130.667,-24 135,-28.3333 135,-32.6667 135,-32.6667 135,-41.3333 135,-41.3333 135,-45.6667 130.667,-50 126.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="53" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="72.7676" text-anchor="start">MapByte$[Ns]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.MapAttr$" xlink:href="attributes$$MapAttr$.html#inheritance-diagram"><path d="M167.583,-112C167.583,-112 8.41667,-112 8.41667,-112 4.08333,-112 -0.25,-107.667 -0.25,-103.333 -0.25,-103.333 -0.25,-94.6667 -0.25,-94.6667 -0.25,-90.3333 4.08333,-86 8.41667,-86 8.41667,-86 167.583,-86 167.583,-86 171.917,-86 176.25,-90.3333 176.25,-94.6667 176.25,-94.6667 176.25,-103.333 176.25,-103.333 176.25,-107.667 171.917,-112 167.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.9199" text-anchor="start">MapAttr$[Ns, Map[String, Byte], Byte]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="MapByte$[Ns] is a subtype of MapAttr$[Ns, Map[String, Byte], Byte]"><path d="M88,-78.7534C88,-69.3549 88,-58.3336 88,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="85.5501,-78.8581 88,-85.8581 90.4501,-78.8581 85.5501,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -835,7 +841,7 @@ Person.name(<span class="lit">"Liz"</span>).age$(lizAge).save
 Person.name.age$.get === <span class="std">List</span>(
   (<span class="lit">"Ben"</span>, <span class="std">Some</span>(<span class="num">42</span>)),
   (<span class="lit">"Liz"</span>, <span class="std">None</span>),
-)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
+)</pre></div><dl class="paramcmts block"><dt class="param">some</dt><dd class="cmt"><p>Optional attribute value to be saved</p></dd><dt>returns</dt><dd class="cmt"><p>Save-molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1149,9 +1155,9 @@ Person.name.age$.get === <span class="std">List</span>(
 
         <div id="inheritedMembers">
         <div class="parent" name="molecule.boilerplate.attributes.MapAttr$">
-              <h3>Inherited from <a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]]</h3>
+              <h3>Inherited from <a href="attributes$$MapAttr$.html" class="extype" name="molecule.boilerplate.attributes.MapAttr$">MapAttr$</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>], <span class="extype" name="scala.Byte">Byte</span>]</h3>
             </div><div class="parent" name="molecule.expression.AttrExpressions.OptionalExpr">
-              <h3>Inherited from <a href="../expression/AttrExpressions$$OptionalExpr.html" class="extype" name="molecule.expression.AttrExpressions.OptionalExpr">OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]]</h3>
+              <h3>Inherited from <a href="../api/core$.html#OptionalExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.OptionalExpr">api.core.OptionalExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.MapByte$.Ns">Ns</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Byte">Byte</span>]]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
               <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
             </div><div class="parent" name="scala.AnyRef">

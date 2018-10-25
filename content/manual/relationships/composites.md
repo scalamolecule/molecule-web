@@ -131,23 +131,10 @@ m(Person.name.likes.age_.>(35)
 The combinations are quite endless - while you can keep your domain model/schema clean and intrinsic!
 
 
-
 ## Arity 22+ molecules
 
 Since composites are composed of up to 22 sub-molecules we could potentially insert and retrieve 
-mega composite molecules with up to 22 x 22 = 484 attributes, although the compiler probably wouldn't 
-be too happy about that. 
-
-### Compile time performance trick...
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/perf/CompilationPerf.scala)
-
-Compile time for molecules longer than about 12-15 attributes tend to increase sharply, so simply 
-splitting up long molecules in 2 or more sub-molecules composed into 1 composite molecule easily keeps compilation fast.
-
-It's also worth to remember that each mandatory attribute in a molecule is like a where clause. So having more than
- 12-15 where clauses seems also like a less frequent need.
-
+mega composite molecules with up to 22 x 22 = 484 attributes!
 
 
 ### Next

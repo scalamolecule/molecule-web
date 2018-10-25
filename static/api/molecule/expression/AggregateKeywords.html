@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.14.0 - molecule.expression.AggregateKeywords</title>
-          <meta name="description" content="Molecule 0.14.0 - molecule.expression.AggregateKeywords" />
-          <meta name="keywords" content="Molecule 0.14.0 molecule.expression.AggregateKeywords" />
+          <title>Molecule 0.15.0 - molecule.expression.AggregateKeywords</title>
+          <meta name="description" content="Molecule 0.15.0 - molecule.expression.AggregateKeywords" />
+          <meta name="keywords" content="Molecule 0.15.0 molecule.expression.AggregateKeywords" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.14.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -84,15 +84,17 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Molecule library - a Scala meta DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../index.html"><span class="name">molecule</span></a>
       </span>
       
-      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.
-<br><br>
-This base package includes a single <a href="../package$$api$.html" class="extype" name="molecule.api">api object</a> that is used to bring Molecule functionality into a project:</p><pre><span class="kw">import</span> molecule.api._</pre><h4> Sub-packages </h4><p><table>
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
     <td><a href="action/index.html">action</a><td>
     <td>Actions on molecules and entities.</td>
+  </tr>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule import interfaces of various arities.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -209,9 +211,13 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
                         <a class="trait" href="" title="Aggregate keywords to mark aggregate expressions on attributes."></a>
                         <a href="" title="Aggregate keywords to mark aggregate expressions on attributes.">AggregateKeywords</a>
                       </li><li class="current-entities indented2">
-                        <a class="object" href="AttrExpressions$.html" title="Attribute expression methods."></a>
+                        <a class="object" href="AttrExpressions$.html" title=""></a>
                         <a class="trait" href="AttrExpressions.html" title="Attribute expression markers and methods."></a>
                         <a href="AttrExpressions.html" title="Attribute expression markers and methods.">AttrExpressions</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic."></a>
+                        <a href="LogicImplicits.html" title="Logic expression implicits to build OR/AND logic.">LogicImplicits</a>
                       </li>
               </ul>
             </div>
@@ -272,12 +278,12 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="../package$$api$.html" class="extype" name="molecule.api">api</a></div>
+            <div class="subClasses hiddenContent"><a href="AggregateKeywords$.html" class="extype" name="molecule.expression.AggregateKeywords">AggregateKeywords</a></div>
           </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 172.00 158.00" height="158pt" width="172pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 168,-154 168,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AggregateKeywords (this trait)" xlink:href="#inheritance-diagram"><path d="M131.333,-88C131.333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 131.333,-62 131.333,-62 135.667,-62 140,-66.3333 140,-70.6667 140,-70.6667 140,-79.3333 140,-79.3333 140,-83.6667 135.667,-88 131.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.8672" text-anchor="start">AggregateKeywords</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="molecule.api" xlink:href="../package$$api$.html#inheritance-diagram"><path d="M100.333,-26C100.333,-26 63.6667,-26 63.6667,-26 59.3333,-26 55,-21.6667 55,-17.3333 55,-17.3333 55,-8.66667 55,-8.66667 55,-4.33333 59.3333,-0 63.6667,-0 63.6667,-0 100.333,-0 100.333,-0 104.667,-0 109,-4.33333 109,-8.66667 109,-8.66667 109,-17.3333 109,-17.3333 109,-21.6667 104.667,-26 100.333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="67" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="86.5508" text-anchor="start">api</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="api is a subtype of AggregateKeywords"><path d="M82,-54.7534C82,-45.3549 82,-34.3336 82,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="79.5501,-54.8581 82,-61.8581 84.4501,-54.8581 79.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M108.333,-150C108.333,-150 55.6667,-150 55.6667,-150 51.3333,-150 47,-145.667 47,-141.333 47,-141.333 47,-132.667 47,-132.667 47,-128.333 51.3333,-124 55.6667,-124 55.6667,-124 108.333,-124 108.333,-124 112.667,-124 117,-128.333 117,-132.667 117,-132.667 117,-141.333 117,-141.333 117,-145.667 112.667,-150 108.333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="59" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="78.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="AggregateKeywords is a subtype of AnyRef"><path d="M82,-116.753C82,-107.355 82,-96.3336 82,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="79.5501,-116.858 82,-123.858 84.4501,-116.858 79.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 172.00 158.00" height="158pt" width="172pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 168,-154 168,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.expression.AggregateKeywords (this trait)" xlink:href="#inheritance-diagram"><path d="M131.333,-88C131.333,-88 32.6667,-88 32.6667,-88 28.3333,-88 24,-83.6667 24,-79.3333 24,-79.3333 24,-70.6667 24,-70.6667 24,-66.3333 28.3333,-62 32.6667,-62 32.6667,-62 131.333,-62 131.333,-62 135.667,-62 140,-66.3333 140,-70.6667 140,-70.6667 140,-79.3333 140,-79.3333 140,-83.6667 135.667,-88 131.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="55.8672" text-anchor="start">AggregateKeywords</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="molecule.expression.AggregateKeywords" xlink:href="AggregateKeywords$.html#inheritance-diagram"><path d="M131.333,-26C131.333,-26 32.6667,-26 32.6667,-26 28.3333,-26 24,-21.6667 24,-17.3333 24,-17.3333 24,-8.66667 24,-8.66667 24,-4.33333 28.3333,-0 32.6667,-0 32.6667,-0 131.333,-0 131.333,-0 135.667,-0 140,-4.33333 140,-8.66667 140,-8.66667 140,-17.3333 140,-17.3333 140,-21.6667 135.667,-26 131.333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="36" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="55.8672" text-anchor="start">AggregateKeywords</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="AggregateKeywords is a subtype of AggregateKeywords"><path d="M82,-54.7534C82,-45.3549 82,-34.3336 82,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="79.5501,-54.8581 82,-61.8581 84.4501,-54.8581 79.5501,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef"><path d="M108.333,-150C108.333,-150 55.6667,-150 55.6667,-150 51.3333,-150 47,-145.667 47,-141.333 47,-141.333 47,-132.667 47,-132.667 47,-128.333 51.3333,-124 55.6667,-124 55.6667,-124 108.333,-124 108.333,-124 112.667,-124 117,-128.333 117,-132.667 117,-132.667 117,-141.333 117,-141.333 117,-145.667 112.667,-150 108.333,-150" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-143" x="59" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="78.7715" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="AggregateKeywords is a subtype of AnyRef"><path d="M82,-116.753C82,-107.355 82,-96.3336 82,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="79.5501,-116.858 82,-123.858 84.4501,-116.858 79.5501,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -330,7 +336,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="molecule.expression.AggregateKeywords.avg" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="molecule.expression.AggregateKeywords.avg" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggrNumber">
       <a id="avgextendsAnyRef"></a><a id="avg:avg"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#avgextendsAnyRef" title="Permalink">
@@ -342,11 +348,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$avg.html"><span class="name">avg</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Average of attribute values." href="AggregateKeywords$avg.html"><span class="name">avg</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.count" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Average of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Average of attribute values.
+<br><br>
+Apply <code>avg</code> keyword to attribute to return average of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
+Match.score(avg).get.head === <span class="num">2.3333333333333335</span> <span class="cmt">// (1 + 2 + 4) / 3</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.count" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="countextendsAnyRef"></a><a id="count:count"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#countextendsAnyRef" title="Permalink">
@@ -358,11 +367,22 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$count.html"><span class="name">count</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Count of attribute values." href="AggregateKeywords$count.html"><span class="name">count</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.countDistinct" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Count of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Count of attribute values.
+<br><br>
+Apply <code>count</code> keyword to attribute to return count of attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
+)
+Person.firstName.age(count).get === <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="num">1</span>),
+  (<span class="lit">"Liz"</span>, <span class="num">3</span>) <span class="cmt">// 34, 34, 25</span>
+)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.countDistinct" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="countDistinctextendsAnyRef"></a><a id="countDistinct:countDistinct"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#countDistinctextendsAnyRef" title="Permalink">
@@ -374,11 +394,22 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$countDistinct.html"><span class="name">countDistinct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Count of distinct attribute values." href="AggregateKeywords$countDistinct.html"><span class="name">countDistinct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.distinct" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Count of distinct attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Count of distinct attribute values.
+<br><br>
+Apply <code>countDistinct</code> keyword to attribute to return count of distinct attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
+)
+Person.firstName.age(countDistinct).get === <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="num">1</span>),
+  (<span class="lit">"Liz"</span>, <span class="num">2</span>) <span class="cmt">// 34, 25</span>
+)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.distinct" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="distinctextendsAnyRef"></a><a id="distinct:distinct"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#distinctextendsAnyRef" title="Permalink">
@@ -390,11 +421,22 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$distinct.html"><span class="name">distinct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Distinct attribute values." href="AggregateKeywords$distinct.html"><span class="name">distinct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.max" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Distinct attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Distinct attribute values.
+<br><br>
+Apply <code>distinct</code> keyword to attribute to return Vector of distinct attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
+  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
+)
+Person.firstName.age(distinct) insert <span class="std">List</span>(
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+  (<span class="lit">"Liz"</span>, Vector(<span class="num">34</span>, <span class="num">25</span>)) <span class="cmt">// only single 34 returned</span>
+)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>List[attribute-type]</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.max" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="maxextendsAnyRef"></a><a id="max:max"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#maxextendsAnyRef" title="Permalink">
@@ -406,10 +448,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$max.html"><span class="name">max</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Maximum attribute value(s)." href="AggregateKeywords$max.html"><span class="name">max</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Maximum attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Maximum attribute value(s).
+<br><br>
+Apply <code>max</code> keyword to attribute to return the maximum attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
+Person.age(max).get.head === <span class="num">70</span></pre><p>Apply <code>max(n)</code> to return Vector of the n biggest values.</p><pre>Person.age(max(<span class="num">3</span>)).get.head === Vector(<span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)</pre></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>max</code>/<code>max(n)</code> supports all value types (via comparators).
+      <br><code>max(n)</code> Can at most return the number of values that match.</p></span></dd></dl></div>
     </li><li name="molecule.expression.AggregateKeywords.maxs" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="maxsextendsAnyRef"></a><a id="maxs:maxs"></a>
       <span class="permalink">
@@ -426,7 +472,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       </span>
       
       
-    </li><li name="molecule.expression.AggregateKeywords.median" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.expression.AggregateKeywords.median" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggrNumber">
       <a id="medianextendsAnyRef"></a><a id="median:median"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#medianextendsAnyRef" title="Permalink">
@@ -438,11 +484,19 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$median.html"><span class="name">median</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Median of attribute values." href="AggregateKeywords$median.html"><span class="name">median</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.min" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Median of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Median of attribute values.
+<br><br>
+Apply <code>median</code> keyword to attribute to return median of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
+Match.score(median).get.head === <span class="num">2</span></pre><p>OBS: When it comes to an even number of values, Datomic has a special implementation of median that is different from the one described on the
+<a href="https://en.wikipedia.org/wiki/Median" target="_blank">Wiki entry on the median function</a>.
+<br><br>
+Datomic calculates the median of even number of values as the average of the two middle numbers rounded down to nearest whole number</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
+Match.score(median).get.head === <span class="num">2</span> <span class="cmt">// (2 + 3) / 2 = 2.5 rounded down to 2</span></pre><p>With decimal numbers this can go wrong:</p><pre>Match.score.insert(<span class="num">1.0</span>, <span class="num">2.5</span>, <span class="num">2.5</span>, <span class="num">3.0</span>)
+Match.score(median).get.head === <span class="num">2</span> <span class="cmt">// (2.5 + 2.5) / 2 = 2.5 rounded down to 2 (This is wrong and bug report has been filed)</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Value of Attribute type</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.min" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="minextendsAnyRef"></a><a id="min:min"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#minextendsAnyRef" title="Permalink">
@@ -454,10 +508,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$min.html"><span class="name">min</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Minimum attribute value(s)." href="AggregateKeywords$min.html"><span class="name">min</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Minimum attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Minimum attribute value(s).
+<br><br>
+Apply <code>min</code> keyword to attribute to return the minimum attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
+Person.age(min).get.head === <span class="num">25</span></pre><p>Apply <code>min(n)</code> to return Vector of the n smallest values.</p><pre>Person.age(min(<span class="num">3</span>)).get.head === Vector(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>)</pre></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>min</code>/<code>min(n)</code> supports all value types (via comparators).
+      <br><code>min(n)</code> Can at most return the number of values that match.</p></span></dd></dl></div>
     </li><li name="molecule.expression.AggregateKeywords.mins" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="minsextendsAnyRef"></a><a id="mins:mins"></a>
       <span class="permalink">
@@ -474,7 +532,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       </span>
       
       
-    </li><li name="molecule.expression.AggregateKeywords.rand" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.expression.AggregateKeywords.rand" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="randextendsAnyRef"></a><a id="rand:rand"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#randextendsAnyRef" title="Permalink">
@@ -486,10 +544,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$rand.html"><span class="name">rand</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Random attribute value(s)." href="AggregateKeywords$rand.html"><span class="name">rand</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Random attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Random attribute value(s).
+<br><br>
+Apply <code>random</code> keyword to attribute to return a single random attribute of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
+Person.age(random).get.head === <span class="num">34</span> <span class="cmt">// or other..</span></pre><p>Apply <code>random(n)</code> to return Vector of n random values. Observe though that duplicate random values can re-occur.</p><pre>Person.age(random(<span class="num">3</span>)).get.head === Vector(<span class="num">42</span>, <span class="num">25</span>, <span class="num">42</span>) <span class="cmt">// or other..</span></pre><p>To get distinct values only, use the <code>sample(n)</code> keyword instead.
+</p></div></div>
     </li><li name="molecule.expression.AggregateKeywords.rands" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="randsextendsAnyRef"></a><a id="rands:rands"></a>
       <span class="permalink">
@@ -506,7 +568,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       </span>
       
       
-    </li><li name="molecule.expression.AggregateKeywords.sample" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.expression.AggregateKeywords.sample" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggregates">
       <a id="sampleextendsAnyRef"></a><a id="sample:sample"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#sampleextendsAnyRef" title="Permalink">
@@ -518,10 +580,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$sample.html"><span class="name">sample</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Sample attribute value(s)." href="AggregateKeywords$sample.html"><span class="name">sample</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Sample attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Sample attribute value(s).
+<br><br>
+Apply <code>sample</code> keyword to attribute to return a single sample (random) attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
+Person.age(sample).get.head === <span class="num">42</span> <span class="cmt">// or other..</span></pre><p>Apply <code>sample(n)</code> to return Vector of up to n distinct sample values.</p><pre>Person.age(sample(<span class="num">3</span>)).get.head === Vector(<span class="num">70</span>, <span class="num">25</span>, <span class="num">37</span>) <span class="cmt">// or other..</span></pre><p>If values don't need to be distinct, <code>random(n)</code> can be used also.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Can at most return the number of values that match.</p></span></dd></dl></div>
     </li><li name="molecule.expression.AggregateKeywords.samples" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="samplesextendsAnyRef"></a><a id="samples:samples"></a>
       <span class="permalink">
@@ -538,7 +604,7 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
       </span>
       
       
-    </li><li name="molecule.expression.AggregateKeywords.stddev" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="molecule.expression.AggregateKeywords.stddev" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggrNumber">
       <a id="stddevextendsAnyRef"></a><a id="stddev:stddev"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#stddevextendsAnyRef" title="Permalink">
@@ -550,11 +616,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$stddev.html"><span class="name">stddev</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Variance of attribute values." href="AggregateKeywords$stddev.html"><span class="name">stddev</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.sum" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Variance of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Variance of attribute values.
+<br><br>
+Apply <code>stddev</code> keyword to attribute to return variance of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
+Match.score(stddev).get.head === <span class="num">1.247219128924647</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.sum" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggrNumber">
       <a id="sumextendsAnyRef"></a><a id="sum:sum"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#sumextendsAnyRef" title="Permalink">
@@ -566,11 +635,14 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$sum.html"><span class="name">sum</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Sum of attribute values." href="AggregateKeywords$sum.html"><span class="name">sum</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
-    </li><li name="molecule.expression.AggregateKeywords.variance" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Sum of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Sum of attribute values.
+<br><br>
+Apply <code>sum</code> keyword to attribute to return sum of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
+Match.score(sum).get.head === <span class="num">7</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Value of Attribute type</p></dd></dl></div>
+    </li><li name="molecule.expression.AggregateKeywords.variance" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="aggrNumber">
       <a id="varianceextendsAnyRef"></a><a id="variance:variance"></a>
       <span class="permalink">
       <a href="../../molecule/expression/AggregateKeywords.html#varianceextendsAnyRef" title="Permalink">
@@ -582,10 +654,13 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="AggregateKeywords$variance.html"><span class="name">variance</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a title="Variance of attribute values." href="AggregateKeywords$variance.html"><span class="name">variance</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Variance of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Variance of attribute values.
+<br><br>
+Apply <code>variance</code> keyword to attribute to return variance of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
+Match.score(variance).get.head === <span class="num">1.5555555555555556</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -944,267 +1019,6 @@ Person.age(variance).get.head === <span class="num">228.2222222222</span>   <spa
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.avg" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggrNumber">
-      <a id="avg"></a><a id="avg:avg"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#avg" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Average of attribute values." href="AggregateKeywords$avg$.html"><span class="name">avg</span></a><span class="result"> extends <a href="AggregateKeywords$avg.html" class="extype" name="molecule.expression.AggregateKeywords.avg">avg</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Average of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Average of attribute values.
-<br><br>
-Apply <code>avg</code> keyword to attribute to return average of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
-Match.score(avg).get.head === <span class="num">2.3333333333333335</span> <span class="cmt">// (1 + 2 + 4) / 3</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.count" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="count"></a><a id="count:count"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#count" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Count of attribute values." href="AggregateKeywords$count$.html"><span class="name">count</span></a><span class="result"> extends <a href="AggregateKeywords$count.html" class="extype" name="molecule.expression.AggregateKeywords.count">count</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Count of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Count of attribute values.
-<br><br>
-Apply <code>count</code> keyword to attribute to return count of attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
-)
-Person.firstName.age(count).get === <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="num">1</span>),
-  (<span class="lit">"Liz"</span>, <span class="num">3</span>) <span class="cmt">// 34, 34, 25</span>
-)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.countDistinct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="countDistinct"></a><a id="countDistinct:countDistinct"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#countDistinct" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Count of distinct attribute values." href="AggregateKeywords$countDistinct$.html"><span class="name">countDistinct</span></a><span class="result"> extends <a href="AggregateKeywords$countDistinct.html" class="extype" name="molecule.expression.AggregateKeywords.countDistinct">countDistinct</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Count of distinct attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Count of distinct attribute values.
-<br><br>
-Apply <code>countDistinct</code> keyword to attribute to return count of distinct attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
-)
-Person.firstName.age(countDistinct).get === <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="num">1</span>),
-  (<span class="lit">"Liz"</span>, <span class="num">2</span>) <span class="cmt">// 34, 25</span>
-)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Int</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.distinct" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="distinct"></a><a id="distinct:distinct"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#distinct" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Distinct attribute values." href="AggregateKeywords$distinct$.html"><span class="name">distinct</span></a><span class="result"> extends <a href="AggregateKeywords$distinct.html" class="extype" name="molecule.expression.AggregateKeywords.distinct">distinct</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Distinct attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Distinct attribute values.
-<br><br>
-Apply <code>distinct</code> keyword to attribute to return Vector of distinct attribute values of entities matching the molecule.</p><pre>Person.firstName.lastName.age insert <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="lit">"Hayday"</span>, <span class="num">42</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Taylor"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Swifty"</span>, <span class="num">34</span>),
-  (<span class="lit">"Liz"</span>, <span class="lit">"Mooray"</span>, <span class="num">25</span>)
-)
-Person.firstName.age(distinct) insert <span class="std">List</span>(
-  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
-  (<span class="lit">"Liz"</span>, Vector(<span class="num">34</span>, <span class="num">25</span>)) <span class="cmt">// only single 34 returned</span>
-)</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Vector[attribute-type]</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.max" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="max"></a><a id="max:max"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#max" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Maximum attribute value(s)." href="AggregateKeywords$max$.html"><span class="name">max</span></a><span class="result"> extends <a href="AggregateKeywords$max.html" class="extype" name="molecule.expression.AggregateKeywords.max">max</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Maximum attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Maximum attribute value(s).
-<br><br>
-Apply <code>max</code> keyword to attribute to return the maximum attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
-Person.age(max).get.head === <span class="num">70</span></pre><p>Apply <code>max(n)</code> to return Vector of the n biggest values.</p><pre>Person.age(max(<span class="num">3</span>)).get.head === Vector(<span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)</pre></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>max</code>/<code>max(n)</code> supports all value types (via comparators).
-      <br><code>max(n)</code> Can at most return the number of values that match.</p></span></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.median" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggrNumber">
-      <a id="median"></a><a id="median:median"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#median" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Median of attribute values." href="AggregateKeywords$median$.html"><span class="name">median</span></a><span class="result"> extends <a href="AggregateKeywords$median.html" class="extype" name="molecule.expression.AggregateKeywords.median">median</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Median of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Median of attribute values.
-<br><br>
-Apply <code>median</code> keyword to attribute to return median of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
-Match.score(median).get.head === <span class="num">2</span></pre><p>OBS: When it comes to an even number of values, Datomic has a special implementation of median that is different from the one described on the
-<a href="https://en.wikipedia.org/wiki/Median" target="_blank">Wiki entry on the median function</a>.
-<br><br>
-Datomic calculates the median of even number of values as the average of the two middle numbers rounded down to nearest whole number</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>)
-Match.score(median).get.head === <span class="num">2</span> <span class="cmt">// (2 + 3) / 2 = 2.5 rounded down to 2</span></pre><p>With decimal numbers this can go wrong:</p><pre>Match.score.insert(<span class="num">1.0</span>, <span class="num">2.5</span>, <span class="num">2.5</span>, <span class="num">3.0</span>)
-Match.score(median).get.head === <span class="num">2</span> <span class="cmt">// (2.5 + 2.5) / 2 = 2.5 rounded down to 2 (This is wrong and bug report has been filed)</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Value of Attribute type</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.min" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="min"></a><a id="min:min"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#min" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Minimum attribute value(s)." href="AggregateKeywords$min$.html"><span class="name">min</span></a><span class="result"> extends <a href="AggregateKeywords$min.html" class="extype" name="molecule.expression.AggregateKeywords.min">min</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Minimum attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Minimum attribute value(s).
-<br><br>
-Apply <code>min</code> keyword to attribute to return the minimum attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
-Person.age(min).get.head === <span class="num">25</span></pre><p>Apply <code>min(n)</code> to return Vector of the n smallest values.</p><pre>Person.age(min(<span class="num">3</span>)).get.head === Vector(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>)</pre></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p><code>min</code>/<code>min(n)</code> supports all value types (via comparators).
-      <br><code>min(n)</code> Can at most return the number of values that match.</p></span></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.rand" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="rand"></a><a id="rand:rand"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#rand" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Random attribute value(s)." href="AggregateKeywords$rand$.html"><span class="name">rand</span></a><span class="result"> extends <a href="AggregateKeywords$rand.html" class="extype" name="molecule.expression.AggregateKeywords.rand">rand</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Random attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Random attribute value(s).
-<br><br>
-Apply <code>random</code> keyword to attribute to return a single random attribute of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
-Person.age(random).get.head === <span class="num">34</span> <span class="cmt">// or other..</span></pre><p>Apply <code>random(n)</code> to return Vector of n random values. Observe though that duplicate random values can re-occur.</p><pre>Person.age(random(<span class="num">3</span>)).get.head === Vector(<span class="num">42</span>, <span class="num">25</span>, <span class="num">42</span>) <span class="cmt">// or other..</span></pre><p>To get distinct values only, use the <code>sample(n)</code> keyword instead.
-</p></div></div>
-    </li><li name="molecule.expression.AggregateKeywords.sample" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggregates">
-      <a id="sample"></a><a id="sample:sample"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#sample" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Sample attribute value(s)." href="AggregateKeywords$sample$.html"><span class="name">sample</span></a><span class="result"> extends <a href="AggregateKeywords$sample.html" class="extype" name="molecule.expression.AggregateKeywords.sample">sample</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Sample attribute value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Sample attribute value(s).
-<br><br>
-Apply <code>sample</code> keyword to attribute to return a single sample (random) attribute value of entities matching the molecule.</p><pre>Person.age.insert(<span class="num">25</span>, <span class="num">34</span>, <span class="num">37</span>, <span class="num">42</span>, <span class="num">70</span>)
-Person.age(sample).get.head === <span class="num">42</span> <span class="cmt">// or other..</span></pre><p>Apply <code>sample(n)</code> to return Vector of up to n distinct sample values.</p><pre>Person.age(sample(<span class="num">3</span>)).get.head === Vector(<span class="num">70</span>, <span class="num">25</span>, <span class="num">37</span>) <span class="cmt">// or other..</span></pre><p>If values don't need to be distinct, <code>random(n)</code> can be used also.
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Can at most return the number of values that match.</p></span></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.stddev" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggrNumber">
-      <a id="stddev"></a><a id="stddev:stddev"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#stddev" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Variance of attribute values." href="AggregateKeywords$stddev$.html"><span class="name">stddev</span></a><span class="result"> extends <a href="AggregateKeywords$stddev.html" class="extype" name="molecule.expression.AggregateKeywords.stddev">stddev</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Variance of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Variance of attribute values.
-<br><br>
-Apply <code>stddev</code> keyword to attribute to return variance of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
-Match.score(stddev).get.head === <span class="num">1.247219128924647</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.sum" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggrNumber">
-      <a id="sum"></a><a id="sum:sum"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#sum" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Sum of attribute values." href="AggregateKeywords$sum$.html"><span class="name">sum</span></a><span class="result"> extends <a href="AggregateKeywords$sum.html" class="extype" name="molecule.expression.AggregateKeywords.sum">sum</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Sum of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Sum of attribute values.
-<br><br>
-Apply <code>sum</code> keyword to attribute to return sum of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
-Match.score(sum).get.head === <span class="num">7</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Value of Attribute type</p></dd></dl></div>
-    </li><li name="molecule.expression.AggregateKeywords.variance" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="aggrNumber">
-      <a id="variance"></a><a id="variance:variance"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AggregateKeywords.html#variance" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="Variance of attribute values." href="AggregateKeywords$variance$.html"><span class="name">variance</span></a><span class="result"> extends <a href="AggregateKeywords$variance.html" class="extype" name="molecule.expression.AggregateKeywords.variance">variance</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Variance of attribute values.</p><div class="fullcomment"><div class="comment cmt"><p>Variance of attribute values.
-<br><br>
-Apply <code>variance</code> keyword to attribute to return variance of attribute values of entities matching the molecule.</p><pre>Match.score.insert(<span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>)
-Match.score(variance).get.head === <span class="num">1.5555555555555556</span></pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl></div>
     </li>
               </ol>
             </div>
