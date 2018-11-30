@@ -15,7 +15,6 @@ Removing current submodule
 Setting up submodule
 https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions
 `git submodule add -b master git@github.com:scalamolecule/scalamolecule.github.io.git public`
-`git submodule add -b master git@github.com:scalamolecule/scalamolecule.github.io.git public`
 
 
 https://github.com/scalamolecule/molecule-web.git
