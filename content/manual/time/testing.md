@@ -12,9 +12,9 @@ prev: /manual/time/with
 
 # Testing
 
-[TestDbAsOf](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala), 
-[TestDbSince](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala) and 
-[TestDbWith](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala)
+[TestDbAsOf](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbAsOf.scala), 
+[TestDbSince](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala) and 
+[TestDbWith](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala)
 
 For more complex test scenarios we can use a "test database" where we can freely make multiple separate molecule queries against
 a temporary database "branch".

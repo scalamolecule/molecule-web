@@ -68,6 +68,8 @@ Now each Order has its own list of typed Line Item data and there is no Order re
 
 This becomes more and more handy the deeper the hierarchy of data is. Molecule can nest data structures up to 10 levels deep!
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
+
 
 ### Entity API
 
@@ -92,6 +94,7 @@ orderId.touch === Map(
       ":lineItem/product" -> "Coffee",
       ":lineItem/price" -> 46.0)))
 ```
+
 
 
 

@@ -13,6 +13,8 @@ down: /manual/entities
 
 # 3 attribute modes
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
+
 #### 1. Mandatory `attr`
 
 When we use a molecule to query the Datomic database we ask for entities having all our Attributes associated with them. 

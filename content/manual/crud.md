@@ -1,6 +1,6 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "CRUD"
+title: '"CRUD"'
 weight: 70
 menu:
   main:
@@ -12,16 +12,49 @@ next: /manual/crud/save
 down: /manual/transactions
 ---
 
-# CRUD
+# "CRUD"
 
 [Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud)
+
 
 
 The classical Create-Read-Update-Delete operations on data are a bit different using Datomic since it never 
 overwrites or deletes data. Facts are only
 _asserted_ or _retracted_ in Datomic. 
 
-Molecule tries to bridge the vocabulary between these two worlds:
+Molecule tries to bridge the vocabulary between these two worlds.
+
+
+## Transactions return TxReport
+
+All transactional operations on molecules return a `TxReport` with information about the transaction 
+like what data was transacted and what entities were created and a timestamp of the transaction:
+
+```scala
+val tx: TxReport = Person.name("Fred").likes("pizza").age(38).save
+
+// Entity id created - useful when we know one entity was created
+val fredId: Long = tx.eid // (same as tx.eids.head)
+
+// Entities id created
+val entities: Seq[Long] = tx.eids
+
+// Transaction time `t` (a sequential number created internally by Datomic identifying the tx)
+val txT: Date = tx.t
+
+// Transaction time as `Date`
+val txTime: Date = tx.inst
+
+// Transaction entity id
+val txEntityId: Long = tx.tx
+
+// Transaction Entity
+val txEntity: datomicEntity = tx.txE
+```
+
+### Async API
+
+All getters and operators below have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters/operators shown for brevity.
 
 ## Create
 
@@ -30,7 +63,7 @@ In Molecule you can either `save` a populated molecule or `insert` multiple tupl
 #### `save`
 3 facts asserted for a new entity:
 ```scala
-Person.name("Fred").likes("pizza").age(38).save
+Person.name("Fred").likes("pizza").age(38).save // or saveAsync
 ```
 
 More on [save](/manual/crud/save/)...
@@ -39,7 +72,7 @@ More on [save](/manual/crud/save/)...
 #### `insert`
 3 facts asserted for each of 3 new entities: 
 ```scala
-Person.name.age.likes insert List(
+Person.name.age.likes insert List( // or insertAsync
   ("Fred", 38, "pizza"),
   ("Lisa", 7, "sushi"),
   ("Ben", 5, "pizza")
@@ -55,7 +88,7 @@ To read data from the database we call `get` on a molecule
 #### `get`
 
 ```scala
-Person.name.age.likes.get === List(
+Person.name.age.likes.get === List( // or getAsync
   ("Fred", 38, "pizza"),
   ("Lisa", 7, "sushi"),
   ("Ben", 5, "pizza")
@@ -69,10 +102,10 @@ More on [get](/manual/crud/get/)...
 Since data is only appended in Datomic we can also go back in time to look at our data!
 
 ```
-<molecule>.getAsOf(t)
-<molecule>.getSince(t)
-<molecule>.getWith(txData) // Imagining the future
-<molecule>.getHistory
+<molecule>.getAsOf(t)      // or getAsynAsOf(t)
+<molecule>.getSince(t)     // or getAsyncSince(t)
+<molecule>.getWith(txData) // or getAsyncWith(txData)
+<molecule>.getHistory      // or getAsyncHistory
 ```
 These are such cool features that we have a whole section about [time](/manual/time)...
 

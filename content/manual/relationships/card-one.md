@@ -78,6 +78,7 @@ Person.name.Home.street.city.Country.name.get.head === ("Fred", "Baker St. 7", "
 ```
 And so on...
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 ### Next
 

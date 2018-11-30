@@ -13,12 +13,14 @@ down: /manual/entities
 
 # Aggregates
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala)
+[Core tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Aggregates.scala) | 
+[Example tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala)
 
 Molecule wraps Datomic's native aggregate functions by applying special aggregate keyword objects to the attribute we want to 
 aggregate on. The keyword objects are made available with the `molecule._` import.
 
 Aggregate functions either return a single value or a collection of values:
+
 
 ## Aggregates returning a single value
 

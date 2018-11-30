@@ -18,7 +18,7 @@ Molecule let's you model and query your domain data structures directly with the
 
 ### Query
 
-Let's say we want to find Persons in our Datomic database. Then we can build a molecule to get this data
+Let's say we want to find Persons in the Datomic database. Then we can build a molecule to get this data
 for us:
 
 ```scala
@@ -28,24 +28,10 @@ This fetches a List of tuples of Strings/Int's that are the types of the `name` 
 we asked for. We can continue adding more and more Attributes as with the builder pattern to define what data
 we are interested in.
 
-Data can be returned in 5 different formats:
+There are 5 different getters that return data in various formats and all synchronous getters have an
+asynchronous equivalent getter. See [Building molecules](/manual/attributes/basics) for more info on
+getters.
 
-```scala
-// List for convenient access to smaller data sets
-val list : List[(String, Int)] = m(Person.name.age).get
-
-// Mutable Array for fastest retrieval and traversing
-val array: Array[(String, Int)] = m(Person.name.age).getArray
-
-// Iterable for lazy traversing with an Iterator
-val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
-
-// Json formatted string 
-val json: String = m(Person.name.age).getJson
-
-// Raw untyped Datomic data if data doesn't need to be typed
-val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getJson
-```
 
 ### Building blocks
 
@@ -65,9 +51,9 @@ That way, we can use our domain terms directly in our code in a type-safe and se
  any invalid queries.
 
 
-### Adding and updating data
+### Operations on molecules
 
-For single entities we can populate a molecule with data to save it:
+For single entities we can apply data to the attributes of a molecule and then save it:
 
 ```scala
 // Save Lisa entity and retrieve new entity id
@@ -78,18 +64,26 @@ Or we can add data for multiple entities with an `insert`:
 ```scala
 // Save Lisa entity and retrieve new entity id
 Person.name.age insert List(
-  ("Lisa", 27),
-  ("Jhn", 32)
+  ("Lisa", 27), // Inserting Lisa entity
+  ("John", 32)  // Inserting John entity  
 )
 ```
-Using an entity id we can update an entity:
+Using an entity id we can update attribute values of an entity:
 ```scala
-// Update
+// Update age attribute value of Lisa entity
 Person(lisaId).age("28").update
 ```
 In Datomic, an update is actually a retraction of the old data and an assertion of the new data. In this example, 
 Lisa's age 27 is retracted and her new age 28 asserted. With this information model, Datomic allow us to go
-back in time and see when Lisa's age was changed to 28. 
+back in time and see when Lisa's age was changed to 28.
+
+Or we can retract an entity entirely by calling `retract` on an entity id
+```scala
+// Retract ("delete") Lisa entity
+lisaId.retract
+```
+Since the entity is retracted and not deleted, Datomic allow us to go back in time before the retraction
+to see that Lisa existed. 
 
 
 ### Expressive powers
@@ -112,21 +106,16 @@ a little about Datomic in order to understand Molecule.
 
 ### Facts/Datoms with time built in
 
-Instead of mapping objects to tables or documents, the core unit of data in Molecule is an atomic piece of 
-information: an _attribute_. 
-
-Attributes are composed to form "molecules" that describe unique and flexible data structures in unlimited 
-combinations suiting your domain. Those are then translated to a Datalog query string being executed against the 
-underlying Datomic database.
-
-An attribute in Datomic is part of a _fact_ or _Datom_ consisting of four elements:
-
+Instead of mapping objects to tables or documents, the core unit of data in Datomic is an atomic piece of 
+information: a _Datom_. A Datom describes a _fact_, for instance that "John likes pizza". A timestamp
+adds information about _when_ John stated that he likes pizza. A fifth piece of information "added" tells
+if the fact is asserted (true - John likes) or retracted (false - John no longer likes). So, a Datom
+consists of 5 pieces of information:
 ```
- John     likes    pizza      12:35:54
-   |        |        |           |
-Entity  Attribute  Value  Transaction/time
+ John     likes    pizza      12:35:54       true
+   |        |        |           |            |
+Entity  Attribute  Value  Transaction/time  Added
 ```
-
 With Molecule we could model asserting the fact like this:
 
 ```scala
@@ -135,14 +124,17 @@ val txTime = Person(johnId).likes("pizza").update.txInstant
 _likes_ is an `attribute` with `value` _pizza_. It is **asserted** that the `entity` _johnId_ likes pizza 
 at `transaction` time 12:35:54. A timestamp is automatically set with all transactions. But if we need 
 "domain time" we could add such attribute to the transaction as well, since this is simply a saved data structure 
-in Datomic as our domain data.
+in Datomic as our domain data (more on ["transaction meta data"](/manual/transactions/tx-meta-data))
 
+As you saw, Molecule simply models Datomic datoms by chaining together _attributes_ to form "_molecules_" in unlimited 
+combinations suiting your domain. You can then call different operations on a molecule as we saw above in order to 
+interact with the underlying Datomic database.
 
 ### Immutable data
 
-Everytime a fact is asserted the old value of the attribute is _not deleted_. A Datomic database is immutable, and
+Everytime a fact is asserted the old value of the attribute is _not deleted_. Data is only appended to a Datomic database, and
 an update of an attribute value internally creates a retraction of the old value and an assertion of the new value.
-In this way, we can go back in time and see the values of an attribute _at any point in time_. We could for instance see all 
+In this way, we can [go back in time](/manual/time/asof-since) and see the values of an attribute _at any point in time_. We could for instance see all 
 our previous addresses if this was part of our domain model.
 
 Also when we delete data, it's actually not deleted, but "retracted". Retracted data doesn't show up when we are 

@@ -1,200 +1,146 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "Tx meta data"
+title: "Tx bundle"
 weight: 20
 menu:
   main:
     parent: transactions
 up:   /manual/transactions
 prev: /manual/transactions
-next: /manual/time
+next: /manual/transactions/tx-functions
 down: /manual/time
 ---
 
-# Transaction meta data
+# Transaction bundle
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TransactionMetaData.scala) 
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TxBundle.scala) 
 
+## Multiple actions in one atomic transaction
 
-As we saw, a [transaction](/manual/transactions/) in Datomic is also an entity with a timestamp fact. Since it's an entity as
-any of our own entities, we can even add more facts that simply share the entity id of the transaction:
-
-![](/img/transactions/2.jpg)
-
-## Save
-
-Depending on our domain we can tailor any tx meta data that we find valuable to associate with some transactions. 
-We could for instance be interested in "who did it" and "in what use case" it happened and create some meta attributes
- `user` and `uc` in an `Audit` namespace:
-
-```scala
-trait Audit {
-  val user = oneString
-  val uc   = oneString
-}
-```
-Then we can assert values of those attributes together with a `save` operation for instance by applying an `Audit` meta molecule 
-
-```scala
-Audit.user("Lisa").uc("survey")
-```
-
-..to the generic `Tx` namespace:
-
-
-```scala
-Person.name("Fred").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
-```
-This could read: _"A person Fred liking pizza was saved by Lisa as part of a survey"_
-
-
-Molecule simply saves the tx meta data attributes `user` and `uc` with the transaction entity id `tx4` as their entity id:
-
-![](/img/transactions/5.jpg)
-
-
-
-## Get
-
-Now we can query the tx meta data in various ways:
-
-```scala
-// How was Fred added?
-// Fred was added by Lisa as part of a survey
-Person(e5).name.Tx(Audit.user.uc).get === List(("Fred", "Lisa", "survey"))
-
-// When did Lisa survey Fred?
-Person(e5).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
-  
-// Who were surveyed?  
-Person.name.Tx(Audit.uc_("survey")).get === List("Fred")
-
-// What did people that Lisa surveyed like? 
-Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
-
-// etc..
-```
-
-
-
-## Insert
-
-If we insert multiple entities in a transaction, the transaction data is only asserted once:
-
-```scala
-Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
-  ("John", "sushi"),
-  ("Pete", "burgers"),
-  ("Mona", "snacks")
-)
-```
-
-
-### Composites
-
-Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta data:
-
-```scala
-insert(
-  // 2 sub-molecules
-  Article.name.author, Tag.name.weight
-)(
-  // 2 rows of data (Articles) 
-  // The 2 sub-tuples of each row matches the 2 sub-molecules
-  (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
-  (("Best jokes ever", "John Cleese"), ("fun", 3))
-)(
-  MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")
-)
-```
-_"Get serious articles that Brenda submitted"_:
-```scala
-m(Article.name.author ~ Tag.name_("serious").weight.>=(4)
-  .Tx(MetaData.submitter_("Brenda Johnson"))).get === List(
-  (("Battle of Waterloo", "Ben Bridge"), 5)
-)
-```
-The example is explained more in detail in the last section of [CRUD/insert](/manual/crud/insert/).
-
-
-
-## Update
-
-Transaction meta data can be attached to updates too so that we can for instance follow who changed data in our system.
-```scala
-Person(johnId).likes("pasta").Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
-```
-Now when we look at a list of Persons and what they like we can see that some likes were from an original survey and one is 
-from a follow-up survey that Ben did:
-
-```scala
-Person.name.likes.Tx(Audit.user.uc).get === List(
-  ("John", "pasta", "Ben", "survey-follow-up"),
-  ("Pete", "burgers", "Lisa", "survey"),
-  ("Mona", "snacks", "Lisa", "survey")
-)
-```
-
-
-## Retract
-It's valuable also to have meta data about retractions so that we can afterwards ask questions like "Who deleted this?". 
-
-### Single attribute
-
-To retract an attribute value we apply an empty arg list to the attribute and `update`. Here we also apply some tx meta data
-about who took away the `likes` value for Pete:
-```scala
-Person(peteId).likes().Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
-```
-We can follow the `likes` of Pete through [history](/manual/time/history/) and see that Ben retracted his `likes` value in a survey follow-up:
-```scala
-Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
-  // Pete's liking was saved by Lisa as part of survey
-  ("burgers", 1028, true, "Lisa", "survey"),
-  
-  // Pete's liking was retracted by Ben in a survey follow-up
-  ("burgers", 1030, false, "Ben", "survey-follow-up")
-)
-```
-The entity Pete still exists but now has no current liking:
-
-```scala
-Person(peteId).name.likes$.get.head === ("Pete", None) 
-```
-
-### Entities
-
-Using the `retract` method 
-(available via `import molecule.imports._`) we can retract one or more entity ids along with a tx meta data:
-
-
-```scala
-retract(johnId, Audit.user("Mona").uc("clean-up"))
-```
-The `Audit.user("Mona").uc("clean-up")` molecule has the tx meta data that we save with the transaction entity.
+[save](/manual/crud/save), 
+[insert](/manual/crud/insert), 
+[update](/manual/crud/update) and 
+[retract](/manual/crud/retract) operations on molecules each execute in their own transaction. By bundling 
+transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled 
+ transaction will either complete as a whole or abort if there are any transactional errors.
  
-John has now ben both saved, updated and retracted:
+Each of the above operations has an equivalent method for getting the transaction statements it produces:
 
+- `<molecule>.getSaveTx`  
+- `<molecule>.getInsertTx`  
+- `<molecule>.getUpdateTx`  
+- `<entityId>.getRetractTx`
+
+We can use those methods to build a bundled transaction to atomically perform 4 operations in one transaction:
 ```scala
-Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
-  // John's liking was saved by Lisa as part of survey
-  ("sushi", 1028, true, "Lisa", "survey"), // sushi asserted
-  
-  // John's liking was updated by Ben in a survey follow-up
-  ("sushi", 1030, false, "Ben", "survey-follow-up"), // sushi retracted
-  ("pasta", 1030, true, "Ben", "survey-follow-up"), // pasta asserted
-  
-  // John's liking (actually whole entity) was retracted by Mona in a clean-up
-  ("pasta", 1033, false, "Mona", "clean-up") // pasta retracted
+// Some initial data
+val List(e1, e2, e3) = Ns.int insert List(1, 2, 3) eids
+
+// Transact multiple molecule statements in one bundled transaction
+transact(
+  // retract entity
+  e1.getRetractTx,
+  // save new entity
+  Ns.int(4).getSaveTx,
+  // insert multiple new entities
+  Ns.int.getInsertTx(List(5, 6)),
+  // update entity
+  Ns(e2).int(20).getUpdateTx
+)
+
+// Data after group transaction
+Ns.int.get.sorted === List(
+  // 1 retracted
+  3, // unchanged
+  4, // saved
+  5, 6, // inserted
+  20 // 2 updated
 )
 ```
 
-The entity John now currently doesn't exists (although still in history)
+Bundled transactions can also use Datomic's asynchronous API by calling `transactAsync`:
+
 ```scala
-Person(johnId).name.likes$.get === Nil 
+Await.result(
+  transactAsync(
+    e1.getRetractTx,
+    Ns.int(4).getSaveTx,
+    Ns.int.getInsertTx(List(5, 6)),
+    Ns(e2).int(20).getUpdateTx
+  ) map { bundleTx =>
+    Ns.int.getAsync map { queryResult => 
+      queryResult === List(3, 4, 5, 6, 20)    
+    }  
+  },
+  2.seconds
+)
 ```
+### Debugging bundled transactions
+
+If you want to see the transactional output from a bundled transaction you can call `debugTransaction` on some bundled transaction data:
+
+
+```scala
+// Print debug info for group transaction without affecting live db
+debugTransact(
+  // retract
+  e1.getRetractTx,
+  // save
+  Ns.int(4).getSaveTx,
+  // insert
+  Ns.int.getInsertTx(List(5, 6)),
+  // update
+  Ns(e2).int(20).getUpdateTx
+)
+
+// Prints transaction data to output:
+/*
+  ## 1 ## TxReport
+  ========================================================================
+  1          ArrayBuffer(
+    1          List(
+      1          :db.fn/retractEntity   17592186045445)
+    2          List(
+      1          :db/add       #db/id[:db.part/user -1000247]     :ns/int          4           Card(1))
+    3          List(
+      1          :db/add       #db/id[:db.part/user -1000252]     :ns/int          5           Card(1))
+    4          List(
+      1          :db/add       #db/id[:db.part/user -1000253]     :ns/int          6           Card(1))
+    5          List(
+      1          :db/add       17592186045446                     :ns/int          20          Card(1)))
+  ------------------------------------------------
+  2          List(
+    1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018
+
+    2    2     added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 1
+
+    3    3     added: true ,   t: 13194139534345,   e: 17592186045450,   a: 64,   v: 4
+
+    4    4     added: true ,   t: 13194139534345,   e: 17592186045451,   a: 64,   v: 5
+
+    5    5     added: true ,   t: 13194139534345,   e: 17592186045452,   a: 64,   v: 6
+
+    6    6     added: true ,   t: 13194139534345,   e: 17592186045446,   a: 64,   v: 20
+         7     added: false,  -t: 13194139534345,  -e: 17592186045446,  -a: 64,  -v: 2)
+  ========================================================================
+*/
+```
+Two groups of data are shown. The first group is an internal representation in Molecule showing the operations. 
+The second group shows the datoms produced in the transaction. For ease of reading, "-" (minus) is prepended
+the prefixes (t, e, a, v) for the datoms that are retractions - where `added` is false.  The abbreviations 
+represents the parts of the Datom:
+
+- `added`: operation, can be true for asserted or false for retracted
+- `t`: transaction entity id
+- `e`: entity
+- `a`: attribute
+- `v`: value
+
+Updating 2 to 20 for instance creates two Datoms, one retracting the old value 2 and one asserting the new value 20.
+
+(The numbers on the left are simply index numbers and not part of the transactional data)
 
 
 ### Next
 
-[Time...](/manual/time)
+[Transaction functions...](/manual/transactions/tx-functions)

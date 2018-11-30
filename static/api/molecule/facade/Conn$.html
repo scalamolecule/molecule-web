@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.15.0 - molecule.facade.Conn</title>
-          <meta name="description" content="Molecule 0.15.0 - molecule.facade.Conn" />
-          <meta name="keywords" content="Molecule 0.15.0 molecule.facade.Conn" />
+          <title>Molecule 0.16.0 - molecule.facade.Conn</title>
+          <meta name="description" content="Molecule 0.16.0 - molecule.facade.Conn" />
+          <meta name="keywords" content="Molecule 0.16.0 molecule.facade.Conn" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.16.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -89,12 +89,8 @@
       
       <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
-    <td><a href="action/index.html">action</a><td>
-    <td>Actions on molecules and entities.</td>
-  </tr>
-  <tr>
     <td><a href="api/index.html">api</a><td>
-    <td>Molecule import interfaces of various arities.</td>
+    <td>Molecule API.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -338,9 +334,9 @@ only interfaces relevant to Molecule.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="molecule.facade.Conn#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(datConn:datomic.Connection):molecule.facade.Conn"></a><a id="apply(Connection):Conn"></a>
+      <a id="apply(txDb:AnyRef):molecule.facade.Conn"></a><a id="apply(AnyRef):Conn"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/Conn$.html#apply(datConn:datomic.Connection):molecule.facade.Conn" title="Permalink">
+      <a href="../../molecule/facade/Conn$.html#apply(txDb:AnyRef):molecule.facade.Conn" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -349,7 +345,23 @@ only interfaces relevant to Molecule.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="datConn">datConn: <span class="extype" name="datomic.Connection">Connection</span></span>)</span><span class="result">: <a href="Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>
+        <span class="name">apply</span><span class="params">(<span name="txDb">txDb: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.facade.Conn#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(datomicConn:datomic.Connection):molecule.facade.Conn"></a><a id="apply(Connection):Conn"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/Conn$.html#apply(datomicConn:datomic.Connection):molecule.facade.Conn" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="datomicConn">datomicConn: <span class="extype" name="datomic.Connection">Connection</span></span>)</span><span class="result">: <a href="Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>
       </span>
       
       

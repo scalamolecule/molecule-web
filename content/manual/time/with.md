@@ -61,14 +61,18 @@ The `getWith(txData)` works on a "branch" of the database and is automatically g
 set up and tear down database mockups!
 
 
-### 4 transaction data getters
+### Transaction molecules
 
-We can generate transaction data by simulating any of the 4 transaction functions we have available in Molecule:
+We can generate transaction test data by invoking a transactional data getter on a molecule or in the case of 
+retraction on an entity id. The tx getters return the transactional data that the 4 transaction functions 
+`save`, `insert`, `update` or `retract` would normally have transacted.
 
-- `getInsertTx`
-- `getSaveTx`
-- `getUpdateTx`
-- `getRetractTx`
+- `<molecule>.getInsertTx`
+- `<molecule>.getSaveTx`
+- `<molecule>.getUpdateTx`
+- `<entityId>.getRetractTx`
+
+Here's an example of combining transaction molecules of all types:
 
 ```scala
 Person.name.age.getWith(
@@ -116,6 +120,66 @@ Person.name.age.getWith(insert, update, retract, save) === expectedResult
 // etc..
 ```
 Since you can apply any number of transaction molecules, the testing options are extremely powerful.
+
+
+
+### With APIs
+
+Data With some `txTestData` can be returned as
+
+- `List` for convenient access to smaller data sets
+- `Array` for fastest retrieval and traversing of large typed data sets
+- `Iterable` for lazy traversing with an Iterator
+- Json (`String`)
+- Raw (`java.util.Collection[java.util.List[AnyRef]]`) for fast access to untyped data
+
+where `txTestData` can be either:
+
+- One or more transaction molecules, each returning `Seq[Seq[Statement]]`
+- Raw transaction data from edn file (`java.util.List[_]`)
+
+Combine the needed return type with some transactional data `txTestData` and optionally a row limit 
+by calling one of the corresponding `With` implementations. All return type/parameter combinations 
+have a synchronous and asynchronous implementation:
+
+<div class="container" style="margin-left: -30px">
+    <div class="col-sm-4 column ">
+        <ul>
+            <li><code>getWith(txTestData)</code> (List)</li>
+            <li><code>getArrayWith(txTestData)</code></li>
+            <li><code>getIterableWith(txTestData)</code></li>
+            <li><code>getJsonWith(txTestData)</code></li>
+            <li><code>getRawWith(txTestData)</code></li>
+        </ul>
+        <ul>
+            <li><code>getWith(txTestData, limit)</code> (List)</li>
+            <li><code>getArrayWith(txTestData, limit)</code></li>
+            <li><code>getJsonWith(txTestData, limit)</code></li>
+            <li><code>getRawWith(txTestData, limit)</code></li>
+        </ul>
+    </div>
+    <div class="col-sm-5 column ">
+        <ul>
+            <li><code>getAsyncWith(txTestData)</code> (List)</li>
+            <li><code>getAsyncArrayWith(txTestData)</code></li>
+            <li><code>getAsyncIterableWith(txTestData)</code></li>
+            <li><code>getAsyncJsonWith(txTestData)</code></li>
+            <li><code>getAsyncRawWith(txTestData)</code></li>
+        </ul>
+        <ul>
+            <li><code>getAsyncWith(txTestData, limit)</code> (List)</li>
+            <li><code>getAsyncArrayWith(txTestData, limit)</code></li>
+            <li><code>getAsyncJsonWith(txTestData, limit)</code></li>
+            <li><code>getAsyncRawWith(txTestData, limit)</code></li>
+        </ul>
+    </div>
+</div>
+
+
+>The asynchronous implementations simply wraps the synchronous result in a Future as any
+>other database server would normally do internally. The difference is that the Peer (the "database server") 
+>runs in the same process as our application code which makes it natural to do the Future-wrapping
+>in Molecule as part of running our application.
 
 ### Next
 

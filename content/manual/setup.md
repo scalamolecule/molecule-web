@@ -46,17 +46,17 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.15.1",
+      "org.scalamolecule" %% "molecule" % "0.16.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to directory with your schema definition file(s)
   )
 ```
-Molecule 0.15.1 for Scala 2.12.7 is available at
+Molecule 0.16.0 for Scala 2.12.7 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 
-# 2. Paths to Schema definition files
+## 2. Paths to Schema definition files
 
 We use the `moleculeSchemas` sbt settings key to tell the sbt MoleculePlugin where we have our Schema definition files.
 
@@ -72,7 +72,7 @@ Schema definiton files should reside in directories named `schema` anywhere in y
 Use the `moleculeSchemas` sbt settings key to list the directories in your project source
 code that contains your `schema` directories.
 
-Say you have a project `demo` and a single Schema definition file `YourDomainDefinition.scala`
+Say you have a project `app` and a single Schema definition file `YourDomainDefinition.scala`
 defining your database:
 
 ![](/img/dirs1.png)
@@ -139,11 +139,11 @@ import molecule.api.in2_out10._
 ```
 
 
-## 5. Connecting to the database
+## 5. Connect to database
 
 To make queries we need an implicit database connection. When initially developing our project
-we might make frequent changes to our schema and therefore recreate our database on each use (later, when
-our schema stabilizes we can retrieve the connection without recreating the database). The Molecule
+we might make frequent changes to our schema and therefore recreate our database schema on each use. Later, when
+our schema stabilizes we can retrieve the connection without recreating the database. The Molecule
 sbt-plugin creates a Schema transaction file that we can use now to transact our schema - simply by applying it
 to the `recreateDbFrom` method. 
 

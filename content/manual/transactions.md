@@ -8,14 +8,11 @@ menu:
     identifier: transactions
 up:   /manual/crud
 prev: /manual/crud/retract
-next: /manual/transactions/tx-meta-data
+next: /manual/transactions/tx-bundle
 down: /manual/time
 ---
 
 # Transactions
-
-[Transaction tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TransactionData.scala) and 
-[History tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetHistory.scala)
 
 All assertions and retractions in Datomic happen within a transaction that guarantees ACID consistency. Along with the domain data
 involved, Datomic also automatically asserts a timestamp as part of a created Transaction entity for that transaction.
@@ -103,4 +100,4 @@ date1.before(date2) === true
 
 ### Next
 
-[Transaction meta data...](/manual/transactions/tx-meta-data)
+[Transaction bundle...](/manual/transactions/tx-bundle)

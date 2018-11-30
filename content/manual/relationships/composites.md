@@ -78,20 +78,20 @@ Relationships to `Site` are simply not _intrinsic_ to or a natural core part of 
 Littering non-intrinsic relationships to `Site` - and possibly other cross-cutting namespaces like `Tags`, `Likes` etc - all 
 over the place quickly clutters and pollutes our domain model.
 
-Instead we want to create a more "loose association" to `Site`. This is what Datomic allow us to do by letting an entity id
+Instead we want to create an "associative relationship" to `Site`. This is what Datomic allow us to do by letting an entity id
 tie _any_ attributes together as we see in the list of facts at the top of this page. 
 
 
 ## Composite modelling
 
-In Molecule we can model "associative relationships" - or "composites" with the `~` method:
+In Molecule we model associative relationships as Composites by chaining "sub-molecules" with the `+` operator:
 
 ```scala
-m(Person.name.likes.age ~ Site.cat).get === List(
+m(Person.name.likes.age + Site.cat).get === List(
   (("Fred", "pizza", 38), "customer")
 )
 ```
-We make a composite molecule from two "sub-molecules" `Person.name.likes.age` and `Site.cat`. 
+We make a composite molecule from two sub-molecules `Person.name.likes.age` and `Site.cat`. 
 
 The composite result set is a list of tuples with
 a sub-tuple for each sub-molecule. 
@@ -100,14 +100,14 @@ Since in this case the last sub-molecule only has one attribute value "customer"
 had 2 attributes we would get a sub-tuple for that too:
 
 ```scala
-m(Person.name.likes.age ~ Site.cat.status).get === List(
+m(Person.name.likes.age + Site.cat.status).get === List(
   (("Fred", "pizza", 38), ("customer", "good"))
 )
 ```
 And so on..
 
 ```scala
-m(Person.name.likes.age ~ Site.cat.status ~ Loc.tags ~ Emotion.like).get === List(
+m(Person.name.likes.age + Site.cat.status + Loc.tags + Emotion.like).get === List(
   (("Fred", "pizza", 38), ("customer", "good"), Set("inner city", "hipster"), true)
 )
 ```
@@ -122,9 +122,9 @@ _"Which positive elder hipster customers like what?"_
 
 ```scala
 m(Person.name.likes.age_.>(35) 
- ~ Site.cat_("customer")
- ~ Loc.tags_("hipster") 
- ~ Emotion.like_(true)).get === List(
+ + Site.cat_("customer")
+ + Loc.tags_("hipster") 
+ + Emotion.like_(true)).get === List(
   ("Fred", "pizza")
 )
 ```
@@ -136,6 +136,7 @@ The combinations are quite endless - while you can keep your domain model/schema
 Since composites are composed of up to 22 sub-molecules we could potentially insert and retrieve 
 mega composite molecules with up to 22 x 22 = 484 attributes!
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 ### Next
 

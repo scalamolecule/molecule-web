@@ -9,13 +9,13 @@ menu:
 
 # Slick vs. Molecule examples
 
-Using examples from [Slick](http://slick.typesafe.com/doc/3.0.0-M1/sql-to-slick.html#sql-vs-slick-examples):
+Using examples from [Coming from SQL to Slick](http://slick.lightbend.com/doc/3.2.3/sql-to-slick.html#select):
 
 #### Select all table values
 
 ```
 // Slick
-people.run
+people.result
 ```
 In molecule we would declare each attribute we are interested in also to infer the exact return type
 ```scala
@@ -26,7 +26,7 @@ Person.name.age.get
 #### Select certain columns
 
 ```
-people.map(p => (p.age, p.name ++ " (" ++ p.id.asColumnOf[String] ++ ")")).run
+people.map(p => (p.age, p.name ++ " (" ++ p.id.asColumnOf[String] ++ ")")).result
 ```
 With Molecule we would concatenate `name` and `id` with the returned result set:
 ```scala
@@ -36,7 +36,7 @@ Person.age.name.e.get map { case (age, name, id) => (age, s"$name ($id)" }
 #### filter / WHERE
 
 ```scala
-people.filter(p => p.age >= 18 && p.name === "C. Vogt").run
+people.filter(p => p.age >= 18 && p.name === "C. Vogt").result
 ```
 Molecule filter values by applying a required value to an attribute or supply a value to compare against (`>=(18)`):
 ```scala
@@ -48,17 +48,17 @@ Person.age.>=(18).name("C. Vogt").get
 #### sortBy / ORDER BY
 
 ```scala
-people.sortBy(p => (p.age.asc, p.name)).run
+people.sortBy(p => (p.age.asc, p.name)).result
 ```
 Ordering is applied on the result set in the application code:
 ```scala
-Person.age.name.get sortBy(_._1)
+Person.age.name.get.sortBy(_._1)
 ```
 
 #### Aggregations
 
 ```scala
-people.map(_.age).max.run
+people.map(_.age).max.result
 ```
 Aggregate functions like `max` are all applied as a keyword value to an attribute.
 ```scala
@@ -89,7 +89,7 @@ people.groupBy(p => p.addressId)
        .map{ case (addressId, group) => (addressId, group.map(_.age).avg) }
        .filter{ case (addressId, avgAge) => avgAge > 50 }
        .map(_._1)
-       .run
+       .result
 ```
 ```scala
 Person.address.age(avg).get.filter(_._2 > 50)
@@ -101,13 +101,13 @@ Person.address.age(avg).get.filter(_._2 > 50)
 people.flatMap(p =>
   addresses.filter(a => p.addressId === a.id)
            .map(a => (p.name, a.city))
-).run
+).result
 
 // or equivalent for-expression:
 (for(p <- people;
      a <- addresses if p.addressId === a.id
  ) yield (p.name, a.city)
-).run
+).result
 ```
 ```scala
 Person.name.Address.city.get
@@ -117,7 +117,7 @@ Person.name.Address.city.get
 
 ```scala
 (people join addresses on (_.addressId === _.id))
-  .map{ case (p, a) => (p.name, a.city) }.run
+  .map{ case (p, a) => (p.name, a.city) }.result
 ```
 ```scala
 Person.name.Address.city.get
@@ -127,7 +127,7 @@ Person.name.Address.city.get
 
 ```scala
 (addresses joinLeft people on (_.id === _.addressId))
-  .map{ case (a, p) => (p.map(_.name), a.city) }.run
+  .map{ case (a, p) => (p.map(_.name), a.city) }.result
 ```
 ```scala
 // Add `$` to attribute name to get optional values
@@ -138,7 +138,7 @@ Person.name$.Address.city.get
 
 ```scala
 val address_ids = addresses.filter(_.city === "New York City").map(_.id)
-people.filter(_.id in address_ids).run // <- run as one query
+people.filter(_.id in address_ids).result // <- run as one query
 ```
 ```scala
 Person.age.name.Address.city_("New York City").get

@@ -6,14 +6,14 @@ menu:
   main:
     parent: transactions
 up:   /manual/transactions
-prev: /manual/transactions
+prev: /manual/transactions/tx-functions
 next: /manual/time
 down: /manual/time
 ---
 
 # Transaction meta data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TransactionMetaData.scala) 
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TxMetaData.scala) 
 
 
 As we saw, a [transaction](/manual/transactions/) in Datomic is also an entity with a timestamp fact. Since it's an entity as
@@ -95,26 +95,23 @@ Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
 Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta data:
 
 ```scala
-insert(
-  // 2 sub-molecules
-  Article.name.author, Tag.name.weight
-)(
+Article.name.author + 
+  Tag.name.weight
+  .Tx(MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")) insert List(
   // 2 rows of data (Articles) 
   // The 2 sub-tuples of each row matches the 2 sub-molecules
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
   (("Best jokes ever", "John Cleese"), ("fun", 3))
-)(
-  MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")
 )
 ```
 _"Get serious articles that Brenda submitted"_:
 ```scala
-m(Article.name.author ~ Tag.name_("serious").weight.>=(4)
+m(Article.name.author + 
+  Tag.name_("serious").weight.>=(4)
   .Tx(MetaData.submitter_("Brenda Johnson"))).get === List(
   (("Battle of Waterloo", "Ben Bridge"), 5)
 )
 ```
-The example is explained more in detail in the last section of [CRUD/insert](/manual/crud/insert/).
 
 
 

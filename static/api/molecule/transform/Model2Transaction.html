@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.15.0 - molecule.transform.Model2Transaction</title>
-          <meta name="description" content="Molecule 0.15.0 - molecule.transform.Model2Transaction" />
-          <meta name="keywords" content="Molecule 0.15.0 molecule.transform.Model2Transaction" />
+          <title>Molecule 0.16.0 - molecule.transform.Model2Transaction</title>
+          <meta name="description" content="Molecule 0.16.0 - molecule.transform.Model2Transaction" />
+          <meta name="keywords" content="Molecule 0.16.0 molecule.transform.Model2Transaction" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.16.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -89,12 +89,8 @@
       
       <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
-    <td><a href="action/index.html">action</a><td>
-    <td>Actions on molecules and entities.</td>
-  </tr>
-  <tr>
     <td><a href="api/index.html">api</a><td>
-    <td>Molecule import interfaces of various arities.</td>
+    <td>Molecule API.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -458,9 +454,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
     </li><li name="molecule.transform.Model2Transaction#eidV" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="eidV(stmts:Seq[molecule.ast.transaction.Statement]):Boolean"></a><a id="eidV(Seq[Statement]):Boolean"></a>
+      <a id="eidV(stmts:Seq[molecule.ast.transactionModel.Statement]):Boolean"></a><a id="eidV(Seq[Statement]):Boolean"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#eidV(stmts:Seq[molecule.ast.transaction.Statement]):Boolean" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#eidV(stmts:Seq[molecule.ast.transactionModel.Statement]):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -469,7 +465,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eidV</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">eidV</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       
@@ -627,9 +623,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
       
       
     </li><li name="molecule.transform.Model2Transaction#insertStmts" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="insertStmts(dataRows:Seq[Seq[Any]]):Seq[Seq[molecule.ast.transaction.Statement]]"></a><a id="insertStmts(Seq[Seq[Any]]):Seq[Seq[Statement]]"></a>
+      <a id="insertStmts(dataRows:Seq[Seq[Any]]):Seq[Seq[molecule.ast.transactionModel.Statement]]"></a><a id="insertStmts(Seq[Seq[Any]]):Seq[Seq[Statement]]"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#insertStmts(dataRows:Seq[Seq[Any]]):Seq[Seq[molecule.ast.transaction.Statement]]" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#insertStmts(dataRows:Seq[Seq[Any]]):Seq[Seq[molecule.ast.transactionModel.Statement]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -638,7 +634,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">insertStmts</span><span class="params">(<span name="dataRows">dataRows: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]]</span>
+        <span class="name">insertStmts</span><span class="params">(<span name="dataRows">dataRows: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]</span>
       </span>
       
       
@@ -659,9 +655,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="molecule.transform.Model2Transaction#lastE" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="lastE(stmts:Seq[molecule.ast.transaction.Statement],attr:String,nestedE:Any,bi:molecule.ast.model.Generic):Any"></a><a id="lastE(Seq[Statement],String,Any,Generic):Any"></a>
+      <a id="lastE(stmts:Seq[molecule.ast.transactionModel.Statement],attr:String,nestedE:Any,bi:molecule.ast.model.Generic,composite:Any):Any"></a><a id="lastE(Seq[Statement],String,Any,Generic,Any):Any"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#lastE(stmts:Seq[molecule.ast.transaction.Statement],attr:String,nestedE:Any,bi:molecule.ast.model.Generic):Any" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#lastE(stmts:Seq[molecule.ast.transactionModel.Statement],attr:String,nestedE:Any,bi:molecule.ast.model.Generic,composite:Any):Any" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -670,14 +666,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">lastE</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span></span>, <span name="bi">bi: <a href="../ast/model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+        <span class="name">lastE</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span></span>, <span name="bi">bi: <a href="../ast/model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></span>, <span name="composite">composite: <span class="extype" name="scala.Any">Any</span> = <span class="symbol">'e</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       
       
     </li><li name="molecule.transform.Model2Transaction#lastV" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="lastV(stmts:Seq[molecule.ast.transaction.Statement],attr:String,nestedE:Any):Any"></a><a id="lastV(Seq[Statement],String,Any):Any"></a>
+      <a id="lastV(stmts:Seq[molecule.ast.transactionModel.Statement],attr:String,nestedE:Any):Any"></a><a id="lastV(Seq[Statement],String,Any):Any"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#lastV(stmts:Seq[molecule.ast.transaction.Statement],attr:String,nestedE:Any):Any" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#lastV(stmts:Seq[molecule.ast.transactionModel.Statement],attr:String,nestedE:Any):Any" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -686,14 +682,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">lastV</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+        <span class="name">lastV</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       
       
     </li><li name="molecule.transform.Model2Transaction#matchDataStmt" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="matchDataStmt(stmts:Seq[molecule.ast.transaction.Statement],genericStmt:molecule.ast.transaction.Statement,arg:Any,cur:Int,next:Int,nestedE:Any,edgeB:Option[AnyRef]):(Int,Option[AnyRef],Seq[molecule.ast.transaction.Statement])"></a><a id="matchDataStmt(Seq[Statement],Statement,Any,Int,Int,Any,Option[AnyRef]):(Int,Option[AnyRef],Seq[Statement])"></a>
+      <a id="matchDataStmt(stmts:Seq[molecule.ast.transactionModel.Statement],genericStmt:molecule.ast.transactionModel.Statement,arg:Any,cur:Int,next:Int,nestedE:Any,edgeB:Option[AnyRef]):(Int,Option[AnyRef],Seq[molecule.ast.transactionModel.Statement])"></a><a id="matchDataStmt(Seq[Statement],Statement,Any,Int,Int,Any,Option[AnyRef]):(Int,Option[AnyRef],Seq[Statement])"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#matchDataStmt(stmts:Seq[molecule.ast.transaction.Statement],genericStmt:molecule.ast.transaction.Statement,arg:Any,cur:Int,next:Int,nestedE:Any,edgeB:Option[AnyRef]):(Int,Option[AnyRef],Seq[molecule.ast.transaction.Statement])" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#matchDataStmt(stmts:Seq[molecule.ast.transactionModel.Statement],genericStmt:molecule.ast.transactionModel.Statement,arg:Any,cur:Int,next:Int,nestedE:Any,edgeB:Option[AnyRef]):(Int,Option[AnyRef],Seq[molecule.ast.transactionModel.Statement])" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -702,7 +698,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">matchDataStmt</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>, <span name="genericStmt">genericStmt: <a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a></span>, <span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>, <span name="cur">cur: <span class="extype" name="scala.Int">Int</span></span>, <span name="next">next: <span class="extype" name="scala.Int">Int</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span></span>, <span name="edgeB">edgeB: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>], <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>])</span>
+        <span class="name">matchDataStmt</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>, <span name="genericStmt">genericStmt: <a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a></span>, <span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>, <span name="cur">cur: <span class="extype" name="scala.Int">Int</span></span>, <span name="next">next: <span class="extype" name="scala.Int">Int</span></span>, <span name="nestedE">nestedE: <span class="extype" name="scala.Any">Any</span></span>, <span name="edgeB">edgeB: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>], <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>])</span>
       </span>
       
       
@@ -809,9 +805,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
       
       
     </li><li name="molecule.transform.Model2Transaction#resolveStmts" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="resolveStmts(genericStmts:Seq[molecule.ast.transaction.Statement],row:Seq[Any],nestedE0:Any,edgeB0:Option[AnyRef]):Seq[molecule.ast.transaction.Statement]"></a><a id="resolveStmts(Seq[Statement],Seq[Any],Any,Option[AnyRef]):Seq[Statement]"></a>
+      <a id="resolveStmts(genericStmts:Seq[molecule.ast.transactionModel.Statement],row:Seq[Any],nestedE0:Any,edgeB0:Option[AnyRef]):Seq[molecule.ast.transactionModel.Statement]"></a><a id="resolveStmts(Seq[Statement],Seq[Any],Any,Option[AnyRef]):Seq[Statement]"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#resolveStmts(genericStmts:Seq[molecule.ast.transaction.Statement],row:Seq[Any],nestedE0:Any,edgeB0:Option[AnyRef]):Seq[molecule.ast.transaction.Statement]" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#resolveStmts(genericStmts:Seq[molecule.ast.transactionModel.Statement],row:Seq[Any],nestedE0:Any,edgeB0:Option[AnyRef]):Seq[molecule.ast.transactionModel.Statement]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -820,14 +816,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resolveStmts</span><span class="params">(<span name="genericStmts">genericStmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>, <span name="row">row: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>, <span name="nestedE0">nestedE0: <span class="extype" name="scala.Any">Any</span> = <span class="symbol">0</span></span>, <span name="edgeB0">edgeB0: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>
+        <span class="name">resolveStmts</span><span class="params">(<span name="genericStmts">genericStmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>, <span name="row">row: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>, <span name="nestedE0">nestedE0: <span class="extype" name="scala.Any">Any</span> = <span class="symbol">0</span></span>, <span name="edgeB0">edgeB0: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>
       </span>
       
       
     </li><li name="molecule.transform.Model2Transaction#saveStmts" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="saveStmts():Seq[molecule.ast.transaction.Statement]"></a><a id="saveStmts():Seq[Statement]"></a>
+      <a id="saveStmts():Seq[molecule.ast.transactionModel.Statement]"></a><a id="saveStmts():Seq[Statement]"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#saveStmts():Seq[molecule.ast.transaction.Statement]" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#saveStmts():Seq[molecule.ast.transactionModel.Statement]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -836,7 +832,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveStmts</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>
+        <span class="name">saveStmts</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>
       </span>
       
       
@@ -873,9 +869,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
     </li><li name="molecule.transform.Model2Transaction#splitStmts" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="splitStmts():(Seq[molecule.ast.transaction.Statement],Seq[molecule.ast.transaction.Statement])"></a><a id="splitStmts():(Seq[Statement],Seq[Statement])"></a>
+      <a id="splitStmts():(Seq[molecule.ast.transactionModel.Statement],Seq[molecule.ast.transactionModel.Statement])"></a><a id="splitStmts():(Seq[Statement],Seq[Statement])"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#splitStmts():(Seq[molecule.ast.transaction.Statement],Seq[molecule.ast.transaction.Statement])" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#splitStmts():(Seq[molecule.ast.transactionModel.Statement],Seq[molecule.ast.transactionModel.Statement])" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -884,14 +880,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">splitStmts</span><span class="params">()</span><span class="result">: (<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>], <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>])</span>
+        <span class="name">splitStmts</span><span class="params">()</span><span class="result">: (<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>], <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>])</span>
       </span>
       
       
     </li><li name="molecule.transform.Model2Transaction#stmtsModel" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="stmtsModel:Seq[molecule.ast.transaction.Statement]"></a><a id="stmtsModel:Seq[Statement]"></a>
+      <a id="stmtsModel:Seq[molecule.ast.transactionModel.Statement]"></a><a id="stmtsModel:Seq[Statement]"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#stmtsModel:Seq[molecule.ast.transaction.Statement]" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#stmtsModel:Seq[molecule.ast.transactionModel.Statement]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -900,7 +896,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">stmtsModel</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>
+        <span class="name">stmtsModel</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>
       </span>
       
       
@@ -948,14 +944,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">tupleToSeq</span><span class="params">(<span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+        <span class="name">tupleToSeq</span><span class="params">(<span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Helpers</dd></dl></div>
     </li><li name="molecule.transform.Model2Transaction#txRefAttr" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="txRefAttr(stmts:Seq[molecule.ast.transaction.Statement]):Boolean"></a><a id="txRefAttr(Seq[Statement]):Boolean"></a>
+      <a id="txRefAttr(stmts:Seq[molecule.ast.transactionModel.Statement]):Boolean"></a><a id="txRefAttr(Seq[Statement]):Boolean"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#txRefAttr(stmts:Seq[molecule.ast.transaction.Statement]):Boolean" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#txRefAttr(stmts:Seq[molecule.ast.transactionModel.Statement]):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -964,14 +960,14 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">txRefAttr</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">txRefAttr</span><span class="params">(<span name="stmts">stmts: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
       
     </li><li name="molecule.transform.Model2Transaction#updateStmts" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="updateStmts():Seq[molecule.ast.transaction.Statement]"></a><a id="updateStmts():Seq[Statement]"></a>
+      <a id="updateStmts():Seq[molecule.ast.transactionModel.Statement]"></a><a id="updateStmts():Seq[Statement]"></a>
       <span class="permalink">
-      <a href="../../molecule/transform/Model2Transaction.html#updateStmts():Seq[molecule.ast.transaction.Statement]" title="Permalink">
+      <a href="../../molecule/transform/Model2Transaction.html#updateStmts():Seq[molecule.ast.transactionModel.Statement]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -980,7 +976,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></d
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">updateStmts</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]</span>
+        <span class="name">updateStmts</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]</span>
       </span>
       
       

@@ -33,6 +33,39 @@ fredId    :person/age     38
 
 Type-safety is guaranteed since each attribute only accepts values of its defined type.
 
+
+### Asynchronous save
+
+All transactional operators have an asynchronous equivalent. Saving data asynchronously with 
+`saveAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`. 
+
+Here, we map over the result of saving asynchronously:
+
+```scala
+// Map over a Future
+Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report from successful save transaction
+  // (synchronous get)
+  Person.name.likes.age.get.head === ("Ben", "pizza", 42)
+}
+```
+
+Or we could defer the resolution of the `Future`
+
+```scala
+val futureSave: Future[TxReport] = Person.name("Fred").likes("pizza").age(42).saveAsync
+for {
+  _ <- futureSave
+  result <- Person.name.likes.age.getAsync
+} yield {
+  // Data was saved
+  result.head === ("Ben", "pizza", 42)
+}
+```
+
+For brevity, the following examples use the synchronous `save` operation.
+
+
+
 ### Related data
 
 We can even save related date in the same operation

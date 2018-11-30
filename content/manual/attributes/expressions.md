@@ -15,6 +15,8 @@ down: /manual/entities
 
 [Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression)
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
+
 ### Equality
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/equality)

@@ -13,16 +13,16 @@ down: /manual/transactions
 
 # Update data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/)
-
 An "update" is a two-step process in Datomic:
 
 1. Retract old fact
 2. Assert new fact
 
-Datomic doesn't overwrite data. "Retract" is a statement that says "this data is no longer current" which means that it won't turn up when you query for it _as of now_. If you query for it _as of before_ you will see it! 
+Datomic doesn't overwrite data. "Retract" is a statement that says "this data is no longer current" which means 
+that it won't turn up when you query for it _as of now_. If you query for it _as of before_ you will see it! 
 
-Being able to see how data develops over time is a brillant core feature of Datomic. We don't need to administrate cumbersome historial changes manually. It's all built in to Datomic.
+Being able to see how data develops over time is a brillant core feature of Datomic. We don't need to administrate 
+cumbersome historical changes manually. Auditing is built-in at the core of Datomic.
 
 
 ## Cardinality one
@@ -150,6 +150,83 @@ Person(fredId).hobbies().update
 Person(fredId).hobbies.get === Nil
 ```
 
+
+## Update multiple entities
+
+
+Update multiple entities in one transaction so that they have the same values:
+```scala
+// Both Bob and Ann turned 25 and became cool club members
+Person(bobId, annId).age(25).memberOf("cool club").update
+```
+
+See [tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleEntities.scala)
+for variations of updating multiple entities.
+
+
+## Asynchronous update
+
+All transactional operators have an asynchronous equivalent. Updating data asynchronously with 
+`updateAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`. 
+
+Here, we map over the result of updating an entity asynchronously:
+
+```scala
+for {
+  // Initial data
+  saveTx <- Person.name.age insertAsync List(("Ben", 42), ("Liz", 37))
+  List(ben, liz) = saveTx.eids
+
+  // Update Liz' age
+  updateTx <- Ns(liz).age(38).updateAsync
+
+  // Get result
+  result <- Person.name.age.getAsync
+} yield {
+  // Liz had a birthday
+  result === List(("Ben", 42), ("Liz", 38))
+}
+```
+
+### Updating multiple entities asynchronously
+
+```scala
+// Initial data
+Ns.str.int insertAsync List(
+  ("a", 1),
+  ("b", 2),
+  ("c", 3),
+  ("d", 4)
+) map { tx => // tx report from successful insert transaction
+  // 4 inserted entities
+  val List(a, b, c, d) = tx.eids
+  Ns.int.get === List(
+    ("a", 1),
+    ("b", 2),
+    ("c", 3),
+    ("d", 4)
+  )
+
+  // Update multiple entities asynchronously
+  Ns(a, b).int(5).updateAsync.map { tx2 => // tx report from successful update transaction
+    // Current data
+    Ns.int.get.sorted === List(
+      ("a", 5),
+      ("b", 5),
+      ("c", 3),
+      ("d", 4)
+    )
+  }
+}
+```
+
+### Tests
+Update-tests with:
+
+- [Various types](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/update) 
+- [Map attribute](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/updateMap)
+- [Multiple attributes](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleAttributes.scala)
+- [Multiple entities](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleEntities.scala)
 
 
 ### Next

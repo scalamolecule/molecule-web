@@ -51,6 +51,7 @@ Molecule concatenates the key and value of each pair to one of several values of
 data is then retrieved Molecule splits the concatenated string into a typed pair. This all happens automatically and let's us focus 
  on their use in our code.
 
+All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity.
 
 There's a broad range of ways we can query mapped attributes and you can see a lot of examples of their use in 
 the [`attrMap` test cases](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/attrMap).

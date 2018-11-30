@@ -1,6 +1,6 @@
 # Molecule website content
 
-- `cd molecule-docs`
+- `cd molecule-web`
 - `hugo server --watch` to watch site locally at http://localhost:1313/
 - make changes until satisfied
 - `./deploy.sh` to upload latest molecule api and generated molecule-docs html to scalamolecule.github.io

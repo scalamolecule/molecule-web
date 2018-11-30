@@ -274,11 +274,12 @@ Since Molecule is a closed eco-system it can manage this redundancy with 100% co
 of uniform queries should easily outweigh the impact of a bit of additional information for the reverse references.
 
 
-### More exampes...
+### More examples...
 
 Please have a look at the implementation of the 
 [Gremlin graph](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/). 
 
+(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 
 ### Next

@@ -80,7 +80,7 @@ Partition examples with Molecule:
 - [partitioned schema definition](https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/schemaDef/schema/PartitionTestDefinition.scala) 
 - [partition tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/schemaDef/partition.scala) 
 
-More about [partitions in Datomic](https://docs.datomic.com/on-prem/indexes.html).
+More about [partitions in Datomic](https://docs.datomic.com/on-prem/indexes.html#partitions).
 
 
 ## Create new Datomic database
@@ -122,6 +122,5 @@ We can also supply a protocol like 'mem' for in-memory db, or 'dev' for a develo
 implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase", "mem")
 ```
 
-For more information on 
-db creation, please see the [Datomic documentation](http://docs.datomic.com/getting-started/connect-to-a-database.html).
+For more information on setting up the environment, please see [Local Dev Setup](https://docs.datomic.com/on-prem/dev-setup.html).
 

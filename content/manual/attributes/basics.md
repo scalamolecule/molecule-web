@@ -1,6 +1,6 @@
 ---
 date: 2015-01-02T22:06:44+01:00
-title: "Basics"
+title: "Building molecules"
 weight: 10
 menu:
   main:
@@ -11,7 +11,7 @@ next: /manual/attributes/modes
 down: /manual/entities
 ---
 
-# Attribute basics
+# Building molecules
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala)
 
@@ -30,18 +30,46 @@ As you see we start our molecule from some Namespace and then build on Attribute
 
 
 
-### Tuples returned
+## Sync API for returning data
 
 Molecule returns all result sets as a List of tuples of values (with `get`).
 
 ```scala
 val persons: List[(String, Int)] = Person.name.age.get
 ```
+Data can be returned in 5 different formats:
 
-For expected large result sets we can also return an `Iterable` of tuples:
 ```scala
-val persons: Iterable[(String, Int)] = Person.name.age.getIterable
+// List for convenient access to smaller data sets
+val list : List[(String, Int)] = m(Person.name.age).get
+
+// Mutable Array for fastest retrieval and traversing of large data sets
+val array: Array[(String, Int)] = m(Person.name.age).getArray
+
+// Iterable for lazy traversing with an Iterator
+val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
+
+// Json formatted string 
+val json: String = m(Person.name.age).getJson
+
+// Raw untyped Datomic data if data doesn't need to be typed
+val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getRaw
 ```
+
+## Async API
+
+
+Molecule provide all operations both synchronously and asynchronously, so the 5 getter methods also has
+equivalent asynchronous methods returning data in a Future:
+```scala
+val list    : Future[List[(String, Int)]] = m(Person.name.age).getAsync
+val array   : Future[Array[(String, Int)]] = m(Person.name.age).getAsyncArray
+val iterable: Future[Iterable[(String, Int)]] = m(Person.name.age).getAsyncIterable
+val json    : Future[String] = m(Person.name.age).getAsyncJson
+val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.name.age).getAsyncRaw
+```
+
+
 
 
 ### Molecule max size
@@ -53,21 +81,21 @@ work with further attributes/values:
 
 ```scala
 // Insert maximum of 22 facts and return the created entity id
-val eid = Ns.someId.b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.insert(
+val eid = Ns.a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.insert(
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
 ).eid
 
-// Use entity id to continue adding more values for the same entity
-Ns.x.y.z.insert(eid, 23, 24, 25)
+// Use entity id to continue adding more values for the same entity if necessary
+Ns.a23.a24.a25.insert(eid, 23, 24, 25)
 ```
 
 Likewise we can retrieve more than 22 values in 2 steps
 
 ```scala
-val first22values = Ns.someId_(1).b.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.u.v.get
+val first22values = Ns(eid).a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.get
 
 // Use entity id to continue adding more values
-val next3values = Ns.x.y.z.insert(eid, 23, 24, 25)
+val next3values = Ns(eid).a23.a24.a25.get
 ```
 
 ## Cardinality

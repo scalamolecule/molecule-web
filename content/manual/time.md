@@ -39,9 +39,9 @@ The two methods `getAsOf(t)` and `getSince(t)` takes a _point in time_ in the da
 4 different ways:
 
 
-### 1. `tx` Transaction entity id 
+### 1. Transaction entity id 
 
-A transaction entity id is the 4th value of the Datomic quintuplets that tells us in what transaction
+A transaction entity id is the 4th value of Datomic quintuplets that tells us in what transaction
  this Datom/fact was asserted/retracted.
  
 ![](/img/time/1.png)
@@ -58,7 +58,7 @@ Such transaction entity id can then be used as a point in time `t` for `getAsOf(
 other queries.
 
 
-### 2. `t` Transaction value
+### 2. Transaction value
 
 An alternative to the transaction entity id is a "transaction value" that is an auto-incremented number 
 that Datomic generates automatically in the background for each transaction taking place. 
@@ -119,106 +119,110 @@ Person(e5).likes.getAsOf(criticalDate) === List("pizza")
 ## Data getters
 
 
-### `get` current view
+### `get` or `getAsync` - the current view
 
 Normally we get the current state of the database with the `get` method on a molecule.
 
 ```scala
-Person.name.age.get === ... // Persons as of now
+// Sync
+val personsCurrently: List[(String, Int)] = Person.name.age.get
+
+// Async - wraps data in a Future
+val personsCurrentlyAsync: Future[List[(String, Int)]] = Person.name.age.getAsync
 ```
 But we might be interested in how the data looked at another point in time:
 
 
-### [☞ `getAsOf(t)`](/manual/time/asof-since/)
+### [☞ `getAsOf(t)`](/manual/time/asof-since/) or [`getAsyncAsOf(t)`](/manual/time/asof-since/)
 
 When we call `getAsOf(t)` on a molecule we get the data as it looked at some point in time `t`. 
-
 
 We could for instance want to know what Persons existed in the database the 5th of November:
 
 ```scala
-Person.name.age.getAsOf(nov5date) === ... // Persons as of November 5 (inclusive) 
+val personsAsOfNov5 = Person.name.age.getAsOf(nov5date) 
+val personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date) 
 ```
 
 
-### [☞ `getSince(t)`](/manual/time/asof-since/)
+### [☞ `getSince(t)`](/manual/time/asof-since/) or [`getSince(t)`](/manual/time/asof-since/)
 
-Likewise we might want to know what Persons have been added _after_ or _since_ 5th of November. Whn
+Likewise we might want to know what Persons have been added _after_ or _since_ 5th of November. When
 we call `getSince(nov5date)` we will get a snapshot of the current
 database filtered with only the data added/retracted after November 5:
 
 ```scala
-Person.name.age.getSince(nov5date) === ... // Persons added after November 5
+val personsAddedSinceNov5 = Person.name.age.getSince(nov5date)
+val personsAddedSinceNov5Async = Person.name.age.getAsyncSince(nov5date)
 ```
 
 
-### [☞ `getHistory`](/manual/time/history/)
+### [☞ `getHistory`](/manual/time/history/) or [`getAsyncHistory`](/manual/time/history/)
 
 The `getHistory` can for instance tell us how a Persons age attribute value has changed over time
 
 ```scala
-Person(fredId).age.getHistory === ... // Current and previous ages of Fred
+val currentAndPreviousAgesOfFred = Person(fredId).age.getHistory
+val currentAndPreviousAgesOfFredAsync = Person(fredId).age.getAsyncHistory
 ```
 Note that this is not a snapshot in time but a series of all assertions and retractions over time that matches the query!
 
 
-### [☞ `getWith(testTxData)`](/manual/time/with/)
+### [☞ `getWith(txTestData)`](/manual/time/with/) or [`getAsyncWith(txTestData)`](/manual/time/with/)
 
-By supplying some test transaction data to `getWith(testTxData)` we can get a "branch" of the current database with
-the test transaction data applied. This is a very powerful way of testing future-like "what-if" scenarios
+By supplying some test transaction data to `getWith(txTestData)` we can get a "branch" of the current database with
+the test transaction data applied. This is a very powerful way of testing future-like "what-if" scenarios. 
+
+Transactional test data to be tested can be obtained by calling one of the following methods on some test-molecules:
+
+- `<molecule>.getSaveTx`  
+- `<molecule>.getInsertTx`  
+- `<molecule>.getUpdateTx`  
+- `<entityId>.getRetractTx`  
 
 ```scala
-Person.name.age.getWith(<testTxData>) === ... // Persons including some new data 
+// Apply one or more tx test data molecules
+val personsWithNewData = Person.name.age.getWith(<txTestData>*) 
+val personsWithNewDataAsync = Person.name.age.getAsyncWith(<txTestData>*) 
 ```
 
 The "test db" that such query works on is simply garbage collected when it goes out of scope. We therefore don't need
-to any tear-down as we would normally need to testing with a mutable database.
+to do any tear-down as we would normally need to when testing with a mutable database.
 
 
+## Limit returned data
 
-## 3 return types
+The amount of data returned with 
 
-Each data getter has 3 interfaces that return data in different ways:
+- get
+- getAsOf
+- getSince
+- getWith
 
-### Typed
+can be limitted by adding a max row parameter:
+```scala
+val some30personsCurrently = Person.name.age.get(30)
 
-The standard getters return Lists of tuples of type-casted data.
+val some20personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date, 20) 
 
-`:List[<tuple>]`
+val some10personsAddedSinceNov5 = Person.name.age.getSince(nov5date, 10)
 
-- `get`
-- `getAsOf(t)`
-- `getSince(t)`
-- `getHistory`
-- `getWith(txData)`
+// The `with` methods have the limit parameter as their first argument since the last argument is a vararg
+val some25personsWithNewData = Person.name.age.getWith(25, <txTestData>) 
+```
 
-### Lazily typed
+`getHistory(n: Int)` is not implemented since the whole data set normally needs to be sorted
+to give chronological meaningful information.
 
-If large data sets are expected, an Iterable of tuples of lazily type-cased data can be retrieved instead. 
-Data is type-casted on each call to `next` on the iterator.
+#### Why not an `offSet` method for pagination?
 
-`:Iterable[<tuple>]`
+Since Datomic has no sorting option in queries (like `ORDER BY` in sql for instance), 
+we sort data in application code. This sorting could be arbitrary complex and Molecule therefore
+has no "standard" sorting API implemented. 
 
-- `getIterable`
-- `getIterableAsOf(t)`
-- `getIterableSince(t)`
-- `getIterableHistory`
-- `getIterableWith(txData)`
-
-
-### Untyped
-
-If typed data is not required we can get the raw untyped java collections of Lists of objects.
-
-`:java.util.Collection[java.util.List[AnyRef]]`
-
-- `getRaw`
-- `getRawAsOf(t)`
-- `getRawSince(t)`
-- `getRawHistory`
-- `getRawWith(txData)`
-
-
+Pagination is and example that needs sorting, and we do that in our application code on the
+server as it would be done on a sql database server too except that we apply our logic on the raw data
+ourselves. The limit option is therefore mainly implemented to be able to work on a smaller data set. 
 
 
 ### Next

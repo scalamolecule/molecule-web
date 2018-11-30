@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.15.0 - molecule.facade.TxReport</title>
-          <meta name="description" content="Molecule 0.15.0 - molecule.facade.TxReport" />
-          <meta name="keywords" content="Molecule 0.15.0 molecule.facade.TxReport" />
+          <title>Molecule 0.16.0 - molecule.facade.TxReport</title>
+          <meta name="description" content="Molecule 0.16.0 - molecule.facade.TxReport" />
+          <meta name="keywords" content="Molecule 0.16.0 molecule.facade.TxReport" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.15.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.16.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -89,12 +89,8 @@
       
       <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
   <tr>
-    <td><a href="action/index.html">action</a><td>
-    <td>Actions on molecules and entities.</td>
-  </tr>
-  <tr>
     <td><a href="api/index.html">api</a><td>
-    <td>Molecule import interfaces of various arities.</td>
+    <td>Molecule API.</td>
   </tr>
   <tr>
     <td><a href="ast/index.html">ast</a><td>
@@ -225,7 +221,7 @@ only interfaces relevant to Molecule.
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">TxReport</span><span class="params">(<span name="txResult">txResult: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>, <span name="stmtss">stmtss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">TxReport</span><span class="params">(<span name="rawTxReport">rawTxReport: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>, <span name="stmtss">stmtss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -291,9 +287,9 @@ only interfaces relevant to Molecule.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="molecule.facade.TxReport#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(txResult:java.util.Map[_,_],stmtss:Seq[Seq[molecule.ast.transaction.Statement]]):molecule.facade.TxReport"></a><a id="&lt;init&gt;:TxReport"></a>
+      <a id="&lt;init&gt;(rawTxReport:java.util.Map[_,_],stmtss:Seq[Seq[molecule.ast.transactionModel.Statement]]):molecule.facade.TxReport"></a><a id="&lt;init&gt;:TxReport"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/TxReport.html#&lt;init&gt;(txResult:java.util.Map[_,_],stmtss:Seq[Seq[molecule.ast.transaction.Statement]]):molecule.facade.TxReport" title="Permalink">
+      <a href="../../molecule/facade/TxReport.html#&lt;init&gt;(rawTxReport:java.util.Map[_,_],stmtss:Seq[Seq[molecule.ast.transactionModel.Statement]]):molecule.facade.TxReport" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -302,7 +298,7 @@ only interfaces relevant to Molecule.
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">TxReport</span><span class="params">(<span name="txResult">txResult: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>, <span name="stmtss">stmtss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]] = <span class="symbol">Nil</span></span>)</span>
+        <span class="name">TxReport</span><span class="params">(<span name="rawTxReport">rawTxReport: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>, <span name="stmtss">stmtss: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]] = <span class="symbol">Nil</span></span>)</span>
       </span>
       
       
@@ -436,6 +432,22 @@ only interfaces relevant to Molecule.
       </span>
       
       <p class="shortcomment cmt">Get database value before transaction.</p>
+    </li><li name="molecule.facade.TxReport#debug" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="debug:Unit"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/TxReport.html#debug:Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debug</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      
     </li><li name="molecule.facade.TxReport#eid" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eid:Long"></a>
       <span class="permalink">
@@ -630,10 +642,10 @@ only interfaces relevant to Molecule.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="molecule.facade.TxReport#stmtss" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="stmtss:Seq[Seq[molecule.ast.transaction.Statement]]"></a><a id="stmtss:Seq[Seq[Statement]]"></a>
+    </li><li name="molecule.facade.TxReport#rawTxReport" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rawTxReport:java.util.Map[_,_]"></a><a id="rawTxReport:Map[_,_]"></a>
       <span class="permalink">
-      <a href="../../molecule/facade/TxReport.html#stmtss:Seq[Seq[molecule.ast.transaction.Statement]]" title="Permalink">
+      <a href="../../molecule/facade/TxReport.html#rawTxReport:java.util.Map[_,_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -642,7 +654,23 @@ only interfaces relevant to Molecule.
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">stmtss</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transaction$$Statement.html" class="extype" name="molecule.ast.transaction.Statement">Statement</a>]]</span>
+        <span class="name">rawTxReport</span><span class="result">: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>
+      </span>
+      
+      
+    </li><li name="molecule.facade.TxReport#stmtss" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stmtss:Seq[Seq[molecule.ast.transactionModel.Statement]]"></a><a id="stmtss:Seq[Seq[Statement]]"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/TxReport.html#stmtss:Seq[Seq[molecule.ast.transactionModel.Statement]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stmtss</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]</span>
       </span>
       
       
@@ -678,6 +706,22 @@ only interfaces relevant to Molecule.
       </span>
       
       <p class="shortcomment cmt">Get transaction time t.</p>
+    </li><li name="molecule.facade.TxReport#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/TxReport.html#toString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.facade.TxReport">TxReport</a> → AnyRef → Any</dd></dl></div>
     </li><li name="molecule.facade.TxReport#tx" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="tx:Long"></a>
       <span class="permalink">
@@ -694,6 +738,22 @@ only interfaces relevant to Molecule.
       </span>
       
       <p class="shortcomment cmt">Get transaction entity id (Long).</p>
+    </li><li name="molecule.facade.TxReport#txDataRaw" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="txDataRaw:List[datomic.db.Datum]"></a><a id="txDataRaw:List[Datum]"></a>
+      <span class="permalink">
+      <a href="../../molecule/facade/TxReport.html#txDataRaw:List[datomic.db.Datum]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">txDataRaw</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="datomic.db.Datum">Datum</span>]</span>
+      </span>
+      
+      
     </li><li name="molecule.facade.TxReport#txE" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="txE:datomic.Entity"></a><a id="txE:Entity"></a>
       <span class="permalink">
@@ -710,22 +770,6 @@ only interfaces relevant to Molecule.
       </span>
       
       <p class="shortcomment cmt">Get transaction entity (datomic.Entity).</p>
-    </li><li name="molecule.facade.TxReport#txResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="txResult:java.util.Map[_,_]"></a><a id="txResult:Map[_,_]"></a>
-      <span class="permalink">
-      <a href="../../molecule/facade/TxReport.html#txResult:java.util.Map[_,_]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">txResult</span><span class="result">: <span class="extype" name="java.util.Map">Map</span>[_, _]</span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">

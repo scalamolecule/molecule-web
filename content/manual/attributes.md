@@ -13,8 +13,8 @@ down: /manual/entities
 ---
 
 # Attributes
- 
-Examples from the sub pages:
+
+Molecules are built by chaining attributes together with the builder pattern. Here are some groups of different attribute types and their use with links to their manual pages:
 
 <br>
 

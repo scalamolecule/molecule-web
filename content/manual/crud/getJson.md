@@ -21,34 +21,29 @@ json with some 3rd party library we can call `getJson` and pass the json data st
 Internally, Molecule builds the json string in a StringBuffer directly from the raw data coming from Datomic 
 (with regards to types being quoted or not). This should make it the fastest way of supplying json data when needed.
 
-
-### Flat data
-
-Normal "flat" molecules creates json with a row on each line in the output:
+To avoid ambiguity all attribute names are prefixed with their namespace name, all in lower case and separated by a dot:
 
 ```scala
 Person.name.age.getJson ===
   """[
-    |{"name": "Fred", "age": 38},
-    |{"name": "Lisa", "age": 35}
+    |{"person.name": "Fred", "person.age": 38},
+    |{"person.name": "Lisa", "person.age": 35}
     |]""".stripMargin
 ```
 
 
 ### Composite data
 
-Composite data has potential field name clashes so each sub part of the composite is rendered 
-as a separate json object tied together in an array for each row: 
+Each sub part of the composite is rendered as a separate json object tied together in an array for each row: 
  
 ```scala
-m(Person.name.age ~ Category.name.importance).getJson ===
+m(Person.name.age + Category.name.importance).getJson ===
   """[
-    |[{"name": "Fred", "age": 38}, {"name": "Marketing", "importance": 6}],
-    |[{"name": "Lisa", "age": 35}, {"name": "Management", "importance": 7}]
+    |[{"person.name": "Fred", "person.age": 38}, {"category.name": "Marketing", "category.importance": 6}],
+    |[{"person.name": "Lisa", "person.age": 35}, {"category.name": "Management", "category.importance": 7}]
     |]""".stripMargin
 ``` 
-Note how a field `name` appears in each sub object. Since the molecule is defined in client code it is presumed that 
-the semantics of eventual duplicate field names are also handled by client code.
+Note the `name` field is prefixed by a different namespace in each json sub-object.
 
 
 ### Nested data
@@ -56,14 +51,14 @@ the semantics of eventual duplicate field names are also handled by client code.
 Nested date is rendered as a json array with json objects for each nested row: 
 
 ```scala
-(Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
+m(Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
   """[
-    |{"no": 1, "customer": "Johnson", "invoiceLines": [
-    |   {"item": "apples", "qty": 10, "amount": 12.0},
-    |   {"item": "oranges", "qty": 7, "amount": 3.5}]},
+    |{"invoice.no": 1, "invoice.customer": "Johnson", "invoice.invoiceLines": [
+    |   {"invoiceline.item": "apples", "invoiceline.qty": 10, "invoiceline.amount": 12.0},
+    |   {"invoiceline.item": "oranges", "invoiceline.qty": 7, "invoiceline.amount": 3.5}]},
     |{"no": 2, "customer": "Benson", "invoiceLines": [
-    |   {"item": "bananas", "qty": 3, "amount": 3.0},
-    |   {"item": "oranges", "qty": 1, "amount": 0.5}]}
+    |   {"invoiceline.item": "bananas", "invoiceline.qty": 3, "invoiceline.amount": 3.0},
+    |   {"invoiceline.item": "oranges", "invoiceline.qty": 1, "invoiceline.amount": 0.5}]}
     |]""".stripMargin
 ```
 

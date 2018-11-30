@@ -6,7 +6,7 @@ menu:
   main:
     parent: crud
 up:   /manual/crud
-prev: /manual/crud/composite-insert
+prev: /manual/crud/insert
 next: /manual/crud/getJson
 down: /manual/transactions
 ---
@@ -27,7 +27,41 @@ val persons3attrs: List[(String, Int, String)] = Person.name.age.likes.get
 // Etc.. to arity 22
 ```
 
-### With entity id
+Data can be returned in 5 different formats:
+
+```scala
+// List for convenient access to smaller data sets
+val list : List[(String, Int)] = m(Person.name.age).get
+
+// Mutable Array for fastest retrieval and traversing
+val array: Array[(String, Int)] = m(Person.name.age).getArray
+
+// Iterable for lazy traversing with an Iterator
+val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
+
+// Json formatted string 
+val json: String = m(Person.name.age).getJson
+
+// Raw untyped Datomic data if data doesn't need to be typed
+val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getRaw
+```
+
+## Async API
+
+
+Molecule provide all operations both synchronously and asynchronously, so the 5 getter methods also has
+equivalent asynchronous methods returning data in a Future:
+```scala
+val list    : Future[List[(String, Int)]] = m(Person.name.age).getAsync
+val array   : Future[Array[(String, Int)]] = m(Person.name.age).getAsyncArray
+val iterable: Future[Iterable[(String, Int)]] = m(Person.name.age).getAsyncIterable
+val json    : Future[String] = m(Person.name.age).getAsyncJson
+val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.name.age).getAsyncRaw
+```
+
+
+
+## With entity id
 
 Attributes of some entity are easily fetched by applying an entity id to the first namespace in the molecule 
  
@@ -37,34 +71,6 @@ Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza")
 The entity id is used for the first attribute of the molecule, here `name` having entity id `fredId`. 
 
 `Person` is just the namespace for the following attributes, so that we get `:person/name`, `:person/age`, `:person/likes` etc..
-
-### Big molecules
-
-The more attributes a molecule has, the longer it takes to compile. Once we get over 14-16 attributes we might start seeing compilation 
-slowing down depending on our hardware. There's an easy trick to split up large molecules into
-[composite](/manual/relationships/composites/) molecules consisting of smaller sub-molecules:
- 
-```scala
-// Tough on the compiler
-m(Ns(id).a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22).get
-
-// faster
-m(Ns(id).a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11 ~ Ns.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22).get
-
-// Fastest
-m(Ns(id).a1.a2.a3.a4.a5.a6.a7 ~ Ns.a8.a9.a10.a11.a12.a13.a14 ~ Ns.a15.a16.a17.a18.a19.a20.a21.a22).get
-```
-
-With this technique we can even build molecules bigger than arity-22
- 
-```scala
-m(Ns(id).a1.a2.a3.a4.a5.a6.a7 
-    ~ Ns.a8.a9.a10.a11.a12.a13.a14 
-    ~ Ns.a15.a16.a17.a18.a19.a20.a21.a22
-    ~ Ns.a23.a24.a25.a26.a27.a28.a29.a30
-).get
-// Etc...
-```
 
 
 ## 2-steps with Entity API
@@ -101,19 +107,7 @@ For this simple example, the original molecule with an optional `likes` attribut
 more concise. But for more complex interconnected data this approach can be a good extra tool in the toolbox.
 
 
-## Raw untyped data
-
-If you need big data sets returned for batch processing for instance, then you might not need to cast every row of data. In that case you
-can get raw data from a Datomic query by calling `getRaw` on a molecule:
-
-
-```scala
-val rawData: java.util.Collection[java.util.List[Object]] = Person.name.age.likes.getRaw
-         //    rows         row      attrs
-```
-
-
 
 ### Next
 
-[Get Json...](/manual/crud/getjson)
+[Get Json...](/manual/crud/getJson)

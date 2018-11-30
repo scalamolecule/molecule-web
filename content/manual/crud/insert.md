@@ -7,7 +7,7 @@ menu:
     parent: crud
 up:   /manual/crud
 prev: /manual/crud/save
-next: /manual/crud/composite-insert
+next: /manual/crud/get
 down: /manual/transactions
 ---
 
@@ -15,11 +15,17 @@ down: /manual/transactions
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Insert.scala)
 
-Multiple rows of data can be inserted by making a molecule that matches the values of each row:
+Data can be inserted by making a molecule that matches the values of each row. 
+
+One row of data can be applied directly with matching arguments
 
 ```scala
+Person.name.likes.age.insert("Fred", "pizza", 38)
+```
+
+Multiple rows of data can be applied as any `Iterable` of tuples of data each matching the molecule attributes:
+```scala
 Person.name.likes.age insert List(
-  ("Fred", "pizza", 38),
   ("Lisa", "pizza", 7),
   ("Ben", "pasta", 5)
 )
@@ -27,11 +33,46 @@ Person.name.likes.age insert List(
 
 ### Type-safety
 
-Type-safety is guaranteed since each tuple of data is enforced by the compiler to conform to the molecule type.
+Type-safety is guaranteed since the type of each tuple of data is enforced by the compiler to conform to the molecule type.
 
 If the data set is not accepted type-wise, then either the molecule needs to be adjusted to match the type
 of data rows. Or, the data set might be irregular and have some variable size of tuples or varying types within tuples that
 need to be sorted out. 
+
+
+
+### Asynchronous insert
+
+All transactional operators have an asynchronous equivalent. Inserting data asynchronously with 
+`insertAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`. 
+
+Here, we insert data as argument list/tuples asynchronously:
+
+```scala
+// Insert single row of data with individual args
+val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("Fred", "pizza", 38)
+
+// Insert Iterable of multiple rows of data
+val multipleInsertFuture: Future[TxReport] = Person.name.likes.age insertAsync List(
+  ("Lisa", "pizza", 7),
+  ("Ben", "pasta", 5)
+)
+
+for {
+  _ <- singleInsertFuture
+  _ <- multipleInsertFuture
+  result <- Person.name.likes.age.getAsync
+} yield {
+  // Both inserts applied
+  result === List(
+    ("Fred", "pizza", 38),
+    ("Lisa", "pizza", 7),
+    ("Ben", "pasta", 5)
+  )
+}
+```
+For brevity, the following examples use the synchronous `save` operation.
+
 
 ### Optional values
 
@@ -45,6 +86,7 @@ Person.name.likes$.age insert List(
 ```
 As with `save`, None values are simply not asserted. No `likes` value is asserted for Fred in the example above.
 
+
 ### Related data
 
 Related data can be inserted
@@ -57,6 +99,21 @@ Person.name.likes$.age.Home.street.city insert List(
 ```
 When the Fred entity is created, a Baker St Address entity is also created and a relationship from Fred to that Address 
 entity is created. The same for Pete, and so on...  
+
+
+### Composite data
+
+Data with associative relationships can be inserted with a Composite molecule
+```scala
+Article.name.author + Tag.name.weight insert List(
+  (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
+  (("Best jokes ever", "John Cleese"), ("fun", 3))
+)
+```
+Note how each sub-molecule type-safely corresponds to each sub-tuple of data.
+
+Up to 22 sub-molecules can be associated in a single Composite which allows for wide data sets to be saved with up
+to 22 x 22 = 484 attributes per row of data!
 
 
 ### Data variables
@@ -120,4 +177,4 @@ insertPerson(personsData)
 
 ### Next
 
-[Composite insert...](/manual/crud/composite-insert)
+[Get...](/manual/crud/get)

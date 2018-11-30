@@ -10,7 +10,7 @@ menu:
 
 # SQL vs. Molecule examples
 
-We'll make a similar comparison to SQL as [Slick](http://slick.typesafe.com/doc/3.0.0-M1/sql-to-slick.html#sql-vs-slick-examples) does:
+We'll make a similar comparison to SQL as [Slick](http://slick.lightbend.com/doc/3.2.3/sql-to-slick.html#select) does:
 
 #### SELECT *
 
