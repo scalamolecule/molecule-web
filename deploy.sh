@@ -11,8 +11,8 @@ cp -R ../molecule/core/target/scala-2.12/api ./static/
 echo -e "\033[0;32mBuilding public Hugo site...\033[0m"
 
 # Empty public folder
-rm -rf public
-mkDir public
+#rm -rf ./public/*
+#mkDir public
 
 # Build the project. Will add everything to the public folder.
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
