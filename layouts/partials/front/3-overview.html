@@ -1,0 +1,110 @@
+<div style="align:center;padding-top:0px;padding-bottom:50px;background-color:rgba(143, 143, 143, 0.08)">
+
+    <div class="container" style="padding-top:0px">
+
+        <div class="col-sm-4 column " style="">
+
+            <h2>Setup</h2>
+            Define and compile your domain schema
+            <pre><code>trait Person {
+  val name    = oneString
+  val age     = oneInt
+  val address = one[Address]
+}
+trait Address {
+  val street = oneString
+}
+</code></pre>
+            <pre><code>> cd yourProjectRoot
+> sbt compile
+</code></pre>
+            <a href="/manual/schema">Read more...</a>
+        </div>
+
+        <div class="col-sm-4 column " style="">
+
+            <h2>Application code</h2>
+            <a href="/manual/crud">Transact data</a>
+            <pre><code class="language-scala">Person.name.age.Address.street insert
+  List(
+    ("Lisa", 20, "Broadway"),
+    ("John", 22, "Fifth Avenue")
+  )
+</code></pre>
+
+            <a href="/manual/attributes/basics">Query data</a>
+            <pre><code class="language-scala">Person.name.age.Address.street.get ===
+  List(
+    ("Lisa", 20, "Broadway"),
+    ("John", 22, "Fifth Avenue")
+  )
+</code></pre>
+
+
+        </div>
+
+        <div class="col-sm-4 column " style="">
+            <h2>Molecule &#10231; Datomic</h2>
+            <!--Molecule transparently make the necessary preparations to transact and query the Datomic database.-->
+            Molecule talks to Datomic
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10230;</div>
+                    </td>
+                    <td style="padding:0px 15px 0px 15px;text-align:center">Tx statements</td>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10230;</div>
+                    </td>
+                    <td rowspan="5">
+<pre style="background-color:rgba(168, 169, 167, 0.16)">
+    
+    
+    
+    
+
+
+  Datomic
+
+
+
+    
+    
+    
+</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10229;</div>
+                    </td>
+                    <td style="padding:0px 15px 0px 15px;text-align:center">Tx report</td>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10229;</div>
+                    </td>
+                </tr>
+                <tr><td height="40px"></td></tr>
+                <tr>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10230;</div>
+                    </td>
+                    <td style="padding:0px 15px 0px 15px;text-align:center">Datalog</td>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10230;</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10229;</div>
+                    </td>
+                    <td style="padding:0px 15px 0px 15px;text-align:center">Typed data</td>
+                    <td>
+                        <div style="font-size:35px;color:#666">&#10229;</div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+</div>
