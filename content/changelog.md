@@ -10,6 +10,7 @@ title: "Changelog"
 
 Main changes:
 
+- 2018-12-02 v0.16.1 [Sbt-molecule 0.7.0, bootstrap speed optimization](#21)
 - 2018-11-25 v0.16.0 [Async API + tx functions](#20)
 - 2018-10-25 v0.15.0 [10x-100x Compilation speed boost](#19)
 - 2018-09-06 v0.14.0 [Scala docs and semantic updates](#18)
@@ -33,6 +34,21 @@ Main changes:
 
 
 
+
+## [☝](#top) Sbt-molecule plugin compilation speed optimizations {#21}
+_2018-11-25 v0.16.1_
+
+Minor upgrade to match [sbt-molecule](https://github.com/scalamolecule/sbt-molecule) plugin v0.7.0. 
+
+When compiling a molecule project with `sbt compile`, compilation of boilerplate
+code is now 4-5x faster than with v0.6.2. Using lazy vals for attributes and
+methods for reference namespaces did the trick.
+
+Since attributes are now defined as lazy vals in boilerplate code, we can no longer
+override some super/base structure where we earlier saved the doc comments. Alternatively
+we could add doc comments to all arities of boilerplate attributes. But that would be
+a lot of redundancy. Combined with the massive compilation speed improvement doc comments
+are therefore skipped.  
 
 
 ## [☝](#top) Async API + tx functions {#20}

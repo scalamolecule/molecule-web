@@ -28,10 +28,10 @@ Add the following to your build files:
 sbt.version=1.1.6
 ```
 
-`project/buildinfo.sbt`:
+`project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.6.2")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.7.0")
 ```
 
 `build.sbt`:
@@ -46,13 +46,13 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.16.0",
+      "org.scalamolecule" %% "molecule" % "0.16.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to directory with your schema definition file(s)
   )
 ```
-Molecule 0.16.0 for Scala 2.12.7 is available at
+Molecule 0.16.1 for Scala 2.12.7 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 

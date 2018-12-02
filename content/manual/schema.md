@@ -59,17 +59,6 @@ The outer object `SeattleDefinition` encapsulates our schema definition. The nam
 in order for the sbt-molecule plugin to recognize it.
 
 
-### Custom Scala Doc generation
-
-The sbt-molecule plugin even generates ScalaDoc documentation for the custom DSL generated form the schema definition file! 
-Attribute types are explained and an optional `doc(<text...>)` can be added to give a hint about the attribute when
-working with the code in the IDE. Given the `doc` text above for the `Community.name` attribute we can see this in our
-IDE:
-
-![Attribute Scala docs](/img/schema/attr-doc.png)
-
-
-
 ### Molecule arity
 
 The `@InOut(2, 8)` arity annotation instructs the sbt-molecule plugin to generate boilerplate code with the ability to create

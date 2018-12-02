@@ -3,18 +3,15 @@
 
 echo -e "\033[0;32mCopying API...\033[0m"
 
-# Update api
+# Copy api folder from molecule project
 rm -r ./static/api
 cp -R ../molecule/core/target/scala-2.12/api ./static/
 
-
 echo -e "\033[0;32mBuilding public Hugo site...\033[0m"
 
-# Empty public folder
-#rm -rf ./public/*
-#mkDir public
+# DON'T delete the public folder! Kills the submodule...
 
-# Build the project. Will add everything to the public folder.
+# Build the project
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
