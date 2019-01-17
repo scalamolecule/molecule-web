@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Expressions"
 weight: 40
 menu:
@@ -63,10 +62,10 @@ Person.age(List(40, 41, 42))
 
 ### Fulltext search
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/FulltextSearch.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Fulltext.scala)
 
 
-If we add the `fulltextSearch` option to a String attribute definition Datomic will index the text strings saved so that we can do
+If we add the `fulltext` option to a String attribute definition Datomic will index the text strings saved so that we can do
 fulltext searches across all values. We could for instance search for Community names containing the word "Town" in their name:
 ```scala
 Community.name.contains("Town")

@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "With"
 weight: 40
 menu:
@@ -15,8 +14,8 @@ next: /manual/time/testing
 
 [Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala)
 
-By supplying some test transaction data to `getWith(testTxData)` we can get a "branch" of the current database with
-the test transaction data applied in-memory. This is a very powerful way of testing future-like "what-if" scenarios
+By supplying some test transaction data to `getWith(testTxData)` we filter the current database with
+the test transaction data applied in-memory. This is a very powerful way of testing future-like "what-if" scenarios.
 
 
 ![](/img/time/with.png)
@@ -57,7 +56,7 @@ Fred will remain unaffected in the live database after `getWith(tx8)` has been c
 ```scala
 Person.name.likes.get.head === ("Fred", "pasta") 
 ```
-The `getWith(txData)` works on a "branch" of the database and is automatically garbage collected. So there is no need to 
+The `getWith(txData)` works on a filtered database and is automatically garbage collected. So there is no need to 
 set up and tear down database mockups!
 
 

@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Introduction"
 weight: 11
 menu:
@@ -15,6 +14,8 @@ down: /manual/setup
 # Molecule introduction
 
 Molecule let's you model and query your domain data structures directly with the words of your domain.
+
+bldskjfl ksdfjl sadkf lj
 
 ### Query
 

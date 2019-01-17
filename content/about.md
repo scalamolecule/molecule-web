@@ -31,7 +31,7 @@ About Marc:
 ### Further development
 
 More developers are welcome to join with [Pull requests](https://github.com/scalamolecule/molecule/pulls) and 
-questions/discussions in the [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl).
+questions/discussions on [gitter](https://gitter.im/scalamolecule/Lobby) in the [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl).
 
 ### License
 Molecule is licensed under the [Apache License 2.0](http://en.wikipedia.org/wiki/Apache_license)

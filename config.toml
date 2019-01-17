@@ -285,12 +285,22 @@ disablePathToLower = true
     parent = "docs-generic"
     name = "Datom"
     identifier = "docs-generic-Datom"
-    url = "/api/molecule/generic/Datom.html"
+    url = "/api/molecule/generic/datom/index.html"
 [[menu.main]]
     parent = "docs-generic"
-    name = "Db"
-    identifier = "docs-generic-Db"
-    url = "/api/molecule/generic/Db.html"
+    name = "Index"
+    identifier = "docs-generic-Index"
+    url = "/api/molecule/generic/datom/index/index.html"
+[[menu.main]]
+    parent = "docs-generic"
+    name = "Schema"
+    identifier = "docs-generic-Schema"
+    url = "/api/molecule/generic/schema/index.html"
+[[menu.main]]
+    parent = "docs-generic"
+    name = "Log"
+    identifier = "docs-generic-Log"
+    url = "/api/molecule/generic/schema/Log.html"
 
 
 [[menu.main]]
@@ -371,23 +381,29 @@ disablePathToLower = true
 [[menu.main]]
     weight = 61
     parent = "community"
+    name = "Gitter"
+    identifier = "gitter"
+    url = "https://gitter.im/scalamolecule/Lobby"
+[[menu.main]]
+    weight = 62
+    parent = "community"
     name = "Forum"
     identifier = "forum"
     url = "https://groups.google.com/forum/#!forum/molecule-dsl"
 [[menu.main]]
-    weight = 62
+    weight = 63
     parent = "community"
     name = "Github"
     identifier = "github"
     url = "https://github.com/scalamolecule/molecule"
 [[menu.main]]
-    weight = 62
+    weight = 64
     parent = "community"
     name = "Molecule issues"
     identifier = "molecule-issues"
     url = "https://github.com/scalamolecule/molecule/issues"
 [[menu.main]]
-    weight = 63
+    weight = 65
     parent = "community"
     name = "Molecule docs issues"
     identifier = "molecule-docs-issues"

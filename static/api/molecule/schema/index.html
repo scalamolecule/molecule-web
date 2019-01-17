@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.16.1 - molecule.schema</title>
-          <meta name="description" content="Molecule 0.16.1 - molecule.schema" />
-          <meta name="keywords" content="Molecule 0.16.1 molecule.schema" />
+          <title>Molecule 0.17.0 - molecule.schema</title>
+          <meta name="description" content="Molecule 0.17.0 - molecule.schema" />
+          <meta name="keywords" content="Molecule 0.17.0 molecule.schema" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.16.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.17.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -341,10 +341,11 @@ only interfaces relevant to Molecule.
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Interfaces to meta information about datoms and Datomic database." href="../generic/index.html"><span class="name">generic</span></a>
+        <a title="Interfaces to get generic information about data and schema." href="../generic/index.html"><span class="name">generic</span></a>
       </span>
       
-      <p class="shortcomment cmt">Interfaces to meta information about datoms and Datomic database.</p><div class="fullcomment"><div class="comment cmt"><p>Interfaces to meta information about datoms and Datomic database.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+      <p class="shortcomment cmt">Interfaces to get generic information about data and schema.</p><div class="fullcomment"><div class="comment cmt"><p>Interfaces to get generic information about data and schema.</p><ul><li><a href="../generic/datom/index.html" class="extype" name="molecule.generic.datom">Datom</a> - Generic Datom attributes in molecules</li><li><a href="../generic/Log.html" class="extype" name="molecule.generic.Log">Log</a> - Datoms sorted by transaction/time</li><li><a href="../generic/index/EAVT.html" class="extype" name="molecule.generic.index.EAVT">EAVT</a> - Datoms sorted by Entity-Attribute-Value-Transaction</li><li><a href="../generic/index/AVET.html" class="extype" name="molecule.generic.index.AVET">AVET</a> - Datoms sorted by Attribute-Value-Entity-Transaction</li><li><a href="../generic/index/AEVT.html" class="extype" name="molecule.generic.index.AEVT">AEVT</a> - Datoms sorted by Attribute-Entity-Value-Transaction</li><li><a href="../generic/index/VAET.html" class="extype" name="molecule.generic.index.VAET">VAET</a> - &quot;Reverse index&quot; for reverse lookup of ref types</li><li><a href="../generic/schema/index.html" class="extype" name="molecule.generic.schema">Schema</a> - Meta information about the current database schema.
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
     </li><li name="molecule.input" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="input"></a><a id="input:input"></a>
       <span class="permalink">
@@ -612,7 +613,7 @@ all namespaces reside in a default tacit partition:</p><pre><span class="kw">pac
 <span class="kw">object</span> SeattleDefinition {                <span class="cmt">// Schema definition object</span>
 
   <span class="kw">trait</span> Person {                          <span class="cmt">// Namespace</span>
-    <span class="kw">val</span> name = oneString.fulltextSearch   <span class="cmt">// String attribute definition with fulltext search</span>
+    <span class="kw">val</span> name = oneString.fulltext   <span class="cmt">// String attribute definition with fulltext search</span>
     <span class="kw">val</span> age  = oneInt                     <span class="cmt">// Int attribute definition</span>
   }
 
@@ -625,13 +626,13 @@ all namespaces reside in a default tacit partition:</p><pre><span class="kw">pac
 
   <span class="kw">object</span> customer {
     <span class="kw">trait</span> Person {
-      <span class="kw">val</span> name    = oneString.fulltextSearch
+      <span class="kw">val</span> name    = oneString.fulltext
       <span class="kw">val</span> age     = oneInt
       <span class="kw">val</span> address = one[Address]
       <span class="kw">val</span> bought  = many[products.Item]
     }
     <span class="kw">trait</span> Address {
-      <span class="kw">val</span> street = oneString.fulltextSearch
+      <span class="kw">val</span> street = oneString.fulltext
       <span class="kw">val</span> city   = oneInt
     }
     <span class="cmt">// ..more namespaces in the `customer` partition</span>

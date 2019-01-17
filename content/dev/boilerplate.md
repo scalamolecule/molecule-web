@@ -15,7 +15,7 @@ An attribute definition like
 @InOut(3, 8)
 trait SeattleDefinition {
   trait Community {
-    val name = oneString.fulltextSearch
+    val name = oneString.fulltext
   }
 }
 ```
@@ -27,7 +27,7 @@ object Community extends Community_0 {
 }
 
 trait Community {
-  class name [Ns, In] extends OneString [Ns, In] with FulltextSearch[Ns, In] with Indexed
+  class name [Ns, In] extends OneString [Ns, In] with Fulltext[Ns, In] with Indexed
 }
 
 trait Community_0 extends Community with Out_0[Community_0, Community_1, Community_In_1_0, Community_In_1_1] {

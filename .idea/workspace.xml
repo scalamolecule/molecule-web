@@ -1,22 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.16.0">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.16.1">
+      <change afterPath="$PROJECT_DIR$/content/manual/debug.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/debug/datalog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/debug/debug-transactions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/debug/err.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/generic.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/generic/datom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/generic/indexes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/generic/log.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/manual/generic/schema.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/test.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/_presentation/presentation.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_presentation/presentation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/_presentation/presentation1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_presentation/presentation1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/about.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/expressions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/mapped.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/mapped.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/modes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/modes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/getJson.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/getJson.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/insert.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/insert.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/retract.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/retract.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/save.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/save.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/crud/update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/update.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/entities.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/entities.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/relationships/composites.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/composites.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/relationships/self-join.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/self-join.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/schema/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema/transaction.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic2.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/time.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/time/asof-since.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/asof-since.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/time/history.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/history.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/time/testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/time/with.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/with.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-bundle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-bundle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/resources/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/resources/tutorials.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/resources/videos.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/videos.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploycommands.md" beforeDir="false" afterPath="$PROJECT_DIR$/deploycommands.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old/_indexOLD.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/old/indexOLD.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/favicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/faviconZ.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/faviconOLD.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/apple-touch-icon-114-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/apple-touch-icon-114-precomposed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/dirs3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/dirs3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/favicon.png" beforeDir="false" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,29 +79,115 @@
     <favorites_list name="molecule-docs" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/deploy.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/debug/debug-transactions.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="182">
+                    <caret line="14" selection-start-line="14" selection-end-line="23" selection-end-column="50" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/changelog.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="676">
+                    <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/deploycommands.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="260">
+                    <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/debug.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="442">
+                    <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="1430">
+                    <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/generic/log.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="481">
+                    <caret line="37" selection-start-line="37" selection-end-line="37" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/generic/schema.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="184">
+                    <caret line="67" column="74" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/content/manual/generic/datom.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="418">
+                    <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tx_</find>
-      <find>toSe</find>
-      <find>toSeq</find>
-      <find>.toSeq</find>
-      <find>sbt-MoleculePlugin</find>
-      <find>&quot;api&quot;</find>
-      <find>apiDocs</find>
-      <find>api</find>
-      <find>/docs/</find>
       <find>rad</find>
       <find>footer</find>
       <find>foot</find>
@@ -78,14 +209,17 @@
       <find>AsOf</find>
       <find>(t, limit)</find>
       <find>.run</find>
+      <find>branch</find>
+      <find>fulltextSearch</find>
+      <find>Fulltext</find>
+      <find>.scalamolecule.</find>
+      <find>str tacit</find>
+      <find>[☝]</find>
+      <find>☝</find>
+      <find>Index</find>
+      <find>fulltext</find>
     </findStrings>
     <replaceStrings>
-      <replace>0.13.16</replace>
-      <replace>&quot;0.4.6&quot;</replace>
-      <replace>.isComponent</replace>
-      <replace>/manual/</replace>
-      <replace>parent: manual</replace>
-      <replace>identifier: manual</replace>
       <replace>docs</replace>
       <replace>assert</replace>
       <replace>retract</replace>
@@ -110,6 +244,12 @@
       <replace>(txTestData)</replace>
       <replace>(txTestData, limit)</replace>
       <replace>.result</replace>
+      <replace>fulltext</replace>
+      <replace>---</replace>
+      <replace>meta data</replace>
+      <replace>[☝]</replace>
+      <replace>☝</replace>
+      <replace>index</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../molecule/coretest/src/test/scala/molecule/bidirectional</dir>
@@ -130,57 +270,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/layouts/partials/front/hero.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/what.md" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/what.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/why.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/3-what.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/2-why.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/4-examples.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/menu.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/front/3-overview.html" />
-        <option value="$PROJECT_DIR$/content/manual/quick-start/introduction.md" />
-        <option value="$PROJECT_DIR$/content/manual/attributes/expressions.md" />
-        <option value="$PROJECT_DIR$/content/manual/attributes/modes.md" />
-        <option value="$PROJECT_DIR$/content/manual/attributes/mapped.md" />
-        <option value="$PROJECT_DIR$/content/manual/attributes/parameterized.md" />
-        <option value="$PROJECT_DIR$/content/manual/relationships/card-one.md" />
-        <option value="$PROJECT_DIR$/content/manual/relationships/card-many.md" />
-        <option value="$PROJECT_DIR$/content/manual/relationships/bidirectional.md" />
-        <option value="$PROJECT_DIR$/content/manual/crud/txreport.md" />
         <option value="$PROJECT_DIR$/content/manual/crud.md" />
         <option value="$PROJECT_DIR$/content/manual/crud/save.md" />
         <option value="$PROJECT_DIR$/content/manual/relationships/composites.md" />
         <option value="$PROJECT_DIR$/content/manual/crud/getJson.md" />
         <option value="$PROJECT_DIR$/content/manual/crud/update.md" />
-        <option value="$PROJECT_DIR$/content/manual/crud/retract.md" />
         <option value="$PROJECT_DIR$/content/manual/transactions/tx-bundle.md" />
         <option value="$PROJECT_DIR$/layouts/partials/temp.html" />
         <option value="$PROJECT_DIR$/content/manual/attributes/basics.md" />
-        <option value="$PROJECT_DIR$/content/manual/time/with.md" />
-        <option value="$PROJECT_DIR$/content/manual/time.md" />
         <option value="$PROJECT_DIR$/content/manual/attributes/aggregates.md" />
         <option value="$PROJECT_DIR$/content/manual/transactions.md" />
         <option value="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" />
         <option value="$PROJECT_DIR$/content/manual/time/asof-since.md" />
-        <option value="$PROJECT_DIR$/content/manual/time/testing.md" />
         <option value="$PROJECT_DIR$/content/compare/sql/slick.md" />
         <option value="$PROJECT_DIR$/content/compare/sql.md" />
-        <option value="$PROJECT_DIR$/config.toml" />
         <option value="$PROJECT_DIR$/content/manual/schema/transaction.md" />
         <option value="$PROJECT_DIR$/content/manual/attributes.md" />
         <option value="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic.html" />
         <option value="$PROJECT_DIR$/layouts/partials/front/1-hero.html" />
         <option value="$PROJECT_DIR$/content/manual/crud/insert.md" />
         <option value="$PROJECT_DIR$/content/manual/crud/get.md" />
-        <option value="$PROJECT_DIR$/deploycommands.md" />
         <option value="$PROJECT_DIR$/layouts/index.html" />
         <option value="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic2.html" />
-        <option value="$PROJECT_DIR$/layouts/partials/header.html" />
-        <option value="$PROJECT_DIR$/content/changelog.md" />
         <option value="$PROJECT_DIR$/content/manual/setup.md" />
         <option value="$PROJECT_DIR$/content/manual/schema.md" />
         <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/content/about.md" />
+        <option value="$PROJECT_DIR$/content/manual/test.md" />
+        <option value="$PROJECT_DIR$/content/manual/time/with.md" />
+        <option value="$PROJECT_DIR$/content/manual/time.md" />
+        <option value="$PROJECT_DIR$/resources/test.md" />
+        <option value="$PROJECT_DIR$/config.toml" />
+        <option value="$PROJECT_DIR$/content/manual/generic/index.md" />
+        <option value="$PROJECT_DIR$/content/manual/time/testing.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug/show.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug/datomic.md" />
+        <option value="$PROJECT_DIR$/layouts/partials/header.html" />
+        <option value="$PROJECT_DIR$/content/manual/debug/transactions.md" />
+        <option value="$PROJECT_DIR$/content/manual/crud/retract.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug/datalog.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug/debug-transactions.md" />
+        <option value="$PROJECT_DIR$/content/manual/quick-start/introduction.md" />
+        <option value="$PROJECT_DIR$/content/manual/generic.md" />
+        <option value="$PROJECT_DIR$/content/manual/generic/log.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug/err.md" />
+        <option value="$PROJECT_DIR$/content/manual/debug.md" />
+        <option value="$PROJECT_DIR$/content/resources/tutorials/seattle.md" />
+        <option value="$PROJECT_DIR$/content/manual/generic/datom.md" />
+        <option value="$PROJECT_DIR$/content/manual/generic/schema.md" />
+        <option value="$PROJECT_DIR$/content/changelog.md" />
+        <option value="$PROJECT_DIR$/content/manual/generic/indexes.md" />
+        <option value="$PROJECT_DIR$/deploycommands.md" />
       </list>
     </option>
   </component>
@@ -191,7 +331,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2197" />
+    <option name="x" value="-2560" />
     <option name="width" value="1280" />
     <option name="height" value="1600" />
   </component>
@@ -203,59 +343,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="crud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="old" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -399,6 +486,96 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="community" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="compare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="compare" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="quick-start" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,19 +598,19 @@
     <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/img" />
-      <recent name="$PROJECT_DIR$/layouts/partials/front" />
-      <recent name="$PROJECT_DIR$/layouts/partials" />
-      <recent name="$PROJECT_DIR$/content/manual/crud" />
-      <recent name="$PROJECT_DIR$/content" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/old" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/content/community" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/content/manual/debug" />
+      <recent name="$PROJECT_DIR$/content/manual" />
+      <recent name="$PROJECT_DIR$/content/manual/generic" />
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/layouts/partials/front" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -692,7 +869,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543584159684</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="0.16.1">
+      <created>1543776399894</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1543776399894</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -708,7 +892,7 @@
     <frame x="-2560" y="0" width="2560" height="1600" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13351713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11264277" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -769,7 +953,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Re-arranging layout having sub menu on the right side" />
     <MESSAGE value="Updating with latest changes" />
     <MESSAGE value="v0.4.0" />
     <MESSAGE value="v0.4.1" />
@@ -794,368 +977,11 @@
     <MESSAGE value="0.15.0" />
     <MESSAGE value="0.15.1" />
     <MESSAGE value="0.16.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.16.0" />
+    <MESSAGE value="0.16.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.16.1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/getJson.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="455">
-            <caret line="35" column="91" lean-forward="true" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/relationships/bidirectional.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1029">
-            <caret line="259" lean-forward="true" selection-start-line="259" selection-end-line="259" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/attributes/mapped.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="234">
-            <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/save.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-353">
-            <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/update.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1237">
-            <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/retract.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="600">
-            <caret line="76" column="3" lean-forward="true" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/docs/crud/get/index.html" />
-    <entry file="file://$PROJECT_DIR$/content/dev/_index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="546">
-            <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="76" selection-end-line="42" selection-end-column="76" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/transactions/tx-bundle.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="91">
-            <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/menuOLD.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/front/4-examples.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1435">
-          <caret line="124" column="100" selection-start-line="124" selection-start-column="100" selection-end-line="124" selection-end-column="100" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#2584#2590#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/front/3-overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#pre#0;n#td#3;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#2;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor>
-            <folding>
-              <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#pre#0;n#td#3;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#0;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#0;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-              <element signature="n#style#0;n#div#0;n#td#2;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/temp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/attributes/basics.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="455">
-            <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/attributes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="585">
-            <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/schema/transaction.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="457">
-            <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/compare/gremlin.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="276">
-            <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-            <folding>
-              <element signature="n#!!doc" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/compare/sql.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="312">
-            <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/compare/sql/slick.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="143">
-            <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="108" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/time.md">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="288">
-            <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/attributes/aggregates.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="455">
-            <caret line="35" column="8" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/transactions.md">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="507">
-            <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1703">
-          <caret line="131" column="37" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="403">
-            <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-            <folding>
-              <element signature="n#!!doc" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/time/asof-since.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="341">
-            <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/time/testing.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="975">
-            <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/time/with.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="626">
-            <caret line="127" column="96" lean-forward="true" selection-start-line="127" selection-start-column="96" selection-end-line="127" selection-end-column="96" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/insert.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="587">
-            <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rmSubmodule.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="323" column="45" selection-start-line="323" selection-start-column="45" selection-end-line="323" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/crud/get.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="626">
-            <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/favicon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/faviconOLD.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/favicon.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/favicon.jpg" />
     <entry file="file://$PROJECT_DIR$/static/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1172,85 +998,6 @@
             </folding>
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/changelog.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-568">
-            <caret line="42" column="80" lean-forward="true" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="43" column="10" lean-forward="true" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploycommands.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="247">
-            <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h1#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="780">
-            <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/partials/front/1-hero.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,10 +1024,449 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/content/community/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/test.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="286">
+            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/sql.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="312">
+            <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/about.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="468">
+            <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time/history.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="205">
+            <caret line="19" selection-start-line="19" selection-end-line="20" />
+            <folding>
+              <element signature="n#!!doc" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1872">
+            <caret line="144" selection-start-line="144" selection-end-line="144" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/schema/transaction.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="130">
+            <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time/with.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret selection-end-line="10" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/entities.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="406">
+            <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/retract.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="390">
+            <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/crud/save.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="789">
+            <caret line="71" selection-start-line="71" selection-end-line="71" selection-end-column="89" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="156">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/attributes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1053">
+            <caret line="81" selection-start-line="81" selection-end-line="81" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/quick-start/introduction.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="403">
+            <caret line="31" column="73" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/manual/quick-start/introduction/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7956">
+          <caret line="612" selection-start-line="612" selection-end-line="612" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3627">
+          <caret line="279" column="19" selection-start-line="279" selection-start-column="19" selection-end-line="279" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/sql/slick.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="572">
+            <caret line="44" column="15" lean-forward="true" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/time/testing.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="676">
+            <caret line="52" column="3" lean-forward="true" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/compare/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/front/1-hero.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h1#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/front/3-overview.html">
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <folding>
+              <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#pre#0;n#td#3;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#0;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#0;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+              <element signature="n#style#0;n#div#0;n#td#2;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="52" column="71" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#pre#0;n#td#3;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#2;n#tr#1;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#2;n#tr#3;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#2;n#tr#4;n#table#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/partials/front/4-examples.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/debug/err.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="546">
+            <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/schema.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="285">
+            <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="197" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/debug/datalog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="169">
+            <caret line="13" selection-start-line="13" selection-end-line="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/debug/debug-transactions.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="182">
+            <caret line="14" selection-start-line="14" selection-end-line="23" selection-end-column="50" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/debug.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="442">
+            <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/resources/tutorials/seattle.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="442">
+            <caret line="121" column="3" lean-forward="true" selection-start-line="121" selection-start-column="3" selection-end-line="121" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/schema.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="184">
+            <caret line="67" column="74" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/log.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="481">
+            <caret line="37" selection-start-line="37" selection-end-line="37" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="1430">
+            <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/datom.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="418">
+            <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/changelog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="676">
+            <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploycommands.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="260">
+            <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
         </state>
       </provider>
     </entry>

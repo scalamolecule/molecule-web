@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Schema"
 weight: 30
 menu:
@@ -35,9 +34,9 @@ import molecule.schema.definition._  // import schema definition DSL
 object SeattleDefinition {
 
   trait Community {
-    val name         = oneString.fulltextSearch.doc("A community's name") // optional doc text
+    val name         = oneString.fulltext.doc("A community's name") // optional doc text
     val url          = oneString
-    val category     = manyString.fulltextSearch
+    val category     = manyString.fulltext
     val orgtype      = oneEnum('community, 'commercial, 'nonprofit, 'personal)
     val `type`       = oneEnum('email_list, 'twitter, 'facebook_page) // + more...
     val neighborhood = one[Neighborhood]
@@ -254,7 +253,7 @@ Each attribute can also have some extra options:
     <td>Generated index for this attribute. By default all attributes are set with the indexed option automatically by Molecule, so you don't need to set this.</td>
   </tr>
   <tr>
-    <td valign="top">fulltextSearch</td>
+    <td valign="top">fulltext</td>
     <td align="center" valign="top">✔︎</td>
     <td>Generate eventually consistent fulltext search index for this attribute.</td>
   </tr>
@@ -275,7 +274,7 @@ Each attribute can also have some extra options:
 
 Datomic indexes the values of all attributes having an option except for the `doc` and `noHistory` options.
 
-As you saw, we added `fulltextSearch` to some of the attributes in the Seattle definition above. Molecule's schema 
+As you saw, we added `fulltext` to some of the attributes in the Seattle definition above. Molecule's schema 
 definition DSL let's you only choose allowed options for any attribute type.
 
 ### Next

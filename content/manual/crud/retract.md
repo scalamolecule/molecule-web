@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Retract"
 weight: 70
 menu:
@@ -33,14 +32,32 @@ Community(belltownId).name().category().update
 Here we retracted the `name` and `category` attribute values of the Belltown Community entity:
 
 
-## Retract entity
+## Retract an entity
 
 To delete a whole entity with all its attribute values we can call `retract` on a `Long` entity id 
 
 ```scala
 fredId.retract
 ```
-Here all attributes having the entity id `fredId` are retracted.
+All attributes having the entity id `fredId` are retracted.
+
+### Add Tx meta data to retraction on entity id
+
+Associate transaction meta data to a retraction on an entity id
+```scala
+fredId.Tx(MyUseCase.name("Terminate membership")).retract
+```
+
+We can then afterwards use the tx meta data to get information of retracted data:
+```scala
+// Who got their membership terminated and when?
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  (fredId, "Fred", t3, false) // Fred terminated his membership at transaction t3 and was retracted
+)
+```
+
+
+## Retract multiple entities
 
 Alternatively we can use the `retract` method (available via `import molecule.imports._`)
 
@@ -56,12 +73,21 @@ val eids: List[Long] = // some entity ids
 retract(eids)
 ```
 
+### Add Tx meta data to retraction of multiple entity ids
+
 .. and even associate transaction meta data to the retraction
 ```scala
 // Retract multiple entity ids and some tx meta data about the transaction
 retract(eids, MyUseCase.name("Terminate membership"))
 ```
-
+Again, we can then afterwards use the tx meta data to get information of retracted data:
+```scala
+// Who got their membership terminated and when?
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  (fredId, "Fred", t3, false), // Fred terminated his membership at transaction t3 and was retracted
+  (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
+)
+```
 
 
 ## Retract component entity

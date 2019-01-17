@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Testing"
 weight: 50
 menu:
@@ -8,6 +7,8 @@ menu:
     identifier: testing
 up:   /manual/time
 prev: /manual/time/with
+next: /manual/generic
+down: /manual/generic
 ---
 
 # Testing
@@ -17,17 +18,18 @@ prev: /manual/time/with
 [TestDbWith](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala)
 
 For more complex test scenarios we can use a "test database" where we can freely make multiple separate molecule queries against
-a temporary database "branch".
+a temporary filtered database.
 
 ### Test db
 
 All molecules expect an implicit connection object to be in scope. If we then set a temporary test database on 
-such `conn` object we can subsequentially freely perform tests against this temporary database as though it was a "branch" (think git).
+such `conn` object we can subsequentially freely perform tests against this temporary filtered database as though 
+it was a "branch" (think git).
 
 When the connection/db goes out of scope it is simply garbage collected automatically by the JVM. At any point we can also 
  explicitly go back to continuing using our live production db.
  
-To make a few tests with a "branch" of our live db we call `conn.testDbAsOfNow`:
+To make a few tests with our filtered db we call `conn.testDbAsOfNow`:
 
 ```scala
 // Current state
@@ -59,8 +61,8 @@ This is now possible by setting a temporary test database
 on the implicit connection object that all molecules expect to be present in their scope - which includes the molecules inside
  domain classes.
 
-When we test against a temporary database, Molecule internally uses the `with` function of Datomic to 
-apply transaction data to a "branch" of the database that is simply garbage collected when it 
+When we test against a temporary filtered database, Molecule internally uses the `with` function of Datomic to 
+apply transaction data to a filtered database that is simply garbage collected when it 
 goes out of scope!
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:

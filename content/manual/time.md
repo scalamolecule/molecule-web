@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Time"
 weight: 90
 menu:
@@ -170,8 +169,8 @@ Note that this is not a snapshot in time but a series of all assertions and retr
 
 ### [☞ `getWith(txTestData)`](/manual/time/with/) or [`getAsyncWith(txTestData)`](/manual/time/with/)
 
-By supplying some test transaction data to `getWith(txTestData)` we can get a "branch" of the current database with
-the test transaction data applied. This is a very powerful way of testing future-like "what-if" scenarios. 
+By supplying some test transaction data to `getWith(txTestData)` we filter the current database by applying
+the test transaction data. This is a very powerful way of testing future-like "what-if" scenarios. 
 
 Transactional test data to be tested can be obtained by calling one of the following methods on some test-molecules:
 

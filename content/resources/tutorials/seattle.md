@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "Seattle"
 weight: 10
 menu:
@@ -43,14 +42,14 @@ trait that defines namespaces with attributes for your domain:
 
 ```scala
 trait Community {
-  val name = oneString.fulltextSearch
+  val name = oneString.fulltext
   val url  = oneString
   ...
 }
 ```
 
 The `name` field defines an attribute of type String with cardinality one. Adding the
-`fulltextSearch` option will tell Datomic that we want to be able to make fulltext
+`fulltext` option will tell Datomic that we want to be able to make fulltext
 searches on the values of this attribute.
 
 After defining the schema like this, we run `sbt compile` and Molecule will generate some
@@ -121,6 +120,7 @@ so we add the `name` attribute with an underscore (to omit it from the result se
 ```scala
 Community.e.name_.get(3) === List(17592186045518L, 17592186045516L, 17592186045514L)
 ```
+
 
 
 
@@ -447,7 +447,7 @@ communitiesBefore("A").get(3) === List("15th Ave Community")
 Datomic supports fulltext searching. When you define an attribute 
 of string value, you can indicate whether it should be indexed for 
 fulltext search. For instance Community `name` and `category` have 
-the fulltextSearch option defined in the Seattle schema. Let's find 
+the fulltext option defined in the Seattle schema. Let's find 
 communities with "Wallingford" in the name.
 
 ```scala

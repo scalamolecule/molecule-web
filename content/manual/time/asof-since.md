@@ -1,5 +1,4 @@
 ---
-date: 2015-01-02T22:06:44+01:00
 title: "AsOf/Since"
 weight: 10
 menu:

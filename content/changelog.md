@@ -10,6 +10,7 @@ title: "Changelog"
 
 Main changes:
 
+- 2019-01-15 v0.17.0 [Datoms, Indexes, Log, Schema and debugging](#22)
 - 2018-12-02 v0.16.1 [Sbt-molecule 0.7.0, bootstrap speed optimization](#21)
 - 2018-11-25 v0.16.0 [Async API + tx functions](#20)
 - 2018-10-25 v0.15.0 [10x-100x Compilation speed boost](#19)
@@ -35,7 +36,112 @@ Main changes:
 
 
 
-## [☝](#top) Sbt-molecule plugin compilation speed optimizations {#21}
+## [☝︎](#top) Datoms, Indexes, Log, Schema and debugging {#22}
+_2019-01-15 v0.17.0_
+
+7 Generic APIs introduced/streamlined to access data and schema generically. Some examples:
+
+#### Datoms
+
+Entity id of Ben with generic datom attribute `e` on a custom molecule...
+```scala
+Person.e.name.get.head === (benEntityId, "Ben")
+```
+
+#### EAVT index
+
+Attributes/values of entity id `e1`...
+```scala
+EAVT(e1).e.a.v.t.get === List(
+  (e1, ":person/name", "Ben", t1),
+  (e1, ":person/age", 42, t2),
+  (e1, ":golf/score", 5.7, t2)
+)
+```
+
+#### AVET index
+Values and entity associations for attribute `:person/age`...
+```scala
+AVET(":person/age").v.e.t.get === List(
+  (42, e1, t2),
+  (37, e2, t5),
+  (14, e3, t7)
+)
+```
+Datomic's [indexRange API](http://docs.datomic.com/on-prem/javadoc/datomic/Database.html#indexRange(java.lang.Object,%20java.lang.Object,%20java.lang.Object))
+is also implemented...
+```scala
+// Entities and transactions of age attribute with values between 14 and 37
+AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
+  (14, e4, t7) // 14 is included in value range
+)
+```
+
+#### AEVT index
+
+Entity ids, values and transaction t's of attribute `:person/name`:
+```scala
+AEVT(":person/name").e.v.t.get === List(
+  (e1, "Ben", t2),
+  (e2, "Liz", t5)
+)
+```
+
+#### VAET index
+
+Reverse index for ref attributes...
+```scala
+// Say we have 3 entities pointing to one entity:
+Release.e.name.Artists.e.name.get === List(
+  (r1, "Abbey Road", a1, "The Beatles"),
+  (r2, "Magical Mystery Tour", a1, "The Beatles"),
+  (r3, "Let it be", a1, "The Beatles"),
+)
+
+// .. then we can get the reverse relationships with the VAET Index:
+VAET(a1).v.a.e.get === List(
+  (a1, ":release/artists", r1),
+  (a1, ":release/artists", r2),
+  (a1, ":release/artists", r3)
+)
+```
+
+#### Log index
+
+Access to datoms index sorted by transaction/time:
+```scala
+// Data from transaction t1 (inclusive) until t4 (exclusive)
+Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
+  (t1, e1, ":person/name", "Ben", true),
+  (t1, e1, ":person/age", 41, true),
+
+  (t2, e2, ":person/name", "Liz", true),
+  (t2, e2, ":person/age", 37, true),
+
+  (t3, e1, ":person/age", 41, false),
+  (t3, e1, ":person/age", 42, true)
+)
+``` 
+
+#### Schema
+
+Programatically explore your `Schema` structure...
+```scala
+// Datomic type and cardinality of attributes
+Schema.a.tpe.card.get === List (
+  (":sales_customer/name", "string", "one"),
+  (":accounting_invoice/invoiceLine", "ref", "many"),
+)
+```
+
+### Debugging
+
+Various debugging methods to explore molecule queries and transactional commands.
+
+ 
+
+
+## [☝︎](#top) Sbt-molecule plugin compilation speed optimizations {#21}
 _2018-11-25 v0.16.1_
 
 Minor upgrade to match [sbt-molecule](https://github.com/scalamolecule/sbt-molecule) plugin v0.7.0. 
@@ -51,7 +157,7 @@ a lot of redundancy. Combined with the massive compilation speed improvement doc
 are therefore skipped.  
 
 
-## [☝](#top) Async API + tx functions {#20}
+## [☝︎](#top) Async API + tx functions {#20}
 _2018-11-25 [v0.16.0](https://github.com/scalamolecule/molecule/releases/tag/v0.16.0)_
 
 ### Sync/AsyncAPIs
@@ -169,7 +275,7 @@ val List(e1, e2) = Ref2.int2 + Ns.int insert Seq(
 
 
 
-## [☝](#top) 10x-100x Compilation speed boost! {#19}
+## [☝︎](#top) 10x-100x Compilation speed boost! {#19}
 _2018-10-25 [v0.15.0](https://github.com/scalamolecule/molecule/releases/tag/v0.15.0)_
 
 The core macro transformation engine has been re-written from the ground up and 
@@ -214,21 +320,27 @@ Each getter group comes with all time-related variations:
 
 
 
-## [☝](#top) Scala docs and semantic updates {#18}
+## [☝︎](#top) Scala docs and semantic updates {#18}
 _2018-09-06 [v0.14.0](https://github.com/scalamolecule/molecule/releases/tag/v0.14.0)_
 
 Major overhaul of Molecule:
 
 ### Thorough Scala docs API documentation
 
-All relevant public interfaces have been documented in the new [Scala docs](http://www.scalamolecule.org/api/molecule). Shortcuts to Scala docs sub packages and documents are also directly available via "API docs" in the menu on the [Molecule website](http://www.scalamolecule.org).
+All relevant public interfaces have been documented in the new [Scala docs](http://www.scalamolecule.org/api/molecule). 
+Shortcuts to Scala docs sub packages and documents are also directly available via "API docs" in the menu on the 
+[Molecule website](http://www.scalamolecule.org).
 
-To aid constructing molecules in your code, all attributes defined now also have Scala docs automatically defined by the [sbt-molecule plugin](https://github.com/scalamolecule) upon compilation.
+To aid constructing molecules in your code, all attributes defined now also have Scala docs automatically defined 
+by the [sbt-molecule plugin](https://github.com/scalamolecule) upon compilation.
 
  
 ### Input molecules correctly implemented 
 
-Input molecules are now semantically correctly implemented and thoroughly tested ([1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3)).
+Input molecules are now semantically correctly implemented and thoroughly tested 
+([1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1), 
+[2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2), 
+[3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3)).
 
 ### Interfaces updated and streamlined
 
@@ -259,7 +371,8 @@ If typed data is not required we can get the raw untyped java collections of Lis
 
 ### Breaking changes
 
-The whole directory layout of the Molecule library has been re-arranged and optimized, including many interfaces. So you might have to change some method names if you have used earlier versions of Molecule.
+The whole directory layout of the Molecule library has been re-arranged and optimized, including many interfaces. 
+So you might have to change some method names if you have used earlier versions of Molecule.
 
 
 
@@ -269,10 +382,12 @@ The whole directory layout of the Molecule library has been re-arranged and opti
 
 
 
-## [☝](#top) Native Json output {#17}
+## [☝︎](#top) Native Json output {#17}
 _2017-11-13 [v0.13.0](https://github.com/scalamolecule/molecule/releases/tag/v0.13.0)_
 
-We can now get data in json format directly from the database by calling `getJson` on a molecule. So instead of converting tuples of data to json with some 3rd party library we can call `getJson` and pass the json data string directly to an Angular table for instance.
+We can now get data in json format directly from the database by calling `getJson` on a molecule. So instead of converting 
+tuples of data to json with some 3rd party library we can call `getJson` and pass the json data string directly to an 
+Angular table for instance.
 
 Internally, Molecule builds the json string in a StringBuffer directly from the raw data coming from Datomic 
 (with regards to types being quoted or not). This should make it the fastest way of supplying json data when needed.
@@ -327,12 +442,15 @@ Nested date is rendered as a json array with json objects for each nested row:
 
 
 
-## [☝](#top) Optional values in save-molecules {#16}
+## [☝︎](#top) Optional values in save-molecules {#16}
 _2017-05-28 [v0.12.0](https://github.com/scalamolecule/molecule/releases/tag/v0.12.0)_
 
-Often, form submissions have some optional field values. Molecule now allow us to `save` molecules with both mandatory and optional attributes.
+Often, form submissions have some optional field values. Molecule now allow us to `save` molecules with both mandatory 
+and optional attributes.
 
-We could for instance have `aName`,  `optionalLikes` and `anAge` values from a form submission that we want to save. We can now apply those values directly to a mandatory `name` attribute, an optional `likes$` attribute (`$` appended makes it optional) and a mandatory `age` attribute of a save-molecule and then save it:
+We could for instance have `aName`,  `optionalLikes` and `anAge` values from a form submission that we want to save. 
+We can now apply those values directly to a mandatory `name` attribute, an optional `likes$` attribute (`$` appended 
+makes it optional) and a mandatory `age` attribute of a save-molecule and then save it:
 
 ```scala
 Person
@@ -358,7 +476,7 @@ It can be a matter of taste if you want to `save` or `insert` - but now you can 
 
 
 
-## [☝](#top) Time API {#15}
+## [☝︎](#top) Time API {#15}
 _2017-05-19 [v0.11.0](https://github.com/scalamolecule/molecule/releases/tag/v0.11.0)_
 
 Datomic has some extremely powerful time functionality that Molecule now makes available in an intuitive way: 
@@ -378,7 +496,8 @@ Person(fredId).age.getHistory === ... // Current and previous ages of Fred in th
 
 `t` can be a transaction entity id (`Long`), a transaction number (`Long`) or a `java.util.Date`.
 
-If we want to test the outcome of some transaction without affecting the production db we can apply transaction data to the `getWith(txData)` method:
+If we want to test the outcome of some transaction without affecting the production db we can apply transaction data to 
+the `getWith(txData)` method:
 
 ```scala
 Person.name.age.getWith(
@@ -393,17 +512,21 @@ Person.name.age.getWith(
 ```
 
 By adding the `Tx` suffix to the standard molecule commands (`save`, `insert`, `update` or `retract`) 
-we can get the transactional data that those operations would normally transact directly. Here, `<command>Tx` methods on transaction molecules just return the transaction data so that we can apply it to the `getWith(txData)` method. This make it convenient for us to ask speculative questions like "what would I get if I did those transactions". 
+we can get the transactional data that those operations would normally transact directly. Here, `<command>Tx` methods 
+on transaction molecules just return the transaction data so that we can apply it to the `getWith(txData)` method. 
+This make it convenient for us to ask speculative questions like "what would I get if I did those transactions". 
 
 For more complex test scenarios we can now use a test database:
 
 ### Test db
 
-All molecules expect an implicit connection object to be in scope. If we then set a temporary test database on such `conn` object we can subsequentially freely perform tests against this temporary database as though it was a "branch" (think git).
+All molecules expect an implicit connection object to be in scope. If we then set a temporary test database on such `conn` object 
+we can subsequentially freely perform tests against this temporary database as though it was a "branch" (think git).
 
-When the connection/db goes out of scope it is simply garbage collected automatically by the JVM. At any point we can also explicitly go back to continuing using our live production db.
+When the connection/db goes out of scope it is simply garbage collected automatically by the JVM. At any point we can also 
+explicitly go back to continuing using our live production db.
  
-To make a few tests with a "branch" of our live db we can now do like this:
+To make a few tests with our filtered db we can now do like this:
 
 ```scala
 // Current state
@@ -428,9 +551,12 @@ Person(fredId).name.age.get.head === ("Fred", 27)
 
 ### Test db with domain classes
 
-When molecules are used inside domain classes we want to test the domain operations also without affecting the state of our production database. And also ideally without having to create mockups of our domain objects. This is now possible by setting a temporary test database on the implicit connection object that all molecules expect to be present in their scope - which includes the molecules inside domain classes.
+When molecules are used inside domain classes we want to test the domain operations also without affecting the state of our production database. 
+And also ideally without having to create mockups of our domain objects. This is now possible by setting a temporary test database on the implicit 
+connection object that all molecules expect to be present in their scope - which includes the molecules inside domain classes.
 
-When we test against a temporary database, Molecule internally uses the `with` function of Datomic to apply transaction data to a "branch" of the database that is simply garbage collected when it goes out of scope!
+When we test against a temporary database, Molecule internally uses the `with` function of Datomic to apply transaction data to a "branch" of 
+the database that is simply garbage collected when it goes out of scope!
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:
 
@@ -456,7 +582,8 @@ conn.useLiveDb
 domainObj.myState == "some state"
 ```
 
-Since internal domain methods will in turn call other domain methods that also expects an implicit conn object then the same test db is even propragated recursively inside the chain of domain operations.
+Since internal domain methods will in turn call other domain methods that also expects an implicit conn object then the same test db is even 
+propragated recursively inside the chain of domain operations.
 
 
 ### Multiple time views
@@ -470,13 +597,12 @@ conn.testDbSince(t)
 conn.testWith(txData)
 ```
 
-This make it possible to run arbitrarily complex test scenarios directly against our production data at any point in time without having to do any manual setup or tear-down of mock domain/database objects!
+This make it possible to run arbitrarily complex test scenarios directly against our production data at any point in time without having to do 
+any manual setup or tear-down of mock domain/database objects!
 
 
 
-
-
-## [☝](#top) Entity selection retrieval and manipulation {#14}
+## [☝︎](#top) Entity selection retrieval and manipulation {#14}
 _2016-10-19 [v0.10.0](https://github.com/scalamolecule/molecule/releases/tag/v0.10.0)_
 
 Molecule now allows retrieving attribute values of selected entities:
@@ -502,15 +628,19 @@ Ns(a, b).int(4).update
 Ns.str.int.get.sorted === List(("a", 4), ("b", 4), ("c", 3))
 ```
 
-See more examples [here](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/EntitySelection.scala) and [here](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/manipulation/UpdateMultipleEntities.scala).
+See more examples 
+[here](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/attr/EntitySelection.scala) and 
+[here](https://github.com/scalamolecule/molecule/blob/master/coretest/src/test/scala/molecule/manipulation/UpdateMultipleEntities.scala).
 
-Datomic encourages multi-step queries where you find some entities ids with one query and then pass those ids on as input to the following query. Since we don't have the cost of round-trips to a database server, this is a powerful technique that Molecule now supports with ease.
+Datomic encourages multi-step queries where you find some entities ids with one query and then pass those ids on as input 
+to the following query. Since we don't have the cost of round-trips to a database server, this is a powerful technique 
+that Molecule now supports with ease.
 
 
 
 
 
-## [☝](#top) Bidirectional references {#13}
+## [☝︎](#top) Bidirectional references {#13}
 _2016-07-24 [v0.9.0](https://github.com/scalamolecule/molecule/releases/tag/v0.9.0)_
 
 Major upgrade of Molecule introducing _Bidirectional_ references. 
@@ -539,14 +669,16 @@ Instead we would have to think backwards to get the back reference
  Person.name.Friends.name_("Ben").get === List("Ann")
 ```
 
-If we want to traverse deeper into a friendship graph we would have to query both forward and backward for each step in the graph which would quickly become a pain. With Molecules new bidirectional references we can uniformly query from both ends:
+If we want to traverse deeper into a friendship graph we would have to query both forward and backward for each step in the graph 
+which would quickly become a pain. With Molecules new bidirectional references we can uniformly query from both ends:
 
 ``` scala
  Person.name_("Ann").Friends.name.get === List("Ben")
  Person.name_("Ben").Friends.name.get === List("Ann")
 ```
 
-Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidirectional%20refs/) for more information and the [Gremlin graph examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/).
+Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidirectional%20refs/) for more information and the 
+[Gremlin graph examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/).
 - This release also adds support for BigInts and BigDecimals. Only bytes is not supported now due to the limited 
   capabilities this type has in Datomic.
 - Input molecules can now also include nested data structures.
@@ -557,14 +689,18 @@ Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidire
 
 
 
-## [☝](#top) Composites & Tx meta data {#12}
+## [☝︎](#top) Composites & Tx meta data {#12}
 _2016-06-13 [v0.8.0](https://github.com/scalamolecule/molecule/releases/tag/v0.8.0)_
 
-[Composites](http://www.scalamolecule.org/manual/query/composites/) and [Transaction meta data](http://www.scalamolecule.org/manual/query/txMetaData/) are two new major functionalities added to Molecule.
+[Composites](http://www.scalamolecule.org/manual/query/composites/) and 
+[Transaction meta data](http://www.scalamolecule.org/manual/query/txMetaData/) are two new major functionalities added to Molecule.
 
-Merge up to 22 sub-molecules as a Composite. Composite inserts create entities with data of attributes type-checking against each sub-molecule. Sub-molecules don't need to be related. The created entity is what ties it all together which is a core feature of Datomic that sets it apart from table/join-thinking.
+Merge up to 22 sub-molecules as a Composite. Composite inserts create entities with data of attributes type-checking against 
+each sub-molecule. Sub-molecules don't need to be related. The created entity is what ties it all together which is a core 
+feature of Datomic that sets it apart from table/join-thinking.
 
-An obvious candidate for composites is cross-cutting data that could be applied to any entity of our domain - like Tags. No need anymore to litter all parts of your domain with refs to Tags. Keep your domain namespaces intrinsic and compose instead!
+An obvious candidate for composites is cross-cutting data that could be applied to any entity of our domain - like Tags. No need anymore 
+to litter all parts of your domain with refs to Tags. Keep your domain namespaces intrinsic and compose instead!
 
 Even transaction meta data can now be applied:
 
@@ -595,10 +731,11 @@ m(Article.name.author ~ Tag.weight.>=(4).tx_(MetaData.submitter_("Brenda Johnson
 
 
 
-## [☝](#top) sbt-molecule plugin code generation {#11}
+## [☝︎](#top) sbt-molecule plugin code generation {#11}
 _2016-06-04 [v0.7.0](https://github.com/scalamolecule/molecule/releases/tag/v0.7.0)_
 
-Previous fragile build system now standardized to use the new [sbt-molecule plugin](https://github.com/scalamolecule/sbt-molecule) to generate and package Molecule boilerplate code.
+Previous fragile build system now standardized to use the new [sbt-molecule plugin](https://github.com/scalamolecule/sbt-molecule) 
+to generate and package Molecule boilerplate code.
 
 Several updates to [scalamolecule.org](http://www.scalamolecule.org).
 
@@ -607,7 +744,7 @@ Several updates to [scalamolecule.org](http://www.scalamolecule.org).
 
 
 
-## [☝](#top) Various improvements and bug fixes {#10}
+## [☝︎](#top) Various improvements and bug fixes {#10}
 _2016-05-30 [v0.6.2](https://github.com/scalamolecule/molecule/releases/tag/v0.6.2)_
 
 - HList support dropped (was very incomplete anyway)
@@ -619,10 +756,11 @@ _2016-05-30 [v0.6.2](https://github.com/scalamolecule/molecule/releases/tag/v0.6
 
 
 
-## [☝](#top) Keyed attribute maps {#9}
+## [☝︎](#top) Keyed attribute maps {#9}
 _2016-04-25 [v0.6.1](https://github.com/scalamolecule/molecule/releases/tag/v0.6.1)_
 
-Each defined attribute map now adds an additional attribute with a "K" appended to the attribute name. This "Keyed attribute map" expects a key and will then return the single value type instead of a Map of key/values:
+Each defined attribute map now adds an additional attribute with a "K" appended to the attribute name. This "Keyed attribute map" expects 
+a key and will then return the single value type instead of a Map of key/values:
 
 ``` Scala
 // Normal attribute map returning maps of key/values
@@ -648,10 +786,11 @@ This makes it more convenient to get to the values directly instead of having to
 
 
 
-## [☝](#top) Map Attributes - Multilingual support {#8}
+## [☝︎](#top) Map Attributes - Multilingual support {#8}
 _2015-12-14 [v0.5.0](https://github.com/scalamolecule/molecule/releases/tag/v0.5.0)_
 
-Molecule now supports an easy way to handle multilingual values; say, names of greetings in different languages for various entities - all with one "Map Attribute" like `greetings`:
+Molecule now supports an easy way to handle multilingual values; say, names of greetings in different languages for various entities - all 
+with one "Map Attribute" like `greetings`:
 
 ``` Scala
 Ns.int.greetings insert List(
@@ -664,7 +803,8 @@ Ns.int.greetings insert List(
 
 Other types are supported too. So we could for instance have timezones as Float values for different countries etc.
 
-Each key is prepended to its value and saved as a cardinality many value ("en@Hi there") in Datomic. When we then retrieve the values, Molecule automatically splits the values into typed key/value pairs in a map so that we can conveniently continue to work with them in Scala:
+Each key is prepended to its value and saved as a cardinality many value ("en@Hi there") in Datomic. When we then retrieve the values, 
+Molecule automatically splits the values into typed key/value pairs in a map so that we can conveniently continue to work with them in Scala:
 
 ``` Scala
 Ns.int.greetings.get === List(
@@ -698,7 +838,7 @@ Ns.int.greetings("_" -> "He").get === List(
 
 
 
-## [☝](#top) Nested adjacent references {#7}
+## [☝︎](#top) Nested adjacent references {#7}
 _2015-11-14 [v0.4.3](https://github.com/scalamolecule/molecule/releases/tag/v0.4.3)_
 
 If we insert a nested data structure like this:
@@ -726,7 +866,7 @@ Resolution is recursive, so Molecule handles arbitrarily deep nested data struct
 
 
 
-## [☝](#top) Back references in nested inserts/gets {#6}
+## [☝︎](#top) Back references in nested inserts/gets {#6}
 _2015-11-13 [v0.4.2](https://github.com/scalamolecule/molecule/releases/tag/v0.4.2)_
 
 Now we can insert/get related values from multiple related namespaces in one go:
@@ -740,7 +880,8 @@ m(lit_Book.title.Author.name._Book.Reviewers * gen_Person.name).get === List(
 )
 ```
 
-From the `Book` namespace we reference first the `Author` namespace and then go back to the `Book` namespace again with the `_Book` back reference so that we can then reference the `Reviewers` namespace. Like multiple connected "arms" of a complex molecule.
+From the `Book` namespace we reference first the `Author` namespace and then go back to the `Book` namespace again with 
+the `_Book` back reference so that we can then reference the `Reviewers` namespace. Like multiple connected "arms" of a complex molecule.
 
 
 
@@ -748,10 +889,12 @@ From the `Book` namespace we reference first the `Author` namespace and then go 
 
 
 
-## [☝](#top) Differentiating between optional values in insert/get {#5}
+## [☝︎](#top) Differentiating between optional values in insert/get {#5}
 _2015-10-28 [v0.4.1](https://github.com/scalamolecule/molecule/releases/tag/v0.4.1)_
 
-Single optional values should be retrievable. But when inserting we want to avoid creating orphan referenced entities with no asserted attribute values. Example from [Relations](https://github.com/scalamolecule/molecule/blob/8e5c0437c245201f5e174cb407ae74cdbc654257/coretest/src/test/scala/molecule/Relations.scala#L196-L236) test:
+Single optional values should be retrievable. But when inserting we want to avoid creating orphan referenced entities with 
+no asserted attribute values. Example from 
+[Relations](https://github.com/scalamolecule/molecule/blob/8e5c0437c245201f5e174cb407ae74cdbc654257/coretest/src/test/scala/molecule/Relations.scala#L196-L236) test:
 
 ``` scala
 "No mandatory attributes after card-one ref" in new CoreSetup {
@@ -780,7 +923,7 @@ Single optional values should be retrievable. But when inserting we want to avoi
 
 
 
-## [☝](#top) Optional values (like Null) {#4}
+## [☝︎](#top) Optional values (like Null) {#4}
 _2015-10-25 [v0.4.0](https://github.com/scalamolecule/molecule/releases/tag/v0.4.0)_
 
 Molecule now supports optional values:
@@ -801,7 +944,8 @@ Person.firstName.middleName$.lastName insert List(
 )
 ```
 
-See more examples of even deeply nested optional values in the [OptionalValues](https://github.com/scalamolecule/molecule/blob/80765bfbae17657cd0fa0fa099a6ba22f41a179f/coretest/src/test/scala/molecule/OptionalValues.scala) tests.
+See more examples of even deeply nested optional values in the 
+[OptionalValues](https://github.com/scalamolecule/molecule/blob/80765bfbae17657cd0fa0fa099a6ba22f41a179f/coretest/src/test/scala/molecule/OptionalValues.scala) tests.
 
 
 
@@ -809,16 +953,19 @@ See more examples of even deeply nested optional values in the [OptionalValues](
 
 
 
-## [☝](#top) Nested data structures {#3}
+## [☝︎](#top) Nested data structures {#3}
 _2015-10-04 [v0.3.0](https://github.com/scalamolecule/molecule/releases/tag/v0.3.0)_
 
-[Products and Orders](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/ProductsAndOrders.scala) shows how Molecule can now retrieve nested data structures at up to 10 levels deep (more can be implemented if necessary). This means that you don't need to manually organize the flat output from Datomic into hierarchical data structures yourself when you query for one-many or many-many data. Molecule does it for you.
+[Products and Orders](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/ProductsAndOrders.scala) 
+shows how Molecule can now retrieve nested data structures at up to 10 levels deep (more can be implemented if necessary). This means 
+that you don't need to manually organize the flat output from Datomic into hierarchical data structures yourself when you query for 
+one-many or many-many data. Molecule does it for you.
 
 
 
 
 
-## [☝](#top) Implemented Day-Of-Datomic and MBrainz {#2}
+## [☝︎](#top) Implemented Day-Of-Datomic and MBrainz {#2}
 _2014-12-25 [v0.2.0](https://github.com/scalamolecule/molecule/releases/tag/v0.2.0)_
 
 - Nested molecules
@@ -829,6 +976,6 @@ _2014-12-25 [v0.2.0](https://github.com/scalamolecule/molecule/releases/tag/v0.2
 
 
 
-## [☝](#top) Initial commit - [Seattle tutorial](/resources/tutorials/seattle/) {#1}
+## [☝︎](#top) Initial commit - [Seattle tutorial](/resources/tutorials/seattle/) {#1}
 _2014-07-02 [v0.1.0](https://github.com/scalamolecule/molecule/releases/tag/v0.1.0)_
 
