@@ -290,7 +290,7 @@ disablePathToLower = true
     parent = "docs-generic"
     name = "Index"
     identifier = "docs-generic-Index"
-    url = "/api/molecule/generic/datom/index/index.html"
+    url = "/api/molecule/generic/index/index.html"
 [[menu.main]]
     parent = "docs-generic"
     name = "Schema"
@@ -300,7 +300,7 @@ disablePathToLower = true
     parent = "docs-generic"
     name = "Log"
     identifier = "docs-generic-Log"
-    url = "/api/molecule/generic/schema/Log.html"
+    url = "/api/molecule/generic/Log.html"
 
 
 [[menu.main]]

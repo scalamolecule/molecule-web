@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.16.1">
-      <change afterPath="$PROJECT_DIR$/content/manual/debug.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/debug/datalog.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/debug/debug-transactions.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/debug/err.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/generic.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/generic/datom.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/generic/indexes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/generic/log.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/manual/generic/schema.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/test.md" afterDir="false" />
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.17.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/_presentation/presentation.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_presentation/presentation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/_presentation/presentation1.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_presentation/presentation1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/about.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/boilerplate.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/aggregates.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/expressions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/mapped.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/mapped.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/modes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/modes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes/parameterized.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/getJson.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/getJson.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/insert.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/insert.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/retract.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/retract.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/save.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/save.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/update.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/entities.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/entities.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/quick-start/introduction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/relationships/composites.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/composites.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/relationships/self-join.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/relationships/self-join.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/schema/transaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema/transaction.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time/asof-since.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/asof-since.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time/history.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/history.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time/testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/testing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time/with.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/time/with.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-bundle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-bundle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/transactions/tx-meta-data.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/tutorials.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/tutorials/seattle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/videos.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/videos.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/resources/videos/2017-04-25_Marc_Grue.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploycommands.md" beforeDir="false" afterPath="$PROJECT_DIR$/deploycommands.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/_indexOLD.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/indexOLD.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/_presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_presentation/presentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/_presentation/presentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_presentation/presentation1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/_presentation/presentation1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/changelog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/changelog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/community/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/community/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/compare/datomic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/compare/datomic/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/compare/gremlin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/compare/gremlin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/compare/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/compare/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/compare/sql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/compare/sql/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/compare/sql/slick/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/compare/sql/slick/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/credits/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/credits/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dev/boilerplate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dev/boilerplate/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dev/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dev/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dev/transformation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/dev/transformation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/aggregates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/aggregates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/basics/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/basics/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/expressions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/expressions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/mapped/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/mapped/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/modes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/modes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/attributes/parameterized/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/attributes/parameterized/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/get/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/get/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/getjson/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/getjson/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/insert/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/insert/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/retract/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/retract/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/save/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/save/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/crud/update/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/crud/update/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/debug/datalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/debug/datalog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/debug/debug-transactions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/debug/debug-transactions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/debug/err/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/debug/err/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/debug/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/debug/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/entities/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/entities/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/generic/datom/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/generic/datom/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/generic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/generic/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/generic/indexes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/generic/indexes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/generic/log/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/generic/log/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/generic/schema/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/generic/schema/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/quick-start/introduction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/quick-start/introduction/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/bidirectional/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/bidirectional/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/card-many/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/card-many/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/card-one/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/card-one/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/composites/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/composites/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/relationships/self-join/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/relationships/self-join/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/schema/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/schema/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/schema/transaction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/schema/transaction/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/setup/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/setup/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/time/asof-since/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/time/asof-since/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/time/history/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/time/history/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/time/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/time/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/time/testing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/time/testing/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/time/with/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/time/with/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/transactions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/transactions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/transactions/tx-bundle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/transactions/tx-bundle/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/transactions/tx-functions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/transactions/tx-functions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manual/transactions/tx-meta-data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/manual/transactions/tx-meta-data/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/tutorials/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/tutorials/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/tutorials/seattle/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/tutorials/seattle/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/videos/2017-04-25_marc_grue/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/videos/2017-04-25_marc_grue/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/resources/videos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/resources/videos/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,12 +118,39 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/deploycommands.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
                   <first_editor relative-caret-position="260">
                     <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="403">
+                    <caret line="31" selection-start-line="31" selection-end-line="31" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="927">
+                    <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+                    <folding>
+                      <element signature="e#0#27#0" expanded="true" />
+                    </folding>
                   </first_editor>
                   <second_editor />
                 </state>
@@ -171,11 +210,20 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/config.toml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="864">
+                  <caret line="302" column="33" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/content/manual/generic/datom.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
-                  <first_editor relative-caret-position="418">
-                    <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+                  <first_editor relative-caret-position="431">
+                    <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -188,7 +236,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rad</find>
       <find>footer</find>
       <find>foot</find>
       <find>blockq</find>
@@ -218,6 +265,7 @@
       <find>☝</find>
       <find>Index</find>
       <find>fulltext</find>
+      <find>0.7</find>
     </findStrings>
     <replaceStrings>
       <replace>docs</replace>
@@ -292,7 +340,6 @@
         <option value="$PROJECT_DIR$/content/manual/crud/get.md" />
         <option value="$PROJECT_DIR$/layouts/index.html" />
         <option value="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic2.html" />
-        <option value="$PROJECT_DIR$/content/manual/setup.md" />
         <option value="$PROJECT_DIR$/content/manual/schema.md" />
         <option value="$PROJECT_DIR$/deploy.sh" />
         <option value="$PROJECT_DIR$/content/about.md" />
@@ -300,7 +347,6 @@
         <option value="$PROJECT_DIR$/content/manual/time/with.md" />
         <option value="$PROJECT_DIR$/content/manual/time.md" />
         <option value="$PROJECT_DIR$/resources/test.md" />
-        <option value="$PROJECT_DIR$/config.toml" />
         <option value="$PROJECT_DIR$/content/manual/generic/index.md" />
         <option value="$PROJECT_DIR$/content/manual/time/testing.md" />
         <option value="$PROJECT_DIR$/content/manual/debug/show.md" />
@@ -321,6 +367,8 @@
         <option value="$PROJECT_DIR$/content/changelog.md" />
         <option value="$PROJECT_DIR$/content/manual/generic/indexes.md" />
         <option value="$PROJECT_DIR$/deploycommands.md" />
+        <option value="$PROJECT_DIR$/config.toml" />
+        <option value="$PROJECT_DIR$/content/manual/setup.md" />
       </list>
     </option>
   </component>
@@ -876,7 +924,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543776399894</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0.17.0">
+      <created>1547740590276</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547740590276</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -953,7 +1008,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Updating with latest changes" />
     <MESSAGE value="v0.4.0" />
     <MESSAGE value="v0.4.1" />
     <MESSAGE value="v0.4.2" />
@@ -978,7 +1032,8 @@
     <MESSAGE value="0.15.1" />
     <MESSAGE value="0.16.0" />
     <MESSAGE value="0.16.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.16.1" />
+    <MESSAGE value="0.17.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.17.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/favicon.jpg" />
@@ -987,19 +1042,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/img/dirs3.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-102">
-            <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-            <folding>
-              <element signature="e#0#27#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/img/faviconZ.png">
       <provider selected="true" editor-type-id="images" />
@@ -1202,13 +1244,6 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3627">
-          <caret line="279" column="19" selection-start-line="279" selection-start-column="19" selection-end-line="279" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1425,26 +1460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1430">
-            <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/manual/generic/datom.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="418">
-            <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/changelog.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1467,6 +1482,46 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/datom.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="431">
+            <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="302" column="33" selection-start-line="302" selection-start-column="33" selection-end-line="302" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="403">
+            <caret line="31" selection-start-line="31" selection-end-line="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="927">
+            <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+            <folding>
+              <element signature="e#0#27#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
