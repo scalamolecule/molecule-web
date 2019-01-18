@@ -1,0 +1,986 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Molecule 0.17.1 - molecule.generic.schema</title>
+          <meta name="description" content="Molecule 0.17.1 - molecule.generic.schema" />
+          <meta name="keywords" content="Molecule 0.17.1 molecule.generic.schema" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../../lib/index.js"></script>
+      <script type="text/javascript" src="../../../index.js"></script>
+      <script type="text/javascript" src="../../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../../index.html"><span class="name">root</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.molecule" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="molecule"></a><a id="molecule:molecule"></a>
+      <span class="permalink">
+      <a href="index.html#molecule" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Molecule library - a Scala meta-DSL for the Datomic database." href="../../index.html"><span class="name">molecule</span></a>
+      </span>
+      
+      <p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../../api/index.html" class="extype" name="molecule.api">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule API.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macro</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="molecule.generic" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generic"></a><a id="generic:generic"></a>
+      <span class="permalink">
+      <a href="../molecule/index.html#generic" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Interfaces to get generic information about data and schema." href="../index.html"><span class="name">generic</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Interfaces to get generic information about data and schema.</p><div class="fullcomment"><div class="comment cmt"><p>Interfaces to get generic information about data and schema.</p><ul><li><a href="../datom/index.html" class="extype" name="molecule.generic.datom">Datom</a> - Generic Datom attributes in molecules</li><li><a href="../Log.html" class="extype" name="molecule.generic.Log">Log</a> - Datoms sorted by transaction/time</li><li><a href="../index/EAVT.html" class="extype" name="molecule.generic.index.EAVT">EAVT</a> - Datoms sorted by Entity-Attribute-Value-Transaction</li><li><a href="../index/AVET.html" class="extype" name="molecule.generic.index.AVET">AVET</a> - Datoms sorted by Attribute-Value-Entity-Transaction</li><li><a href="../index/AEVT.html" class="extype" name="molecule.generic.index.AEVT">AEVT</a> - Datoms sorted by Attribute-Entity-Value-Transaction</li><li><a href="../index/VAET.html" class="extype" name="molecule.generic.index.VAET">VAET</a> - &quot;Reverse index&quot; for reverse lookup of ref types</li><li><a href="" class="extype" name="molecule.generic.schema">Schema</a> - Meta information about the current database schema.
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="molecule">molecule</a></dd></dl></div>
+    </li><li name="molecule.generic.datom" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="datom"></a><a id="datom:datom"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#datom" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Generic Datom attribute interfaces of all arities." href="../datom/index.html"><span class="name">datom</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Generic Datom attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Datom attribute interfaces of all arities.</p><p>&quot;Generic attributes&quot; are special pre-defined attributes that can
+be combined with custom attributes in molecules to return
+meta data:</p><pre><span class="cmt">// Get id of Ben entity with `e`</span>
+Person.e.name.get.head === (benEntityId, <span class="lit">"Ben"</span>)
+
+<span class="cmt">// When was Ben's age updated? Using `txInstant`</span>
+Person(benEntityId).age.txInstant.get.head === (<span class="num">42</span>, &lt;April <span class="num">4</span>, <span class="num">2019</span>&gt;) <span class="cmt">// (Date)</span>
+
+<span class="cmt">// With a history db we can access the transaction number `t` and</span>
+<span class="cmt">// assertion/retraction statusses with `op`</span>
+Person(benEntityId).age.t.op.getHistory === <span class="std">List</span>(
+  (<span class="num">41</span>, t1, <span class="kw">true</span>),  <span class="cmt">// age 41 asserted in transaction t1</span>
+  (<span class="num">41</span>, t2, <span class="kw">false</span>), <span class="cmt">// age 41 retracted in transaction t2</span>
+  (<span class="num">42</span>, t2, <span class="kw">true</span>)   <span class="cmt">// age 42 asserted in transaction t2</span>
+)</pre><p>Available generic attributes:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.generic">generic</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Datom.scala#L1" target="_blank">Tests</a>
+    for more generic attribute query examples.</p></span></dd></dl></div>
+    </li><li name="molecule.generic.index" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="index"></a><a id="index:index"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#index" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Datomic Index APIs in Molecule." href="../index/index.html"><span class="name">index</span></a>
+      </span>
+      
+      <p class="shortcomment cmt">Datomic Index APIs in Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Datomic Index APIs in Molecule.
+<br><br>
+Datomic maintains four indexes that contain ordered sets of datoms.
+Each of these indexes is named based on the sort order used:</p><ul><li><a href="../index/EAVT.html" class="extype" name="molecule.generic.index.EAVT">EAVT</a> - Datoms sorted by Entity-Attribute-Value-Transaction</li><li><a href="../index/AVET.html" class="extype" name="molecule.generic.index.AVET">AVET</a> - Datoms sorted by Attribute-Value-Entity-Transaction</li><li><a href="../index/AEVT.html" class="extype" name="molecule.generic.index.AEVT">AEVT</a> - Datoms sorted by Attribute-Entity-Value-Transaction</li><li><a href="../index/VAET.html" class="extype" name="molecule.generic.index.VAET">VAET</a> - &quot;Reverse index&quot; for reverse lookup of ref types</li></ul><p>Create an Index molecule by instantiating an Index object
+with one or more arguments in the order of the Index's elements. Datoms are
+returned as tuples of data depending of which generic attributes you add to the
+Index molecule:</p><pre><span class="cmt">// Create EAVT Index molecule with 1 entity id argument</span>
+EAVT(e1).e.a.v.t.get === <span class="std">List</span>(
+  (e1, <span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>, t1),
+  (e1, <span class="lit">":person/age"</span>, <span class="num">42</span>, t2),
+  (e1, <span class="lit">":golf/score"</span>, <span class="num">5.7</span>, t2)
+)
+
+<span class="cmt">// Maybe we are only interested in the attribute/value pairs:</span>
+EAVT(e1).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">":person/age"</span>, <span class="num">42</span>),
+  (<span class="lit">":golf/score"</span>, <span class="num">5.7</span>)
+)
+
+<span class="cmt">// Two arguments to narrow the search</span>
+EAVT(e1, <span class="lit">":person/age"</span>).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":person/age"</span>, <span class="num">42</span>)
+)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
+      So omitting arguments constructing the Index object (like <code>EAVT.e.a.v.t.get</code>)
+      will throw an exception.<br>
+      Please use Datomics API if you need to return the whole database Index:<br>
+      <code>conn.db.datoms(datomic.Database.EAVT)</code></p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Index.scala#L1" target="_blank">Tests</a>
+    for more Index query examples.</p></span></dd></dl></div>
+    </li><li name="molecule.generic.schema" visbl="pub" class="indented3 current" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="schema"></a><a id="schema:schema"></a>
+      <span class="permalink">
+      <a href="../../molecule/generic/index.html#schema" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">schema</span>
+      </span>
+      
+      <p class="shortcomment cmt">Generic Schema attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Schema attribute interfaces of all arities.
+<br><br>
+The generic Schema interface provides attributes to build molecules that
+query the Schema structure of the current database.</p><pre><span class="cmt">// List of attribute entity ids</span>
+<span class="kw">val</span> attrIds: <span class="std">Seq</span>[<span class="std">Long</span>] = Schema.id.get
+
+<span class="cmt">// Attribute name elements</span>
+Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  <span class="cmt">// etc..</span>
+)
+
+<span class="cmt">// Datomic type and cardinality of attributes</span>
+Schema.a.tpe.card.get === <span class="std">List</span> (
+  (<span class="lit">":sales_customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+)
+
+<span class="cmt">// Optional docs and attribute options</span>
+<span class="cmt">// These can be retrieved as mandatory or optional values</span>
+Schema.a
+      .index
+      .doc$
+      .unique$
+      .fulltext$
+      .isComponent$
+      .noHistory$
+      .get === <span class="std">List</span>(
+  (<span class="lit">":sales_customer/name"</span>,
+    <span class="kw">true</span>,            <span class="cmt">// indexed</span>
+    <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),      <span class="cmt">// Fulltext search set so that we can search for names</span>
+    <span class="std">None</span>,            <span class="cmt">// Not a component</span>
+    <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+  (<span class="lit">":accounting_invoice/invoiceLine"</span>,
+    <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
+    <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
+    <span class="std">None</span>,                   <span class="cmt">// Fulltext search not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),             <span class="cmt">// Invoice is a component - owns invoice lines</span>
+    <span class="std">None</span>                    <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+)
+
+<span class="cmt">// Defined enum values</span>
+Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
+  <span class="lit">":person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+)
+
+<span class="cmt">// Schema transaction times</span>
+Schema.t.tx.txInstant.get === <span class="std">List</span>(
+  (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
+  (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
+)</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"country"</span>, <span class="lit">"region"</span>, etc...)
+
+<span class="cmt">// Attributes in the "Person" namespace</span>
+Schema.ns_(<span class="lit">"person"</span>).a.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+
+<span class="cmt">// How many enum attributes?</span>
+Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related
+      to the current database are transparently filtered out from all Schema queries.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/SchemaTest.scala#L1" target="_blank">Tests</a>
+    for more Schema query examples.</p></span></dd></dl></div>
+    </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="GenericSchema.html" title="Container for Schema object."></a>
+                        <a href="GenericSchema.html" title="Container for Schema object.">GenericSchema</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema.html" title="Base Schema trait with attribute types shared by all arity interfaces."></a>
+                        <a href="Schema.html" title="Base Schema trait with attribute types shared by all arity interfaces.">Schema</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_0.html" title="Schema interface to add first Schema attribute"></a>
+                        <a href="Schema_0.html" title="Schema interface to add first Schema attribute">Schema_0</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_1.html" title="Schema interface to add second Schema attribute"></a>
+                        <a href="Schema_1.html" title="Schema interface to add second Schema attribute">Schema_1</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_10.html" title=""></a>
+                        <a href="Schema_10.html" title="">Schema_10</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_11.html" title=""></a>
+                        <a href="Schema_11.html" title="">Schema_11</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_12.html" title=""></a>
+                        <a href="Schema_12.html" title="">Schema_12</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_13.html" title=""></a>
+                        <a href="Schema_13.html" title="">Schema_13</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_14.html" title=""></a>
+                        <a href="Schema_14.html" title="">Schema_14</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_15.html" title=""></a>
+                        <a href="Schema_15.html" title="">Schema_15</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_16.html" title=""></a>
+                        <a href="Schema_16.html" title="">Schema_16</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_17.html" title=""></a>
+                        <a href="Schema_17.html" title="">Schema_17</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_18.html" title=""></a>
+                        <a href="Schema_18.html" title="">Schema_18</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_19.html" title=""></a>
+                        <a href="Schema_19.html" title="">Schema_19</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_2.html" title=""></a>
+                        <a href="Schema_2.html" title="">Schema_2</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_20.html" title=""></a>
+                        <a href="Schema_20.html" title="">Schema_20</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_21.html" title=""></a>
+                        <a href="Schema_21.html" title="">Schema_21</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_22.html" title=""></a>
+                        <a href="Schema_22.html" title="">Schema_22</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_3.html" title=""></a>
+                        <a href="Schema_3.html" title="">Schema_3</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_4.html" title=""></a>
+                        <a href="Schema_4.html" title="">Schema_4</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_5.html" title=""></a>
+                        <a href="Schema_5.html" title="">Schema_5</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_6.html" title=""></a>
+                        <a href="Schema_6.html" title="">Schema_6</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_7.html" title=""></a>
+                        <a href="Schema_7.html" title="">Schema_7</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_8.html" title=""></a>
+                        <a href="Schema_8.html" title="">Schema_8</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="Schema_9.html" title=""></a>
+                        <a href="Schema_9.html" title="">Schema_9</a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="package value">
+      <div id="definition">
+        <div class="big-circle package">p</div>
+        <p id="owner"><a href="../../index.html" class="extype" name="molecule">molecule</a>.<a href="../index.html" class="extype" name="molecule.generic">generic</a></p>
+        <h1>schema<span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">schema</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Generic Schema attribute interfaces of all arities.
+<br><br>
+The generic Schema interface provides attributes to build molecules that
+query the Schema structure of the current database.</p><pre><span class="cmt">// List of attribute entity ids</span>
+<span class="kw">val</span> attrIds: <span class="std">Seq</span>[<span class="std">Long</span>] = Schema.id.get
+
+<span class="cmt">// Attribute name elements</span>
+Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  <span class="cmt">// etc..</span>
+)
+
+<span class="cmt">// Datomic type and cardinality of attributes</span>
+Schema.a.tpe.card.get === <span class="std">List</span> (
+  (<span class="lit">":sales_customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+)
+
+<span class="cmt">// Optional docs and attribute options</span>
+<span class="cmt">// These can be retrieved as mandatory or optional values</span>
+Schema.a
+      .index
+      .doc$
+      .unique$
+      .fulltext$
+      .isComponent$
+      .noHistory$
+      .get === <span class="std">List</span>(
+  (<span class="lit">":sales_customer/name"</span>,
+    <span class="kw">true</span>,            <span class="cmt">// indexed</span>
+    <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),      <span class="cmt">// Fulltext search set so that we can search for names</span>
+    <span class="std">None</span>,            <span class="cmt">// Not a component</span>
+    <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+  (<span class="lit">":accounting_invoice/invoiceLine"</span>,
+    <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
+    <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
+    <span class="std">None</span>,                   <span class="cmt">// Fulltext search not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),             <span class="cmt">// Invoice is a component - owns invoice lines</span>
+    <span class="std">None</span>                    <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+)
+
+<span class="cmt">// Defined enum values</span>
+Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
+  <span class="lit">":person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+)
+
+<span class="cmt">// Schema transaction times</span>
+Schema.t.tx.txInstant.get === <span class="std">List</span>(
+  (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
+  (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
+)</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"country"</span>, <span class="lit">"region"</span>, etc...)
+
+<span class="cmt">// Attributes in the "Person" namespace</span>
+Schema.ns_(<span class="lit">"person"</span>).a.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+
+<span class="cmt">// How many enum attributes?</span>
+Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/generic/schema/package.scala#L1" target="_blank">package.scala</a></dd><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related
+      to the current database are transparently filtered out from all Schema queries.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/SchemaTest.scala#L1" target="_blank">Tests</a>
+    for more Schema query examples.</p></span></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 4796.00 96.00" height="96pt" width="4796pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 92)" class="graph" id="graph0"><polygon points="-4,4 -4,-92 4792,-92 4792,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="molecule.generic.schema.Schema_9" xlink:href="Schema_9.html#inheritance-diagram"><path d="M159.333,-26C159.333,-26 8.66667,-26 8.66667,-26 4.33333,-26 0,-21.6667 0,-17.3333 0,-17.3333 0,-8.66667 0,-8.66667 0,-4.33333 4.33333,-0 8.66667,-0 8.66667,-0 159.333,-0 159.333,-0 163.667,-0 168,-4.33333 168,-8.66667 168,-8.66667 168,-17.3333 168,-17.3333 168,-21.6667 163.667,-26 159.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.8691" text-anchor="start">Schema_9[A, B, C, D, E, F, G, H, I]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.generic.schema.Schema_8" xlink:href="Schema_8.html#inheritance-diagram"><path d="M338.583,-26C338.583,-26 195.417,-26 195.417,-26 191.083,-26 186.75,-21.6667 186.75,-17.3333 186.75,-17.3333 186.75,-8.66667 186.75,-8.66667 186.75,-4.33333 191.083,-0 195.417,-0 195.417,-0 338.583,-0 338.583,-0 342.917,-0 347.25,-4.33333 347.25,-8.66667 347.25,-8.66667 347.25,-17.3333 347.25,-17.3333 347.25,-21.6667 342.917,-26 338.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="199" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="218.703" text-anchor="start">Schema_8[A, B, C, D, E, F, G, H]</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.generic.schema.Schema_7" xlink:href="Schema_7.html#inheritance-diagram"><path d="M507.583,-26C507.583,-26 374.417,-26 374.417,-26 370.083,-26 365.75,-21.6667 365.75,-17.3333 365.75,-17.3333 365.75,-8.66667 365.75,-8.66667 365.75,-4.33333 370.083,-0 374.417,-0 374.417,-0 507.583,-0 507.583,-0 511.917,-0 516.25,-4.33333 516.25,-8.66667 516.25,-8.66667 516.25,-17.3333 516.25,-17.3333 516.25,-21.6667 511.917,-26 507.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="378" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="397.814" text-anchor="start">Schema_7[A, B, C, D, E, F, G]</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="molecule.generic.schema.Schema_6" xlink:href="Schema_6.html#inheritance-diagram"><path d="M666.583,-26C666.583,-26 543.417,-26 543.417,-26 539.083,-26 534.75,-21.6667 534.75,-17.3333 534.75,-17.3333 534.75,-8.66667 534.75,-8.66667 534.75,-4.33333 539.083,-0 543.417,-0 543.417,-0 666.583,-0 666.583,-0 670.917,-0 675.25,-4.33333 675.25,-8.66667 675.25,-8.66667 675.25,-17.3333 675.25,-17.3333 675.25,-21.6667 670.917,-26 666.583,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="547" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="566.705" text-anchor="start">Schema_6[A, B, C, D, E, F]</text></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="molecule.generic.schema.Schema_5" xlink:href="Schema_5.html#inheritance-diagram"><path d="M817.333,-26C817.333,-26 702.667,-26 702.667,-26 698.333,-26 694,-21.6667 694,-17.3333 694,-17.3333 694,-8.66667 694,-8.66667 694,-4.33333 698.333,-0 702.667,-0 702.667,-0 817.333,-0 817.333,-0 821.667,-0 826,-4.33333 826,-8.66667 826,-8.66667 826,-17.3333 826,-17.3333 826,-21.6667 821.667,-26 817.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="706" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="725.871" text-anchor="start">Schema_5[A, B, C, D, E]</text></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.generic.schema.Schema_4" xlink:href="Schema_4.html#inheritance-diagram"><path d="M957.333,-26C957.333,-26 852.667,-26 852.667,-26 848.333,-26 844,-21.6667 844,-17.3333 844,-17.3333 844,-8.66667 844,-8.66667 844,-4.33333 848.333,-0 852.667,-0 852.667,-0 957.333,-0 957.333,-0 961.667,-0 966,-4.33333 966,-8.66667 966,-8.66667 966,-17.3333 966,-17.3333 966,-21.6667 961.667,-26 957.333,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="856" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="875.762" text-anchor="start">Schema_4[A, B, C, D]</text></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="molecule.generic.schema.Schema_3" xlink:href="Schema_3.html#inheritance-diagram"><path d="M1087.33,-26C1087.33,-26 992.667,-26 992.667,-26 988.333,-26 984,-21.6667 984,-17.3333 984,-17.3333 984,-8.66667 984,-8.66667 984,-4.33333 988.333,-0 992.667,-0 992.667,-0 1087.33,-0 1087.33,-0 1091.67,-0 1096,-4.33333 1096,-8.66667 1096,-8.66667 1096,-17.3333 1096,-17.3333 1096,-21.6667 1091.67,-26 1087.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="996" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1015.87" text-anchor="start">Schema_3[A, B, C]</text></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="molecule.generic.schema.Schema_22" xlink:href="Schema_22.html#inheritance-diagram"><path d="M1404.58,-26C1404.58,-26 1123.42,-26 1123.42,-26 1119.08,-26 1114.75,-21.6667 1114.75,-17.3333 1114.75,-17.3333 1114.75,-8.66667 1114.75,-8.66667 1114.75,-4.33333 1119.08,-0 1123.42,-0 1123.42,-0 1404.58,-0 1404.58,-0 1408.92,-0 1413.25,-4.33333 1413.25,-8.66667 1413.25,-8.66667 1413.25,-17.3333 1413.25,-17.3333 1413.25,-21.6667 1408.92,-26 1404.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="1127" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1146.72" text-anchor="start">Schema_22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V]</text></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="molecule.generic.schema.Schema_21" xlink:href="Schema_21.html#inheritance-diagram"><path d="M1711.58,-26C1711.58,-26 1440.42,-26 1440.42,-26 1436.08,-26 1431.75,-21.6667 1431.75,-17.3333 1431.75,-17.3333 1431.75,-8.66667 1431.75,-8.66667 1431.75,-4.33333 1436.08,-0 1440.42,-0 1440.42,-0 1711.58,-0 1711.58,-0 1715.92,-0 1720.25,-4.33333 1720.25,-8.66667 1720.25,-8.66667 1720.25,-17.3333 1720.25,-17.3333 1720.25,-21.6667 1715.92,-26 1711.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="1444" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1463.61" text-anchor="start">Schema_21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U]</text></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="molecule.generic.schema.Schema_20" xlink:href="Schema_20.html#inheritance-diagram"><path d="M2010.33,-26C2010.33,-26 1747.67,-26 1747.67,-26 1743.33,-26 1739,-21.6667 1739,-17.3333 1739,-17.3333 1739,-8.66667 1739,-8.66667 1739,-4.33333 1743.33,-0 1747.67,-0 1747.67,-0 2010.33,-0 2010.33,-0 2014.67,-0 2019,-4.33333 2019,-8.66667 2019,-8.66667 2019,-17.3333 2019,-17.3333 2019,-21.6667 2014.67,-26 2010.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="1751" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="1770.78" text-anchor="start">Schema_20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T]</text></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="molecule.generic.schema.Schema_2" xlink:href="Schema_2.html#inheritance-diagram"><path d="M2130.33,-26C2130.33,-26 2045.67,-26 2045.67,-26 2041.33,-26 2037,-21.6667 2037,-17.3333 2037,-17.3333 2037,-8.66667 2037,-8.66667 2037,-4.33333 2041.33,-0 2045.67,-0 2045.67,-0 2130.33,-0 2130.33,-0 2134.67,-0 2139,-4.33333 2139,-8.66667 2139,-8.66667 2139,-17.3333 2139,-17.3333 2139,-21.6667 2134.67,-26 2130.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="2049" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="2068.98" text-anchor="start">Schema_2[A, B]</text></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="molecule.generic.schema.Schema_19" xlink:href="Schema_19.html#inheritance-diagram"><path d="M2419.58,-26C2419.58,-26 2166.42,-26 2166.42,-26 2162.08,-26 2157.75,-21.6667 2157.75,-17.3333 2157.75,-17.3333 2157.75,-8.66667 2157.75,-8.66667 2157.75,-4.33333 2162.08,-0 2166.42,-0 2166.42,-0 2419.58,-0 2419.58,-0 2423.92,-0 2428.25,-4.33333 2428.25,-8.66667 2428.25,-8.66667 2428.25,-17.3333 2428.25,-17.3333 2428.25,-21.6667 2423.92,-26 2419.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="2170" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="2189.87" text-anchor="start">Schema_19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S]</text></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="molecule.generic.schema.Schema_18" xlink:href="Schema_18.html#inheritance-diagram"><path d="M2698.58,-26C2698.58,-26 2455.42,-26 2455.42,-26 2451.08,-26 2446.75,-21.6667 2446.75,-17.3333 2446.75,-17.3333 2446.75,-8.66667 2446.75,-8.66667 2446.75,-4.33333 2451.08,-0 2455.42,-0 2455.42,-0 2698.58,-0 2698.58,-0 2702.92,-0 2707.25,-4.33333 2707.25,-8.66667 2707.25,-8.66667 2707.25,-17.3333 2707.25,-17.3333 2707.25,-21.6667 2702.92,-26 2698.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="2459" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="2478.76" text-anchor="start">Schema_18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R]</text></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="molecule.generic.schema.Schema_17" xlink:href="Schema_17.html#inheritance-diagram"><path d="M2967.58,-26C2967.58,-26 2734.42,-26 2734.42,-26 2730.08,-26 2725.75,-21.6667 2725.75,-17.3333 2725.75,-17.3333 2725.75,-8.66667 2725.75,-8.66667 2725.75,-4.33333 2730.08,-0 2734.42,-0 2734.42,-0 2967.58,-0 2967.58,-0 2971.92,-0 2976.25,-4.33333 2976.25,-8.66667 2976.25,-8.66667 2976.25,-17.3333 2976.25,-17.3333 2976.25,-21.6667 2971.92,-26 2967.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="2738" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="2757.88" text-anchor="start">Schema_17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q]</text></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="molecule.generic.schema.Schema_16" xlink:href="Schema_16.html#inheritance-diagram"><path d="M3226.58,-26C3226.58,-26 3003.42,-26 3003.42,-26 2999.08,-26 2994.75,-21.6667 2994.75,-17.3333 2994.75,-17.3333 2994.75,-8.66667 2994.75,-8.66667 2994.75,-4.33333 2999.08,-0 3003.42,-0 3003.42,-0 3226.58,-0 3226.58,-0 3230.92,-0 3235.25,-4.33333 3235.25,-8.66667 3235.25,-8.66667 3235.25,-17.3333 3235.25,-17.3333 3235.25,-21.6667 3230.92,-26 3226.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="3007" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="3026.69" text-anchor="start">Schema_16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]</text></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="molecule.generic.schema.Schema_15" xlink:href="Schema_15.html#inheritance-diagram"><path d="M3475.58,-26C3475.58,-26 3262.42,-26 3262.42,-26 3258.08,-26 3253.75,-21.6667 3253.75,-17.3333 3253.75,-17.3333 3253.75,-8.66667 3253.75,-8.66667 3253.75,-4.33333 3258.08,-0 3262.42,-0 3262.42,-0 3475.58,-0 3475.58,-0 3479.92,-0 3484.25,-4.33333 3484.25,-8.66667 3484.25,-8.66667 3484.25,-17.3333 3484.25,-17.3333 3484.25,-21.6667 3479.92,-26 3475.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="3266" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="3285.58" text-anchor="start">Schema_15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]</text></a></g></g><!-- node16 --><g class="node trait" id="graph1_16"><g id="a_trait|graph1_16"><a xlink:title="molecule.generic.schema.Schema_14" xlink:href="Schema_14.html#inheritance-diagram"><path d="M3714.58,-26C3714.58,-26 3511.42,-26 3511.42,-26 3507.08,-26 3502.75,-21.6667 3502.75,-17.3333 3502.75,-17.3333 3502.75,-8.66667 3502.75,-8.66667 3502.75,-4.33333 3507.08,-0 3511.42,-0 3511.42,-0 3714.58,-0 3714.58,-0 3718.92,-0 3723.25,-4.33333 3723.25,-8.66667 3723.25,-8.66667 3723.25,-17.3333 3723.25,-17.3333 3723.25,-21.6667 3718.92,-26 3714.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="3515" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="3534.92" text-anchor="start">Schema_14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]</text></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="molecule.generic.schema.Schema_13" xlink:href="Schema_13.html#inheritance-diagram"><path d="M3943.33,-26C3943.33,-26 3750.67,-26 3750.67,-26 3746.33,-26 3742,-21.6667 3742,-17.3333 3742,-17.3333 3742,-8.66667 3742,-8.66667 3742,-4.33333 3746.33,-0 3750.67,-0 3750.67,-0 3943.33,-0 3943.33,-0 3947.67,-0 3952,-4.33333 3952,-8.66667 3952,-8.66667 3952,-17.3333 3952,-17.3333 3952,-21.6667 3947.67,-26 3943.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="3754" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="3773.53" text-anchor="start">Schema_13[A, B, C, D, E, F, G, H, I, J, K, L, M]</text></a></g></g><!-- node18 --><g class="node trait" id="graph1_18"><g id="a_trait|graph1_18"><a xlink:title="molecule.generic.schema.Schema_12" xlink:href="Schema_12.html#inheritance-diagram"><path d="M4160.58,-26C4160.58,-26 3979.42,-26 3979.42,-26 3975.08,-26 3970.75,-21.6667 3970.75,-17.3333 3970.75,-17.3333 3970.75,-8.66667 3970.75,-8.66667 3970.75,-4.33333 3975.08,-0 3979.42,-0 3979.42,-0 4160.58,-0 4160.58,-0 4164.92,-0 4169.25,-4.33333 4169.25,-8.66667 4169.25,-8.66667 4169.25,-17.3333 4169.25,-17.3333 4169.25,-21.6667 4164.92,-26 4160.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="3983" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="4002.58" text-anchor="start">Schema_12[A, B, C, D, E, F, G, H, I, J, K, L]</text></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="molecule.generic.schema.Schema_11" xlink:href="Schema_11.html#inheritance-diagram"><path d="M4369.33,-26C4369.33,-26 4196.67,-26 4196.67,-26 4192.33,-26 4188,-21.6667 4188,-17.3333 4188,-17.3333 4188,-8.66667 4188,-8.66667 4188,-4.33333 4192.33,-0 4196.67,-0 4196.67,-0 4369.33,-0 4369.33,-0 4373.67,-0 4378,-4.33333 4378,-8.66667 4378,-8.66667 4378,-17.3333 4378,-17.3333 4378,-21.6667 4373.67,-26 4369.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="4200" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="4219.83" text-anchor="start">Schema_11[A, B, C, D, E, F, G, H, I, J, K]</text></a></g></g><!-- node20 --><g class="node trait" id="graph1_20"><g id="a_trait|graph1_20"><a xlink:title="molecule.generic.schema.Schema_10" xlink:href="Schema_10.html#inheritance-diagram"><path d="M4568.58,-26C4568.58,-26 4405.42,-26 4405.42,-26 4401.08,-26 4396.75,-21.6667 4396.75,-17.3333 4396.75,-17.3333 4396.75,-8.66667 4396.75,-8.66667 4396.75,-4.33333 4401.08,-0 4405.42,-0 4405.42,-0 4568.58,-0 4568.58,-0 4572.92,-0 4577.25,-4.33333 4577.25,-8.66667 4577.25,-8.66667 4577.25,-17.3333 4577.25,-17.3333 4577.25,-21.6667 4572.92,-26 4568.58,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="4409" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="4428.92" text-anchor="start">Schema_10[A, B, C, D, E, F, G, H, I, J]</text></a></g></g><!-- node21 --><g class="node trait" id="graph1_21"><g id="a_trait|graph1_21"><a xlink:title="molecule.generic.schema.Schema_1" xlink:href="Schema_1.html#inheritance-diagram"><path d="M4679.33,-26C4679.33,-26 4604.67,-26 4604.67,-26 4600.33,-26 4596,-21.6667 4596,-17.3333 4596,-17.3333 4596,-8.66667 4596,-8.66667 4596,-4.33333 4600.33,-0 4604.67,-0 4604.67,-0 4679.33,-0 4679.33,-0 4683.67,-0 4688,-4.33333 4688,-8.66667 4688,-8.66667 4688,-17.3333 4688,-17.3333 4688,-21.6667 4683.67,-26 4679.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="4608" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="4627.88" text-anchor="start">Schema_1[A]</text></a></g></g><!-- node22 --><g class="node trait" id="graph1_22"><g id="a_trait|graph1_22"><a xlink:title="molecule.generic.schema.Schema_0" xlink:href="Schema_0.html#inheritance-diagram"><path d="M4779.33,-26C4779.33,-26 4714.67,-26 4714.67,-26 4710.33,-26 4706,-21.6667 4706,-17.3333 4706,-17.3333 4706,-8.66667 4706,-8.66667 4706,-4.33333 4710.33,-0 4714.67,-0 4714.67,-0 4779.33,-0 4779.33,-0 4783.67,-0 4788,-4.33333 4788,-8.66667 4788,-8.66667 4788,-17.3333 4788,-17.3333 4788,-21.6667 4783.67,-26 4779.33,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-19" x="4718" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="4737.77" text-anchor="start">Schema_0</text></a></g></g><!-- node23 --><g class="node trait" id="graph1_23"><g id="a_trait|graph1_23"><a xlink:title="molecule.generic.schema.Schema" xlink:href="Schema.html#inheritance-diagram"><path d="M2320.58,-88C2320.58,-88 2265.42,-88 2265.42,-88 2261.08,-88 2256.75,-83.6667 2256.75,-79.3333 2256.75,-79.3333 2256.75,-70.6667 2256.75,-70.6667 2256.75,-66.3333 2261.08,-62 2265.42,-62 2265.42,-62 2320.58,-62 2320.58,-62 2324.92,-62 2329.25,-66.3333 2329.25,-70.6667 2329.25,-70.6667 2329.25,-79.3333 2329.25,-79.3333 2329.25,-83.6667 2324.92,-88 2320.58,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../../lib/trait_diagram.png" y="-81" x="2269" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="2288.71" text-anchor="start">Schema</text></a></g></g><!-- node23&#45;&gt;node0 --><g class="edge inheritance" id="graph1_23_0"><g id="a_inheritance|graph1_23_0"><a xlink:title="Schema_9[A, B, C, D, E, F, G, H, I] is a subtype of Schema"><path d="M2249.23,-73.6383C1985.07,-71.3596 600.587,-58.0425 177,-26 174.078,-25.779 171.107,-25.5297 168.109,-25.2572" stroke="#d4d4d4" fill="none"></path><polygon points="2249.34,-76.0891 2256.36,-73.6994 2249.38,-71.1893 2249.34,-76.0891" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node1 --><g class="edge inheritance" id="graph1_23_1"><g id="a_inheritance|graph1_23_1"><a xlink:title="Schema_8[A, B, C, D, E, F, G, H] is a subtype of Schema"><path d="M2249.4,-73.5683C1999.01,-70.9908 741.805,-56.6972 356,-26 353.202,-25.7774 350.358,-25.5268 347.488,-25.2532" stroke="#d4d4d4" fill="none"></path><polygon points="2249.48,-76.0192 2256.51,-73.6411 2249.53,-71.1194 2249.48,-76.0192" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node2 --><g class="edge inheritance" id="graph1_23_2"><g id="a_inheritance|graph1_23_2"><a xlink:title="Schema_7[A, B, C, D, E, F, G] is a subtype of Schema"><path d="M2249.46,-73.4968C2012.42,-70.6537 875.14,-55.6645 525,-26 522.211,-25.7637 519.373,-25.4964 516.51,-25.204" stroke="#d4d4d4" fill="none"></path><polygon points="2249.51,-75.9474 2256.54,-73.5812 2249.57,-71.0478 2249.51,-75.9474" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node3 --><g class="edge inheritance" id="graph1_23_3"><g id="a_inheritance|graph1_23_3"><a xlink:title="Schema_6[A, B, C, D, E, F] is a subtype of Schema"><path d="M2249.5,-73.4032C2025.62,-70.2245 1001.47,-54.3569 685,-26 681.923,-25.7242 678.783,-25.4073 675.615,-25.0582" stroke="#d4d4d4" fill="none"></path><polygon points="2249.48,-75.853 2256.51,-73.5022 2249.54,-70.9535 2249.48,-75.853" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node4 --><g class="edge inheritance" id="graph1_23_4"><g id="a_inheritance|graph1_23_4"><a xlink:title="Schema_5[A, B, C, D, E] is a subtype of Schema"><path d="M2249.21,-73.302C2037.63,-69.8161 1119.81,-53.3632 835,-26 832.112,-25.7226 829.167,-25.4042 826.195,-25.0539" stroke="#d4d4d4" fill="none"></path><polygon points="2249.4,-75.7554 2256.44,-73.4206 2249.48,-70.856 2249.4,-75.7554" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node5 --><g class="edge inheritance" id="graph1_23_5"><g id="a_inheritance|graph1_23_5"><a xlink:title="Schema_4[A, B, C, D] is a subtype of Schema"><path d="M2249.59,-73.1988C2051.34,-69.4196 1230.63,-52.4466 975,-26 972.056,-25.6955 969.05,-25.3426 966.017,-24.9531" stroke="#d4d4d4" fill="none"></path><polygon points="2249.61,-75.6494 2256.66,-73.3328 2249.7,-70.7503 2249.61,-75.6494" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node6 --><g class="edge inheritance" id="graph1_23_6"><g id="a_inheritance|graph1_23_6"><a xlink:title="Schema_3[A, B, C] is a subtype of Schema"><path d="M2249.27,-74.4699C2093.27,-75.6711 1549.75,-75.7836 1105,-26 1102.15,-25.6809 1099.23,-25.3096 1096.3,-24.8995" stroke="#d4d4d4" fill="none"></path><polygon points="2249.42,-76.9188 2256.4,-74.412 2249.38,-72.019 2249.42,-76.9188" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node7 --><g class="edge inheritance" id="graph1_23_7"><g id="a_inheritance|graph1_23_7"><a xlink:title="Schema_22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V] is a subtype of Schema"><path d="M2249.15,-71.9059C2121.5,-65.7401 1739.08,-46.7759 1422,-26 1419.12,-25.8111 1416.21,-25.6176 1413.27,-25.42" stroke="#d4d4d4" fill="none"></path><polygon points="2249.36,-74.3689 2256.47,-72.259 2249.6,-69.4746 2249.36,-74.3689" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node8 --><g class="edge inheritance" id="graph1_23_8"><g id="a_inheritance|graph1_23_8"><a xlink:title="Schema_21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U] is a subtype of Schema"><path d="M2249.32,-70.3452C2146.39,-61.7318 1884.87,-39.8466 1719.7,-26.025" stroke="#d4d4d4" fill="none"></path><polygon points="2249.28,-72.7997 2256.46,-70.9421 2249.69,-67.9168 2249.28,-72.7997" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node9 --><g class="edge inheritance" id="graph1_23_9"><g id="a_inheritance|graph1_23_9"><a xlink:title="Schema_20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T] is a subtype of Schema"><path d="M2249.45,-67.6878C2181.38,-57.8232 2048.62,-38.5832 1961.91,-26.0162" stroke="#d4d4d4" fill="none"></path><polygon points="2249.34,-70.1486 2256.62,-68.728 2250.05,-65.2992 2249.34,-70.1486" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node10 --><g class="edge inheritance" id="graph1_23_10"><g id="a_inheritance|graph1_23_10"><a xlink:title="Schema_2[A, B] is a subtype of Schema"><path d="M2249.45,-61.2531C2213.94,-50.861 2164.14,-36.2844 2129.27,-26.0776" stroke="#d4d4d4" fill="none"></path><polygon points="2248.94,-63.6582 2256.35,-63.2732 2250.32,-58.9555 2248.94,-63.6582" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node11 --><g class="edge inheritance" id="graph1_23_11"><g id="a_inheritance|graph1_23_11"><a xlink:title="Schema_19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S] is a subtype of Schema"><path d="M2293,-54.7534C2293,-45.3549 2293,-34.3336 2293,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="2290.55,-54.8581 2293,-61.8581 2295.45,-54.8581 2290.55,-54.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node12 --><g class="edge inheritance" id="graph1_23_12"><g id="a_inheritance|graph1_23_12"><a xlink:title="Schema_18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R] is a subtype of Schema"><path d="M2336.28,-64.8564C2385.46,-54.4662 2465.91,-37.4688 2520.13,-26.0152" stroke="#d4d4d4" fill="none"></path><polygon points="2335.6,-62.4959 2329.26,-66.34 2336.61,-67.2901 2335.6,-62.4959" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node13 --><g class="edge inheritance" id="graph1_23_13"><g id="a_inheritance|graph1_23_13"><a xlink:title="Schema_17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q] is a subtype of Schema"><path d="M2336.59,-69.3127C2422.43,-60.0832 2615.72,-39.2992 2739.39,-26.0011" stroke="#d4d4d4" fill="none"></path><polygon points="2336.31,-66.8788 2329.61,-70.0632 2336.83,-71.7507 2336.31,-66.8788" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node14 --><g class="edge inheritance" id="graph1_23_14"><g id="a_inheritance|graph1_23_14"><a xlink:title="Schema_16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] is a subtype of Schema"><path d="M2336.65,-71.3191C2445.92,-64.5322 2740.05,-45.7979 2985,-26 2988.16,-25.7444 2991.37,-25.4808 2994.6,-25.2109" stroke="#d4d4d4" fill="none"></path><polygon points="2336.25,-68.8892 2329.41,-71.7679 2336.55,-73.7798 2336.25,-68.8892" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node15 --><g class="edge inheritance" id="graph1_23_15"><g id="a_inheritance|graph1_23_15"><a xlink:title="Schema_15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] is a subtype of Schema"><path d="M2336.66,-72.5004C2471.69,-67.7117 2894.48,-51.5843 3244,-26 3247.15,-25.7692 3250.35,-25.5261 3253.57,-25.2727" stroke="#d4d4d4" fill="none"></path><polygon points="2336.22,-70.0643 2329.31,-72.7599 2336.4,-74.9612 2336.22,-70.0643" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node16 --><g class="edge inheritance" id="graph1_23_16"><g id="a_inheritance|graph1_23_16"><a xlink:title="Schema_14[A, B, C, D, E, F, G, H, I, J, K, L, M, N] is a subtype of Schema"><path d="M2336.52,-73.1975C2492.98,-70.113 3041.54,-57.5737 3493,-26 3496.13,-25.7809 3499.31,-25.5463 3502.52,-25.2987" stroke="#d4d4d4" fill="none"></path><polygon points="2336.32,-70.7509 2329.37,-73.3373 2336.42,-75.6499 2336.32,-70.7509" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node17 --><g class="edge inheritance" id="graph1_23_17"><g id="a_inheritance|graph1_23_17"><a xlink:title="Schema_13[A, B, C, D, E, F, G, H, I, J, K, L, M] is a subtype of Schema"><path d="M2336.72,-73.6674C2512.17,-72.0945 3182.23,-63.8055 3732,-26 3735.2,-25.7797 3738.46,-25.54 3741.74,-25.2843" stroke="#d4d4d4" fill="none"></path><polygon points="2336.44,-71.2196 2329.47,-73.7311 2336.49,-76.1194 2336.44,-71.2196" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node18 --><g class="edge inheritance" id="graph1_23_18"><g id="a_inheritance|graph1_23_18"><a xlink:title="Schema_12[A, B, C, D, E, F, G, H, I, J, K, L] is a subtype of Schema"><path d="M2336.54,-74.0401C2528.23,-73.9445 3316.13,-70.7026 3961,-26 3964.13,-25.7828 3967.32,-25.5437 3970.53,-25.2865" stroke="#d4d4d4" fill="none"></path><polygon points="2336.44,-71.5901 2329.44,-74.0423 2336.44,-76.4901 2336.44,-71.5901" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node19 --><g class="edge inheritance" id="graph1_23_19"><g id="a_inheritance|graph1_23_19"><a xlink:title="Schema_11[A, B, C, D, E, F, G, H, I, J, K] is a subtype of Schema"><path d="M2336.34,-74.3099C2542.29,-75.4859 3442.55,-77.2889 4178,-26 4181.2,-25.7766 4184.46,-25.5277 4187.75,-25.2578" stroke="#d4d4d4" fill="none"></path><polygon points="2336.32,-71.8598 2329.31,-74.2684 2336.3,-76.7598 2336.32,-71.8598" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node20 --><g class="edge inheritance" id="graph1_23_20"><g id="a_inheritance|graph1_23_20"><a xlink:title="Schema_10[A, B, C, D, E, F, G, H, I, J] is a subtype of Schema"><path d="M2336.31,-73.5778C2597.7,-70.9437 3967.68,-55.895 4387,-26 4390.14,-25.7762 4393.33,-25.5245 4396.55,-25.25" stroke="#d4d4d4" fill="none"></path><polygon points="2336.23,-71.1284 2329.26,-73.6486 2336.28,-76.0281 2336.23,-71.1284" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node21 --><g class="edge inheritance" id="graph1_23_21"><g id="a_inheritance|graph1_23_21"><a xlink:title="Schema_1[A] is a subtype of Schema"><path d="M2336.45,-74.2182C2612.66,-75.4354 4126.6,-79.5367 4586,-26 4589.26,-25.6202 4592.61,-25.1389 4595.97,-24.5886" stroke="#d4d4d4" fill="none"></path><polygon points="2336.41,-71.7681 2329.4,-74.1866 2336.39,-76.668 2336.41,-71.7681" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23&#45;&gt;node22 --><g class="edge inheritance" id="graph1_23_22"><g id="a_inheritance|graph1_23_22"><a xlink:title="Schema_0 is a subtype of Schema"><path d="M2336.71,-73.695C2642.34,-71.4875 4454.49,-57.1519 4697,-26 4699.92,-25.6247 4702.92,-25.1467 4705.93,-24.5988" stroke="#d4d4d4" fill="none"></path><polygon points="2336.33,-71.2475 2329.35,-73.7479 2336.37,-76.1474 2336.33,-71.2475" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
+        
+
+      
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="molecule.generic.schema.GenericSchema" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericSchemaextendsAnyRef"></a><a id="GenericSchema:GenericSchema"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#GenericSchemaextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Container for Schema object." href="GenericSchema.html"><span class="name">GenericSchema</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Container for Schema object.</p>
+    </li><li name="molecule.generic.schema.Schema" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SchemaextendsGenericNs"></a><a id="Schema:Schema"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#SchemaextendsGenericNs" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Base Schema trait with attribute types shared by all arity interfaces." href="Schema.html"><span class="name">Schema</span></a><span class="result"> extends <span class="extype" name="molecule.generic.GenericNs">GenericNs</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Base Schema trait with attribute types shared by all arity interfaces.</p>
+    </li><li name="molecule.generic.schema.Schema_0" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_0extendsSchemawithoutSchema.OutSchema_0[molecule.generic.schema.Schema_0]"></a><a id="Schema_0:Schema_0"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_0extendsSchemawithoutSchema.OutSchema_0[molecule.generic.schema.Schema_0]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Schema interface to add first Schema attribute" href="Schema_0.html"><span class="name">Schema_0</span></a><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_0.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_0">OutSchema_0</a>[<a href="Schema_0.html" class="extype" name="molecule.generic.schema.Schema_0">Schema_0</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Schema interface to add first Schema attribute</p>
+    </li><li name="molecule.generic.schema.Schema_1" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_1[A]extendsSchemawithoutSchema.OutSchema_1[molecule.generic.schema.Schema_1,A]"></a><a id="Schema_1[A]:Schema_1[A]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_1[A]extendsSchemawithoutSchema.OutSchema_1[molecule.generic.schema.Schema_1,A]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Schema interface to add second Schema attribute" href="Schema_1.html"><span class="name">Schema_1</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_1.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_1">OutSchema_1</a>[<a href="Schema_1.html" class="extype" name="molecule.generic.schema.Schema_1">Schema_1</a>, <span class="extype" name="molecule.generic.schema.Schema_1.A">A</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Schema interface to add second Schema attribute</p>
+    </li><li name="molecule.generic.schema.Schema_10" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_10[A,B,C,D,E,F,G,H,I,J]extendsSchemawithoutSchema.OutSchema_10[molecule.generic.schema.Schema_10,A,B,C,D,E,F,G,H,I,J]"></a><a id="Schema_10[A,B,C,D,E,F,G,H,I,J]:Schema_10[A,B,C,D,E,F,G,H,I,J]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_10[A,B,C,D,E,F,G,H,I,J]extendsSchemawithoutSchema.OutSchema_10[molecule.generic.schema.Schema_10,A,B,C,D,E,F,G,H,I,J]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_10.html"><span class="name">Schema_10</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_10.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_10">OutSchema_10</a>[<a href="Schema_10.html" class="extype" name="molecule.generic.schema.Schema_10">Schema_10</a>, <span class="extype" name="molecule.generic.schema.Schema_10.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_10.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_10.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_10.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_10.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_10.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_10.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_10.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_10.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_10.J">J</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_11" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_11[A,B,C,D,E,F,G,H,I,J,K]extendsSchemawithoutSchema.OutSchema_11[molecule.generic.schema.Schema_11,A,B,C,D,E,F,G,H,I,J,K]"></a><a id="Schema_11[A,B,C,D,E,F,G,H,I,J,K]:Schema_11[A,B,C,D,E,F,G,H,I,J,K]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_11[A,B,C,D,E,F,G,H,I,J,K]extendsSchemawithoutSchema.OutSchema_11[molecule.generic.schema.Schema_11,A,B,C,D,E,F,G,H,I,J,K]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_11.html"><span class="name">Schema_11</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_11.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_11">OutSchema_11</a>[<a href="Schema_11.html" class="extype" name="molecule.generic.schema.Schema_11">Schema_11</a>, <span class="extype" name="molecule.generic.schema.Schema_11.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_11.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_11.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_11.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_11.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_11.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_11.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_11.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_11.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_11.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_11.K">K</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_12" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_12[A,B,C,D,E,F,G,H,I,J,K,L]extendsSchemawithoutSchema.OutSchema_12[molecule.generic.schema.Schema_12,A,B,C,D,E,F,G,H,I,J,K,L]"></a><a id="Schema_12[A,B,C,D,E,F,G,H,I,J,K,L]:Schema_12[A,B,C,D,E,F,G,H,I,J,K,L]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_12[A,B,C,D,E,F,G,H,I,J,K,L]extendsSchemawithoutSchema.OutSchema_12[molecule.generic.schema.Schema_12,A,B,C,D,E,F,G,H,I,J,K,L]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_12.html"><span class="name">Schema_12</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_12.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_12">OutSchema_12</a>[<a href="Schema_12.html" class="extype" name="molecule.generic.schema.Schema_12">Schema_12</a>, <span class="extype" name="molecule.generic.schema.Schema_12.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_12.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_12.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_12.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_12.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_12.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_12.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_12.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_12.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_12.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_12.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_12.L">L</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_13" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_13[A,B,C,D,E,F,G,H,I,J,K,L,M]extendsSchemawithoutSchema.OutSchema_13[molecule.generic.schema.Schema_13,A,B,C,D,E,F,G,H,I,J,K,L,M]"></a><a id="Schema_13[A,B,C,D,E,F,G,H,I,J,K,L,M]:Schema_13[A,B,C,D,E,F,G,H,I,J,K,L,M]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_13[A,B,C,D,E,F,G,H,I,J,K,L,M]extendsSchemawithoutSchema.OutSchema_13[molecule.generic.schema.Schema_13,A,B,C,D,E,F,G,H,I,J,K,L,M]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_13.html"><span class="name">Schema_13</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_13.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_13">OutSchema_13</a>[<a href="Schema_13.html" class="extype" name="molecule.generic.schema.Schema_13">Schema_13</a>, <span class="extype" name="molecule.generic.schema.Schema_13.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_13.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_13.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_13.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_13.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_13.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_13.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_13.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_13.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_13.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_13.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_13.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_13.M">M</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_14" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_14[A,B,C,D,E,F,G,H,I,J,K,L,M,N]extendsSchemawithoutSchema.OutSchema_14[molecule.generic.schema.Schema_14,A,B,C,D,E,F,G,H,I,J,K,L,M,N]"></a><a id="Schema_14[A,B,C,D,E,F,G,H,I,J,K,L,M,N]:Schema_14[A,B,C,D,E,F,G,H,I,J,K,L,M,N]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_14[A,B,C,D,E,F,G,H,I,J,K,L,M,N]extendsSchemawithoutSchema.OutSchema_14[molecule.generic.schema.Schema_14,A,B,C,D,E,F,G,H,I,J,K,L,M,N]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_14.html"><span class="name">Schema_14</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_14.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_14">OutSchema_14</a>[<a href="Schema_14.html" class="extype" name="molecule.generic.schema.Schema_14">Schema_14</a>, <span class="extype" name="molecule.generic.schema.Schema_14.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_14.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_14.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_14.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_14.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_14.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_14.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_14.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_14.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_14.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_14.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_14.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_14.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_14.N">N</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_15" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_15[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]extendsSchemawithoutSchema.OutSchema_15[molecule.generic.schema.Schema_15,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]"></a><a id="Schema_15[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]:Schema_15[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_15[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]extendsSchemawithoutSchema.OutSchema_15[molecule.generic.schema.Schema_15,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_15.html"><span class="name">Schema_15</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_15.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_15">OutSchema_15</a>[<a href="Schema_15.html" class="extype" name="molecule.generic.schema.Schema_15">Schema_15</a>, <span class="extype" name="molecule.generic.schema.Schema_15.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_15.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_15.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_15.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_15.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_15.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_15.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_15.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_15.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_15.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_15.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_15.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_15.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_15.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_15.O">O</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_16" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_16[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]extendsSchemawithoutSchema.OutSchema_16[molecule.generic.schema.Schema_16,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]"></a><a id="Schema_16[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]:Schema_16[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_16[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]extendsSchemawithoutSchema.OutSchema_16[molecule.generic.schema.Schema_16,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_16.html"><span class="name">Schema_16</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_16.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_16">OutSchema_16</a>[<a href="Schema_16.html" class="extype" name="molecule.generic.schema.Schema_16">Schema_16</a>, <span class="extype" name="molecule.generic.schema.Schema_16.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_16.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_16.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_16.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_16.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_16.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_16.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_16.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_16.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_16.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_16.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_16.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_16.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_16.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_16.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_16.P">P</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_17" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_17[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]extendsSchemawithoutSchema.OutSchema_17[molecule.generic.schema.Schema_17,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]"></a><a id="Schema_17[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]:Schema_17[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_17[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]extendsSchemawithoutSchema.OutSchema_17[molecule.generic.schema.Schema_17,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_17.html"><span class="name">Schema_17</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_17.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_17">OutSchema_17</a>[<a href="Schema_17.html" class="extype" name="molecule.generic.schema.Schema_17">Schema_17</a>, <span class="extype" name="molecule.generic.schema.Schema_17.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_17.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_17.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_17.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_17.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_17.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_17.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_17.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_17.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_17.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_17.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_17.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_17.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_17.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_17.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_17.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_17.Q">Q</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_18" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_18[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]extendsSchemawithoutSchema.OutSchema_18[molecule.generic.schema.Schema_18,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]"></a><a id="Schema_18[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]:Schema_18[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_18[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]extendsSchemawithoutSchema.OutSchema_18[molecule.generic.schema.Schema_18,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_18.html"><span class="name">Schema_18</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_18.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_18">OutSchema_18</a>[<a href="Schema_18.html" class="extype" name="molecule.generic.schema.Schema_18">Schema_18</a>, <span class="extype" name="molecule.generic.schema.Schema_18.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_18.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_18.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_18.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_18.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_18.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_18.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_18.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_18.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_18.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_18.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_18.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_18.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_18.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_18.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_18.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_18.Q">Q</span>, <span class="extype" name="molecule.generic.schema.Schema_18.R">R</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_19" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_19[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]extendsSchemawithoutSchema.OutSchema_19[molecule.generic.schema.Schema_19,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]"></a><a id="Schema_19[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]:Schema_19[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_19[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]extendsSchemawithoutSchema.OutSchema_19[molecule.generic.schema.Schema_19,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_19.html"><span class="name">Schema_19</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>, <span name="R">R</span>, <span name="S">S</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_19.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_19">OutSchema_19</a>[<a href="Schema_19.html" class="extype" name="molecule.generic.schema.Schema_19">Schema_19</a>, <span class="extype" name="molecule.generic.schema.Schema_19.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_19.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_19.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_19.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_19.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_19.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_19.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_19.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_19.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_19.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_19.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_19.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_19.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_19.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_19.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_19.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_19.Q">Q</span>, <span class="extype" name="molecule.generic.schema.Schema_19.R">R</span>, <span class="extype" name="molecule.generic.schema.Schema_19.S">S</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_2" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_2[A,B]extendsSchemawithoutSchema.OutSchema_2[molecule.generic.schema.Schema_2,A,B]"></a><a id="Schema_2[A,B]:Schema_2[A,B]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_2[A,B]extendsSchemawithoutSchema.OutSchema_2[molecule.generic.schema.Schema_2,A,B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_2.html"><span class="name">Schema_2</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_2.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_2">OutSchema_2</a>[<a href="Schema_2.html" class="extype" name="molecule.generic.schema.Schema_2">Schema_2</a>, <span class="extype" name="molecule.generic.schema.Schema_2.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_2.B">B</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_20" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_20[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]extendsSchemawithoutSchema.OutSchema_20[molecule.generic.schema.Schema_20,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]"></a><a id="Schema_20[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]:Schema_20[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_20[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]extendsSchemawithoutSchema.OutSchema_20[molecule.generic.schema.Schema_20,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_20.html"><span class="name">Schema_20</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>, <span name="R">R</span>, <span name="S">S</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_20.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_20">OutSchema_20</a>[<a href="Schema_20.html" class="extype" name="molecule.generic.schema.Schema_20">Schema_20</a>, <span class="extype" name="molecule.generic.schema.Schema_20.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_20.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_20.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_20.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_20.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_20.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_20.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_20.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_20.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_20.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_20.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_20.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_20.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_20.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_20.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_20.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_20.Q">Q</span>, <span class="extype" name="molecule.generic.schema.Schema_20.R">R</span>, <span class="extype" name="molecule.generic.schema.Schema_20.S">S</span>, <span class="extype" name="molecule.generic.schema.Schema_20.T">T</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_21" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_21[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]extendsSchemawithoutSchema.OutSchema_21[molecule.generic.schema.Schema_21,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]"></a><a id="Schema_21[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]:Schema_21[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_21[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]extendsSchemawithoutSchema.OutSchema_21[molecule.generic.schema.Schema_21,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_21.html"><span class="name">Schema_21</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>, <span name="R">R</span>, <span name="S">S</span>, <span name="T">T</span>, <span name="U">U</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_21.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_21">OutSchema_21</a>[<a href="Schema_21.html" class="extype" name="molecule.generic.schema.Schema_21">Schema_21</a>, <span class="extype" name="molecule.generic.schema.Schema_21.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_21.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_21.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_21.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_21.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_21.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_21.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_21.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_21.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_21.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_21.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_21.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_21.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_21.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_21.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_21.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_21.Q">Q</span>, <span class="extype" name="molecule.generic.schema.Schema_21.R">R</span>, <span class="extype" name="molecule.generic.schema.Schema_21.S">S</span>, <span class="extype" name="molecule.generic.schema.Schema_21.T">T</span>, <span class="extype" name="molecule.generic.schema.Schema_21.U">U</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_22" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_22[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]extendsSchemawithoutSchema.OutSchema_22[molecule.generic.schema.Schema_22,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]"></a><a id="Schema_22[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]:Schema_22[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_22[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]extendsSchemawithoutSchema.OutSchema_22[molecule.generic.schema.Schema_22,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_22.html"><span class="name">Schema_22</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>, <span name="J">J</span>, <span name="K">K</span>, <span name="L">L</span>, <span name="M">M</span>, <span name="N">N</span>, <span name="O">O</span>, <span name="P">P</span>, <span name="Q">Q</span>, <span name="R">R</span>, <span name="S">S</span>, <span name="T">T</span>, <span name="U">U</span>, <span name="V">V</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_22.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_22">OutSchema_22</a>[<a href="Schema_22.html" class="extype" name="molecule.generic.schema.Schema_22">Schema_22</a>, <span class="extype" name="molecule.generic.schema.Schema_22.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_22.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_22.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_22.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_22.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_22.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_22.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_22.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_22.I">I</span>, <span class="extype" name="molecule.generic.schema.Schema_22.J">J</span>, <span class="extype" name="molecule.generic.schema.Schema_22.K">K</span>, <span class="extype" name="molecule.generic.schema.Schema_22.L">L</span>, <span class="extype" name="molecule.generic.schema.Schema_22.M">M</span>, <span class="extype" name="molecule.generic.schema.Schema_22.N">N</span>, <span class="extype" name="molecule.generic.schema.Schema_22.O">O</span>, <span class="extype" name="molecule.generic.schema.Schema_22.P">P</span>, <span class="extype" name="molecule.generic.schema.Schema_22.Q">Q</span>, <span class="extype" name="molecule.generic.schema.Schema_22.R">R</span>, <span class="extype" name="molecule.generic.schema.Schema_22.S">S</span>, <span class="extype" name="molecule.generic.schema.Schema_22.T">T</span>, <span class="extype" name="molecule.generic.schema.Schema_22.U">U</span>, <span class="extype" name="molecule.generic.schema.Schema_22.V">V</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_3" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_3[A,B,C]extendsSchemawithoutSchema.OutSchema_3[molecule.generic.schema.Schema_3,A,B,C]"></a><a id="Schema_3[A,B,C]:Schema_3[A,B,C]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_3[A,B,C]extendsSchemawithoutSchema.OutSchema_3[molecule.generic.schema.Schema_3,A,B,C]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_3.html"><span class="name">Schema_3</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_3.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_3">OutSchema_3</a>[<a href="Schema_3.html" class="extype" name="molecule.generic.schema.Schema_3">Schema_3</a>, <span class="extype" name="molecule.generic.schema.Schema_3.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_3.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_3.C">C</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_4" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_4[A,B,C,D]extendsSchemawithoutSchema.OutSchema_4[molecule.generic.schema.Schema_4,A,B,C,D]"></a><a id="Schema_4[A,B,C,D]:Schema_4[A,B,C,D]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_4[A,B,C,D]extendsSchemawithoutSchema.OutSchema_4[molecule.generic.schema.Schema_4,A,B,C,D]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_4.html"><span class="name">Schema_4</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_4.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_4">OutSchema_4</a>[<a href="Schema_4.html" class="extype" name="molecule.generic.schema.Schema_4">Schema_4</a>, <span class="extype" name="molecule.generic.schema.Schema_4.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_4.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_4.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_4.D">D</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_5" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_5[A,B,C,D,E]extendsSchemawithoutSchema.OutSchema_5[molecule.generic.schema.Schema_5,A,B,C,D,E]"></a><a id="Schema_5[A,B,C,D,E]:Schema_5[A,B,C,D,E]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_5[A,B,C,D,E]extendsSchemawithoutSchema.OutSchema_5[molecule.generic.schema.Schema_5,A,B,C,D,E]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_5.html"><span class="name">Schema_5</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_5.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_5">OutSchema_5</a>[<a href="Schema_5.html" class="extype" name="molecule.generic.schema.Schema_5">Schema_5</a>, <span class="extype" name="molecule.generic.schema.Schema_5.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_5.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_5.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_5.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_5.E">E</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_6" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_6[A,B,C,D,E,F]extendsSchemawithoutSchema.OutSchema_6[molecule.generic.schema.Schema_6,A,B,C,D,E,F]"></a><a id="Schema_6[A,B,C,D,E,F]:Schema_6[A,B,C,D,E,F]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_6[A,B,C,D,E,F]extendsSchemawithoutSchema.OutSchema_6[molecule.generic.schema.Schema_6,A,B,C,D,E,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_6.html"><span class="name">Schema_6</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_6.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_6">OutSchema_6</a>[<a href="Schema_6.html" class="extype" name="molecule.generic.schema.Schema_6">Schema_6</a>, <span class="extype" name="molecule.generic.schema.Schema_6.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_6.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_6.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_6.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_6.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_6.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_7" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_7[A,B,C,D,E,F,G]extendsSchemawithoutSchema.OutSchema_7[molecule.generic.schema.Schema_7,A,B,C,D,E,F,G]"></a><a id="Schema_7[A,B,C,D,E,F,G]:Schema_7[A,B,C,D,E,F,G]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_7[A,B,C,D,E,F,G]extendsSchemawithoutSchema.OutSchema_7[molecule.generic.schema.Schema_7,A,B,C,D,E,F,G]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_7.html"><span class="name">Schema_7</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_7.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_7">OutSchema_7</a>[<a href="Schema_7.html" class="extype" name="molecule.generic.schema.Schema_7">Schema_7</a>, <span class="extype" name="molecule.generic.schema.Schema_7.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_7.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_7.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_7.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_7.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_7.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_7.G">G</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_8" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_8[A,B,C,D,E,F,G,H]extendsSchemawithoutSchema.OutSchema_8[molecule.generic.schema.Schema_8,A,B,C,D,E,F,G,H]"></a><a id="Schema_8[A,B,C,D,E,F,G,H]:Schema_8[A,B,C,D,E,F,G,H]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_8[A,B,C,D,E,F,G,H]extendsSchemawithoutSchema.OutSchema_8[molecule.generic.schema.Schema_8,A,B,C,D,E,F,G,H]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_8.html"><span class="name">Schema_8</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_8.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_8">OutSchema_8</a>[<a href="Schema_8.html" class="extype" name="molecule.generic.schema.Schema_8">Schema_8</a>, <span class="extype" name="molecule.generic.schema.Schema_8.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_8.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_8.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_8.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_8.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_8.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_8.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_8.H">H</span>]</span>
+      </span>
+      
+      
+    </li><li name="molecule.generic.schema.Schema_9" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Schema_9[A,B,C,D,E,F,G,H,I]extendsSchemawithoutSchema.OutSchema_9[molecule.generic.schema.Schema_9,A,B,C,D,E,F,G,H,I]"></a><a id="Schema_9[A,B,C,D,E,F,G,H,I]:Schema_9[A,B,C,D,E,F,G,H,I]"></a>
+      <span class="permalink">
+      <a href="../../../molecule/generic/schema/index.html#Schema_9[A,B,C,D,E,F,G,H,I]extendsSchemawithoutSchema.OutSchema_9[molecule.generic.schema.Schema_9,A,B,C,D,E,F,G,H,I]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Schema_9.html"><span class="name">Schema_9</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>, <span name="H">H</span>, <span name="I">I</span>]</span><span class="result"> extends <a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a> with <a href="../../boilerplate/outSchema$$OutSchema_9.html" class="extype" name="molecule.boilerplate.outSchema.OutSchema_9">OutSchema_9</a>[<a href="Schema_9.html" class="extype" name="molecule.generic.schema.Schema_9">Schema_9</a>, <span class="extype" name="molecule.generic.schema.Schema_9.A">A</span>, <span class="extype" name="molecule.generic.schema.Schema_9.B">B</span>, <span class="extype" name="molecule.generic.schema.Schema_9.C">C</span>, <span class="extype" name="molecule.generic.schema.Schema_9.D">D</span>, <span class="extype" name="molecule.generic.schema.Schema_9.E">E</span>, <span class="extype" name="molecule.generic.schema.Schema_9.F">F</span>, <span class="extype" name="molecule.generic.schema.Schema_9.G">G</span>, <span class="extype" name="molecule.generic.schema.Schema_9.H">H</span>, <span class="extype" name="molecule.generic.schema.Schema_9.I">I</span>]</span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
