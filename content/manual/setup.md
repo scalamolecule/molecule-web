@@ -30,7 +30,7 @@ sbt.version=1.1.6
 `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.7.1")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.7.2")
 ```
 
 `build.sbt`:
@@ -45,13 +45,13 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.17.1",
+      "org.scalamolecule" %% "molecule" % "0.17.2",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to directory with your schema definition file(s)
   )
 ```
-Molecule 0.17.1 for Scala 2.12.8 is available at
+Molecule 0.17.2 for Scala 2.12.8 is available at
 [Sonatype](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/molecule_2.12/).
 
 
