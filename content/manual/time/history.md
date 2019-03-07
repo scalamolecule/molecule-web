@@ -102,10 +102,10 @@ track changes to all atrributes of an entity:
 
 ```scala
 Person(fred).a.v.t.op.getHistory === List(
-  (":person/name", "Fred", t3, true), 
-  (":person/likes", "pizza", t3, true), 
-  (":person/likes", "pizza", t6, false),
-  (":person/likes", "pasta", t6, true)  
+  (":Person/name", "Fred", t3, true), 
+  (":Person/likes", "pizza", t3, true), 
+  (":Person/likes", "pizza", t6, false),
+  (":Person/likes", "pasta", t6, true)  
 )
 ```
 
@@ -117,14 +117,14 @@ We can apply values to generic attributes in history queries to narrow our resul
 // "What has been retracted for the entity `fred`"
 // - Fred disliked "pizza" at date6
 Person(fred).a.v.txInstant.op_(false).getHistory === List(
-  (":person/likes", "pizza", date6, false) 
+  (":Person/likes", "pizza", date6, false) 
 )
 
 // What happened for Fred in tx 3?
 // - Fred's name and liking was asserted
 Person(fred).a.v.tx(tx3).op.getHistory === List(
-  (":person/name", "Fred", t3, true), 
-  (":person/likes", "pizza", t3, true)
+  (":Person/name", "Fred", t3, true), 
+  (":Person/likes", "pizza", t3, true)
 )
 ```
 

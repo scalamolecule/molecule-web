@@ -69,7 +69,7 @@ Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza")
 ```
 The entity id is used for the first attribute of the molecule, here `name` having entity id `fredId`. 
 
-`Person` is just the namespace for the following attributes, so that we get `:person/name`, `:person/age`, `:person/likes` etc..
+`Person` is just the namespace for the following attributes, so that we get `:Person/name`, `:Person/age`, `:Person/likes` etc..
 
 
 ## 2-steps with Entity API
@@ -99,7 +99,7 @@ val seed: List[(Long, String, Int)] = Person.e.name.age.get
 // Step 2
 val data: List[(String, Int, Option[String])] = seed.map { case (e, name, age) =>
   // Add optional `likes` value via entity api
-  (name, age, e[String](":person/likes"))
+  (name, age, e[String](":Person/likes"))
 }
 ```
 For this simple example, the original molecule with an optional `likes` attribute would of course have been sufficient and 

@@ -58,21 +58,21 @@ to a predefined set of columns.
 ```scala
 // Create EAVT Index molecule with 1 entity id argument
 EAVT(e1).e.a.v.t.get === List(
-  (e1, ":person/name", "Ben", t1),
-  (e1, ":person/age", 42, t2),
-  (e1, ":golf/score", 5.7, t2)
+  (e1, ":Person/name", "Ben", t1),
+  (e1, ":Person/age", 42, t2),
+  (e1, ":Golf/score", 5.7, t2)
 )
 
 // Maybe we are only interested in the attribute/value pairs:
 EAVT(e1).a.v.get === List(
-  (":person/name", "Ben"),
-  (":person/age", 42),
-  (":golf/score", 5.7)
+  (":Person/name", "Ben"),
+  (":Person/age", 42),
+  (":Golf/score", 5.7)
 )
 
 // Two arguments to narrow the search
-EAVT(e1, ":person/age").a.v.get === List(
-  (":person/age", 42)
+EAVT(e1, ":Person/age").a.v.get === List(
+  (":Person/age", 42)
 )
 ``` 
 
@@ -83,36 +83,36 @@ The AVET index provides efficient access to particular combinations of attribute
 
 ```scala
 // Create AVET Index molecule with 1 entity id argument
-AVET(":person/age").v.e.t.get === List(
+AVET(":Person/age").v.e.t.get === List(
   (42, e1, t2),
   (37, e2, t5),
   (14, e3, t7)
 )
 
 // Narrow search with multiple arguments
-AVET(":person/age", 42).e.t.get === List( (e1, t2) )
-AVET(":person/age", 42, e1).e.v.get === List( (e1, t2) )
-AVET(":person/age", 42, e1, t2).e.v.get === List( (e1, t2) )
+AVET(":Person/age", 42).e.t.get === List( (e1, t2) )
+AVET(":Person/age", 42, e1).e.v.get === List( (e1, t2) )
+AVET(":Person/age", 42, e1, t2).e.v.get === List( (e1, t2) )
 ```
 
 The AVET Index can be filtered by a range of values between `from` (inclusive) and
 `until` (exclusive) for an attribute:
 
 ```scala
-AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(37)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
                // 37 not included in value range
                // 42 outside value range
 )
 
 // If `from` is None, the range starts from the beginning
-AVET.range(":person/age", None, Some(40)).v.e.t.get === List(
+AVET.range(":Person/age", None, Some(40)).v.e.t.get === List(
   (14, e3, t7),
   (37, e2, t5)
 )
 
 // If `until` is None, the range goes to the end
-AVET.range(":person/age", Some(20), None).v.e.t.get === List(
+AVET.range(":Person/age", Some(20), None).v.e.t.get === List(
   (37, e2, t5),
   (42, e1, t2)
 )
@@ -125,15 +125,15 @@ comparable to traditional column access style.
 
 ```scala
 // Create AEVT Index molecule with 1 entity id argument
-AEVT(":person/name").e.v.t.get === List(
+AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
 )
 
 // Narrow search with multiple arguments
-AEVT(":person/name", e1).e.v.get === List( (e1, "Ben") )
-AEVT(":person/name", e1, "Ben").e.v.get === List( (e1, "Ben") )
-AEVT(":person/name", e1, "Ben", t2).e.v.get === List( (e1, "Ben") )
+AEVT(":Person/name", e1).e.v.get === List( (e1, "Ben") )
+AEVT(":Person/name", e1, "Ben").e.v.get === List( (e1, "Ben") )
+AEVT(":Person/name", e1, "Ben", t2).e.v.get === List( (e1, "Ben") )
 ```
 
 ## VAET
@@ -151,15 +151,15 @@ Release.e.name.Artists.e.name.get === List(
 
 // .. then we can get the reverse relationships with the VAET Index:
 VAET(a1).v.a.e.get === List(
-  (a1, ":release/artists", r1),
-  (a1, ":release/artists", r2),
-  (a1, ":release/artists", r3)
+  (a1, ":Release/artists", r1),
+  (a1, ":Release/artists", r2),
+  (a1, ":Release/artists", r3)
 )
 
 // Narrow search with multiple arguments
-VAET(a1, ":release/artist").e.get === List(r1, r2, r3)
-VAET(a1, ":release/artist", r2).e.get === List(r2)
-VAET(a1, ":release/artist", r2, t7).e.get === List(r2)
+VAET(a1, ":Release/artist").e.get === List(r1, r2, r3)
+VAET(a1, ":Release/artist", r2).e.get === List(r2)
+VAET(a1, ":Release/artist", r2, t7).e.get === List(r2)
 ```
 
 

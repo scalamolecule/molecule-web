@@ -34,14 +34,14 @@ object SeattleSchema extends SchemaTransaction {
     
     // Community --------------------------------------------------------
 
-    Util.map(":db/ident"             , ":community/name",
+    Util.map(":db/ident"             , ":Community/name",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
              ":db/fulltext"          , true.asInstanceOf[Object],
              ":db/doc"               , "A community's name",
              ":db/index"             , true.asInstanceOf[Object]),
     
-    Util.map(":db/ident"             , ":community/url",
+    Util.map(":db/ident"             , ":Community/url",
              ":db/valueType"         , ":db.type/string",
              ":db/cardinality"       , ":db.cardinality/one",
              ":db/doc"               , "A community's url",
@@ -54,7 +54,7 @@ As you see, the `Community` namespace information is present in the value of the
 the `name` attribute: 
 
 ```scala
-":db/ident", ":community/name",
+":db/ident", ":Community/name",
 ```
 The rest of the lines are pretty self-describing except from the last two that create and save the 
 internal id of the attribute in Datomic. [Datomic schemas](https://docs.datomic.com/on-prem/schema.html) are 
@@ -120,6 +120,43 @@ We can also supply a protocol like 'mem' for in-memory db, or 'dev' for a develo
 // Create new database with identifier as an in-memory database
 implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase", "mem")
 ```
+
+
+### Working with non-molecule Datomic databases
+
+If you are working with externally defined Datomic databases or data sets with lowercase namespace
+names defined then you can easily add some attribute name aliases so that you can freely
+work with the external data from your molecule code.
+
+The sbt-plugin generates two additional schema transaction files
+that can be transacted with the external lowercase database so that you can use your 
+uppercase Molecule code with it:
+
+#### Molecule schema (uppercase) + external data (lowercase) 
+
+When importing external data 
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L367-L368)) 
+from a database with lowercase namespace names then you can 
+transact lowercase attribute aliases 
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L18)) 
+so that your uppercase Molecule code can recognize the 
+imported lowercase data:
+
+```scala
+conn.datomicConn.transact(SchemaUpperToLower.namespaces)
+```
+
+#### External schema (lowercase) + external data (lowercase) 
+
+If both external schema and data is created with lowercase namespace names, then you can transact
+uppercase attribute aliases with the live database so that it will recognize your uppercase
+molecule code
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/mbrainz/MBrainz.scala#L38)):
+
+```scala
+conn.datomicConn.transact(MBrainzSchemaLowerToUpper.namespaces)
+```
+
 
 For more information on setting up the environment, please see [Local Dev Setup](https://docs.datomic.com/on-prem/dev-setup.html).
 

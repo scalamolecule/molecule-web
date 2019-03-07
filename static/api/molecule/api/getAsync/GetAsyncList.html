@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.api.getAsync.GetAsyncList</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.api.getAsync.GetAsyncList" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.api.getAsync.GetAsyncList" />
+          <title>Molecule 0.18.0 - molecule.api.getAsync.GetAsyncList</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.api.getAsync.GetAsyncList" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.api.getAsync.GetAsyncList" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -472,9 +472,9 @@ Considered as the default getter, no postfix has been added (<code>getAsync</cod
               
         </dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsync">
-      <a id="getAsync(n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsync(Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsync(n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsync(Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsync(n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsync(n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -483,21 +483,21 @@ Considered as the default getter, no postfix has been added (<code>getAsync</cod
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsync</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsync</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#get(n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#get">get</a> method.
+<a href="../get/GetList.html#get(n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#get">get</a> method.
 <br><br>
 Since retrieving a List is considered the default fetch format, the getter method is
 simply named <code>get</code> (and not <code>getList</code>).
-</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of types matching the attributes of the molecule</p></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of types matching the attributes of the molecule</p></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsync" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsync">
-      <a id="getAsync(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsync(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsync(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsync(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsync(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsync(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -506,21 +506,21 @@ simply named <code>get</code> (and not <code>getList</code>).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsync</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsync</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#get(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#get">get</a> method.
+<a href="../get/GetList.html#get(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#get">get</a> method.
 <br><br>
 Since retrieving a List is considered the default fetch format, the getter method is
 simply named <code>get</code> (and not <code>getList</code>).
-</p></div><dl class="paramcmts block"><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of types matching the attributes of the molecule</p></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of types matching the attributes of the molecule</p></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Date,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Date,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -529,7 +529,7 @@ simply named <code>get</code> (and not <code>getList</code>).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of date.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of date.
@@ -537,12 +537,12 @@ simply named <code>get</code> (and not <code>getList</code>).
 Get data at a human point in time (a java.util.Date).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Date)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Date)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -551,7 +551,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of date.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of date.
@@ -559,12 +559,12 @@ For more info and code examples see equivalent synchronous
 Get data at a human point in time (a java.util.Date).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(date:java.util.Date)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(TxReport,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(TxReport,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -573,7 +573,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of tx.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of tx.
@@ -587,12 +587,12 @@ convenient when using Molecule since we get a <a href="../../facade/TxReport.htm
 operations like <code>get</code>, <code>update</code>, <code>retract</code> etc.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> (returned from all molecule transaction operations)</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> (returned from all molecule transaction operations)</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(TxReport)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(TxReport)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -601,7 +601,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of tx.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of tx.
@@ -615,12 +615,12 @@ convenient when using Molecule since we get a <a href="../../facade/TxReport.htm
 operations like <code>get</code>, <code>update</code>, <code>retract</code> etc.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> (returned from all molecule transaction operations)</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> (returned from all molecule transaction operations)</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Long,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Long,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -629,7 +629,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of transaction time <code>t</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule as of transaction time <code>t</code>.
@@ -640,12 +640,12 @@ Transaction time <code>t</code> is an auto-incremented transaction number assign
 used to get data as of that point in time (including that transaction).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Long Transaction time t</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(t:Long,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Long Transaction time t</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncAsOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncAsOf">
-      <a id="getAsyncAsOf(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Long)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncAsOf(t:Long)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncAsOf(Long)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncAsOf(t:Long)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -654,7 +654,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncAsOf</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncAsOf</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of transaction time <code>t</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule as of transaction time <code>t</code>.
@@ -665,12 +665,12 @@ Transaction time <code>t</code> is an auto-incremented transaction number assign
 used to get data as of that point in time (including that transaction).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getAsOf(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getAsOf(t:Long)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getAsOf">getAsOf</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncHistory" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getHistory">
-      <a id="getAsyncHistory(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncHistory(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncHistory(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncHistory(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncHistory(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncHistory(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -679,18 +679,18 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncHistory</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncHistory</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with history of operations as <code>List</code> on an attribute in the db.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with history of operations as <code>List</code> on an attribute in the db.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getHistory(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getHistory">getHistory</a> method.
+<a href="../get/GetList.html#getHistory(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getHistory">getHistory</a> method.
 </p></div><dl class="paramcmts block"><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/history/" target="_blank">manual</a> for more info on generic attributes.</p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Date,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Date,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -699,7 +699,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since date.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since date.
@@ -707,12 +707,12 @@ For more info and code examples see equivalent synchronous
 Get data added/retracted since a human point in time (a java.util.Date).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(date:java.util.Date,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Date)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(date:java.util.Date)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Date)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(date:java.util.Date)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -721,7 +721,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since date.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since date.
@@ -729,12 +729,12 @@ For more info and code examples see equivalent synchronous
 Get data added/retracted since a human point in time (a java.util.Date).
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(date:java.util.Date)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(date:java.util.Date)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">date</dt><dd class="cmt"><p>java.util.Date</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(TxReport,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(TxReport,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -743,7 +743,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since tx.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since tx.
@@ -756,12 +756,12 @@ the transaction entity id (which is used as argument to Datomic internally). Thi
 get a <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> from transaction operations like <code>get</code>, <code>update</code>, <code>retract</code> etc.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(tx:molecule.facade.TxReport,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(TxReport)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(TxReport)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -770,7 +770,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="tx">tx: <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since tx.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since tx.
@@ -783,12 +783,12 @@ the transaction entity id (which is used as argument to Datomic internally). Thi
 get a <a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a> from transaction operations like <code>get</code>, <code>update</code>, <code>retract</code> etc.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(tx:molecule.facade.TxReport)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">tx</dt><dd class="cmt"><p><a href="../../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">TxReport</a></p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Long,Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Long,Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -797,7 +797,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since transaction time <code>t</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule since transaction time <code>t</code>.
@@ -805,12 +805,12 @@ For more info and code examples see equivalent synchronous
 Transaction time <code>t</code> is an auto-incremented transaction number assigned internally by Datomic.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(t:Long,n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncSince" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncSince">
-      <a id="getAsyncSince(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Long)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncSince(t:Long)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncSince(Long)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncSince(t:Long)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -819,7 +819,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncSince</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncSince</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since transaction time <code>t</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule since transaction time <code>t</code>.
@@ -827,12 +827,12 @@ For more info and code examples see equivalent synchronous
 Transaction time <code>t</code> is an auto-incremented transaction number assigned internally by Datomic.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getSince(t:Long)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getSince(t:Long)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getSince">getSince</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>Transaction time t</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/asof-since/" target="_blank">Manual</a> on <code>asof</code>/<code>since</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncWith">
-      <a id="getAsyncWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(List[_],Int)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(List[_],Int)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -841,7 +841,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="java.util.List">List</span>[_]</span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="java.util.List">List</span>[_]</span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule with applied raw transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule with applied raw transaction data.
@@ -849,12 +849,12 @@ For more info and code examples see equivalent synchronous
 Apply raw transaction data to in-memory &quot;branch&quot; of db without affecting db.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">txData</dt><dd class="cmt"><p>Raw transaction data as java.util.List[Object]</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getWith(txData:java.util.List[_],n:Int)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">txData</dt><dd class="cmt"><p>Raw transaction data as java.util.List[Object]</p></dd><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncWith">
-      <a id="getAsyncWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(List[_])(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(List[_])(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -863,7 +863,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="java.util.List">List</span>[_]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncWith</span><span class="params">(<span name="txData">txData: <span class="extype" name="java.util.List">List</span>[_]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule with applied raw transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule with applied raw transaction data.
@@ -871,12 +871,12 @@ For more info and code examples see equivalent synchronous
 Apply raw transaction data to in-memory &quot;branch&quot; of db without affecting db.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">txData</dt><dd class="cmt"><p>Raw transaction data as java.util.List[Object]</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getWith(txData:java.util.List[_])(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">txData</dt><dd class="cmt"><p>Raw transaction data as java.util.List[Object]</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncWith">
-      <a id="getAsyncWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(Int,Seq[Seq[Statement]]*)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(Int,Seq[Seq[Statement]]*)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -885,7 +885,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncWith</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>, <span name="txMolecules">txMolecules: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncWith</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>, <span name="txMolecules">txMolecules: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule with applied molecule transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of n rows as tuples matching molecule with applied molecule transaction data.
@@ -893,12 +893,12 @@ For more info and code examples see equivalent synchronous
 Apply one or more molecule transactions to in-memory &quot;branch&quot; of db without affecting db.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
-</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">txMolecules</dt><dd class="cmt"><p>Transaction statements from applied Molecules with test data</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Note how the <code>n</code> parameter has to come before the <code>txMolecules</code> vararg.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
+<a href="../get/GetList.html#getWith(n:Int,txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>Int Number of rows returned</p></dd><dt class="param">txMolecules</dt><dd class="cmt"><p>Transaction statements from applied Molecules with test data</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Note how the <code>n</code> parameter has to come before the <code>txMolecules</code> vararg.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
     </li><li name="molecule.api.getAsync.GetAsyncList#getAsyncWith" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="getAsyncWith">
-      <a id="getAsyncWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(Seq[Seq[Statement]]*)(Conn,ClassTag[Tpl]):Future[List[Tpl]]"></a>
+      <a id="getAsyncWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]"></a><a id="getAsyncWith(Seq[Seq[Statement]]*)(Conn):Future[List[Tpl]]"></a>
       <span class="permalink">
-      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):scala.concurrent.Future[List[Tpl]]" title="Permalink">
+      <a href="../../../molecule/api/getAsync/GetAsyncList.html#getAsyncWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):scala.concurrent.Future[List[Tpl]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -907,7 +907,7 @@ For more info and code examples see equivalent synchronous
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getAsyncWith</span><span class="params">(<span name="txMolecules">txMolecules: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>, <span name="tplType">tplType: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]</span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
+        <span class="name">getAsyncWith</span><span class="params">(<span name="txMolecules">txMolecules: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../../ast/transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a>]]*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="conn">conn: <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="molecule.api.getAsync.GetAsyncList.Tpl">Tpl</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule with applied molecule transaction data.</p><div class="fullcomment"><div class="comment cmt"><p>Get <code>Future</code> with <code>List</code> of all rows as tuples matching molecule with applied molecule transaction data.
@@ -915,9 +915,9 @@ For more info and code examples see equivalent synchronous
 Apply one or more molecule transactions to in-memory &quot;branch&quot; of db without affecting db.
 <br><br>
 For more info and code examples see equivalent synchronous
-<a href="../get/GetList.html#getWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn,implicittplType:scala.reflect.ClassTag[Tpl]):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
+<a href="../get/GetList.html#getWith(txMolecules:Seq[Seq[molecule.ast.transactionModel.Statement]]*)(implicitconn:molecule.facade.Conn):List[Tpl]" class="extmbr" name="molecule.api.get.GetList#getWith">getWith</a> method.
 Multiple transactions can be applied to test more complex what-if scenarios!
-</p></div><dl class="paramcmts block"><dt class="param">txMolecules</dt><dd class="cmt"><p>Transaction statements from applied Molecules with test data</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt class="param">tplType</dt><dd class="cmt"><p>Implicit <code>ClassTag[Tpl]</code> to capture Tuple type for Array extraction</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">txMolecules</dt><dd class="cmt"><p>Transaction statements from applied Molecules with test data</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>List[Tpl] where Tpl is a tuple of data matching molecule</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/time/with/" target="_blank">Manual</a> on <code>with</code></p></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">

@@ -84,10 +84,10 @@ in the database:
 ```scala
 // What do we know about the fred entity?
 Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
-  (":person/name", "Fred", t3, true), 
-  (":person/likes", "pizza", t3, true), 
-  (":person/likes", "pizza", t6, false),
-  (":person/likes", "pasta", t6, true)  
+  (":Person/name", "Fred", t3, true), 
+  (":Person/likes", "pizza", t3, true), 
+  (":Person/likes", "pizza", t6, false),
+  (":Person/likes", "pasta", t6, true)  
 )
 ```
 

@@ -45,28 +45,28 @@ transaction representation, the "Statements Model", and then finally the Datomic
 ## 1 ## output.Molecule.debugSave 
 ================================================================================================================
 1          Model(
-  1          Atom("ns", "str", "String", 1, Eq(Seq("273 Broadway")), None, Seq(), Seq())
-  2          Bond("ns", "ref1", "ref1", 1, Seq())
-  3          Atom("ref1", "int1", "Int", 1, Eq(Seq(10700)), None, Seq(), Seq())
-  4          Atom("ref1", "str1", "String", 1, Eq(Seq("New York")), None, Seq(), Seq())
-  5          Bond("ref1", "ref2", "ref2", 1, Seq())
-  6          Atom("ref2", "str2", "String", 1, Eq(Seq("USA")), None, Seq(), Seq()))
+  1          Atom("Ns", "str", "String", 1, Eq(Seq("273 Broadway")), None, Seq(), Seq())
+  2          Bond("Ns", "ref1", "Ref1", 1, Seq())
+  3          Atom("Ref1", "int1", "Int", 1, Eq(Seq(10700)), None, Seq(), Seq())
+  4          Atom("Ref1", "str1", "String", 1, Eq(Seq("New York")), None, Seq(), Seq())
+  5          Bond("Ref1", "ref2", "Ref2", 1, Seq())
+  6          Atom("Ref2", "str2", "String", 1, Eq(Seq("USA")), None, Seq(), Seq()))
 ----------------------------------------------------------------------------------------------------------------
 2          List(
-  1          :db/add    'tempId                          :ns/str              Values(Eq(Seq("273 Broadway")),None)
-  2          :db/add    'e                               :ns/ref1             :ref1
-  3          :db/add    'v                               :ref1/int1           Values(Eq(Seq(10700)),None)
-  4          :db/add    'e                               :ref1/str1           Values(Eq(Seq("New York")),None)
-  5          :db/add    'e                               :ref1/ref2           :ref2
-  6          :db/add    'v                               :ref2/str2           Values(Eq(Seq("USA")),None))
+  1          :db/add    'tempId                          :Ns/str              Values(Eq(Seq("273 Broadway")),None)
+  2          :db/add    'e                               :Ns/ref1             :ref1
+  3          :db/add    'v                               :Ref1/int1           Values(Eq(Seq(10700)),None)
+  4          :db/add    'e                               :Ref1/str1           Values(Eq(Seq("New York")),None)
+  5          :db/add    'e                               :Ref1/ref2           :ref2
+  6          :db/add    'v                               :Ref2/str2           Values(Eq(Seq("USA")),None))
 ----------------------------------------------------------------------------------------------------------------
 3          List(
-  1          :db/add    #db/id[:db.part/user -1001200]   :ns/str              273 Broadway
-  2          :db/add    #db/id[:db.part/user -1001200]   :ns/ref1             #db/id[:db.part/user -1001201]
-  3          :db/add    #db/id[:db.part/user -1001201]   :ref1/int1           10700
-  4          :db/add    #db/id[:db.part/user -1001201]   :ref1/str1           New York
-  5          :db/add    #db/id[:db.part/user -1001201]   :ref1/ref2           #db/id[:db.part/user -1001204]
-  6          :db/add    #db/id[:db.part/user -1001204]   :ref2/str2           USA)
+  1          :db/add    #db/id[:db.part/user -1001200]   :Ns/str              273 Broadway
+  2          :db/add    #db/id[:db.part/user -1001200]   :Ns/ref1             #db/id[:db.part/user -1001201]
+  3          :db/add    #db/id[:db.part/user -1001201]   :Ref1/int1           10700
+  4          :db/add    #db/id[:db.part/user -1001201]   :Ref1/str1           New York
+  5          :db/add    #db/id[:db.part/user -1001201]   :Ref1/ref2           #db/id[:db.part/user -1001204]
+  6          :db/add    #db/id[:db.part/user -1001204]   :Ref2/str2           USA)
 ================================================================================================================
 ```
 
@@ -81,20 +81,20 @@ The following is then printed to console:
 ## 1 ## output.Molecule.debugSave 
 ================================================================================================================
 1          Model(
-  1          Atom("ns", "int", "Int", 1, Eq(Seq(1)), None, Seq(), Seq())
+  1          Atom("Ns", "int", "Int", 1, Eq(Seq(1)), None, Seq(), Seq())
   2          TxMetaData(
-    1          Atom("ns", "str_", "String", 1, Eq(Seq("meta data")), None, Seq(), Seq())))
+    1          Atom("Ns", "str_", "String", 1, Eq(Seq("meta data")), None, Seq(), Seq())))
 ----------------------------------------------------------------------------------------------------------------
 2          List(
-  1          :db/add    'tempId                          :ns/int              Values(Eq(Seq(1)),None)
-  2          :db/add    'tx                              :ns/str              Values(Eq(Seq("meta data")),None))
+  1          :db/add    'tempId                          :Ns/int              Values(Eq(Seq(1)),None)
+  2          :db/add    'tx                              :Ns/str              Values(Eq(Seq("meta data")),None))
 ----------------------------------------------------------------------------------------------------------------
 3          List(
-  1          :db/add    #db/id[:db.part/user -1000590]   :ns/int              1
-  2          :db/add    datomic.tx                       :ns/str              meta data)
+  1          :db/add    #db/id[:db.part/user -1000590]   :Ns/int              1
+  2          :db/add    datomic.tx                       :Ns/str              meta data)
 ================================================================================================================
 ```
-Note how the `:ns/str` attribute meta value "meta data" is asserted with the current transaction entity 
+Note how the `:Ns/str` attribute meta value "meta data" is asserted with the current transaction entity 
 (identified by `datomic.tx`).
 
 
@@ -118,17 +118,17 @@ The following is then printed to console:
 ## 1 ## output.Molecule._debugInsert 
 ================================================================================================================
 1          Model(
-  1          Atom("ns", "str", "String", 1, VarValue, None, Seq(), Seq())
+  1          Atom("Ns", "str", "String", 1, VarValue, None, Seq(), Seq())
   2          Nested(
-    1          Bond("ns", "refs1", "ref1", 2, Seq())
-    2          Atom("ref1", "int1", "Int", 1, VarValue, None, Seq(), Seq())
-    3          Atom("ref1", "str1", "String", 1, VarValue, None, Seq(), Seq())))
+    1          Bond("Ns", "refs1", "Ref1", 2, Seq())
+    2          Atom("Ref1", "int1", "Int", 1, VarValue, None, Seq(), Seq())
+    3          Atom("Ref1", "str1", "String", 1, VarValue, None, Seq(), Seq())))
 ----------------------------------------------------------------------------------------------------------------
 2          List(
-  1          :db/add    'tempId                          :ns/str              'arg
-  2          :db/add    'e                               :ns/refs1            List(
-    1          :db/add    'v                               :ref1/int1           'arg
-    2          :db/add    'e                               :ref1/str1           'arg))
+  1          :db/add    'tempId                          :Ns/str              'arg
+  2          :db/add    'e                               :Ns/refs1            List(
+    1          :db/add    'v                               :Ref1/int1           'arg
+    2          :db/add    'e                               :Ref1/str1           'arg))
 ----------------------------------------------------------------------------------------------------------------
 3          List(
   1          List(
@@ -146,13 +146,13 @@ The following is then printed to console:
 ----------------------------------------------------------------------------------------------------------------
 5          List(
   1          List(
-    1          :db/add    #db/id[:db.part/user -1001476]   :ns/str              order
-    2          :db/add    #db/id[:db.part/user -1001476]   :ns/refs1            #db/id[:db.part/user -1001477]
-    3          :db/add    #db/id[:db.part/user -1001477]   :ref1/int1           4
-    4          :db/add    #db/id[:db.part/user -1001477]   :ref1/str1           product1
-    5          :db/add    #db/id[:db.part/user -1001476]   :ns/refs1            #db/id[:db.part/user -1001478]
-    6          :db/add    #db/id[:db.part/user -1001478]   :ref1/int1           7
-    7          :db/add    #db/id[:db.part/user -1001478]   :ref1/str1           product2))
+    1          :db/add    #db/id[:db.part/user -1001476]   :Ns/str              order
+    2          :db/add    #db/id[:db.part/user -1001476]   :Ns/refs1            #db/id[:db.part/user -1001477]
+    3          :db/add    #db/id[:db.part/user -1001477]   :Ref1/int1           4
+    4          :db/add    #db/id[:db.part/user -1001477]   :Ref1/str1           product1
+    5          :db/add    #db/id[:db.part/user -1001476]   :Ns/refs1            #db/id[:db.part/user -1001478]
+    6          :db/add    #db/id[:db.part/user -1001478]   :Ref1/int1           7
+    7          :db/add    #db/id[:db.part/user -1001478]   :Ref1/str1           product2))
 ================================================================================================================
 ```
 Note how the order entity (-1001476) is referencing each created nested order line entity.
@@ -184,18 +184,18 @@ Datomic since the same value is already asserted.
 ================================================================================================================
 1          Model(
   1          Meta("?", "e_", "Long", Eq(Seq(17592186045445L)))
-  2          Atom("ns", "int", "Int", 1, Eq(Seq(2)), None, Seq(), Seq())
-  3          Atom("ns", "str", "String", 1, Eq(Seq("a")), None, Seq(), Seq()))
+  2          Atom("Ns", "int", "Int", 1, Eq(Seq(2)), None, Seq(), Seq())
+  3          Atom("Ns", "str", "String", 1, Eq(Seq("a")), None, Seq(), Seq()))
 ----------------------------------------------------------------------------------------------------------------
 2          List(
-  1          :db/add    17592186045445                   :ns/int              Values(Eq(Seq(2)),None)
-  2          :db/add    17592186045445                   :ns/str              Values(Eq(Seq("a")),None))
+  1          :db/add    17592186045445                   :Ns/int              Values(Eq(Seq(2)),None)
+  2          :db/add    17592186045445                   :Ns/str              Values(Eq(Seq("a")),None))
 ----------------------------------------------------------------------------------------------------------------
 3          List(
-  1          :db/add    17592186045445                   :ns/int              2)
+  1          :db/add    17592186045445                   :Ns/int              2)
 ================================================================================================================
 ```
-Datomic will internally create a retraction of the old value 1 for the attribute `:ns/int`. We can confirm this
+Datomic will internally create a retraction of the old value 1 for the attribute `:Ns/int`. We can confirm this
 by debugging the history data:
 
 ```scala
@@ -205,10 +205,10 @@ Ns(eid).a.v.t.op.debugGetHistory
 // Model, Query, Datalog...
 
 OUTPUTS:
-1  [":ns/int" 1 1030 false]  // <-- 1 was retracted
-2  [":ns/str" "a" 1028 true]
-3  [":ns/int" 2 1030 true]
-4  [":ns/int" 1 1028 true]
+1  [":Ns/int" 1 1030 false]  // <-- 1 was retracted
+2  [":Ns/str" "a" 1028 true]
+3  [":Ns/int" 2 1030 true]
+4  [":Ns/int" 1 1028 true]
 (showing up to 500 rows)
 --------------------------------------------------------------------------
 ```
@@ -244,7 +244,7 @@ where the retraction of the entity is performed.
 1          List(
   1          List(
     1          :db.fn/retractEntity   17592186045445
-    2          :db/add    datomic.tx                       :ns/str              meta))
+    2          :db/add    datomic.tx                       :Ns/str              meta))
 ================================================================================================================
 ```
 
@@ -284,23 +284,23 @@ Let's add some transaction meta data to the retraction
 ```scala
 debugRetract(Seq(e1, e2), Ref1.str1("Some tx info"))
 ```
-Then we can see how the `:ref1/str1` attribute value "Some tx info" is added as a statement to the transaction
+Then we can see how the `:Ref1/str1` attribute value "Some tx info" is added as a statement to the transaction
 that retracts the two entities:
 ```scala
 ## 1 ## molecule.Datomic.debugRetract 
 ================================================================================================================
 1          Model(
   1          TxMetaData(
-    1          Atom("ref1", "str1", "String", 1, Eq(Seq("Some tx info")), None, Seq(), Seq())))
+    1          Atom("Ref1", "str1", "String", 1, Eq(Seq("Some tx info")), None, Seq(), Seq())))
 ----------------------------------------------------------------------------------------------------------------
 2          List(
-  1          :db/add    'tx                              :ref1/str1           Values(Eq(Seq("Some tx info")),None))
+  1          :db/add    'tx                              :Ref1/str1           Values(Eq(Seq("Some tx info")),None))
 ----------------------------------------------------------------------------------------------------------------
 3          List(
   1          List(
     1          :db.fn/retractEntity   17592186045445
     2          :db.fn/retractEntity   17592186045446
-    3          :db/add    datomic.tx                       :ref1/str1           Some tx info))
+    3          :db/add    datomic.tx                       :Ref1/str1           Some tx info))
 ================================================================================================================
 ```
 

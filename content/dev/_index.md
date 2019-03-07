@@ -60,7 +60,7 @@ The `m`olecule method transforms our source code _at compile time_ through a ser
 The end result is simply a Datomic query string:
 
 ```scala
-"[:find ?b ?c :where [?a :person/name ?b] [?a :person/age ?c]]"
+"[:find ?b ?c :where [?a :Person/name ?b] [?a :Person/age ?c]]"
 ```
 
 Since the query is created at compile time it's all ready to fetch our data _at runtime_ with no performance impact:

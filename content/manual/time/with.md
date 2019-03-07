@@ -35,8 +35,8 @@ Transaction data is supplied to `getWith(txData)` by calling a transaction data 
 
 ```scala
 Person(fred).likes("sushi").getUpdateTx === List(
-  [:db/retract, 17592186045445, :person/likes, "pasta"]
-  [:db/add    , 17592186045445, :person/likes, "sushi"]
+  [:db/retract, 17592186045445, :Person/likes, "pasta"]
+  [:db/add    , 17592186045445, :Person/likes, "sushi"]
 ) 
 ```
 `getUpdateTx` returns the transaction data that would have been used to update Fred. In that way we

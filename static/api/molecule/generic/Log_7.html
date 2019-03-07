@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.generic.Log_7</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.generic.Log 7" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.generic.Log 7" />
+          <title>Molecule 0.18.0 - molecule.generic.Log_7</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.generic.Log 7" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.generic.Log 7" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -196,7 +196,7 @@ Person(benEntityId).age.t.op.getHistory === <span class="std">List</span>(
   (<span class="num">41</span>, t1, <span class="kw">true</span>),  <span class="cmt">// age 41 asserted in transaction t1</span>
   (<span class="num">41</span>, t2, <span class="kw">false</span>), <span class="cmt">// age 41 retracted in transaction t2</span>
   (<span class="num">42</span>, t2, <span class="kw">true</span>)   <span class="cmt">// age 42 asserted in transaction t2</span>
-)</pre><p>Available generic attributes:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+)</pre><p>Available generic attributes:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:Person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
 </li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.generic">generic</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Datom.scala#L1" target="_blank">Tests</a>
     for more generic attribute query examples.</p></span></dd></dl></div>
     </li><li name="molecule.generic.index" visbl="pub" class="indented3 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -222,21 +222,21 @@ with one or more arguments in the order of the Index's elements. Datoms are
 returned as tuples of data depending of which generic attributes you add to the
 Index molecule:</p><pre><span class="cmt">// Create EAVT Index molecule with 1 entity id argument</span>
 EAVT(e1).e.a.v.t.get === <span class="std">List</span>(
-  (e1, <span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>, t1),
-  (e1, <span class="lit">":person/age"</span>, <span class="num">42</span>, t2),
-  (e1, <span class="lit">":golf/score"</span>, <span class="num">5.7</span>, t2)
+  (e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, t1),
+  (e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, t2),
+  (e1, <span class="lit">":Golf/score"</span>, <span class="num">5.7</span>, t2)
 )
 
 <span class="cmt">// Maybe we are only interested in the attribute/value pairs:</span>
 EAVT(e1).a.v.get === <span class="std">List</span>(
-  (<span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>),
-  (<span class="lit">":person/age"</span>, <span class="num">42</span>),
-  (<span class="lit">":golf/score"</span>, <span class="num">5.7</span>)
+  (<span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>),
+  (<span class="lit">":Golf/score"</span>, <span class="num">5.7</span>)
 )
 
 <span class="cmt">// Two arguments to narrow the search</span>
-EAVT(e1, <span class="lit">":person/age"</span>).a.v.get === <span class="std">List</span>(
-  (<span class="lit">":person/age"</span>, <span class="num">42</span>)
+EAVT(e1, <span class="lit">":Person/age"</span>).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>)
 )</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
       So omitting arguments constructing the Index object (like <code>EAVT.e.a.v.t.get</code>)
       will throw an exception.<br>
@@ -266,15 +266,15 @@ query the Schema structure of the current database.</p><pre><span class="cmt">//
 
 <span class="cmt">// Attribute name elements</span>
 Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
-  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
-  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
   <span class="cmt">// etc..</span>
 )
 
 <span class="cmt">// Datomic type and cardinality of attributes</span>
 Schema.a.tpe.card.get === <span class="std">List</span> (
-  (<span class="lit">":sales_customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
-  (<span class="lit">":accounting_invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
 )
 
 <span class="cmt">// Optional docs and attribute options</span>
@@ -287,7 +287,7 @@ Schema.a
       .isComponent$
       .noHistory$
       .get === <span class="std">List</span>(
-  (<span class="lit">":sales_customer/name"</span>,
+  (<span class="lit">":sales_Customer/name"</span>,
     <span class="kw">true</span>,            <span class="cmt">// indexed</span>
     <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
     <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
@@ -295,7 +295,7 @@ Schema.a
     <span class="std">None</span>,            <span class="cmt">// Not a component</span>
     <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
     ),
-  (<span class="lit">":accounting_invoice/invoiceLine"</span>,
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>,
     <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
     <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
     <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
@@ -307,8 +307,8 @@ Schema.a
 
 <span class="cmt">// Defined enum values</span>
 Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
-  <span class="lit">":person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
-  <span class="lit">":interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+  <span class="lit">":Person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":Interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
 )
 
 <span class="cmt">// Schema transaction times</span>
@@ -316,10 +316,10 @@ Schema.t.tx.txInstant.get === <span class="std">List</span>(
   (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
   (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
 )</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
-Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"country"</span>, <span class="lit">"region"</span>, etc...)
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"Country"</span>, <span class="lit">"Region"</span>, etc...)
 
 <span class="cmt">// Attributes in the "Person" namespace</span>
-Schema.ns_(<span class="lit">"person"</span>).a.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+Schema.ns_(<span class="lit">"Person"</span>).attr.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
 
 <span class="cmt">// How many enum attributes?</span>
 Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related

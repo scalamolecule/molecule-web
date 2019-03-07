@@ -348,25 +348,25 @@ Person.name.age.get === List(("Fred", 42))
 
 ```
 List(
-  [:db/add, 17592186045445, :ns/int, 43]
+  [:db/add, 17592186045445, :Ns/int, 43]
 )
 List(
-    [:db/add, #db/id[:db.part/user -1000112], :ns/str, John], 
-    [:db/add, #db/id[:db.part/user -1000112], :ns/int, 44]
+    [:db/add, #db/id[:db.part/user -1000112], :Ns/str, John], 
+    [:db/add, #db/id[:db.part/user -1000112], :Ns/int, 44]
 )
 List(
-    [:db/add, #db/id[:db.part/user -1000113], :ns/str, Lisa], 
-    [:db/add, #db/id[:db.part/user -1000113], :ns/int, 23], 
-    [:db/add, #db/id[:db.part/user -1000114], :ns/str, Pete], 
-    [:db/add, #db/id[:db.part/user -1000114], :ns/int, 24]
+    [:db/add, #db/id[:db.part/user -1000113], :Ns/str, Lisa], 
+    [:db/add, #db/id[:db.part/user -1000113], :Ns/int, 23], 
+    [:db/add, #db/id[:db.part/user -1000114], :Ns/str, Pete], 
+    [:db/add, #db/id[:db.part/user -1000114], :Ns/int, 24]
 )
 List(
-    [:db/add, 17592186045445, :ns/int, 43]
+    [:db/add, 17592186045445, :Ns/int, 43]
 )
 ```
 ```
 List(
-  [:db/add, 17592186045445, :ns/int, 43]
+  [:db/add, 17592186045445, :Ns/int, 43]
 )
 ```
 
@@ -539,20 +539,20 @@ Person(fred).likes.getHistory === List("pizza", "pasta")
 
 ```scala
 Db.e.a.v.tx.t.txInstant.op.getHistory === List(
-  (fred, ":person/name",  "Fred",  tx1, t1, date1, true),
-  (fred, ":person/likes", "pizza", tx1, t1, date1, true),
-  (fred, ":person/likes", "pizza", tx2, t2, date2, false),
-  (fred, ":person/likes", "pasta", tx2, t2, date2, true)
+  (fred, ":Person/name",  "Fred",  tx1, t1, date1, true),
+  (fred, ":Person/likes", "pizza", tx1, t1, date1, true),
+  (fred, ":Person/likes", "pizza", tx2, t2, date2, false),
+  (fred, ":Person/likes", "pasta", tx2, t2, date2, true)
 )
 ```
 
 
 ```scala
 Person(fred).a.v.tx.t.txInstant.op.getHistory === List(
-  (":person/name",  "Fred",  tx1, t1, date1, true),
-  (":person/likes", "pizza", tx1, t1, date1, true),
-  (":person/likes", "pizza", tx2, t2, date2, false),
-  (":person/likes", "pasta", tx2, t2, date2, true)
+  (":Person/name",  "Fred",  tx1, t1, date1, true),
+  (":Person/likes", "pizza", tx1, t1, date1, true),
+  (":Person/likes", "pizza", tx2, t2, date2, false),
+  (":Person/likes", "pasta", tx2, t2, date2, true)
 )
 ```
 
@@ -893,7 +893,7 @@ val persons = datomic.Peer.q(
     |[:find ?id
     | :in $ ?names
     | :where
-    |   [?e :person/name ?names]]
+    |   [?e :Person/name ?names]]
   """.stripMargin, conn.db, "John")
 ```
 
@@ -1144,22 +1144,22 @@ object YourDomainDefinition {
 ```scala
 fredId.touch === Map( // Map[String, Any]
   ":db/id" -> 101L,
-  ":person/name" -> "Fred",
-  ":person/likes" -> "pizza",
-  ":person/age"	-> 38,
-  ":site/cat" -> "customer"
+  ":Person/name" -> "Fred",
+  ":Person/likes" -> "pizza",
+  ":Person/age"	-> 38,
+  ":Site/cat" -> "customer"
 )
 
-val siteCat_? : Option[String] = fredId[String](":site/cat")
+val siteCat_? : Option[String] = fredId[String](":Site/cat")
 ```
 
 ```scala
 fredId.touch === Map(
   ":db/id" -> 101L,
-  ":person/name" -> "Fred",
-  ":person/likes" -> "pizza",
-  ":person/age"	-> 38,
-  ":site/cat" -> "customer"
+  ":Person/name" -> "Fred",
+  ":Person/likes" -> "pizza",
+  ":Person/age"	-> 38,
+  ":Site/cat" -> "customer"
 )
 ```
 
@@ -1183,20 +1183,20 @@ m(Order.orderid.LineItems * (
 // Touch entity facts hierarchy recursively
 orderId.touch === Map(
   ":db/id" -> 101L,
-  ":order/lineItems" -> List(
+  ":Order/lineItems" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 
 // Optional typed attribute value
-fredId[String](":person/likes") === Some("pizza")
+fredId[String](":Person/likes") === Some("pizza")
 ```
 
 ```scala
@@ -1210,17 +1210,17 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
 // Entity api - .touch
 101.touch === Map(
   ":db/id" -> 101L,
-  ":order/lineItems" -> List(
+  ":Order/lineItems" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 ```
 
 

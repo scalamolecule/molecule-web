@@ -305,9 +305,9 @@ debugTransact(transfer(fromAccount, toAccount, 20))
 ========================================================================
 1          ArrayBuffer(
   1          List(
-    1          :db/add       17592186045445       :account/balance    80        Card(1))
+    1          :db/add       17592186045445       :Account/balance    80        Card(1))
   2          List(
-    1          :db/add       17592186045447       :account/balance    720       Card(1)))
+    1          :db/add       17592186045447       :Account/balance    720       Card(1)))
 ------------------------------------------------
 2          List(
   1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Thu Nov 22 16:23:09 CET 2018

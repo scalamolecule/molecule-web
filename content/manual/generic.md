@@ -31,24 +31,24 @@ Person.e.name.get.head === (benEntityId, "Ben")
 Attributes and values of entity e1
 ```scala
 EAVT(e1).a.v.get === List(
-  (":person/name", "Ben"),
-  (":person/age", 42),
-  (":golf/score", 5.7)
+  (":Person/name", "Ben"),
+  (":Person/age", 42),
+  (":Golf/score", 5.7)
 )
 ``` 
 
 ### [AVET Index](indexes)
 
-Values, entities and transactions where attribute :person/age is involved
+Values, entities and transactions where attribute :Person/age is involved
 ```scala
-AVET(":person/age").e.v.t.get === List(
+AVET(":Person/age").e.v.t.get === List(
   (42, e1, t2),
   (37, e2, t5)
   (14, e3, t7),
 )
 
 // AVET index filtered with an attribute name and a range of values
-AVET.range(":person/age", Some(14), Some(40)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
   (14, e4, t7),
   (37, e2, t5)
 )
@@ -56,9 +56,9 @@ AVET.range(":person/age", Some(14), Some(40)).v.e.t.get === List(
 
 ### [AEVT Index](indexes)
 
-Entities, values and transactions where attribute :person/name is involved 
+Entities, values and transactions where attribute :Person/name is involved 
 ```scala
-AEVT(":person/name").e.v.t.get === List(
+AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
 )
@@ -69,9 +69,9 @@ AEVT(":person/name").e.v.t.get === List(
 Get entities pointing to entity a1
 ```scala
 VAET(a1).v.a.e.get === List(
-  (a1, ":release/artists", r1),
-  (a1, ":release/artists", r2),
-  (a1, ":release/artists", r3),
+  (a1, ":Release/artists", r1),
+  (a1, ":Release/artists", r2),
+  (a1, ":Release/artists", r3),
 )
 ``` 
 
@@ -80,14 +80,14 @@ VAET(a1).v.a.e.get === List(
 Data from transaction t1 until t4 (exclusive)
 ```scala
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
-  (t1, e1, ":person/name", "Ben", true),
-  (t1, e1, ":person/age", 41, true),
+  (t1, e1, ":Person/name", "Ben", true),
+  (t1, e1, ":Person/age", 41, true),
 
-  (t2, e2, ":person/name", "Liz", true),
-  (t2, e2, ":person/age", 37, true),
+  (t2, e2, ":Person/name", "Liz", true),
+  (t2, e2, ":Person/age", 37, true),
 
-  (t3, e1, ":person/age", 41, false),
-  (t3, e1, ":person/age", 42, true)
+  (t3, e1, ":Person/age", 41, false),
+  (t3, e1, ":Person/age", 42, true)
 )
 ``` 
 
@@ -95,7 +95,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 
 Get entities pointing to entity a1 
 ```scala
-Schema.part.ns.attr.fuolltext$.doc.get === List(
+Schema.part.ns.attr.fulltext$.doc.get === List(
   ("ind", "person", "name", Some(true), "Person name"), // fulltext search enabled
   ("ind", "person", "age", None, "Person age"),
   ("cat", "sport", "name", None, "Sport category name")

@@ -81,18 +81,18 @@ We can get a similar - but un-typed - nested hierarchy of data with the Entity A
 // Touch entity facts hierarchy recursively
 orderId.touch === Map(
   ":db/id" -> 101L,
-  ":order/id" -> "order1",
-  ":order/items" -> List(
+  ":Order/id" -> "order1",
+  ":Order/items" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 ```
 
 

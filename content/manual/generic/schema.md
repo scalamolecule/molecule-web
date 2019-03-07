@@ -31,10 +31,10 @@ The following Schema attributes can be used to build Schema molecules:
     <tr><td><i><b>Attribute</i></b>         &nbsp;&nbsp;</td> <td><b><i>Description</i></b></td> <td><b><i>Example value</i></b></td></tr>
 </th>
 <tr><td>`id`         &nbsp;&nbsp;</td> <td>Attribute definition entity id</td><td>`Long`</td></tr>
-<tr><td>`a`          &nbsp;&nbsp;</td> <td>(Partition-)Namespace-prefixed attribute name &nbsp;&nbsp;&nbsp;</td> <td>":ind_Person/name" or ":person/name" if no partitions</td></tr>
+<tr><td>`a`          &nbsp;&nbsp;</td> <td>(Partition-)Namespace-prefixed attribute name &nbsp;&nbsp;&nbsp;</td> <td>":ind_Person/name" or ":Person/name" if no partitions</td></tr>
 <tr><td>`part`       &nbsp;&nbsp;</td> <td>Partition name.</td> <td>"ind" or "" if no partitions</td></tr>
-<tr><td>`nsFull`     &nbsp;&nbsp;</td> <td>Namespace name with partition prefix</td> <td>"ind_Person" or "person" if no partitions</td></tr>
-<tr><td>`ns`         &nbsp;&nbsp;</td> <td>Namespace name</td> <td>"person"</td></tr>
+<tr><td>`nsFull`     &nbsp;&nbsp;</td> <td>Namespace name with partition prefix</td> <td>"ind_Person" or "Person" if no partitions</td></tr>
+<tr><td>`ns`         &nbsp;&nbsp;</td> <td>Namespace name</td> <td>"Person"</td></tr>
 <tr><td>`attr`       &nbsp;&nbsp;</td> <td>Attribute name</td> <td>"name"</td></tr>
 <tr><td>`tpe`        &nbsp;&nbsp;</td> <td>Attribute Datomic type</td> <td>See types below </td></tr>
 <tr><td>`card`       &nbsp;&nbsp;</td> <td>Attribute cardinality</td> <td>"one"/"many"</td></tr>
@@ -64,8 +64,8 @@ val attrIds: Seq[Long] = Schema.id.get
 ```scala
 // Attribute name elements
 Schema.a.part.ns.nsFull.attr.get === List (
-  (":sales_Customer/name", "sales", "customer", "sales_Customer", "name"),
-  (":sales_Customer/name", "sales", "customer", "sales_Customer", "name"),
+  (":sales_Customer/name", "sales", "Customer", "sales_Customer", "name"),
+  (":accounting_Invoice/invoiceLine", "accounting", "Invoice", "accounting_Invoice", "invoiceLine"),
   // etc..
 )
 ```
@@ -75,8 +75,8 @@ Schema.a.part.ns.nsFull.attr.get === List (
 ```scala
 // Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
-  (":sales_customer/name", "string", "one"),
-  (":accounting_invoice/invoiceLine", "ref", "many")
+  (":sales_Customer/name", "string", "one"),
+  (":accounting_Invoice/invoiceLine", "ref", "many")
 )
 ```
 Scala `Int` and `Long` are both represented as Datomic type `long`:
@@ -114,7 +114,7 @@ Schema.a
       .isComponent$
       .noHistory$
       .get === List(
-  (":sales_customer/name",
+  (":sales_Customer/name",
     true,            // indexed
     "Customer name", // doc
     None,            // Uniqueness not set
@@ -122,7 +122,7 @@ Schema.a
     None,            // Not a component
     None             // History is preserved (noHistory not set)
     ),
-  (":accounting_invoice/invoiceLine",
+  (":accounting_Invoice/invoiceLine",
     true,                   // indexed
     "Ref to Invoice lines", // doc
     None,                   // Uniqueness not set
@@ -139,8 +139,8 @@ Enumerated values can be defined in the schema and then retrieved generically wi
 ```scala
 // Defined enum values
 Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
-  ":person/gender" -> List("female", "male"),
-  ":interests/sports" -> List("golf", "basket", "badminton")
+  ":Person/gender" -> List("female", "male"),
+  ":Interests/sports" -> List("golf", "basket", "badminton")
 )
 ```
 

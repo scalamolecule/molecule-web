@@ -33,11 +33,11 @@ At runtime we can see the facts of an entity by calling `touch` on the entity id
 ```scala
 101L.touch === Map(
   ":db/id" -> 101L,
-  ":person/name"  -> "Fred", 
-  ":person/likes" -> "pizza", 
-  ":person/age"   -> 38, 
-  ":person/addr"  -> 102L,        // reference to an address entity with entity id 102 
-  ":site/cat"     -> "customer"
+  ":Person/name"  -> "Fred", 
+  ":Person/likes" -> "pizza", 
+  ":Person/age"   -> 38, 
+  ":Person/addr"  -> 102L,        // reference to an address entity with entity id 102 
+  ":Site/cat"     -> "customer"
 )
 ```
 
@@ -46,9 +46,9 @@ At runtime we can see the facts of an entity by calling `touch` on the entity id
 ### Optional attribute values
 
 We can look for an optionally present attribute value. Here we ask the entity id `fredId` if it has 
-a `:site/cat` attribute value (of type `String`) and we get a typed optional value back:
+a `:Site/cat` attribute value (of type `String`) and we get a typed optional value back:
 ```scala
-val siteCat_? : Option[String] = fredId[String](":site/cat")
+val siteCat_? : Option[String] = fredId[String](":Site/cat")
 ```
 
 
@@ -60,17 +60,17 @@ The `touch` method can recursively retrieve referenced entities. We could for in
 ```scala
 orderId.touch === Map(
   ":db/id" -> orderId,
-  ":order/lineItems" -> List(
+  ":Order/lineItems" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 ```
 
 The entity attributes graph might be deep and wide so we can apply a max level to `touch(<maxLevel>)`:
@@ -78,16 +78,16 @@ The entity attributes graph might be deep and wide so we can apply a max level t
 ```scala
 fredId.touchMax(2) === Map(
   ":db/id" -> fredId,
-  ":person/name" -> "Fred"
-  ":person/friends" -> List(
+  ":Person/name" -> "Fred"
+  ":Person/friends" -> List(
     Map(
       ":db/id" -> lisaId,
-      ":person/name" -> "Lisa"
-      ":person/friends" -> List(
+      ":Person/name" -> "Lisa"
+      ":Person/friends" -> List(
         Map(
           ":db/id" -> monaId,
-          ":person/name" -> "Mona"
-          ":person/friends" -> Set(ids...) // Mona's friends (3 levels deep) only as ids - not attribute maps
+          ":Person/name" -> "Mona"
+          ":Person/friends" -> Set(ids...) // Mona's friends (3 levels deep) only as ids - not attribute maps
         ),
         Map(...) // + more friends of Lisa (2 levels deep)
       )

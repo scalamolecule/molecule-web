@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.facade.Conn</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.facade.Conn" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.facade.Conn" />
+          <title>Molecule 0.18.0 - molecule.facade.Conn</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.facade.Conn" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.facade.Conn" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -755,8 +755,8 @@ Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
 <span class="cmt">// Paste Datomic query into `q` call and use some db value</span>
 conn.q(conn.db,
        <span class="lit">""</span><span class="lit">"[:find  ?b ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
   <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="num">37</span>),
   <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
 )
@@ -766,8 +766,8 @@ conn.q(conn.db,
 conn.q(conn.db,
        <span class="lit">""</span><span class="lit">"[:find  ?b ?c
          | :in    $ ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
        <span class="std">Seq</span>(<span class="num">42</span>) <span class="cmt">// input values in list</span>
  ) === <span class="std">List</span>(
   <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
@@ -798,8 +798,8 @@ Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
 
 <span class="cmt">// Paste Datomic query into `q` call</span>
 conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin) === <span class="std">List</span>(
   <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="num">37</span>),
   <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
 )
@@ -808,8 +808,8 @@ conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
 <span class="cmt">// by adding input to query and applying input value</span>
 conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
          | :in    $ ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>) === <span class="std">List</span>(
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>) === <span class="std">List</span>(
   <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="num">42</span>)
 )</pre></div><dl class="paramcmts block"><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>List[List[AnyRef]]</p></dd></dl></div>
     </li><li name="molecule.facade.Conn#qRaw" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -839,8 +839,8 @@ Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
 <span class="cmt">// Paste Datomic query into `q` call and use some db value</span>
 conn.q(conn.db,
        <span class="lit">""</span><span class="lit">"[:find  ?b ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
     .toString === <span class="lit">""</span><span class="lit">"[["</span>Liz<span class="lit">" 37], ["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span>
 
 <span class="cmt">// Modify Datomic query to see result, for instance</span>
@@ -848,8 +848,8 @@ conn.q(conn.db,
 conn.q(conn.db,
        <span class="lit">""</span><span class="lit">"[:find  ?b ?c
          | :in    $ ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin,
        <span class="std">Seq</span>(<span class="num">42</span>) <span class="cmt">// input values in list</span>
  ).toString === <span class="lit">""</span><span class="lit">"[["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span></pre></div><dl class="paramcmts block"><dt class="param">db</dt><dd class="cmt"><p>Any Datomic Database value (could be asOf(x) etc)</p></dd><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Seq of optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
     </li><li name="molecule.facade.Conn#qRaw" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -878,16 +878,16 @@ Ns.str.int.debugGet <span class="cmt">// shows datomic query...</span>
 
 <span class="cmt">// Paste Datomic query into `q` call</span>
 conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin)
     .toString === <span class="lit">""</span><span class="lit">"[["</span>Liz<span class="lit">" 37], ["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span>
 
 <span class="cmt">// Modify Datomic query to see result, for instance</span>
 <span class="cmt">// by adding input to query and applying input value</span>
 conn.q(<span class="lit">""</span><span class="lit">"[:find  ?b ?c
          | :in    $ ?c
-         | :where [?a :ns/str ?b]
-         |        [?a :ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>).toString === <span class="lit">""</span><span class="lit">"[["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span></pre></div><dl class="paramcmts block"><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
+         | :where [?a :Ns/str ?b]
+         |        [?a :Ns/int ?c]]"</span><span class="lit">""</span>.stripMargin, <span class="num">42</span>).toString === <span class="lit">""</span><span class="lit">"[["</span>Ben<span class="lit">" 42]]"</span><span class="lit">""</span></pre></div><dl class="paramcmts block"><dt class="param">query</dt><dd class="cmt"><p>Datomic query string</p></dd><dt class="param">inputs</dt><dd class="cmt"><p>Optional input(s) to query</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.Collection[java.util.List[AnyRef]]</p></dd></dl></div>
     </li><li name="molecule.facade.Conn#query" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="query(model:molecule.ast.model.Model,query:molecule.ast.query.Query):java.util.Collection[java.util.List[AnyRef]]"></a><a id="query(Model,Query):Collection[List[AnyRef]]"></a>
       <span class="permalink">

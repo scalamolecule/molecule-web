@@ -25,11 +25,11 @@ The source code of our molecule is then pattern matched in [Dsl2Model](https://g
 
 ```scala
 Model(List(
-  Atom("community", "name", "String", 1, VarValue, None),
-  Atom("community", "type_", "String", 1, Eq(List("twitter", "facebook_page")), Some(":community.type/")),
-  Bond("community", "neighborhood", "neighborhood"),
-  Bond("neighborhood", "district", "district"),
-  Atom("district", "region_", "String", 1, Eq(List("sw", "s", "se")), Some(":district.region/")))
+  Atom("Community", "name", "String", 1, VarValue, None),
+  Atom("Community", "type_", "String", 1, Eq(List("twitter", "facebook_page")), Some(":Community.type/")),
+  Bond("Community", "neighborhood", "Neighborhood"),
+  Bond("Neighborhood", "district", "District"),
+  Atom("District", "region_", "String", 1, Eq(List("sw", "s", "se")), Some(":District.region/")))
 )
 ```
 This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/model.scala) has shown to cover a surprising wide spectre of queries.
@@ -43,20 +43,20 @@ Query(
     Var("b"))),
   In(List(), List(
     Rule("rule1", List(Var("a")), List(
-      DataClause(ImplDS, Var("a"), KW("community", "type"), Val(":community.type/twitter"), Empty))),
+      DataClause(ImplDS, Var("a"), KW("Community", "type"), Val(":Community.type/twitter"), Empty))),
     Rule("rule1", List(Var("a")), List(
-      DataClause(ImplDS, Var("a"), KW("community", "type"), Val(":community.type/facebook_page"), Empty))),
+      DataClause(ImplDS, Var("a"), KW("Community", "type"), Val(":Community.type/facebook_page"), Empty))),
     Rule("rule2", List(Var("e")), List(
-      DataClause(ImplDS, Var("e"), KW("district", "region"), Val(":district.region/sw"), Empty))),
+      DataClause(ImplDS, Var("e"), KW("District", "region"), Val(":District.region/sw"), Empty))),
     Rule("rule2", List(Var("e")), List(
-      DataClause(ImplDS, Var("e"), KW("district", "region"), Val(":district.region/s"), Empty))),
+      DataClause(ImplDS, Var("e"), KW("District", "region"), Val(":District.region/s"), Empty))),
     Rule("rule2", List(Var("e")), List(
-      DataClause(ImplDS, Var("e"), KW("district", "region"), Val(":district.region/se"), Empty)))), List(DS)),
+      DataClause(ImplDS, Var("e"), KW("District", "region"), Val(":District.region/se"), Empty)))), List(DS)),
   Where(List(
-    DataClause(ImplDS, Var("a"), KW("community", "name"), Var("b"), Empty),
+    DataClause(ImplDS, Var("a"), KW("Community", "name"), Var("b"), Empty),
     RuleInvocation("rule1", List(Var("a"))),
-    DataClause(ImplDS, Var("a"), KW("community", "neighborhood", "neighborhood"), Var("d"), Empty),
-    DataClause(ImplDS, Var("d"), KW("neighborhood", "district", "district"), Var("e"), Empty),
+    DataClause(ImplDS, Var("a"), KW("Community", "neighborhood", "Neighborhood"), Var("d"), Empty),
+    DataClause(ImplDS, Var("d"), KW("Neighborhood", "district", "District"), Var("e"), Empty),
     RuleInvocation("rule2", List(Var("e")))))
 )
 ``` 
@@ -71,20 +71,20 @@ Finally Molecule transforms our Query AST in [Query2String](https://github.com/s
 <pre>
 [:find  ?b
  :in    $ %
- :where [?a :community/name ?b]
+ :where [?a :Community/name ?b]
         (rule1 ?a)
-        [?a :community/neighborhood ?d]
-        [?d :neighborhood/district ?e]
+        [?a :Community/neighborhood ?d]
+        [?d :Neighborhood/district ?e]
         (rule2 ?e)]
 
 INPUTS:
 List(
   1 datomic.db.Db@xxx
-  2 [[(rule1 ?a) [?a :community/type ":community.type/twitter"]]
-     [(rule1 ?a) [?a :community/type ":community.type/facebook_page"]]
-     [(rule2 ?e) [?e :district/region ":district.region/sw"]]
-     [(rule2 ?e) [?e :district/region ":district.region/s"]]
-     [(rule2 ?e) [?e :district/region ":district.region/se"]]]
+  2 [[(rule1 ?a) [?a :Community/type ":Community.type/twitter"]]
+     [(rule1 ?a) [?a :Community/type ":Community.type/facebook_page"]]
+     [(rule2 ?e) [?e :District/region ":District.region/sw"]]
+     [(rule2 ?e) [?e :District/region ":District.region/s"]]
+     [(rule2 ?e) [?e :District/region ":District.region/se"]]]
 </pre>
 
 All 3 transformations happen at compile time and therefore have no impact on the runtime performance.

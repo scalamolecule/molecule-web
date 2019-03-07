@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.api.out21</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.api.out21" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.api.out21" />
+          <title>Molecule 0.18.0 - molecule.api.out21</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.api.out21" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.api.out21" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -1511,13 +1511,13 @@ Here we debug a possible retraction of two comment entities with transaction met
     <span class="num">1</span>      Atom(metaData,user,<span class="std">String</span>,<span class="num">1</span>,Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>,<span class="std">List</span>(),<span class="std">List</span>())))
 ------------------------------------------------
 <span class="num">2</span>      <span class="std">List</span>(
-  <span class="num">1</span>      :db/add     'tx                             :metaData/user     Values(Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>)   Card(<span class="num">1</span>))
+  <span class="num">1</span>      :db/add     'tx                             :MetaData/user     Values(Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>)   Card(<span class="num">1</span>))
 ------------------------------------------------
 <span class="num">3</span>      <span class="std">List</span>(
   <span class="num">1</span>      <span class="std">List</span>(
     <span class="num">1</span>      :db.fn/retractEntity   <span class="num">17592186045445</span>
     <span class="num">2</span>      :db.fn/retractEntity   <span class="num">17592186045446</span>
-    <span class="num">3</span>      :db/add   #db/id[:db.part/tx -<span class="num">1000097</span>]    :metaData/user     b                                    Card(<span class="num">1</span>)))
+    <span class="num">3</span>      :db/add   #db/id[:db.part/tx -<span class="num">1000097</span>]    :MetaData/user     b                                    Card(<span class="num">1</span>)))
 ===================================================================================================================</pre></div><dl class="paramcmts block"><dt class="param">eids</dt><dd class="cmt"><p>Iterable of entity ids of type Long</p></dd><dt class="param">txMetaDataMolecules</dt><dd class="cmt"><p>Zero or more transaction meta data molecules</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>Unit (prints to output)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="EntityOps.html" class="extype" name="molecule.api.EntityOps">EntityOps</a></dd></dl></div>
     </li><li name="molecule.api.TxMethods#debugTransact" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="txfn">
       <a id="debugTransact(txFnCall:Seq[Seq[molecule.ast.transactionModel.Statement]],txMolecules:molecule.ast.MoleculeBase*):Unit"></a><a id="debugTransact(Seq[Seq[Statement]],MoleculeBase*):Unit"></a>
@@ -1549,9 +1549,9 @@ debugTransact(transfer(fromAccount, toAccount, <span class="num">20</span>))
 ========================================================================
 1          ArrayBuffer(
   1          List(
-    1          :db/add       17592186045445       :account/balance    80        Card(1))
+    1          :db/add       17592186045445       :Account/balance    80        Card(1))
   2          List(
-    1          :db/add       17592186045447       :account/balance    720       Card(1)))
+    1          :db/add       17592186045447       :Account/balance    720       Card(1)))
 ------------------------------------------------
 2          List(
   1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Thu Nov 22 16:23:09 CET 2018
@@ -1603,13 +1603,13 @@ to see the bundled transaction statements.</p><pre>debugTransact(
     1          List(
       1          :db.fn/retractEntity   17592186045445)
     2          List(
-      1          :db/add       #db/id[:db.part/user -1000247]     :ns/int          4           Card(1))
+      1          :db/add       #db/id[:db.part/user -1000247]     :Ns/int          4           Card(1))
     3          List(
-      1          :db/add       #db/id[:db.part/user -1000252]     :ns/int          5           Card(1))
+      1          :db/add       #db/id[:db.part/user -1000252]     :Ns/int          5           Card(1))
     4          List(
-      1          :db/add       #db/id[:db.part/user -1000253]     :ns/int          6           Card(1))
+      1          :db/add       #db/id[:db.part/user -1000253]     :Ns/int          6           Card(1))
     5          List(
-      1          :db/add       17592186045446                     :ns/int          20          Card(1)))
+      1          :db/add       17592186045446                     :Ns/int          20          Card(1)))
   ------------------------------------------------
   2          List(
     1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018

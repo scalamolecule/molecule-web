@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.api.EntityOps</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.api.EntityOps" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.api.EntityOps" />
+          <title>Molecule 0.18.0 - molecule.api.EntityOps</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.api.EntityOps" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.api.EntityOps" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -825,13 +825,13 @@ Here we debug a possible retraction of two comment entities with transaction met
     <span class="num">1</span>      Atom(metaData,user,<span class="std">String</span>,<span class="num">1</span>,Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>,<span class="std">List</span>(),<span class="std">List</span>())))
 ------------------------------------------------
 <span class="num">2</span>      <span class="std">List</span>(
-  <span class="num">1</span>      :db/add     'tx                             :metaData/user     Values(Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>)   Card(<span class="num">1</span>))
+  <span class="num">1</span>      :db/add     'tx                             :MetaData/user     Values(Eq(<span class="std">List</span>(Ben Goodman)),<span class="std">None</span>)   Card(<span class="num">1</span>))
 ------------------------------------------------
 <span class="num">3</span>      <span class="std">List</span>(
   <span class="num">1</span>      <span class="std">List</span>(
     <span class="num">1</span>      :db.fn/retractEntity   <span class="num">17592186045445</span>
     <span class="num">2</span>      :db.fn/retractEntity   <span class="num">17592186045446</span>
-    <span class="num">3</span>      :db/add   #db/id[:db.part/tx -<span class="num">1000097</span>]    :metaData/user     b                                    Card(<span class="num">1</span>)))
+    <span class="num">3</span>      :db/add   #db/id[:db.part/tx -<span class="num">1000097</span>]    :MetaData/user     b                                    Card(<span class="num">1</span>)))
 ===================================================================================================================</pre></div><dl class="paramcmts block"><dt class="param">eids</dt><dd class="cmt"><p>Iterable of entity ids of type Long</p></dd><dt class="param">txMetaDataMolecules</dt><dd class="cmt"><p>Zero or more transaction meta data molecules</p></dd><dt class="param">conn</dt><dd class="cmt"><p>Implicit <a href="../facade/Conn.html" class="extype" name="molecule.facade.Conn">Conn</a> value in scope</p></dd><dt>returns</dt><dd class="cmt"><p>Unit (prints to output)</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>

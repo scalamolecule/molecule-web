@@ -33,7 +33,7 @@ trait Community {
 trait Community_0 extends Community with Out_0[Community_0, Community_1, Community_In_1_0, Community_In_1_1] {
   lazy val name : name[Community_1[String], Community_In_1_1[String, String]] with Community_1[String] = 
     new name[Community_1[String], Community_In_1_1[String, String]] with Community_1[String] { 
-      override val _kw = ":community/name" 
+      override val _kw = ":Community/name" 
     }
   lazy val name_ : name[Community_0, Community_In_1_0[String]] with Community_0 = ???
 }
@@ -70,7 +70,7 @@ A way to gather additional/optional values from a query is to use the entity API
 to an entity id from the query:
 
 ```scala
-communityId(":community/url") === Some("http://eastballard.com/")
+communityId(":Community/url") === Some("http://eastballard.com/")
 ```
 This gives us an optional value back if an attribute value has been asserted for this entity.
 

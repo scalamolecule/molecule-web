@@ -133,28 +133,28 @@ val communityId = Community.e.name_.get.head
 
 // Use the community id to touch all the entity's attribute values
 communityId.touch === Map(
-  ":community/type" -> ":community.type/website",
-  ":community/url" -> "http://www.greenlakecommunitycouncil.org/",
-  ":community/category" -> List("community council"),
-  ":community/orgtype" -> ":community.orgtype/community",
+  ":Community/type" -> ":Community.type/website",
+  ":Community/url" -> "http://www.greenlakecommunitycouncil.org/",
+  ":Community/category" -> List("community council"),
+  ":Community/orgtype" -> ":Community.orgtype/community",
   ":db/id" -> 17592186045665L,
-  ":community/name" -> "Greenlake Community Council",
-  ":community/neighborhood" -> Map(
+  ":Community/name" -> "Greenlake Community Council",
+  ":Community/neighborhood" -> Map(
     ":db/id" -> 17592186045666L,
-    ":neighborhood/district" -> Map(
+    ":Neighborhood/district" -> Map(
       ":db/id" -> 17592186045667L,
-      ":district/name" -> "Northwest",
-      ":district/region" -> ":district.region/sw"),
-    ":neighborhood/name" -> "Green Lake"))
+      ":District/name" -> "Northwest",
+      ":District/region" -> ":District.region/sw"),
+    ":Neighborhood/name" -> "Green Lake"))
 ```
 
 We can also retrive attribute values one by one by simply applying an attribute name to the entity id:
 
 ```scala
-communityId(":community/name") === Some("Greenlake Community Council")
-communityId(":community/url") === Some("http://www.greenlakecommunitycouncil.org/")
-communityId(":community/category") === Some(Set("community council"))
-communityId(":community/emptyOrBogusAttribute") === None
+communityId(":Community/name") === Some("Greenlake Community Council")
+communityId(":Community/url") === Some("http://www.greenlakecommunitycouncil.org/")
+communityId(":Community/category") === Some(Set("community council"))
+communityId(":Community/emptyOrBogusAttribute") === None
 ```
 
 

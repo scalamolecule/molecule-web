@@ -281,22 +281,22 @@ object YourDomainDefinition {
 ```scala
 fredId.touch === Map( // Map[String, Any]
   ":db/id" -> 101L,
-  ":person/name" -> "Fred",
-  ":person/likes" -> "pizza",
-  ":person/age" -> 38,
-  ":site/cat" -> "customer"
+  ":Person/name" -> "Fred",
+  ":Person/likes" -> "pizza",
+  ":Person/age" -> 38,
+  ":Site/cat" -> "customer"
 )
 
-val siteCat_? : Option[String] = fredId[String](":site/cat")
+val siteCat_? : Option[String] = fredId[String](":Site/cat")
 ```
 
 ```scala
 fredId.touch === Map(
   ":db/id" -> 101L,
-  ":person/name" -> "Fred",
-  ":person/likes" -> "pizza",
-  ":person/age" -> 38,
-  ":site/cat" -> "customer"
+  ":Person/name" -> "Fred",
+  ":Person/likes" -> "pizza",
+  ":Person/age" -> 38,
+  ":Site/cat" -> "customer"
 )
 ```
 
@@ -320,20 +320,20 @@ m(Order.orderid.LineItems * (
 // Touch entity facts hierarchy recursively
 orderId.touch === Map(
   ":db/id" -> 101L,
-  ":order/lineItems" -> List(
+  ":Order/lineItems" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 
 // Optional typed attribute value
-fredId[String](":person/likes") === Some("pizza")
+fredId[String](":Person/likes") === Some("pizza")
 ```
 
 ```scala
@@ -347,17 +347,17 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
 // Entity api - .touch
 101.touch === Map(
   ":db/id" -> 101L,
-  ":order/lineItems" -> List(
+  ":Order/lineItems" -> List(
     Map(
       ":db/id" -> 102L, 
-      ":lineItem/qty" -> 3, 
-      ":lineItem/product" -> "Milk",
-      ":lineItem/price" -> 12.0),
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
     Map(
       ":db/id" -> 103L, 
-      ":lineItem/qty" -> 2, 
-      ":lineItem/product" -> "Coffee",
-      ":lineItem/price" -> 46.0)))
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
 ```
 
 
@@ -736,12 +736,12 @@ Model(
   Atom(person,age,Long,1,Eq(List(39)),None,List(),List()))
 -------------------------------------
 List(
-  :db/add   'tempId                          :person/name    Values(Eq(List(Fred)),None)
-  :db/add   'e                               :person/age     Values(Eq(List(39)),None))
+  :db/add   'tempId                          :Person/name    Values(Eq(List(Fred)),None)
+  :db/add   'e                               :Person/age     Values(Eq(List(39)),None))
 ---------------------------------
 List(
-  :db/add   #db/id[:db.part/user -1000008]   :person/name    Fred                       
-  :db/add   #db/id[:db.part/user -1000008]   :person/age     39)
+  :db/add   #db/id[:db.part/user -1000008]   :Person/name    Fred                       
+  :db/add   #db/id[:db.part/user -1000008]   :Person/age     39)
 ========================================================================
 
 
@@ -803,8 +803,8 @@ val persons = datomic.Peer.q(
   """
     |[:find ?name ?age
     | :where
-    |   [?e :person/name ?name]
-    |   [?e :person/age ?age]]
+    |   [?e :Person/name ?name]
+    |   [?e :Person/age ?age]]
   """.stripMargin, conn.db)
 ```
 
@@ -817,8 +817,8 @@ val persons: java.util.Collection[java.util.List[Object]] = datomic.Peer.q(
   """
     |[:find ?name ?age
     | :where
-    |   [?e :person/name ?name]
-    |   [?e :person/age ?age]]
+    |   [?e :Person/name ?name]
+    |   [?e :Person/age ?age]]
   """.stripMargin, conn.db)
 ```
 
@@ -828,8 +828,8 @@ val persons: List[(String, Int)] = datomic.Peer.q(
   """
     |[:find ?name ?age
     | :where
-    |   [?e :person/name ?name]
-    |   [?e :person/age ?age]]
+    |   [?e :Person/name ?name]
+    |   [?e :Person/age ?age]]
   """.stripMargin, conn.db
 ).asScala.map(_.asScala match {
     case Seq(name, age) =>
@@ -848,8 +848,8 @@ new Molecule2[String, Int] {
     """
       |[:find ?name ?age
       | :where
-      |   [?e :person/name ?name]
-      |   [?e :person/age ?age]]
+      |   [?e :Person/name ?name]
+      |   [?e :Person/age ?age]]
     """.stripMargin, conn.db
   ).asScala.map( _.asScala match {
     case Seq(name, age) => 

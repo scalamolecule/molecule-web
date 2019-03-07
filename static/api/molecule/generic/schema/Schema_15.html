@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.generic.schema.Schema_15</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.generic.schema.Schema 15" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.generic.schema.Schema 15" />
+          <title>Molecule 0.18.0 - molecule.generic.schema.Schema_15</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.generic.schema.Schema 15" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.generic.schema.Schema 15" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -190,15 +190,15 @@ query the Schema structure of the current database.</p><pre><span class="cmt">//
 
 <span class="cmt">// Attribute name elements</span>
 Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
-  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
-  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
   <span class="cmt">// etc..</span>
 )
 
 <span class="cmt">// Datomic type and cardinality of attributes</span>
 Schema.a.tpe.card.get === <span class="std">List</span> (
-  (<span class="lit">":sales_customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
-  (<span class="lit">":accounting_invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
 )
 
 <span class="cmt">// Optional docs and attribute options</span>
@@ -211,7 +211,7 @@ Schema.a
       .isComponent$
       .noHistory$
       .get === <span class="std">List</span>(
-  (<span class="lit">":sales_customer/name"</span>,
+  (<span class="lit">":sales_Customer/name"</span>,
     <span class="kw">true</span>,            <span class="cmt">// indexed</span>
     <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
     <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
@@ -219,7 +219,7 @@ Schema.a
     <span class="std">None</span>,            <span class="cmt">// Not a component</span>
     <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
     ),
-  (<span class="lit">":accounting_invoice/invoiceLine"</span>,
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>,
     <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
     <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
     <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
@@ -231,8 +231,8 @@ Schema.a
 
 <span class="cmt">// Defined enum values</span>
 Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
-  <span class="lit">":person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
-  <span class="lit">":interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+  <span class="lit">":Person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":Interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
 )
 
 <span class="cmt">// Schema transaction times</span>
@@ -240,10 +240,10 @@ Schema.t.tx.txInstant.get === <span class="std">List</span>(
   (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
   (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
 )</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
-Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"country"</span>, <span class="lit">"region"</span>, etc...)
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"Country"</span>, <span class="lit">"Region"</span>, etc...)
 
 <span class="cmt">// Attributes in the "Person" namespace</span>
-Schema.ns_(<span class="lit">"person"</span>).a.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+Schema.ns_(<span class="lit">"Person"</span>).attr.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
 
 <span class="cmt">// How many enum attributes?</span>
 Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related
@@ -451,10 +451,10 @@ Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2<
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:ns/attr&quot; if no partitions)." href="Schema$a.html"><span class="name">a</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../../boilerplate/attributes$$OneString.html" class="extype" name="molecule.boilerplate.attributes.OneString">OneString</a>[<span class="extype" name="molecule.generic.schema.Schema.a.Ns">Ns</span>, <span class="extype" name="molecule.generic.schema.Schema.a.In">In</span>] with <a href="../../boilerplate/attributes$$Indexed.html" class="extype" name="molecule.boilerplate.attributes.Indexed">Indexed</a></span>
+        <a title="(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:Ns/attr&quot; if no partitions)." href="Schema$a.html"><span class="name">a</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../../boilerplate/attributes$$OneString.html" class="extype" name="molecule.boilerplate.attributes.OneString">OneString</a>[<span class="extype" name="molecule.generic.schema.Schema.a.Ns">Ns</span>, <span class="extype" name="molecule.generic.schema.Schema.a.In">In</span>] with <a href="../../boilerplate/attributes$$Indexed.html" class="extype" name="molecule.boilerplate.attributes.Indexed">Indexed</a></span>
       </span>
       
-      <p class="shortcomment cmt">(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:ns/attr&quot; if no partitions).</p><div class="fullcomment"><div class="comment cmt"><p>(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:ns/attr&quot; if no partitions).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a></dd></dl></div>
+      <p class="shortcomment cmt">(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:Ns/attr&quot; if no partitions).</p><div class="fullcomment"><div class="comment cmt"><p>(Partition-)Namespace-prefixed attribute name (&quot;:part_Ns/attr&quot; or &quot;:Ns/attr&quot; if no partitions).</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Schema.html" class="extype" name="molecule.generic.schema.Schema">Schema</a></dd></dl></div>
     </li><li name="molecule.generic.schema.Schema.attr" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="attr[Ns,In]extendsattributes.OneString[Ns,In]withattributes.Indexed"></a><a id="attr[Ns,In]:attr[Ns,In]"></a>
       <span class="permalink">

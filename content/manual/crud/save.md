@@ -23,9 +23,9 @@ Person.name("Fred").likes("pizza").age(38).save
 This will assert 3 facts in Datomic that all share the id of the new entity id `fredId` that is automatically created by Datomic:
 
 ```
-fredId    :person/name    "Fred"
-fredId    :person/likes   "pizza"
-fredId    :person/age     38
+fredId    :Person/name    "Fred"
+fredId    :Person/likes   "pizza"
+fredId    :Person/age     38
 ```
 
 ### Type-safety
@@ -71,16 +71,16 @@ We can even save related date in the same operation
 ```scala
 Person.name("Fred").likes("pizza").age(38).Home.street("Baker St. 7").city("Boston").save
 ```
-In this case, 6 facts will be asserted for the entity of Fred. A `:person/home` ref attribute will resolve to the
+In this case, 6 facts will be asserted for the entity of Fred. A `:Person/home` ref attribute will resolve to the
 value of a new Address entity with id `addrId` and thereby establish the relationship from Fred to his Address:
 
 ```
-fredId    :person/name    "Fred"
-fredId    :person/likes   "pizza"
-fredId    :person/age     38
-fredId    :person/home    addrId
-addrId    :addr/street    "Baker St. 7"
-addrId    :addr/city      "Boston"
+fredId    :Person/name    "Fred"
+fredId    :Person/likes   "pizza"
+fredId    :Person/age     38
+fredId    :Person/home    addrId
+addrId    :Addr/street    "Baker St. 7"
+addrId    :Addr/city      "Boston"
 ```
 And we could go on with further relationships...
 
@@ -112,8 +112,8 @@ Person.name(aName).likes$(optionalLikes).age(anAge).save
 When this molecule is saved, only 2 facts will be asserted:
 
 ```
-fredId    :person/name    "Fred"
-fredId    :person/age     38
+fredId    :Person/name    "Fred"
+fredId    :Person/age     38
 ```
 
 This is different from SQL where we would save a NULL value in a `likes` column.

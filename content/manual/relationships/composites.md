@@ -18,7 +18,7 @@ As we saw earlier, [Entities](/manual/entities/) are simply groups of facts that
 
 ![](/img/entity/entity5.jpg)
 
-The last fact is kind of a black sheep though since the `:site/cat` attribute is not in the `Person` namespace.
+The last fact is kind of a black sheep though since the `:Site/cat` attribute is not in the `Person` namespace.
 
 ### Avoid non-intrinsic pollution
 

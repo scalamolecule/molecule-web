@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.generic.index.AVET.t</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.generic.index.AVET.t" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.generic.index.AVET.t" />
+          <title>Molecule 0.18.0 - molecule.generic.index.AVET.t</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.generic.index.AVET.t" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.generic.index.AVET.t" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -190,21 +190,21 @@ with one or more arguments in the order of the Index's elements. Datoms are
 returned as tuples of data depending of which generic attributes you add to the
 Index molecule:</p><pre><span class="cmt">// Create EAVT Index molecule with 1 entity id argument</span>
 EAVT(e1).e.a.v.t.get === <span class="std">List</span>(
-  (e1, <span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>, t1),
-  (e1, <span class="lit">":person/age"</span>, <span class="num">42</span>, t2),
-  (e1, <span class="lit">":golf/score"</span>, <span class="num">5.7</span>, t2)
+  (e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, t1),
+  (e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, t2),
+  (e1, <span class="lit">":Golf/score"</span>, <span class="num">5.7</span>, t2)
 )
 
 <span class="cmt">// Maybe we are only interested in the attribute/value pairs:</span>
 EAVT(e1).a.v.get === <span class="std">List</span>(
-  (<span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>),
-  (<span class="lit">":person/age"</span>, <span class="num">42</span>),
-  (<span class="lit">":golf/score"</span>, <span class="num">5.7</span>)
+  (<span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>),
+  (<span class="lit">":Golf/score"</span>, <span class="num">5.7</span>)
 )
 
 <span class="cmt">// Two arguments to narrow the search</span>
-EAVT(e1, <span class="lit">":person/age"</span>).a.v.get === <span class="std">List</span>(
-  (<span class="lit">":person/age"</span>, <span class="num">42</span>)
+EAVT(e1, <span class="lit">":Person/age"</span>).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>)
 )</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
       So omitting arguments constructing the Index object (like <code>EAVT.e.a.v.t.get</code>)
       will throw an exception.<br>
@@ -229,33 +229,33 @@ EAVT(e1, <span class="lit">":person/age"</span>).a.v.get === <span class="std">L
       <p class="shortcomment cmt">AVET Index.</p><div class="fullcomment"><div class="comment cmt"><p>AVET Index.</p><p>&quot;The AVET index provides efficient access to particular combinations of attribute and value.&quot;
 (from <a href="https://docs.datomic.com/on-prem/indexes.html" target="_blank">Datomic documentation</a>)</p><p>Access the AVET Index in Molecule by instantiating an AVET object with one
 or more arguments and then add generic attributes:</p><pre><span class="cmt">// Create AVET Index molecule with 1 entity id argument</span>
-AVET(<span class="lit">":person/age"</span>).e.v.t.get === <span class="std">List</span>(
+AVET(<span class="lit">":Person/age"</span>).e.v.t.get === <span class="std">List</span>(
   (e1, <span class="num">42</span>, t2),
   (e2, <span class="num">37</span>, t5)
   (e3, <span class="num">14</span>, t7),
 )
 
 <span class="cmt">// Narrow search with multiple arguments</span>
-AVET(<span class="lit">":person/age"</span>, <span class="num">42</span>).e.t.get === <span class="std">List</span>( (e1, t2) )
-AVET(<span class="lit">":person/age"</span>, <span class="num">42</span>, e1).e.v.get === <span class="std">List</span>( (e1, t2) )
-AVET(<span class="lit">":person/age"</span>, <span class="num">42</span>, e1, t2).e.v.get === <span class="std">List</span>( (e1, t2) )</pre><p>The AVET Index can be filtered by a range of values between <code>from</code> (inclusive) and
-<code>until</code> (exclusive) for an attribute:</p><pre>AVET.range(<span class="lit">":person/age"</span>, <span class="std">Some</span>(<span class="num">14</span>), <span class="std">Some</span>(<span class="num">37</span>)).v.e.t.get === <span class="std">List</span>(
+AVET(<span class="lit">":Person/age"</span>, <span class="num">42</span>).e.t.get === <span class="std">List</span>( (e1, t2) )
+AVET(<span class="lit">":Person/age"</span>, <span class="num">42</span>, e1).e.v.get === <span class="std">List</span>( (e1, t2) )
+AVET(<span class="lit">":Person/age"</span>, <span class="num">42</span>, e1, t2).e.v.get === <span class="std">List</span>( (e1, t2) )</pre><p>The AVET Index can be filtered by a range of values between <code>from</code> (inclusive) and
+<code>until</code> (exclusive) for an attribute:</p><pre>AVET.range(<span class="lit">":Person/age"</span>, <span class="std">Some</span>(<span class="num">14</span>), <span class="std">Some</span>(<span class="num">37</span>)).v.e.t.get === <span class="std">List</span>(
   (<span class="num">14</span>, e4, t7) <span class="cmt">// 14 is included in value range</span>
                <span class="cmt">// 37 not included in value range</span>
                <span class="cmt">// 42 outside value range</span>
 )
 
 <span class="cmt">// If `from` is None, the range starts from the beginning</span>
-AVET.range(<span class="lit">":person/age"</span>, <span class="std">None</span>, <span class="std">Some</span>(<span class="num">40</span>)).v.e.t.get === <span class="std">List</span>(
+AVET.range(<span class="lit">":Person/age"</span>, <span class="std">None</span>, <span class="std">Some</span>(<span class="num">40</span>)).v.e.t.get === <span class="std">List</span>(
   (<span class="num">14</span>, e3, t7),
   (<span class="num">37</span>, e2, t5),
 )
 
 <span class="cmt">// If `until` is None, the range goes to the end</span>
-AVET.range(<span class="lit">":person/age"</span>, <span class="std">Some</span>(<span class="num">20</span>), <span class="std">None</span>).v.e.t.get === <span class="std">List</span>(
+AVET.range(<span class="lit">":Person/age"</span>, <span class="std">Some</span>(<span class="num">20</span>), <span class="std">None</span>).v.e.t.get === <span class="std">List</span>(
   (<span class="num">37</span>, e2, t5),
   (<span class="num">42</span>, e1, t2)
-)</pre><p>Index attributes available:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+)</pre><p>Index attributes available:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:Person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
 </li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.generic.index">index</a></dd><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
       So omitting arguments constructing the Index object (like <code>AVET.a.v.e.t.get</code>)
       will throw an exception.<br>

@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.api.Entity</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.api.Entity" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.api.Entity" />
+          <title>Molecule 0.18.0 - molecule.api.Entity</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.api.Entity" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.api.Entity" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -647,7 +647,7 @@ In the meanwhile, Future-wrapped methods in this package can be used.</p><p>Mole
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Entity wrapper with actions on entity.
 </p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scalamolecule/molecule/tree/master/core/src/main/scala/molecule/api/Entity.scala#L1" target="_blank">Entity.scala</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/manual/entities/" target="_blank">Manual</a>
-    | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/runtime/EntityAPI.scala#L1" target="_blank">entity api</a></p></span></dd></dl><div class="toggleContainer block">
+     | Tests: <a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/runtime/EntityAPI.scala#L1" target="_blank">entity api</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -866,16 +866,16 @@ Referenced entities can be cast to an Option[Map[String, Any]].</p><pre><span cl
   optAge: <span class="std">Option</span>[<span class="std">Int</span>],
   optAddress: <span class="std">Option</span>[<span class="std">Map</span>[<span class="std">String</span>, Any]]
 ) = benId(
-  <span class="lit">":person/name"</span>,
-  <span class="lit">":person/age"</span>,
-  <span class="lit">":person/address"</span>
+  <span class="lit">":Person/name"</span>,
+  <span class="lit">":Person/age"</span>,
+  <span class="lit">":Person/address"</span>
 )
 
 <span class="kw">val</span> name: <span class="std">String</span> = optName.getOrElse(<span class="lit">"no name"</span>)
 
 <span class="cmt">// Type casting necessary to get right value type from Map[String, Any]</span>
 <span class="kw">val</span> address: <span class="std">Map</span>[<span class="std">String</span>, Any] = optAddress.getOrElse(<span class="std">Map</span>.empty[<span class="std">String</span>, Any])
-<span class="kw">val</span> street: <span class="std">String</span> = address.getOrElse(<span class="lit">":address/street"</span>, <span class="lit">"no street"</span>).asInstanceOf[<span class="std">String</span>]
+<span class="kw">val</span> street: <span class="std">String</span> = address.getOrElse(<span class="lit">":Address/street"</span>, <span class="lit">"no street"</span>).asInstanceOf[<span class="std">String</span>]
 
 name === <span class="lit">"Ben"</span>
 street === <span class="lit">"Hollywood Rd"</span></pre><p>Typed apply is likely more convenient if typed values are required.
@@ -902,16 +902,16 @@ Apply namespaced attribute name with a type parameter to return an optional type
 Note how referenced entities are returned as a Map so that we can continue traverse the entity graph.</p><pre><span class="kw">val</span> <span class="std">List</span>(benId, benAddressId) = Person.name.age.Address.street.insert(<span class="lit">"Ben"</span>, <span class="num">42</span>, <span class="lit">"Hollywood Rd"</span>).eids
 
 <span class="cmt">// Level 1</span>
-benId[<span class="std">String</span>](<span class="lit">":person/name"</span>) === <span class="std">Some</span>(<span class="lit">"Ben"</span>)
-benId[<span class="std">Int</span>](<span class="lit">":person/age"</span>) === <span class="std">Some</span>(<span class="num">42</span>)
+benId[<span class="std">String</span>](<span class="lit">":Person/name"</span>) === <span class="std">Some</span>(<span class="lit">"Ben"</span>)
+benId[<span class="std">Int</span>](<span class="lit">":Person/age"</span>) === <span class="std">Some</span>(<span class="num">42</span>)
 
 <span class="cmt">// Level 2</span>
-<span class="kw">val</span> refMap = benId[<span class="std">Map</span>[<span class="std">String</span>, Any]](<span class="lit">":person/address"</span>).getOrElse(<span class="std">Map</span>.empty[<span class="std">String</span>, Any])
-benAddressId[<span class="std">String</span>](<span class="lit">":address/street"</span>) === <span class="std">Some</span>(<span class="lit">"Hollywood Rd"</span>)
+<span class="kw">val</span> refMap = benId[<span class="std">Map</span>[<span class="std">String</span>, Any]](<span class="lit">":Person/address"</span>).getOrElse(<span class="std">Map</span>.empty[<span class="std">String</span>, Any])
+benAddressId[<span class="std">String</span>](<span class="lit">":Address/street"</span>) === <span class="std">Some</span>(<span class="lit">"Hollywood Rd"</span>)
 
 <span class="cmt">// Non-asserted or non-existing attribute returns None</span>
-benId[<span class="std">Int</span>](<span class="lit">":person/non-existing-attribute"</span>) === <span class="std">None</span>
-benId[<span class="std">Int</span>](<span class="lit">":person/existing-but-non-asserted-attribute"</span>) === <span class="std">None</span></pre></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>Type of attribute</p></dd><dt class="param">kw</dt><dd class="cmt"><p>Namespaced attribute: &quot;:[namespace with lowercase first letter]/[attribute name]&quot;</p></dd><dt>returns</dt><dd class="cmt"><p>Optional typed attribute value</p></dd></dl></div>
+benId[<span class="std">Int</span>](<span class="lit">":Person/non-existing-attribute"</span>) === <span class="std">None</span>
+benId[<span class="std">Int</span>](<span class="lit">":Person/existing-but-non-asserted-attribute"</span>) === <span class="std">None</span></pre></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>Type of attribute</p></dd><dt class="param">kw</dt><dd class="cmt"><p>Namespaced attribute: &quot;:[namespace with lowercase first letter]/[attribute name]&quot;</p></dd><dt>returns</dt><dd class="cmt"><p>Optional typed attribute value</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1270,11 +1270,11 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 
 benId.touch === <span class="std">Map</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="std">Map</span>(
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="std">Map</span>(
     <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045446</span>L,
-    <span class="lit">":address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+    <span class="lit">":Address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Map[key: String, value: Any] where value can be a primitive or another nested Map of the entity graph</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchList" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchList:List[(String,Any)]"></a>
@@ -1298,11 +1298,11 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 
 benId.touchList === <span class="std">List</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="std">List</span>(
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="std">List</span>(
     <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045446</span>L,
-    <span class="lit">":address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+    <span class="lit">":Address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>List[(key: String, value: Any)] where value can be a primitive or another nested List of the entity graph</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchListMax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchListMax(maxDepth:Int):List[(String,Any)]"></a><a id="touchListMax(Int):List[(String,Any)]"></a>
@@ -1325,19 +1325,19 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 <span class="cmt">// 2 levels returned</span>
 benId.touchListMax(<span class="num">2</span>) === <span class="std">List</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="std">List</span>(
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="std">List</span>(
     <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045446</span>L,
-    <span class="lit">":address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+    <span class="lit">":Address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )
 
 <span class="cmt">// 1 level returned</span>
 benId.touchListMax(<span class="num">1</span>) === <span class="std">List</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="num">17592186045446</span>L <span class="cmt">// Only reference returned</span>
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="num">17592186045446</span>L <span class="cmt">// Only reference returned</span>
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>List[(key: String, value: Any)] where value can be a primitive or another nested Map of the entity graph</p></dd></dl><dl class="attributes block"> <dt>To do</dt><dd><span class="cmt"><p>remove overload hack (by avoiding implicit apply method of scala.collection.LinearSeqOptimized ?)</p></span></dd></dl></div>
     </li><li name="molecule.api.Entity#touchListQuoted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchListQuoted:String"></a>
@@ -1362,11 +1362,11 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 benId.touchListQuoted ===
   <span class="lit">""</span><span class="lit">"List(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> List(
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> List(
     |    "</span>:db/id<span class="lit">" -> 17592186045446L,
-    |    "</span>:address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
+    |    "</span>:Address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchListQuotedMax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchListQuotedMax(maxDepth:Int):String"></a><a id="touchListQuotedMax(Int):String"></a>
       <span class="permalink">
@@ -1389,20 +1389,20 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 benId.touchListQuotedMax(<span class="num">2</span>) ===
   <span class="lit">""</span><span class="lit">"List(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> List(
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> List(
     |    "</span>:db/id<span class="lit">" -> 17592186045446L,
-    |    "</span>:address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin
+    |    "</span>:Address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin
 
 <span class="cmt">// 1 level returned</span>
 <span class="cmt">// Note that only reference to Address entity on level 2 is returned</span>
 benId.touchListQuotedMax(<span class="num">1</span>) ===
   <span class="lit">""</span><span class="lit">"List(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> 17592186045446L,
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> 17592186045446L,
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>,stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchMax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchMax(maxDepth:Int):Map[String,Any]"></a><a id="touchMax(Int):Map[String,Any]"></a>
       <span class="permalink">
@@ -1424,19 +1424,19 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 <span class="cmt">// 2 levels returned</span>
 benId.touchMax(<span class="num">2</span>) === <span class="std">Map</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="std">Map</span>(
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="std">Map</span>(
     <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045446</span>L,
-    <span class="lit">":address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+    <span class="lit">":Address/street"</span> -&gt; <span class="lit">"Hollywood Rd"</span>),
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )
 
 <span class="cmt">// 1 level returned</span>
 benId.touchMax(<span class="num">1</span>) === <span class="std">Map</span>(
   <span class="lit">":db/id"</span> -&gt; <span class="num">17592186045445</span>L,
-  <span class="lit">":person/age"</span> -&gt; <span class="num">42</span>,
-  <span class="lit">":person/address"</span> -&gt; <span class="num">17592186045446</span>L <span class="cmt">// Only reference returned</span>
-  <span class="lit">":person/name"</span> -&gt; <span class="lit">"Ben"</span>
+  <span class="lit">":Person/age"</span> -&gt; <span class="num">42</span>,
+  <span class="lit">":Person/address"</span> -&gt; <span class="num">17592186045446</span>L <span class="cmt">// Only reference returned</span>
+  <span class="lit">":Person/name"</span> -&gt; <span class="lit">"Ben"</span>
 )</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Map[key: String, value: Any] where value can be a primitive or another nested Map of the entity graph</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchQuoted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchQuoted:String"></a>
@@ -1465,11 +1465,11 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 benId.touchQuoted ===
   <span class="lit">""</span><span class="lit">"Map(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> Map(
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> Map(
     |    "</span>:db/id<span class="lit">" -> 17592186045446L,
-    |    "</span>:address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
+    |    "</span>:Address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
     </li><li name="molecule.api.Entity#touchQuotedMax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="touch">
       <a id="touchQuotedMax(maxDepth:Int):String"></a><a id="touchQuotedMax(Int):String"></a>
       <span class="permalink">
@@ -1496,20 +1496,20 @@ the value is a Map itself of the referenced entity attributes, etc.</li></ul><pr
 benId.touchQuotedMax(<span class="num">2</span>) ===
   <span class="lit">""</span><span class="lit">"Map(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> Map(
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> Map(
     |    "</span>:db/id<span class="lit">" -> 17592186045446L,
-    |    "</span>:address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin
+    |    "</span>:Address/street<span class="lit">" -> "</span>Hollywood Rd<span class="lit">"),
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin
 
 <span class="cmt">// 1 level returned</span>
 <span class="cmt">// Note that only reference to Address entity on level 2 is returned</span>
 benId.touchQuotedMax(<span class="num">1</span>) ===
   <span class="lit">""</span><span class="lit">"Map(
     |  "</span>:db/id<span class="lit">" -> 17592186045445L,
-    |  "</span>:person/age<span class="lit">" -> 42,
-    |  "</span>:person/address<span class="lit">" -> 17592186045446L,
-    |  "</span>:person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
+    |  "</span>:Person/age<span class="lit">" -> 42,
+    |  "</span>:Person/address<span class="lit">" -> 17592186045446L,
+    |  "</span>:Person/name<span class="lit">" -> "</span>Ben<span class="lit">")"</span><span class="lit">""</span>.stripMargin</pre></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>String</p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">

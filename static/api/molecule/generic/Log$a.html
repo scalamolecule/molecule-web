@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.17.1 - molecule.generic.Log.a</title>
-          <meta name="description" content="Molecule 0.17.1 - molecule.generic.Log.a" />
-          <meta name="keywords" content="Molecule 0.17.1 molecule.generic.Log.a" />
+          <title>Molecule 0.18.0 - molecule.generic.Log.a</title>
+          <meta name="description" content="Molecule 0.18.0 - molecule.generic.Log.a" />
+          <meta name="keywords" content="Molecule 0.18.0 molecule.generic.Log.a" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.17.1</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -190,23 +190,23 @@ organized for efficient access by transaction.
 Instantiate Log object with tx range arguments between <code>from</code> (inclusive) and <code>until</code> (exclusive),
 and add Log attributes to be returned as tuples of data:</p><pre><span class="cmt">// Data from transaction t1 until t4 (exclusive)</span>
 Log(<span class="std">Some</span>(t1), <span class="std">Some</span>(t4)).t.e.a.v.op.get === <span class="std">List</span>(
-  (t1, e1, <span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
-  (t1, e1, <span class="lit">":person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
 
-  (t2, e2, <span class="lit">":person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
-  (t2, e2, <span class="lit">":person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
 
-  (t3, e1, <span class="lit">":person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
-  (t3, e1, <span class="lit">":person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
 )
 
 <span class="cmt">// If `from` is None, the range starts from the beginning</span>
 Log(<span class="std">None</span>, <span class="std">Some</span>(t3)).v.e.t.get === <span class="std">List</span>(
-  (t1, e1, <span class="lit">":person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
-  (t1, e1, <span class="lit">":person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
 
-  (t2, e2, <span class="lit">":person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
-  (t2, e2, <span class="lit">":person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>)
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>)
 
   <span class="cmt">// t3 not included</span>
 )
@@ -215,12 +215,12 @@ Log(<span class="std">None</span>, <span class="std">Some</span>(t3)).v.e.t.get 
 Log(<span class="std">Some</span>(t2), <span class="std">None</span>).v.e.t.get === <span class="std">List</span>(
   <span class="cmt">// t1 not included</span>
 
-  (t2, e2, <span class="lit">":person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
-  (t2, e2, <span class="lit">":person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
 
-  (t3, e1, <span class="lit">":person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
-  (t3, e1, <span class="lit">":person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
-)</pre><p>Log attributes available:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
+)</pre><p>Log attributes available:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like &quot;:Person/name&quot; (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
 </li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="molecule.generic">generic</a></dd><dt>Note</dt><dd><span class="cmt"><p>Contrary to the Datomic Log which is map of individual transactions
 the Molecule Log implementation is flattened to be one continuous list
 of transaction data. This is to have a transparent unified return type
