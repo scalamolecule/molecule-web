@@ -10,6 +10,10 @@ title: "Changelog"
 
 Main changes:
 
+- 2019-04-02 v0.18.3 [Bug fixes](#26)
+- 2019-03-10 v0.18.2 [Meta becomes Generic](#25)
+- 2019-03-09 v0.18.1 [Shift Meta semantics](#24)
+- 2019-03-07 v0.18.0 [Synchronized internal naming scheme + bug fixes](#23)
 - 2019-01-15 v0.17.0 [Datoms, Indexes, Log, Schema and debugging](#22)
 - 2018-12-02 v0.16.1 [Sbt-molecule 0.7.0, bootstrap speed optimization](#21)
 - 2018-11-25 v0.16.0 [Async API + tx functions](#20)
@@ -34,7 +38,121 @@ Main changes:
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
 
 
+## [☝︎](#top) Bug fixes {#26}
+_2019-04-02 v0.18.3_
 
+Bugfixes: 
+
+- Card-many ref attributes now have the same api as other card-many attributes (Set's of values can now be applied to both types).
+- Variable resolution on fulltext searches added.
+- Text attributes can now handle text input with quotation marks.  
+- Touching entity ids with `Entity` now correctly handles all types.
+
+
+Improvement:
+
+- For a more direct query evaluation, applying a single value to an attribute is now `ground`ed to a variable instead of using `comparison`.
+
+
+## [☝︎](#top) Meta becomes Generic {#25}
+_2019-03-10 v0.18.2_
+
+
+## [☝︎](#top) Shift Meta semantics {#24}
+_2019-03-09 v0.18.1_
+
+
+## [☝︎](#top) Synchronized internal naming scheme + bug fixes {#23}
+_2019-03-07 v0.18.0_
+
+In order to synchronize scala molecule boilerplate code and its internal representation,
+namespace names are now capitalized also in molecule model/query/datalog. This
+applies when no custom partitions are defined (and namespaces not partition-prefixed): 
+
+```scala
+// Namespace names are now capitalized in the model
+m(Community.name)._model === Model(List(
+  Atom("Community", "name", "String", 1, VarValue) // "Community" now uppercase
+))
+
+// Uppercase namespace names are also retrieved when querying the schema
+Schema.a.part.ns.nsFull.attr.get === List((
+  ":Community/name", // namespace name now uppercase 
+  "db.part/user", // default partition (not prefixed to namespaces)
+  "Community", // now uppercase
+  "Customer", // now uppercase (has no partition prefix when no custom partition is defined)
+  "name"
+))
+
+// Produced Datalog queries will also use the uppercase namespace name 
+[:find  ?b
+ :where [?a :Community/name ?b]]
+```
+
+This change takes away the need to lower/capitalize namespace names back and forth
+between the source code representation and molecule model/query/datalog representations.
+It also makes it easier to distinguish between namespace/attribute names in internal
+molecule representations.
+
+
+### Unaffected with custom partitions
+
+As before, custom partition-prefixed namespaces are unaffected: 
+
+```scala
+// Namespace names are now capitalized in the model
+m(accounting_Invoice.invoiceLine)._model === Model(List(
+  Atom("accounting_Invoice", "invoiceLine", "ref", 1, VarValue)
+))
+
+// Querying the schema
+Schema.a.part.ns.nsFull.attr.get === List((
+  ":accounting_Invoice/invoiceLine", 
+  "accounting", // custom partition (always lowercase)
+  "Invoice", // namespace now uppercase
+  "accounting_Invoice", // partition-prefixed namespace
+  "invoiceLine"
+))
+
+// Datalog query 
+[:find  ?b
+ :where [?a :accounting_Invoice/invoiceLine ?b]]
+```
+
+### Working with non-molecule Datomic databases
+
+For the end user internal uppercase namespace names have no impact unless you are working 
+with externally defined Datomic databases or data sets that can have lowercase namespace
+names defined. 
+
+The sbt-plugin (as of version 0.8) now generates two additional schema transaction files
+that can be transacted with the external lowercase database so that you can use your 
+uppercase Molecule code with it:
+
+#### Molecule schema (uppercase) + external data (lowercase) 
+
+When importing external data 
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L367-L368)) 
+from a database with lowercase namespace names then you can 
+transact lowercase attribute aliases 
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L18)) 
+so that your uppercase Molecule code can recognize the 
+imported lowercase data:
+
+```scala
+conn.datomicConn.transact(SchemaUpperToLower.namespaces)
+```
+
+#### External schema (lowercase) + external data (lowercase) 
+
+If both external schema and data is created with lowercase namespace names, then you can transact
+uppercase attribute aliases with the live database so that it will recognize your uppercase
+molecule code
+([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/mbrainz/MBrainz.scala#L38)):
+
+```scala
+conn.datomicConn.transact(MBrainzSchemaLowerToUpper.namespaces)
+```
 
 ## [☝︎](#top) Datoms, Indexes, Log, Schema and debugging {#22}
 _2019-01-15 v0.17.0_

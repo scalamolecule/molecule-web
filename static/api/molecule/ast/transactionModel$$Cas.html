@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.ast.transactionModel.Cas</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.ast.transactionModel.Cas" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.ast.transactionModel.Cas" />
+          <title>Molecule 0.18.3 - molecule.ast.transactionModel.Cas</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.ast.transactionModel.Cas" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.ast.transactionModel.Cas" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -241,7 +241,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Cas</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Any">Any</span></span>, <span name="a">a: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="oldV">oldV: <span class="extype" name="scala.Any">Any</span></span>, <span name="v">v: <span class="extype" name="scala.Any">Any</span></span>, <span name="bi">bi: <a href="model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></span>)</span><span class="result"> extends <a href="transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">Cas</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Any">Any</span></span>, <span name="a">a: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="oldV">oldV: <span class="extype" name="scala.Any">Any</span></span>, <span name="v">v: <span class="extype" name="scala.Any">Any</span></span>, <span name="gv">gv: <a href="model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a></span>)</span><span class="result"> extends <a href="transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -307,9 +307,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="molecule.ast.transactionModel.Cas#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(e:Any,a:String,oldV:Any,v:Any,bi:molecule.ast.model.Generic):molecule.ast.transactionModel.Cas"></a><a id="&lt;init&gt;:Cas"></a>
+      <a id="&lt;init&gt;(e:Any,a:String,oldV:Any,v:Any,gv:molecule.ast.model.GenericValue):molecule.ast.transactionModel.Cas"></a><a id="&lt;init&gt;:Cas"></a>
       <span class="permalink">
-      <a href="../../molecule/ast/transactionModel$$Cas.html#&lt;init&gt;(e:Any,a:String,oldV:Any,v:Any,bi:molecule.ast.model.Generic):molecule.ast.transactionModel.Cas" title="Permalink">
+      <a href="../../molecule/ast/transactionModel$$Cas.html#&lt;init&gt;(e:Any,a:String,oldV:Any,v:Any,gv:molecule.ast.model.GenericValue):molecule.ast.transactionModel.Cas" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -318,7 +318,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Cas</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Any">Any</span></span>, <span name="a">a: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="oldV">oldV: <span class="extype" name="scala.Any">Any</span></span>, <span name="v">v: <span class="extype" name="scala.Any">Any</span></span>, <span name="bi">bi: <a href="model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></span>)</span>
+        <span class="name">Cas</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Any">Any</span></span>, <span name="a">a: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="oldV">oldV: <span class="extype" name="scala.Any">Any</span></span>, <span name="v">v: <span class="extype" name="scala.Any">Any</span></span>, <span name="gv">gv: <a href="model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a></span>)</span>
       </span>
       
       
@@ -428,22 +428,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="molecule.ast.transactionModel.Cas#bi" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="bi:molecule.ast.model.Generic"></a><a id="bi:Generic"></a>
-      <span class="permalink">
-      <a href="../../molecule/ast/transactionModel$$Cas.html#bi:molecule.ast.model.Generic" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">bi</span><span class="result">: <a href="model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.transactionModel.Cas">Cas</a> → <a href="transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -541,6 +525,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="molecule.ast.transactionModel.Cas#gv" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="gv:molecule.ast.model.GenericValue"></a><a id="gv:GenericValue"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/transactionModel$$Cas.html#gv:molecule.ast.model.GenericValue" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gv</span><span class="result">: <a href="model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.transactionModel.Cas">Cas</a> → <a href="transactionModel$$Statement.html" class="extype" name="molecule.ast.transactionModel.Statement">Statement</a></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">

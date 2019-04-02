@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.macros.MakeComposite_In</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.macros.MakeComposite In" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.macros.MakeComposite In" />
+          <title>Molecule 0.18.3 - molecule.macros.MakeComposite_In</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.macros.MakeComposite In" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.macros.MakeComposite In" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -2699,6 +2699,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
+    </li><li name="molecule.ops.Liftables#liftGenericValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="liftGenericValue:Liftables.this.c.universe.Liftable[molecule.ast.model.GenericValue]"></a><a id="liftGenericValue:scala.reflect.macros.Universe.Liftable[GenericValue]"></a>
+      <span class="permalink">
+      <a href="../../molecule/macros/MakeComposite_In.html#liftGenericValue:Liftables.this.c.universe.Liftable[molecule.ast.model.GenericValue]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">liftGenericValue</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
     </li><li name="molecule.ops.Liftables#liftGroup" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="liftGroup:Liftables.this.c.universe.Liftable[molecule.ast.model.Nested]"></a><a id="liftGroup:scala.reflect.macros.Universe.Liftable[Nested]"></a>
       <span class="permalink">
@@ -2776,22 +2792,6 @@
       </span>
       <span class="symbol">
         <span class="name">liftListOfElements</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<span class="extype" name="scala.Seq">Seq</span>[<a href="../ast/model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a>]]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>
-    </li><li name="molecule.ops.Liftables#liftMeta" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="liftMeta:Liftables.this.c.universe.Liftable[molecule.ast.model.Meta]"></a><a id="liftMeta:scala.reflect.macros.Universe.Liftable[Meta]"></a>
-      <span class="permalink">
-      <a href="../../molecule/macros/MakeComposite_In.html#liftMeta:Liftables.this.c.universe.Liftable[molecule.ast.model.Meta]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">liftMeta</span><span class="result">: <span class="extype" name="scala.reflect.api.Liftables.Liftable">scala.reflect.macros.Universe.Liftable</span>[<a href="../ast/model$$Meta.html" class="extype" name="molecule.ast.model.Meta">Meta</a>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Liftables</dd></dl></div>

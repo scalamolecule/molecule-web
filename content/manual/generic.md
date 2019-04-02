@@ -15,7 +15,7 @@ down: /manual/debug
 
 [Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic)
 
-Molecule provides access to meta data about data and Schema with the following 7 generic interfaces (each with a little example - 
+Molecule provides access to generic data about data and Schema with the following 7 generic interfaces (each with a little example - 
 read more by clicking on each title):
 
 

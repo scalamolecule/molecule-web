@@ -96,7 +96,7 @@ to be in scope so our above implicit conn object will make it possible to create
 
 ## Managing databases
 
-Datomic databases are created with a database name so that we can later refer to a spedific database. In the above creation example, 
+Datomic databases are created with a database name so that we can later refer to a specific database. In the above creation example, 
 a random database name was created which is convenient for testing purposes. 
 
 For durable databases we use a database name:
@@ -122,7 +122,7 @@ implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase", "mem")
 ```
 
 
-### Working with non-molecule Datomic databases
+## Working with non-molecule Datomic databases
 
 If you are working with externally defined Datomic databases or data sets with lowercase namespace
 names defined then you can easily add some attribute name aliases so that you can freely
@@ -132,7 +132,7 @@ The sbt-plugin generates two additional schema transaction files
 that can be transacted with the external lowercase database so that you can use your 
 uppercase Molecule code with it:
 
-#### Molecule schema (uppercase) + external data (lowercase) 
+### Molecule schema (uppercase) + external data (lowercase) 
 
 When importing external data 
 ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L367-L368)) 
@@ -146,7 +146,7 @@ imported lowercase data:
 conn.datomicConn.transact(SchemaUpperToLower.namespaces)
 ```
 
-#### External schema (lowercase) + external data (lowercase) 
+### External schema (lowercase) + external data (lowercase) 
 
 If both external schema and data is created with lowercase namespace names, then you can transact
 uppercase attribute aliases with the live database so that it will recognize your uppercase

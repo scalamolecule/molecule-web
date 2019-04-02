@@ -1,5 +1,5 @@
 ---
-title: "Index"
+title: "Indexes"
 weight: 20
 menu:
   main:

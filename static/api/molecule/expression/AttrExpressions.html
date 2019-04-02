@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.expression.AttrExpressions</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.expression.AttrExpressions" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.expression.AttrExpressions" />
+          <title>Molecule 0.18.3 - molecule.expression.AttrExpressions</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.expression.AttrExpressions" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.expression.AttrExpressions" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -438,22 +438,6 @@ ageOfPersons(<span class="lit">"Ben"</span>).get === <span class="std">List</spa
       </span>
       
       <p class="shortcomment cmt">Expression methods of card-many attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.ManyRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]"></a><a id="ManyRefAttrExpr[Ns,In]:ManyRefAttrExpr[Ns,In]"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="Expression methods of card-many ref attributes." href="AttrExpressions$ManyRefAttrExpr.html"><span class="name">ManyRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>] with <a href="AttrExpressions$ManyAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyAttrExpr">ManyAttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.ManyRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Expression methods of card-many ref attributes.</p>
     </li><li name="molecule.expression.AttrExpressions.MapAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="MapAttrExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,(String,T),(String,T),String]"></a><a id="MapAttrExpr[Ns,In,T]:MapAttrExpr[Ns,In,T]"></a>
       <span class="permalink">
@@ -486,22 +470,6 @@ ageOfPersons(<span class="lit">"Ben"</span>).get === <span class="std">List</spa
       </span>
       
       <p class="shortcomment cmt">Expression methods of card-one attributes.</p>
-    </li><li name="molecule.expression.AttrExpressions.OneRefAttrExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]"></a><a id="OneRefAttrExpr[Ns,In]:OneRefAttrExpr[Ns,In]"></a>
-      <span class="permalink">
-      <a href="../../molecule/expression/AttrExpressions.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a title="Expression methods of card-one ref attributes." href="AttrExpressions$OneRefAttrExpr.html"><span class="name">OneRefAttrExpr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="AttrExpressions$AttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.AttrExpr">AttrExpr</a>[<span class="extype" name="molecule.expression.AttrExpressions.OneRefAttrExpr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Expression methods of card-one ref attributes.</p>
     </li><li name="molecule.expression.AttrExpressions.OptionalExpr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="OptionalExpr[Ns,T]extendsAnyRef"></a><a id="OptionalExpr[Ns,T]:OptionalExpr[Ns,T]"></a>
       <span class="permalink">

@@ -23,7 +23,7 @@ any of our own entities, we can even add more facts that simply share the entity
 ## Save
 
 Depending on our domain we can tailor any tx meta data that we find valuable to associate with some transactions. 
-We could for instance be interested in "who did it" and "in what use case" it happened and create some meta attributes
+We could for instance be interested in "who did it" and "in what use case" it happened and create some generic attributes
  `user` and `uc` in an `Audit` namespace:
 
 ```scala

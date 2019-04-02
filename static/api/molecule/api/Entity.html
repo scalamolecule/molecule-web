@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.api.Entity</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.api.Entity" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.api.Entity" />
+          <title>Molecule 0.18.3 - molecule.api.Entity</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.api.Entity" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.api.Entity" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -1028,6 +1028,22 @@ eid.debugRetract</pre><p>This will print generated Datomic transaction statement
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="molecule.api.Entity#format2" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="format2(date:java.util.Date):String"></a><a id="format2(Date):String"></a>
+      <span class="permalink">
+      <a href="../../molecule/api/Entity.html#format2(date:java.util.Date):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">format2</span><span class="params">(<span name="date">date: <span class="extype" name="java.util.Date">Date</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -1216,6 +1232,22 @@ benId.retractAsync.map { tx <span class="kw">=&gt;</span>
 To retract multiple entities (with or without tx meta data), use<br>
 <code>retract(eids, txMetaDataMolecules*)</code> in <a href="EntityOps.html" class="extype" name="molecule.api.EntityOps">molecule.api.EntityOps</a>.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><a href="../facade/TxReport.html" class="extype" name="molecule.facade.TxReport">molecule.facade.TxReport</a> with result of retraction</p></dd></dl></div>
+    </li><li name="molecule.api.Entity#sdf" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sdf:java.text.SimpleDateFormat"></a><a id="sdf:SimpleDateFormat"></a>
+      <span class="permalink">
+      <a href="../../molecule/api/Entity.html#sdf:java.text.SimpleDateFormat" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sdf</span><span class="result">: <span class="extype" name="java.text.SimpleDateFormat">SimpleDateFormat</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

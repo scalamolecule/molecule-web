@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.ast.model.Generic</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.ast.model.Generic" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.ast.model.Generic" />
+          <title>Molecule 0.18.3 - molecule.ast.model.Generic</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.ast.model.Generic" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.ast.model.Generic" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -333,8 +333,16 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                         <a href="model$$Ge.html" title="">Ge</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="trait" href="" title=""></a>
+                        <a class="class" href="" title=""></a>
                         <a href="" title="">Generic</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="model$$GenericAtom.html" title=""></a>
+                        <a href="model$$GenericAtom.html" title="">GenericAtom</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="model$$GenericValue.html" title=""></a>
+                        <a href="model$$GenericValue.html" title="">GenericValue</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="model$$Gt.html" title=""></a>
@@ -363,14 +371,6 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                         <span class="separator"></span>
                         <a class="class" href="model$$MapKeys.html" title=""></a>
                         <a href="model$$MapKeys.html" title="">MapKeys</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="class" href="model$$Meta.html" title=""></a>
-                        <a href="model$$Meta.html" title="">Meta</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="trait" href="model$$MetaAtom.html" title=""></a>
-                        <a href="model$$MetaAtom.html" title="">MetaAtom</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="model$$Model.html" title="Molecule Model representation."></a>
@@ -456,9 +456,9 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
             </div>
           </div>
           <div id="content">
-            <body class="trait type">
+            <body class="class type">
       <div id="definition">
-        <div class="big-circle trait">t</div>
+        <div class="big-circle class">c</div>
         <p id="owner"><a href="../index.html" class="extype" name="molecule">molecule</a>.<a href="index.html" class="extype" name="molecule.ast">ast</a>.<a href="model$.html" class="extype" name="molecule.ast.model">model</a></p>
         <h1>Generic<span class="permalink">
       <a href="../../molecule/ast/model$$Generic.html" title="Permalink">
@@ -470,11 +470,11 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">sealed </span>
-        <span class="kind">trait</span>
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Generic</span><span class="result"> extends <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></span>
+        <span class="name">Generic</span><span class="params">(<span name="ns">ns: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></span>)</span><span class="result"> extends <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
 
@@ -483,17 +483,12 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-            <span class="toggle">
-              Known Subclasses
-            </span>
-            <div class="subClasses hiddenContent"><a href="model$$BiEdge$.html" class="extype" name="molecule.ast.model.BiEdge">BiEdge</a>, <a href="model$$BiEdgePropAttr.html" class="extype" name="molecule.ast.model.BiEdgePropAttr">BiEdgePropAttr</a>, <a href="model$$BiEdgePropRef.html" class="extype" name="molecule.ast.model.BiEdgePropRef">BiEdgePropRef</a>, <a href="model$$BiEdgePropRefAttr.html" class="extype" name="molecule.ast.model.BiEdgePropRefAttr">BiEdgePropRefAttr</a>, <a href="model$$BiEdgeRef.html" class="extype" name="molecule.ast.model.BiEdgeRef">BiEdgeRef</a>, <a href="model$$BiEdgeRefAttr.html" class="extype" name="molecule.ast.model.BiEdgeRefAttr">BiEdgeRefAttr</a>, <a href="model$$BiOtherRef.html" class="extype" name="molecule.ast.model.BiOtherRef">BiOtherRef</a>, <a href="model$$BiOtherRefAttr.html" class="extype" name="molecule.ast.model.BiOtherRefAttr">BiOtherRefAttr</a>, <a href="model$$BiSelfRef.html" class="extype" name="molecule.ast.model.BiSelfRef">BiSelfRef</a>, <a href="model$$BiSelfRefAttr.html" class="extype" name="molecule.ast.model.BiSelfRefAttr">BiSelfRefAttr</a>, <a href="model$$BiTargetRef.html" class="extype" name="molecule.ast.model.BiTargetRef">BiTargetRef</a>, <a href="model$$BiTargetRefAttr.html" class="extype" name="molecule.ast.model.BiTargetRefAttr">BiTargetRefAttr</a>, <a href="model$$Bidirectional.html" class="extype" name="molecule.ast.model.Bidirectional">Bidirectional</a>, <a href="model$$Card.html" class="extype" name="molecule.ast.model.Card">Card</a>, <a href="model$$Id.html" class="extype" name="molecule.ast.model.Id">Id</a>, <a href="model$$NoValue$.html" class="extype" name="molecule.ast.model.NoValue">NoValue</a></div>
-          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a>, <a href="model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 334.00 158.00" height="158pt" width="334pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 154)" class="graph" id="graph0"><polygon points="-4,4 -4,-154 330,-154 330,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.ast.model.Generic (this trait)" xlink:href="#inheritance-diagram"><path d="M199.333,-88C199.333,-88 144.667,-88 144.667,-88 140.333,-88 136,-83.6667 136,-79.3333 136,-79.3333 136,-70.6667 136,-70.6667 136,-66.3333 140.333,-62 144.667,-62 144.667,-62 199.333,-62 199.333,-62 203.667,-62 208,-66.3333 208,-70.6667 208,-70.6667 208,-79.3333 208,-79.3333 208,-83.6667 203.667,-88 199.333,-88" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-81" x="148" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-72.6" x="167.883" text-anchor="start">Generic</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.ast.model.Bidirectional" xlink:href="model$$Bidirectional.html#inheritance-diagram"><path d="M77.5833,-26C77.5833,-26 8.41667,-26 8.41667,-26 4.08333,-26 -0.25,-21.6667 -0.25,-17.3333 -0.25,-17.3333 -0.25,-8.66667 -0.25,-8.66667 -0.25,-4.33333 4.08333,-0 8.41667,-0 8.41667,-0 77.5833,-0 77.5833,-0 81.9167,-0 86.25,-4.33333 86.25,-8.66667 86.25,-8.66667 86.25,-17.3333 86.25,-17.3333 86.25,-21.6667 81.9167,-26 77.5833,-26" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-19" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="31.5996" text-anchor="start">Bidirectional</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Bidirectional is a subtype of Generic"><path d="M139.361,-58.8189C117.585,-48.6906 89.3388,-35.5529 69.0663,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="138.515,-61.1274 145.895,-61.8581 140.581,-56.6845 138.515,-61.1274" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="molecule.ast.model.Card" xlink:href="model$$Card.html#inheritance-diagram"><path d="M156.583,-26C156.583,-26 113.417,-26 113.417,-26 109.083,-26 104.75,-21.6667 104.75,-17.3333 104.75,-17.3333 104.75,-8.66667 104.75,-8.66667 104.75,-4.33333 109.083,-0 113.417,-0 113.417,-0 156.583,-0 156.583,-0 160.917,-0 165.25,-4.33333 165.25,-8.66667 165.25,-8.66667 165.25,-17.3333 165.25,-17.3333 165.25,-21.6667 160.917,-26 156.583,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="117" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="136.719" text-anchor="start">Card</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="Card is a subtype of Generic"><path d="M160.815,-55.8621C154.877,-46.2323 147.74,-34.6588 142.476,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="158.753,-57.1859 164.512,-61.8581 162.924,-54.6139 158.753,-57.1859" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="molecule.ast.model.Id" xlink:href="model$$Id.html#inheritance-diagram"><path d="M225.333,-26C225.333,-26 192.667,-26 192.667,-26 188.333,-26 184,-21.6667 184,-17.3333 184,-17.3333 184,-8.66667 184,-8.66667 184,-4.33333 188.333,-0 192.667,-0 192.667,-0 225.333,-0 225.333,-0 229.667,-0 234,-4.33333 234,-8.66667 234,-8.66667 234,-17.3333 234,-17.3333 234,-21.6667 229.667,-26 225.333,-26" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19" x="196" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="215.553" text-anchor="start">Id</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="Id is a subtype of Generic"><path d="M183.185,-55.8621C189.123,-46.2323 196.26,-34.6588 201.524,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="181.076,-54.6139 179.488,-61.8581 185.247,-57.1859 181.076,-54.6139" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node object" id="graph1_4"><g id="a_object|graph1_4"><a xlink:title="molecule.ast.model.NoValue" xlink:href="model$$NoValue$.html#inheritance-diagram"><path d="M317.333,-26C317.333,-26 260.667,-26 260.667,-26 256.333,-26 252,-21.6667 252,-17.3333 252,-17.3333 252,-8.66667 252,-8.66667 252,-4.33333 256.333,-0 260.667,-0 260.667,-0 317.333,-0 317.333,-0 321.667,-0 326,-4.33333 326,-8.66667 326,-8.66667 326,-17.3333 326,-17.3333 326,-21.6667 321.667,-26 317.333,-26" stroke="#103a51" fill="#103a51"></path><image xlink:href="../../lib/object_diagram.png" y="-19" x="264" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-10.6" x="283.84" text-anchor="start">NoValue</text></a></g></g><!-- node0&#45;&gt;node4 --><g class="edge inheritance" id="graph1_0_4"><g id="a_inheritance|graph1_0_4"><a xlink:title="NoValue is a subtype of Generic"><path d="M202.115,-58.5563C221.795,-48.4643 247.13,-35.4716 265.359,-26.1238" stroke="#d4d4d4" fill="none"></path><polygon points="200.787,-56.4838 195.677,-61.8581 203.023,-60.8439 200.787,-56.4838" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="molecule.ast.model.Value" xlink:href="model$$Value.html#inheritance-diagram"><path d="M195.333,-150C195.333,-150 148.667,-150 148.667,-150 144.333,-150 140,-145.667 140,-141.333 140,-141.333 140,-132.667 140,-132.667 140,-128.333 144.333,-124 148.667,-124 148.667,-124 195.333,-124 195.333,-124 199.667,-124 204,-128.333 204,-132.667 204,-132.667 204,-141.333 204,-141.333 204,-145.667 199.667,-150 195.333,-150" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-143" x="152" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-134.6" x="171.953" text-anchor="start">Value</text></a></g></g><!-- node5&#45;&gt;node0 --><g class="edge inheritance" id="graph1_5_0"><g id="a_inheritance|graph1_5_0"><a xlink:title="Generic is a subtype of Value"><path d="M172,-116.753C172,-107.355 172,-96.3336 172,-88.1238" stroke="#d4d4d4" fill="none"></path><polygon points="169.55,-116.858 172,-123.858 174.45,-116.858 169.55,-116.858" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 290.00 120.00" height="120pt" width="290pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 286,-116 286,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="molecule.ast.model.Generic (this class)" xlink:href="#inheritance-diagram"><path d="M171.333,-50C171.333,-50 116.667,-50 116.667,-50 112.333,-50 108,-45.6667 108,-41.3333 108,-41.3333 108,-32.6667 108,-32.6667 108,-28.3333 112.333,-24 116.667,-24 116.667,-24 171.333,-24 171.333,-24 175.667,-24 180,-28.3333 180,-32.6667 180,-32.6667 180,-41.3333 180,-41.3333 180,-45.6667 175.667,-50 171.333,-50" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43" x="120" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="139.883" text-anchor="start">Generic</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.ast.model.GenericAtom" xlink:href="model$$GenericAtom.html#inheritance-diagram"><path d="M81.3333,-112C81.3333,-112 8.66667,-112 8.66667,-112 4.33333,-112 0,-107.667 0,-103.333 0,-103.333 0,-94.6667 0,-94.6667 0,-90.3333 4.33333,-86 8.66667,-86 8.66667,-86 81.3333,-86 81.3333,-86 85.6667,-86 90,-90.3333 90,-94.6667 90,-94.6667 90,-103.333 90,-103.333 90,-107.667 85.6667,-112 81.3333,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.5469" text-anchor="start">GenericAtom</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Generic is a subtype of GenericAtom"><path d="M71.3552,-82.0271C87.8777,-72.0135 108.84,-59.3091 123.996,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="69.7507,-80.1347 65.0341,-85.8581 72.2904,-84.3252 69.7507,-80.1347" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.Product"><path d="M170.583,-112C170.583,-112 117.417,-112 117.417,-112 113.083,-112 108.75,-107.667 108.75,-103.333 108.75,-103.333 108.75,-94.6667 108.75,-94.6667 108.75,-90.3333 113.083,-86 117.417,-86 117.417,-86 170.583,-86 170.583,-86 174.917,-86 179.25,-90.3333 179.25,-94.6667 179.25,-94.6667 179.25,-103.333 179.25,-103.333 179.25,-107.667 174.917,-112 170.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="121" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="140.604" text-anchor="start">Product</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Generic is a subtype of Product"><path d="M144,-78.7534C144,-69.3549 144,-58.3336 144,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="141.55,-78.8581 144,-85.8581 146.45,-78.8581 141.55,-78.8581" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.Serializable"><path d="M273.583,-112C273.583,-112 206.417,-112 206.417,-112 202.083,-112 197.75,-107.667 197.75,-103.333 197.75,-103.333 197.75,-94.6667 197.75,-94.6667 197.75,-90.3333 202.083,-86 206.417,-86 206.417,-86 273.583,-86 273.583,-86 277.917,-86 282.25,-90.3333 282.25,-94.6667 282.25,-94.6667 282.25,-103.333 282.25,-103.333 282.25,-107.667 277.917,-112 273.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="210" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="229.711" text-anchor="start">Serializable</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="Generic is a subtype of Serializable"><path d="M214.443,-82.0271C198.422,-72.0135 178.095,-59.3091 163.398,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="213.338,-84.2257 220.573,-85.8581 215.935,-80.0705 213.338,-84.2257" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -524,7 +519,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.ast.model.Generic"><span>Generic</span></li><li class="in" name="molecule.ast.model.Value"><span>Value</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.ast.model.Generic"><span>Generic</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="molecule.ast.model.GenericAtom"><span>GenericAtom</span></li><li class="in" name="molecule.ast.model.Element"><span>Element</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -542,7 +537,26 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="molecule.ast.model.Generic#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(ns:String,attr:String,tpe:String,value:molecule.ast.model.Value):molecule.ast.model.Generic"></a><a id="&lt;init&gt;:Generic"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/model$$Generic.html#&lt;init&gt;(ns:String,attr:String,tpe:String,value:molecule.ast.model.Value):molecule.ast.model.Generic" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Generic</span><span class="params">(<span name="ns">ns: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="attr">attr: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tpe">tpe: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></span>)</span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
 
         
 
@@ -615,6 +629,22 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="molecule.ast.model.Generic#attr" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="attr:String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/model$$Generic.html#attr:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">attr</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.model.Generic">Generic</a> → <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -655,22 +685,6 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
-      <span class="permalink">
-      <a href="../../molecule/ast/model$$Generic.html#equals(x$1:Any):Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
@@ -706,25 +720,6 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
       </span>
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
-        </dd></dl></div>
-    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hashCode():Int"></a>
-      <span class="permalink">
-      <a href="../../molecule/ast/model$$Generic.html#hashCode():Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -801,6 +796,22 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="molecule.ast.model.Generic#ns" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ns:String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/model$$Generic.html#ns:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ns</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.model.Generic">Generic</a> → <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -817,7 +828,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="molecule.ast.model.Generic#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
       <a href="../../molecule/ast/model$$Generic.html#toString():String" title="Permalink">
@@ -829,10 +840,42 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.model.Generic">Generic</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.ast.model.Generic#tpe" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tpe:String"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/model$$Generic.html#tpe:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tpe</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.model.Generic">Generic</a> → <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a></dd></dl></div>
+    </li><li name="molecule.ast.model.Generic#value" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="value:molecule.ast.model.Value"></a><a id="value:Value"></a>
+      <span class="permalink">
+      <a href="../../molecule/ast/model$$Generic.html#value:molecule.ast.model.Value" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">value</span><span class="result">: <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="molecule.ast.model.Generic">Generic</a> → <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
@@ -911,8 +954,18 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="molecule.ast.model.Value">
-              <h3>Inherited from <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></h3>
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="molecule.ast.model.GenericAtom">
+              <h3>Inherited from <a href="model$$GenericAtom.html" class="extype" name="molecule.ast.model.GenericAtom">GenericAtom</a></h3>
+            </div><div class="parent" name="molecule.ast.model.Element">
+              <h3>Inherited from <a href="model$$Element.html" class="extype" name="molecule.ast.model.Element">Element</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

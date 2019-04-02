@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.ast.model.BiEdgeRef</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.ast.model.BiEdgeRef" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.ast.model.BiEdgeRef" />
+          <title>Molecule 0.18.3 - molecule.ast.model.BiEdgeRef</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.ast.model.BiEdgeRef" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.ast.model.BiEdgeRef" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -333,8 +333,16 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                         <a href="model$$Ge.html" title="">Ge</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="trait" href="model$$Generic.html" title=""></a>
+                        <a class="class" href="model$$Generic.html" title=""></a>
                         <a href="model$$Generic.html" title="">Generic</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="model$$GenericAtom.html" title=""></a>
+                        <a href="model$$GenericAtom.html" title="">GenericAtom</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="model$$GenericValue.html" title=""></a>
+                        <a href="model$$GenericValue.html" title="">GenericValue</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="model$$Gt.html" title=""></a>
@@ -363,14 +371,6 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                         <span class="separator"></span>
                         <a class="class" href="model$$MapKeys.html" title=""></a>
                         <a href="model$$MapKeys.html" title="">MapKeys</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="class" href="model$$Meta.html" title=""></a>
-                        <a href="model$$Meta.html" title="">Meta</a>
-                      </li><li class="current-entities indented3">
-                        <span class="separator"></span>
-                        <a class="trait" href="model$$MetaAtom.html" title=""></a>
-                        <a href="model$$MetaAtom.html" title="">MetaAtom</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="class" href="model$$Model.html" title="Molecule Model representation."></a>
@@ -483,7 +483,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="model$$Bidirectional.html" class="extype" name="molecule.ast.model.Bidirectional">Bidirectional</a>, <a href="model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a>, <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="model$$Bidirectional.html" class="extype" name="molecule.ast.model.Bidirectional">Bidirectional</a>, <a href="model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a>, <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
@@ -519,7 +519,7 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.ast.model.BiEdgeRef"><span>BiEdgeRef</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="molecule.ast.model.Bidirectional"><span>Bidirectional</span></li><li class="in" name="molecule.ast.model.Generic"><span>Generic</span></li><li class="in" name="molecule.ast.model.Value"><span>Value</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.ast.model.BiEdgeRef"><span>BiEdgeRef</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="molecule.ast.model.Bidirectional"><span>Bidirectional</span></li><li class="in" name="molecule.ast.model.GenericValue"><span>GenericValue</span></li><li class="in" name="molecule.ast.model.Value"><span>Value</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -932,8 +932,8 @@ Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
             </div><div class="parent" name="molecule.ast.model.Bidirectional">
               <h3>Inherited from <a href="model$$Bidirectional.html" class="extype" name="molecule.ast.model.Bidirectional">Bidirectional</a></h3>
-            </div><div class="parent" name="molecule.ast.model.Generic">
-              <h3>Inherited from <a href="model$$Generic.html" class="extype" name="molecule.ast.model.Generic">Generic</a></h3>
+            </div><div class="parent" name="molecule.ast.model.GenericValue">
+              <h3>Inherited from <a href="model$$GenericValue.html" class="extype" name="molecule.ast.model.GenericValue">GenericValue</a></h3>
             </div><div class="parent" name="molecule.ast.model.Value">
               <h3>Inherited from <a href="model$$Value.html" class="extype" name="molecule.ast.model.Value">Value</a></h3>
             </div><div class="parent" name="scala.AnyRef">

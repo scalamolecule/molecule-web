@@ -162,7 +162,7 @@ people.filter(_.name === "M Odersky")
        .update(("M. Odersky",54321))
 ```
 ```scala
-// Find entity id with generic Molecule attribute `e`
+// Find entity id with meta Molecule attribute `e`
 // Omit `name` value by adding underscore `_` to attribute name   
 val oderskyId = Person.e.name_("M Odersky").get.head
 Person(oderskyId).name("M. Odersky").age(54321).update

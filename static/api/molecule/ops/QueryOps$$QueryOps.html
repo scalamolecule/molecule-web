@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.ops.QueryOps.QueryOps</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.ops.QueryOps.QueryOps" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.ops.QueryOps.QueryOps" />
+          <title>Molecule 0.18.3 - molecule.ops.QueryOps.QueryOps</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.ops.QueryOps.QueryOps" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.ops.QueryOps.QueryOps" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -368,22 +368,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="molecule.ops.QueryOps.QueryOps#castStr" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="castStr(tpe:String):String"></a><a id="castStr(String):String"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#castStr(tpe:String):String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">castStr</span><span class="params">(<span name="tpe">tpe: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -472,6 +456,118 @@
       </span>
       
       
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomA" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomA(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomA(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomA(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomA</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomE" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomE(e:String,v:String,v1:String,singleElement:Boolean):molecule.ast.query.Query"></a><a id="datomE(String,String,String,Boolean):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomE(e:String,v:String,v1:String,singleElement:Boolean):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomE</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="singleElement">singleElement: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomOp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomOp(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomOp(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomOp(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomOp</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomT" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomT(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomT(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomT(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomT</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomTx" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomTx(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomTx(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomTx(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomTx</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomTxInstant" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomTxInstant(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomTxInstant(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomTxInstant(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomTxInstant</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#datomV" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datomV(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="datomV(String,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#datomV(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">datomV</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
     </li><li name="molecule.ops.QueryOps.QueryOps#enum" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="enum(e:String,a:molecule.ast.model.Atom,v:String):molecule.ast.query.Query"></a><a id="enum(String,Atom,String):Query"></a>
       <span class="permalink">
@@ -520,22 +616,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="molecule.ops.QueryOps.QueryOps#esc" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="esc(arg:Any):Any"></a><a id="esc(Any):Any"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#esc(arg:Any):Any" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">esc</span><span class="params">(<span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
@@ -623,9 +703,9 @@
       
       
     </li><li name="molecule.ops.QueryOps.QueryOps#fulltext" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="fulltext(e:String,a:molecule.ast.model.Atom,v:String,qv:molecule.ast.query.QueryValue):molecule.ast.query.Query"></a><a id="fulltext(String,Atom,String,QueryValue):Query"></a>
+      <a id="fulltext(e:String,a:molecule.ast.model.Atom,v:String,qv:molecule.ast.query.Var):molecule.ast.query.Query"></a><a id="fulltext(String,Atom,String,Var):Query"></a>
       <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#fulltext(e:String,a:molecule.ast.model.Atom,v:String,qv:molecule.ast.query.QueryValue):molecule.ast.query.Query" title="Permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#fulltext(e:String,a:molecule.ast.model.Atom,v:String,qv:molecule.ast.query.Var):molecule.ast.query.Query" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -634,7 +714,23 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fulltext</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="a">a: <a href="../ast/model$$Atom.html" class="extype" name="molecule.ast.model.Atom">Atom</a></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="qv">qv: <a href="../ast/query$$QueryValue.html" class="extype" name="molecule.ast.query.QueryValue">QueryValue</a></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+        <span class="name">fulltext</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="a">a: <a href="../ast/model$$Atom.html" class="extype" name="molecule.ast.model.Atom">Atom</a></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="qv">qv: <a href="../ast/query$$Var.html" class="extype" name="molecule.ast.query.Var">Var</a></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
+    </li><li name="molecule.ops.QueryOps.QueryOps#fulltext" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fulltext(e:String,a:molecule.ast.model.Atom,v:String,s:String):molecule.ast.query.Query"></a><a id="fulltext(String,Atom,String,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#fulltext(e:String,a:molecule.ast.model.Atom,v:String,s:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fulltext</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="a">a: <a href="../ast/model$$Atom.html" class="extype" name="molecule.ast.model.Atom">Atom</a></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
       </span>
       
       
@@ -670,118 +766,6 @@
       </span>
       
       
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericA" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericA(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericA(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericA(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericA</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericE" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericE(e:String,v:String,v1:String,singleElement:Boolean):molecule.ast.query.Query"></a><a id="genericE(String,String,String,Boolean):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericE(e:String,v:String,v1:String,singleElement:Boolean):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericE</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="singleElement">singleElement: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericOp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericOp(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericOp(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericOp(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericOp</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericT" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericT(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericT(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericT(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericT</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericTx" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericTx(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericTx(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericTx(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericTx</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericTxInstant" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericTxInstant(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericTxInstant(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericTxInstant(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericTxInstant</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
-    </li><li name="molecule.ops.QueryOps.QueryOps#genericV" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="genericV(e:String,v:String,v1:String):molecule.ast.query.Query"></a><a id="genericV(String,String,String):Query"></a>
-      <span class="permalink">
-      <a href="../../molecule/ops/QueryOps$$QueryOps.html#genericV(e:String,v:String,v1:String):molecule.ast.query.Query" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">genericV</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="v1">v1: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -801,6 +785,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="molecule.ops.QueryOps.QueryOps#ground" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ground(a:molecule.ast.model.Atom,arg:Any,v:String):molecule.ast.query.Query"></a><a id="ground(Atom,Any,String):Query"></a>
+      <span class="permalink">
+      <a href="../../molecule/ops/QueryOps$$QueryOps.html#ground(a:molecule.ast.model.Atom,arg:Any,v:String):molecule.ast.query.Query" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ground</span><span class="params">(<span name="a">a: <a href="../ast/model$$Atom.html" class="extype" name="molecule.ast.model.Atom">Atom</a></span>, <span name="arg">arg: <span class="extype" name="scala.Any">Any</span></span>, <span name="v">v: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../ast/query$$Query.html" class="extype" name="molecule.ast.query.Query">Query</a></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">

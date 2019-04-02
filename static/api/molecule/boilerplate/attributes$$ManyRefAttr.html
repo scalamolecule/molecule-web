@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.boilerplate.attributes.ManyRefAttr</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.boilerplate.attributes.ManyRefAttr" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.boilerplate.attributes.ManyRefAttr" />
+          <title>Molecule 0.18.3 - molecule.boilerplate.attributes.ManyRefAttr</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.boilerplate.attributes.ManyRefAttr" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.boilerplate.attributes.ManyRefAttr" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -696,7 +696,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">ManyRefAttr</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../api/core$.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" class="extmbr" name="molecule.expression.AttrExpressions.ManyRefAttrExpr">api.core.ManyRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>] with <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>]</span>
+        <span class="name">ManyRefAttr</span><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>] with <a href="../api/core$.html#ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]" class="extmbr" name="molecule.expression.AttrExpressions.ManyExpr">api.core.ManyExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       </h4>
 
@@ -705,12 +705,12 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <a href="../api/core$.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" class="extmbr" name="molecule.expression.AttrExpressions.ManyRefAttrExpr">api.core.ManyRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>], <a href="../api/core$.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.ManyAttrExpr">api.core.ManyAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>], <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../api/core$.html#ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]" class="extmbr" name="molecule.expression.AttrExpressions.ManyExpr">api.core.ManyExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>], <a href="../api/core$.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.ManyAttrExpr">api.core.ManyAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>], <a href="../api/core$.html#ValueAttrExpr[Ns,In,T]extendsAttrExpressions.this.AttrExpr[Ns,T]" class="extmbr" name="molecule.expression.AttrExpressions.ValueAttrExpr">api.core.ValueAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>], <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>], <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>], <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 269.00 120.00" height="120pt" width="269pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 265,-116 265,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.ManyRefAttr (this trait)" xlink:href="#inheritance-diagram"><path d="M198.333,-50C198.333,-50 101.667,-50 101.667,-50 97.3333,-50 93,-45.6667 93,-41.3333 93,-41.3333 93,-32.6667 93,-32.6667 93,-28.3333 97.3333,-24 101.667,-24 101.667,-24 198.333,-24 198.333,-24 202.667,-24 207,-28.3333 207,-32.6667 207,-32.6667 207,-41.3333 207,-41.3333 207,-45.6667 202.667,-50 198.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="105" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="124.99" text-anchor="start">ManyRefAttr[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.expression.AttrExpressions.ManyRefAttrExpr" xlink:href="../expression/AttrExpressions$ManyRefAttrExpr.html#inheritance-diagram"><path d="M151.583,-112C151.583,-112 8.41667,-112 8.41667,-112 4.08333,-112 -0.25,-107.667 -0.25,-103.333 -0.25,-103.333 -0.25,-94.6667 -0.25,-94.6667 -0.25,-90.3333 4.08333,-86 8.41667,-86 8.41667,-86 151.583,-86 151.583,-86 155.917,-86 160.25,-90.3333 160.25,-94.6667 160.25,-94.6667 160.25,-103.333 160.25,-103.333 160.25,-107.667 155.917,-112 151.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.9238" text-anchor="start">api.core.ManyRefAttrExpr[Ns, In]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ManyRefAttr[Ns, In] is a subtype of api.core.ManyRefAttrExpr[Ns, In]"><path d="M99.572,-81.224C111.102,-71.3414 125.424,-59.0652 135.856,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="97.8859,-79.4423 94.1655,-85.8581 101.075,-83.1627 97.8859,-79.4423" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.boilerplate.attributes.RefAttr" xlink:href="attributes$$RefAttr.html#inheritance-diagram"><path d="M252.583,-112C252.583,-112 187.417,-112 187.417,-112 183.083,-112 178.75,-107.667 178.75,-103.333 178.75,-103.333 178.75,-94.6667 178.75,-94.6667 178.75,-90.3333 183.083,-86 187.417,-86 187.417,-86 252.583,-86 252.583,-86 256.917,-86 261.25,-90.3333 261.25,-94.6667 261.25,-94.6667 261.25,-103.333 261.25,-103.333 261.25,-107.667 256.917,-112 252.583,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="191" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="210.83" text-anchor="start">RefAttr[Ns]</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="ManyRefAttr[Ns, In] is a subtype of RefAttr[Ns]"><path d="M200.428,-81.224C188.898,-71.3414 174.576,-59.0652 164.144,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="198.925,-83.1627 205.834,-85.8581 202.114,-79.4423 198.925,-83.1627" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 267.00 120.00" height="120pt" width="267pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 116)" class="graph" id="graph0"><polygon points="-4,4 -4,-116 263,-116 263,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="molecule.boilerplate.attributes.ManyRefAttr (this trait)" xlink:href="#inheritance-diagram"><path d="M158.333,-50C158.333,-50 61.6667,-50 61.6667,-50 57.3333,-50 53,-45.6667 53,-41.3333 53,-41.3333 53,-32.6667 53,-32.6667 53,-28.3333 57.3333,-24 61.6667,-24 61.6667,-24 158.333,-24 158.333,-24 162.667,-24 167,-28.3333 167,-32.6667 167,-32.6667 167,-41.3333 167,-41.3333 167,-45.6667 162.667,-50 158.333,-50" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-43" x="65" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-34.6" x="84.9902" text-anchor="start">ManyRefAttr[Ns, In]</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="molecule.boilerplate.attributes.RefAttr" xlink:href="attributes$$RefAttr.html#inheritance-diagram"><path d="M73.5833,-112C73.5833,-112 8.41667,-112 8.41667,-112 4.08333,-112 -0.25,-107.667 -0.25,-103.333 -0.25,-103.333 -0.25,-94.6667 -0.25,-94.6667 -0.25,-90.3333 4.08333,-86 8.41667,-86 8.41667,-86 73.5833,-86 73.5833,-86 77.9167,-86 82.25,-90.3333 82.25,-94.6667 82.25,-94.6667 82.25,-103.333 82.25,-103.333 82.25,-107.667 77.9167,-112 73.5833,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="12" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="31.8301" text-anchor="start">RefAttr[Ns]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ManyRefAttr[Ns, In] is a subtype of RefAttr[Ns]"><path d="M60.2924,-81.224C71.6574,-71.3414 85.775,-59.0652 96.0576,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="58.6378,-79.416 54.9632,-85.8581 61.8531,-83.1136 58.6378,-79.416" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="molecule.expression.AttrExpressions.ManyExpr" xlink:href="../expression/AttrExpressions$ManyExpr.html#inheritance-diagram"><path d="M250.333,-112C250.333,-112 109.667,-112 109.667,-112 105.333,-112 101,-107.667 101,-103.333 101,-103.333 101,-94.6667 101,-94.6667 101,-90.3333 105.333,-86 109.667,-86 109.667,-86 250.333,-86 250.333,-86 254.667,-86 259,-90.3333 259,-94.6667 259,-94.6667 259,-103.333 259,-103.333 259,-107.667 254.667,-112 250.333,-112" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-105" x="113" preserveAspectRatio="xMinYMin meet" height="12px" width="12px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-96.6" x="132.75" text-anchor="start">api.core.ManyExpr[Ns, In, Long]</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="ManyRefAttr[Ns, In] is a subtype of api.core.ManyExpr[Ns, In, Long]"><path d="M160.428,-81.224C148.898,-71.3414 134.576,-59.0652 124.144,-50.1238" stroke="#d4d4d4" fill="none"></path><polygon points="158.925,-83.1627 165.834,-85.8581 162.114,-79.4423 158.925,-83.1627" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -741,7 +741,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="molecule.boilerplate.attributes.ManyRefAttr"><span>ManyRefAttr</span></li><li class="in" name="molecule.boilerplate.attributes.RefAttr"><span>RefAttr</span></li><li class="in" name="molecule.boilerplate.attributes.Attr"><span>Attr</span></li><li class="in" name="molecule.expression.AttrExpressions.ManyRefAttrExpr"><span>ManyRefAttrExpr</span></li><li class="in" name="molecule.expression.AttrExpressions.ManyAttrExpr"><span>ManyAttrExpr</span></li><li class="in" name="molecule.expression.AttrExpressions.AttrExpr"><span>AttrExpr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="molecule.boilerplate.attributes.ManyRefAttr"><span>ManyRefAttr</span></li><li class="in" name="molecule.expression.AttrExpressions.ManyExpr"><span>ManyExpr</span></li><li class="in" name="molecule.expression.AttrExpressions.ManyAttrExpr"><span>ManyAttrExpr</span></li><li class="in" name="molecule.expression.AttrExpressions.ValueAttrExpr"><span>ValueAttrExpr</span></li><li class="in" name="molecule.expression.AttrExpressions.AttrExpr"><span>AttrExpr</span></li><li class="in" name="molecule.boilerplate.attributes.RefAttr"><span>RefAttr</span></li><li class="in" name="molecule.boilerplate.attributes.Attr"><span>Attr</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -768,7 +768,77 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="molecule.expression.AttrExpressions.AttrExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+                <li name="molecule.expression.AttrExpressions.ManyExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(sets:Seq[Set[T]]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Seq[Set[Long]]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#!=(sets:Seq[Set[T]]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="sets">sets: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(set:Set[T],set2:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Set[Long],Set[Long],Set[Long]*):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#!=(set:Set[T],set2:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="set">set: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="set2">set2: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="moreSets">moreSets: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]*</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(set:Set[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Set[Long]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#!=(set:Set[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="set">set: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="!=(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#!=(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="value">value: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute negation value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute negation value(s).</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">37</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> ageOfPersonsOtherThan = m(Person.name_.!=(?).age)
+
+<span class="cmt">// Apply `name` attribute value at runtime to get ages of all other than Ben</span>
+ageOfPersonsOtherThan(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="num">37</span>) <span class="cmt">// Liz' age</span></pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Input marker <code>?</code> for negation value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.AttrExpr#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(values:Seq[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="!=(Seq[Long]):NswithAttr"></a>
       <span class="permalink">
       <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#!=(values:Seq[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
@@ -869,6 +939,84 @@ Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&lt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;(upper:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="&lt;(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&lt;(upper:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="upper">upper: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute upper value.</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute upper value.</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Liz"</span>, <span class="num">37</span>), (<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Don"</span>, <span class="num">71</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> personsUnder = m(Person.name.age_.&lt;(?))
+
+<span class="cmt">// Apply upper value at runtime to get names of all under 42</span>
+personsUnder(<span class="num">42</span>).get === <span class="std">List</span>(<span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">upper</dt><dd class="cmt"><p>Input marker <code>?</code> for upper value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&lt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;(upper:T):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="&lt;(Long):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&lt;(upper:T):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="upper">upper: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Match attribute values less than upper value.</p><div class="fullcomment"><div class="comment cmt"><p>Match attribute values less than upper value.</p><pre>Person.age.get === <span class="std">List</span>(<span class="num">5</span>, <span class="num">12</span>, <span class="num">28</span>)
+Person.age.&lt;(<span class="num">12</span>).get === <span class="std">List</span>(<span class="num">5</span>)</pre></div><dl class="paramcmts block"><dt class="param">upper</dt><dd class="cmt"><p>Upper value</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&lt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;=(upper:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="&lt;=(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&lt;=(upper:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="upper">upper: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute upper value.</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute upper value.</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Liz"</span>, <span class="num">37</span>), (<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Don"</span>, <span class="num">71</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> personsUnderOrExactly = m(Person.name.age_.&lt;=(?))
+
+<span class="cmt">// Apply upper value at runtime to get names of all under or exactly 42</span>
+personsUnderOrExactly(<span class="num">42</span>).get === <span class="std">List</span>(<span class="lit">"Liz"</span>, <span class="lit">"Ben"</span>)</pre></div><dl class="paramcmts block"><dt class="param">upper</dt><dd class="cmt"><p>Input marker <code>?</code> for upper value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&lt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;=(upper:T):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="&lt;=(Long):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&lt;=(upper:T):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="upper">upper: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Match attribute values less than or equal to upper value.</p><div class="fullcomment"><div class="comment cmt"><p>Match attribute values less than or equal to upper value.</p><pre>Person.age.get === <span class="std">List</span>(<span class="num">5</span>, <span class="num">12</span>, <span class="num">28</span>)
+Person.age.&lt;=(<span class="num">12</span>).get === <span class="std">List</span>(<span class="num">5</span>, <span class="num">12</span>)</pre></div><dl class="paramcmts block"><dt class="param">upper</dt><dd class="cmt"><p>Upper value</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
@@ -885,6 +1033,203 @@ Person.name.not(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;(lower:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="&gt;(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&gt;(lower:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="lower">lower: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute lower value.</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute lower value.</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Liz"</span>, <span class="num">37</span>), (<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Don"</span>, <span class="num">71</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> personsOver = m(Person.name.age_.&gt;(?))
+
+<span class="cmt">// Apply lower value at runtime to get names of all over 42</span>
+personsOver(<span class="num">42</span>).get === <span class="std">List</span>(<span class="lit">"Don"</span>)</pre></div><dl class="paramcmts block"><dt class="param">lower</dt><dd class="cmt"><p>Input marker <code>?</code> for lower value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;(lower:T):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="&gt;(Long):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&gt;(lower:T):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="lower">lower: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Match attribute values bigger than lower value</p><div class="fullcomment"><div class="comment cmt"><p>Match attribute values bigger than lower value</p><pre>Person.age.get === <span class="std">List</span>(<span class="num">5</span>, <span class="num">12</span>, <span class="num">28</span>)
+Person.age.&gt;(<span class="num">12</span>).get === <span class="std">List</span>(<span class="num">28</span>)</pre></div><dl class="paramcmts block"><dt class="param">lower</dt><dd class="cmt"><p>Lower value</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&gt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;=(lower:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="&gt;=(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&gt;=(lower:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="lower">lower: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute lower value.</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute lower value.</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Liz"</span>, <span class="num">37</span>), (<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Don"</span>, <span class="num">71</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> personsOverOrExactly = m(Person.name.age_.&gt;=(?))
+
+<span class="cmt">// Apply lower value at runtime to get names of all over or exactly 42</span>
+personsOverOrExactly(<span class="num">42</span>).get === <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Don"</span>)</pre></div><dl class="paramcmts block"><dt class="param">lower</dt><dd class="cmt"><p>Input marker <code>?</code> for lower value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#&gt;=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;=(lower:T):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="&gt;=(Long):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#&gt;=(lower:T):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="lower">lower: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Match attribute values bigger than or equal to lower value.</p><div class="fullcomment"><div class="comment cmt"><p>Match attribute values bigger than or equal to lower value.</p><pre>Person.age.get === <span class="std">List</span>(<span class="num">5</span>, <span class="num">12</span>, <span class="num">28</span>)
+Person.age.&gt;=(<span class="num">12</span>).get === <span class="std">List</span>(<span class="num">12</span>, <span class="num">28</span>)</pre></div><dl class="paramcmts block"><dt class="param">lower</dt><dd class="cmt"><p>Lower value</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(set:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Set[Long],Set[Long]*):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#apply(set:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="set">set: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="moreSets">moreSets: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]*</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(expr3:molecule.ast.model.Exp3[T,T,T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Exp3[Long,Long,Long]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#apply(expr3:molecule.ast.model.Exp3[T,T,T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="expr3">expr3: <a href="../ast/model$$Exp3.html" class="extype" name="molecule.ast.model.Exp3">Exp3</a>[<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Expression AST for building OR/AND expressions.</p><div class="fullcomment"><div class="comment cmt"><p>Expression AST for building OR/AND expressions.</p><pre>Person.name.age.hobbies.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>)),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>, <span class="lit">"reading"</span>)),
+  (<span class="lit">"Joe"</span>, <span class="num">42</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"reading"</span>))
+)
+
+<span class="cmt">// Apply two AND expression for card-many attributes</span>
+Person.name.hobbies_(<span class="lit">"golf"</span> and <span class="lit">"diving"</span> and <span class="lit">"reading"</span>).get === <span class="std">List</span>(<span class="lit">"Ben"</span>)</pre><p>With input molecules we can apply logic to multiple attributes at once.</p><pre>Person.name.age.noOfCars.noOfKids.get === <span class="std">List</span>(
+  (<span class="lit">"Joe"</span>, <span class="num">42</span>, <span class="num">1</span>, <span class="num">2</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>, <span class="num">1</span>, <span class="num">1</span>),
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>, <span class="num">2</span>, <span class="num">3</span>)
+)
+<span class="cmt">// Apply AND-triples to OR expression:</span>
+<span class="kw">val</span> persons = m(Person.name.age_(?).noOfCars(?).noOfKids_(?))
+persons((<span class="num">42</span> and <span class="num">1</span> and <span class="num">1</span>) or (<span class="num">37</span> and <span class="num">2</span> and <span class="num">3</span>)).get === <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>)</pre></div><dl class="paramcmts block"><dt class="param">expr3</dt><dd class="cmt"><p>OR/AND expression</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(expr2:molecule.ast.model.Exp2[T,T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Exp2[Long,Long]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#apply(expr2:molecule.ast.model.Exp2[T,T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="expr2">expr2: <a href="../ast/model$$Exp2.html" class="extype" name="molecule.ast.model.Exp2">Exp2</a>[<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Filter attribute values with logical expression.</p><div class="fullcomment"><div class="comment cmt"><p>Filter attribute values with logical expression.</p><pre>Person.name.age.hobbies.get === <span class="std">List</span>(
+  (<span class="lit">"Joe"</span>, <span class="num">42</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"reading"</span>)),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>, <span class="lit">"reading"</span>)),
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>, <span class="std">Set</span>(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>))
+)
+
+<span class="cmt">// Apply AND expression for card-many attributes</span>
+Person.name.hobbies_(<span class="lit">"golf"</span> and <span class="lit">"diving"</span>).get === <span class="std">List</span>(<span class="lit">"Ben"</span>, <span class="lit">"Liz"</span>)
+
+<span class="cmt">// Given an input molecule awaiting 2 inputs, we can apply AND-pairs to OR expression:</span>
+<span class="kw">val</span> persons = m(Person.name_(?).age(?))
+persons((<span class="lit">"Ben"</span> and <span class="num">42</span>) or (<span class="lit">"Liz"</span> and <span class="num">37</span>)).get === <span class="std">List</span>(<span class="num">42</span>, <span class="num">37</span>)</pre></div><dl class="paramcmts block"><dt class="param">expr2</dt><dd class="cmt"><p>OR/AND expression</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(expr1:molecule.ast.model.Exp1[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(Exp1[Long]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#apply(expr1:molecule.ast.model.Exp1[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="expr1">expr1: <a href="../ast/model$$Exp1.html" class="extype" name="molecule.ast.model.Exp1">Exp1</a>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Filter attribute values with logical expression.</p><div class="fullcomment"><div class="comment cmt"><p>Filter attribute values with logical expression.</p><pre>Person.name.age.get === <span class="std">List</span>(
+  (<span class="lit">"Liz"</span>, <span class="num">37</span>),
+  (<span class="lit">"Ben"</span>, <span class="num">42</span>),
+  (<span class="lit">"Don"</span>, <span class="num">71</span>)
+)
+
+<span class="cmt">// Apply OR expression</span>
+<span class="cmt">// Match all entities with `name` attribute having value "Liz" or "Ben"</span>
+Person.name_(<span class="lit">"Liz"</span> or <span class="lit">"Ben"</span>).age.get === <span class="std">List</span>(<span class="num">37</span>, <span class="num">42</span>)</pre></div><dl class="paramcmts block"><dt class="param">expr1</dt><dd class="cmt"><p>OR expression</p></dd><dt>returns</dt><dd class="cmt"><p>Molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="apply(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#apply(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="value">value: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute value(s) to be matched.</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute value(s) to be matched.</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">37</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> ageOfPerson = m(Person.name_(?).age)
+
+<span class="cmt">// Apply `name` attribute value at runtime to get age</span>
+ageOfPerson(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="num">42</span>)</pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Input marker <code>?</code> for equality match</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply(unifyer:AttrExpressions.this.unify):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="apply(api.core.unify):NswithAttr"></a>
       <span class="permalink">
@@ -1227,6 +1572,76 @@ Person.hobbies.get === <span class="std">List</span>(<span class="std">Set</span
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not(sets:Seq[Set[T]]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="not(Seq[Set[Long]]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#not(sets:Seq[Set[T]]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="params">(<span name="sets">sets: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not(set:Set[T],set2:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="not(Set[Long],Set[Long],Set[Long]*):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#not(set:Set[T],set2:Set[T],moreSets:Set[T]*):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="params">(<span name="set">set: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="set2">set2: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="moreSets">moreSets: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]*</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ManyExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not(set:Set[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="not(Set[Long]):NswithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#not(set:Set[T]):Nswithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="params">(<span name="set">set: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ManyExpr.html" class="extype" name="molecule.expression.AttrExpressions.ManyExpr">ManyExpr</a></dd></dl></div>
+    </li><li name="molecule.expression.AttrExpressions.ValueAttrExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="not(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr"></a><a id="not(api.core.??):InwithAttr"></a>
+      <span class="permalink">
+      <a href="../../molecule/boilerplate/attributes$$ManyRefAttr.html#not(value:AttrExpressions.this.??):Inwithmolecule.boilerplate.attributes.Attr" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">not</span><span class="params">(<span name="value">value: <a href="../api/core$.html#??=molecule.expression.AttrExpressions.?" class="extmbr" name="molecule.api.core.??">api.core.??</a></span>)</span><span class="result">: <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span> with <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Mark molecule as input molecule awaiting attribute negation value(s).</p><div class="fullcomment"><div class="comment cmt"><p>Mark molecule as input molecule awaiting attribute negation value(s).</p><pre>Person.name.age.get === <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">37</span>))
+
+<span class="cmt">// Create input molecule at compile time by applying `?` marker to attribute</span>
+<span class="kw">val</span> ageOfPersonsOtherThan = m(Person.name_.not(?).age)
+
+<span class="cmt">// Apply `name` attribute value at runtime to get ages of all other than Ben</span>
+ageOfPersonsOtherThan(<span class="lit">"Ben"</span>).get === <span class="std">List</span>(<span class="num">37</span>) <span class="cmt">// Liz' age</span></pre></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Input marker <code>?</code> for negation value</p></dd><dt>returns</dt><dd class="cmt"><p>Input molecule</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../expression/AttrExpressions$ValueAttrExpr.html" class="extype" name="molecule.expression.AttrExpressions.ValueAttrExpr">ValueAttrExpr</a></dd></dl></div>
     </li><li name="molecule.expression.AttrExpressions.AttrExpr#not" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="not(values:Seq[T]):Nswithmolecule.boilerplate.attributes.Attr"></a><a id="not(Seq[Long]):NswithAttr"></a>
       <span class="permalink">
@@ -1516,16 +1931,18 @@ Person.hobbies.get === <span class="std">List</span>(<span class="std">Set</span
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="molecule.boilerplate.attributes.RefAttr">
+        <div class="parent" name="molecule.expression.AttrExpressions.ManyExpr">
+              <h3>Inherited from <a href="../api/core$.html#ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]" class="extmbr" name="molecule.expression.AttrExpressions.ManyExpr">api.core.ManyExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
+            </div><div class="parent" name="molecule.expression.AttrExpressions.ManyAttrExpr">
+              <h3>Inherited from <a href="../api/core$.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.ManyAttrExpr">api.core.ManyAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>]</h3>
+            </div><div class="parent" name="molecule.expression.AttrExpressions.ValueAttrExpr">
+              <h3>Inherited from <a href="../api/core$.html#ValueAttrExpr[Ns,In,T]extendsAttrExpressions.this.AttrExpr[Ns,T]" class="extmbr" name="molecule.expression.AttrExpressions.ValueAttrExpr">api.core.ValueAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
+            </div><div class="parent" name="molecule.expression.AttrExpressions.AttrExpr">
+              <h3>Inherited from <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
+            </div><div class="parent" name="molecule.boilerplate.attributes.RefAttr">
               <h3>Inherited from <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>]</h3>
             </div><div class="parent" name="molecule.boilerplate.attributes.Attr">
               <h3>Inherited from <a href="attributes$$Attr.html" class="extype" name="molecule.boilerplate.attributes.Attr">Attr</a></h3>
-            </div><div class="parent" name="molecule.expression.AttrExpressions.ManyRefAttrExpr">
-              <h3>Inherited from <a href="../api/core$.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" class="extmbr" name="molecule.expression.AttrExpressions.ManyRefAttrExpr">api.core.ManyRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>]</h3>
-            </div><div class="parent" name="molecule.expression.AttrExpressions.ManyAttrExpr">
-              <h3>Inherited from <a href="../api/core$.html#ManyAttrExpr[Ns,Add,OldNew,Rem]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.ManyAttrExpr">api.core.ManyAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>, (<span class="extype" name="scala.Long">Long</span>, <span class="extype" name="scala.Long">Long</span>), <span class="extype" name="scala.Long">Long</span>]</h3>
-            </div><div class="parent" name="molecule.expression.AttrExpressions.AttrExpr">
-              <h3>Inherited from <a href="../api/core$.html#AttrExpr[Ns,T]extendsAnyRef" class="extmbr" name="molecule.expression.AttrExpressions.AttrExpr">api.core.AttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="scala.Long">Long</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

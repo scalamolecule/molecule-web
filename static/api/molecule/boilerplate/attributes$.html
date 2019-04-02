@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>Molecule 0.18.0 - molecule.boilerplate.attributes</title>
-          <meta name="description" content="Molecule 0.18.0 - molecule.boilerplate.attributes" />
-          <meta name="keywords" content="Molecule 0.18.0 molecule.boilerplate.attributes" />
+          <title>Molecule 0.18.3 - molecule.boilerplate.attributes</title>
+          <meta name="description" content="Molecule 0.18.3 - molecule.boilerplate.attributes" />
+          <meta name="keywords" content="Molecule 0.18.3 molecule.boilerplate.attributes" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
         </head>
         <body>
       <div id="search">
-        <span id="doc-title">Molecule<span id="doc-version">0.18.0</span></span>
+        <span id="doc-title">Molecule<span id="doc-version">0.18.3</span></span>
         <span class="close-results"><span class="left">&lt;</span> Back</span>
         <div id="textfilter">
           <span class="input">
@@ -121,16 +121,16 @@
     <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
   </tr>
   <tr>
-    <td><a href="generic/index.html">generic</a><td>
-    <td>Interfaces to generic information about datoms and Datomic database.</td>
-  </tr>
-  <tr>
     <td><a href="input/index.html">input</a><td>
     <td>Input molecules awaiting input.</td>
   </tr>
   <tr>
-    <td><a href="macro/index.html">macro</a><td>
+    <td><a href="macro/index.html">macros</a><td>
     <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
   </tr>
   <tr>
     <td><a href="ops/index.html">ops</a><td>
@@ -972,9 +972,9 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
       
       
     </li><li name="molecule.boilerplate.attributes.ManyRefAttr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ManyRefAttr[Ns,In]extendsmolecule.api.core.ManyRefAttrExpr[Ns,In]withattributes.RefAttr[Ns]"></a><a id="ManyRefAttr[Ns,In]:ManyRefAttr[Ns,In]"></a>
+      <a id="ManyRefAttr[Ns,In]extendsattributes.RefAttr[Ns]withmolecule.api.core.ManyExpr[Ns,In,Long]"></a><a id="ManyRefAttr[Ns,In]:ManyRefAttr[Ns,In]"></a>
       <span class="permalink">
-      <a href="../../molecule/boilerplate/attributes$.html#ManyRefAttr[Ns,In]extendsmolecule.api.core.ManyRefAttrExpr[Ns,In]withattributes.RefAttr[Ns]" title="Permalink">
+      <a href="../../molecule/boilerplate/attributes$.html#ManyRefAttr[Ns,In]extendsattributes.RefAttr[Ns]withmolecule.api.core.ManyExpr[Ns,In,Long]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -983,7 +983,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="attributes$$ManyRefAttr.html"><span class="name">ManyRefAttr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../api/core$.html#ManyRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]withAttrExpressions.this.ManyAttrExpr[Ns,Long,(Long,Long),Long]" class="extmbr" name="molecule.expression.AttrExpressions.ManyRefAttrExpr">api.core.ManyRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>] with <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>]</span>
+        <a title="" href="attributes$$ManyRefAttr.html"><span class="name">ManyRefAttr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>] with <a href="../api/core$.html#ManyExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]withAttrExpressions.this.ManyAttrExpr[Ns,T,(T,T),T]" class="extmbr" name="molecule.expression.AttrExpressions.ManyExpr">api.core.ManyExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.ManyRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
       
@@ -1948,9 +1948,9 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
       
       
     </li><li name="molecule.boilerplate.attributes.OneRefAttr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="OneRefAttr[Ns,In]extendsmolecule.api.core.OneRefAttrExpr[Ns,In]withattributes.RefAttr[Ns]"></a><a id="OneRefAttr[Ns,In]:OneRefAttr[Ns,In]"></a>
+      <a id="OneRefAttr[Ns,In]extendsattributes.RefAttr[Ns]withmolecule.api.core.OneExpr[Ns,In,Long]"></a><a id="OneRefAttr[Ns,In]:OneRefAttr[Ns,In]"></a>
       <span class="permalink">
-      <a href="../../molecule/boilerplate/attributes$.html#OneRefAttr[Ns,In]extendsmolecule.api.core.OneRefAttrExpr[Ns,In]withattributes.RefAttr[Ns]" title="Permalink">
+      <a href="../../molecule/boilerplate/attributes$.html#OneRefAttr[Ns,In]extendsattributes.RefAttr[Ns]withmolecule.api.core.OneExpr[Ns,In,Long]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1959,7 +1959,7 @@ Encodes attribute cardinality, type and mode (mandatory, tacit, optional).
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="" href="attributes$$OneRefAttr.html"><span class="name">OneRefAttr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="../api/core$.html#OneRefAttrExpr[Ns,In]extendsAttrExpressions.this.AttrExpr[Ns,Long]" class="extmbr" name="molecule.expression.AttrExpressions.OneRefAttrExpr">api.core.OneRefAttrExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>] with <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>]</span>
+        <a title="" href="attributes$$OneRefAttr.html"><span class="name">OneRefAttr</span></a><span class="tparams">[<span name="Ns">Ns</span>, <span name="In">In</span>]</span><span class="result"> extends <a href="attributes$$RefAttr.html" class="extype" name="molecule.boilerplate.attributes.RefAttr">RefAttr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>] with <a href="../api/core$.html#OneExpr[Ns,In,T]extendsAttrExpressions.this.ValueAttrExpr[Ns,In,T]" class="extmbr" name="molecule.expression.AttrExpressions.OneExpr">api.core.OneExpr</a>[<span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.Ns">Ns</span>, <span class="extype" name="molecule.boilerplate.attributes.OneRefAttr.In">In</span>, <span class="extype" name="scala.Long">Long</span>]</span>
       </span>
       
       
