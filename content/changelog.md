@@ -10,6 +10,7 @@ title: "Changelog"
 
 Main changes:
 
+- 2019-05-13 v0.18.4 [Aggregates for card-many attributes](#27)
 - 2019-04-02 v0.18.3 [Bug fixes](#26)
 - 2019-03-10 v0.18.2 [Meta becomes Generic](#25)
 - 2019-03-09 v0.18.1 [Shift Meta semantics](#24)
@@ -36,6 +37,12 @@ Main changes:
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Aggregates implemented for card-many attributes {#27}
+_2019-05.13 v0.18.4_
+
+- Card-many attribute values can now be aggregated.
 
 
 ## [☝︎](#top) Bug fixes {#26}

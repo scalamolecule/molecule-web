@@ -16,7 +16,7 @@ down: /manual/entities
 [Example tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala)
 
 Molecule wraps Datomic's native aggregate functions by applying special aggregate keyword objects to the attribute we want to 
-aggregate on. The keyword objects are made available with the `molecule._` import.
+aggregate on.
 
 Aggregate functions either return a single value or a collection of values:
 
@@ -41,14 +41,14 @@ Person.age(sum) // sum of all ages
 
 #### count
 
-Not to be confused with `sum`. `count` counts the total number of entities with an asserted `age` value
+Count the total number of entities with an asserted `age` value (not to be confused with `sum`).
 ```scala
 Person.age(count) // count of all persons with an age (not the sum of ages)
 ```
 
 #### countDistinct
 
-Not to be confused with `sum`. `count` counts the total number of entities with asserted _unique_ `age` values
+Count the total number of entities with asserted _unique_ `age` values (not to be confused with `sum`).
 ```scala
 Person.age(countDistinct)  // count of unique ages
 ```
