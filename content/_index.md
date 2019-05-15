@@ -246,9 +246,9 @@ trait Address {
 
 ### Read more
 
-- [Introduction](/docs/documentation/introduction/) to Datomic/Molecule
-- [Getting started](/docs/getting-started/) with Molecule
-- [Setup](/docs/getting-started/setup/) your Molecule project
+- [Quick start](/manual/) with Molecule
+- [Introduction](/manual/quick-start/introduction/) to Datomic/Molecule
+- [Setup](/manual/setup/) your Molecule project
 
 
 [Datomic]: http://www.datomic.com
