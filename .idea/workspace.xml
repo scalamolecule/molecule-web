@@ -1,123 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.18.3">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.18.4 / sbt-molecule 0.8.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/_index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/4-examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/4-examples.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/community/community/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/compare/overview/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/boilerplate/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/developer/transformation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/aggregates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/basics/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/expressions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/mapped/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/modes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/attributes/parameterized/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/get/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/getjson/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/insert/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/retract/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/save/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/crud/update/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/documentation/introduction/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/entities/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/getting-started/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/getting-started/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/getting-started/setup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/presentation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/presentation1/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/bidirectional/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/card-many/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/card-one/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/composites/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/relationships/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/schema/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/schema/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/schema/transaction/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/asof-since/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/history/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/testing/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/time/with/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/transactions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/transactions/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/docs/transactions/tx-meta-data/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/aggregates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/basics/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/expressions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/mapped/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/modes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/attributes/parameterized/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/composites/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/get/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/insert/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/retract/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/save/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/crud/update/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/entities/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/introduction/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/project-setup/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/getting-started/quickstart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/edge-other/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/edge-self/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/other/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/graphs/self/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/overview/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/card-many/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/card-one/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/composites/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/relationships/nested/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/schema/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/schema/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/schema/transaction/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/time/asof/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/time/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/time/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/time/since/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/transactions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/transactions/index.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/transactions/tx-data/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/documentation/transactions/tx-meta-data/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/faviconOLD.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Earth 2073.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/apple-touch-icon-114-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/jars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/crud/composite-insert/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/meta/datom/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/meta/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/meta/indexes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/meta/log/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manual/meta/schema/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/resources/overview/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
     </list>
     <ignored path="molecule-docs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layouts/partials/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+            <state relative-caret-position="520">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -154,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="902">
-                <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+              <first_editor relative-caret-position="226">
+                <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
                 <folding>
                   <element signature="e#0#27#0" expanded="true" />
                 </folding>
@@ -325,119 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="compare" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="attributes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="generic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="quick-start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="time" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="manual" type="462c0819:PsiDirectoryNode" />
-              <item name="transactions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="_default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -581,6 +355,119 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="compare" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="attributes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="quick-start" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="time" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="manual" type="462c0819:PsiDirectoryNode" />
+              <item name="transactions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="_default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecule-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecule-web" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -945,7 +832,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557767330891</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="0.18.4 / sbt-molecule 0.8.1">
+      <created>1557933496708</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1557933496708</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1022,7 +916,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.5.1" />
     <MESSAGE value="v0.6.1" />
     <MESSAGE value="v0.6.2" />
     <MESSAGE value="v0.6.3" />
@@ -1047,7 +940,8 @@
     <MESSAGE value="0.17.1" />
     <MESSAGE value="0.18.0" />
     <MESSAGE value="0.18.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.18.3" />
+    <MESSAGE value="0.18.4 / sbt-molecule 0.8.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.18.4 / sbt-molecule 0.8.1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/content/community/_index.md">
@@ -1346,9 +1240,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/api/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/api/index.html" />
     <entry file="file://$PROJECT_DIR$/content/manual/generic/indexes.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1551,8 +1443,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layouts/partials/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+        <state relative-caret-position="520">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1564,8 +1456,8 @@
     <entry file="file://$PROJECT_DIR$/content/manual/setup.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="902">
-            <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <first_editor relative-caret-position="226">
+            <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             <folding>
               <element signature="e#0#27#0" expanded="true" />
             </folding>
