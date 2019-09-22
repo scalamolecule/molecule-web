@@ -37,8 +37,8 @@ object SeattleDefinition {
     val name         = oneString.fulltext.doc("A community's name") // optional doc text
     val url          = oneString
     val category     = manyString.fulltext
-    val orgtype      = oneEnum('community, 'commercial, 'nonprofit, 'personal)
-    val `type`       = oneEnum('email_list, 'twitter, 'facebook_page) // + more...
+    val orgtype      = oneEnum("community", "commercial", "nonprofit", "personal")
+    val `type`       = oneEnum("email_list", "twitter", "facebook_page") // + more...
     val neighborhood = one[Neighborhood]
   }
 
@@ -49,7 +49,7 @@ object SeattleDefinition {
 
   trait District {
     val name   = oneString
-    val region = oneEnum('n, 'ne, 'e, 'se, 's, 'sw, 'w, 'nw)
+    val region = oneEnum("n", "ne", "e", "se", "s", "sw", "w", "nw")
   }
 }
 ```
@@ -135,7 +135,7 @@ object PartitionTestDefinition {
   object gen {
     trait Person {
       val name   = oneString
-      val gender = oneEnum('male, 'female)
+      val gender = oneEnum("male", "female")
     }
     // ..more namespaces in the `gen` partition
   }
@@ -147,7 +147,7 @@ object PartitionTestDefinition {
       // To avoid attr/partition name clashes we can prepend the definition object name
       // (in case we would have needed an attribute named `gen` for instance)
       val editor = one[PartitionTestDefinition.gen.Person]
-      val cat    = oneEnum('good, 'bad)
+      val cat    = oneEnum("good", "bad")
     }
     // ..more namespaces in the `lit` partition
   }

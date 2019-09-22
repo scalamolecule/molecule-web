@@ -6,7 +6,7 @@ menu:
     parent: crud
 up:   /manual/crud
 prev: /manual/crud/insert
-next: /manual/crud/getJson
+next: /manual/crud/get-json
 down: /manual/transactions
 ---
 
@@ -109,4 +109,4 @@ more concise. But for more complex interconnected data this approach can be a go
 
 ### Next
 
-[Get Json...](/manual/crud/getJson)
+[Get Json...](/manual/crud/get-json)

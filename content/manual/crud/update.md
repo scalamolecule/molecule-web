@@ -5,7 +5,7 @@ menu:
   main:
     parent: crud
 up:   /manual/crud
-prev: /manual/crud/getjson
+prev: /manual/crud/get-json
 next: /manual/crud/retract
 down: /manual/transactions
 ---

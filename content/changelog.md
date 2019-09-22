@@ -1,5 +1,5 @@
 ---
-date: 2018-11-14T02:13:50Z
+date: 2019-09-22T02:13:50Z
 title: "Changelog"
 ---
 
@@ -10,6 +10,8 @@ title: "Changelog"
 
 Main changes:
 
+- 2019-09.22 v0.19.0 [Cross-compiling to Scala 2.13.1 and 2.12.10](#29)
+- 2019-05-17 v0.18.5 [Adapting to sbt-molecule 0.8.1](#28)
 - 2019-05-13 v0.18.4 [Aggregates for card-many attributes](#27)
 - 2019-04-02 v0.18.3 [Bug fixes](#26)
 - 2019-03-10 v0.18.2 [Meta becomes Generic](#25)
@@ -37,6 +39,25 @@ Main changes:
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Cross-compiling to Scala 2.13.1 and 2.12.10 {#29}
+_2019-09-22 v0.19.0_
+
+- Molecule now cross-compiles to Scala 2.12.10 and 2.13.1
+- Generic entity id `e` can now be used together with aggregates.
+- `ReBond` model element simplified (only affects internally).
+- All cardinality many types now correctly casted with Entity touch.
+- Now saving/inserting correct Float precision.
+- Bug fix: correct namespace name when `e(count)` is first.
+- bug fix: generic attr before ref.
+- Internal model semantics clarification, changing `ns` to `nsFull`.
+
+
+## [☝︎](#top) Adapting to sbt-molecule 0.8.1 {#28}
+_2019-05-17 v0.18.5_
+
+Adapting to `sbt-molecule` 0.8.1 that now no longer adds MapK attributes to the schema creation file.
 
 
 ## [☝︎](#top) Aggregates implemented for card-many attributes {#27}
@@ -87,7 +108,7 @@ Schema.a.part.ns.nsFull.attr.get === List((
   ":Community/name", // namespace name now uppercase 
   "db.part/user", // default partition (not prefixed to namespaces)
   "Community", // now uppercase
-  "Customer", // now uppercase (has no partition prefix when no custom partition is defined)
+  "Community", // now uppercase (has no partition prefix when no custom partition is defined)
   "name"
 ))
 
