@@ -10,7 +10,7 @@ title: "Changelog"
 
 Main changes:
 
-- 2019-09.22 v0.19.0 [Cross-compiling to Scala 2.13.1 and 2.12.10](#29)
+- 2019-09-22 v0.19.0 [Cross-compiling to Scala 2.13.1 and 2.12.10](#29)
 - 2019-05-17 v0.18.5 [Adapting to sbt-molecule 0.8.1](#28)
 - 2019-05-13 v0.18.4 [Aggregates for card-many attributes](#27)
 - 2019-04-02 v0.18.3 [Bug fixes](#26)

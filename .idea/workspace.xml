@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="0.18.5 / sbt-molecule 0.8.1">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/getJson.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/get-json.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/crud/update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/crud/update.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/schema.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -422,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558099136804</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10">
+      <created>1569192472208</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1569192472208</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -445,7 +445,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -462,7 +464,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.6.2" />
     <MESSAGE value="v0.6.3" />
     <MESSAGE value="Schema transaction" />
     <MESSAGE value="v0.7.0 sbt-molecule plugin now handles code generation" />
@@ -487,7 +488,8 @@
     <MESSAGE value="0.18.3" />
     <MESSAGE value="0.18.4 / sbt-molecule 0.8.1" />
     <MESSAGE value="0.18.5 / sbt-molecule 0.8.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.18.5 / sbt-molecule 0.8.1" />
+    <MESSAGE value="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10" />
   </component>
   <component name="masterDetails">
     <states>
