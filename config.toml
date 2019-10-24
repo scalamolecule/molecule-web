@@ -56,6 +56,11 @@ disablePathToLower = true
     url = "/api/molecule/api/getAsync"
 [[menu.main]]
     parent = "docs-api"
+    name = "core"
+    identifier = "docs-api-core"
+    url = "/api/molecule/api/core%24?.html"
+[[menu.main]]
+    parent = "docs-api"
     name = "Entity"
     identifier = "docs-api-Entity"
     url = "/api/molecule/api/Entity.html"
@@ -84,6 +89,85 @@ disablePathToLower = true
     name = "TxMethods"
     identifier = "docs-api-TxMethods"
     url = "/api/molecule/api/TxMethods.html"
+
+
+[[menu.main]]
+    parent = "docs"
+    name = "ast"
+    identifier = "docs-ast"
+    url = "/api/molecule/ast"
+[[menu.main]]
+    parent = "docs-ast"
+    name = "model"
+    identifier = "docs-ast-model"
+    url = "/api/molecule/ast/model%24?.html"
+[[menu.main]]
+    parent = "docs-ast"
+    name = "MoleculeBase"
+    identifier = "docs-ast-MoleculeBase"
+    url = "/api/molecule/ast/MoleculeBase.html"
+[[menu.main]]
+    parent = "docs-ast"
+    name = "query"
+    identifier = "docs-ast-query"
+    url = "/api/molecule/ast/query%24?.html"
+[[menu.main]]
+    parent = "docs-ast"
+    name = "transactionModel"
+    identifier = "docs-ast-transactionModel"
+    url = "/api/molecule/ast/transactionModel%24?.html"
+
+
+[[menu.main]]
+    parent = "docs"
+    name = "boilerplate"
+    identifier = "docs-boilerplate"
+    url = "/api/molecule/boilerplate"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "attributes"
+    identifier = "docs-boilerplate-attributes"
+    url = "/api/molecule/boilerplate/attributes%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "base"
+    identifier = "docs-boilerplate-base"
+    url = "/api/molecule/boilerplate/base%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "dummyTypes"
+    identifier = "docs-boilerplate-dummyTypes"
+    url = "/api/molecule/boilerplate/dummyTypes%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "in1"
+    identifier = "docs-boilerplate-in1"
+    url = "/api/molecule/boilerplate/in1%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "in2"
+    identifier = "docs-boilerplate-in2"
+    url = "/api/molecule/boilerplate/in2%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "in3"
+    identifier = "docs-boilerplate-in3"
+    url = "/api/molecule/boilerplate/in3%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "out"
+    identifier = "docs-boilerplate-out"
+    url = "/api/molecule/boilerplate/out%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "outIndex"
+    identifier = "docs-boilerplate-outIndex"
+    url = "/api/molecule/boilerplate/outIndex%24?.html"
+[[menu.main]]
+    parent = "docs-boilerplate"
+    name = "outSchema"
+    identifier = "docs-boilerplate-outSchema"
+    url = "/api/molecule/boilerplate/outSchema%24?.html"
 
 
 [[menu.main]]
@@ -192,13 +276,18 @@ disablePathToLower = true
     url = "/api/molecule/expression/AggregateKeywords.html"
 [[menu.main]]
     parent = "docs-expression"
+    name = "AggregateKeywordsSchema"
+    identifier = "docs-expression-AggregateKeywordsSchema"
+    url = "/api/molecule/expression/AggregateKeywordsSchema%24?.html"
+[[menu.main]]
+    parent = "docs-expression"
     name = "AttrExpressions"
     identifier = "docs-expression-AttrExpressions"
     url = "/api/molecule/expression/AttrExpressions.html"
 [[menu.main]]
     parent = "docs-expression"
-    name = "AttrExpressions"
-    identifier = "docs-expression-AttrExpressions"
+    name = "LogicImplicits"
+    identifier = "docs-expression-LogicImplicits"
     url = "/api/molecule/expression/LogicImplicits.html"
 
 
@@ -283,18 +372,18 @@ disablePathToLower = true
     url = "/api/molecule/generic"
 [[menu.main]]
     parent = "docs-generic"
-    name = "Datom"
-    identifier = "docs-generic-Datom"
+    name = "datom"
+    identifier = "docs-generic-datom"
     url = "/api/molecule/generic/datom/index.html"
 [[menu.main]]
     parent = "docs-generic"
-    name = "Index"
-    identifier = "docs-generic-Index"
+    name = "index"
+    identifier = "docs-generic-index"
     url = "/api/molecule/generic/index/index.html"
 [[menu.main]]
     parent = "docs-generic"
-    name = "Schema"
-    identifier = "docs-generic-Schema"
+    name = "schema"
+    identifier = "docs-generic-schema"
     url = "/api/molecule/generic/schema/index.html"
 [[menu.main]]
     parent = "docs-generic"
@@ -342,9 +431,61 @@ disablePathToLower = true
     url = "/api/molecule/macros"
 [[menu.main]]
     parent = "docs-macros"
+    name = "MakeComposite"
+    identifier = "docs-macros-MakeComposite"
+    url = "/api/molecule/macros/MakeComposite.html"
+[[menu.main]]
+    parent = "docs-macros"
+    name = "MakeComposite_In"
+    identifier = "docs-macros-MakeComposite_In"
+    url = "/api/molecule/macros/MakeComposite_In.html"
+[[menu.main]]
+    parent = "docs-macros"
+    name = "MakeMolecule"
+    identifier = "docs-macros-MakeMolecule"
+    url = "/api/molecule/macros/MakeMolecule.html"
+[[menu.main]]
+    parent = "docs-macros"
+    name = "MakeMolecule_In"
+    identifier = "docs-macros-MakeMolecule_In"
+    url = "/api/molecule/macros/MakeMolecule_In.html"
+[[menu.main]]
+    parent = "docs-macros"
     name = "TxFns"
     identifier = "docs-macros-TxFns"
     url = "/api/molecule/macros/TxFns.html"
+[[menu.main]]
+    parent = "docs-macros"
+    name = "TxFunctionCall"
+    identifier = "docs-macros-TxFunctionCall"
+    url = "/api/molecule/macros/TxFunctionCall.html"
+
+
+[[menu.main]]
+    parent = "docs"
+    name = "ops"
+    identifier = "docs-ops"
+    url = "/api/molecule/ops"
+[[menu.main]]
+    parent = "docs-ops"
+    name = "ModelOps"
+    identifier = "docs-ops-ModelOps"
+    url = "/api/molecule/ops/ModelOps%24?.html"
+[[menu.main]]
+    parent = "docs-ops"
+    name = "QueryOps"
+    identifier = "docs-ops-QueryOps"
+    url = "/api/molecule/ops/QueryOps%24?.html"
+[[menu.main]]
+    parent = "docs-ops"
+    name = "VerifyModel"
+    identifier = "docs-ops-VerifyModel"
+    url = "/api/molecule/ops/VerifyModel.html"
+[[menu.main]]
+    parent = "docs-ops"
+    name = "VerifyRawModel"
+    identifier = "docs-ops-VerifyRawModel"
+    url = "/api/molecule/ops/VerifyRawModel%24?.html"
 
 
 [[menu.main]]
@@ -362,6 +503,71 @@ disablePathToLower = true
     name = "definition"
     identifier = "docs-schema-definition"
     url = "/api/molecule/schema/definition%24?.html"
+
+
+[[menu.main]]
+    parent = "docs"
+    name = "transform"
+    identifier = "docs-transform"
+    url = "/api/molecule/transform"
+[[menu.main]]
+    parent = "docs-transform"
+    name = "CastHelpers"
+    identifier = "docs-transform-CastHelpers"
+    url = "/api/molecule/transform/CastHelpers.html"
+[[menu.main]]
+    parent = "docs-transform"
+    name = "Model2Query"
+    identifier = "docs-transform-Model2Query"
+    url = "/api/molecule/transform/Model2Query%24?.html"
+[[menu.main]]
+    parent = "docs-transform"
+    name = "Model2Transaction"
+    identifier = "docs-transform-Model2Transaction"
+    url = "/api/molecule/transform/Model2Transaction.html"
+[[menu.main]]
+    parent = "docs-transform"
+    name = "Query2String"
+    identifier = "docs-transform-Query2String"
+    url = "/api/molecule/transform/Query2String.html"
+
+
+[[menu.main]]
+    parent = "docs"
+    name = "util"
+    identifier = "docs-util"
+    url = "/api/molecule/util"
+[[menu.main]]
+    parent = "docs-util"
+    name = "BridgeDatomicFuture"
+    identifier = "docs-util-BridgeDatomicFuture"
+    url = "/api/molecule/util/BridgeDatomicFuture.html"
+[[menu.main]]
+    parent = "docs-util"
+    name = "DateHandling"
+    identifier = "docs-util-DateHandling"
+    url = "/api/molecule/util/DateHandling.html"
+[[menu.main]]
+    parent = "docs-util"
+    name = "Helpers"
+    identifier = "docs-util-Helpers"
+    url = "/api/molecule/util/Helpers.html"
+[[menu.main]]
+    parent = "docs-util"
+    name = "JavaUtil"
+    identifier = "docs-util-JavaUtil"
+    url = "/api/molecule/util/JavaUtil.html"
+[[menu.main]]
+    parent = "docs-util"
+    name = "RegexMatching"
+    identifier = "docs-util-RegexMatching"
+    url = "/api/molecule/util/RegexMatching.html"
+[[menu.main]]
+    parent = "docs-util"
+    name = "fns"
+    identifier = "docs-util-fns"
+    url = "/api/molecule/util/fns%24?.html"
+
 
 # end of Docs ============================================================
 

@@ -1,5 +1,5 @@
 ---
-date: 2019-09-22T02:13:50Z
+date: 2019-10-20T02:13:50Z
 title: "Changelog"
 ---
 
@@ -10,6 +10,8 @@ title: "Changelog"
 
 Main changes:
 
+- 2019-10-24 v0.20.0 [Molecule for Scala.js](#31)
+- 2019-10-20 v0.19.1 [Date handling corrected](#30)
 - 2019-09-22 v0.19.0 [Cross-compiling to Scala 2.13.1 and 2.12.10](#29)
 - 2019-05-17 v0.18.5 [Adapting to sbt-molecule 0.8.1](#28)
 - 2019-05-13 v0.18.4 [Aggregates for card-many attributes](#27)
@@ -39,6 +41,22 @@ Main changes:
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Molecule for Scala.js {#31}
+_2019-10-24 v0.20.0_
+
+Molecule AST's and generic interfaces compiled for Scala.js.
+
+See the [molecule-admin](https://github.com/scalamolecule/molecule-admin) project for
+an example of how Molecule is used both on the server and client side.
+
+
+## [☝︎](#top) Date handling corrected {#30}
+_2019-10-20 v0.19.1_
+
+- Bug fixes: Date formatting with correct timezone and daylight savings
+- Bug fix: duplicate optional attributes allowed
 
 
 ## [☝︎](#top) Cross-compiling to Scala 2.13.1 and 2.12.10 {#29}

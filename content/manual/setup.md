@@ -45,16 +45,66 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.19.0",
+      "org.scalamolecule" %% "molecule" % "0.20.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
   )
 ```
-Molecule 0.19.0 cross-compilations available at maven central for Scala 
-[2.13.1](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/sbt-molecule_2.13.1/) and
-[2.12.10](https://oss.sonatype.org/content/repositories/releases/org/scalamolecule/sbt-molecule_2.12.10/).
+Molecule 0.20.0 cross-compilations available at maven central for Scala 
+[2.13.1](https://repo1.maven.org/maven2/org/scalamolecule/molecule_2.13/) and
+[2.12.10](https://repo1.maven.org/maven2/org/scalamolecule/molecule_2.12/).
 
+
+### Molecule in Scala.js project
+
+Molecule AST's and other generic interfaces have been ported to Scala.js so
+that you can also work with Molecule on the client side. 
+See the [molecule-admin](https://github.com/scalamolecule/molecule-admin) project for
+an example of how Molecule is used both on the server and client side.
+
+`project/buildinfo.sbt`:
+
+```scala
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.8.2")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.29")
+addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "0.6.1")
+```
+
+`build.sbt` (CrossType.Full example):
+
+```scala
+import sbtcrossproject.CrossPlugin.autoImport.crossProject
+
+lazy val yourProject = crossProject(JSPlatform, JVMPlatform)
+  .in(file("."))
+
+lazy val yourProjectJVM = yourProject.jvm
+  .enablePlugins(MoleculePlugin)
+  .settings(
+    resolvers ++= Seq(
+      "datomic" at "http://files.datomic.com/maven",
+      "clojars" at "http://clojars.org/repo",
+      Resolver.sonatypeRepo("releases")
+    ),
+    libraryDependencies ++= Seq(
+      "org.scalamolecule" %% "molecule" % "0.20.0",
+      "com.datomic" % "datomic-free" % "0.9.5697"
+    ),
+    moleculeSchemas := Seq("app") // paths to your schema definition files...
+  )
+
+lazy val yourProjectJS = yourProject.js
+  .settings(
+    libraryDependencies ++= Seq(
+      ("org.scalamolecule" %%% "molecule" % "0.20.0")
+        .exclude("com.datomic", "datomic-free")
+    ),
+    moleculeSchemas := Seq("app") // paths to your schema definition files...
+  )
+```
+Note how we exclude the Datomic dependency on the js side (since Datomic is obviously not 
+compiled to javascript).
 
 ## 2. Paths to Schema definition files
 
