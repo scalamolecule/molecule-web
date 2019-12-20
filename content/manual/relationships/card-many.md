@@ -49,11 +49,11 @@ Order.id.Items.qty.product.price.get === List(
 The Order data is repeated for each line Item which is kind of redundant. We can avoid that with a "nested" Molecule instead:
 
 
-## Nested results
+## Nested data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/NestedRef.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/nested/NestedRef.scala)
 
-We can nest the result with the Molecule syntax `*` indicating "with many":
+We can nest the result from the above example with the Molecule operator `*` indicating "with many":
 
 ```scala
 m(Order.id.Items * LineItem.qty.product.price).get === List(
@@ -66,9 +66,32 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
 ```
 Now each Order has its own list of typed Line Item data and there is no Order redundancy.
 
-This becomes more and more handy the deeper the hierarchy of data is. Molecule can nest data structures up to 10 levels deep!
 
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
+### Optional nested data
+
+Optional nested data can be queried with the `*?` operator:
+
+```scala
+m(Ns.int.Refs1 * Ref1.str1) insert List(
+  (1, List("a", "b")),
+  (2, List()) // (no nested data)
+)
+
+// Mandatory nested data
+m(Ns.int.Refs1 * Ref1.str1).get === List(
+  (1, List("a", "b"))
+)
+
+// Optional nested data
+m(Ns.int.Refs1 *? Ref1.str1).get === List(
+  (1, List("a", "b")),
+  (2, List())
+)
+```
+
+Molecule can nest data structures up to 7 levels deep.
+
+All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity.
 
 
 ### Entity API
