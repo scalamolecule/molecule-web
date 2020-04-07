@@ -26,7 +26,7 @@ Depending on our domain we can tailor any tx meta data that we find valuable to 
 We could for instance be interested in "who did it" and "in what use case" it happened and create some generic attributes
  `user` and `uc` in an `Audit` namespace:
 
-```scala
+```
 trait Audit {
   val user = oneString
   val uc   = oneString
@@ -34,14 +34,14 @@ trait Audit {
 ```
 Then we can assert values of those attributes together with a `save` operation for instance by applying an `Audit` meta molecule 
 
-```scala
+```
 Audit.user("Lisa").uc("survey")
 ```
 
 ..to the generic `Tx` namespace:
 
 
-```scala
+```
 Person.name("Fred").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
 ```
 This could read: _"A person Fred liking pizza was saved by Lisa as part of a survey"_
@@ -57,7 +57,7 @@ Molecule simply saves the tx meta data attributes `user` and `uc` with the trans
 
 Now we can query the tx meta data in various ways:
 
-```scala
+```
 // How was Fred added?
 // Fred was added by Lisa as part of a survey
 Person(e5).name.Tx(Audit.user.uc).get === List(("Fred", "Lisa", "survey"))
@@ -80,7 +80,7 @@ Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
 
 If we insert multiple entities in a transaction, the transaction data is only asserted once:
 
-```scala
+```
 Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
   ("John", "sushi"),
   ("Pete", "burgers"),
@@ -93,7 +93,7 @@ Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
 
 Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta data:
 
-```scala
+```
 Article.name.author + 
   Tag.name.weight
   .Tx(MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")) insert List(
@@ -104,7 +104,7 @@ Article.name.author +
 )
 ```
 _"Get serious articles that Brenda submitted"_:
-```scala
+```
 m(Article.name.author + 
   Tag.name_("serious").weight.>=(4)
   .Tx(MetaData.submitter_("Brenda Johnson"))).get === List(
@@ -117,13 +117,13 @@ m(Article.name.author +
 ## Update
 
 Transaction meta data can be attached to updates too so that we can for instance follow who changed data in our system.
-```scala
+```
 Person(johnId).likes("pasta").Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
 ```
 Now when we look at a list of Persons and what they like we can see that some likes were from an original survey and one is 
 from a follow-up survey that Ben did:
 
-```scala
+```
 Person.name.likes.Tx(Audit.user.uc).get === List(
   ("John", "pasta", "Ben", "survey-follow-up"),
   ("Pete", "burgers", "Lisa", "survey"),
@@ -139,11 +139,11 @@ It's valuable also to have meta data about retractions so that we can afterwards
 
 To retract an attribute value we apply an empty arg list to the attribute and `update`. Here we also apply some tx meta data
 about who took away the `likes` value for Pete:
-```scala
+```
 Person(peteId).likes().Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
 ```
 We can follow the `likes` of Pete through [history](/manual/time/history/) and see that Ben retracted his `likes` value in a survey follow-up:
-```scala
+```
 Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // Pete's liking was saved by Lisa as part of survey
   ("burgers", 1028, true, "Lisa", "survey"),
@@ -154,7 +154,7 @@ Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2,
 ```
 The entity Pete still exists but now has no current liking:
 
-```scala
+```
 Person(peteId).name.likes$.get.head === ("Pete", None) 
 ```
 
@@ -164,14 +164,14 @@ Using the `retract` method
 (available via `import molecule.imports._`) we can retract one or more entity ids along with a tx meta data:
 
 
-```scala
+```
 retract(johnId, Audit.user("Mona").uc("clean-up"))
 ```
 The `Audit.user("Mona").uc("clean-up")` molecule has the tx meta data that we save with the transaction entity.
  
 John has now ben both saved, updated and retracted:
 
-```scala
+```
 Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // John's liking was saved by Lisa as part of survey
   ("sushi", 1028, true, "Lisa", "survey"), // sushi asserted
@@ -186,7 +186,7 @@ Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2,
 ```
 
 The entity John now currently doesn't exists (although still in history)
-```scala
+```
 Person(johnId).name.likes$.get === Nil 
 ```
 

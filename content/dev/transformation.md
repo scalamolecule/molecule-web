@@ -14,7 +14,7 @@ Molecule performs a series of transformation of the molecules we write so that t
 ### 1. Source code
 
 To find southern media communities we could make the following molecule
-```scala
+```
 Community.name.`type`("twitter" or "facebook_page")
   .Neighborhood.District.region("sw" or "s" or "se")
 ```
@@ -23,7 +23,7 @@ Community.name.`type`("twitter" or "facebook_page")
 
 The source code of our molecule is then pattern matched in [Dsl2Model](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Dsl2Model.scala) element by element in order to create an abstracted Model of `Atom`s and `Bond`s:
 
-```scala
+```
 Model(List(
   Atom("Community", "name", "String", 1, VarValue, None),
   Atom("Community", "type_", "String", 1, Eq(List("twitter", "facebook_page")), Some(":Community.type/")),
@@ -37,7 +37,7 @@ This simple [Model AST](https://github.com/scalamolecule/molecule/blob/master/co
 ### 3. Query AST
 Our model is then transformed in [Model2Query](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Model2Query.scala) to a Query AST which is a little more elaborate:
 
-```scala
+```
 Query(
   Find(List(
     Var("b"))),

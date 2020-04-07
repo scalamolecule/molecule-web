@@ -54,14 +54,14 @@ The following Schema attributes can be used to build Schema molecules:
 
 ### Querying the Schema structure
 
-```scala
+```
 // List of attribute entity ids
 val attrIds: Seq[Long] = Schema.id.get
 ```
 
 ### Partition/Namespace/Attribute names
 
-```scala
+```
 // Attribute name elements
 Schema.a.part.ns.nsFull.attr.get === List (
   (":sales_Customer/name", "sales", "Customer", "sales_Customer", "name"),
@@ -72,7 +72,7 @@ Schema.a.part.ns.nsFull.attr.get === List (
 
 ### Types and cardinality
 
-```scala
+```
 // Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
   (":sales_Customer/name", "string", "one"),
@@ -105,7 +105,7 @@ Scala `Int` and `Long` are both represented as Datomic type `long`:
 
 These can be retrieved as mandatory or optional attribute values
 
-```scala
+```
 Schema.a
       .index
       .doc$
@@ -136,7 +136,7 @@ Schema.a
 ### Enum values
 
 Enumerated values can be defined in the schema and then retrieved generically with `Schema.enum`:
-```scala
+```
 // Defined enum values
 Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
   ":Person/gender" -> List("female", "male"),
@@ -147,7 +147,7 @@ Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
 ### Schema transaction times
 
 "In what transaction/when were the attributes created in the schema?"
-```scala
+```
 Schema.t.tx.txInstant.get === List(
   (t1, tx1, <Date: 2018-11-07 09:28:10>), // Initial schema transaction
   (t2, tx2, <Date: 2019-01-12 12:43:27>), // Additional schema attribute definitions...

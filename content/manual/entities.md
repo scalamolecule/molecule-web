@@ -30,7 +30,7 @@ Attributes from any number of namespaces could be asserted sharing the same enti
 
 At runtime we can see the facts of an entity by calling `touch` on the entity id (of type `Long`):
 
-```scala
+```
 101L.touch === Map(
   ":db/id" -> 101L,
   ":Person/name"  -> "Fred", 
@@ -47,7 +47,7 @@ At runtime we can see the facts of an entity by calling `touch` on the entity id
 
 We can look for an optionally present attribute value. Here we ask the entity id `fredId` if it has 
 a `:Site/cat` attribute value (of type `String`) and we get a typed optional value back:
-```scala
+```
 val siteCat_? : Option[String] = fredId[String](":Site/cat")
 ```
 
@@ -57,7 +57,7 @@ val siteCat_? : Option[String] = fredId[String](":Site/cat")
 The `touch` method can recursively retrieve referenced entities. We could for instance traverse an `Order` with `LineItems`:
 
 
-```scala
+```
 orderId.touch === Map(
   ":db/id" -> orderId,
   ":Order/lineItems" -> List(
@@ -75,7 +75,7 @@ orderId.touch === Map(
 
 The entity attributes graph might be deep and wide so we can apply a max level to `touch(<maxLevel>)`:
 
-```scala
+```
 fredId.touchMax(2) === Map(
   ":db/id" -> fredId,
   ":Person/name" -> "Fred"

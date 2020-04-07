@@ -18,12 +18,12 @@ Data can be inserted by making a molecule that matches the values of each row.
 
 One row of data can be applied directly with matching arguments
 
-```scala
+```
 Person.name.likes.age.insert("Fred", "pizza", 38)
 ```
 
 Multiple rows of data can be applied as any `Iterable` of tuples of data each matching the molecule attributes:
-```scala
+```
 Person.name.likes.age insert List(
   ("Lisa", "pizza", 7),
   ("Ben", "pasta", 5)
@@ -47,7 +47,7 @@ All transactional operators have an asynchronous equivalent. Inserting data asyn
 
 Here, we insert data as argument list/tuples asynchronously:
 
-```scala
+```
 // Insert single row of data with individual args
 val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("Fred", "pizza", 38)
 
@@ -77,7 +77,7 @@ For brevity, the following examples use the synchronous `save` operation.
 
 `null` values are not allowed as data-input values whereas Optional values are:
 
-```scala
+```
 Person.name.likes$.age insert List(
   ("Fred", None, 38),
   ("Pete", Some("sushi"), 17)
@@ -90,7 +90,7 @@ As with `save`, None values are simply not asserted. No `likes` value is asserte
 
 Related data can be inserted
 
-```scala
+```
 Person.name.likes$.age.Home.street.city insert List(
   ("Fred", None, 38, "Baker St. 7", "Boston"),
   ("Pete", Some("sushi"), 17, "Sunset Boulevard 1042", "Foxville")
@@ -103,7 +103,7 @@ entity is created. The same for Pete, and so on...
 ### Composite data
 
 Data with associative relationships can be inserted with a Composite molecule
-```scala
+```
 Article.name.author + Tag.name.weight insert List(
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
   (("Best jokes ever", "John Cleese"), ("fun", 3))
@@ -118,7 +118,7 @@ to 22 x 22 = 484 attributes per row of data!
 ### Data variables
 Likewise we might often have the whole data set saved in a variable that we can insert too:
 
-```scala
+```
 val data = List(
   ("Fred", None, 38),
   ("Pete", Some("sushi"), 17)
@@ -131,7 +131,7 @@ Person.name.likes$.age insert data
 If we have some previously saved entities we can also insert their ids. Here we save some Address entity ids 
 with the ref attribute `home`:
 
-```scala
+```
 val bakerSt7 = Addr.street("Baker St. 7").city("Boston").save.eid
 val sunsetB = Addr.street("Sunset Boulevard 1042").city("Foxville").save.eid
 
@@ -148,7 +148,7 @@ Person.name.likes$.age.home insert List(
 
 We can assign an Insert-molecule to a variable in order to re-use it as a temple to insert data with various inputs.
 
-```scala
+```
 // Insert-molecule
 val insertPerson = Person.name.likes.age.insert
 
@@ -160,7 +160,7 @@ insertPerson("Ben", "pasta", 7)
 
 We can use insert-molecules with data assigned to variables too: 
 
-```scala
+```
 val insertPerson = Person.name.likes.age.insert
 
 val personsData = List(

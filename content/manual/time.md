@@ -47,7 +47,7 @@ A transaction entity id is the 4th value of Datomic quintuplets that tells us in
 
 In Molecule code we can get this information by adding the generic `tx` attribute after an attribute:
 
-```scala
+```
 Person(e5).likes.tx.get.head === ("pizza", tx4)
 ```
 Here we get some transaction entity id `tx4` (a `Long` number) for the transaction where it 
@@ -66,12 +66,12 @@ This can be useful if we for instance want to examine "the previous" transaction
 As when getting the transaction entity id with `tx` we can get the transaction value by appending
 the generic Molecule attribute `t` after some attribute:
 
-```scala
+```
 val someT = Person(e5).likes_.t.get.head
 ```
 Then we could ask "was there another value in the previous transaction?"
 
-```scala
+```
 val previousT = someT - 1
 Person(e5).likes.getAsOf(previousT) === Nil // There were no `likes` value before...
 ```
@@ -92,7 +92,7 @@ datomic.Peer.toT(tx2) === t2
 Each transaction returns a `TxReport` with information about the transaction and we can use the report itself as a point in time:
 
 
-```scala
+```
 val txReport1 = Person.name("Fred").likes("pizza").save
 val fred = txReport1.eid // Getting created entity id from tx report
 
@@ -108,7 +108,7 @@ Person(fred).likes.getAsOf(txReport1) === List("pizza")
 
 Lastly we can also supply a human time/date of type `java.util.Date` 
 
-```scala
+```
 val criticalDate = new Date("2017-04-26")
 Person(e5).likes.getAsOf(criticalDate) === List("pizza")
 ```
@@ -122,7 +122,7 @@ Person(e5).likes.getAsOf(criticalDate) === List("pizza")
 
 Normally we get the current state of the database with the `get` method on a molecule.
 
-```scala
+```
 // Sync
 val personsCurrently: List[(String, Int)] = Person.name.age.get
 
@@ -138,7 +138,7 @@ When we call `getAsOf(t)` on a molecule we get the data as it looked at some poi
 
 We could for instance want to know what Persons existed in the database the 5th of November:
 
-```scala
+```
 val personsAsOfNov5 = Person.name.age.getAsOf(nov5date) 
 val personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date) 
 ```
@@ -150,7 +150,7 @@ Likewise we might want to know what Persons have been added _after_ or _since_ 5
 we call `getSince(nov5date)` we will get a snapshot of the current
 database filtered with only the data added/retracted after November 5:
 
-```scala
+```
 val personsAddedSinceNov5 = Person.name.age.getSince(nov5date)
 val personsAddedSinceNov5Async = Person.name.age.getAsyncSince(nov5date)
 ```
@@ -160,7 +160,7 @@ val personsAddedSinceNov5Async = Person.name.age.getAsyncSince(nov5date)
 
 The `getHistory` can for instance tell us how a Persons age attribute value has changed over time
 
-```scala
+```
 val currentAndPreviousAgesOfFred = Person(fredId).age.getHistory
 val currentAndPreviousAgesOfFredAsync = Person(fredId).age.getAsyncHistory
 ```
@@ -179,7 +179,7 @@ Transactional test data to be tested can be obtained by calling one of the follo
 - `<molecule>.getUpdateTx`  
 - `<entityId>.getRetractTx`  
 
-```scala
+```
 // Apply one or more tx test data molecules
 val personsWithNewData = Person.name.age.getWith(<txTestData>*) 
 val personsWithNewDataAsync = Person.name.age.getAsyncWith(<txTestData>*) 
@@ -199,7 +199,7 @@ The amount of data returned with
 - getWith
 
 can be limitted by adding a max row parameter:
-```scala
+```
 val some30personsCurrently = Person.name.age.get(30)
 
 val some20personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date, 20) 

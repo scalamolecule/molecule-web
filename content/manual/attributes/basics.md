@@ -19,7 +19,7 @@ When we have defined a schema, Molecule generates the necessary boilerplate code
 
 We could for instance build a molecule representing the data structure of Persons with name, age and gender Attributes:
 
-```scala
+```
 Person.name.age.gender // etc
 ```
 The fundamental building blocks are Namespaces like `Person` and Attributes like `name`, `age` and `gender`. Namespaces
@@ -33,12 +33,12 @@ As you see we start our molecule from some Namespace and then build on Attribute
 
 Molecule returns all result sets as a List of tuples of values (with `get`).
 
-```scala
+```
 val persons: List[(String, Int)] = Person.name.age.get
 ```
 Data can be returned in 5 different formats:
 
-```scala
+```
 // List for convenient access to smaller data sets
 val list : List[(String, Int)] = m(Person.name.age).get
 
@@ -60,7 +60,7 @@ val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getRa
 
 Molecule provide all operations both synchronously and asynchronously, so the 5 getter methods also has
 equivalent asynchronous methods returning data in a Future:
-```scala
+```
 val list    : Future[List[(String, Int)]] = m(Person.name.age).getAsync
 val array   : Future[Array[(String, Int)]] = m(Person.name.age).getAsyncArray
 val iterable: Future[Iterable[(String, Int)]] = m(Person.name.age).getAsyncIterable
@@ -78,7 +78,7 @@ The size of molecules are limited to Scala's arity limit of 22 for tuples.
 If we need to insert more than 22 attribute values we can easily do this by using the entity id to 
 work with further attributes/values:
 
-```scala
+```
 // Insert maximum of 22 facts and return the created entity id
 val eid = Ns.a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.insert(
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
@@ -90,7 +90,7 @@ Ns.a23.a24.a25.insert(eid, 23, 24, 25)
 
 Likewise we can retrieve more than 22 values in 2 steps
 
-```scala
+```
 val first22values = Ns(eid).a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.get
 
 // Use entity id to continue adding more values
@@ -104,7 +104,7 @@ The attributes `name`, `age` and `gender` that we saw above are typical cardinal
 Datomic also has cardinality-many attributes that have a `Set` of values. This means that the same value cannot be saved 
 multiple times, or that only unique values are saved. An example could be a cardinality-many attribute `hobbies` of a `Person`:
 
-```scala
+```
 Person.name.hobbies.get.head === ("Fred", Set("Trains", "Chess"))
 ```
 

@@ -19,7 +19,7 @@ When we asked
 _"how can I most intuitively and with most minimal code query for persons?"_
 
 we first tried something like this
-```scala
+```
 import Person._
 m(firstName ~ lastName ~ age) // all fields of a `Person` trait...
 ```
@@ -29,7 +29,7 @@ But it quickly became un-intuitive with relations, expressions etc.
 
 Instead we settled on using the builder pattern with `.`s
 
-```scala
+```
 Person.firstName.lastName.age
 ```
 We can't think of a more minimal Scala representation of "finding persons".
@@ -46,7 +46,7 @@ We therefore generate all boilerplate code automatically when we compile our pro
 ### Scala macro transformations
 Our generated boilerplate code allow us to build molecules attribute by attribute:
 
-```scala
+```
 val personsMolecule = m(Person.name.age)
 ```
 
@@ -59,18 +59,18 @@ The `m`olecule method transforms our source code _at compile time_ through a ser
 
 The end result is simply a Datomic query string:
 
-```scala
+```
 "[:find ?b ?c :where [?a :Person/name ?b] [?a :Person/age ?c]]"
 ```
 
 Since the query is created at compile time it's all ready to fetch our data _at runtime_ with no performance impact:
 
-```scala
+```
 val data = personsMolecule.get
 ```
 
 Given implicit conversions we could even unify the two steps:
-```scala
+```
 val persons = Person.name.age.get
 ```
 The query would still be created at compile time and fetching data at runtime.

@@ -32,7 +32,7 @@ As we saw in [point in time](/manual/time#pointintime), a `t` can be either a tr
 id like `txE4`, a transaction number `t4`, the resulting transaction report `tx4` from some transactional 
 operation or a `java.util.Date` like `date4`. So we could get to the same data in 4 different ways:
 
-```scala
+```
 Person.name.age.getAsOf(txE4) === ... // Persons as of transaction entity id `txE4` (inclusive)
  
 Person.name.age.getAsOf(t4) === ... // Persons as of transaction value `t4` (inclusive) 
@@ -119,7 +119,7 @@ Contrary to the getAsOf(t) method, the `t` is _not_ included in `getSince(t)`.
 report `tx4` from some transactional operation or a `java.util.Date` like `date4`. So we could get to the same data 
 in 4 different ways:
 
-```scala
+```
 Person.name.age.getSince(txE4) === ... // Persons added since/after transaction entity id `txE4` (exclusive)
  
 Person.name.age.getSince(t4) === ... // Persons added since/after transaction value `t4` (exclusive) 

@@ -48,7 +48,7 @@ peter.addEdge("created", lop, T.id, 12, "weight", 0.2f);
 In Molecule we first define a schema. Since we won't use the `weight` properties yet, we'll start off defining a schema
 without those:
 
-```scala
+```
 object ModernGraph1Definition {
 
   trait Person {
@@ -71,7 +71,7 @@ object ModernGraph1Definition {
 When we compile our project with `sbt compile`, the sbt-molecule plugin will generate the necessary boilerplate code so
 that we can enter typed data to populate the graph:
 
-```scala
+```
 // Create database and save implicit connection
 implicit val conn = recreateDbFrom(ModernGraph1Schema)
 
@@ -117,7 +117,7 @@ the language of our domain directly:
 
 _What is the Person name of entity `marko`?_
 
-```scala
+```
 Person(marko).name.get.head === "marko"
 ```
 
@@ -132,7 +132,7 @@ gremlin> g.V(1).outE('knows')
 
 _Marko's friends_
 
-```scala
+```
 Person(marko).friends.get.head === Set(vadas, josh)
 ```
 
@@ -148,7 +148,7 @@ gremlin> g.V(1).out('knows').values('name')
 In Molecule we can jump from one namespace like `Person` to `Friends` since there's a relationship defined
  between the two. That way we can get Marko's referenced Friends entities:
 
-```scala
+```
 Person(marko).Friends.name.get.head === Set("vadas", "josh")
 ```
 Note though, that a namespace is not like a SQL table but rather just a meaningful prefix for a group of attributes.
@@ -164,7 +164,7 @@ gremlin> g.V(1).out('knows').has('age', gt(30)).values('name') //(7)
 
 _Names of Marko's friends over the age of 30._
 
-```scala
+```
 Person(marko).Friends.name.age_.>(30).get === Set("josh")
 ```
 
@@ -180,7 +180,7 @@ gremlin> g.V().has('name','marko')
 
 Prepending the generic attribute `e` before an attribute finds the entity that it belongs to:
 
-```scala
+```
 Person.e.name_("marko").get.head === marko
 ```
 We also append an underscore `_` to the `name` attribute so that it becomes `name_`. In Molecule this makes
@@ -199,7 +199,7 @@ gremlin> g.V().has('name','marko').out('created').values('name')
 
 _What software did Marko create?_ - here we use a relationship again to get to the referenced Software entities and their names
 
-```scala
+```
 Person.name_("marko").Software.name.get === Seq("lop")
 ```
 
@@ -215,7 +215,7 @@ gremlin> g.V().has('name',within('vadas','marko')).values('age')
 To get both names we us Molecule's OR-logic by applying multiple values to an attribute. 
 `name` should be either "marko" OR "vadas" and we can use various syntaxes:
 
-```scala
+```
 Person.name_("marko", "vadas").age.get === Seq(27, 29)       // Vararg
 Person.name_("marko" or "vadas").age.get === Seq(27, 29)     // `or`
 Person.name_(Seq("marko", "vadas")).age.get === Seq(27, 29)  // Seq
@@ -231,7 +231,7 @@ gremlin> g.V().has('name',within('vadas','marko')).values('age').mean()
 
 Molecule implements Datomics aggregate functions by applying the keyword `avg` to a number attribute like `age`
 
-```scala
+```
 Person.name_("marko", "vadas").age(avg).get.head === 28.0
 ```
 
@@ -249,7 +249,7 @@ gremlin> g.V().has('name','marko').out('created').in('created').values('name')
 It's idiomatic with Datomic to split such query and use the output of
 one query as input for the next one:
 
-```scala
+```
 // First find ids of software projects that marko has participated in
 val markoSoftware = Person.name_("marko").software.get.head
 
@@ -265,7 +265,7 @@ gremlin> g.V().has('name','marko').as('exclude').out('created').in('created').wh
 ==>peter
 ```
 
-```scala
+```
 Person.name.not("marko").software_(markoSoftware).get === Seq("peter", "josh")
 ```
 
@@ -281,7 +281,7 @@ gremlin> g.V().group().by(label).by('name')
 
 Since Molecule is typed we would probably ask for specific `name` attribute values:
 
-```scala
+```
 Person.name.get === Seq("peter", "vadas", "josh", "marko")
 Software.name.get === Seq("ripple", "lop")
 ```
@@ -297,7 +297,7 @@ Let's ask a few more complex questions - a reminder of the graph could be useful
 
 <br>
 
-```scala
+```
 // Who knows young people?
 // Since we save bidirectional references we get friendships in both directions:
 Person.name.Friends.name.age.<(30).get === List(

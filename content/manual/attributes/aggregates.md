@@ -25,7 +25,7 @@ Aggregate functions either return a single value or a collection of values:
 
 #### min/max
 Applying the `min` or `max` aggregate keyword object as a value to the `age` attribute returns the lowest/highest ages.
-```scala
+```
 Person.age(min) // lowest age
 Person.age(max) // highest age
 ```
@@ -34,7 +34,7 @@ Person.age(max) // highest age
 
 #### sum
 
-```scala
+```
 Person.age(sum) // sum of all ages
 ```
 
@@ -42,38 +42,38 @@ Person.age(sum) // sum of all ages
 #### count
 
 Count the total number of entities with an asserted `age` value (not to be confused with `sum`).
-```scala
+```
 Person.age(count) // count of all persons with an age (not the sum of ages)
 ```
 
 #### countDistinct
 
 Count the total number of entities with asserted _unique_ `age` values (not to be confused with `sum`).
-```scala
+```
 Person.age(countDistinct)  // count of unique ages
 ```
 
 #### avg
 
-```scala
+```
 Person.age(avg) // average of all ages
 ```
 
 #### median
 
-```scala
+```
 Person.age(median) // median of all ages
 ```
 
 #### variance
 
-```scala
+```
 Person.age(variance) // variance of all ages
 ```
 
 #### stddev
 
-```scala
+```
 Person.age(stddev) // standard deviation of all ages
 ```
 
@@ -82,31 +82,31 @@ Person.age(stddev) // standard deviation of all ages
 
 #### distinct
 
-```scala
+```
 Person.age(distinct) // distinct ages
 ```
 
 #### min(n)
 
-```scala
+```
 Person.age(min(3)) // 3 lowest ages
 ```
 
 #### max(n)
 
-```scala
+```
 Person.age(max(3)) // 3 highest ages
 ```
 
 #### rand(n)
 
-```scala
+```
 Person.age(rand(3)) // 3 random persons (with potential for duplicates)
 ```
 
 #### sample(n)
 
-```scala
+```
 Person.age(sample(3)) // 3 sample persons (without duplicates)
 ```
 

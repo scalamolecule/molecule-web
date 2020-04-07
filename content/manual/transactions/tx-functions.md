@@ -34,7 +34,7 @@ query the current db value within the transaction logic and thus be sure certain
 
 Molecule facilitates writing tx functions by annotating one or more objects that contain tx function methods:
 
-```scala
+```
 import molecule.macros.TxFns
 
 @TxFns
@@ -63,7 +63,7 @@ database transparently without any work on your part.
 
 To use the `@TxFns` macro annotation, you'll need to include the Macro Paradise compiler plugin in your build:
  
-```scala
+```
 
 libraryDependencies ++= Seq(
   ...,
@@ -118,7 +118,7 @@ the necessary atomicity of the whole transfer. The transfer will only happen if 
 
 Let's look at a simple tx function implementation:
 
-```scala
+```
 @TxFns
 object myTxFunctions {
 
@@ -152,7 +152,7 @@ molecules for the equivalent operations to get the necessary statements. So, to 
 of an update we simply replace a normal `update` call too `getUpdateTx` which will give us the transaction
 statements produced:
 
-```scala
+```
 // Isolated update transaction (not in tx function)
 Account(from).balance(newFromBalance).update
 
@@ -171,7 +171,7 @@ transaction statements.
 ## Invoking tx functions
 
 We call the transaction function inside a `transact` method:
-```scala
+```
 transact(transfer(fromAccount, toAccount, okAmount))
 ```
 `transact` is a macro that needs the tx function invocation itself as its argument in order to be able 
@@ -179,7 +179,7 @@ to analyze the tx function at compile time.
 
 So our complete example could look like this:
 
-```scala
+```
 // Initial balances
 Account(fromAccount).balance.get.head === 100
 Account(toAccount).balance.get.head === 700
@@ -194,7 +194,7 @@ Account(toAccount).balance.get.head === 720
 
 ### Error handling - ensuring atomicity
 
-```scala
+```
 // Trying to transfer a too big amount will throw an exception 
 (transact(transfer(fromAccount, toAccount, 500)) must throwA[TxFnException])
   .message === s"Got the exception molecule.macros.exception.TxFnException: " +
@@ -208,7 +208,7 @@ Account(toAccount).balance.get.head === 700
 ### Async invocations
 Tx functions can also be invoked asynchronously:
 
-```scala
+```
 Await.result(
   transactAsync(transfer(fromAccount, toAccount, 20)) map { txReport =>
     // (for brevity we check the current balances synchronously)
@@ -228,7 +228,7 @@ from "sub tx functions". We could for instance de-compose our previous transfer 
 two sub tx functions `withdraw` and `deposit` and then call those from a `transferComposed`
 tx function:
 
-```scala
+```
 // "Sub" tx fn - can be used on its own or in other tx functions
 def withdraw(from: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
   val curFromBalance = Account(from).balance.get.headOption.getOrElse(0)
@@ -260,7 +260,7 @@ def transferComposed(from: Long, to: Long, amount: Int)(implicit conn: Conn): Se
 Tx meta data can be added to a tx function invocation by adding one or more tx meta data molecules with
 applied tx meta data to the `transact`/`transactAsync` method. Say we want to add meta information about
 "who did the transfer" then we can add it to the transaction entity like this:
-```scala
+```
 // Add tx meta data that John did the transfer
 transact(transfer(fromAccount, toAccount, 20), Person.name("John"))
 
@@ -273,7 +273,7 @@ transaction that the tx meta data was applied to.
 
 We can add arbitrary and possibly unrelated tx meta data to a tx function invocation by applying
 two or more tx meta data molecules: 
-```scala
+```
 // Add tx meta data that John did the transfer and that it is a scheduled transfer
 transact(
   transfer(fromAccount, toAccount, 20), 
@@ -295,7 +295,7 @@ Account(toAccount).balance
 If you want to see the `Statement`s produced by a tx function you can invoke it 
 within `debugTransact` without affecting the live database:
 
-```scala
+```
 // Print debug info for tx function invocation
 debugTransact(transfer(fromAccount, toAccount, 20))
 

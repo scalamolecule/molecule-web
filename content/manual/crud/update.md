@@ -28,14 +28,14 @@ cumbersome historical changes manually. Auditing is built-in at the core of Dato
 
 We need an entity id to update data so we get it first with the special generic Molecule attribute `e` (for _**e**ntity_):
 
-```scala
+```
 val fredId = Person.e.name_("Fred").get.head
 ```
 
 #### `apply(<value>)`
 Now we can update the entity Fred's age by applying the new value 39 to the `age` attribute:
 
-```scala
+```
 Person(fredId).age(39).update
 ```
 
@@ -48,7 +48,7 @@ Molecule uses the `fredId` to
 #### `apply()`
 
 We can retract ("delete") an attribute value by applying no value
-```scala
+```
 Person(fredId).age().update
 ```
 This will retract the `age` value 39 of the Fred entity.
@@ -59,7 +59,7 @@ This will retract the `age` value 39 of the Fred entity.
 
 A cardinality many attribute like `hobbies` holds a `Set` of values:
 
-```scala
+```
 Person(fredId).hobbies.get.head === Set("golf", "cars")
 ```
 
@@ -81,7 +81,7 @@ a `Set` of values we can also supply a `Seq` of values.
 #### `assert` ("add")
 
 
-```scala
+```
 // Assert vararg values
 Person(fredId).hobbies.assert("walks", "jogging").update
 Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging")
@@ -96,7 +96,7 @@ Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "ska
 
 Since Cardinality-many attributes have multiple values we need to specify which of those values we want to replace:
 
-```scala
+```
 // Cardinality-many attribute value updated
 Person(fredId).hobbies.replace("skating" -> "surfing").update
 Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "surfing", "biking")
@@ -106,7 +106,7 @@ value asserted so that we can go back in time and see what the values were befor
 
 Update several values in one go
 
-```scala
+```
 Person(fredId).hobbies(
   "golf" -> "badminton",
   "cars" -> "trains").update
@@ -118,7 +118,7 @@ Person(fredId).hobbies.get.head === Set("badminton", "trains", "walks", "jogging
 
 We can retract one or more values from the set of values
 
-```scala
+```
 Person(fredId).hobbies.retract("badminton").update
 Person(fredId).hobbies.get.head === Set("trains", "walks", "jogging", "surfing", "biking")
 
@@ -135,7 +135,7 @@ It's like an "overwrite all" operation except that we can see the retracted old 
 the database.
 
 
-```scala
+```
 Person(fredId).hobbies("meditaion").update
 Person(fredId).hobbies.get.head === Set("meditation")
 ```
@@ -144,7 +144,7 @@ Person(fredId).hobbies.get.head === Set("meditation")
 
 Applying nothing (empty parenthesises) retracts all values of an attribute
 
-```scala
+```
 Person(fredId).hobbies().update
 Person(fredId).hobbies.get === Nil
 ```
@@ -154,7 +154,7 @@ Person(fredId).hobbies.get === Nil
 
 
 Update multiple entities in one transaction so that they have the same values:
-```scala
+```
 // Both Bob and Ann turned 25 and became cool club members
 Person(bobId, annId).age(25).memberOf("cool club").update
 ```
@@ -170,7 +170,7 @@ All transactional operators have an asynchronous equivalent. Updating data async
 
 Here, we map over the result of updating an entity asynchronously:
 
-```scala
+```
 for {
   // Initial data
   saveTx <- Person.name.age insertAsync List(("Ben", 42), ("Liz", 37))
@@ -189,7 +189,7 @@ for {
 
 ### Updating multiple entities asynchronously
 
-```scala
+```
 // Initial data
 Ns.str.int insertAsync List(
   ("a", 1),

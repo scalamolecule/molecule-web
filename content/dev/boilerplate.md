@@ -11,7 +11,7 @@ menu:
 # Boilerplate code generation
 
 An attribute definition like
-```scala
+```
 @InOut(3, 8)
 trait SeattleDefinition {
   trait Community {
@@ -21,7 +21,7 @@ trait SeattleDefinition {
 ```
 would generate the following boilerplate code
 
-```scala
+```
 object Community extends Community_0 {
   def apply(e: Long): Community_0 = ???
 }
@@ -69,7 +69,7 @@ corresponding where clause. In that respect it seems a very seldom necessity to 
 A way to gather additional/optional values from a query is to use the entity API by applying an attribute name 
 to an entity id from the query:
 
-```scala
+```
 communityId(":Community/url") === Some("http://eastballard.com/")
 ```
 This gives us an optional value back if an attribute value has been asserted for this entity.
@@ -83,7 +83,7 @@ The `name_` attributes are "tacit" attributes that cause a :where clause in the 
 (no variable in the :find section of the produced query). This is to be able to skip returning data of attributes 
 that we for instance apply a constant value to
 
-```scala
+```
 Person.name.age_(28).get // no need to return age values (all 28)
 ```
 

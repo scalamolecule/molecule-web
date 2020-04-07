@@ -30,7 +30,7 @@ any transaction on the database.
 
 If we are about to save a molecule we can instead call `debugSave` on the same molecule to see what transaction
 statements Molecule will send to Datomic. 
-```scala
+```
 // Normal save
 Ns.str("273 Broadway").Ref1.int1(10700).str1("New York").Ref2.str2("USA").save
 
@@ -73,7 +73,7 @@ transaction representation, the "Statements Model", and then finally the Datomic
 ### Debug save with tx meta data
 
 Debug save with transaction meta data by calling `debugSave`. 
-```scala
+```
 Ns.int(1).Tx(Ns.str_("meta data")).debugSave
 ```
 The following is then printed to console:
@@ -102,7 +102,7 @@ Note how the `:Ns/str` attribute meta value "meta data" is asserted with the cur
 
 If we for instance have a nested insert it could be valuable to break it down and see what transaction 
 statements Molecule produces by applying the same insertion data to the `debugInsert` method:
-```scala
+```
 // Nested insert
 m(Ns.str.Refs1 * Ref1.int1.str1).insert(
   "order", List((4, "product1"), (7, "product2"))
@@ -168,7 +168,7 @@ Note how the order entity (-1001476) is referencing each created nested order li
 
 ## Debug update
 
-```scala
+```
 // Initial data
 val eid = Ns.int(1).str("a").save.eid
 // Update - note how we try to update to the same `str` value
@@ -198,7 +198,7 @@ Datomic since the same value is already asserted.
 Datomic will internally create a retraction of the old value 1 for the attribute `:Ns/int`. We can confirm this
 by debugging the history data:
 
-```scala
+```
 Ns(eid).a.v.t.op.debugGetHistory
 
 --------------------------------------------------------------------------
@@ -218,11 +218,11 @@ OUTPUTS:
 
 A single entity can be retracted by simply calling the implicit `retract` method on an entity id. To see 
 what transaction statements this produces, call `debugRetract` instead:
-```scala
+```
 eid.debugRetract
 ```
 This shows that a single transaction is produced to retract the entity:
-```scala
+```
 ## 1 ## Debug `retract` on entity 
 ================================================================================================================
 1          List(
@@ -234,12 +234,12 @@ This shows that a single transaction is produced to retract the entity:
 ### Add Tx meta data to retraction on entity id
 We can add transaction meta data to the entity retraction in order to be able to later track what kind of
 retraction that happened.
-```scala
+```
 eid.Tx(Ns.str("meta")).debugRetract
 ```
 We see that the additional datom with the meta value "meta" was associated with the transaction entity (datomic.tx)
 where the retraction of the entity is performed.
-```scala
+```
 ================================================================================================================
 1          List(
   1          List(
@@ -258,11 +258,11 @@ where the retraction of the entity is performed.
 ## Debug retract multiple entities
 
 Debug retracting multiple entities with `debugRetract`
-```scala
+```
 debugRetract(Seq(e1, e2))
 ```
 Two entity retraction statements produced.
-```scala
+```
 ## 1 ## molecule.Datomic.debugRetract 
 ================================================================================================================
 1          Model(
@@ -281,12 +281,12 @@ Two entity retraction statements produced.
 
 ### Add Tx meta data to retraction of multiple entity ids
 Let's add some transaction meta data to the retraction
-```scala
+```
 debugRetract(Seq(e1, e2), Ref1.str1("Some tx info"))
 ```
 Then we can see how the `:Ref1/str1` attribute value "Some tx info" is added as a statement to the transaction
 that retracts the two entities:
-```scala
+```
 ## 1 ## molecule.Datomic.debugRetract 
 ================================================================================================================
 1          Model(

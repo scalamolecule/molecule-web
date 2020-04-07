@@ -27,7 +27,7 @@ All molecule query commands have a corresponding debug command that will print d
 Simply replace a `get` command on a molecule with `debugGet` to print debugging data when running the code in 
 a test for instance:
 
-```scala
+```
 // Molecule to be debugged
 Community.name.Neighborhood.District.region_("ne" or "sw").get(3) === List(
   "Beach Drive Blog", 
@@ -136,7 +136,7 @@ Using debugGet can also be a quick way to test if a required data set is correct
 If you want to experiment with changing the raw Datalog query, you can copy an paste the Datalog query 
 from console into the query call on the connection object:
 
-```scala
+```
 conn.q(
   // Datalog query:
   """[:find  ?b
@@ -168,7 +168,7 @@ List(Laurelhurst Community Club)
 
 When examining data spanning multiple transactions, the time filter debug commands can be very useful. Say we have
 3 transactions:
-```scala
+```
 val tx1 = Ns.str("a").int(1).save
 val e1  = tx1.eid
 val t1  = tx1.t // 1028
@@ -180,7 +180,7 @@ val tx3 = Ns(e1).int(2).update
 val t3  = tx3.t // 1031
 ```
 Then we can for instance debug the history of the `:Ns/str` attribute by calling the `debugGetHistory` method:
-```scala
+```
 Ns(e1).str.t.op.debugGetHistory
 ```
 And get the transformations and resulting data
@@ -229,7 +229,7 @@ We can see that the value "a" was asserted in transaction 1028, retracted in 103
 ## `debugGetAsOf(..)`
 
 Using the same example transaction above we can debug data at a certain point in time by calling `debugGetAsOf(t)`:
-```scala
+```
 Ns(e1).t.a.v.op.debugGetAsOf(t1)
 ```
 And get
@@ -276,7 +276,7 @@ Showing the `:Ns/str` value at transaction 1028
 ## `debugGetSince(..)`
 
 Likewise we can get changes of attribute `:Ns/int` since transaction t1/1028
-```scala
+```
 Ns(e1).int.t.op.debugGetSince(t1)
 ```
 And see that `:Ns/int` value 2 was asserted in transaction 1031:
@@ -328,7 +328,7 @@ OUTPUTS:
 The `with` time filter is a bit special since transactional data is supplied to the method. So the 
 `debugGetWith(..)` method will also display the transactional data:
 
-```scala
+```
 // Normal `getWith` call with some sample data
 val fred = Ns.str("Fred").int(42).save.eid
 Ns.str.int.debugGetWith(

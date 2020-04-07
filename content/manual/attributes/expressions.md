@@ -22,19 +22,19 @@ down: /manual/entities
 
 We can apply values to Attributes in order to filter the data structures we are looking for. We could for instance find people who like pizza:
 
-```scala
+```
 Person.likes.apply("pizza")
 ```
 or simply
 
-```scala
+```
 Person.likes("pizza")
 ```
 
 Since the applied value "pizza" ensures that the attributes returned has this value we will get redundant information back for the `likes` 
 attribute ("pizza" is returned for all persons):
 
-```scala
+```
 Person.name.likes("pizza").get === List(
   ("Fred", "pizza"),
   ("Ben", "pizza")
@@ -42,7 +42,7 @@ Person.name.likes("pizza").get === List(
 ```
 This is an ideomatic place to use a tacit attribute `likes_` to say "Give me names of persons that like pizza" without returning the `likes` value "pizza"
 over and over again. Then we get a nice list of only the pizza likers:
-```scala
+```
 Person.name.likes_("pizza").get === List(
   "Fred", "Ben"
 )
@@ -51,7 +51,7 @@ _Note that since we get an arity-1 result back it is simply a list of those valu
 
 We can apply OR-logic to find a selection of alternatives
 
-```scala
+```
 Person.age(40 or 41 or 42)
 // .. same as
 Person.age(40, 41, 42)
@@ -67,7 +67,7 @@ Person.age(List(40, 41, 42))
 
 If we add the `fulltext` option to a String attribute definition Datomic will index the text strings saved so that we can do
 fulltext searches across all values. We could for instance search for Community names containing the word "Town" in their name:
-```scala
+```
 Community.name.contains("Town")
 ```
 Note that only full words are considered, so "Tow" won't match. Searches are case-insensitive.
@@ -90,7 +90,7 @@ Also the following common words are not considered:
 
 We can exclude a certain attribute value like in "Persons that are not 42 years old":
 
-```scala
+```
 Person.age.!=(42)
 // or
 Person.age.not(42)
@@ -98,7 +98,7 @@ Person.age.not(42)
 
 Negate multiple values
 
-```scala
+```
 Person.age.!=(40 or 41 or 42)
 Person.age.!=(40, 41, 42)
 Person.age.!=(List(40, 41, 42))
@@ -110,14 +110,14 @@ Person.age.!=(List(40, 41, 42))
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Comparison.scala)
 
 We can filer attribute values that satisfy comparison expressions:
-```scala
+```
 Person.age.<(42)
 Person.age.>(42)
 Person.age.<=(42)
 Person.age.>=(42)
 ```
 Comparison of all types are performed with java's `compareTo` method. Text strings can for instance also be sorted by a letter:
-```scala
+```
 Community.name.<("C").get(3) === List(
   "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
 ```
@@ -127,7 +127,7 @@ Community.name.<("C").get(3) === List(
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Null.scala)
 
 We can look for non-asserted attributes (Null values) as in "Persons that have no age asserted" by applying an empty value to an attribute:
-```scala
+```
 Person.name.age_() === // all persons where age hasn't been asserted
 ```
 Note that the `age_` attribute has to be tacit (with an underscore) since we naturally can't return missing values.
@@ -138,7 +138,7 @@ Note that the `age_` attribute has to be tacit (with an underscore) since we nat
 
 Even though Molecule introspects molecule constructions at compile time we can still use (runtime) variables for our expressions:
 
-```scala
+```
 val youngAge = 25
 val goodAge = 42
 Person.age(goodAge)
@@ -154,12 +154,12 @@ freely use variables in our expressions.
 
 For now Molecule can't though evaluate arbitrary applied expressions like this one: 
 
-```scala
+```
 Person.birthday(new java.util.Date("2017-05-10"))
 ```
 In this case we could instead apply the expression result to a variable and use that in the molecule:
 
-```scala
+```
 val date = new java.util.Date("2017-05-10")
 Person.birthday(date)
 ```

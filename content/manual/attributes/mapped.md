@@ -20,7 +20,7 @@ But they can also be used for any other key-value indexed data.
 
 Say you want to save famous Persons names in multiple languages. Then you could use a mapString:
 
-```scala
+```
 // In definition file
 val name = mapString
  

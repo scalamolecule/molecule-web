@@ -22,14 +22,14 @@ read more by clicking on each title):
 ### [Datom](datom)
 
 Get id of Ben entity with generic Datom attribute `e`
-```scala
+```
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
 
 ### [EAVT Index](indexes)
 
 Attributes and values of entity e1
-```scala
+```
 EAVT(e1).a.v.get === List(
   (":Person/name", "Ben"),
   (":Person/age", 42),
@@ -40,7 +40,7 @@ EAVT(e1).a.v.get === List(
 ### [AVET Index](indexes)
 
 Values, entities and transactions where attribute :Person/age is involved
-```scala
+```
 AVET(":Person/age").e.v.t.get === List(
   (42, e1, t2),
   (37, e2, t5)
@@ -57,7 +57,7 @@ AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
 ### [AEVT Index](indexes)
 
 Entities, values and transactions where attribute :Person/name is involved 
-```scala
+```
 AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
@@ -67,7 +67,7 @@ AEVT(":Person/name").e.v.t.get === List(
 ### [VAET Index](indexes)
 
 Get entities pointing to entity a1
-```scala
+```
 VAET(a1).v.a.e.get === List(
   (a1, ":Release/artists", r1),
   (a1, ":Release/artists", r2),
@@ -78,7 +78,7 @@ VAET(a1).v.a.e.get === List(
 ### [Log](log)
 
 Data from transaction t1 until t4 (exclusive)
-```scala
+```
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 41, true),
@@ -94,7 +94,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 ### [Schema](schema)
 
 Get entities pointing to entity a1 
-```scala
+```
 Schema.part.ns.attr.fulltext$.doc.get === List(
   ("ind", "person", "name", Some(true), "Person name"), // fulltext search enabled
   ("ind", "person", "age", None, "Person age"),

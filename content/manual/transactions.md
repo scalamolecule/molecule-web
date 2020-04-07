@@ -17,7 +17,7 @@ All assertions and retractions in Datomic happen within a transaction that guara
 involved, Datomic also automatically asserts a timestamp as part of a created Transaction entity for that transaction.
 
 Say that we create a new person with entity id `e5`:
-```scala
+```
 val e5 = Person.name("Fred").likes("pizza").save.eid
 ```
 
@@ -41,7 +41,7 @@ transaction entity id of the assertion of Freds `name` by adding the generic att
 have made tacit with the underscore since we're not interested in value "Fred"): 
 
 _"In what transaction was Freds name asserted?"_
-```scala
+```
 Person(e5).name_.tx.get.head === tx4  // 13194139534340L
 ```
 The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity 
@@ -51,7 +51,7 @@ The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in 
 
 Alternatively we can get a transaction value `t`
 
-```scala
+```
 Person(e5).name_.t.get.head === t4  // 1028L
 ```
 
@@ -62,7 +62,7 @@ With the transaction entity available we can then also get to the value of the t
  convenience Molecule has a generic `txIntstant` to lookup the timestamp which is a `date.util.Date`:
 
 _"When was Freds name asserted?"_
-```scala
+```
 Person(e5).name_.txInstant.get.head === date1  // Tue Apr 26 18:35:41
 ```
 
@@ -75,7 +75,7 @@ Since each fact of an entity could have been stated in different transactions, t
  two transactions involved:
 
  _"Was Fred's name and age asserted in the same transaction?"_
-```scala
+```
 // Second transaction
 val tx5 = Person(e5).age(38).update.tx
 
@@ -88,7 +88,7 @@ tx4 !== tx5
 Likewise we could ask
 
 _"At what time was Fred's name and age asserted"_
-```scala
+```
 Person(e5).name_.txInstant.age_.txInstant.get.head === (date1, date2)
 
 // Fred's name was asserted before his age

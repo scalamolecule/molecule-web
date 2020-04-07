@@ -17,7 +17,7 @@ down: /manual/crud
 
 Cardinality-many relationships in Molecule are modelled with the `many[<RefNamespace>]` syntax:
 
-```scala
+```
 object OrderDefinition {
 
   trait Order {
@@ -39,7 +39,7 @@ retracted if the `Order` is retracted. Subsequent component-defined referenced e
 
 Now we can get an Order and its Line Items:
 
-```scala
+```
 Order.id.Items.qty.product.price.get === List(
   ("order1", 3, "Milk", 12.00),
   ("order1", 2, "Coffee", 46.00),
@@ -55,7 +55,7 @@ The Order data is repeated for each line Item which is kind of redundant. We can
 
 We can nest the result from the above example with the Molecule operator `*` indicating "with many":
 
-```scala
+```
 m(Order.id.Items * LineItem.qty.product.price).get === List(
   ("order1", List(
     (3, "Milk", 12.00), 
@@ -71,7 +71,7 @@ Now each Order has its own list of typed Line Item data and there is no Order re
 
 Optional nested data can be queried with the `*?` operator:
 
-```scala
+```
 m(Ns.int.Refs1 * Ref1.str1) insert List(
   (1, List("a", "b")),
   (2, List()) // (no nested data)
@@ -100,7 +100,7 @@ All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchr
 
 We can get a similar - but un-typed - nested hierarchy of data with the Entity API by calling `touch` on an order id: 
 
-```scala
+```
 // Touch entity facts hierarchy recursively
 orderId.touch === Map(
   ":db/id" -> 101L,

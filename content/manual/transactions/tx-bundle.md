@@ -31,7 +31,7 @@ Each of the above operations has an equivalent method for getting the transactio
 - `<entityId>.getRetractTx`
 
 We can use those methods to build a bundled transaction to atomically perform 4 operations in one transaction:
-```scala
+```
 // Some initial data
 val List(e1, e2, e3) = Ns.int insert List(1, 2, 3) eids
 
@@ -59,7 +59,7 @@ Ns.int.get.sorted === List(
 
 Bundled transactions can also use Datomic's asynchronous API by calling `transactAsync`:
 
-```scala
+```
 Await.result(
   transactAsync(
     e1.getRetractTx,
@@ -79,7 +79,7 @@ Await.result(
 If you want to see the transactional output from a bundled transaction you can call `debugTransaction` on some bundled transaction data:
 
 
-```scala
+```
 // Print debug info for group transaction without affecting live db
 debugTransact(
   // retract

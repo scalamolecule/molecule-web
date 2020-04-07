@@ -29,7 +29,7 @@ Molecule tries to bridge the vocabulary between these two worlds.
 All transactional operations on molecules return a `TxReport` with information about the transaction 
 like what data was transacted and what entities were created and a timestamp of the transaction:
 
-```scala
+```
 val tx: TxReport = Person.name("Fred").likes("pizza").age(38).save
 
 // Entity id created - useful when we know one entity was created
@@ -61,7 +61,7 @@ In Molecule you can either `save` a populated molecule or `insert` multiple tupl
 
 #### `save`
 3 facts asserted for a new entity:
-```scala
+```
 Person.name("Fred").likes("pizza").age(38).save // or saveAsync
 ```
 
@@ -70,7 +70,7 @@ More on [save](/manual/crud/save/)...
 
 #### `insert`
 3 facts asserted for each of 3 new entities: 
-```scala
+```
 Person.name.age.likes insert List( // or insertAsync
   ("Fred", 38, "pizza"),
   ("Lisa", 7, "sushi"),
@@ -86,7 +86,7 @@ To read data from the database we call `get` on a molecule
 
 #### `get`
 
-```scala
+```
 Person.name.age.likes.get === List( // or getAsync
   ("Fred", 38, "pizza"),
   ("Lisa", 7, "sushi"),
@@ -120,7 +120,7 @@ in the database and available with the time getters.
 
 #### `update`
 
-```scala
+```
 Person(fredId).likes("pasta").update // Retracts "pizza" and Asserts "pasta"
 
 // Current value is now "pasta"
@@ -139,7 +139,7 @@ Retracted data is no longer showing up when we query with `get` but it will be v
 
 To retract individual attribute values of an entity we apply an empty value and `update`:
 
-```scala
+```
 // Retract what Fred likes by applying an empty value
 Person(fredId).likes().update
 
@@ -150,7 +150,7 @@ Person(fred).name.likes$.get.head === ("Fred", None)
 #### `retract` entity
 
 We can retract an entity (a group of facts with a common entity id) by calling `retract` on a `Long` entity id:
-```scala
+```
 fredId.retract
 
 // Fred is retracted from current view (but still in history)

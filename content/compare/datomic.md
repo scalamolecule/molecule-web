@@ -25,7 +25,7 @@ The most basic query is to ask for entities with some attribute values:
         [?a :Community/category ?d]]
 ```
 In Molecule we simply use the namespace name and add the attribute names:
-```scala
+```
 // Molecule
 Community.name.url.category
 ```
@@ -45,7 +45,7 @@ Let's query by an enumerated value for the `type` attribute:
         [?a :Community/type ":Community.type/twitter"]]
 ```
 
-```scala
+```
 Community.name.type_("twitter")
 ```
       
@@ -70,7 +70,7 @@ List(
 ```
 In Molecule we can apply the two values either separated with `or` or commas:
 
-```scala
+```
 Community.name.category_("news" or "arts")
 
 // Same as
@@ -89,7 +89,7 @@ Community.name.category_("news", "arts")
         [(.getName ^clojure.lang.Keyword ?e1) ?e2]]
 ```
 
-```scala
+```
 Community.name.Neighborhood.District.region
 ```
 
@@ -113,7 +113,7 @@ List(
 )
 ```
 
-```scala
+```
 val communitiesOfType  = m(Community.name.type(?))
 val twitterCommunities = communitiesOfType("twitter")
 ```
@@ -135,7 +135,7 @@ List(
 )
 ```
 
-```scala
+```
 m(Community.name.`type`(?)).apply("facebook_page" or "twitter")
 ```
 
@@ -156,7 +156,7 @@ List(
 )
 ```
 
-```scala
+```
 m(Community.name.type_(?).orgtype_(?))("email_list" and "community")
 ```
 
@@ -182,7 +182,7 @@ List(
 )
 ```
 
-```scala
+```
 m(Community.name.`type`(?).orgtype(?))
 .apply(Seq(("email_list", "community"), ("website", "commercial")))
 ```
@@ -197,7 +197,7 @@ m(Community.name.`type`(?).orgtype(?))
         [(< ?b2 0)]]
 ```
 
-```scala
+```
 Community.name.<("C")
 ```
 
@@ -210,7 +210,7 @@ Community.name.<("C")
  :where [(fulltext $ :Community/name "Wallingford") [[ ?a ?b ]]]]
 ```
 
-```scala
+```
 Community.name.contains("Wallingford")
 ```
 
@@ -223,7 +223,7 @@ Fulltext search on many-attribute (`category`)
         [(fulltext $ :Community/category "food") [[ ?a ?d ]]]]
 ```
 
-```scala
+```
 Community.name.type_("website").category.contains("food")
 ```
 
@@ -247,7 +247,7 @@ List(
 )
 ```
 
-```scala
+```
 Community.name.type_("twitter" or "facebook_page")
 ```
 
@@ -273,7 +273,7 @@ List(
 )
 ```
 
-```scala
+```
 Community.name.type_("twitter" or "facebook_page")
   .Neighborhood.District.region_("sw" or "s" or "se")
 ```
@@ -302,7 +302,7 @@ List(
 )
 ```
 
-```scala
+```
 m(Community.name.type_(?).Neighborhood.District.region_(?))
   .apply(("twitter" or "facebook_page") and ("sw" or "s" or "se")
 ```
@@ -316,7 +316,7 @@ m(Community.name.type_(?).Neighborhood.District.region_(?))
  :where [?a :db/txInstant ?b]]
 ```
 
-```scala
+```
 Db.txInstant
 ```
 
@@ -339,7 +339,7 @@ List(
 )
 ```
 
-```scala
+```
 Community
   .name("AAA")
   .url("myUrl")
@@ -379,7 +379,7 @@ List(
 )
 ```
 
-```scala
+```
 Community.name.url.`type`.orgtype.category.Neighborhood.name.District.name.region insert List(
   ("DDD Blogging Georgetown", "http://www.blogginggeorgetown.com/", "blog", "commercial", Set("DD cat 1", "DD cat 2"), "DD Georgetown", "Greater Duwamish", "s"),
   ("DDD Interbay District Blog", "http://interbayneighborhood.neighborlogs.com/", "blog", "community", Set("DD cat 3"), "DD Interbay", "Magnolia/Queen Anne", "w")
@@ -400,7 +400,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).name("belltown 2").url("url 2").update
 ```
 
@@ -413,7 +413,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).category("news" -> "Cool news").update
 ```
 
@@ -427,7 +427,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).category(
   "Cool news" -> "Super cool news",
   "events" -> "Super cool events"
@@ -444,7 +444,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).category(
   "Cool news" -> "Super cool news",
   "events" -> "Super cool events"
@@ -459,7 +459,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).category.assert("extra category").update
 ```
 
@@ -470,7 +470,7 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).category.retract("Super cool events").update
 ```
 
@@ -484,6 +484,6 @@ List(
 )
 ```
 
-```scala
+```
 Community(belltownId).name("belltown 3").url().category().update
 ```

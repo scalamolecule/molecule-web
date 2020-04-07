@@ -55,7 +55,7 @@ Conceptually this is very similar to row access style in a SQL database,
 except that entities can possess arbitrary attributes rather then being limited
 to a predefined set of columns.
 
-```scala
+```
 // Create EAVT Index molecule with 1 entity id argument
 EAVT(e1).e.a.v.t.get === List(
   (e1, ":Person/name", "Ben", t1),
@@ -81,7 +81,7 @@ EAVT(e1, ":Person/age").a.v.get === List(
 
 The AVET index provides efficient access to particular combinations of attribute and value.
 
-```scala
+```
 // Create AVET Index molecule with 1 entity id argument
 AVET(":Person/age").v.e.t.get === List(
   (42, e1, t2),
@@ -98,7 +98,7 @@ AVET(":Person/age", 42, e1, t2).e.v.get === List( (e1, t2) )
 The AVET Index can be filtered by a range of values between `from` (inclusive) and
 `until` (exclusive) for an attribute:
 
-```scala
+```
 AVET.range(":Person/age", Some(14), Some(37)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
                // 37 not included in value range
@@ -123,7 +123,7 @@ AVET.range(":Person/age", Some(20), None).v.e.t.get === List(
 The AEVT index provides efficient access to all values for a given attribute,
 comparable to traditional column access style.
 
-```scala
+```
 // Create AEVT Index molecule with 1 entity id argument
 AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
@@ -141,7 +141,7 @@ AEVT(":Person/name", e1, "Ben", t2).e.v.get === List( (e1, "Ben") )
 The VAET index contains all and only datoms whose attribute has a :db/valueType of :db.type/ref.
 This is also known as the reverse index, since it allows efficient navigation of relationships in reverse.
 
-```scala
+```
 // Say we have 3 entities pointing to one entity:
 Release.e.name.Artists.e.name.get === List(
   (r1, "Abbey Road", a1, "The Beatles"),

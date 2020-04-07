@@ -22,7 +22,7 @@ the test transaction data applied in-memory. This is a very powerful way of test
 
 We could for instance add some transaction data `tx8` to a Person molecule to see if we would get the extected persons back:
 
-```scala
+```
 Person.name.likes.getWith(<tx8Data>) === ... // Persons after applying tx8 
 ```
 
@@ -33,7 +33,7 @@ Molecule transaction function to get some valid transaction data:
 
 Transaction data is supplied to `getWith(txData)` by calling a transaction data getter on a molecule:
 
-```scala
+```
 Person(fred).likes("sushi").getUpdateTx === List(
   [:db/retract, 17592186045445, :Person/likes, "pasta"]
   [:db/add    , 17592186045445, :Person/likes, "sushi"]
@@ -43,7 +43,7 @@ Person(fred).likes("sushi").getUpdateTx === List(
 can supply this data to the `getWith(txData)` method to answer the question _"What if we updated Fred?"_. 
 
 When getting the transaction data from a simulated molecule transaction like this, we call it a "transaction molecule":
-```scala
+```
 Person.name.likes.getWith(
   Person(fred).likes("sushi").getUpdateTx // "Transaction molecule" with tx8 data
 ) === List(
@@ -53,7 +53,7 @@ Person.name.likes.getWith(
 
 Fred will remain unaffected in the live database after `getWith(tx8)` has been called:
 
-```scala
+```
 Person.name.likes.get.head === ("Fred", "pasta") 
 ```
 The `getWith(txData)` works on a filtered database and is automatically garbage collected. So there is no need to 
@@ -73,7 +73,7 @@ retraction on an entity id. The tx getters return the transactional data that th
 
 Here's an example of combining transaction molecules of all types:
 
-```scala
+```
 Person.name.age.getWith(
   // Transaction molecules:
   Person.name("John").age(44).getSaveTx, // John saved
@@ -101,7 +101,7 @@ live database.
 Assigning transaction molecules to variables can help us modularize tests where we could for instance
 be interested in seeing if various orders of transactions will produce the same result:
 
-```scala
+```
 val save    = Person.name("John").age(44).getSaveTx
 val insert  = Person.name.age getInsertTx List(("Lisa", 23), ("Pete", 24))
 val update  = Person(fred).age(43).getUpdateTx

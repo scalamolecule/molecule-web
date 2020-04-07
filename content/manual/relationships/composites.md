@@ -27,7 +27,7 @@ schema definiton. It would be quick and easy to just make a relationship from a 
 the `Site` namespace:
 
 
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name  = oneString
@@ -47,7 +47,7 @@ object YourDomainDefinition {
 ```
 Then we could easily build a molecule to get the `Site` category:
 
-```scala
+```
 Person.name.likes.age.Site.cat.get.head === ("Fred", "pizza", 38, "customer")
 ```
 
@@ -55,7 +55,7 @@ Person.name.likes.age.Site.cat.get.head === ("Fred", "pizza", 38, "customer")
 Modelling-wise this is just not the best idea since we could easily end up making lots of redundant relationships from 
 various namespaces to `Site`:
 
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val site  = one[Site]
@@ -85,7 +85,7 @@ tie _any_ attributes together as we see in the list of facts at the top of this 
 
 In Molecule we model associative relationships as Composites by chaining "sub-molecules" with the `+` operator:
 
-```scala
+```
 m(Person.name.likes.age + Site.cat).get === List(
   (("Fred", "pizza", 38), "customer")
 )
@@ -98,14 +98,14 @@ a sub-tuple for each sub-molecule.
 Since in this case the last sub-molecule only has one attribute value "customer" a single value for that is returned. If it
 had 2 attributes we would get a sub-tuple for that too:
 
-```scala
+```
 m(Person.name.likes.age + Site.cat.status).get === List(
   (("Fred", "pizza", 38), ("customer", "good"))
 )
 ```
 And so on..
 
-```scala
+```
 m(Person.name.likes.age + Site.cat.status + Loc.tags + Emotion.like).get === List(
   (("Fred", "pizza", 38), ("customer", "good"), Set("inner city", "hipster"), true)
 )
@@ -119,7 +119,7 @@ composite aspects of our domain.
 
 _"Which positive elder hipster customers like what?"_
 
-```scala
+```
 m(Person.name.likes.age_.>(35) 
  + Site.cat_("customer")
  + Loc.tags_("hipster") 

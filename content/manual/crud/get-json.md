@@ -22,7 +22,7 @@ Internally, Molecule builds the json string in a StringBuffer directly from the 
 
 To avoid ambiguity all attribute names are prefixed with their namespace name, all in lower case and separated by a dot:
 
-```scala
+```
 Person.name.age.getJson ===
   """[
     |{"person.name": "Fred", "person.age": 38},
@@ -35,7 +35,7 @@ Person.name.age.getJson ===
 
 Each sub part of the composite is rendered as a separate json object tied together in an array for each row: 
  
-```scala
+```
 m(Person.name.age + Category.name.importance).getJson ===
   """[
     |[{"person.name": "Fred", "person.age": 38}, {"category.name": "Marketing", "category.importance": 6}],
@@ -49,7 +49,7 @@ Note the `name` field is prefixed by a different namespace in each json sub-obje
 
 Nested date is rendered as a json array with json objects for each nested row: 
 
-```scala
+```
 m(Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
   """[
     |{"invoice.no": 1, "invoice.customer": "Johnson", "invoice.invoiceLines": [

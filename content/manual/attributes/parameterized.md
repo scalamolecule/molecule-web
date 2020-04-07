@@ -24,7 +24,7 @@ attribute at runtime.
 By assigning parameterized "Input-molecules" to variables we can re-use those variables to query for 
 similar data structures where only some data part varies:
 
-```scala
+```
 // 1 input parameter
 val person = m(Person.name(?))
 
@@ -40,7 +40,7 @@ Datomic caches and optimizes queries from input molecules so performance-wise it
 
 ### Parameterized expressions
 
-```scala
+```
 val personName  = m(Person.name(?))
 val johnOrLisas = personName("John" or "Lisa").get // OR
 ```
@@ -48,7 +48,7 @@ val johnOrLisas = personName("John" or "Lisa").get // OR
 ### Multiple parameters
 Molecules can have up to 3 `?` placeholder parameters.
 
-```scala
+```
 val person      = m(Person.name(?).age(?))
 val john        = person("John" and 42).get.head // AND
 val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
@@ -56,7 +56,7 @@ val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
 
 ### Mix parameterized and static expressions
 
-```scala
+```
 val americansYoungerThan = m(Person.name.age.<(?).Country.name("USA"))
 val americanKids         = americansYoungerThan(13).get
 val americanBabies       = americansYoungerThan(1).get

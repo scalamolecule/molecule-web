@@ -31,7 +31,7 @@ When the connection/db goes out of scope it is simply garbage collected automati
  
 To make a few tests with our filtered db we call `conn.testDbAsOfNow`:
 
-```scala
+```
 // Current state
 Person(fredId).name.age.get.head === ("Fred", 27)
 
@@ -67,7 +67,7 @@ goes out of scope!
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:
 
-```scala
+```
 // Some domain object that we want to test
 val domainObj = MyDomainClass(params..) // having molecule transactions inside...
 domainObj.myState === "some state"
@@ -97,7 +97,7 @@ the same test db is even propragated recursively inside the chain of domain oper
 
 We can apply the above approach with various time views of our database:
  
-```scala
+```
 conn.testDbAsOfNow
 conn.testDbAsOf(t)
 conn.testDbSince(t)

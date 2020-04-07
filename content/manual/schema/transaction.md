@@ -25,7 +25,7 @@ Apart from generating our molecule boilerplate code, the sbt-MoleculePlugin also
 basically a `java.util.List` containing a `java.util.Map` of schema transaction data for each attribute defined. 
 Our `name` and `url` attributes for instance requires the following map of information to be transacted in Datomic:
 
-```scala
+```
 object SeattleSchema extends SchemaTransaction {
   
   lazy val partitions = Util.list()
@@ -53,7 +53,7 @@ object SeattleSchema extends SchemaTransaction {
 As you see, the `Community` namespace information is present in the value of the first pair in the map for 
 the `name` attribute: 
 
-```scala
+```
 ":db/ident", ":Community/name",
 ```
 The rest of the lines are pretty self-describing except from the last two that create and save the 
@@ -65,7 +65,7 @@ literally a set of datoms that have been transacted as any other data!
 
 Partition transaction data looks almost like attribute transaction data:
 
-```scala
+```
 lazy val partitions = Util.list(
 
 Util.map(":db/ident"             , ":gen",
@@ -86,7 +86,7 @@ More about [partitions in Datomic](https://docs.datomic.com/on-prem/indexes.html
 
 Now we can simply pass the generated raw transaction data to Datomic in order to create our partitions/schema:
 
-```scala
+```
 implicit val conn = recreateDbFrom(SeattleSchema)
 ```
 
@@ -101,13 +101,13 @@ a random database name was created which is convenient for testing purposes.
 
 For durable databases we use a database name:
 
-```scala
+```
 // Create new database with identifier
 implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase")
 ```
 Then we can later - in another scope - establish a new connection to the existing database:
 
-```scala
+```
 // Create connection to the database 'myDatabase' 
 implicit val conn = molecule.facade.Conn("myDatabase")
 ```
@@ -116,7 +116,7 @@ implicit val conn = molecule.facade.Conn("myDatabase")
 
 We can also supply a protocol like 'mem' for in-memory db, or 'dev' for a development db saved on local disk etc. 
 
-```scala
+```
 // Create new database with identifier as an in-memory database
 implicit val conn = recreateDbFrom(SeattleSchema, "myDatabase", "mem")
 ```
@@ -142,7 +142,7 @@ transact lowercase attribute aliases
 so that your uppercase Molecule code can recognize the 
 imported lowercase data:
 
-```scala
+```
 conn.datomicConn.transact(SchemaUpperToLower.namespaces)
 ```
 
@@ -153,7 +153,7 @@ uppercase attribute aliases with the live database so that it will recognize you
 molecule code
 ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/mbrainz/MBrainz.scala#L38)):
 
-```scala
+```
 conn.datomicConn.transact(MBrainzSchemaLowerToUpper.namespaces)
 ```
 

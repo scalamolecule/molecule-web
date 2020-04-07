@@ -5,7 +5,7 @@ Just released v0.16.1 of the meta-DSL library [Molecule](http://www.scalamolecul
 Molecule is a "meta-DSL" in that it generates boilerplate code from your initial schema definition so that 
 you can intuitively use the tokens of your domain as the core building blocks of queries and transactions:
 
-```scala
+```
 Await.result(
   // Asynchronously get Person data and related Address
   Person.name.age.Address.street.getAsync, 

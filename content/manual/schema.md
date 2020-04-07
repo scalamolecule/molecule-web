@@ -26,7 +26,7 @@ sbt-plugin can create a Molecule DSL from your definitions.
 
 Let's look at the schema definition from the [Seattle tutorial](/resources/tutorials/seattle):
 
-```scala
+```
 package path.to.your.project
 import molecule.schema.definition._  // import schema definition DSL
 
@@ -128,7 +128,7 @@ In the schema definition file we can organize namespaces in partitions with obje
 
 ### 
 
-```scala
+```
 @InOut(0, 4)
 object PartitionTestDefinition {
 
@@ -159,7 +159,7 @@ lowercase and is prepended to the namespaces it contains.
 
 When we build molecules the partition name is prepended to the namespace like this:
 
-```scala
+```
 lit_Book.title.cat.Author.name.gender.get === ...
 ```
 

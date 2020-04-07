@@ -115,7 +115,7 @@ In order to synchronize scala molecule boilerplate code and its internal represe
 namespace names are now capitalized also in molecule model/query/datalog. This
 applies when no custom partitions are defined (and namespaces not partition-prefixed): 
 
-```scala
+```
 // Namespace names are now capitalized in the model
 m(Community.name)._model === Model(List(
   Atom("Community", "name", "String", 1, VarValue) // "Community" now uppercase
@@ -145,7 +145,7 @@ molecule representations.
 
 As before, custom partition-prefixed namespaces are unaffected: 
 
-```scala
+```
 // Namespace names are now capitalized in the model
 m(accounting_Invoice.invoiceLine)._model === Model(List(
   Atom("accounting_Invoice", "invoiceLine", "ref", 1, VarValue)
@@ -185,7 +185,7 @@ transact lowercase attribute aliases
 so that your uppercase Molecule code can recognize the 
 imported lowercase data:
 
-```scala
+```
 conn.datomicConn.transact(SchemaUpperToLower.namespaces)
 ```
 
@@ -196,7 +196,7 @@ uppercase attribute aliases with the live database so that it will recognize you
 molecule code
 ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/mbrainz/MBrainz.scala#L38)):
 
-```scala
+```
 conn.datomicConn.transact(MBrainzSchemaLowerToUpper.namespaces)
 ```
 
@@ -208,14 +208,14 @@ _2019-01-15 v0.17.0_
 #### Datoms
 
 Entity id of Ben with generic datom attribute `e` on a custom molecule...
-```scala
+```
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
 
 #### EAVT index
 
 Attributes/values of entity id `e1`...
-```scala
+```
 EAVT(e1).e.a.v.t.get === List(
   (e1, ":person/name", "Ben", t1),
   (e1, ":person/age", 42, t2),
@@ -225,7 +225,7 @@ EAVT(e1).e.a.v.t.get === List(
 
 #### AVET index
 Values and entity associations for attribute `:person/age`...
-```scala
+```
 AVET(":person/age").v.e.t.get === List(
   (42, e1, t2),
   (37, e2, t5),
@@ -234,7 +234,7 @@ AVET(":person/age").v.e.t.get === List(
 ```
 Datomic's [indexRange API](http://docs.datomic.com/on-prem/javadoc/datomic/Database.html#indexRange(java.lang.Object,%20java.lang.Object,%20java.lang.Object))
 is also implemented...
-```scala
+```
 // Entities and transactions of age attribute with values between 14 and 37
 AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
@@ -244,7 +244,7 @@ AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
 #### AEVT index
 
 Entity ids, values and transaction t's of attribute `:person/name`:
-```scala
+```
 AEVT(":person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
@@ -254,7 +254,7 @@ AEVT(":person/name").e.v.t.get === List(
 #### VAET index
 
 Reverse index for ref attributes...
-```scala
+```
 // Say we have 3 entities pointing to one entity:
 Release.e.name.Artists.e.name.get === List(
   (r1, "Abbey Road", a1, "The Beatles"),
@@ -273,7 +273,7 @@ VAET(a1).v.a.e.get === List(
 #### Log index
 
 Access to datoms index sorted by transaction/time:
-```scala
+```
 // Data from transaction t1 (inclusive) until t4 (exclusive)
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":person/name", "Ben", true),
@@ -290,7 +290,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 #### Schema
 
 Programatically explore your `Schema` structure...
-```scala
+```
 // Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
   (":sales_customer/name", "string", "one"),
@@ -361,7 +361,7 @@ Tx functions in Datomic are untyped (takes arguments of type `Object`). But Mole
 define typed tx methods inside a `@TxFns`-annotated object that will automatically create equivalent "twin" 
 functions with the shape that Datomic expects and save them in the Datamic database transparently for you.
 
-```scala
+```
 @TxFns
 object myTxFns {
   // Constraint check before multiple updates
@@ -384,7 +384,7 @@ object myTxFns {
 ```
 
 Tx function are invoked in application code with the `transact` or `transactAsync` method:
-```scala
+```
 transact(transfer(fromAccount, toAccount, 20))
 ```
 `transact` (or `transactAsync`) is a macro that analyzes the tx function signature to be able to
@@ -397,7 +397,7 @@ If the transactional logic is not dependent on access to the transaction databas
 multiple "bundled" tx statements can now be created by adding molecule tx statements to
 one of the bundling `transact` or `transactAsync` methods:
 
-```scala
+```
 transact(
   // retract
   e1.getRetractTx,
@@ -416,7 +416,7 @@ if there is some transactional error.
 
 ### Composite syntax
 Composite molecules are now tied together with `+` instead of `~`.
-```scala
+```
 m(Ref2.int2 + Ns.int).get.sorted === Seq(
   (1, 11),
   (2, 22)
@@ -428,7 +428,7 @@ major version of Scala/Dotty (see [MACROS: THE PLAN FOR SCALA 3](https://www.sca
 Composite inserts previously had its own special insert method but now shares syntax 
 with other inserts
 
-```scala
+```
 val List(e1, e2) = Ref2.int2 + Ns.int insert Seq(
   // Two rows of data
   (1, 11),
@@ -561,7 +561,7 @@ Internally, Molecule builds the json string in a StringBuffer directly from the 
 
 Normal "flat" molecules creates json with a row on each line in the output:
 
-```scala
+```
 Person.name.age.getJson ===
   """[
     |{"name": "Fred", "age": 38},
@@ -575,7 +575,7 @@ Person.name.age.getJson ===
 Composite data has potential field name clashes so each sub part of the composite is rendered 
 as a separate json object tied together in an array for each row: 
  
-```scala
+```
 m(Person.name.age ~ Category.name.importance).getJson ===
   """[
     |[{"name": "Fred", "age": 38}, {"name": "Marketing", "importance": 6}],
@@ -590,7 +590,7 @@ the semantics of eventual duplicate field names are also handled by client code.
 
 Nested date is rendered as a json array with json objects for each nested row: 
 
-```scala
+```
 (Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
   """[
     |{"no": 1, "customer": "Johnson", "invoiceLines": [
@@ -616,7 +616,7 @@ We could for instance have `aName`,  `optionalLikes` and `anAge` values from a f
 We can now apply those values directly to a mandatory `name` attribute, an optional `likes$` attribute (`$` appended 
 makes it optional) and a mandatory `age` attribute of a save-molecule and then save it:
 
-```scala
+```
 Person
   .name(aName)
   .likes$(optionalLikes)
@@ -626,7 +626,7 @@ Person
 
 We can also, as before, _insert_ the data using an "insert-molecule" as a template:
 
-```scala
+```
 Person.name.likes$.age.insert(
   aName, optionalLikes, anAge
 )
@@ -650,7 +650,7 @@ Datomic has some extremely powerful time functionality that Molecule now makes a
 Ad-hoc time queries against our database can now be made with the following time-aware getter methods on a molecule:
 
 
-```scala
+```
 Person.name.age.getAsOf(t) === ... // Persons as of a point in time `t`
 
 Person.name.age.getSince(t) === ... // Persons added after a point in time `t`
@@ -663,7 +663,7 @@ Person(fredId).age.getHistory === ... // Current and previous ages of Fred in th
 If we want to test the outcome of some transaction without affecting the production db we can apply transaction data to 
 the `getWith(txData)` method:
 
-```scala
+```
 Person.name.age.getWith(
   // Testing adding some transactional data to the current db
   Person.name("John").age(42).saveTx, // Save transaction data
@@ -692,7 +692,7 @@ explicitly go back to continuing using our live production db.
  
 To make a few tests with our filtered db we can now do like this:
 
-```scala
+```
 // Current state
 Person(fredId).name.age.get.head === ("Fred", 27)
 
@@ -724,7 +724,7 @@ the database that is simply garbage collected when it goes out of scope!
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:
 
-```scala
+```
 // Some domain object that we want to test
 val domainObj = MyDomainClass(params..) // having molecule transactions inside...
 domainObj.myState === "some state"
@@ -754,7 +754,7 @@ propragated recursively inside the chain of domain operations.
 
 We can apply the above approach with several time views of our database:
  
-```scala
+```
 conn.testDbAsOfNow
 conn.testDbAsOf(t)
 conn.testDbSince(t)

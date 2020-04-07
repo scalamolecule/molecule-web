@@ -8,14 +8,14 @@ weight: 0
 
 
 
-```scala
+```
 fredId.retract
 
 Person.name("Fred").get.size === 0 
 ```
 
 
-```scala
+```
 Person.id.nameMap.one === (101, Map(
     "en" -> "Dmitri Shostakovich",
     "de" -> "Dmitri Schostakowitsch",
@@ -34,7 +34,7 @@ Person.id.nameMap_("en" -> "Dmitri Shostakovich").one === 101
 Person.id.nameMap_("en")(".*Shosta.*").one === 101
 ```
 
-```scala
+```
 Person.id.nameMap.one === (101, Map(
     "en" -> "Dmitri Shostakovich",
     "de" -> "Dmitri Schostakowitsch",
@@ -47,7 +47,7 @@ Person.nameMapK("fr|en").one === "Dmitri Chostakovitch"
 ```
 
 
-```scala
+```
 // In definition file
 val nameMap = mapString
  
@@ -64,14 +64,14 @@ Person.id.nameMap.insert(
 ```
 
 
-```scala
+```
 fredId.retract
 
 Person.name("Fred").get.size === 0 
 ```
 
 
-```scala
+```
 Person(bob).hobbies.add("stars").update
 Person(bob).hobbies.get.head === Set("golf", "cars", "stars")
 
@@ -89,7 +89,7 @@ Person(bob).hobbies.get.head === Set()
 ```
 
 
-```scala
+```
 // Assert new fact
 Person(fred).likes("pasta").update
 Person(fred).likes$.get.head === Some("pasta")
@@ -99,25 +99,25 @@ Person(fred).likes().update
 Person(fred).likes$.get.head === None
 ```
 
-```scala
+```
 // Assert new fact
 Person(fred).likes("pasta").update
 Person(fred).likes$.get.head === Some("pasta")
 ```
 
-```scala
+```
 Person(fred).likes("pasta").update
 Person(fred).likes$.get.head === Some("pasta")
 ```
 
 
-```scala
+```
 // Re-use insert molecules
 val insertPerson = Person.name.likes$.age.insert
 val fredId = insertPerson("Fred", Some("pizza"), 38).eid 
 ```
 
-```scala
+```
 Person.name.age.likes$ insert List(
   ("Fred", 38, Some("pizza")),
   ("Lisa", 7, None),
@@ -130,7 +130,7 @@ val fred = insertPerson("Fred", 38, Some("pizza")).eid
 val ben  = insertPerson("Lisa", 7, None).eid
 ```
 
-```scala
+```
 Person.name.likes$.age insert List(
   ("Fred", Some("pizza"), 38),
   ("Lisa", None, 7),
@@ -138,14 +138,14 @@ Person.name.likes$.age insert List(
 )
 ```
 
-```scala
+```
 Person
   .name("Fred")
   .age(38)
   .likes("pizza").save
 ```
 
-```scala
+```
 Person.name.age.likes$.get === List(
   ("Fred", 38, Some("pizza")),
   ("Lisa", 7, None),
@@ -153,7 +153,7 @@ Person.name.age.likes$.get === List(
 )
 ```
 
-```scala
+```
 Person.name.age.likes$ insert List(
   ("Fred", 38, Some("pizza")),
   ("Lisa", 7, None),
@@ -161,7 +161,7 @@ Person.name.age.likes$ insert List(
 )
 ```
 
-```scala
+```
 // Save 1 molecule
 Person.name("Fred").likes("pizza").age(38).save
 
@@ -175,41 +175,41 @@ Person.name.likes$.age insert List(
 
 
 
-```scala
+```
 Person.name("Fred").likes("pizza").age(38).save
 ```
 
 
-```scala
+```
 m(Person.name.likes.age ~ Site.cat.status ~ Loc.tag).get === List(
   (("Fred", "pizza", 38), ("customer", "good"), "city")
 )
 ```
 
 
-```scala
+```
 m(Person.name.likes.age ~ Site.cat.status).get === List(
   (("Fred", "pizza", 38), ("customer", "good"))
 )
 ```
 
-```scala
+```
 m(Person.name.likes.age ~ Site.cat).get === List(
   (("Fred", "pizza", 38), "customer")
 )
 ```
 
-```scala
+```
 m(Person.name.likes.age ~ Site.cat).get === List(
   (("Fred", "pizza", 38), "customer")
 )
 
 val ((name, likes, age), cat) = m(Person.name.likes.age ~ Site.cat).get.head
 ```
-```scala
+```
 Person.name.likes.age ~ Site.cat
 ```
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name  = oneString
@@ -223,10 +223,10 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 Person.name.likes.age.Site.cat
 ```
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name  = oneString
@@ -241,10 +241,10 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 Person.name.likes.age.Site.cat
 ```
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name  = oneString
@@ -259,10 +259,10 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 Person.name.likes.age .. ? .. Site.cat
 ```
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name  = oneString
@@ -278,7 +278,7 @@ object YourDomainDefinition {
 
 
 
-```scala
+```
 fredId.touch === Map( // Map[String, Any]
   ":db/id" -> 101L,
   ":Person/name" -> "Fred",
@@ -290,7 +290,7 @@ fredId.touch === Map( // Map[String, Any]
 val siteCat_? : Option[String] = fredId[String](":Site/cat")
 ```
 
-```scala
+```
 fredId.touch === Map(
   ":db/id" -> 101L,
   ":Person/name" -> "Fred",
@@ -300,7 +300,7 @@ fredId.touch === Map(
 )
 ```
 
-```scala
+```
 m(Order.orderid.LineItems * (
   LineItem.product.price.quantity.Comments * (
     Comment.text.descr.Authors * Person.name))).get === List(
@@ -316,7 +316,7 @@ m(Order.orderid.LineItems * (
     )
 ```
 
-```scala
+```
 // Touch entity facts hierarchy recursively
 orderId.touch === Map(
   ":db/id" -> 101L,
@@ -336,7 +336,7 @@ orderId.touch === Map(
 fredId[String](":Person/likes") === Some("pizza")
 ```
 
-```scala
+```
 // Nested molecule
 m(Order.id.Items * LineItem.qty.product.price).get === List(
   (1, List(
@@ -361,7 +361,7 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
 ```
 
 
-```scala
+```
 // Adjacent facts
 Order.id.Items.qty.product.price.get === List(
   (1, 3, "Milk", 12.0),
@@ -376,7 +376,7 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
 )
 ```
 
-```scala
+```
 // Adjacent facts
 Order.id.Items.qty.product.price.get === List(
   (1, 3, "Milk", 12.0),
@@ -384,7 +384,7 @@ Order.id.Items.qty.product.price.get === List(
 )
 ```
 
-```scala
+```
 object OrderDefinition {
 
   trait Order {
@@ -401,7 +401,7 @@ object OrderDefinition {
 ```
 
 
-```scala
+```
 object ProductsOrderDefinition {
 
   trait Order {
@@ -421,7 +421,7 @@ object ProductsOrderDefinition {
 }
 ```
 
-```scala
+```
 Person.name
   .Home.street.city._Person
   .Work.street.city.one === (
@@ -431,7 +431,7 @@ Person.name
 )
 ```
 
-```scala
+```
 Person.name
   .Home.street.city._Person
   .Cottage.street.city._Person
@@ -444,11 +444,11 @@ Person.name
 ```
 
 
-```scala
+```
 Person.name.Home.street.city. ..??
 ```
 
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name = oneString
@@ -462,7 +462,7 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name = oneString
@@ -477,22 +477,22 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 Person.name.Home.street.city
 Person.name.Work.street.city
 ```
-```scala
+```
 Person.name.Home.street.city
 ```
 
-```scala
+```
 Person.name.Home.street.city.one === (
   "Fred", "Baker St. 7", "Boston"
 )
 ```
 
 
-```scala
+```
 Person.name.age(5 or 6 or 7).get === List(
   ("Lisa", 7),
   ("Ben", 5)
@@ -507,7 +507,7 @@ Person.name.age(Seq(5, 6, 7)).get === List(
 )
 ```
 
-```scala
+```
 Person.age(min).one           === 5 
 Person.age(max).one           === 38 
 Person.age(sum).one           === 50 
@@ -525,7 +525,7 @@ Person.age(rand(2)).one   === Stream(5, ?)
 Person.age(sample(2)).one === Vector(7, 38) 
 ```
 
-```scala
+```
 Person.name.age.>(7).get === List(
   ("Fred", 38)
 )
@@ -542,12 +542,12 @@ Person.name.age.<=(7).get === List(
 )
 ```
 
-```scala
+```
 Person.name.likes_(nil).get === List(
   "Lisa"
 )
 ```
-```scala
+```
 Person.name.age.not(38).get === List(
   ("Lisa", 7),
   ("Ben", 5)
@@ -557,7 +557,7 @@ Person.name.age.!=(38).get === List(
   ("Ben", 5)
 )
 ```
-```scala
+```
 // Equality - exact matches only
 Person.name("Fred").age.get === List()
 
@@ -565,99 +565,99 @@ Person.name("Fred Ben").age.get === List(
   ("Fred Ben", 38)
 )
 ```
-```scala
+```
 Person.name.contains("Ben").get === List(
   "Fred Ben", "Ben"
 )
 
 Person.name.contains("Be").get === List()
 ```
-```scala
+```
 Person.name.age_(38).get === List(
   "Fred"
 )
 ```
 
-```scala
+```
 Person.name.likes_("pizza").get === List(
   "Fred", "Ben"
 )
 ```
-```scala
+```
 Person.name.likes("pizza").get === List(
   ("Fred", "pizza"),
   ("Ben", "pizza")
 )
 ```
 
-```scala
+```
 Person.name.get === List(
   "Fred", "Lisa", "Ben"
 )
 ```
-```scala
+```
 Person.name.get: List[String] === List(
   "Fred", "Lisa", "Ben"
 )
 ```
-```scala
+```
 Person.name.age.get: List[(String, Int)] === List(
   ("Fred", 38),
   ("Lisa", 7),
   ("Ben", 5)
 )
 ```
-```scala
+```
 Person.name.age.likes.get === List(
   ("Fred", 38, "pizza"),
   ("Ben", 5, "pizza")
 )
 ```
-```scala
+```
 Person.name.age.likes_.get === List(
   ("Fred", 38),
   ("Ben", 5)
 )
 ```
-```scala
+```
 Person.name.age.likes$.get === List(
   ("Fred", 38, Some("pizza")),
   ("Lisa", 7, None),
   ("Ben", 5, Some("pizza"))
 )
 ```
-```scala
+```
 Person.e(101).name.likes.age.get === List(
   (101, "Fred", "pizza", 38)
 )
 ```
-```scala
+```
 Person.name.age
 ```
-```scala
+```
 val persons: List[(String, Option[String])] = Person.name.age_.likes$.get
 ```
-```scala
+```
 Person.name.age.get
 ```
-```scala
+```
 Person.name("Fred").age(39).saveD
 ```
-```scala
+```
 Person.name.age.updateD
 ```
 
-```scala
+```
 Person.name.age extends M2[String, Int]
 ```
 
-```scala
+```
 object oneString
 object oneInt
 ...
 ```
 
-```scala
+```
 object YourDomainDefinition {
   trait Person {
     val name = oneString
@@ -666,7 +666,7 @@ object YourDomainDefinition {
 }
 ```
 
-```scala
+```
 trait M1[A] {
   def get: List[A] = ???
 }
@@ -685,11 +685,11 @@ class Person1[A] extends M1[A] {
 class Person2[A, B] extends M2[A, B]
 ```
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[String, Int] = macro from2attr[A, B]
 ```
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[A, B] = macro from2attr[A, B]
 
 // Macro implementation (simplified)
@@ -707,7 +707,7 @@ def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
 }
 ```
 
-```scala
+```
 // Macro implementation (simplified)
 def from2attr[A, B](dsl: M2[A, B]): Molecule2[A, B] = {
 
@@ -746,7 +746,7 @@ List(
 
 
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[A, B] = 
   macro from2attr[A, B]
 
@@ -765,11 +765,11 @@ def from2attr[A: c.WeakTypeTag, B: c.WeakTypeTag]
 }
 ```
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[A, B] = macro from2attr[A, B]
 ```
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[A, B] = macro from2attr[A, B]
 
 def from2attr[A: c.WeakTypeTag, B: c.WeakTypeTag]
@@ -791,14 +791,14 @@ def from2attr[A: c.WeakTypeTag, B: c.WeakTypeTag]
 }
 ```
 
-```scala
+```
 Person.name.age
 ```
 
-```scala
+```
 val persons = Person.name.age.get
 ```
-```scala
+```
 val persons = datomic.Peer.q(
   """
     |[:find ?name ?age
@@ -809,10 +809,10 @@ val persons = datomic.Peer.q(
 ```
 
 
-```scala
+```
 val persons: List[(String, Int)] = Person.name.age.get
 ```
-```scala
+```
 val persons: java.util.Collection[java.util.List[Object]] = datomic.Peer.q(
   """
     |[:find ?name ?age
@@ -823,7 +823,7 @@ val persons: java.util.Collection[java.util.List[Object]] = datomic.Peer.q(
 ```
 
 
-```scala
+```
 val persons: List[(String, Int)] = datomic.Peer.q(
   """
     |[:find ?name ?age
@@ -838,11 +838,11 @@ val persons: List[(String, Int)] = datomic.Peer.q(
 )
 ```
 
-```scala
+```
 val personsMolecule: Molecule2[String, Int] = m(Person.name.age)
 ```
 
-```scala
+```
 new Molecule2[String, Int] {
   def get: List[(String, Int)] = datomic.Peer.q(
     """
@@ -858,12 +858,12 @@ new Molecule2[String, Int] {
   )
 ```
 
-```scala
+```
 val personM: Molecule2[String, Int] = m(Person.name.age)
 val persons: List[(String, Int)] = personM.get
 ```
 
-```scala
+```
 // compile-time
 val personMolecule: Molecule2[String, Int] = m(Person.name.age)
 
@@ -871,7 +871,7 @@ val personMolecule: Molecule2[String, Int] = m(Person.name.age)
 val persons: List[(String, Int)] = personMolecule.get
 ```
 
-```scala
+```
 implicit def m[A, B](dsl: M2[A, B]) = macro MakeMolecule.from2attr[A, B]
 
 // compile-time
@@ -884,7 +884,7 @@ val persons: List[(String, Int)] = personMolecule.get
 val persons: List[(String, Int)] = Person.name.age.get
 ```
 
-```scala
+```
 // implicit def macro
 implicit def m[A, B](dsl: M2[A, B]) = macro MakeMolecule.from2attr[A, B]
 
@@ -892,7 +892,7 @@ implicit def m[A, B](dsl: M2[A, B]) = macro MakeMolecule.from2attr[A, B]
 val persons: List[(String, Int)] = Person.name.age.get
 ```
 
-```scala
+```
 // implicit def macro
 implicit def m[A, B](dsl: M2[A, B]): Molecule2[String, Int] = macro from2attr[A, B]
 

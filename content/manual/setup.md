@@ -6,7 +6,7 @@ menu:
     parent: manual
     identifier: setup
 up:   /manual/
-prev: /manual/quick-start/introduction
+prev: /manual/quick-start/performance
 next: /manual/schema
 down: /manual/schema
 ---
@@ -23,19 +23,19 @@ Add the following to your build files:
 
 `project/build.properties`:
 
-```scala
-sbt.version=1.3.5
+```
+sbt.version=1.3.8
 ```
 
 `project/buildinfo.sbt`:
 
-```scala
+```
 addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.8.4")
 ```
 
 `build.sbt`:
 
-```scala
+```
 lazy val yourProject = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
@@ -45,7 +45,7 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.21.0",
+      "org.scalamolecule" %% "molecule" % "0.22.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -65,15 +65,15 @@ an example of how Molecule is used both on the server and client side.
 
 `project/buildinfo.sbt`:
 
-```scala
+```
 addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.8.4")
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.31")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.32")
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "0.6.1")
 ```
 
 `build.sbt` (CrossType.Full example):
 
-```scala
+```
 import sbtcrossproject.CrossPlugin.autoImport.crossProject
 
 lazy val yourProject = crossProject(JSPlatform, JVMPlatform)
@@ -88,7 +88,7 @@ lazy val yourProjectJVM = yourProject.jvm
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.21.0",
+      "org.scalamolecule" %% "molecule" % "0.22.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -97,7 +97,7 @@ lazy val yourProjectJVM = yourProject.jvm
 lazy val yourProjectJS = yourProject.js
   .settings(
     libraryDependencies ++= Seq(
-      ("org.scalamolecule" %%% "molecule" % "0.21.0")
+      ("org.scalamolecule" %%% "molecule" % "0.22.0")
         .exclude("com.datomic", "datomic-free")
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -142,7 +142,7 @@ In the main Molecule project's examples module we have several Schema definition
 
 And we then list the paths to those like this in our `build.sbt`:
 
-```scala
+```
 moleculeSchemas := Seq(
   "molecule/examples/dayOfDatomic",
   "molecule/examples/graph",
@@ -183,13 +183,13 @@ transform our custom molecules to Datomic queries and we want to have as few of 
 to compile as fast as possible. So we therefore try to import only the implicits we need. If you for
 instance are building molecules with maximum 10 attributes, you can therefore import the `out10` ("out"
 for outputs):
-```scala
+```
 import app.dsl.yourDomain._
 import molecule.api.out10._ // (or other arity)
 ```
 If you use input molecules awaiting an input then you can add `inX` where X is
 how many [inputs](/manual/attributes/parameterized/) (1, 2 or 3) you will use, for instance:
-```scala
+```
 import molecule.api.in2_out10._
 ```
 
@@ -205,7 +205,7 @@ to the `recreateDbFrom` method.
 We assign the returned Connection to an implicit variable to have it available for our molecules to 
 access the connection implicitly.
 
-```scala
+```
 implicit val conn = recreateDbFrom(app.schema.YourDomainSchema)
 
 // Save data

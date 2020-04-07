@@ -46,14 +46,14 @@ The Transaction value has two more representations
 
 Generic attributes like `e` can be added to retrieve an entity id of a custom molecule:
 
-```scala
+```
 // Get entity id of Ben with generic datom attribute `e` on a custom molecule
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
 
 And we can get information about the transaction time of the assertion of some custom attribute value:
 
-```scala
+```
 // When was Ben's age updated? Using `txInstant`
 Person(benEntityId).age.txInstant.get.head === (42, <April 4, 2019>) // (Date)
 ```
@@ -61,7 +61,7 @@ Person(benEntityId).age.txInstant.get.head === (42, <April 4, 2019>) // (Date)
 With a history db we can access the transaction number `t` and
 assertion/retraction statusses with `op`
 
-```scala
+```
 // 
 Person(benEntityId).age.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
   (41, t1, true),  // age 41 asserted in transaction t1
@@ -81,7 +81,7 @@ where we don't know in advance what attributes will be involved. Then we can use
 attribute `a` for Attribute name and `v` for value. We could for instance ask what we know about an entity over time
 in the database:
 
-```scala
+```
 // What do we know about the fred entity?
 Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
   (":Person/name", "Fred", t3, true), 
@@ -95,7 +95,7 @@ Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
 
 By applying values to generic attributes we can filter search results:
 
-```scala
+```
 // What was asserted/retracted in transaction tx3 about what Fred likes? 
 Person(fred).likes.tx(tx6).op.getHistory.sortBy(r => (r._2, r._3)) === List(
   ("pizza", t6, false), // Fred no longer likes pizza

@@ -16,7 +16,7 @@ down: /manual/transactions
 
 In Molecule we can populate a molecule with data and save it:
 
-```scala
+```
 Person.name("Fred").likes("pizza").age(38).save
 ```
 
@@ -40,7 +40,7 @@ All transactional operators have an asynchronous equivalent. Saving data asynchr
 
 Here, we map over the result of saving asynchronously:
 
-```scala
+```
 // Map over a Future
 Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report from successful save transaction
   // (synchronous get)
@@ -50,7 +50,7 @@ Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report fr
 
 Or we could defer the resolution of the `Future`
 
-```scala
+```
 val futureSave: Future[TxReport] = Person.name("Fred").likes("pizza").age(42).saveAsync
 for {
   _ <- futureSave
@@ -68,7 +68,7 @@ For brevity, the following examples use the synchronous `save` operation.
 ### Related data
 
 We can even save related date in the same operation
-```scala
+```
 Person.name("Fred").likes("pizza").age(38).Home.street("Baker St. 7").city("Boston").save
 ```
 In this case, 6 facts will be asserted for the entity of Fred. A `:Person/home` ref attribute will resolve to the
@@ -88,7 +88,7 @@ And we could go on with further relationships...
 
 Cardinality many attributes like for instance `hobbies` hold `Set`s of values. But we can apply values in
 various ways:
-```scala
+```
 // Vararg
 Person.hobbies("golf", "chess").save
 
@@ -106,7 +106,7 @@ Person.hobbies(seq).save
 
 An optional value (`optionalLikes`) from a form submission for instance can be applied to an optional attribute (`likes$`):
 
-```scala
+```
 Person.name(aName).likes$(optionalLikes).age(anAge).save
 ```
 When this molecule is saved, only 2 facts will be asserted:
@@ -120,7 +120,7 @@ This is different from SQL where we would save a NULL value in a `likes` column.
 
 Molecule lets us fetch data sets with optional facts asserted for an attribute as optional values:
 
-```scala
+```
 Person.name.likes$.age.get === List(
   ("Fred", None, 38),
   ("Pete", Some("sushi"), 17)
@@ -128,14 +128,14 @@ Person.name.likes$.age.get === List(
 ```
 
 If we specifically want to find Persons that have no `likes` asserted we can say
-```scala
+```
 Person.name.likes_(nil).age.get === List(
   ("Fred", 38)
   // Pete not returned since he likes something
 )
 ```
 .. or 
-```scala
+```
 Person.name.likes$(None).age.get === List(
   ("Fred", None, 38)
   // Pete not returned since he likes something

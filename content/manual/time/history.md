@@ -26,7 +26,7 @@ on a molecule we get all the assertions and retractions that has happened over t
 
 As an example we can imagine Fred being added in tx3 and then updated in tx6.
 
-```scala
+```
 // tx 3 (save)
 val result3 = Person.name("Fred").likes("pizza").save
 val tx3 = result3.tx
@@ -53,7 +53,7 @@ the generic attribute `op` after an attribute.
 
 Let's see the transaction values and operations over time for the attribute `likes`:
 
-```scala
+```
 Person(fred).likes.tx.op.getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   ("pizza", tx3, true), // 2nd fact
   ("pizza", tx6, false),// 3rd fact
@@ -69,7 +69,7 @@ of the historical data (Datomic of course keeps internal order). For brevity we 
 Instead of getting the transaction entity id with `tx` we could also get the transaction value (an auto-incremented internal 
 number for each transaction) with the generic attribute `t`:
 
-```scala
+```
 Person(fred).likes.t.op.getHistory === List(
   ("pizza", t3, true), 
   ("pizza", t6, false),
@@ -78,7 +78,7 @@ Person(fred).likes.t.op.getHistory === List(
 ```
 .. or the time/date of the transaction with `txInstant`:
 
-```scala
+```
 Person(fred).likes.txInstant.op.getHistory === List(
   ("pizza", date3, true), 
   ("pizza", date6, false),
@@ -87,7 +87,7 @@ Person(fred).likes.txInstant.op.getHistory === List(
 ```
 .. or all at once:
 
-```scala
+```
 Person(fred).likes.tx.t.txInstant.op.getHistory === List(
   ("pizza", tx3, t3, date3, true), 
   ("pizza", tx6, t6, date6, false),
@@ -100,7 +100,7 @@ Person(fred).likes.tx.t.txInstant.op.getHistory === List(
 We can even use a generic attribute `a` for the attribute name and `v` for the value of an attribute. This allow us to for instance
 track changes to all atrributes of an entity:
 
-```scala
+```
 Person(fred).a.v.t.op.getHistory === List(
   (":Person/name", "Fred", t3, true), 
   (":Person/likes", "pizza", t3, true), 
@@ -113,7 +113,7 @@ Person(fred).a.v.t.op.getHistory === List(
 
 We can apply values to generic attributes in history queries to narrow our results:
 
-```scala
+```
 // "What has been retracted for the entity `fred`"
 // - Fred disliked "pizza" at date6
 Person(fred).a.v.txInstant.op_(false).getHistory === List(
@@ -138,7 +138,7 @@ examples from the Day of Datomic tutorials:
 
 _"Who created/updated stories?"_
 
-```scala
+```
 Story.url_(ecURL).title.op.tx_(MetaData.usecase.User.firstName).history.get.reverse === List(
   ("ElastiCache in 6 minutes", true, "AddStories", "Stu"),  // Stu adds the story
   ("ElastiCache in 6 minutes", false, "UpdateStory", "Ed"), // retraction automatically added by Datomic
@@ -148,7 +148,7 @@ Story.url_(ecURL).title.op.tx_(MetaData.usecase.User.firstName).history.get.reve
 And we can narrow with expressions:
 
 _"What did Ed retract and in what use cases?"_
-```scala
+```
 Story.url_(ecURL).title.op_(false).tx_(MetaData.usecase.User.firstName_("Ed")).getHistory === List(
   ("ElastiCache in 6 minutes", "UpdateStory") 
 )

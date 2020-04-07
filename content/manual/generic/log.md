@@ -39,7 +39,7 @@ following standard generic attributes can be combined to match the required data
 Contrary to Datomic's Log implementation, Molecule returns data as a flat list of tuples of data that matches
 the generic attributes in the Log molecule. This is to transparently sharing the same semantics as other molecules.   
 
-```scala
+```
 // Data from transaction t1 (inclusive) until t4 (exclusive)
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
@@ -56,7 +56,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 ### From beginning
 
 If the `from` argument is `None` data from the beginning of the log is matched:
-```scala
+```
 Log(None, Some(t3)).v.e.t.get === List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 41, true),
@@ -71,7 +71,7 @@ Log(None, Some(t3)).v.e.t.get === List(
 ### Until end
 
 If the `until` argument is `None` data from until the end of the log is matched:
-```scala
+```
 Log(Some(t2), None).v.e.t.get === List(
   // t1 not included
 

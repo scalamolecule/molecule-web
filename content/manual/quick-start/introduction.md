@@ -7,7 +7,7 @@ menu:
     
 up:   /manual/
 prev: /manual/
-next: /manual/setup
+next: /manual/quick-start/performance
 down: /manual/setup
 ---
 
@@ -15,14 +15,13 @@ down: /manual/setup
 
 Molecule let's you model and query your domain data structures directly with the words of your domain.
 
-bldskjfl ksdfjl sadkf lj
 
 ### Query
 
 Let's say we want to find Persons in the Datomic database. Then we can build a molecule to get this data
 for us:
 
-```scala
+```
 val persons: List[(String, Int)] = m(Person.name.age).get
 ```
 This fetches a List of tuples of Strings/Int's that are the types of the `name` and `age` Attributes that 
@@ -43,7 +42,7 @@ The `m` method (for **_m_**olecule) is an implicit macro method in the Molecule 
 data structure that we have modelled with our custom DSL and produces a molecule. We can then for instance 
 call `get` on the molecule to fetch data from Datomic that matches the data structure of the molecule. 
 Since the `m` method is implicit we can simply write
-```scala
+```
 val persons = Person.name.age.get
 ```
 That way, we can use our domain terms directly in our code in a type-safe and semantically meaningful way to
@@ -56,13 +55,13 @@ That way, we can use our domain terms directly in our code in a type-safe and se
 
 For single entities we can apply data to the attributes of a molecule and then save it:
 
-```scala
+```
 // Save Lisa entity and retrieve new entity id
 val lisaId = Person.name("Lisa").age("27").save.eid
 ```
 Or we can add data for multiple entities with an `insert`:
 
-```scala
+```
 // Save Lisa entity and retrieve new entity id
 Person.name.age insert List(
   ("Lisa", 27), // Inserting Lisa entity
@@ -70,7 +69,7 @@ Person.name.age insert List(
 )
 ```
 Using an entity id we can update attribute values of an entity:
-```scala
+```
 // Update age attribute value of Lisa entity
 Person(lisaId).age("28").update
 ```
@@ -79,7 +78,7 @@ Lisa's age 27 is retracted and her new age 28 asserted. With this information mo
 back in time and see when Lisa's age was changed to 28.
 
 Or we can retract an entity entirely by calling `retract` on an entity id
-```scala
+```
 // Retract ("delete") Lisa entity
 lisaId.retract
 ```
@@ -91,7 +90,7 @@ to see that Lisa existed.
 
 We can apply conditional values, ranges etc to our molecules to express more subtle data structures:
 
-```scala
+```
 Community.name.`type`("twitter" or "facebook_page")
   .Neighborhood.District.region("sw" or "s" or "se")
 ```
@@ -119,7 +118,7 @@ Entity  Attribute  Value  Transaction/time  Added
 ```
 With Molecule we could model asserting the fact like this:
 
-```scala
+```
 val txTime = Person(johnId).likes("pizza").update.txInstant
 ```
 _likes_ is an `attribute` with `value` _pizza_. It is **asserted** that the `entity` _johnId_ likes pizza 
