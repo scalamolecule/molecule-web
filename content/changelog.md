@@ -8,8 +8,9 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
-Main changes:
-
+- 2020-04-10 v0.22.1 [Bugfix: Query optimization resolves fulltext search correctly](#34)
+- 2020-04-07 v0.22.0 [Automatic Query optimization](#33)
+- 2019-12-20 v0.21.0 [Optional nested data](#32)
 - 2019-10-24 v0.20.0 [Molecule for Scala.js](#31)
 - 2019-10-20 v0.19.1 [Date handling corrected](#30)
 - 2019-09-22 v0.19.0 [Cross-compiling to Scala 2.13.1 and 2.12.10](#29)
@@ -41,6 +42,59 @@ Main changes:
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Bugfix: Query optimization resolves fulltext search correctly {#34}
+_2020-04-10 v0.22.1_
+
+
+## [☝︎](#top) Automatic Query optimization {#33}
+_2020-04-07 v0.22.0_
+
+Molecule now transparently optimize all queries sent to Datomic. 
+
+Most selective
+Clauses are automatically grouped first in the :where section of the Datomic query as per
+the recommendation in [Datomic Best Practices](https://docs.datomic.com/on-prem/best-practices.html#most-selective-clauses-first). 
+
+This brings dramatic performance gains of in some cases beyond 100x compared to 
+un-optimized queries. The optimization happens automatically in the background 
+so that you can focus entirely on your domain without concern for the optimal 
+order of attributes in your molecules.
+
+Bug fixes:
+
+- Correct resolution of multiple attrs in refs in tx meta data
+- Optimization of Index/Log operations
+- Optional card-many attributes now return all values (not Datomic default max 1000)
+- Correctly converting Iterables in raw queries
+- Re-use attr variable in query when applying multiple aggregates to the same attr
+- Fulltext search allowed on optional attributes
+
+
+
+## [☝︎](#top) Optional nested data {#32}
+_2019-12-20 v0.21.0_
+
+Optional nested data can now be queried with the `*?` operator:
+
+```scala
+m(Ns.int.Refs1 * Ref1.str1) insert List(
+  (1, List("a", "b")),
+  (2, List()) // (no nested data)
+)
+
+// Mandatory nested data
+m(Ns.int.Refs1 * Ref1.str1).get === List(
+  (1, List("a", "b"))
+)
+
+// Optional nested data
+m(Ns.int.Refs1 *? Ref1.str1).get === List(
+  (1, List("a", "b")),
+  (2, List())
+)
+```
 
 
 ## [☝︎](#top) Molecule for Scala.js {#31}

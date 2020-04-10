@@ -24,13 +24,13 @@ Add the following to your build files:
 `project/build.properties`:
 
 ```
-sbt.version=1.3.8
+sbt.version=1.3.9
 ```
 
 `project/buildinfo.sbt`:
 
 ```
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.8.4")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.9.0")
 ```
 
 `build.sbt`:
@@ -45,7 +45,7 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.22.0",
+      "org.scalamolecule" %% "molecule" % "0.22.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -66,7 +66,7 @@ an example of how Molecule is used both on the server and client side.
 `project/buildinfo.sbt`:
 
 ```
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.8.4")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.9.0")
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.32")
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "0.6.1")
 ```
@@ -88,7 +88,7 @@ lazy val yourProjectJVM = yourProject.jvm
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.22.0",
+      "org.scalamolecule" %% "molecule" % "0.22.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -97,7 +97,7 @@ lazy val yourProjectJVM = yourProject.jvm
 lazy val yourProjectJS = yourProject.js
   .settings(
     libraryDependencies ++= Seq(
-      ("org.scalamolecule" %%% "molecule" % "0.22.0")
+      ("org.scalamolecule" %%% "molecule" % "0.22.1")
         .exclude("com.datomic", "datomic-free")
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
