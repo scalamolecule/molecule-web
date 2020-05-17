@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.22.0 Automatic Query optimizatin">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.22.1 Optimizing fulltext">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +204,7 @@
       <option name="javaOptions" value="" />
       <option name="jrePath" />
       <option name="searchTest" value="Across module dependencies" />
+      <option name="shortenClasspath" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
       <option name="testClassPath" value="" />
@@ -222,6 +224,7 @@
       <option name="javaOptions" value="" />
       <option name="jrePath" />
       <option name="searchTest" value="Across module dependencies" />
+      <option name="shortenClasspath" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
       <option name="testClassPath" value="" />
@@ -241,6 +244,7 @@
       <option name="javaOptions" value="" />
       <option name="jrePath" />
       <option name="searchTest" value="Across module dependencies" />
+      <option name="shortenClasspath" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
       <option name="testClassPath" value="" />
@@ -447,7 +451,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.8.0 Composites &amp; Tx meta data" />
     <MESSAGE value="v0.9.0 Bidirectional references" />
     <MESSAGE value="v0.10.0 Entity selection retrieval and manipulation" />
     <MESSAGE value="Update to Scala 2.12.1" />
@@ -472,21 +475,22 @@
     <MESSAGE value="v0.20.0 Molecule for Scala.js" />
     <MESSAGE value="v0.21.0 Optional nested data" />
     <MESSAGE value="v0.22.0 Automatic Query optimizatin" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.22.0 Automatic Query optimizatin" />
+    <MESSAGE value="v0.22.1 Optimizing fulltext" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.22.1 Optimizing fulltext" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2" timestamp="1586286338920">
+    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2" timestamp="1586525891825">
       <screen x="-2560" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1586286338920" />
-    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2" timestamp="1586286345923">
+    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1586525891825" />
+    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2" timestamp="1586525600072">
       <screen x="-2560" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1586286345923" />
-    <state x="-1356" y="206" width="588" height="538" key="find.popup" timestamp="1586520828767">
+    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1586525600072" />
+    <state x="-1356" y="206" width="982" height="1172" key="find.popup" timestamp="1589748820492">
       <screen x="-2560" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1356" y="206" width="588" height="538" key="find.popup/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1586520828767" />
+    <state x="-1356" y="206" width="982" height="1172" key="find.popup/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1589748820492" />
   </component>
   <component name="masterDetails">
     <states>

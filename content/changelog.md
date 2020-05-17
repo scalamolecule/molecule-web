@@ -8,6 +8,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2020-05-17 v0.22.2 [Upgrade to ScalaJS 1.1.0](#35)
 - 2020-04-10 v0.22.1 [Bugfix: Query optimization resolves fulltext search correctly](#34)
 - 2020-04-07 v0.22.0 [Automatic Query optimization](#33)
 - 2019-12-20 v0.21.0 [Optional nested data](#32)
@@ -42,6 +43,10 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) # Upgrade to ScalaJS 1.1.0 {#35}
+_2020-05-17 v0.22.2_
 
 
 ## [☝︎](#top) Bugfix: Query optimization resolves fulltext search correctly {#34}
