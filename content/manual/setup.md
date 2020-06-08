@@ -24,7 +24,7 @@ Add the following to your build files:
 `project/build.properties`:
 
 ```
-sbt.version=1.3.10
+sbt.version=1.3.12
 ```
 
 `project/buildinfo.sbt`:
@@ -45,7 +45,7 @@ lazy val yourProject = project.in(file("app"))
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.22.2",
+      "org.scalamolecule" %% "molecule" % "0.22.3",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -88,7 +88,7 @@ lazy val yourProjectJVM = yourProject.jvm
       Resolver.sonatypeRepo("releases")
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.22.2",
+      "org.scalamolecule" %% "molecule" % "0.22.3",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
@@ -97,7 +97,7 @@ lazy val yourProjectJVM = yourProject.jvm
 lazy val yourProjectJS = yourProject.js
   .settings(
     libraryDependencies ++= Seq(
-      ("org.scalamolecule" %%% "molecule" % "0.22.2")
+      ("org.scalamolecule" %%% "molecule" % "0.22.3")
         .exclude("com.datomic", "datomic-free")
     ),
     moleculeSchemas := Seq("app") // paths to your schema definition files...
