@@ -1,5 +1,5 @@
 ---
-date: 2019-10-20T02:13:50Z
+date: 2020-06-16T02:13:50Z
 title: "Changelog"
 ---
 
@@ -8,6 +8,10 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2020-07-17 v0.22.6 [BigDecimal accepting non-decimal numbers correctly](#39)
+- 2020-06-16 v0.22.5 [Apply `Iterable` instead of `Seq` to values](#38)
+- 2020-06-11 v0.22.4 [Time zones in distribution](#37)
+- 2020-06-08 v0.22.3 [Resolve mutable identifiers in Scala 2.13](#36)
 - 2020-05-17 v0.22.2 [Upgrade to ScalaJS 1.1.0](#35)
 - 2020-04-10 v0.22.1 [Bugfix: Query optimization resolves fulltext search correctly](#34)
 - 2020-04-07 v0.22.0 [Automatic Query optimization](#33)
@@ -45,7 +49,35 @@ title: "Changelog"
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
 
 
-## [☝︎](#top) # Upgrade to ScalaJS 1.1.0 {#35}
+## [☝︎](#top) BigDecimal accepting non-decimal numbers correctly {#39}
+_2020-07-17 v0.22.6_
+
+Implicit conversion of for instance applied Integers to BigDecimal would end up 
+missing the decimal point and thus not be saved correctly in Datomic. Now correct 
+conversion is ensured both for inserting, updating and querying BigDecimals.
+
+
+## [☝︎](#top) Apply `Iterable` instead of `Seq` to values {#38}
+_2020-06-16 v0.22.5_
+
+
+## [☝︎](#top) Time zones in distribution {#37}
+_2020-06-11 v0.22.4_
+
+Include transpiled [scala-java-time](http://cquiroz.github.io/scala-java-time/) time zones for ScalaJS code.
+This allows dependent ScalaJS projects to have time zones available in client code that depends on `molecule`
+([DateTransformatin](https://github.com/scalamolecule/molecule-admin/blob/master/shared/src/test/scala/moleculeadmin/sharedtest/util/DateTransformation.scala) 
+in [molecule-admin](https://github.com/scalamolecule/molecule-admin) being an example).
+
+
+## [☝︎](#top) Resolve mutable identifiers in Scala 2.13 {#36}
+_2020-06-08 v0.22.3_
+
+Pattern match against unified interfaces in `molecule.ops.ModelOps` matching
+both immutable and mutable collections.
+
+
+## [☝︎](#top) Upgrade to ScalaJS 1.1.0 {#35}
 _2020-05-17 v0.22.2_
 
 
@@ -83,7 +115,7 @@ _2019-12-20 v0.21.0_
 
 Optional nested data can now be queried with the `*?` operator:
 
-```scala
+```
 m(Ns.int.Refs1 * Ref1.str1) insert List(
   (1, List("a", "b")),
   (2, List()) // (no nested data)

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.22.2 Upgrading to ScalaJS 1.1.0">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.22.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +226,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <created>1530693114682</created>
@@ -419,7 +422,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.10.0 Entity selection retrieval and manipulation" />
     <MESSAGE value="Update to Scala 2.12.1" />
     <MESSAGE value="v0.10.2 Obsolete `maybe` interfaces removed" />
     <MESSAGE value="v0.11.0" />
@@ -444,21 +446,23 @@
     <MESSAGE value="v0.22.0 Automatic Query optimizatin" />
     <MESSAGE value="v0.22.1 Optimizing fulltext" />
     <MESSAGE value="v0.22.2 Upgrading to ScalaJS 1.1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.22.2 Upgrading to ScalaJS 1.1.0" />
+    <MESSAGE value="v0.22.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.22.3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2" timestamp="1589749481016">
+    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2" timestamp="1591644204203">
       <screen x="-2560" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1589749481016" />
-    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2" timestamp="1589749483655">
+    <state x="-1910" y="122" width="1292" height="1336" key="CommitChangelistDialog2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1591644204203" />
+    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2" timestamp="1591644206690">
       <screen x="-2560" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1589749483655" />
-    <state x="-1356" y="206" width="982" height="1172" key="find.popup" timestamp="1589748820492">
-      <screen x="-2560" y="0" width="2560" height="1600" />
+    <state x="-1680" y="540" key="Vcs.Push.Dialog.v2/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1591644206690" />
+    <state x="-3916" y="206" width="982" height="1172" key="find.popup" timestamp="1594996046150">
+      <screen x="-5120" y="0" width="2560" height="1600" />
     </state>
-    <state x="-1356" y="206" width="982" height="1172" key="find.popup/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1589748820492" />
+    <state x="-1356" y="206" width="982" height="1172" key="find.popup/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-2560.0.2560.1600" timestamp="1592333770813" />
+    <state x="-3916" y="206" width="982" height="1172" key="find.popup/-2560.0.2560.1600/-5120.0.2560.1600/0.23.1680.1027@-5120.0.2560.1600" timestamp="1594996046150" />
   </component>
   <component name="masterDetails">
     <states>
