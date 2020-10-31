@@ -1,5 +1,5 @@
 ---
-date: 2020-06-16T02:13:50Z
+date: 2020-10-31T02:13:50Z
 title: "Changelog"
 ---
 
@@ -8,6 +8,8 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2020-10-31 v0.22.8 [Upgrade to ScalaJS 1.3](#41)
+- 2020-07-17 v0.22.7 [Allow all implicit widening conversions for numeric variables](#40)
 - 2020-07-17 v0.22.6 [BigDecimal accepting non-decimal numbers correctly](#39)
 - 2020-06-16 v0.22.5 [Apply `Iterable` instead of `Seq` to values](#38)
 - 2020-06-11 v0.22.4 [Time zones in distribution](#37)
@@ -47,6 +49,39 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Upgrade to ScalaJS 1.3 {#41}
+_2020-10-31 v0.22.8_
+
+
+## [☝︎](#top) Allow all implicit widening conversions for numeric variables {#40}
+_2020-07-17 v0.22.7_
+
+Implicit widening conversion of numeric variables is now allowed in Molecule:
+
+```scala
+val int   = 1
+val long  = 1L
+val float = 1f
+
+// -> Float
+Ns.float(int).get === List(1.0f)
+Ns.float(long).get === List(1.0f)
+
+// -> Double
+Ns.double(int).get === List(1.0)
+Ns.double(long).get === List(1.0)
+Ns.double(float).get === List(1.0)
+```
+
+The widening feature is deprecated in Scala and will thus be gone when removed from Scala.
+
+Variables with Int values can now also be applied to Long attributes:
+```scala
+val int = 1
+Ns.long(int).get === List(1L)
+```
 
 
 ## [☝︎](#top) BigDecimal accepting non-decimal numbers correctly {#39}
