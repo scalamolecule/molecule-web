@@ -1,0 +1,451 @@
+<!DOCTYPE html ><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/><title>Molecule 0.22.8 - molecule.generic</title><meta content="Molecule 0.22.8 - molecule.generic" name="description"/><meta content="Molecule 0.22.8 molecule.generic" name="keywords"/><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet"/><link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet"/><link href="../../lib/print.css" media="print" type="text/css" rel="stylesheet"/><link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css"/><script type="text/javascript" src="../../lib/jquery.min.js"></script><script type="text/javascript" src="../../lib/index.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript" src="../../lib/scheduler.js"></script><script type="text/javascript" src="../../lib/template.js"></script><script type="text/javascript" src="https://d3js.org/d3.v4.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/graphlib-dot@0.6.2/dist/graphlib-dot.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.1/dagre-d3.min.js"></script><script type="text/javascript">/* this variable can be used by the JS to determine the path to the root document */
+var toRoot = '../../';</script></head><body><div id="search"><span id="doc-title">Molecule<span id="doc-version">0.22.8</span></span> <span class="close-results"><span class="left">&lt;</span> Back</span><div id="textfilter"><span class="input"><input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/"/><i class="clear material-icons"></i><i id="search-icon" class="material-icons"></i></span></div></div><div id="search-results"><div id="search-progress"><div id="progress-fill"></div></div><div id="results-content"><div id="entity-results"></div><div id="member-results"></div></div></div><div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;"><div id="content-container" style="-webkit-overflow-scrolling: touch;"><div id="subpackage-spacer"><div id="packages"><h1>Packages</h1><ul><li class="indented0 " name="_root_.root" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="_root_"></a><a id="root:_root_"></a> <span class="permalink"><a href="../../index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../../index.html" title=""><span class="name">root</span></a></span><p class="shortcomment cmt"><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><div class="fullcomment"><div class="comment cmt"><p><img src="http://www.scalamolecule.org/img/logo/MoleculeLogo200.png"></p><p>Documentation/API for the Molecule library - a meta DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p><a href="http://www.scalamolecule.org" target="_blank">Manual</a> |
+<a href="http://www.scalamolecule.org" target="_blank">scalamolecule.org</a> |
+<a href="https://github.com/scalamolecule/molecule" target="_blank">Github</a> |
+<a href="https://groups.google.com/forum/#!forum/molecule-dsl" target="_blank">Forum</a></p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented1 " name="_root_.molecule" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="molecule"></a><a id="molecule:molecule"></a> <span class="permalink"><a href="../../molecule/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../index.html" title="Molecule library - a Scala meta-DSL for the Datomic database."><span class="name">molecule</span></a></span><p class="shortcomment cmt"><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><div class="fullcomment"><div class="comment cmt"><p><a href="http://www.scalamolecule.org" target="_blank">Molecule</a> library - a Scala meta-DSL for the <a href="https://www.datomic.com" target="_blank">Datomic</a> database.</p><p>See <a href="../api/index.html" name="molecule.api" id="molecule.api" class="extype">api</a> package for various api imports to start using Molecule.</p><h4> Sub-packages </h4><p><table>
+  <tr>
+    <td><a href="api/index.html">api</a><td>
+    <td>Molecule API.</td>
+  </tr>
+  <tr>
+    <td><a href="ast/index.html">ast</a><td>
+    <td style="color:#888">Internal Molecule ASTs.</td>
+  </tr>
+  <tr>
+    <td><a href="boilerplate/index.html">boilerplate</a><td>
+    <td style="color:#888">Internal interfaces for auto-generated DSL boilerplate code.</td>
+  </tr>
+  <tr>
+    <td><a href="composition/index.html">composition</a>&nbsp;&nbsp;&nbsp;<td>
+    <td>Builder methods to compose molecules.</td>
+  </tr>
+  <tr>
+    <td><a href="exception/index.html">exceptions</a><td>
+    <td>Exceptions thrown by Molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="expression/index.html">expression</a><td>
+    <td>Attribute expressions and operations.</td>
+  </tr>
+  <tr>
+    <td><a href="facade/index.html">facade</a><td>
+    <td>Molecule facades to Datomic.</td>
+  </tr>
+  <tr>
+    <td><a href="factory/index.html">factory</a><td>
+    <td>Implicit macro methods `m` to instantiate molecules from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="input/index.html">input</a><td>
+    <td>Input molecules awaiting input.</td>
+  </tr>
+  <tr>
+    <td><a href="macro/index.html">macros</a><td>
+    <td style="color:#888">Internal macros generating molecule code from custom DSL molecule constructs.</td>
+  </tr>
+  <tr>
+    <td><a href="generic/index.html">generic</a><td>
+    <td>Interfaces to generic information about datoms and Datomic database.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">ops</a><td>
+    <td style="color:#888">Internal operational helpers for transforming DSL to molecule.</td>
+  </tr>
+  <tr>
+    <td><a href="schema/index.html">schema</a><td>
+    <td>Schema definition DSL.</td>
+  </tr>
+  <tr>
+    <td><a href="ops/index.html">transform</a><td>
+    <td style="color:#888">Internal transformers from DSL to Model/Query/Transaction.</td>
+  </tr>
+  <tr>
+    <td><a href="util/index.html">util</a><td>
+    <td style="color:#888">Internal Java database functions for Datomic.</td>
+  </tr>
+</table>
+</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../../index.html" name="_root_" id="_root_" class="extype">root</a></dd></dl></div></li><li class="indented2 " name="molecule.api" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="api"></a><a id="api:api"></a> <span class="permalink"><a href="../../molecule/api/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../api/index.html" title=""><span class="name">api</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.ast" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="ast"></a><a id="ast:ast"></a> <span class="permalink"><a href="../../molecule/ast/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../ast/index.html" title="Internal Molecule ASTs."><span class="name">ast</span></a></span><p class="shortcomment cmt">Internal Molecule ASTs.</p><div class="fullcomment"><div class="comment cmt"><p>Internal Molecule ASTs.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.boilerplate" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="boilerplate"></a><a id="boilerplate:boilerplate"></a> <span class="permalink"><a href="../../molecule/boilerplate/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../boilerplate/index.html" title="Internal interfaces for auto-generated DSL boilerplate code."><span class="name">boilerplate</span></a></span><p class="shortcomment cmt">Internal interfaces for auto-generated DSL boilerplate code.</p><div class="fullcomment"><div class="comment cmt"><p>Internal interfaces for auto-generated DSL boilerplate code.
+<br><br>
+Interfaces to the generated schema-defined DSL boilerplate code that the sbt-plugin generates when doing a <code>sbt-compile</code>.
+Molecule macros can then type-safely deduct the type structure of composed molecules.
+</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.composition" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="composition"></a><a id="composition:composition"></a> <span class="permalink"><a href="../../molecule/composition/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../composition/index.html" title="Methods to build transaction, composite and nested molecules."><span class="name">composition</span></a></span><p class="shortcomment cmt">Methods to build transaction, composite and nested molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Methods to build transaction, composite and nested molecules.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.exceptions" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="exceptions"></a><a id="exceptions:exceptions"></a> <span class="permalink"><a href="../../molecule/exceptions/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../exceptions/index.html" title="Exceptions thrown by Molecule."><span class="name">exceptions</span></a></span><p class="shortcomment cmt">Exceptions thrown by Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Exceptions thrown by Molecule.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.expression" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="expression"></a><a id="expression:expression"></a> <span class="permalink"><a href="../../molecule/expression/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../expression/index.html" title="Attribute expressions and operations."><span class="name">expression</span></a></span><p class="shortcomment cmt">Attribute expressions and operations.</p><div class="fullcomment"><div class="comment cmt"><p>Attribute expressions and operations.
+<br><br>
+Refine attribute matches with various <a href="../expression/AttrExpressions.html" name="molecule.expression.AttrExpressions" id="molecule.expression.AttrExpressions" class="extype">attribute expressions</a>:</p><pre>Person.age(<span class="num">42</span>)                           <span class="cmt">// equality</span>
+Person.name.contains(<span class="lit">"John"</span>)             <span class="cmt">// fulltext search</span>
+Person.age.!=(<span class="num">42</span>)                        <span class="cmt">// negation (or `not`)</span>
+Person.age.&lt;(<span class="num">42</span>)                         <span class="cmt">// comparison (&lt; &gt; &lt;= &gt;=)</span>
+Person.name(<span class="lit">"John"</span> or <span class="lit">"Jonas"</span>)           <span class="cmt">// OR-logic</span>
+Person.age()                             <span class="cmt">// apply empty value to retract value(s) in updates</span>
+Person.hobbies.assert(<span class="lit">"golf"</span>)               <span class="cmt">// add value(s) to card-many attributes</span>
+Person.hobbies.retract(<span class="lit">"golf"</span>)            <span class="cmt">// retract value(s) of card-many attributes</span>
+Person.hobbies.replace(<span class="lit">"golf"</span>, <span class="lit">"diving"</span>) <span class="cmt">// replace value(s) of card-many attributes</span>
+Person.tags.k(<span class="lit">"en"</span>)                      <span class="cmt">// match values of map attributes by key</span>
+Person.age(Nil)                          <span class="cmt">// match non-asserted datoms (null)</span>
+Person.name(?)                           <span class="cmt">// initiate input molecules awaiting input at runtime</span>
+Person.name(unify)                       <span class="cmt">// Unify attributes in self-joins</span></pre><p>Apply <a href="../expression/AggregateKeywords.html" name="molecule.expression.AggregateKeywords" id="molecule.expression.AggregateKeywords" class="extype">aggregate keywords</a> to aggregate attribute value(s):</p><pre><span class="cmt">// Aggregates on any attribute type</span>
+Person.age(count).get.head         === <span class="num">3</span>   <span class="cmt">// count of asserted `age` attribute values</span>
+Person.age(countDistinct).get.head === <span class="num">3</span>   <span class="cmt">// count of asserted distinct `age` attribute values</span>
+Person.age(max).get.head           === <span class="num">38</span>  <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(min).get.head           === <span class="num">5</span>   <span class="cmt">// maximum `age` value (using `compare`)</span>
+Person.age(rand).get.head          === <span class="num">25</span>  <span class="cmt">// single random `age` value</span>
+Person.age(sample).get.head        === <span class="num">27</span>  <span class="cmt">// single sample `age` value (when single value, same as random)</span>
+
+<span class="cmt">// Aggregates on any attribute type, returning multiple values</span>
+Person.age(distinct).get.head  === Vector(<span class="num">5</span>, <span class="num">7</span>, <span class="num">38</span>)  <span class="cmt">// distinct `age` values</span>
+Person.age(max(<span class="num">2</span>)).get.head    === Vector(<span class="num">38</span>, <span class="num">7</span>)     <span class="cmt">// 2 maximum `age` values</span>
+Person.age(min(<span class="num">2</span>)).get.head    === Vector(<span class="num">5</span>, <span class="num">7</span>)      <span class="cmt">// 2 minimum `age` values</span>
+Person.age(rand(<span class="num">2</span>)).get.head   === Stream(<span class="num">5</span>, ?)      <span class="cmt">// 2 random `age` values (values can re-occur)</span>
+Person.age(sample(<span class="num">2</span>)).get.head === Vector(<span class="num">7</span>, <span class="num">38</span>)     <span class="cmt">// 2 sample `age` values</span>
+
+<span class="cmt">// Aggregates on number attributes</span>
+Person.age(sum).get.head      === <span class="num">50</span>               <span class="cmt">// sum of all `age` numbers</span>
+Person.age(avg).get.head      === <span class="num">16.66666667</span>      <span class="cmt">// average of all `age` numbers</span>
+Person.age(median).get.head   === <span class="num">7</span>                <span class="cmt">// median of all `age` numbers</span>
+Person.age(stddev).get.head   === <span class="num">15.107025591499</span>  <span class="cmt">// standard deviation of all `age` numbers</span>
+Person.age(variance).get.head === <span class="num">228.2222222222</span>   <span class="cmt">// variance of all `age` numbers</span></pre></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p>Manual: <a href="http://www.scalamolecule.org/manual/attributes/expressions/" target="_blank">expressions</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/aggregates/" target="_blank">aggregates</a> |
+     <a href="http://www.scalamolecule.org/manual/attributes/parameterized/" target="_blank">input molecules</a></p></span><span class="cmt"><p>Tests: <a href="https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression" target="_blank">expressions</a></p></span></dd></dl></div></li><li class="indented2 " name="molecule.facade" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="facade"></a><a id="facade:facade"></a> <span class="permalink"><a href="../../molecule/facade/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../facade/index.html" title=""><span class="name">facade</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.factory" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="factory"></a><a id="factory:factory"></a> <span class="permalink"><a href="../../molecule/factory/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../factory/index.html" title="Factory methods m to instantiate molecules from custom DSL molecule constructs."><span class="name">factory</span></a></span><p class="shortcomment cmt">Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p><div class="fullcomment"><div class="comment cmt"><p>Factory methods <code>m</code> to instantiate molecules from custom DSL molecule constructs.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 current" name="molecule.generic" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="generic"></a><a id="generic:generic"></a> <span class="permalink"><a href="../../molecule/generic/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">generic</span></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented3 " name="molecule.generic.datom" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="datom"></a><a id="datom:datom"></a> <span class="permalink"><a href="../../molecule/generic/datom/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="datom/index.html" title="Generic Datom attribute interfaces of all arities."><span class="name">datom</span></a></span><p class="shortcomment cmt">Generic Datom attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Datom attribute interfaces of all arities.</p><p>"Generic attributes" are special pre-defined attributes that can
+be combined with custom attributes in molecules to return
+meta data:</p><pre><span class="cmt">// Get id of Ben entity with `e`</span>
+Person.e.name.get.head === (benEntityId, <span class="lit">"Ben"</span>)
+
+<span class="cmt">// When was Ben's age updated? Using `txInstant`</span>
+Person(benEntityId).age.txInstant.get.head === (<span class="num">42</span>, &lt;April <span class="num">4</span>, <span class="num">2019</span>&gt;) <span class="cmt">// (Date)</span>
+
+<span class="cmt">// With a history db we can access the transaction number `t` and</span>
+<span class="cmt">// assertion/retraction statusses with `op`</span>
+Person(benEntityId).age.t.op.getHistory === <span class="std">List</span>(
+  (<span class="num">41</span>, t1, <span class="kw">true</span>),  <span class="cmt">// age 41 asserted in transaction t1</span>
+  (<span class="num">41</span>, t2, <span class="kw">false</span>), <span class="cmt">// age 41 retracted in transaction t2</span>
+  (<span class="num">42</span>, t2, <span class="kw">true</span>)   <span class="cmt">// age 42 asserted in transaction t2</span>
+)</pre><p>Available generic attributes:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like ":Person/name" (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+</li></ul></div><dl class="attributes block"><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Datom.scala#L1" target="_blank">Tests</a>
+    for more generic attribute query examples.</p></span></dd></dl></div></li><li class="indented3 " name="molecule.generic.index" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="index"></a><a id="index:index"></a> <span class="permalink"><a href="../../molecule/generic/index/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="index/index.html" title="Datomic Index APIs in Molecule."><span class="name">index</span></a></span><p class="shortcomment cmt">Datomic Index APIs in Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Datomic Index APIs in Molecule.
+<br><br>
+Datomic maintains four indexes that contain ordered sets of datoms.
+Each of these indexes is named based on the sort order used:</p><ul><li><a href="index/EAVT.html" name="molecule.generic.index.EAVT" id="molecule.generic.index.EAVT" class="extype">EAVT</a> - Datoms sorted by Entity-Attribute-Value-Transaction</li><li><a href="index/AVET.html" name="molecule.generic.index.AVET" id="molecule.generic.index.AVET" class="extype">AVET</a> - Datoms sorted by Attribute-Value-Entity-Transaction</li><li><a href="index/AEVT.html" name="molecule.generic.index.AEVT" id="molecule.generic.index.AEVT" class="extype">AEVT</a> - Datoms sorted by Attribute-Entity-Value-Transaction</li><li><a href="index/VAET.html" name="molecule.generic.index.VAET" id="molecule.generic.index.VAET" class="extype">VAET</a> - "Reverse index" for reverse lookup of ref types</li></ul><p>Create an Index molecule by instantiating an Index object
+with one or more arguments in the order of the Index's elements. Datoms are
+returned as tuples of data depending of which generic attributes you add to the
+Index molecule:</p><pre><span class="cmt">// Create EAVT Index molecule with 1 entity id argument</span>
+EAVT(e1).e.a.v.t.get === <span class="std">List</span>(
+  (e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, t1),
+  (e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, t2),
+  (e1, <span class="lit">":Golf/score"</span>, <span class="num">5.7</span>, t2)
+)
+
+<span class="cmt">// Maybe we are only interested in the attribute/value pairs:</span>
+EAVT(e1).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>),
+  (<span class="lit">":Golf/score"</span>, <span class="num">5.7</span>)
+)
+
+<span class="cmt">// Two arguments to narrow the search</span>
+EAVT(e1, <span class="lit">":Person/age"</span>).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>)
+)</pre></div><dl class="attributes block"><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
+      So omitting arguments constructing the Index object (like <code>EAVT.e.a.v.t.get</code>)
+      will throw an exception.<br>
+      Please use Datomics API if you need to return the whole database Index:<br>
+      <code>conn.db.datoms(datomic.Database.EAVT)</code></p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Index.scala#L1" target="_blank">Tests</a>
+    for more Index query examples.</p></span></dd></dl></div></li><li class="indented3 " name="molecule.generic.schema" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="schema"></a><a id="schema:schema"></a> <span class="permalink"><a href="../../molecule/generic/schema/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="schema/index.html" title="Generic Schema attribute interfaces of all arities."><span class="name">schema</span></a></span><p class="shortcomment cmt">Generic Schema attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Schema attribute interfaces of all arities.
+<br><br>
+The generic Schema interface provides attributes to build molecules that
+query the Schema structure of the current database.</p><pre><span class="cmt">// List of attribute entity ids</span>
+<span class="kw">val</span> attrIds: <span class="std">Seq</span>[<span class="std">Long</span>] = Schema.id.get
+
+<span class="cmt">// Attribute name elements</span>
+Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  <span class="cmt">// etc..</span>
+)
+
+<span class="cmt">// Datomic type and cardinality of attributes</span>
+Schema.a.tpe.card.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+)
+
+<span class="cmt">// Optional docs and attribute options</span>
+<span class="cmt">// These can be retrieved as mandatory or optional values</span>
+Schema.a
+      .index
+      .doc$
+      .unique$
+      .fulltext$
+      .isComponent$
+      .noHistory$
+      .get === <span class="std">List</span>(
+  (<span class="lit">":sales_Customer/name"</span>,
+    <span class="kw">true</span>,            <span class="cmt">// indexed</span>
+    <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),      <span class="cmt">// Fulltext search set so that we can search for names</span>
+    <span class="std">None</span>,            <span class="cmt">// Not a component</span>
+    <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>,
+    <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
+    <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
+    <span class="std">None</span>,                   <span class="cmt">// Fulltext search not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),             <span class="cmt">// Invoice is a component - owns invoice lines</span>
+    <span class="std">None</span>                    <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+)
+
+<span class="cmt">// Defined enum values</span>
+Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
+  <span class="lit">":Person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":Interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+)
+
+<span class="cmt">// Schema transaction times</span>
+Schema.t.tx.txInstant.get === <span class="std">List</span>(
+  (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
+  (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
+)</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"Country"</span>, <span class="lit">"Region"</span>, etc...)
+
+<span class="cmt">// Attributes in the "Person" namespace</span>
+Schema.ns_(<span class="lit">"Person"</span>).attr.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+
+<span class="cmt">// How many enum attributes?</span>
+Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related
+      to the current database are transparently filtered out from all Schema queries.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/SchemaTest.scala#L1" target="_blank">Tests</a>
+    for more Schema query examples.</p></span></dd></dl></div></li><li class="current-entities indented2"><span class="separator"></span> <a href="GenericLog.html" title="Container for Log object." class="trait"></a><a href="GenericLog.html" title="Container for Log object.">GenericLog</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log.html" title="Log interface." class="trait"></a><a href="Log.html" title="Log interface.">Log</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_0.html" title="Log interface to add a first generic attribute to molecule." class="trait"></a><a href="Log_0.html" title="Log interface to add a first generic attribute to molecule.">Log_0</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_1.html" title="Log interface to add a second generic attribute to molecule." class="trait"></a><a href="Log_1.html" title="Log interface to add a second generic attribute to molecule.">Log_1</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_2.html" title="" class="trait"></a><a href="Log_2.html" title="">Log_2</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_3.html" title="" class="trait"></a><a href="Log_3.html" title="">Log_3</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_4.html" title="" class="trait"></a><a href="Log_4.html" title="">Log_4</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_5.html" title="" class="trait"></a><a href="Log_5.html" title="">Log_5</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_6.html" title="" class="trait"></a><a href="Log_6.html" title="">Log_6</a></li><li class="current-entities indented2"><span class="separator"></span> <a href="Log_7.html" title="" class="trait"></a><a href="Log_7.html" title="">Log_7</a></li><li class="indented2 " name="molecule.input" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="input"></a><a id="input:input"></a> <span class="permalink"><a href="../../molecule/input/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../input/index.html" title="Input molecules awaiting input."><span class="name">input</span></a></span><p class="shortcomment cmt">Input molecules awaiting input.</p><div class="fullcomment"><div class="comment cmt"><p>Input molecules awaiting input.
+<br><br>
+Input molecules are molecules that awaits one or more inputs at runtime. When input value is applied,
+the input molecule is resolved and a standard molecule is returned that we can then call actions on.
+<br><br>
+Input molecule queries are cached by Datomic. So there is a runtime performance gain in using input molecules. Furthermore,
+input molecules are a good fit for re-use for queries where only a few parameters change.
+<br><br>
+Input molecules can await 1, 2 or 3 inputs and are constructed by applying the <a href="../expression/AttrExpressions$$qmark.html" name="molecule.expression.AttrExpressions.?" id="molecule.expression.AttrExpressions.?" class="extype">?</a> marker
+to attributes. If one marker is applied, we get a <a href="../input/InputMolecule_1.html" name="molecule.input.InputMolecule_1" id="molecule.input.InputMolecule_1" class="extype">InputMolecule_1</a>, 2 inputs creates
+an <a href="../input/InputMolecule_2.html" name="molecule.input.InputMolecule_2" id="molecule.input.InputMolecule_2" class="extype">InputMolecule_2</a> and 3 an <a href="../input/InputMolecule_3.html" name="molecule.input.InputMolecule_3" id="molecule.input.InputMolecule_3" class="extype">InputMolecule_3</a>.
+<br><br>
+The three input molecule interfaces come in arity-versions corresponding to the number of non-?-marked attributes
+in the input molecule. Let's see a simple example:</p><pre><span class="cmt">// Sample data</span>
+Person.name.age insert <span class="std">List</span>((<span class="lit">"Ben"</span>, <span class="num">42</span>), (<span class="lit">"Liz"</span>, <span class="num">34</span>))
+
+<span class="cmt">// Input molecule created at compile time. Awaits a name of type String</span>
+<span class="kw">val</span> ageOfPersons: InputMolecule_1.InputMolecule_1_01[<span class="std">String</span>, <span class="std">Int</span>] = m(Person.name_(?).age)
+
+<span class="cmt">// Resolved molecule. "Ben" input is matched against name attribute</span>
+<span class="kw">val</span> ageOfPersonsNamedBen: Molecule.Molecule01[<span class="std">Int</span>] = ageOfPersons.apply(<span class="lit">"Ben"</span>)
+
+<span class="cmt">// Calling action on resolved molecule.</span>
+<span class="cmt">// (Only age is returned since name was marked as tacit with the underscore notation)</span>
+ageOfPersonsNamedBen.get === <span class="std">List</span>(<span class="num">42</span>)
+
+<span class="cmt">// Or we can re-use the input molecule straight away</span>
+ageOfPersons(<span class="lit">"Liz"</span>).get === <span class="std">List</span>(<span class="num">34</span>)</pre></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.macros" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="macros"></a><a id="macros:macros"></a> <span class="permalink"><a href="../../molecule/macros/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../macros/index.html" title=""><span class="name">macros</span></a></span><div class="fullcomment"><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.ops" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="ops"></a><a id="ops:ops"></a> <span class="permalink"><a href="../../molecule/ops/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../ops/index.html" title="Internal operational helpers for transforming DSL to molecules."><span class="name">ops</span></a></span><p class="shortcomment cmt">Internal operational helpers for transforming DSL to molecules.</p><div class="fullcomment"><div class="comment cmt"><p>Internal operational helpers for transforming DSL to molecules.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.schema" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="schema"></a><a id="schema:schema"></a> <span class="permalink"><a href="../../molecule/schema/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../schema/index.html" title="Schema definition DSL and API."><span class="name">schema</span></a></span><p class="shortcomment cmt">Schema definition DSL and API.</p><div class="fullcomment"><div class="comment cmt"><p>Schema definition DSL and API.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li><li class="indented2 " name="molecule.transform" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="transform"></a><a id="transform:transform"></a> <span class="permalink"><a href="../../molecule/transform/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../transform/index.html" title="Internal transformers from DSL to Model/Query/Transaction/Datomic."><span class="name">transform</span></a></span><p class="shortcomment cmt">Internal transformers from DSL to Model/Query/Transaction/Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal transformers from DSL to Model/Query/Transaction/Datomic.
+<br><br>
+Molecule transforms custom boilerplate DSL constructs to Datomic queries in 3 steps:
+<br><br>
+Custom DSL molecule --&gt; Model --&gt; Query --&gt; Datomic query string</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="http://www.scalamolecule.org/dev/transformation/" target="_blank">http://www.scalamolecule.org/dev/transformation/</a></p></span></dd></dl></div></li><li class="indented2 " name="molecule.util" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="util"></a><a id="util:util"></a> <span class="permalink"><a href="../../molecule/util/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="../util/index.html" title="Internal database functions for Datomic."><span class="name">util</span></a></span><p class="shortcomment cmt">Internal database functions for Datomic.</p><div class="fullcomment"><div class="comment cmt"><p>Internal database functions for Datomic.</p></div><dl class="attributes block"><dt>Definition Classes</dt><dd><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></dd></dl></div></li></ul></div></div><div id="content"><body class="package value"><div id="definition"><div class="big-circle package">p</div><p id="owner"><a href="../index.html" name="molecule" id="molecule" class="extype">molecule</a></p><h1>generic<span class="permalink"><a href="../../molecule/generic/index.html" title="Permalink"><i class="material-icons"></i></a></span></h1></div><h4 id="signature" class="signature"><span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><span class="name">generic</span></span></h4><div id="comment" class="fullcommenttop"><div id="content-diagram-container" class="toggleContainer block diagram-container"><span class="toggle diagram-link">Content Hierarchy</span><div id="content-diagram" class="diagram hiddenContent"><svg id="graph1" class="package-diagram" width="800" height="600"></svg><script type="text/dot" id="dot1">
+digraph G {
+  
+  
+  node0 [URL="Log_7.html#inheritance-diagram-container", label="Log_7[A, B, C, D, E, F, G]", id="graph1_0", class="default", tooltip="molecule.generic.Log_7"] ;
+  node1 [URL="Log_6.html#inheritance-diagram-container", label="Log_6[A, B, C, D, E, F]", id="graph1_1", class="default", tooltip="molecule.generic.Log_6"] ;
+  node2 [URL="Log_5.html#inheritance-diagram-container", label="Log_5[A, B, C, D, E]", id="graph1_2", class="default", tooltip="molecule.generic.Log_5"] ;
+  node3 [URL="Log_4.html#inheritance-diagram-container", label="Log_4[A, B, C, D]", id="graph1_3", class="default", tooltip="molecule.generic.Log_4"] ;
+  node4 [URL="Log_3.html#inheritance-diagram-container", label="Log_3[A, B, C]", id="graph1_4", class="default", tooltip="molecule.generic.Log_3"] ;
+  node5 [URL="Log_2.html#inheritance-diagram-container", label="Log_2[A, B]", id="graph1_5", class="default", tooltip="molecule.generic.Log_2"] ;
+  node6 [URL="Log_1.html#inheritance-diagram-container", label="Log_1[A]", id="graph1_6", class="default", tooltip="molecule.generic.Log_1"] ;
+  node7 [URL="Log_0.html#inheritance-diagram-container", label="Log_0", id="graph1_7", class="default", tooltip="molecule.generic.Log_0"] ;
+  node8 [URL="Log.html#inheritance-diagram-container", label="Log", id="graph1_8", class="default", tooltip="molecule.generic.Log"] ;
+  
+  
+  node8 -> node7 [arrowtail="empty", dir="back", id="graph1_8_7", class="inheritance", tooltip="Log_0 is a subtype of Log"] ;
+  node8 -> node6 [arrowtail="empty", dir="back", id="graph1_8_6", class="inheritance", tooltip="Log_1[A] is a subtype of Log"] ;
+  node8 -> node5 [arrowtail="empty", dir="back", id="graph1_8_5", class="inheritance", tooltip="Log_2[A, B] is a subtype of Log"] ;
+  node8 -> node4 [arrowtail="empty", dir="back", id="graph1_8_4", class="inheritance", tooltip="Log_3[A, B, C] is a subtype of Log"] ;
+  node8 -> node3 [arrowtail="empty", dir="back", id="graph1_8_3", class="inheritance", tooltip="Log_4[A, B, C, D] is a subtype of Log"] ;
+  node8 -> node2 [arrowtail="empty", dir="back", id="graph1_8_2", class="inheritance", tooltip="Log_5[A, B, C, D, E] is a subtype of Log"] ;
+  node8 -> node1 [arrowtail="empty", dir="back", id="graph1_8_1", class="inheritance", tooltip="Log_6[A, B, C, D, E, F] is a subtype of Log"] ;
+  node8 -> node0 [arrowtail="empty", dir="back", id="graph1_8_0", class="inheritance", tooltip="Log_7[A, B, C, D, E, F, G] is a subtype of Log"] ;
+}
+</script><script>$("#inheritance-diagram").bind('beforeShow', function() {
+  if ($("svg#graph1").children().length == 0) {
+    var dot = document.querySelector("#dot1").text;
+    var svg = d3.select("#graph1");
+    var inner = svg.append("g");
+
+    // Set up zoom support
+    var zoom = d3.zoom()
+        .on("zoom", function() {
+          inner.attr("transform", d3.event.transform);
+        });
+    svg.call(zoom);
+
+    var render = new dagreD3.render();
+    var g = graphlibDot.read(dot);
+    render(inner, g);
+
+    inner.selectAll("g.node").each(function(v) {
+      // https://stackoverflow.com/questions/27381452/wrapping-existing-inline-svg-g-element-with-a-element
+      var tgt = $("#"+ g.node(v).id +" g.label text")[0];
+      var parent = tgt.parentNode;
+      var a = document.createElementNS('http://www.w3.org/2000/svg', 'a');
+      a.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', g.node(v).URL);
+      a.appendChild(tgt);
+      parent.appendChild(a);
+    });
+  }
+})</script></div></div></div><div id="template"><div id="allMembers"><div id="packages" class="package members"><h3>Package Members</h3><ol><li class="indented0 " name="molecule.generic.datom" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="datom"></a><a id="datom:datom"></a> <span class="permalink"><a href="../../molecule/generic/datom/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="datom/index.html" title="Generic Datom attribute interfaces of all arities."><span class="name">datom</span></a></span><p class="shortcomment cmt">Generic Datom attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Datom attribute interfaces of all arities.</p><p>"Generic attributes" are special pre-defined attributes that can
+be combined with custom attributes in molecules to return
+meta data:</p><pre><span class="cmt">// Get id of Ben entity with `e`</span>
+Person.e.name.get.head === (benEntityId, <span class="lit">"Ben"</span>)
+
+<span class="cmt">// When was Ben's age updated? Using `txInstant`</span>
+Person(benEntityId).age.txInstant.get.head === (<span class="num">42</span>, &lt;April <span class="num">4</span>, <span class="num">2019</span>&gt;) <span class="cmt">// (Date)</span>
+
+<span class="cmt">// With a history db we can access the transaction number `t` and</span>
+<span class="cmt">// assertion/retraction statusses with `op`</span>
+Person(benEntityId).age.t.op.getHistory === <span class="std">List</span>(
+  (<span class="num">41</span>, t1, <span class="kw">true</span>),  <span class="cmt">// age 41 asserted in transaction t1</span>
+  (<span class="num">41</span>, t2, <span class="kw">false</span>), <span class="cmt">// age 41 retracted in transaction t2</span>
+  (<span class="num">42</span>, t2, <span class="kw">true</span>)   <span class="cmt">// age 42 asserted in transaction t2</span>
+)</pre><p>Available generic attributes:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like ":Person/name" (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+</li></ul></div><dl class="attributes block"><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Datom.scala#L1" target="_blank">Tests</a>
+    for more generic attribute query examples.</p></span></dd></dl></div></li><li class="indented0 " name="molecule.generic.index" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="index"></a><a id="index:index"></a> <span class="permalink"><a href="../../molecule/generic/index/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="index/index.html" title="Datomic Index APIs in Molecule."><span class="name">index</span></a></span><p class="shortcomment cmt">Datomic Index APIs in Molecule.</p><div class="fullcomment"><div class="comment cmt"><p>Datomic Index APIs in Molecule.
+<br><br>
+Datomic maintains four indexes that contain ordered sets of datoms.
+Each of these indexes is named based on the sort order used:</p><ul><li><a href="index/EAVT.html" name="molecule.generic.index.EAVT" id="molecule.generic.index.EAVT" class="extype">EAVT</a> - Datoms sorted by Entity-Attribute-Value-Transaction</li><li><a href="index/AVET.html" name="molecule.generic.index.AVET" id="molecule.generic.index.AVET" class="extype">AVET</a> - Datoms sorted by Attribute-Value-Entity-Transaction</li><li><a href="index/AEVT.html" name="molecule.generic.index.AEVT" id="molecule.generic.index.AEVT" class="extype">AEVT</a> - Datoms sorted by Attribute-Entity-Value-Transaction</li><li><a href="index/VAET.html" name="molecule.generic.index.VAET" id="molecule.generic.index.VAET" class="extype">VAET</a> - "Reverse index" for reverse lookup of ref types</li></ul><p>Create an Index molecule by instantiating an Index object
+with one or more arguments in the order of the Index's elements. Datoms are
+returned as tuples of data depending of which generic attributes you add to the
+Index molecule:</p><pre><span class="cmt">// Create EAVT Index molecule with 1 entity id argument</span>
+EAVT(e1).e.a.v.t.get === <span class="std">List</span>(
+  (e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, t1),
+  (e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, t2),
+  (e1, <span class="lit">":Golf/score"</span>, <span class="num">5.7</span>, t2)
+)
+
+<span class="cmt">// Maybe we are only interested in the attribute/value pairs:</span>
+EAVT(e1).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>),
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>),
+  (<span class="lit">":Golf/score"</span>, <span class="num">5.7</span>)
+)
+
+<span class="cmt">// Two arguments to narrow the search</span>
+EAVT(e1, <span class="lit">":Person/age"</span>).a.v.get === <span class="std">List</span>(
+  (<span class="lit">":Person/age"</span>, <span class="num">42</span>)
+)</pre></div><dl class="attributes block"><dt>Note</dt><dd><span class="cmt"><p>The Molecule Index API's don't allow returning the whole Index/the whole database.
+      So omitting arguments constructing the Index object (like <code>EAVT.e.a.v.t.get</code>)
+      will throw an exception.<br>
+      Please use Datomics API if you need to return the whole database Index:<br>
+      <code>conn.db.datoms(datomic.Database.EAVT)</code></p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/Index.scala#L1" target="_blank">Tests</a>
+    for more Index query examples.</p></span></dd></dl></div></li><li class="indented0 " name="molecule.generic.schema" group="Ungrouped" fullComment="yes" data-isabs="false" visbl="pub"><a id="schema"></a><a id="schema:schema"></a> <span class="permalink"><a href="../../molecule/generic/schema/index.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">package</span></span> <span class="symbol"><a href="schema/index.html" title="Generic Schema attribute interfaces of all arities."><span class="name">schema</span></a></span><p class="shortcomment cmt">Generic Schema attribute interfaces of all arities.</p><div class="fullcomment"><div class="comment cmt"><p>Generic Schema attribute interfaces of all arities.
+<br><br>
+The generic Schema interface provides attributes to build molecules that
+query the Schema structure of the current database.</p><pre><span class="cmt">// List of attribute entity ids</span>
+<span class="kw">val</span> attrIds: <span class="std">Seq</span>[<span class="std">Long</span>] = Schema.id.get
+
+<span class="cmt">// Attribute name elements</span>
+Schema.a.part.ns.nsFull.attr.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"sales"</span>, <span class="lit">"Customer"</span>, <span class="lit">"sales_Customer"</span>, <span class="lit">"name"</span>),
+  <span class="cmt">// etc..</span>
+)
+
+<span class="cmt">// Datomic type and cardinality of attributes</span>
+Schema.a.tpe.card.get === <span class="std">List</span> (
+  (<span class="lit">":sales_Customer/name"</span>, <span class="lit">"string"</span>, <span class="lit">"one"</span>),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>, <span class="lit">"ref"</span>, <span class="lit">"many"</span>),
+)
+
+<span class="cmt">// Optional docs and attribute options</span>
+<span class="cmt">// These can be retrieved as mandatory or optional values</span>
+Schema.a
+      .index
+      .doc$
+      .unique$
+      .fulltext$
+      .isComponent$
+      .noHistory$
+      .get === <span class="std">List</span>(
+  (<span class="lit">":sales_Customer/name"</span>,
+    <span class="kw">true</span>,            <span class="cmt">// indexed</span>
+    <span class="lit">"Customer name"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,            <span class="cmt">// Uniqueness not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),      <span class="cmt">// Fulltext search set so that we can search for names</span>
+    <span class="std">None</span>,            <span class="cmt">// Not a component</span>
+    <span class="std">None</span>             <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+  (<span class="lit">":accounting_Invoice/invoiceLine"</span>,
+    <span class="kw">true</span>,                   <span class="cmt">// indexed</span>
+    <span class="lit">"Ref to Invoice lines"</span>, <span class="cmt">// doc</span>
+    <span class="std">None</span>,                   <span class="cmt">// Uniqueness not set</span>
+    <span class="std">None</span>,                   <span class="cmt">// Fulltext search not set</span>
+    <span class="std">Some</span>(<span class="kw">true</span>),             <span class="cmt">// Invoice is a component - owns invoice lines</span>
+    <span class="std">None</span>                    <span class="cmt">// History is preserved (noHistory not set)</span>
+    ),
+)
+
+<span class="cmt">// Defined enum values</span>
+Schema.a.enum.get.groupBy(_._1).map(g <span class="kw">=&gt;</span> g._1 -&gt; g._2) === <span class="std">Map</span>(
+  <span class="lit">":Person/gender"</span> -&gt; <span class="std">List</span>(<span class="lit">"female"</span>, <span class="lit">"male"</span>),
+  <span class="lit">":Interests/sports"</span> -&gt; <span class="std">List</span>(<span class="lit">"golf"</span>, <span class="lit">"basket"</span>, <span class="lit">"badminton"</span>)
+)
+
+<span class="cmt">// Schema transaction times</span>
+Schema.t.tx.txInstant.get === <span class="std">List</span>(
+  (t1, tx1, &lt;Date: <span class="num">2018</span>-<span class="num">11</span>-<span class="num">07</span> <span class="num">09</span>:<span class="num">28</span>:<span class="num">10</span>&gt;), <span class="cmt">// Initial schema transaction</span>
+  (t2, tx2, &lt;Date: <span class="num">2019</span>-<span class="num">01</span>-<span class="num">12</span> <span class="num">12</span>:<span class="num">43</span>:<span class="num">27</span>&gt;), <span class="cmt">// Additional schema attribute definitions...</span>
+)</pre><p>Apply expressions to narrow the returned selection of Schema data:</p><pre><span class="cmt">// Namespaces in the "gen" partition (partition name tacit)</span>
+Schema.part_(<span class="lit">"location"</span>).ns.get === <span class="std">List</span>(<span class="lit">"Country"</span>, <span class="lit">"Region"</span>, etc...)
+
+<span class="cmt">// Attributes in the "Person" namespace</span>
+Schema.ns_(<span class="lit">"Person"</span>).attr.get === <span class="std">List</span>(<span class="lit">"name"</span>, <span class="lit">"age"</span>, <span class="lit">"hobbies"</span>, etc...)
+
+<span class="cmt">// How many enum attributes?</span>
+Schema.enum_.a(count).get === <span class="std">List</span>(<span class="num">2</span>)</pre></div><dl class="attributes block"><dt>Note</dt><dd><span class="cmt"><p>Schema attributes defined in Datomic's bootstrap process that are not related
+      to the current database are transparently filtered out from all Schema queries.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/generic/SchemaTest.scala#L1" target="_blank">Tests</a>
+    for more Schema query examples.</p></span></dd></dl></div></li></ol></div><div id="types" class="types members"><h3>Type Members</h3><ol><li class="indented0 " name="molecule.generic.GenericLog" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="GenericLogextendsAnyRef"></a><a id="GenericLog:GenericLog"></a> <span class="permalink"><a href="../../molecule/generic/GenericLog.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="GenericLog.html" title="Container for Log object."><span class="name">GenericLog</span></a><span class="result"> extends <span name="scala.AnyRef" class="extype">AnyRef</span></span></span><p class="shortcomment cmt">Container for Log object.</p></li><li class="indented0 " name="molecule.generic.Log" group="Ungrouped" fullComment="yes" data-isabs="true" visbl="pub"><a id="LogextendsGenericNs"></a><a id="Log:Log"></a> <span class="permalink"><a href="../../molecule/generic/Log.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log.html" title="Log interface."><span class="name">Log</span></a><span class="result"> extends <span name="molecule.generic.GenericNs" class="extype">GenericNs</span></span></span><p class="shortcomment cmt">Log interface.</p><div class="fullcomment"><div class="comment cmt"><p>Log interface.
+<br><br>
+Datomic's database log is a recording of all transaction data in historic order,
+organized for efficient access by transaction.
+<br><br>
+Instantiate Log object with tx range arguments between <code>from</code> (inclusive) and <code>until</code> (exclusive),
+and add Log attributes to be returned as tuples of data:</p><pre><span class="cmt">// Data from transaction t1 until t4 (exclusive)</span>
+Log(<span class="std">Some</span>(t1), <span class="std">Some</span>(t4)).t.e.a.v.op.get === <span class="std">List</span>(
+  (t1, e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
+
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
+
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
+)
+
+<span class="cmt">// If `from` is None, the range starts from the beginning</span>
+Log(<span class="std">None</span>, <span class="std">Some</span>(t3)).v.e.t.get === <span class="std">List</span>(
+  (t1, e1, <span class="lit">":Person/name"</span>, <span class="lit">"Ben"</span>, <span class="kw">true</span>),
+  (t1, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">true</span>),
+
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>)
+
+  <span class="cmt">// t3 not included</span>
+)
+
+<span class="cmt">// If `until` is None, the range goes to the end</span>
+Log(<span class="std">Some</span>(t2), <span class="std">None</span>).v.e.t.get === <span class="std">List</span>(
+  <span class="cmt">// t1 not included</span>
+
+  (t2, e2, <span class="lit">":Person/name"</span>, <span class="lit">"Liz"</span>, <span class="kw">true</span>),
+  (t2, e2, <span class="lit">":Person/age"</span>, <span class="num">37</span>, <span class="kw">true</span>),
+
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">41</span>, <span class="kw">false</span>),
+  (t3, e1, <span class="lit">":Person/age"</span>, <span class="num">42</span>, <span class="kw">true</span>)
+)</pre><p>Log attributes available:</p><ul><li><b><code>e</code></b> - Entity id (Long)</li><li><b><code>a</code></b> - Full attribute name like ":Person/name" (String)</li><li><b><code>v</code></b> - Value of Datoms (Any)</li><li><b><code>t</code></b> - Transaction pointer (Long/Int)</li><li><b><code>tx</code></b> - Transaction entity id (Long)</li><li><b><code>txInstant</code></b> - Transaction wall clock time (java.util.Date)</li><li><b><code>op</code></b> - Operation status: assertion (true) / retraction (false)
+</li></ul></div><dl class="attributes block"><dt>Note</dt><dd><span class="cmt"><p>Contrary to the Datomic Log which is map of individual transactions
+the Molecule Log implementation is flattened to be one continuous list
+of transaction data. This is to have a transparent unified return type
+as all other molecules returning data. Data can always be grouped if needed.</p></span></dd></dl></div></li><li class="indented0 " name="molecule.generic.Log_0" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_0extendsLogwithoutIndex.OutIndex_0"></a><a id="Log_0:Log_0"></a> <span class="permalink"><a href="../../molecule/generic/Log_0.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_0.html" title="Log interface to add a first generic attribute to molecule."><span class="name">Log_0</span></a><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_0.html" name="molecule.boilerplate.outIndex.OutIndex_0" id="molecule.boilerplate.outIndex.OutIndex_0" class="extype">OutIndex_0</a></span></span><p class="shortcomment cmt">Log interface to add a first generic attribute to molecule.</p></li><li class="indented0 " name="molecule.generic.Log_1" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_1[A]extendsLogwithoutIndex.OutIndex_1[A]"></a><a id="Log_1[A]:Log_1[A]"></a> <span class="permalink"><a href="../../molecule/generic/Log_1.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_1.html" title="Log interface to add a second generic attribute to molecule."><span class="name">Log_1</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_1.html" name="molecule.boilerplate.outIndex.OutIndex_1" id="molecule.boilerplate.outIndex.OutIndex_1" class="extype">OutIndex_1</a>[<span name="molecule.generic.Log_1.A" class="extype">A</span>]</span></span><p class="shortcomment cmt">Log interface to add a second generic attribute to molecule.</p></li><li class="indented0 " name="molecule.generic.Log_2" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_2[A,B]extendsLogwithoutIndex.OutIndex_2[A,B]"></a><a id="Log_2[A,B]:Log_2[A,B]"></a> <span class="permalink"><a href="../../molecule/generic/Log_2.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_2.html" title=""><span class="name">Log_2</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_2.html" name="molecule.boilerplate.outIndex.OutIndex_2" id="molecule.boilerplate.outIndex.OutIndex_2" class="extype">OutIndex_2</a>[<span name="molecule.generic.Log_2.A" class="extype">A</span>, <span name="molecule.generic.Log_2.B" class="extype">B</span>]</span></span></li><li class="indented0 " name="molecule.generic.Log_3" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_3[A,B,C]extendsLogwithoutIndex.OutIndex_3[A,B,C]"></a><a id="Log_3[A,B,C]:Log_3[A,B,C]"></a> <span class="permalink"><a href="../../molecule/generic/Log_3.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_3.html" title=""><span class="name">Log_3</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_3.html" name="molecule.boilerplate.outIndex.OutIndex_3" id="molecule.boilerplate.outIndex.OutIndex_3" class="extype">OutIndex_3</a>[<span name="molecule.generic.Log_3.A" class="extype">A</span>, <span name="molecule.generic.Log_3.B" class="extype">B</span>, <span name="molecule.generic.Log_3.C" class="extype">C</span>]</span></span></li><li class="indented0 " name="molecule.generic.Log_4" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_4[A,B,C,D]extendsLogwithoutIndex.OutIndex_4[A,B,C,D]"></a><a id="Log_4[A,B,C,D]:Log_4[A,B,C,D]"></a> <span class="permalink"><a href="../../molecule/generic/Log_4.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_4.html" title=""><span class="name">Log_4</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_4.html" name="molecule.boilerplate.outIndex.OutIndex_4" id="molecule.boilerplate.outIndex.OutIndex_4" class="extype">OutIndex_4</a>[<span name="molecule.generic.Log_4.A" class="extype">A</span>, <span name="molecule.generic.Log_4.B" class="extype">B</span>, <span name="molecule.generic.Log_4.C" class="extype">C</span>, <span name="molecule.generic.Log_4.D" class="extype">D</span>]</span></span></li><li class="indented0 " name="molecule.generic.Log_5" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_5[A,B,C,D,E]extendsLogwithoutIndex.OutIndex_5[A,B,C,D,E]"></a><a id="Log_5[A,B,C,D,E]:Log_5[A,B,C,D,E]"></a> <span class="permalink"><a href="../../molecule/generic/Log_5.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_5.html" title=""><span class="name">Log_5</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_5.html" name="molecule.boilerplate.outIndex.OutIndex_5" id="molecule.boilerplate.outIndex.OutIndex_5" class="extype">OutIndex_5</a>[<span name="molecule.generic.Log_5.A" class="extype">A</span>, <span name="molecule.generic.Log_5.B" class="extype">B</span>, <span name="molecule.generic.Log_5.C" class="extype">C</span>, <span name="molecule.generic.Log_5.D" class="extype">D</span>, <span name="molecule.generic.Log_5.E" class="extype">E</span>]</span></span></li><li class="indented0 " name="molecule.generic.Log_6" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_6[A,B,C,D,E,F]extendsLogwithoutIndex.OutIndex_6[A,B,C,D,E,F]"></a><a id="Log_6[A,B,C,D,E,F]:Log_6[A,B,C,D,E,F]"></a> <span class="permalink"><a href="../../molecule/generic/Log_6.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_6.html" title=""><span class="name">Log_6</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_6.html" name="molecule.boilerplate.outIndex.OutIndex_6" id="molecule.boilerplate.outIndex.OutIndex_6" class="extype">OutIndex_6</a>[<span name="molecule.generic.Log_6.A" class="extype">A</span>, <span name="molecule.generic.Log_6.B" class="extype">B</span>, <span name="molecule.generic.Log_6.C" class="extype">C</span>, <span name="molecule.generic.Log_6.D" class="extype">D</span>, <span name="molecule.generic.Log_6.E" class="extype">E</span>, <span name="molecule.generic.Log_6.F" class="extype">F</span>]</span></span></li><li class="indented0 " name="molecule.generic.Log_7" group="Ungrouped" fullComment="no" data-isabs="true" visbl="pub"><a id="Log_7[A,B,C,D,E,F,G]extendsLogwithoutIndex.OutIndex_7[A,B,C,D,E,F,G]"></a><a id="Log_7[A,B,C,D,E,F,G]:Log_7[A,B,C,D,E,F,G]"></a> <span class="permalink"><a href="../../molecule/generic/Log_7.html" title="Permalink"><i class="material-icons"></i></a></span> <span class="modifier_kind"><span class="modifier"></span> <span class="kind">trait</span></span> <span class="symbol"><a href="Log_7.html" title=""><span class="name">Log_7</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>, <span name="C">C</span>, <span name="D">D</span>, <span name="E">E</span>, <span name="F">F</span>, <span name="G">G</span>]</span><span class="result"> extends <a href="Log.html" name="molecule.generic.Log" id="molecule.generic.Log" class="extype">Log</a> with <a href="../boilerplate/outIndex$$OutIndex_7.html" name="molecule.boilerplate.outIndex.OutIndex_7" id="molecule.boilerplate.outIndex.OutIndex_7" class="extype">OutIndex_7</a>[<span name="molecule.generic.Log_7.A" class="extype">A</span>, <span name="molecule.generic.Log_7.B" class="extype">B</span>, <span name="molecule.generic.Log_7.C" class="extype">C</span>, <span name="molecule.generic.Log_7.D" class="extype">D</span>, <span name="molecule.generic.Log_7.E" class="extype">E</span>, <span name="molecule.generic.Log_7.F" class="extype">F</span>, <span name="molecule.generic.Log_7.G" class="extype">G</span>]</span></span></li></ol></div></div><div id="inheritedMembers"></div><div id="groupedMembers"><div name="Ungrouped" class="group"><h3>Ungrouped</h3></div></div></div><div id="tooltip"></div><div id="footer"></div></body></div></div></div></body></html>

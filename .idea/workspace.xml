@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.22.8">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/setup.md" afterDir="false" />
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Resolve deprecations">
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/submenu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,7 +427,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.11.0" />
     <MESSAGE value="Re-design and expansion of docs" />
     <MESSAGE value="0.13.0" />
     <MESSAGE value="0.13.1" />
@@ -455,7 +451,8 @@
     <MESSAGE value="v0.22.3" />
     <MESSAGE value="v0.22.6" />
     <MESSAGE value="v0.22.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.22.8" />
+    <MESSAGE value="Resolve deprecations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve deprecations" />
   </component>
   <component name="masterDetails">
     <states>
