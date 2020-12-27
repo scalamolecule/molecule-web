@@ -1,22 +1,22 @@
 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
 
   <div style="position:absolute;top: 15px; left: 0px;">
-    {{ with .GetParam "up" }}
+    {{ with .Param "up" }}
     <a class="navigation-control up" href="{{.}}" style="position:absolute; top:0px; left: 56px">
       <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
     {{ end }}
-    {{ with .GetParam "prev" }}
+    {{ with .Param "prev" }}
     <a class="navigation-control left" href="{{.}}" style="position:absolute; top: 15px; left: 20px">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
     {{ end }}
-    {{ with .GetParam "next" }}
+    {{ with .Param "next" }}
     <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 15px; left: 89px">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
     {{ end }}
-    {{ with .GetParam "down" }}
+    {{ with .Param "down" }}
     <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 30px; left: 54px;">
       <span class="glyphicon glyphicon-chevron-down"></span>
     </a>
