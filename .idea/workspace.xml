@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Resolve deprecations">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Add static resources">
+      <change afterPath="$PROJECT_DIR$/layouts/partials/front/2-about-examples.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/front/3-one-api-dbs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/front/5-schema-transact-query.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ThinItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/manual/attributes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/manual/attributes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/_default/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/2-molecule-datomic.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/4-molecule-datomic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/3-overview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/4-examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/6-links.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/submenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +68,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1RD84YACP3NO5d5IsHF8QGFsLn0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
     <option name="autoscrollFromSource" value="true" />
@@ -52,7 +89,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/layouts/partials/front" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -64,18 +101,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/layouts/partials/front" />
       <recent name="$PROJECT_DIR$/content/manual/quick-start" />
       <recent name="$PROJECT_DIR$/content/manual/debug" />
       <recent name="$PROJECT_DIR$/content/manual" />
       <recent name="$PROJECT_DIR$/content/manual/generic" />
-      <recent name="$PROJECT_DIR$/static/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/vendor" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/old" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -427,7 +464,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Re-design and expansion of docs" />
     <MESSAGE value="0.13.0" />
     <MESSAGE value="0.13.1" />
     <MESSAGE value="0.13.2" />
@@ -452,7 +488,8 @@
     <MESSAGE value="v0.22.6" />
     <MESSAGE value="v0.22.8" />
     <MESSAGE value="Resolve deprecations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolve deprecations" />
+    <MESSAGE value="Add static resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add static resources" />
   </component>
   <component name="masterDetails">
     <states>

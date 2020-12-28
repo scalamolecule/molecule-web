@@ -1,0 +1,58 @@
+<div style="align:center;padding-top:0px;padding-bottom:50px;background-color:rgba(143, 143, 143, 0.08)">
+
+    <div class="container" style="padding-top:0px">
+
+        <div class="col-sm-4 column " style="">
+
+            <h2>Define schema</h2>
+            <a href="/manual/schema">Define and compile schema</a> (seldom)
+
+            <pre><code>trait Person {
+  val name    = oneString
+  val age     = oneInt
+  val address = one[Address]
+}
+trait Address {
+  val street = oneString
+}
+</code></pre>
+            <pre><code>> cd yourProjectRoot
+> sbt compile
+</code></pre>
+
+        </div>
+
+        <div class="col-sm-4 column " style="">
+
+            <h2>Transact</h2>
+            <a href="/manual/crud">Transact data</a>
+            <pre><code class="language-scala">Person.name.age.Address.street insert
+  List(
+    ("Lisa", 20, "Broadway"),
+    ("John", 22, "Fifth Avenue")
+  )
+</code></pre>
+
+
+        </div>
+
+
+        <div class="col-sm-4 column " style="">
+
+            <h2>Query</h2>
+
+            <a href="/manual/attributes/basics">Query data</a>
+            <pre><code class="language-scala">Person.name.age.Address.street.get ===
+  List(
+    ("Lisa", 20, "Broadway"),
+    ("John", 22, "Fifth Avenue")
+  )
+</code></pre>
+
+
+        </div>
+
+
+    </div>
+
+</div>

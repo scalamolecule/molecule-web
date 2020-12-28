@@ -1,34 +1,10 @@
-<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm ">
-
-  <div style="position:absolute;top: 15px; left: 0px;">
-    {{ with .Param "up" }}
-    <a class="navigation-control up" href="{{.}}" style="position:absolute; top:0px; left: 56px">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    {{ end }}
-    {{ with .Param "prev" }}
-    <a class="navigation-control left" href="{{.}}" style="position:absolute; top: 15px; left: 20px">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    {{ end }}
-    {{ with .Param "next" }}
-    <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 15px; left: 89px">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-    {{ end }}
-    {{ with .Param "down" }}
-    <a class="navigation-control right" href="{{.}}" style="position:absolute; top: 30px; left: 54px;">
-      <span class="glyphicon glyphicon-chevron-down"></span>
-    </a>
-    {{ end }}
-  </div>
-
+<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
   <ul class="bs-docs-sidenav">{{ $currentNode := . }}
     {{ range where .Site.Menus.main "Identifier" .Section }}
     {{ if .HasChildren }}
     {{ range .Children }}
     {{if $currentNode.IsMenuCurrent "main" . }}
-    <li class="active"><b>{{ .Name }}</b></li>
+    <li class="active" aria-current="page"><b>{{ .Name }}</b></li>
     {{if .HasChildren}}
     <ul class="level2">{{ range .Children }}
       <li><a href="{{.URL}}">{{ .Name }}</a></li>
