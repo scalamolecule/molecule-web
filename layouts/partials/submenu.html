@@ -42,6 +42,11 @@
             {{if $currentNode.IsMenuCurrent "main" . }}
               <li class="active" aria-current="page"><b>{{ .Name }}</b></li>
               {{if .HasChildren}}
+<!--    2-->
+<!--      {{ $currentNode.IsMenuCurrent "main" . }}-->
+<!--      {{ $currentNode.IsPage }}-->
+<!--      -&#45;&#45;-->
+<!--      {{ . }}-->
                 <ul class="level2">{{ range .Children }}
                   <li><a href="{{.URL}}">{{ .Name }}</a></li>
                   {{end}}
@@ -49,15 +54,23 @@
               {{end}}
             {{else}}
               <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-              {{if .HasChildren}}
-<!--                <ul class="level2">{{ range .Children }}-->
-<!--                    {{if $currentNode.IsMenuCurrent "main" . }}-->
-<!--                      <li class="active"><b>{{ .Name }}</b></li>-->
-<!--                    {{else}}-->
-<!--                      <li><a href="{{ .URL }}">{{ .Name }}</a></li>-->
-<!--                    {{end}}-->
-<!--                  {{end}}-->
-<!--                </ul>-->
+              {{if and .HasChildren $currentNode.IsPage }}
+<!--3-->
+<!--      {{ $currentNode.IsMenuCurrent "main" . }}-->
+<!--      {{ $currentNode.IsPage }}-->
+<!--      -&#45;&#45;-->
+<!--      {{ . }}-->
+
+
+                <ul class="level2">{{ range .Children }}
+                    {{if $currentNode.IsMenuCurrent "main" . }}
+                      <li class="active"><b>{{ .Name }}</b></li>
+                    {{else}}
+                      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{end}}
+                  {{end}}
+                </ul>
+
               {{end}}
             {{end}}
           {{end}}

@@ -3,7 +3,7 @@ title: "Seattle1"
 weight: 20
 menu:
   main: 
-    parent: community
+    parent: tutorials
 identifier: seattle
 ---
 

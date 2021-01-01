@@ -5,6 +5,7 @@ weight: 10
 menu:
   main:
     parent: intro-compare
+identifier: intro-compare-datomic
 ---
 
 # Compare with Datomic/Datalog
