@@ -27,25 +27,15 @@
     {{ with .OutputFormats.Get "RSS" }}
     <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $title }}"/>
     {{ end }}
-    <script type='text/javascript'>//<![CDATA[
-$(window).load(function(){
-$('body').scrollspy({
-    target: '.bs-docs-sidebar',
-    offset: 40
-});
-});//]]>
-</script>
 </head>
 <body>
 <header class="bs-docs-header">
     <div class="container">
-        <div class="col-md-12 column" style="padding-left:0px; padding-right:0px; margin-bottom:15px">
+        <div class="col-md-12 column" style="padding-left:0px; padding-right:0px">
             {{ partial "menu.html" . }}
 
-            <div class="col-md-2 column" style="padding-top:18px;padding-right:0px;">
-                <a href="/changelog" style="margin-top:-2px;">
-                    v0.23.0
-                </a>
+            <div class="col-sm-3 column" style="padding-top:13px;padding-right:0px;text-align:right;display:inline-block">
+                <a href="/changelog" style="margin-top:-2px;color:#999">v0.23.0</a>
                 <a href="https://github.com/scalamolecule/molecule" target="_blank">
                     <img src="/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"
                          style="margin-top:-6px;padding-left:15px;opacity:0.6">

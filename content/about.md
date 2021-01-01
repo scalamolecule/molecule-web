@@ -8,11 +8,9 @@ title: "About"
 
 ### Creator
 
-Molecule is created by Marc Grue who both plays the double bass in the Gothenburg Symphony Orchestra of Sweden and 
-programs a lot in Scala.
+Molecule is created by Marc Grue who both plays the double bass in the Gothenburg Symphony Orchestra of Sweden and programs a lot in Scala.
 
-The plan is to use
-Molecule as the optimal database access DSL for a big website for all classical musicians that Marc works on.
+The plan is to use Molecule as the optimal database access DSL for a big website for all classical musicians that Marc works on.
 
 ![](/img/about/mg.jpg)
 
@@ -30,8 +28,7 @@ About Marc:
 
 ### Further development
 
-More developers are welcome to join with [Pull requests](https://github.com/scalamolecule/molecule/pulls) and 
-questions/discussions on [gitter](https://gitter.im/scalamolecule/Lobby) in the [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl).
+More developers are welcome to join with [Pull requests](https://github.com/scalamolecule/molecule/pulls) and questions/discussions on [gitter](https://gitter.im/scalamolecule/Lobby) in the [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl).
 
 ### License
 Molecule is licensed under the [Apache License 2.0](http://en.wikipedia.org/wiki/Apache_license)

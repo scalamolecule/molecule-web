@@ -1,14 +1,21 @@
 {{ partial "header.html" . }}
 
-<div class="container" style="padding-top:20px">
+<div class="container">
 
-<div class="col-sm-10 column" style="padding-left:8px;">
-	{{ .Content }}
-</div>
+    <div class="col-sm-10" style="padding-left:8px;">
+        {{ .Content }}
+    </div>
 
-<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px;padding-right: 0px;">
-  {{ partial "submenu.html" . }}
-</div>
+
+    <!--    <div class="col-sm-2" style="padding-left:24px;padding-top:50px;padding-right: 0px;position:sticky;top:71px">-->
+<!--    <div class="col-sm-2" style="padding-left:24px;padding-top:50px;padding-right: 0px;position:sticky;top:-20px">-->
+<!--        {{ partial "submenu0.html" . }}-->
+<!--    </div>-->
+
+    <!--    <div class="col-sm-3" style="padding-left:24px;padding-top:50px;padding-right: 0px;position:sticky;top:71px">-->
+    <div class="col-sm-2" style="padding-left:24px;padding-right: 0px;position:sticky;top:115px">
+        {{ partial "submenu.html" . }}
+    </div>
 
 </div> <!--container-->
 

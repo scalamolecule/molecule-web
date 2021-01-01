@@ -1,12 +1,12 @@
 ---
-title: "Dev"
+title: "Intro"
 weight: 10
 menu:
   main:
-    parent: dev
+    parent: intro
 ---
 
-# Developer
+# Introduction to Molecule
 
 The basic philosophy of Molecule is to think from the User's perspective towards a technical solution. 
 

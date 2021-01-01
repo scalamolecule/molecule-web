@@ -1,12 +1,6 @@
 #!/bin/bash
 
 
-echo -e "\033[0;32mCopying API...\033[0m"
-
-# Copy api folder from molecule project
-rm -r ./static/api
-cp -R ../molecule/molecule/jvm/target/scala-2.13/api ./static/
-
 echo -e "\033[0;32mBuilding public Hugo site...\033[0m"
 
 # DON'T delete the public folder! Kills the submodule...

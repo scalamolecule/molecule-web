@@ -1,0 +1,38 @@
+<nav class="bs-docs-sidebar">
+
+  <ul class="bs-docs-sidenav">{{ $currentNode := . }}
+    {{ range where .Site.Menus.main "Identifier" .Section }}
+      {{ if .HasChildren }}
+
+
+        {{ range .Children }}
+          {{if $currentNode.IsMenuCurrent "main" . }}
+            <li class="active" aria-current="page"><b>{{ .Name }}</b></li>
+            {{if .HasChildren}}
+              <ul class="level2">{{ range .Children }}
+                <li><a href="{{.URL}}">{{ .Name }}</a></li>
+                {{end}}
+              </ul>
+            {{end}}
+          {{else}}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{if .HasChildren}}
+              <ul class="level2">{{ range .Children }}
+                  {{if $currentNode.IsMenuCurrent "main" . }}
+                    <li class="active"><b>{{ .Name }}</b></li>
+                  {{else}}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                  {{end}}
+                {{end}}
+              </ul>
+            {{end}}
+          {{end}}
+        {{end}}
+
+
+      {{end}}
+    {{end}}
+  </ul>
+
+</nav>
+

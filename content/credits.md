@@ -8,7 +8,7 @@ title: "Credits"
 
 ### Author(s)
 
-Molecule is created by Marc Grue (bass player in the Gothenburg Symphony orchestra and a dedicated Scala programmer).
+Molecule is created by Marc Grue (bass player in the Gothenburg Symphony Orchestra and a dedicated Scala programmer).
 
 
 ### Inspired by

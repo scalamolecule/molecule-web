@@ -1,7 +1,6 @@
 ---
-date: 2014-05-14T02:13:50Z
 title: "Community"
-weight: 33
+weight: 10
 menu:
   main:
     parent: community
@@ -9,17 +8,31 @@ menu:
 
 # Community
 
-The [Molecule google list](https://groups.google.com/forum/#!forum/molecule-dsl) is open to questions and discussions about Molecule and other Scala-based Datomic resources.
+- [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl)
+- [Molecule gitter]("https://gitter.im/scalamolecule/Lobby")
 
 
-### Resources
-- [Issues](https://github.com/scalamolecule/molecule/issues) - please feel free to raise issues/report bugs or make pull requests
+### Links
 - [Datomic](http://datomic.com) website
 
 
 
-### Suggestions
+### Videos
 
-You're welcome to raise [documentation issues](https://github.com/scalamolecule/molecule-docs/issues) 
-and/or [Molecule code isues](https://github.com/scalamolecule/molecule/issues).
+- 2017-04-25 [Molecule](https://www.youtube.com/watch?v=JjX8DYvQRXQ) (v 0.11), presentation by Marc Grue (unfortunately bad sound).
 
+
+### Tutorials
+
+- [Seattle](tutorials/seattle/)
+
+
+### Code
+
+- [Molecule code](https://github.com/scalamolecule/molecule)
+- [Molecule code isues](https://github.com/scalamolecule/molecule/issues)
+
+
+### Documentation
+
+- [Molecule documentation issues](https://github.com/scalamolecule/molecule-docs/issues)
