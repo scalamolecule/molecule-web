@@ -58,7 +58,7 @@ h1, .h1 {
     /*font-family: "Work Sans", Arial, sans-serif;*/
     font-family: "Jura", Arial, sans-serif;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 52px;
     color: #222;
 }
 h2, .h2 {
@@ -67,7 +67,7 @@ h2, .h2 {
     /*font-family: "Earth2073", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     /*font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;*/
     font-family: "Jura", Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 36px;
     color: #222;
 }
@@ -91,14 +91,13 @@ pre {
     background-color: rgba(255, 206, 150, 0.2);
     border-radius: 4px;
     overflow: auto;
-    padding: 15px;
+    padding: 13px;
     word-wrap: normal;
+    margin-bottom: 15px;
 }
 pre.clean {
-    border: 0;
-    background: none;
-    font-size: 20px;
-    overflow: auto;
+    background-color: #f9f9f9;
+    color: #777;
 }
 code {
     padding: 1px 4px;
@@ -133,7 +132,7 @@ blockquote {
     padding: 15px 20px 15px 15px;
     margin-bottom: 30px;
     margin-top: 20px;
-    margin-left: -26px;
+    Xmargin-left: -26px;
     margin-right: 0px;
 }
 

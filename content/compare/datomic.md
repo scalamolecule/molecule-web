@@ -1,50 +1,50 @@
 ---
 date: 2014-05-14T02:13:50Z
 title: "Datomic"
-weight: 10
+weight: 20
 menu:
   main:
-    parent: intro-compare
-identifier: intro-compare-datomic
+    parent: compare
 ---
 
-# Compare with Datomic/Datalog
+# Molecule vs Datomic/Datalog
 
 Even though Molecule is adapting to Datomic we'll have a look the other way around to see how Datomic compares to Molecule. 
 
-[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/coretests/examples/seattle/SeattleQueryTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
+[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala) from which we will pick a few examples based on the Seattle tutorial examples.
 
 ### Querying _for_ attribute values
 
 The most basic query is to ask for entities with some attribute values:
 
-```
+<pre class="clean">
 // Datalog
 [:find  ?b ?c (distinct ?d)
  :where [?a :Community/name ?b]
         [?a :Community/url ?c]
         [?a :Community/category ?d]]
-```
+</pre>
 In Molecule we simply use the namespace name and add the attribute names:
 ```
 // Molecule
 Community.name.url.category
 ```
       
-Datalog has a `:find` and `:where` section similar to `select` and `where` in the SQL world. The `:find` section defines which values to return and the where section defines one or more clauses filtering the result set. 
+Datalog has a `:find` and `:where` section similar to `select` and `where` in the SQL world. The `:find` section defines which values to return and the `:where` section defines one or more clauses filtering the result set. 
 
-In this case we asked for the values of variable `?b`, `?c` and `?d` each one bound in its where clause. With molecule we use the three attribute names all associated to the `Community` namespace.
+In this case we asked for the values of variable `?b`, `?c` and `?d` each one bound in its where clause. With molecule we use the three attribute names all associated with the `Community` namespace.
 
 
 ### Querying _by_ attribute values
 
 Let's query by an enumerated value for the `type` attribute:
 
-```
+
+<pre class="clean">
 [:find  ?b
  :where [?a :Community/name ?b]
         [?a :Community/type ":Community.type/twitter"]]
-```
+</pre>
 
 ```
 Community.name.type_("twitter")
@@ -55,8 +55,8 @@ Note how we add an underscore to the `type` attribute to tell Molecule that we w
 Since the `type` attribute is defined as en enumeration Molecule checks the "twitter" value at _compile time_ against the defined enumeration values that we have definied in our schema for the `Community` namespace to ensure that "twitter" is one of the enums. If it is not, our molecule won't compile and we'll get an error showing the available enum values.
  
 For a many-cardinality attribute like `category` Datalog applies logical OR with Datalog rules:
- 
-```
+
+<pre class="clean">
 [:find  ?b
  :in    $ %
  :where [?a :Community/name ?b]
@@ -68,7 +68,7 @@ List(
   2 [[(rule1 ?a) [?a :Community/category "news"]]
      [(rule1 ?a) [?a :Community/category "arts"]]]
 )
-```
+</pre>
 In Molecule we can apply the two values either separated with `or` or commas:
 
 ```
@@ -80,7 +80,7 @@ Community.name.category_("news", "arts")
 
 ### Querying across references
 
-```
+<pre class="clean">
 [:find  ?b ?e2
  :where [?a :Community/name ?b]
         [?a :Community/neighborhood ?c]
@@ -88,7 +88,7 @@ Community.name.category_("news", "arts")
         [?d :District/region ?e]
         [?e :db/ident ?e1]
         [(.getName ^clojure.lang.Keyword ?e1) ?e2]]
-```
+</pre>
 
 ```
 Community.name.Neighborhood.District.region
@@ -99,7 +99,7 @@ Community.name.Neighborhood.District.region
 
 Community input molecule awaiting some type value
 
-```
+<pre class="clean">
 [:find  ?b ?c2
  :in    $ ?c
  :where [?a :Community/name ?b]
@@ -112,7 +112,7 @@ List(
   1 datomic.db.Db@xxx
   2 :Community.type/twitter
 )
-```
+</pre>
 
 ```
 val communitiesOfType  = m(Community.name.type(?))
@@ -121,7 +121,7 @@ val twitterCommunities = communitiesOfType("twitter")
 
 Multiple input values for one attribute - logical OR
 
-```
+<pre class="clean">
 [:find  ?b ?c2
  :in    $ ?c
  :where [?a :Community/name ?b]
@@ -134,7 +134,7 @@ List(
   1 datomic.db.Db@xxx
   2 :Community.type/twitter
 )
-```
+</pre>
 
 ```
 m(Community.name.`type`(?)).apply("facebook_page" or "twitter")
@@ -143,7 +143,7 @@ m(Community.name.`type`(?)).apply("facebook_page" or "twitter")
 
 Single tuple of input values for two attributes - logical AND
 
-```
+<pre class="clean">
 [:find  ?b
  :in    $ [[ ?c ?d ]]
  :where [?a :Community/name ?b]
@@ -155,7 +155,7 @@ List(
   1 datomic.db.Db@xxx
   2 [[:Community.type/email_list, :Community.orgtype/community]]
 )
-```
+</pre>
 
 ```
 m(Community.name.type_(?).orgtype_(?))("email_list" and "community")
@@ -164,7 +164,7 @@ m(Community.name.type_(?).orgtype_(?))("email_list" and "community")
 
 Multiple tuple of input values for two attributes - logical AND
 
-```
+<pre class="clean">
 [:find  ?b ?c2 ?d2
  :in    $ [[ ?c ?d ]]
  :where [?a :Community/name ?b]
@@ -181,7 +181,7 @@ List(
   2 [[:Community.type/email_list, :Community.orgtype/community], 
      [:Community.type/website, :Community.orgtype/commercial]]
 )
-```
+</pre>
 
 ```
 m(Community.name.`type`(?).orgtype(?))
@@ -191,12 +191,12 @@ m(Community.name.`type`(?).orgtype(?))
 
 ### Invoking functions in queries
 
-```
+<pre class="clean">
 [:find  ?b
  :where [?a :Community/name ?b]
         [(.compareTo ^String ?b "C") ?b2]
         [(< ?b2 0)]]
-```
+</pre>
 
 ```
 Community.name.<("C")
@@ -206,10 +206,10 @@ Community.name.<("C")
 
 ### Fulltext search
 
-```
+<pre class="clean">
 [:find  ?b
  :where [(fulltext $ :Community/name "Wallingford") [[ ?a ?b ]]]]
-```
+</pre>
 
 ```
 Community.name.contains("Wallingford")
@@ -217,12 +217,12 @@ Community.name.contains("Wallingford")
 
 Fulltext search on many-attribute (`category`)
 
-```
+<pre class="clean">
 [:find  ?b (distinct ?d)
  :where [?a :Community/name ?b]
         [?a :Community/type ":Community.type/website"]
         [(fulltext $ :Community/category "food") [[ ?a ?d ]]]]
-```
+</pre>
 
 ```
 Community.name.type_("website").category.contains("food")
@@ -234,7 +234,7 @@ Community.name.type_("website").category.contains("food")
 ### Querying with rules (logical OR)
 
 Social media communities
-```
+<pre class="clean">
 [:find  ?b
  :in    $ %
  :where [?a :Community/name ?b]
@@ -246,7 +246,7 @@ List(
   2 [[(rule1 ?a) [?a :Community/type ":Community.type/twitter"]]
      [(rule1 ?a) [?a :Community/type ":Community.type/facebook_page"]]]
 )
-```
+</pre>
 
 ```
 Community.name.type_("twitter" or "facebook_page")
@@ -254,7 +254,7 @@ Community.name.type_("twitter" or "facebook_page")
 
 Social media communities in southern regions
 
-```
+<pre class="clean">
 [:find  ?b
  :in    $ %
  :where [?a :Community/name ?b]
@@ -272,7 +272,7 @@ List(
      [(rule2 ?e) [?e :District/region ":District.region/s"]]
      [(rule2 ?e) [?e :District/region ":District.region/se"]]]
 )
-```
+</pre>
 
 ```
 Community.name.type_("twitter" or "facebook_page")
@@ -281,7 +281,7 @@ Community.name.type_("twitter" or "facebook_page")
 
 Parameterized
 
-```
+<pre class="clean">
 [:find  ?b
  :in    $ %
  :where [?a :Community/name ?b]
@@ -301,7 +301,7 @@ List(
      [(rule2 ?e) [?e :District/region ":District.region/s"]]
      [(rule2 ?e) [?e :District/region ":District.region/se"]]]
 )
-```
+</pre>
 
 ```
 m(Community.name.type_(?).Neighborhood.District.region_(?))
@@ -312,10 +312,10 @@ m(Community.name.type_(?).Neighborhood.District.region_(?))
 
 ### Working with time
 
-```
+<pre class="clean">
 [:find  ?b
  :where [?a :db/txInstant ?b]]
-```
+</pre>
 
 ```
 Db.txInstant
@@ -324,7 +324,7 @@ Db.txInstant
 
 ### Inserting data
 
-```
+<pre class="clean">
 List(
   List(  :db/add,   #db/id[:db.part/user -1000001],   :Community/name        ,   AAA                             )
   List(  :db/add,   #db/id[:db.part/user -1000001],   :Community/url         ,   myUrl                           )
@@ -338,7 +338,7 @@ List(
   List(  :db/add,   #db/id[:db.part/user -1000003],   :District/name         ,   myDistrict                      )
   List(  :db/add,   #db/id[:db.part/user -1000003],   :District/region       ,   :District.region/nw             )
 )
-```
+</pre>
 
 ```
 Community
@@ -353,7 +353,7 @@ Community
 
 Multiple entities:
 
-```
+<pre class="clean">
 List(
   List(  :db/add,   #db/id[:db.part/user -1000001],   :Community/name        ,   DDD Blogging Georgetown                        )
   List(  :db/add,   #db/id[:db.part/user -1000001],   :Community/url         ,   http://www.blogginggeorgetown.com/             )
@@ -378,7 +378,7 @@ List(
   List(  :db/add,   #db/id[:db.part/user -1000006],   :District/name         ,   Magnolia/Queen Anne                            )
   List(  :db/add,   #db/id[:db.part/user -1000006],   :District/region       ,   :District.region/w                             )
 )
-```
+</pre>
 
 ```
 Community.name.url.`type`.orgtype.category.Neighborhood.name.District.name.region insert List(
@@ -394,12 +394,12 @@ Community.name.url.`type`.orgtype.category.Neighborhood.name.District.name.regio
 
 Updating one-attribute
 
-```
+<pre class="clean">
 List(
   List(  :db/add,   17592186045649,   :Community/name,   belltown 2  )
   List(  :db/add,   17592186045649,   :Community/url ,   url 2       )
 )
-```
+</pre>
 
 ```
 Community(belltownId).name("belltown 2").url("url 2").update
@@ -407,26 +407,26 @@ Community(belltownId).name("belltown 2").url("url 2").update
 
 Updating many-attribute
 
-```
+<pre class="clean">
 List(
   List(  :db/retract,   17592186045649,   :Community/category,   news       )
   List(  :db/add    ,   17592186045649,   :Community/category,   Cool news  )
 )
-```
+</pre>
 
 ```
 Community(belltownId).category("news" -> "Cool news").update
 ```
 
 Update multiple values of many-attribute
-```
+<pre class="clean">
 List(
   List(  :db/retract,   17592186045649,   :Community/category,   Cool news          )
   List(  :db/add    ,   17592186045649,   :Community/category,   Super cool news    )
   List(  :db/retract,   17592186045649,   :Community/category,   events             )
   List(  :db/add    ,   17592186045649,   :Community/category,   Super cool events  )
 )
-```
+</pre>
 
 ```
 Community(belltownId).category(
@@ -436,14 +436,14 @@ Community(belltownId).category(
 ```
 
 Update multiple values of many-attribute
-```
+<pre class="clean">
 List(
   List(  :db/retract,   17592186045649,   :Community/category,   Cool news          )
   List(  :db/add    ,   17592186045649,   :Community/category,   Super cool news    )
   List(  :db/retract,   17592186045649,   :Community/category,   events             )
   List(  :db/add    ,   17592186045649,   :Community/category,   Super cool events  )
 )
-```
+</pre>
 
 ```
 Community(belltownId).category(
@@ -454,36 +454,36 @@ Community(belltownId).category(
 
 
 Add a value to a many-attribute
-```
+<pre class="clean">
 List(
   List(  :db/add,   17592186045649,   :Community/category,   extra category  )
 )
-```
+</pre>
 
 ```
 Community(belltownId).category.assert("extra category").update
 ```
 
 Remove value from a many-attribute
-```
+<pre class="clean">
 List(
   List(  :db/retract,   17592186045649,   :Community/category,   Super cool events  )
 )
-```
+</pre>
 
 ```
 Community(belltownId).category.retract("Super cool events").update
 ```
 
 Mixing updates and deletes
-```
+<pre class="clean">
 List(
   List(  :db/add    ,   17592186045649,   :Community/name    ,   belltown 3                      )
   List(  :db/retract,   17592186045649,   :Community/url     ,   http://www.belltownpeople.com/  )
   List(  :db/retract,   17592186045649,   :Community/category,   events                          )
   List(  :db/retract,   17592186045649,   :Community/category,   news                            )
 )
-```
+</pre>
 
 ```
 Community(belltownId).name("belltown 3").url().category().update

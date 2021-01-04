@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Menu re-arrangement. API externalized">
-      <change afterPath="$PROJECT_DIR$/content/admin/_index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/blog/_index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/deploy/_index.md" afterDir="false" />
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Base content structure">
+      <change afterPath="$PROJECT_DIR$/content-old/blog2/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content-old/community/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/community/seattle.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/intro/building-blocks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/intro/molecule-datomic.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/molecule-logo-m-75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo/molecule-logo-m-75a.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/community/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/community/tutorials/seattle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/compare/datomic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/compare/datomic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/submenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/admin/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/attributes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/attributes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/crud.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/crud.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/entities.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/entities.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/generic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/generic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/relationships.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/schema.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/schema.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/time.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/time.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/code/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/transactions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/community/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/tutorials.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/community/tutorials.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/community/tutorials/seattle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/deploy/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/deploy/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/dev/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/boilerplate.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/dev/boilerplate.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/transformation.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-old/dev/transformation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/datomic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/datomic.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/gremlin.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/gremlin.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/sql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/sql/slick.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/compare/slick.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/_default/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/entity/entity1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/entity/entity2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/entity/entity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/entity/entity4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/entity/entity5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/entityref.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/entityref.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/entityrefs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/entityrefs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/ref.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/relationships/ref.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/transactions/5.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,17 +135,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/content/intro" />
+      <recent name="$PROJECT_DIR$/content/code" />
+      <recent name="$PROJECT_DIR$/content-old" />
       <recent name="$PROJECT_DIR$/content/dev" />
       <recent name="$PROJECT_DIR$/content/community/tutorials" />
-      <recent name="$PROJECT_DIR$/layouts/partials" />
-      <recent name="$PROJECT_DIR$/layouts/partials/front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/dev" />
-      <recent name="$PROJECT_DIR$/content/setup" />
+      <recent name="$PROJECT_DIR$/content/compare" />
       <recent name="$PROJECT_DIR$/content/intro" />
-      <recent name="$PROJECT_DIR$/content/community" />
-      <recent name="$PROJECT_DIR$/content/manual" />
+      <recent name="$PROJECT_DIR$/content/setup" />
+      <recent name="$PROJECT_DIR$/content-old" />
+      <recent name="$PROJECT_DIR$/content" />
     </key>
   </component>
   <component name="RunManager">
@@ -444,7 +497,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="0.13.2" />
     <MESSAGE value="0.14.0" />
     <MESSAGE value="0.15.0" />
     <MESSAGE value="0.15.1" />
@@ -469,7 +521,8 @@
     <MESSAGE value="Add static resources" />
     <MESSAGE value="Frontpage and sidebar re-designed" />
     <MESSAGE value="Menu re-arrangement. API externalized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu re-arrangement. API externalized" />
+    <MESSAGE value="Base content structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base content structure" />
   </component>
   <component name="masterDetails">
     <states>

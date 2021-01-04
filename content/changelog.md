@@ -1,5 +1,4 @@
 ---
-date: 2020-10-31T02:13:50Z
 title: "Changelog"
 ---
 
@@ -8,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-01-03 v0.23.0 [Targeting Datomic Peer + Peer-Server + Cloud](#42)
 - 2020-10-31 v0.22.8 [Upgrade to ScalaJS 1.3](#41)
 - 2020-07-17 v0.22.7 [Allow all implicit widening conversions for numeric variables](#40)
 - 2020-07-17 v0.22.6 [BigDecimal accepting non-decimal numbers correctly](#39)
@@ -49,6 +49,19 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Targeting Datomic Peer + Peer-Server + Cloud {#42}
+
+_2021-01-03 v0.23.0_
+
+Major upgrade making Molecule fully compliant with all three Datomic database systems:
+
+- Peer (On-Prem, Java API)
+- Peer Server (Clojure Client API)
+- Cloud / Dev-Local (Clojure Client API)
+
+All 1400+ tests pass with all three systems. See test spec on how to set up each system.
 
 
 ## [☝︎](#top) Upgrade to ScalaJS 1.3 {#41}
@@ -557,7 +570,7 @@ To aid constructing molecules in your code, all attributes defined now also have
  
 ### Input molecules correctly implemented 
 
-Input molecules are now semantically correctly implemented and thoroughly tested ([1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3)).
+Input molecules are now semantically correctly implemented and thoroughly tested ([1 input](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input3)).
 
 ### Interfaces updated and streamlined
 
@@ -1148,6 +1161,6 @@ _2014-12-25 [v0.2.0](https://github.com/scalamolecule/molecule/releases/tag/v0.2
 
 
 
-## [☝︎](#top) Initial commit - [Seattle tutorial](/resources/tutorials/seattle/) {#1}
+## [☝︎](#top) Initial commit - [Seattle tutorial](/community/seattle/) {#1}
 _2014-07-02 [v0.1.0](https://github.com/scalamolecule/molecule/releases/tag/v0.1.0)_
 

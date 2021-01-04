@@ -1,5 +1,5 @@
 ---
-title: "Seattle1"
+title: "Seattle tutorial"
 weight: 20
 menu:
   main: 

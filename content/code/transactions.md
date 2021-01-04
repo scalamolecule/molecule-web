@@ -18,7 +18,7 @@ val e5 = Person.name("Fred").likes("pizza").save.eid
 
 Then the following assertions are made:
 
-![](/img/transactions/1.jpg)
+![](/img/page/transactions/1.png)
 
 The 4th column of the quintuplets is the entity id of the transaction where the fact was asserted or retracted. In this case the two facts about Fred was asserted in transaction `tx4`. `tx4` is an entity id (`Long`) exactly as the entity id of fred `e5`.
 
@@ -83,7 +83,7 @@ date1.before(date2) === true
 
 ## Transaction bundle
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TxBundle.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxBundle.scala)
 
 ### Multiple actions in one atomic transaction
 
@@ -204,7 +204,7 @@ Updating 2 to 20 for instance creates two Datoms, one retracting the old value 2
 
 ## Transaction functions
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TxFunctions.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxFunctions.scala)
 
 
 
@@ -498,12 +498,12 @@ Updating the from-account balance from 100 to 80 for instance creates two Datoms
 
 ## Transaction meta data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/transaction/TxMetaData.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxMetaData.scala)
 
 
 As we saw, a [transaction](/manual/transactions/) in Datomic is also an entity with a timestamp fact. Since it's an entity as any of our own entities, we can even add more facts that simply share the entity id of the transaction:
 
-![](/img/transactions/2.jpg)
+![](/img/page/transactions/2.png)
 
 ### Save
 
@@ -532,7 +532,7 @@ This could read: _"A person Fred liking pizza was saved by Lisa as part of a sur
 
 Molecule simply saves the tx meta data attributes `user` and `uc` with the transaction entity id `tx4` as their entity id:
 
-![](/img/transactions/5.jpg)
+![](/img/page/transactions/3.png)
 
 
 

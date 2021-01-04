@@ -15,12 +15,12 @@ down: /manual/relationships
 
 An entity in Datomic is a group of Datoms/facts that share an entity id:
  
-![](/img/entity/entity4.jpg)
+![](/img/page/entity/entity1.png)
 
 
 Attributes with any seemingly unrelated namespaces can group as entities by simply sharing the entity id:
 
-![](/img/entity/entity5.jpg)
+![](/img/page/entity/entity2.png)
 
 This demonstrates that Datomic/Molecule Namespaces are not like Tables in SQL. The above entity for instance has attributes asserted from 2 different namespaces that could be completely unrelated/have no reference to each other. Attributes from any number of namespaces could be asserted sharing the same entity id.
 

@@ -149,7 +149,7 @@ More on [retract](/manual/crud/retract/)...
 
 ## Save
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Save.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Save.scala)
 
 In Molecule we can populate a molecule with data and save it:
 
@@ -278,7 +278,7 @@ Person.name.likes$(None).age.get === List(
 
 ## Insert
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Insert.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Insert.scala)
 
 Data can be inserted by making a molecule that matches the values of each row.
 
@@ -525,7 +525,7 @@ For this simple example, the original molecule with an optional `likes` attribut
 
 ### Get Json formatted Data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/json)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/json)
 
 We can get data in json format directly from the database by calling `getJson` on a molecule. So instead of converting tuples of data to json with some 3rd party library we can call `getJson` and pass the json data string directly to an Angular table for instance.
 
@@ -718,7 +718,7 @@ Update multiple entities in one transaction so that they have the same values:
 Person(bobId, annId).age(25).memberOf("cool club").update
 ```
 
-See [tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleEntities.scala) for variations of updating multiple entities.
+See [tests](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleEntities.scala) for variations of updating multiple entities.
 
 
 ### Asynchronous update
@@ -781,13 +781,13 @@ Update-tests with:
 
 - [Various types](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/update)
 - [Map attribute](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/updateMap)
-- [Multiple attributes](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleAttributes.scala)
-- [Multiple entities](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/UpdateMultipleEntities.scala)
+- [Multiple attributes](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleAttributes.scala)
+- [Multiple entities](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleEntities.scala)
 
 
 ## Retract
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/crud/Retract.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Retract.scala)
 
 
 In Datomic, retracting a fact saves a retracted Datom with the `added` operation set to `false`. Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/manual/time/asof-since/) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since none is deleted!

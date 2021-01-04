@@ -110,9 +110,7 @@ Schema.part.ns.attr.fulltext$.doc.get === List(
 
 Attribute values are saved as quintuplets of information in Datomic:
 
-![](/img/generic/datom.png)
-<br><br>
-
+![](/img/page/generic/datom.png)
 
 
 
@@ -405,29 +403,27 @@ The generic Schema interface provides attributes to build a Schema molecule that
 
 The following Schema attributes can be used to build Schema molecules:
 
-<table>
-<th>
-    <tr><td><i><b>Attribute</i></b>         &nbsp;&nbsp;</td> <td><b><i>Description</i></b></td> <td><b><i>Example value</i></b></td></tr>
-</th>
-<tr><td>`id`         &nbsp;&nbsp;</td> <td>Attribute definition entity id</td><td>`Long`</td></tr>
-<tr><td>`a`          &nbsp;&nbsp;</td> <td>(Partition-)Namespace-prefixed attribute name &nbsp;&nbsp;&nbsp;</td> <td>":ind_Person/name" or ":Person/name" if no partitions</td></tr>
-<tr><td>`part`       &nbsp;&nbsp;</td> <td>Partition name.</td> <td>"ind" or "" if no partitions</td></tr>
-<tr><td>`nsFull`     &nbsp;&nbsp;</td> <td>Namespace name with partition prefix</td> <td>"ind_Person" or "Person" if no partitions</td></tr>
-<tr><td>`ns`         &nbsp;&nbsp;</td> <td>Namespace name</td> <td>"Person"</td></tr>
-<tr><td>`attr`       &nbsp;&nbsp;</td> <td>Attribute name</td> <td>"name"</td></tr>
-<tr><td>`tpe`        &nbsp;&nbsp;</td> <td>Attribute Datomic type</td> <td>See types below </td></tr>
-<tr><td>`card`       &nbsp;&nbsp;</td> <td>Attribute cardinality</td> <td>"one"/"many"</td></tr>
-<tr><td>`doc`        &nbsp;&nbsp;</td> <td>Attribute documentation string</td> <td>`String`</td></tr>
-<tr><td>`index`      &nbsp;&nbsp;</td> <td>Attribute index status</td> <td>true / not set</td></tr>
-<tr><td>`unique`     &nbsp;&nbsp;</td> <td>Attribute uniqueness status</td> <td>true / not set</td></tr>
-<tr><td>`fulltext`   &nbsp;&nbsp;</td> <td>Attribute fulltext search status</td> <td>true / not set</td></tr>
-<tr><td>`isComponent`&nbsp;&nbsp;</td> <td>Attribute isComponent status</td> <td>true / not set</td></tr>
-<tr><td>`noHistory`  &nbsp;&nbsp;</td> <td>Attribute noHistory status</td> <td>true / not set</td></tr>
-<tr><td>`enum`       &nbsp;&nbsp;</td> <td>Attribute enum values</td> <td>`String`</td></tr>
-<tr><td>`t`          &nbsp;&nbsp;</td> <td>Attribute definition transaction point in time</td> <td>`Long` / `Int`</td></tr>
-<tr><td>`tx`         &nbsp;&nbsp;</td> <td>Attribute definition transaction entity id</td> <td>`Long`</td></tr>
-<tr><td>`txInstant`  &nbsp;&nbsp;</td> <td>Attribute definition transaction wall-clock time</td> <td>`java.util.Date`</td></tr>
-</table>&nbsp; <!-- hack to force markdown handling inside table -->
+| Attribute                       | Description                                                      | Example value                                         |
+| :-                              | :-                                                               | :-                                                    |
+| `id`                            | Attribute definition entity id                                   | `Long`                                                |
+| `a`                             | (Partition-)Namespace-prefixed attribute name &nbsp;&nbsp;&nbsp; | ":ind_Person/name" or ":Person/name" if no partitions |
+| `part`                          | Partition name.                                                  | "ind" or "" if no partitions                          |
+| `nsFull`                        | Namespace name with partition prefix                             | "ind_Person" or "Person" if no partitions             |
+| `ns`                            | Namespace name                                                   | "Person"                                              |
+| `attr`                          | Attribute name                                                   | "name"                                                |
+| `tpe`                           | Attribute Datomic type                                           | See types below                                       |
+| `card`                          | Attribute cardinality                                            | "one"/"many"                                          |
+| `doc`                           | Attribute documentation string                                   | `String`                                              |
+| `index`                         | Attribute index status                                           | true / not set                                        |
+| `unique`                        | Attribute uniqueness status                                      | true / not set                                        |
+| `fulltext`                      | Attribute fulltext search status                                 | true / not set                                        |
+| `isComponent`&nbsp;&nbsp;&nbsp; | Attribute isComponent status                                     | true / not set                                        |
+| `noHistory`                     | Attribute noHistory status                                       | true / not set                                        |
+| `enum`                          | Attribute enum values                                            | `String`                                              |
+| `t`                             | Attribute definition transaction point in time                   | `Long` / `Int`                                        |
+| `tx`                            | Attribute definition transaction entity id                       | `Long`                                                |
+| `txInstant`                     | Attribute definition transaction wall-clock time                 | `java.util.Date`                                      |
+
 
 
 
@@ -461,23 +457,21 @@ Schema.a.tpe.card.get === List (
 Scala `Int` and `Long` are both represented as Datomic type `long`:
 
 
-<table>
-<th>
-    <tr><td><b>Datomic type</b>&nbsp;&nbsp;&nbsp;&nbsp;</td> <td><b>Scala type</b></td></tr>
-</th>
-<tr><td><i>string                   </i></td> <td>`String`</td></tr>
-<tr><td><i>long                     </i></td> <td>`Int`</td></tr>
-<tr><td><i>long                     </i></td> <td>`Long`</td></tr>
-<tr><td><i>float                    </i></td> <td>`Float`</td></tr>
-<tr><td><i>double                   </i></td> <td>`Double`</td></tr>
-<tr><td><i>bigint                   </i></td> <td>`BigInt`</td></tr>
-<tr><td><i>bigdec                   </i></td> <td>`BigDecimal`</td></tr>
-<tr><td><i>boolean&nbsp;&nbsp;&nbsp;</i></td> <td>`Boolean`</td></tr>
-<tr><td><i>instant                  </i></td> <td>`java.util.Date`</td></tr>
-<tr><td><i>uuid                     </i></td> <td>`java.util.UUID`</td></tr>
-<tr><td><i>uri                      </i></td> <td>`java.net.URI`</td></tr>
-<tr><td><i>ref                      </i></td> <td>`Long`</td></tr>
-</table>&nbsp; <!-- hack to force markdown handling inside table -->
+| Datomic type &nbsp;&nbsp;&nbsp; | Scala type       |
+| :-                              | :-               |
+| _string_                        | `String`         |
+| _long_                          | `Int`            |
+| _long_                          | `Long`           |
+| _float_                         | `Float`          |
+| _double_                        | `Double`         |
+| _bigint_                        | `BigInt`         |
+| _bigdec_                        | `BigDecimal`     |
+| _boolean_                       | `Boolean`        |
+| _instant_                       | `java.util.Date` |
+| _uuid_                          | `java.util.UUID` |
+| _uri_                           | `java.net.URI`   |
+| _ref_                           | `Long`           |
+
 
 
 ### Optional docs and attribute options

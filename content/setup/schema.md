@@ -3,13 +3,7 @@ title: "Schema"
 weight: 30
 menu:
   main:
-    parent: code
-    identifier: schema
-    
-up:   /manual/setup
-prev: /manual/setup
-next: /manual/schema/transaction
-down: /manual/attributes
+    parent: setup
 ---
 
 # Schema
@@ -18,7 +12,7 @@ A [Datomic schema](http://docs.datomic.com/schema.html) defines the set of possi
 
 In Molecule we make this definition in a Schema definition file:
 
-### Schema definition file
+## Schema definition file
 
 Molecule provides an intuitive and type-safe dsl to model your schema in a Schema definition file. After each change you make in this file you need to compile your project with `sbt compile` so that the sbt-plugin can create a Molecule DSL from your definitions.
 
@@ -194,7 +188,7 @@ one[<Ref-namespace>]    many[<Ref-namespace>]
 In the example above we saw a reference from Community to Neighborhood defined as `one[Neighborhood]`. We would for instance likely define an Order/OrderLine relationship in an Order namespace as `many[OrderLine]`.
 
 
-## Attribute options
+### Attribute options
 
 Each attribute can also have some extra options:
 
@@ -320,7 +314,7 @@ Util.map(":db/ident"             , ":gen",
 Partition examples with Molecule:
 
 - [partitioned schema definition](https://github.com/scalamolecule/molecule/blob/master/coretests/src/main/scala/molecule/coretests/schemaDef/schema/PartitionTestDefinition.scala)
-- [partition tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/schemaDef/partition.scala)
+- [partition tests](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/schemaDef/partition.scala)
 
 More about [partitions in Datomic](https://docs.datomic.com/on-prem/indexes.html#partitions).
 
@@ -336,7 +330,7 @@ implicit val conn = recreateDbFrom(SeattleSchema)
 The returned connection to the database is saved in an implicit val. Molecule method calls need an implicit database connection to be in scope so our above implicit conn object will make it possible to create and operate on molecules in the following code.
 
 
-### Managing databases
+## Managing databases
 
 Datomic databases are created with a database name so that we can later refer to a specific database. In the above creation example, a random database name was created which is convenient for testing purposes.
 

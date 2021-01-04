@@ -10,79 +10,10 @@ menu:
 # Attributes
 
 
-Molecules are built by chaining attributes together with the builder pattern. Here are some groups of different attribute types and their use with links to their manual pages:
+_[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/attr/Attribute.scala)_
 
-<br>
+Molecules are built by chaining attributes together with the builder pattern. 
 
-[Attribute basics](/manual/attributes/basics), return types, arity, cardinality ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala))
-```
-val persons: List[(String, Int)] = Person.name.age.get
-```
-<br>
-
-[Mandatory/Tacit/Optional](/manual/attributes/modes) attributes ([tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala))
-```
-Person.name.age.get  // all required values              ("mandatory value")
-Person.name.age_.get // age is required but not returned ("tacit value")
-Person.name.age$.get // optional age returned            ("optional value")
-```
-<br>
-
-[Map attributes](/manual/attributes/mapped) - mapped attribute values
-([tests](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/attrMap))
-```
-Person.id.name.get.head === (
-  1, 
-  Map(
-    "en" -> "Dmitri Shostakovich",
-    "de" -> "Dmitri Schostakowitsch",
-    "fr" -> "Dmitri Chostakovitch",
-    "es" -> "Dmitri Shostakóvich"
-  )
-)
-```
-<br>
-
-[Expressions](/manual/attributes/expressions) - filter attribute values with expressions
-([tests](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/expression))
-```
-Person.age(42)                  // equality
-Person.name.contains("John")    // fulltext search
-Person.age.!=(42)               // negation
-Person.age.<(42)                // comparison
-Person.age(nil)                 // nil (null)
-Person.name("John" or "Jonas")  // OR-logic
-```
-<br>
-
-[Aggregates](/manual/attributes/aggregates) - aggregate attribute values
-([tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala))
-```
-Person.age(min) 
-Person.age(max) 
-// rand, sample, count, countDistinct, sum, avg, median, variance, stddev
-```
-<br>
-
-[Parameterize](/manual/attributes/parameterized) - re-use molecules and let Datomic cache queries and optimize performance
-(tests: 
-[1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1),
-[2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2),
-[3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3))
-```
-val person = m(Person.name(?).age(?))
-
-// Re-use `person` input molecule
-val Johan  = person("John", 33).get.head
-val Lisa   = person("Lisa", 27).get.head
-```
-
-
-## Building molecules
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/Attribute.scala)
-
-When we have defined a schema, Molecule generates the necessary boilerplate code so that we can build "molecular data structures" by building sequences of Attributes separated with dots (the "builder pattern").
 
 We could for instance build a molecule representing the data structure of Persons with name, age and gender Attributes:
 
@@ -213,7 +144,7 @@ This way we can switch on and off individual attributes from the result set with
 
 #### 3. Optional `attr$`
 
-[tests..](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/attr/OptionalValues.scala)
+[tests..](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/attr/OptionalValues.scala)
 
 
 If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
@@ -273,7 +204,7 @@ There's a broad range of ways we can query mapped attributes and you can see a l
 
 ### Equality
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/equality)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/equality)
 
 We can apply values to Attributes in order to filter the data structures we are looking for. We could for instance find people who like pizza:
 
@@ -315,7 +246,7 @@ Person.age(List(40, 41, 42))
 
 ### Fulltext search
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Fulltext.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Fulltext.scala)
 
 
 If we add the `fulltext` option to a String attribute definition Datomic will index the text strings saved so that we can do fulltext searches across all values. We could for instance search for Community names containing the word "Town" in their name:
@@ -338,7 +269,7 @@ Also the following common words are not considered:
 
 ### Negation
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Negation.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Negation.scala)
 
 We can exclude a certain attribute value like in "Persons that are not 42 years old":
 
@@ -359,7 +290,7 @@ Person.age.!=(List(40, 41, 42))
 
 ### Comparison
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Comparison.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Comparison.scala)
 
 We can filer attribute values that satisfy comparison expressions:
 ```
@@ -376,7 +307,7 @@ Community.name.<("C").get(3) === List(
 
 ### Null
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Null.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Null.scala)
 
 We can look for non-asserted attributes (Null values) as in "Persons that have no age asserted" by applying an empty value to an attribute:
 ```
@@ -419,7 +350,7 @@ Person.birthday(date)
 
 ## Aggregates
 
-[Core tests](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/expression/Aggregates.scala) |
+[Core tests](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Aggregates.scala) |
 [Example tests](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Aggregates.scala)
 
 Molecule wraps Datomic's native aggregate functions by applying special aggregate keyword objects to the attribute we want to aggregate on.
@@ -521,9 +452,9 @@ Person.age(sample(3)) // 3 sample persons (without duplicates)
 ## Input-molecules
 
 Tests:
-[1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1),
-[2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2),
-[3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3)
+[1 input](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input1),
+[2 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input2),
+[3 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input3)
 
 
 Molecules can be parameterized by applying the input placeholder `?` as a value to an attribute. The molecule then expects input for that attribute at runtime.
@@ -568,7 +499,7 @@ val americanKids         = americansYoungerThan(13).get
 val americanBabies       = americansYoungerThan(1).get
 ```
 
-For more examples, please see the [Seattle examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L136-L233) and tests for [1 input](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/input3)
+For more examples, please see the [Seattle examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L136-L233) and tests for [1 input](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input3)
 
 (All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 

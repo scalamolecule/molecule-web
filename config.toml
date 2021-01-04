@@ -2,17 +2,21 @@ title = "Molecule"
 baseURL = "http://scalamolecule.org/"
 languageCode = "en-us"
 metaDataFormat = "yaml"
-pygmentsStyle = "perldoc"
+pygmentsUseClasses=true
 uglifyUrls = false
 disablePathToLower = true
 relativeURLs = true
 canonifyURLs = true
+
 
 [markup]
     [markup.tableOfContents]
         endLevel = 2
         ordered = false
         startLevel = 2
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
 
 [[menu.main]]
     weight = 10
@@ -23,13 +27,22 @@ canonifyURLs = true
 
 [[menu.main]]
     weight = 20
-    name = "Setup"
-    identifier = "setup"
-    url = "/setup/"
+    name = "Compare"
+    identifier = "compare"
+    url = "/compare/"
 
 
 [[menu.main]]
     weight = 30
+    name = "Setup"
+    identifier = "setup"
+    url = "/setup/"
+    [menu.main.params]
+        anchors = true
+
+
+[[menu.main]]
+    weight = 40
     name = "Code"
     identifier = "code"
     url = "/code/"
@@ -43,36 +56,43 @@ canonifyURLs = true
     identifier = "docs"
     url = "https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html"
 
-
 [[menu.main]]
-    weight = 40
-    name = "Deploy"
-    identifier = "deploy"
-    url = "/deploy/"
+    weight = 210
+    parent = "code"
+    name = "Changelog"
+    identifier = "changelog"
+    url = "/changelog"
 
 
-[[menu.main]]
-    name = "Admin"
-    weight = 50
-    identifier = "admin"
-    url = "/admin/"
-
-[[menu.main]]
-    weight = 60
-    name = "Dev"
-    identifier = "dev"
-    url = "/dev/"
-
-
-[[menu.main]]
-    name = "Blog"
-    weight = 70
-    identifier = "blog"
-    url = "/blog/"
+#[[menu.main]]
+#    weight = 50
+#    name = "Deploy"
+#    identifier = "deploy"
+#    url = "/deploy/"
+#
+#
+#[[menu.main]]
+#    name = "Admin"
+#    weight = 60
+#    identifier = "admin"
+#    url = "/admin/"
+#
+#[[menu.main]]
+#    weight = 70
+#    name = "Dev"
+#    identifier = "dev"
+#    url = "/dev/"
+#
+#
+#[[menu.main]]
+#    name = "Blog"
+#    weight = 80
+#    identifier = "blog"
+#    url = "/blog/"
 
 [[menu.main]]
     name = "Community"
-    weight = 80
+    weight = 90
     identifier = "community"
     url = "/community/"
 

@@ -13,39 +13,21 @@ down: /manual/crud
 
 # Relationships
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Relations.scala)
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/ref)
 
-
-To understand how Molecule treats relationships it is valuable to get an idea of how they work in Datomic.
-
-
-### Ref attributes connect entities
+## Card-one relationships
 
 A relationship in Datomic is simply when a ref attribute of entity A has an entity B id value. Then there is a relationship from A to B!
 
 In the following example, entity `101` has a ref attribute `:Person/home` with a value `102`. That makes the relationship between entity `101` and entity `102`, or that Fred has an Address:
 
-![](/img/relationships/ref.jpg)
+
+![](/img/page/relationships/ref.png)
+
 
 We can illustrate the same data as two entities (groups of facts with a shared entity id) with the link between them:
 
-![](/img/relationships/entityref.jpg)
-
-[Card-one relationships](/manual/relationships/card-one/)...
-
-
-### Card-many ref attributes
-
-Since datomic has cardinality many attributes, ref attributes can also be of cardinality many.
-
-We could for instance have a classic Order/LineItems card-many example where the `:Order/items` card-many ref attribute has two LineItem entity id values `102` and `103`:
-
-![](/img/relationships/entityrefs.jpg)
-
-
-## Card-one relationships
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Relations.scala)
+![](/img/page/relationships/card-one.png)
 
 In Molecule we model a cardinality-one relationship in our [schema definition file](/manual/schema/) with the `one[<RefNamespace>]` syntax:
 
@@ -102,14 +84,19 @@ Relationships can nest arbitrarily deep. We could for instance in the `Addr` nam
 ```
 Person.name.Home.street.city.Country.name.get.head === ("Fred", "Baker St. 7", "Boston", "USA")
 ```
-And so on...
 
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 
 ## Card-many relationships
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Relations.scala)
+
+Since datomic has cardinality many attributes, ref attributes can also be of cardinality many.
+
+We could for instance have a classic Order/LineItems card-many example where the `:Order/items` card-many ref attribute has two LineItem entity id values `102` and `103`:
+
+![](/img/page/relationships/card-many.png)
+
+
 
 Cardinality-many relationships in Molecule are modelled with the `many[<RefNamespace>]` syntax:
 
@@ -145,8 +132,6 @@ The Order data is repeated for each line Item which is kind of redundant. We can
 
 
 ## Nested data
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/nested/NestedRef.scala)
 
 We can nest the result from the above example with the Molecule operator `*` indicating "with many":
 
@@ -191,8 +176,6 @@ All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchr
 
 ### Entity API
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/ProductsAndOrders.scala)
-
 We can get a similar - but un-typed - nested hierarchy of data with the Entity API by calling `touch` on an order id:
 
 ```
@@ -215,11 +198,9 @@ orderId.touch === Map(
 
 ## Composites
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/Composite.scala)
-
 As we saw earlier, [Entities](/manual/entities/) are simply groups of facts that share an entity id:
 
-![](/img/entity/entity5.jpg)
+![](/img/page/entity/entity2.png)
 
 The last fact is kind of a black sheep though since the `:Site/cat` attribute is not in the `Person` namespace.
 
@@ -331,8 +312,6 @@ Since composites are composed of up to 22 sub-molecules we could potentially ins
 (All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 ## Bidirectional references
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/bidirectionals/self/OneSelf.scala)
 
 
 ### Unidirectional reference limitations
@@ -589,6 +568,6 @@ Please have a look at the implementation of the [Gremlin graph](https://github.c
 
 
 Please see the following
-[Self-join examples of Molecule](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/ref/SelfJoin.scala#L1)
+[Self-join examples of Molecule](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/ref/SelfJoin.scala#L1)
 
 

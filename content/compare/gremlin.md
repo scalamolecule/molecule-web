@@ -1,13 +1,12 @@
 ---
-date: 2014-05-14T02:13:50Z
 title: "Gremlin"
-weight: 30
+weight: 50
 menu:
   main:
-    parent: intro-compare
+    parent: compare
 ---
 
-# Gremlin vs. Molecule examples
+# Molecule vs Gremlin
 
 
 Let's compare the queries/traversals in the [Gremlin Getting Started Tutorial](http://tinkerpop.apache.org/docs/current/tutorials/getting-started/) with equivalent [Molecule queries](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/Friends.scala).
@@ -27,7 +26,7 @@ For the examples we'll use the same "Modern" graph as the tutorial:
 ## Insert data
 
 Gremlin is untyped, so data is inserted directly in a generic way where "types" are created on-the-go:
-```
+<pre class="clean">
 Graph graph = TinkerGraph.open(); (1)
 Vertex marko = graph.addVertex(T.label, "person", T.id, 1, "name", "marko", "age", 29); (2)
 Vertex vadas = graph.addVertex(T.label, "person", T.id, 2, "name", "vadas", "age", 27);
@@ -41,7 +40,7 @@ marko.addEdge("created", lop, T.id, 9, "weight", 0.4f);
 josh.addEdge("created", ripple, T.id, 10, "weight", 1.0f);
 josh.addEdge("created", lop, T.id, 11, "weight", 0.4f);
 peter.addEdge("created", lop, T.id, 12, "weight", 0.2f);
-```
+</pre>
 
 In Molecule we first define a schema. Since we won't use the `weight` properties yet, we'll start off defining a schema without those:
 
@@ -102,10 +101,10 @@ Since Gremlin traverses generic edges and vertices it is also communicating inte
  
 _Get the value of the `name` property on vertex with the unique identifier of "1"._
 
-```
+<pre class="clean">
 gremlin> g.V(1).values('name')
 ==>marko
-```
+</pre>
 
 Since Molecule uses the domain terms as custom building blocks directly, we can formulate our intentions with the language of our domain directly:
 
@@ -118,11 +117,11 @@ Person(marko).name.get.head === "marko"
 ### Edges / Entities
 
 _Get the edges with the label "knows" for the vertex with the unique identifier of "1":_
-```
+<pre class="clean">
 gremlin> g.V(1).outE('knows')
 ==>e[7][1-knows->2]
 ==>e[8][1-knows->4]
-```
+</pre>
 
 _Marko's friends_
 
@@ -133,11 +132,11 @@ Person(marko).friends.get.head === Set(vadas, josh)
 ### Values
 
 _Get the names of the people that the vertex with the unique identifier of "1" "knows"._
-```
+<pre class="clean">
 gremlin> g.V(1).out('knows').values('name')
 ==>vadas
 ==>josh
-```
+</pre>
 
 In Molecule we can jump from one namespace like `Person` to `Friends` since there's a relationship defined between the two. That way we can get Marko's referenced Friends entities:
 
@@ -150,10 +149,10 @@ Note though, that a namespace is not like a SQL table but rather just a meaningf
 ### Expressions
 
 _Get the names of the people vertex "1" knows who are over the age of 30._
-```
+<pre class="clean">
 gremlin> g.V(1).out('knows').has('age', gt(30)).values('name') //(7)
 ==>josh
-```
+</pre>
 
 _Names of Marko's friends over the age of 30._
 
@@ -166,10 +165,10 @@ Person(marko).Friends.name.age_.>(30).get === Set("josh")
 
 
 _Find Marko in the graph_
-```
+<pre class="clean">
 gremlin> g.V().has('name','marko')
 ==>v[1]
-```
+</pre>
 
 Prepending the generic attribute `e` before an attribute finds the entity that it belongs to:
 
@@ -182,10 +181,10 @@ We also append an underscore `_` to the `name` attribute so that it becomes `nam
 ### Traversing / relationships
 
 _Gremlin has reached the "software that Marko created", he has access to the properties of the "software" vertex and you can therefore ask Gremlin to extract the value of the "name" property_
-```
+<pre class="clean">
 gremlin> g.V().has('name','marko').out('created').values('name')
 ==>lop
-```
+</pre>
 
 _What software did Marko create?_ - here we use a relationship again to get to the referenced Software entities and their names
 
@@ -196,11 +195,11 @@ Person.name_("marko").Software.name.get === Seq("lop")
 ### OR logic
 
 _Find the "age" values of both "vadas" and "marko"_
-```
+<pre class="clean">
 gremlin> g.V().has('name',within('vadas','marko')).values('age')
 ==>29
 ==>27
-```
+</pre>
 
 To get both names we us Molecule's OR-logic by applying multiple values to an attribute. `name` should be either "marko" OR "vadas" and we can use various syntaxes:
 
@@ -213,10 +212,10 @@ Person.name_(Seq("marko", "vadas")).age.get === Seq(27, 29)  // Seq
 ### Aggregates
 
 _Average age of "vadas" and "marko"_
-```
+<pre class="clean">
 gremlin> g.V().has('name',within('vadas','marko')).values('age').mean()
 ==>28.0
-```
+</pre>
 
 Molecule implements Datomics aggregate functions by applying the keyword `avg` to a number attribute like `age`
 
@@ -228,12 +227,12 @@ Person.name_("marko", "vadas").age(avg).get.head === 28.0
 
 _"Who are the people that marko develops software with?"_
 
-```
+<pre class="clean">
 gremlin> g.V().has('name','marko').out('created').in('created').values('name')
 ==>marko
 ==>josh
 ==>peter
-```
+</pre>
 
 It's idiomatic with Datomic to split such query and use the output of one query as input for the next one:
 
@@ -247,11 +246,11 @@ Person.name.software_(markoSoftware).get === Seq("peter", "josh", "marko")
 <br>
 Excluding marko from the result
 
-```
+<pre class="clean">
 gremlin> g.V().has('name','marko').as('exclude').out('created').in('created').where(neq('exclude')).values('name')
 ==>josh
 ==>peter
-```
+</pre>
 
 ```
 Person.name.not("marko").software_(markoSoftware).get === Seq("peter", "josh")
@@ -262,10 +261,10 @@ Person.name.not("marko").software_(markoSoftware).get === Seq("peter", "josh")
 
 _"Group all the vertices in the graph by their vertex label"_
 
-```
+<pre class="clean">
 gremlin> g.V().group().by(label).by('name')
 ==>[software:[lop,ripple],person:[marko,vadas,josh,peter]]
-```
+</pre>
 
 Since Molecule is typed we would probably ask for specific `name` attribute values:
 

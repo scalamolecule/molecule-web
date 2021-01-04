@@ -1,8 +1,8 @@
 ---
-title: "Blog"
+title: "Blogx"
 menu:
     main:
-        parent: blog
+        parent: 
 ---
 
 # Blog

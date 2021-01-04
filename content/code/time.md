@@ -19,7 +19,7 @@ Datomic has powerful ways of accessing the immutable data that accumulates over 
 Molecule maps those to 5 data getters that we can illustrate with a time line of transactions.
 
 
-![](/img/time/all.png)
+![](/img/page/time/all.png)
 
 
 The 5 ways of getting data have the following semantics:
@@ -41,7 +41,7 @@ The two methods `getAsOf(t)` and `getSince(t)` takes a _point in time_ in the da
 
 A transaction entity id is the 4th value of Datomic quintuplets that tells us in what transaction this Datom/fact was asserted/retracted.
  
-![](/img/time/1.png)
+![](/img/page/time/tx.png)
 
 In Molecule code we can get this information by adding the generic `tx` attribute after an attribute:
 
@@ -216,13 +216,13 @@ Pagination is and example that needs sorting, and we do that in our application 
 
 ##" AsOf
 
-[AsOf test...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetAsOf.scala)
+[AsOf test...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/GetAsOf.scala)
 
 Calling `getAsOf(t)` on a molecule gives us the data as of a certain point in time like `t4`:
 
-![](/img/time/as-of.png)
 
-<br>
+![](/img/page/time/as-of.png)
+
 
 As we saw in [point in time](/manual/time#pointintime), a `t` can be either a transaction entity id like `txE4`, a transaction number `t4`, the resulting transaction report `tx4` from some transactional operation or a `java.util.Date` like `date4`. So we could get to the same data in 4 different ways:
 
@@ -238,7 +238,7 @@ Person.name.age.getAsOf(date4) === ... // Persons as of some Date `date4` (inclu
 
 Note that `t` is "inclusive" meaning that it is how the database looked right _after_ transaction `txE4`/`t4`/`tx4`/`date4`.
 
-### AsOf APIs
+### AsOf
 
 Data AsOf some point in time `t` can be returned as
 
@@ -257,50 +257,33 @@ where `t` can be any of:
 
 Combine the needed return type with some representation of `t` and optionally a row limit by calling one of the corresponding `AsOf` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
 
-<div class="container" style="margin-left: -30px">
-    <div class="col-sm-3 column ">
-        <ul>
-            <li><code>getAsOf(t)</code> (List)</li>
-            <li><code>getArrayAsOf(t)</code></li>
-            <li><code>getIterableAsOf(t)</code></li>
-            <li><code>getJsonAsOf(t)</code></li>
-            <li><code>getRawAsOf(t)</code></li>
-        </ul>
-        <ul>
-            <li><code>getAsOf(t, limit)</code> (List)</li>
-            <li><code>getArrayAsOf(t, limit)</code></li>
-            <li><code>getJsonAsOf(t, limit)</code></li>
-            <li><code>getRawAsOf(t, limit)</code></li>
-        </ul>
-    </div>
-    <div class="col-sm-5 column ">
-        <ul>
-            <li><code>getAsyncAsOf(t)</code> (List)</li>
-            <li><code>getAsyncArrayAsOf(t)</code></li>
-            <li><code>getAsyncIterableAsOf(t)</code></li>
-            <li><code>getAsyncJsonAsOf(t)</code></li>
-            <li><code>getAsyncRawAsOf(t)</code></li>
-        </ul>
-        <ul>
-            <li><code>getAsyncAsOf(t, limit)</code> (List)</li>
-            <li><code>getAsyncArrayAsOf(t, limit)</code></li>
-            <li><code>getAsyncJsonAsOf(t, limit)</code></li>
-            <li><code>getAsyncRawAsOf(t, limit)</code></li>
-        </ul>
-    </div>
-</div>
+|| &nbsp;&nbsp;&nbsp;&nbsp; ||
+| :- | :- | :- |
+| `getAsOf(t)` (List)         || `getAsyncAsOf(t)` (List)         |
+| `getArrayAsOf(t)`           || `getAsyncArrayAsOf(t)`           |
+| `getIterableAsOf(t)`        || `getAsyncIterableAsOf(t)`        |
+| `getJsonAsOf(t)`            || `getAsyncJsonAsOf(t)`            |
+| `getRawAsOf(t)`             || `getAsyncRawAsOf(t)`             |
+| &nbsp;                      ||                                  |
+| `getAsOf(t, limit)` (List)  || `getAsyncAsOf(t, limit)` (List)  |
+| `getArrayAsOf(t, limit)`    || `getAsyncArrayAsOf(t, limit)`    |
+| `getIterableAsOf(t, limit)` || `getAsyncIterableAsOf(t, limit)` |
+| `getJsonAsOf(t, limit)`     || `getAsyncJsonAsOf(t, limit)`     |
+| `getRawAsOf(t, limit)`      || `getAsyncRawAsOf(t, limit)`      |
+| &nbsp;                      ||                                  |
+| &nbsp;                      ||                                  |
+
+
 
 `getIterableAsOf(t, limit)` and `getAsyncIterableAsOf(t, limit)` are not implemented since the data is lazily evaluated with calls to `next` on the `Iterator`.
 
 
 ### Since
-[Since tests...](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/GetSince.scala)
+[Since tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/GetSince.scala)
 
 As a complementary function to `getAsOf(t)` we have `getSince(t)` that gives us a snapshot of the current database filtered with only changes added _after/since_ `t`:
 
-![](/img/time/since.png)
-
-<br>
+![](/img/page/time/since.png)
 
 Contrary to the getAsOf(t) method, the `t` is _not_ included in `getSince(t)`.
 
@@ -315,7 +298,6 @@ Person.name.age.getSince(tx4) === ... // Persons added since/after transaction r
 
 Person.name.age.getSince(date4) === ... // Persons added since/after some Date `date4` (exclusive) 
 ```
-
 
 
 
@@ -338,38 +320,22 @@ where `t` can be any of:
 
 Combine the needed return type with some representation of `t` and optionally a row limit by calling one of the corresponding `Since` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
 
-<div class="container" style="margin-left: -30px">
-    <div class="col-sm-3 column ">
-        <ul>
-            <li><code>getSince(t)</code> (List)</li>
-            <li><code>getArraySince(t)</code></li>
-            <li><code>getIterableSince(t)</code></li>
-            <li><code>getJsonSince(t)</code></li>
-            <li><code>getRawSince(t)</code></li>
-        </ul>
-        <ul>
-            <li><code>getSince(t, limit)</code> (List)</li>
-            <li><code>getArraySince(t, limit)</code></li>
-            <li><code>getJsonSince(t, limit)</code></li>
-            <li><code>getRawSince(t, limit)</code></li>
-        </ul>
-    </div>
-    <div class="col-sm-5 column ">
-        <ul>
-            <li><code>getAsyncSince(t)</code> (List)</li>
-            <li><code>getAsyncArraySince(t)</code></li>
-            <li><code>getAsyncIterableSince(t)</code></li>
-            <li><code>getAsyncJsonSince(t)</code></li>
-            <li><code>getAsyncRawSince(t)</code></li>
-        </ul>
-        <ul>
-            <li><code>getAsyncSince(t, limit)</code> (List)</li>
-            <li><code>getAsyncArraySince(t, limit)</code></li>
-            <li><code>getAsyncJsonSince(t, limit)</code></li>
-            <li><code>getAsyncRawSince(t, limit)</code></li>
-        </ul>
-    </div>
-</div>
+
+|| &nbsp;&nbsp;&nbsp;&nbsp; ||
+| :- | :- | :- |
+| `getSince(t)` (List)         || `getAsyncSince(t)` (List)         |
+| `getArraySince(t)`           || `getAsyncArraySince(t)`           |
+| `getIterableSince(t)`        || `getAsyncIterableSince(t)`        |
+| `getJsonSince(t)`            || `getAsyncJsonSince(t)`            |
+| `getRawSince(t)`             || `getAsyncRawSince(t)`             |
+| &nbsp;                       ||                                   |
+| `getSince(t, limit)` (List)  || `getAsyncSince(t, limit)` (List)  |
+| `getArraySince(t, limit)`    || `getAsyncArraySince(t, limit)`    |
+| `getIterableSince(t, limit)` || `getAsyncIterableSince(t, limit)` |
+| `getJsonSince(t, limit)`     || `getAsyncJsonSince(t, limit)`     |
+| `getRawSince(t, limit)`      || `getAsyncRawSince(t, limit)`      |
+| &nbsp;                       ||                                   |
+| &nbsp;                       ||                                   |
 
 
 `getIterableSince(t, limit)` and `getAsyncIterableSince(t, limit)` are not implemented since the data is lazily evaluated with calls to `next` on the `Iterator`.
@@ -384,9 +350,9 @@ The asynchronous implementations simply wraps the synchronous result in a Future
 
 The history perspective gives us all the assertions and retractions that has happened over time.
 
-![](/img/time/history.png)
 
-### Assertions and retractions
+![](/img/page/time/history.png)
+
 
 Normally we get a snapshot of the database at a certain point in time. But when we call the `getHistory` method on a molecule we get all the assertions and retractions that has happened over time for the attributes of the molecule.
 
@@ -405,7 +371,8 @@ val tx6 = result6.tx
 
 The two transactions (save + update) produces the following 4 facts in the database:
 
-![](/img/time/4.png)
+
+![](/img/page/time/2-txs.png)
 
 ### Generic attributes
 
@@ -520,7 +487,7 @@ Story.url_(ecURL).title.op_(false).tx_(MetaData.usecase.User.firstName_("Ed")).g
 By supplying some test transaction data to `getWith(testTxData)` we filter the current database with the test transaction data applied in-memory. This is a very powerful way of testing future-like "what-if" scenarios.
 
 
-![](/img/time/with.png)
+![](/img/page/time/with.png)
 
 We could for instance add some transaction data `tx8` to a Person molecule to see if we would get the extected persons back:
 
@@ -634,38 +601,21 @@ where `txTestData` can be either:
 
 Combine the needed return type with some transactional data `txTestData` and optionally a row limit by calling one of the corresponding `With` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
 
-<div class="container" style="margin-left: -30px">
-    <div class="col-sm-4 column ">
-        <ul>
-            <li><code>getWith(txTestData)</code> (List)</li>
-            <li><code>getArrayWith(txTestData)</code></li>
-            <li><code>getIterableWith(txTestData)</code></li>
-            <li><code>getJsonWith(txTestData)</code></li>
-            <li><code>getRawWith(txTestData)</code></li>
-        </ul>
-        <ul>
-            <li><code>getWith(txTestData, limit)</code> (List)</li>
-            <li><code>getArrayWith(txTestData, limit)</code></li>
-            <li><code>getJsonWith(txTestData, limit)</code></li>
-            <li><code>getRawWith(txTestData, limit)</code></li>
-        </ul>
-    </div>
-    <div class="col-sm-5 column ">
-        <ul>
-            <li><code>getAsyncWith(txTestData)</code> (List)</li>
-            <li><code>getAsyncArrayWith(txTestData)</code></li>
-            <li><code>getAsyncIterableWith(txTestData)</code></li>
-            <li><code>getAsyncJsonWith(txTestData)</code></li>
-            <li><code>getAsyncRawWith(txTestData)</code></li>
-        </ul>
-        <ul>
-            <li><code>getAsyncWith(txTestData, limit)</code> (List)</li>
-            <li><code>getAsyncArrayWith(txTestData, limit)</code></li>
-            <li><code>getAsyncJsonWith(txTestData, limit)</code></li>
-            <li><code>getAsyncRawWith(txTestData, limit)</code></li>
-        </ul>
-    </div>
-</div>
+|| &nbsp;&nbsp;&nbsp;&nbsp; ||
+| :- | :- | :- |
+| `getWith(txTestData)` (List)         || `getAsyncWith(txTestData)` (List)         |
+| `getArrayWith(txTestData)`           || `getAsyncArrayWith(txTestData)`           |
+| `getIterableWith(txTestData)`        || `getAsyncIterableWith(txTestData)`        |
+| `getJsonWith(txTestData)`            || `getAsyncJsonWith(txTestData)`            |
+| `getRawWith(txTestData)`             || `getAsyncRawWith(txTestData)`             |
+| &nbsp;                               ||                                           |
+| `getWith(txTestData, limit)` (List)  || `getAsyncWith(txTestData, limit)` (List)  |
+| `getArrayWith(txTestData, limit)`    || `getAsyncArrayWith(txTestData, limit)`    |
+| `getIterableWith(txTestData, limit)` || `getAsyncIterableWith(txTestData, limit)` |
+| `getJsonWith(txTestData, limit)`     || `getAsyncJsonWith(txTestData, limit)`     |
+| `getRawWith(txTestData, limit)`      || `getAsyncRawWith(txTestData, limit)`      |
+| &nbsp;                               ||                                           |
+
 
 
 >The asynchronous implementations simply wraps the synchronous result in a Future as any
@@ -673,9 +623,10 @@ Combine the needed return type with some transactional data `txTestData` and opt
 >runs in the same process as our application code which makes it natural to do the Future-wrapping
 >in Molecule as part of running our application.
 
+
 ## Testing
 
-[TestDbAsOf](https://github.com/scalamolecule/molecule/blob/master/coretests/src/test/scala/molecule/coretests/time/TestDbAsOf.scala),
+[TestDbAsOf](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/TestDbAsOf.scala),
 [TestDbSince](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala) and
 [TestDbWith](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala)
 
