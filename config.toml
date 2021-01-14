@@ -26,19 +26,10 @@ canonifyURLs = true
 
 
 [[menu.main]]
-    weight = 20
-    name = "Compare"
-    identifier = "compare"
-    url = "/compare/"
-
-
-[[menu.main]]
     weight = 30
     name = "Setup"
     identifier = "setup"
     url = "/setup/"
-    [menu.main.params]
-        anchors = true
 
 
 [[menu.main]]
@@ -46,22 +37,26 @@ canonifyURLs = true
     name = "Code"
     identifier = "code"
     url = "/code/"
-    [menu.main.params]
-        anchors = true
 
-[[menu.main]]
-    weight = 200
-    parent = "code"
-    name = "ScalaDocs"
-    identifier = "docs"
-    url = "https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html"
+#[[menu.main]]
+#    weight = 50
+#    name = "Resources"
+#    identifier = "resources"
+#    url = "/resources/"
 
-[[menu.main]]
-    weight = 210
-    parent = "code"
-    name = "Changelog"
-    identifier = "changelog"
-    url = "/changelog"
+#[[menu.main]]
+#    weight = 20
+#    parent = "resources"
+#    name = "ScalaDocs"
+#    identifier = "docs"
+#    url = "https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html"
+#
+#[[menu.main]]
+#    weight = 210
+#    parent = "resources"
+#    name = "Changelog"
+#    identifier = "changelog"
+#    url = "/changelog"
 
 
 #[[menu.main]]
@@ -77,11 +72,11 @@ canonifyURLs = true
 #    identifier = "admin"
 #    url = "/admin/"
 #
-#[[menu.main]]
-#    weight = 70
-#    name = "Dev"
-#    identifier = "dev"
-#    url = "/dev/"
+[[menu.main]]
+    weight = 70
+    name = "Dev"
+    identifier = "dev"
+    url = "/dev/"
 #
 #
 #[[menu.main]]

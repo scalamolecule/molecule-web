@@ -1,6 +1,6 @@
 ---
 title: "Attributes"
-weight: 40
+weight: 20
 menu:
   main:
     parent: code
@@ -9,62 +9,24 @@ menu:
 
 # Attributes
 
-
 _[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/attr/Attribute.scala)_
 
 Molecules are built by chaining attributes together with the builder pattern. 
 
+Molecule then transforms the constructed molecule to a query string at compile time. Molecules can be constructed explicitly with the `m` method. But generally the implicit call is used.
 
 We could for instance build a molecule representing the data structure of Persons with name, age and gender Attributes:
 
-```
-Person.name.age.gender // etc
+```scala
+// Explicit `m` macro call
+m(Person.name.age.gender)
+
+// Implicit `m` macro call
+Person.name.age.gender // etc..
 ```
 The fundamental building blocks are Namespaces like `Person` and Attributes like `name`, `age` and `gender`. Namespaces are simply prefixes to Attribute names to avoid name clashes and to group our Attributes in meaningful ways according to our domain.
 
 As you see we start our molecule from some Namespace and then build on Attribute by Attribute.
-
-
-
-### Sync API for returning data
-
-Molecule returns all result sets as a List of tuples of values (with `get`).
-
-```
-val persons: List[(String, Int)] = Person.name.age.get
-```
-Data can be returned in 5 different formats:
-
-```
-// List for convenient access to smaller data sets
-val list : List[(String, Int)] = m(Person.name.age).get
-
-// Mutable Array for fastest retrieval and traversing of large data sets
-val array: Array[(String, Int)] = m(Person.name.age).getArray
-
-// Iterable for lazy traversing with an Iterator
-val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
-
-// Json formatted string 
-val json: String = m(Person.name.age).getJson
-
-// Raw untyped Datomic data if data doesn't need to be typed
-val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getRaw
-```
-
-### Async API
-
-
-Molecule provide all operations both synchronously and asynchronously, so the 5 getter methods also has equivalent asynchronous methods returning data in a Future:
-```
-val list    : Future[List[(String, Int)]] = m(Person.name.age).getAsync
-val array   : Future[Array[(String, Int)]] = m(Person.name.age).getAsyncArray
-val iterable: Future[Iterable[(String, Int)]] = m(Person.name.age).getAsyncIterable
-val json    : Future[String] = m(Person.name.age).getAsyncJson
-val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.name.age).getAsyncRaw
-```
-
-
 
 
 ### Molecule max size
@@ -73,7 +35,7 @@ The size of molecules are limited to Scala's arity limit of 22 for tuples.
 
 If we need to insert more than 22 attribute values we can easily do this by using the entity id to work with further attributes/values:
 
-```
+```scala
 // Insert maximum of 22 facts and return the created entity id
 val eid = Ns.a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.insert(
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22
@@ -85,12 +47,14 @@ Ns.a23.a24.a25.insert(eid, 23, 24, 25)
 
 Likewise we can retrieve more than 22 values in 2 steps
 
-```
+```scala
 val first22values = Ns(eid).a1.a2.a3.a4.a5.a6.a7.a8.a9.a10.a11.a12.a13.a14.a15.a16.a17.a18.a19.a20.a21.a22.get
 
 // Use entity id to continue adding more values
 val next3values = Ns(eid).a23.a24.a25.get
 ```
+
+
 
 ### Cardinality
 
@@ -98,17 +62,54 @@ The attributes `name`, `age` and `gender` that we saw above are typical cardinal
 
 Datomic also has cardinality-many attributes that have a `Set` of values. This means that the same value cannot be saved multiple times, or that only unique values are saved. An example could be a cardinality-many attribute `hobbies` of a `Person`:
 
-```
+```scala
 Person.name.hobbies.get.head === ("Fred", Set("Trains", "Chess"))
 ```
 
 In the [Update](/manual/crud/update/) section of CRUD we will see how multiple values are managed with Molecule.
 
 
+## Sync/Async APIs
+
+Molecule returns results in 5 different formats and can be retrieved either synchronously or asynchronously: 
+
+
+### Sync API
+
+```scala
+// List for convenient access to smaller data sets
+val list : List[(String, Int)] = Person.name.age.get
+
+// Mutable Array for fastest retrieval and traversing of large data sets
+val array: Array[(String, Int)] = Person.name.age.getArray
+
+// Iterable for lazy traversing with an Iterator
+val iterable: Iterable[(String, Int)] = Person.name.age.getIterable
+
+// Json formatted string 
+val json: String = Person.name.age.getJson
+
+// Raw untyped Datomic data if data doesn't need to be typed
+val raw: java.util.Collection[java.util.List[AnyRef]] = Person.name.age.getRaw
+```
+
+### Async API
+
+Molecule provide all operations both synchronously and asynchronously, so the 5 getter methods also has equivalent asynchronous methods returning data in a Future:
+```scala
+val list    : Future[List[(String, Int)]]                          = Person.name.age.getAsync
+val array   : Future[Array[(String, Int)]]                         = Person.name.age.getAsyncArray
+val iterable: Future[Iterable[(String, Int)]]                      = Person.name.age.getAsyncIterable
+val json    : Future[String]                                       = Person.name.age.getAsyncJson
+val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = Person.name.age.getAsyncRaw
+```
+
+
+
+
 
 ## 3 attribute modes
 
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 #### 1. Mandatory `attr`
 
@@ -118,7 +119,7 @@ _Note that this is different from selecting rows from a sql table where you can 
 
 If for instance we have entities representing Persons in our data set that haven't got any age Attribute associated with them then this query will _not_ return those entities:
 
-```
+```scala
 val persons = Person.name.age.get
 ```
 Basically we look for **matches** to our molecule data structure.
@@ -130,12 +131,12 @@ Sometimes we want to grap entities that we _know_ have certain attributes, but w
 
 If for instance we wanted to find all names of Persons that have an age attribute set but we don't need to return those age values, then we can add an underscore `_` after the `age` Attribute:
 
-```
+```scala
 val names = Person.name.age_.get
 ```
 This will return names of person entities having both a name and age Attribute set. Note how the age values are no longer returned from the type signatures:
 
-```
+```scala
 val persons: List[(String, Int)] = Person.name.age.get
 val names  : List[String]        = Person.name.age_.get
 ```
@@ -149,7 +150,7 @@ This way we can switch on and off individual attributes from the result set with
 
 If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
 
-```
+```scala
 val names: List[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
 ```
 That way we can get all person names with or without middleNames. As you can see from the return type, the middle name is wrapped in an `Option`.
@@ -163,7 +164,7 @@ Mapped values can be saved with mapped attributes in Molecule. It's a special Mo
 
 Say you want to save famous Persons names in multiple languages. Then you could use a mapString:
 
-```
+```scala
 // In definition file
 val name = mapString
  
@@ -208,25 +209,25 @@ There's a broad range of ways we can query mapped attributes and you can see a l
 
 We can apply values to Attributes in order to filter the data structures we are looking for. We could for instance find people who like pizza:
 
-```
+```scala
 Person.likes.apply("pizza")
 ```
 or simply
 
-```
+```scala
 Person.likes("pizza")
 ```
 
 Since the applied value "pizza" ensures that the attributes returned has this value we will get redundant information back for the `likes` attribute ("pizza" is returned for all persons):
 
-```
+```scala
 Person.name.likes("pizza").get === List(
   ("Fred", "pizza"),
   ("Ben", "pizza")
 )
 ```
 This is an ideomatic place to use a tacit attribute `likes_` to say "Give me names of persons that like pizza" without returning the `likes` value "pizza" over and over again. Then we get a nice list of only the pizza likers:
-```
+```scala
 Person.name.likes_("pizza").get === List(
   "Fred", "Ben"
 )
@@ -235,7 +236,7 @@ _Note that since we get an arity-1 result back it is simply a list of those valu
 
 We can apply OR-logic to find a selection of alternatives
 
-```
+```scala
 Person.age(40 or 41 or 42)
 // .. same as
 Person.age(40, 41, 42)
@@ -250,12 +251,12 @@ Person.age(List(40, 41, 42))
 
 
 If we add the `fulltext` option to a String attribute definition Datomic will index the text strings saved so that we can do fulltext searches across all values. We could for instance search for Community names containing the word "Town" in their name:
-```
+```scala
 Community.name.contains("Town")
 ```
 Note that only full words are considered, so "Tow" won't match. Searches are case-insensitive.
 
-Also the following common words are not considered:
+Also, the following common words are not considered:
 
 ```
 "a", "an", "and", "are", "as", "at", "be", "but", "by",
@@ -273,7 +274,7 @@ Also the following common words are not considered:
 
 We can exclude a certain attribute value like in "Persons that are not 42 years old":
 
-```
+```scala
 Person.age.!=(42)
 // or
 Person.age.not(42)
@@ -281,7 +282,7 @@ Person.age.not(42)
 
 Negate multiple values
 
-```
+```scala
 Person.age.!=(40 or 41 or 42)
 Person.age.!=(40, 41, 42)
 Person.age.!=(List(40, 41, 42))
@@ -293,14 +294,14 @@ Person.age.!=(List(40, 41, 42))
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Comparison.scala)
 
 We can filer attribute values that satisfy comparison expressions:
-```
+```scala
 Person.age.<(42)
 Person.age.>(42)
 Person.age.<=(42)
 Person.age.>=(42)
 ```
 Comparison of all types are performed with java's `compareTo` method. Text strings can for instance also be sorted by a letter:
-```
+```scala
 Community.name.<("C").get(3) === List(
   "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
 ```
@@ -310,7 +311,7 @@ Community.name.<("C").get(3) === List(
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/expression/Null.scala)
 
 We can look for non-asserted attributes (Null values) as in "Persons that have no age asserted" by applying an empty value to an attribute:
-```
+```scala
 Person.name.age_() === // all persons where age hasn't been asserted
 ```
 Note that the `age_` attribute has to be tacit (with an underscore) since we naturally can't return missing values.
@@ -321,7 +322,7 @@ Note that the `age_` attribute has to be tacit (with an underscore) since we nat
 
 Even though Molecule introspects molecule constructions at compile time we can still use (runtime) variables for our expressions:
 
-```
+```scala
 val youngAge = 25
 val goodAge = 42
 Person.age(goodAge)
@@ -336,12 +337,12 @@ Technically, Molecule saves the `TermName` like 'goodAge' of the variable for la
 
 For now Molecule can't though evaluate arbitrary applied expressions like this one:
 
-```
+```scala
 Person.birthday(new java.util.Date("2017-05-10"))
 ```
 In this case we could instead apply the expression result to a variable and use that in the molecule:
 
-```
+```scala
 val date = new java.util.Date("2017-05-10")
 Person.birthday(date)
 ```
@@ -362,7 +363,7 @@ Aggregate functions either return a single value or a collection of values:
 
 #### min/max
 Applying the `min` or `max` aggregate keyword object as a value to the `age` attribute returns the lowest/highest ages.
-```
+```scala
 Person.age(min) // lowest age
 Person.age(max) // highest age
 ```
@@ -371,7 +372,7 @@ Person.age(max) // highest age
 
 #### sum
 
-```
+```scala
 Person.age(sum) // sum of all ages
 ```
 
@@ -379,38 +380,38 @@ Person.age(sum) // sum of all ages
 #### count
 
 Count the total number of entities with an asserted `age` value (not to be confused with `sum`).
-```
+```scala
 Person.age(count) // count of all persons with an age (not the sum of ages)
 ```
 
 #### countDistinct
 
 Count the total number of entities with asserted _unique_ `age` values (not to be confused with `sum`).
-```
+```scala
 Person.age(countDistinct)  // count of unique ages
 ```
 
 #### avg
 
-```
+```scala
 Person.age(avg) // average of all ages
 ```
 
 #### median
 
-```
+```scala
 Person.age(median) // median of all ages
 ```
 
 #### variance
 
-```
+```scala
 Person.age(variance) // variance of all ages
 ```
 
 #### stddev
 
-```
+```scala
 Person.age(stddev) // standard deviation of all ages
 ```
 
@@ -419,31 +420,31 @@ Person.age(stddev) // standard deviation of all ages
 
 #### distinct
 
-```
+```scala
 Person.age(distinct) // distinct ages
 ```
 
 #### min(n)
 
-```
+```scala
 Person.age(min(3)) // 3 lowest ages
 ```
 
 #### max(n)
 
-```
+```scala
 Person.age(max(3)) // 3 highest ages
 ```
 
 #### rand(n)
 
-```
+```scala
 Person.age(rand(3)) // 3 random persons (with potential for duplicates)
 ```
 
 #### sample(n)
 
-```
+```scala
 Person.age(sample(3)) // 3 sample persons (without duplicates)
 ```
 
@@ -461,7 +462,7 @@ Molecules can be parameterized by applying the input placeholder `?` as a value 
 
 By assigning parameterized "Input-molecules" to variables we can re-use those variables to query for similar data structures where only some data part varies:
 
-```
+```scala
 // 1 input parameter
 val person = m(Person.name(?))
 
@@ -477,7 +478,7 @@ Datomic caches and optimizes queries from input molecules so performance-wise it
 
 ### Parameterized expressions
 
-```
+```scala
 val personName  = m(Person.name(?))
 val johnOrLisas = personName("John" or "Lisa").get // OR
 ```
@@ -485,7 +486,7 @@ val johnOrLisas = personName("John" or "Lisa").get // OR
 ### Multiple parameters
 Molecules can have up to 3 `?` placeholder parameters.
 
-```
+```scala
 val person      = m(Person.name(?).age(?))
 val john        = person("John" and 42).get.head // AND
 val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
@@ -493,7 +494,7 @@ val johnOrJonas = person(("John" and 42) or ("Jonas" and 38)).get // AND/OR
 
 ### Mix parameterized and static expressions
 
-```
+```scala
 val americansYoungerThan = m(Person.name.age.<(?).Country.name("USA"))
 val americanKids         = americansYoungerThan(13).get
 val americanBabies       = americansYoungerThan(1).get
@@ -501,5 +502,4 @@ val americanBabies       = americansYoungerThan(1).get
 
 For more examples, please see the [Seattle examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L136-L233) and tests for [1 input](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input1), [2 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input2), [3 inputs](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/input3)
 
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 

@@ -1,87 +1,658 @@
 ---
-title: "Transactions"
-weight: 80
+title: Transactions
+weight: 50
 menu:
   main:
     parent: code
-    identifier: transactions
+    identifier: code-transactions
 ---
 
-# Transactions
 
-All assertions and retractions in Datomic happen within a transaction that guarantees ACID consistency. Along with the domain data involved, Datomic also automatically asserts a timestamp as part of a created Transaction entity for that transaction.
+## Save
 
-Say that we create a new person with entity id `e5`:
-```
-val e5 = Person.name("Fred").likes("pizza").save.eid
-```
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Save.scala)
 
-Then the following assertions are made:
+In Molecule we can populate a molecule with data and save it:
 
-![](/img/page/transactions/1.png)
-
-The 4th column of the quintuplets is the entity id of the transaction where the fact was asserted or retracted. In this case the two facts about Fred was asserted in transaction `tx4`. `tx4` is an entity id (`Long`) exactly as the entity id of fred `e5`.
-
-The time of the transaction `date1` (`java.util.Date`) is asserted with the transaction entity id `tx4` as its entity id. And since that timestamp fact is also part of the same transaction `tx4` is also the transaction value (4th column) for that fact.
-
-### Transaction entity id `tx`
-
-Since the transaction is itself an entity exactly as any other entity we can query it as we query our own domain data.
-
-Molecule offers some generic attributes that makes it easy to access transaction data. In our example we could find the transaction entity id of the assertion of Freds `name` by adding the generic attribute `tx` right after the `name_` attribute (that we have made tacit with the underscore since we're not interested in value "Fred"): 
-
-_"In what transaction was Freds name asserted?"_
-```
-Person(e5).name_.tx.get.head === tx4  // 13194139534340L
-```
-The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity `e5` (Fred) was asserted in transaction `tx4` since the value `tx4` was saved as the `name` quintuplet's 4th value.
-
-### Transaction value `t`
-
-Alternatively we can get a transaction value `t`
-
-```
-Person(e5).name_.t.get.head === t4  // 1028L
+```scala
+Person.name("Fred").likes("pizza").age(38).save
 ```
 
+This will assert 3 facts in Datomic that all share the id of the new entity id `fredId` that is automatically created by Datomic:
 
-### Transaction time `txInstant`
-
-With the transaction entity available we can then also get to the value of the timestamp fact of that transaction entity. For convenience Molecule has a generic `txIntstant` to lookup the timestamp which is a `date.util.Date`:
-
-_"When was Freds name asserted?"_
-```
-Person(e5).name_.txInstant.get.head === date1  // Tue Apr 26 18:35:41
+```scala
+fredId    :Person/name    "Fred"
+fredId    :Person/likes   "pizza"
+fredId    :Person/age     38
 ```
 
-### Transaction data per attribute
+### Type-safety
 
-Since each fact of an entity could have been stated in different transactions, transaction data is always tied to only one attribute. 
- 
-Say for instance that we assert Fred's `age` in another transaction `tx5`, then we could subsequently get the two transactions involved:
+Type-safety is guaranteed since each attribute only accepts values of its defined type.
 
-_"Was Fred's name and age asserted in the same transaction?"_
-```
-// Second transaction
-val tx5 = Person(e5).age(38).update.tx
 
-// Retrieve transactions of multiple attributes
-Person(e5).name_.tx.age_.tx.get.head === (tx4, tx5)
+### Asynchronous save
 
-// No, name and age were asserted in different transactions
-tx4 !== tx5
-```
-Likewise we could ask
+All transactional operators have an asynchronous equivalent. Saving data asynchronously with `saveAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
 
-_"At what time was Fred's name and age asserted"_
-```
-Person(e5).name_.txInstant.age_.txInstant.get.head === (date1, date2)
+Here, we map over the result of saving asynchronously:
 
-// Fred's name was asserted before his age
-date1.before(date2) === true
+```scala
+// Map over a Future
+Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report from successful save transaction
+  // (synchronous get)
+  Person.name.likes.age.get.head === ("Ben", "pizza", 42)
+}
 ```
 
-## Transaction bundle
+Or we could defer the resolution of the `Future`
+
+```scala
+val futureSave: Future[TxReport] = Person.name("Fred").likes("pizza").age(42).saveAsync
+for {
+  _ <- futureSave
+  result <- Person.name.likes.age.getAsync
+} yield {
+  // Data was saved
+  result.head === ("Ben", "pizza", 42)
+}
+```
+
+For brevity, the following examples use the synchronous `save` operation.
+
+
+
+### Related data
+
+We can even save related date in the same operation
+```scala
+Person.name("Fred").likes("pizza").age(38).Home.street("Baker St. 7").city("Boston").save
+```
+In this case, 6 facts will be asserted for the entity of Fred. A `:Person/home` ref attribute will resolve to the value of a new Address entity with id `addrId` and thereby establish the relationship from Fred to his Address:
+
+```
+fredId    :Person/name    "Fred"
+fredId    :Person/likes   "pizza"
+fredId    :Person/age     38
+fredId    :Person/home    addrId
+addrId    :Addr/street    "Baker St. 7"
+addrId    :Addr/city      "Boston"
+```
+And we could go on with further relationships...
+
+### Cardinality many values
+
+Cardinality many attributes like for instance `hobbies` hold `Set`s of values. But we can apply values in various ways:
+```scala
+// Vararg
+Person.hobbies("golf", "chess").save
+
+// Set
+val set = Set("golf", "chess")
+Person.hobbies(set).save
+
+// Seq/List
+val seq = Seq("golf", "chess")
+Person.hobbies(seq).save
+```
+
+
+### Optional values
+
+An optional value (`optionalLikes`) from a form submission for instance can be applied to an optional attribute (`likes$`):
+
+```scala
+Person.name(aName).likes$(optionalLikes).age(anAge).save
+```
+When this molecule is saved, only 2 facts will be asserted:
+
+```
+fredId    :Person/name    "Fred"
+fredId    :Person/age     38
+```
+
+This is different from SQL where we would save a NULL value in a `likes` column.
+
+Molecule lets us fetch data sets with optional facts asserted for an attribute as optional values:
+
+```scala
+Person.name.likes$.age.get === List(
+  ("Fred", None, 38),
+  ("Pete", Some("sushi"), 17)
+)
+```
+
+If we specifically want to find Persons that have no `likes` asserted we can say
+```scala
+Person.name.likes_(nil).age.get === List(
+  ("Fred", 38)
+  // Pete not returned since he likes something
+)
+```
+.. or
+```scala
+Person.name.likes$(None).age.get === List(
+  ("Fred", None, 38)
+  // Pete not returned since he likes something
+)
+```
+
+## Insert
+
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Insert.scala)
+
+Data can be inserted by making a molecule that matches the values of each row.
+
+One row of data can be applied directly with matching arguments
+
+```scala
+Person.name.likes.age.insert("Fred", "pizza", 38)
+```
+
+Multiple rows of data can be applied as any `Iterable` of tuples of data each matching the molecule attributes:
+```scala
+Person.name.likes.age insert List(
+  ("Lisa", "pizza", 7),
+  ("Ben", "pasta", 5)
+)
+```
+
+### Type-safety
+
+Type-safety is guaranteed since the type of each tuple of data is enforced by the compiler to conform to the molecule type.
+
+If the data set is not accepted type-wise, then either the molecule needs to be adjusted to match the type of data rows. Or, the data set might be irregular and have some variable size of tuples or varying types within tuples that need to be sorted out.
+
+
+
+### Asynchronous insert
+
+All transactional operators have an asynchronous equivalent. Inserting data asynchronously with `insertAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
+
+Here, we insert data as argument list/tuples asynchronously:
+
+```scala
+// Insert single row of data with individual args
+val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("Fred", "pizza", 38)
+
+// Insert Iterable of multiple rows of data
+val multipleInsertFuture: Future[TxReport] = Person.name.likes.age insertAsync List(
+  ("Lisa", "pizza", 7),
+  ("Ben", "pasta", 5)
+)
+
+for {
+  _ <- singleInsertFuture
+  _ <- multipleInsertFuture
+  result <- Person.name.likes.age.getAsync
+} yield {
+  // Both inserts applied
+  result === List(
+    ("Fred", "pizza", 38),
+    ("Lisa", "pizza", 7),
+    ("Ben", "pasta", 5)
+  )
+}
+```
+For brevity, the following examples use the synchronous `save` operation.
+
+
+### Optional values
+
+`null` values are not allowed as data-input values whereas Optional values are:
+
+```scala
+Person.name.likes$.age insert List(
+  ("Fred", None, 38),
+  ("Pete", Some("sushi"), 17)
+)
+```
+As with `save`, None values are simply not asserted. No `likes` value is asserted for Fred in the example above.
+
+
+### Related data
+
+Related data can be inserted
+
+```scala
+Person.name.likes$.age.Home.street.city insert List(
+  ("Fred", None, 38, "Baker St. 7", "Boston"),
+  ("Pete", Some("sushi"), 17, "Sunset Boulevard 1042", "Foxville")
+)
+```
+When the Fred entity is created, a Baker St Address entity is also created and a relationship from Fred to that Address entity is created. The same for Pete, and so on...
+
+
+### Composite data
+
+Data with associative relationships can be inserted with a Composite molecule
+```scala
+Article.name.author + Tag.name.weight insert List(
+  (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
+  (("Best jokes ever", "John Cleese"), ("fun", 3))
+)
+```
+Note how each sub-molecule type-safely corresponds to each sub-tuple of data.
+
+Up to 22 sub-molecules can be associated in a single Composite which allows for wide data sets to be saved with up to 22 x 22 = 484 attributes per row of data!
+
+
+### Data variables
+Likewise we might often have the whole data set saved in a variable that we can insert too:
+
+```scala
+val data = List(
+  ("Fred", None, 38),
+  ("Pete", Some("sushi"), 17)
+)
+Person.name.likes$.age insert data
+```
+
+### Entity ids
+
+If we have some previously saved entities we can also insert their ids. Here we save some Address entity ids with the ref attribute `home`:
+
+```scala
+val bakerSt7 = Addr.street("Baker St. 7").city("Boston").save.eid
+val sunsetB = Addr.street("Sunset Boulevard 1042").city("Foxville").save.eid
+
+Person.name.likes$.age.home insert List(
+  ("Fred", Some("pizza"), 38, bakerSt7),
+  ("Lisa", None, 12, bakerSt7),
+  ("Ben", Some("pasta"), 7, bakerSt7),
+  ("Pete", Some("sushi"), 17, sunsetB)
+)
+```
+
+
+### Insert-molecule as template
+
+We can assign an Insert-molecule to a variable in order to re-use it as a temple to insert data with various inputs.
+
+```scala
+// Insert-molecule
+val insertPerson = Person.name.likes.age.insert
+
+// Insert 3 persons re-using the insert-molecule
+insertPerson("Fred", "pizza", 38)
+insertPerson("Lisa", "pizza", 12)
+insertPerson("Ben", "pasta", 7)
+```
+
+We can use insert-molecules with data assigned to variables too:
+
+```scala
+val insertPerson = Person.name.likes.age.insert
+
+val personsData = List(
+  ("Fred", "pizza", 38),
+  ("Lisa", "pizza", 7),
+  ("Ben", "pasta", 5)
+)
+
+// Re-use insert-molecules with larger data sets 
+insertPerson(personsData)
+```
+
+
+## Update
+
+An "update" is a two-step process in Datomic:
+
+1. Retract old fact
+2. Assert new fact
+
+Datomic doesn't overwrite data. "Retract" is a statement that says "this data is no longer current" which means that it won't turn up when you query for it _as of now_. If you query for it _as of before_ you will see it!
+
+Being able to see how data develops over time is a brillant core feature of Datomic. We don't need to administrate cumbersome historical changes manually. Auditing is built-in at the core of Datomic.
+
+
+### Cardinality one
+
+We need an entity id to update data so we get it first with the special generic Molecule attribute `e` (for _**e**ntity_):
+
+```scala
+val fredId = Person.e.name_("Fred").get.head
+```
+
+#### `apply(<value>)`
+Now we can update the entity Fred's age by applying the new value 39 to the `age` attribute:
+
+```scala
+Person(fredId).age(39).update
+```
+
+Molecule uses the `fredId` to
+
+1. find the current `age` attribute value (38) and retract that value
+2. assert the new `age` attribute value 39
+
+
+#### `apply()`
+
+We can retract ("delete") an attribute value by applying no value
+```scala
+Person(fredId).age().update
+```
+This will retract the `age` value 39 of the Fred entity.
+
+
+
+### Cardinality-many
+
+A cardinality many attribute like `hobbies` holds a `Set` of values:
+
+```scala
+Person(fredId).hobbies.get.head === Set("golf", "cars")
+```
+
+
+### Only unique values
+
+Since cardinality many attributes hold Sets, Molecule rejects duplicate values in all cardinality-many operations shown below.
+
+Duplicate variables or primitive values will throw a compile-time error. Duplicate values that can only be discovered at runtime will throw an IllegalArgumentException at runtime.
+
+### Operations on card-many attrs
+
+All operations generally accepts varargs or `Lists` of the type of the attribute. So even if the attribute holds a `Set` of values we can also supply a `Seq` of values.
+
+
+#### `assert` ("add")
+
+
+```scala
+// Assert vararg values
+Person(fredId).hobbies.assert("walks", "jogging").update
+Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging")
+
+// Add Set of values
+Person(fredId).hobbies.assert(Set("skating", "biking")).update
+Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "skating", "biking")
+```
+
+
+#### `replace` (retract + assert)
+
+Since Cardinality-many attributes have multiple values we need to specify which of those values we want to replace:
+
+```scala
+// Cardinality-many attribute value updated
+Person(fredId).hobbies.replace("skating" -> "surfing").update
+Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "surfing", "biking")
+```
+Here we tell that the "skating" value should now be "surfing". The old value is retracted and the new value asserted so that we can go back in time and see what the values were before our update.
+
+Update several values in one go
+
+```scala
+Person(fredId).hobbies(
+  "golf" -> "badminton",
+  "cars" -> "trains").update
+Person(fredId).hobbies.get.head === Set("badminton", "trains", "walks", "jogging", "surfing", "biking")
+```
+
+
+#### `retract`
+
+We can retract one or more values from the set of values
+
+```scala
+Person(fredId).hobbies.retract("badminton").update
+Person(fredId).hobbies.get.head === Set("trains", "walks", "jogging", "surfing", "biking")
+
+Person(fredId).hobbies.retract(List("walks", "surfing")).update
+Person(fredId).hobbies.get.head === Set("trains", "jogging", "biking")
+```
+The retracted facts can still be tracked in the history of the database.
+
+
+#### `apply`
+
+As with cardinality one attributes we can `apply` completely new values to an attribute. All old values are retracted. It's like an "overwrite all" operation except that we can see the retracted old values in the history of the database.
+
+
+```scala
+Person(fredId).hobbies("meditaion").update
+Person(fredId).hobbies.get.head === Set("meditation")
+```
+
+#### `apply()`
+
+Applying nothing (empty parenthesises) retracts all values of an attribute
+
+```scala
+Person(fredId).hobbies().update
+Person(fredId).hobbies.get === Nil
+```
+
+
+### Update multiple entities
+
+
+Update multiple entities in one transaction so that they have the same values:
+```scala
+// Both Bob and Ann turned 25 and became cool club members
+Person(bobId, annId).age(25).memberOf("cool club").update
+```
+
+See [tests](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleEntities.scala) for variations of updating multiple entities.
+
+
+### Asynchronous update
+
+All transactional operators have an asynchronous equivalent. Updating data asynchronously with `updateAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
+
+Here, we map over the result of updating an entity asynchronously:
+
+```scala
+for {
+  // Initial data
+  saveTx <- Person.name.age insertAsync List(("Ben", 42), ("Liz", 37))
+  List(ben, liz) = saveTx.eids
+
+  // Update Liz' age
+  updateTx <- Ns(liz).age(38).updateAsync
+
+  // Get result
+  result <- Person.name.age.getAsync
+} yield {
+  // Liz had a birthday
+  result === List(("Ben", 42), ("Liz", 38))
+}
+```
+
+### Updating multiple entities asynchronously
+
+```scala
+// Initial data
+Ns.str.int insertAsync List(
+  ("a", 1),
+  ("b", 2),
+  ("c", 3),
+  ("d", 4)
+) map { tx => // tx report from successful insert transaction
+  // 4 inserted entities
+  val List(a, b, c, d) = tx.eids
+  Ns.int.get === List(
+    ("a", 1),
+    ("b", 2),
+    ("c", 3),
+    ("d", 4)
+  )
+
+  // Update multiple entities asynchronously
+  Ns(a, b).int(5).updateAsync.map { tx2 => // tx report from successful update transaction
+    // Current data
+    Ns.int.get.sorted === List(
+      ("a", 5),
+      ("b", 5),
+      ("c", 3),
+      ("d", 4)
+    )
+  }
+}
+```
+
+### Tests
+Update-tests with:
+
+- [Various types](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/update)
+- [Map attribute](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/crud/updateMap)
+- [Multiple attributes](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleAttributes.scala)
+- [Multiple entities](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/UpdateMultipleEntities.scala)
+
+
+## Retract
+
+[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Retract.scala)
+
+
+In Datomic, retracting a fact saves a retracted Datom with the `added` operation set to `false`. Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/manual/time/asof-since/) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since none is deleted!
+
+### Retract facts
+
+To retract individual attributre values apply empty parenthesises to the attribute we want to retract and then update the molecule:
+
+
+```scala
+Community(belltownId).name().category().update
+```
+Here we retracted the `name` and `category` attribute values of the Belltown Community entity:
+
+
+### Retract an entity
+
+To delete a whole entity with all its attribute values we can call `retract` on a `Long` entity id
+
+```scala
+fredId.retract
+```
+All attributes having the entity id `fredId` are retracted.
+
+### Add Tx meta data to retraction on entity id
+
+Associate transaction meta data to a retraction on an entity id
+```scala
+fredId.Tx(MyUseCase.name("Terminate membership")).retract
+```
+
+We can then afterwards use the tx meta data to get information of retracted data:
+```scala
+// Who got their membership terminated and when?
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  (fredId, "Fred", t3, false) // Fred terminated his membership at transaction t3 and was retracted
+)
+```
+
+
+### Retract multiple entities
+
+Alternatively we can use the `retract` method (available via `import molecule.imports._`)
+
+```scala
+retract(fredId)
+```
+This `retract` method can also retract multiple entities
+
+```scala
+val eids: List[Long] = // some entity ids 
+
+// Retract all supplied entity ids
+retract(eids)
+```
+
+### Add Tx meta data to retraction of multiple entity ids
+
+.. and even associate transaction meta data to the retraction
+```scala
+// Retract multiple entity ids and some tx meta data about the transaction
+retract(eids, MyUseCase.name("Terminate membership"))
+```
+Again, we can then afterwards use the tx meta data to get information of retracted data:
+```scala
+// Who got their membership terminated and when?
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  (fredId, "Fred", t3, false), // Fred terminated his membership at transaction t3 and was retracted
+  (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
+)
+```
+
+
+### Retract component entity
+
+If a ref attribute is defined with the option `isComponent` then it "owns" its related entities - or "subcomponents", as when an `Order` own its `LineItem`s.
+
+```scala
+object ProductsOrderDefinition {
+
+  trait Order {
+    val id    = oneInt
+    val items = many[LineItem].isComponent // Order owns its line items
+  }
+
+  trait LineItem {
+    val product = oneString
+    val price   = oneDouble
+    val qty     = oneInt
+  }
+}
+```
+
+If we retract such `Order`, then all of its related `LineItem`s are also retracted:
+
+```scala
+orderId.retract // All related `LineItem`s are also retracted!
+
+// or
+retract(orderId)
+```
+Component entities are recursively retracted! So if `LineItem` would have had subcomponents then those would have been retracted too when the order was retracted - and so on down the hierarchy of subcomponents.
+
+
+
+
+### Asynchronous retract
+
+All transactional operators have an asynchronous equivalent.
+
+Retracting entities asynchronously uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
+
+Here, we map over the result of retracting an entity asynchronously (in the inner mapping):
+
+```scala
+// Initial data
+Ns.int.insertAsync(1, 2).map { tx => // tx report from successful insert transaction
+  // 2 inserted entities
+  val List(e1, e2) = tx.eids
+  Ns.int.get === List(1, 2)
+
+  // Retract first entity asynchronously
+  e1.retractAsync.map { tx2 => // tx report from successful retract transaction
+    // Current data
+    Ns.int.get === List(2)
+  }
+}
+```
+Retract multiple entities asynchronously:
+```scala
+// Initial data
+Ns.int.insertAsync(1, 2, 3).map { tx => // tx report from successful insert transaction
+  // 2 inserted entities
+  val List(e1, e2, e3) = tx.eids
+  Ns.int.get === List(1, 2, 3)
+
+  // Retract first entity asynchronously
+  retractAsync(Seq(e1, e2)).map { tx2 => // tx report from successful retract transaction
+    // Current data
+    Ns.int.get === List(3)
+  }
+}
+```
+
+
+
+## Tx bundle
 
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxBundle.scala)
 
@@ -97,7 +668,7 @@ Each of the above operations has an equivalent method for getting the transactio
 - `<entityId>.getRetractTx`
 
 We can use those methods to build a bundled transaction to atomically perform 4 operations in one transaction:
-```
+```scala
 // Some initial data
 val List(e1, e2, e3) = Ns.int insert List(1, 2, 3) eids
 
@@ -125,7 +696,7 @@ Ns.int.get.sorted === List(
 
 Bundled transactions can also use Datomic's asynchronous API by calling `transactAsync`:
 
-```
+```scala
 Await.result(
   transactAsync(
     e1.getRetractTx,
@@ -140,14 +711,14 @@ Await.result(
   2.seconds
 )
 ```
-### Debugging bundled transactions
+### Inspecting bundled transactions
 
-If you want to see the transactional output from a bundled transaction you can call `debugTransaction` on some bundled transaction data:
+If you want to see the transactional output from a bundled transaction you can call `inspectTransaction` on some bundled transaction data:
 
 
-```
-// Print debug info for group transaction without affecting live db
-debugTransact(
+```scala
+// Print inspect info for group transaction without affecting live db
+inspectTransact(
   // retract
   e1.getRetractTx,
   // save
@@ -202,303 +773,9 @@ Updating 2 to 20 for instance creates two Datoms, one retracting the old value 2
 
 (The numbers on the left are simply index numbers and not part of the transactional data)
 
-## Transaction functions
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxFunctions.scala)
 
-
-
-
-### Atomic processing within the transaction
-
-Transaction functions
-
-- run on the transactor inside of transactions
-- can atomically analyze and transform database values
-- can perform arbitrary logic
-- must have no side effect
-- must return transaction data (`Seq[Seq[Statement]]`)
-
-Since tx functions have access to the tx database value they are essential to guaranteeing atomicity in updates for instance. You can query the current db value within the transaction logic and thus be sure certain assertions hold before doing some operation.
-
-### Calling tx functions
-
-Molecule facilitates writing tx functions by annotating one or more objects that contain tx function methods:
-
-```
-import molecule.macros.TxFns
-
-@TxFns
-object myTxFunctions {
-
-  def myTxFunction1(args...)(implicit conn: Conn): Seq[Seq[Statement]] = {
-    ...
-  }
-  
-  def myTxFunction2(args...)(implicit conn: Conn): Seq[Seq[Statement]] = {
-    ...
-  }
-  etc...
-}
-
-
-@TxFns
-object myTxFunctionsSomewhereElse {...}
-etc...
-```
-The macro annotation `@TxFns` creates an internal "twin" method at compile time for each Scala tx function that you define. The twin method basically adapts to the way Datomic expects tx functions and automatically gets saved into the Datomic database transparently without any work on your part.
-
-### Enabling the macro annotation
-
-To use the `@TxFns` macro annotation, you'll need to include the Macro Paradise compiler plugin in your build:
-
-```
-
-libraryDependencies ++= Seq(
-  ...,
-  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.patch)
-)
-```
-
->Macro annotations have been considered experimental in Scala and for version 2.12 requires an
->import of the scala paradise plugin. In version 2.13 they have been incorporated into the core
->language itself and importing the paradise plugin will no longer be necessary.
-
-
-### Tx functions on the transactor classpath
-
-The tx functions also need to be visible to the transactor process meaning that the compiled tx function container must be on the classpath of the transactor. This will depend on the Datomic setup you are using:
-
-#### Local dev / in-memory
-No need to prepare anything since transaction functions defined within the project will be available on the classpath for the Transactor managed by the Peer.
-
-#### Starter pro / pro
-Set Datomic classpath variable to where your tx functions are before starting the transactor
-```
-> cd DATOMIC_HOME
-> export DATOMIC_EXT_CLASSPATH=/Users/mg/molecule/molecule/coretests/target/scala-2.12/test-classes/
-> bin/transactor ...
-```
-
-#### Free
-The Free version can't set the classpath variable so we need to provide the tx functions manually by making a jar of our classes, move it to the transactor bin folder and start the transactor:
-```
-> cd ~/molecule/molecule/coretests/target/scala-2.12/test-classes  [path to your compiled classes] 
-> jar cvf scala-fns.jar .
-> mv ~/molecule/molecule/coretests/target/scala-2.12/test-classes/scala-fns.jar DATOMIC_HOME/bin/
-> bin/transactor ...
-```
-
-
-### Tx function example
-
-A typical example of needing access to the tx database value before doing an operation on it could be to transfer money from one account to another.
-
-### Enforcing atomic constraints
-We want to be sure that there is enough available funds before we do the transfer. If we had done the lookup of the current balance outside a transaction we could risk that the balance was updated inbetween our lookup and doing the transfer. With a tx function we can avoid this by having access to the tx database value _within the transaction itself_. This will give us the necessary atomicity of the whole transfer. The transfer will only happen if there are enough funds available.
-
-Let's look at a simple tx function implementation:
-
-```
-@TxFns
-object myTxFunctions {
-
-  // Pass in entity ids of from/to accounts and the amount to be transferred
-  def transfer(from: Long, to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-    // Validate sufficient funds in from-account
-    val curFromBalance = Account(from).balance.get.headOption.getOrElse(0)
-    if (curFromBalance < amount)
-      throw new TxFnException(
-        s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
-
-    // Calculate new balances
-    val newFromBalance = curFromBalance - amount
-    val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
-
-    // Update accounts
-    Account(from).balance(newFromBalance).getUpdateTx ++ Account(to).balance(newToBalance).getUpdateTx
-  }
-}
-```
-
-The signature of a tx functions must include an implicit `Conn` parameter. This makes sure that the macro annotation can inject a database value in the generated transparent twin function for Datomic.
-
-We first check the available-funds constraint by looking up the current balance and throw an exception if there is not enough money available. Throwing an exception inside a tx function will cancel the whole transaction and thereby guarantee atomicity.
-
-Tx functions need to return transaction statements. We use Molecule's tx methods on molecules for the equivalent operations to get the necessary statements. So, to get the transaction statements of an update we simply replace a normal `update` call too `getUpdateTx` which will give us the transaction statements produced:
-
-```
-// Isolated update transaction (not in tx function)
-Account(from).balance(newFromBalance).update
-
-// .. equivalent to the transaction statements returned by `getUpdateTx` 
-Account(from).balance(newFromBalance).getUpdateTx
-```
-
-
-### Tx functions have to be pure
-
-Tx functions can't modify the database within the body of the tx method. You couldn't for instance do an update within the method body. Any operations on the database have to be encoded in the returned transaction statements.
-
-
-### Invoking tx functions
-
-We call the transaction function inside a `transact` method:
-```
-transact(transfer(fromAccount, toAccount, okAmount))
-```
-`transact` is a macro that needs the tx function invocation itself as its argument in order to be able to analyze the tx function at compile time.
-
-So our complete example could look like this:
-
-```
-// Initial balances
-Account(fromAccount).balance.get.head === 100
-Account(toAccount).balance.get.head === 700
-
-// Invoke tx function to do the transfer and pass the produced tx statements to `transact`
-transact(transfer(fromAccount, toAccount, 20))
-
-// Balances after transfer
-Account(fromAccount).balance.get.head === 80
-Account(toAccount).balance.get.head === 720
-```
-
-### Error handling - ensuring atomicity
-
-```
-// Trying to transfer a too big amount will throw an exception 
-(transact(transfer(fromAccount, toAccount, 500)) must throwA[TxFnException])
-  .message === s"Got the exception molecule.macros.exception.TxFnException: " +
-  s"Can't transfer 500 from account $fromAccount having a balance of only 100."
-  
-// No data has been changed
-Account(fromAccount).balance.get.head === 100
-Account(toAccount).balance.get.head === 700
-```
-
-### Async invocations
-Tx functions can also be invoked asynchronously:
-
-```
-Await.result(
-  transactAsync(transfer(fromAccount, toAccount, 20)) map { txReport =>
-    // (for brevity we check the current balances synchronously)
-    Account(fromAccount).balance.get.head === 80
-    Account(toAccount).balance.get.head === 720
-  },
-  2.seconds
-)
-```
-For brevity examples show synchronous invocations but could as well have used async invocations.
-
-
-### Composing tx functions
-
-A tx function can be called from another tx function. We can thus compose more complex tx functions from "sub tx functions". We could for instance de-compose our previous transfer tx function into two sub tx functions `withdraw` and `deposit` and then call those from a `transferComposed` tx function:
-
-```
-// "Sub" tx fn - can be used on its own or in other tx functions
-def withdraw(from: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  val curFromBalance = Account(from).balance.get.headOption.getOrElse(0)
-  if (curFromBalance < amount)
-    throw new TxFnException(s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
-
-  val newFromBalance = curFromBalance - amount
-  Account(from).balance(newFromBalance).getUpdateTx
-}
-
-
-// "Sub" tx fn - can be used on its own or in other tx functions
-def deposit(to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
-  Account(to).balance(newToBalance).getUpdateTx
-}
-
-
-// Compose tx function by calling other tx functions
-def transferComposed(from: Long, to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  // This tx function guarantees atomicity when calling multiple sub tx functions.
-  // If they were called independently outside a tx function, atomicity wouldn't be guaranteed.
-  withdraw(from, amount) ++ deposit(to, amount)
-}
-```
-
-### Adding tx meta data to tx function invocations
-
-Tx meta data can be added to a tx function invocation by adding one or more tx meta data molecules with applied tx meta data to the `transact`/`transactAsync` method. Say we want to add meta information about "who did the transfer" then we can add it to the transaction entity like this:
-```
-// Add tx meta data that John did the transfer
-transact(transfer(fromAccount, toAccount, 20), Person.name("John"))
-
-// We can then query for the transfer that John did
-Account(fromAccount).balance.Tx(Person.name_("John")).get.head === 80
-Account(toAccount).balance.Tx(Person.name_("John")).get.head === 720
-```
-Note how the tx meta data applies to both accounts since they were both modified in the same transaction that the tx meta data was applied to.
-
-We can add arbitrary and possibly unrelated tx meta data to a tx function invocation by applying two or more tx meta data molecules:
-```
-// Add tx meta data that John did the transfer and that it is a scheduled transfer
-transact(
-  transfer(fromAccount, toAccount, 20), 
-  Person.name("John"), 
-  UseCase.name("Scheduled transfer"))
-
-// Query multiple Tx meta data molecules
-Account(fromAccount).balance
-  .Tx(Person.name_("John"))
-  .Tx(UseCase.name_("Scheduled transfer")).get.head === 80
-Account(toAccount).balance
-  .Tx(Person.name_("John"))
-  .Tx(UseCase.name_("Scheduled transfer")).get.head === 720
-```
-
-
-### Debugging tx function invocations
-
-If you want to see the `Statement`s produced by a tx function you can invoke it within `debugTransact` without affecting the live database:
-
-```
-// Print debug info for tx function invocation
-debugTransact(transfer(fromAccount, toAccount, 20))
-
-// Prints produced tx statements to output:
-/*
-## 1 ## TxReport 
-========================================================================
-1          ArrayBuffer(
-  1          List(
-    1          :db/add       17592186045445       :Account/balance    80        Card(1))
-  2          List(
-    1          :db/add       17592186045447       :Account/balance    720       Card(1)))
-------------------------------------------------
-2          List(
-  1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Thu Nov 22 16:23:09 CET 2018
-
-  2    2     added: true ,   t: 13194139534345,   e: 17592186045445,   a: 64,   v: 80
-       3     added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 100
-
-  3    4     added: true ,   t: 13194139534345,   e: 17592186045447,   a: 64,   v: 720
-       5     added: false,  -t: 13194139534345,  -e: 17592186045447,  -a: 64,  -v: 700)
-========================================================================
-*/
-```
-Two groups of data are shown. The first group is an internal representation in Molecule showing the operations. The second group shows the datoms produced in the transaction. For ease of reading, "-" (minus) is prepended the prefixes (t, e, a, v) for the datoms that are retractions - where `added` is false. The abbreviations represents the parts of the Datom:
-
-- `added`: operation, can be true for asserted or false for retracted
-- `t`: transaction entity id
-- `e`: entity
-- `a`: attribute
-- `v`: value
-
-Updating the from-account balance from 100 to 80 for instance creates two Datoms, one retracting the old value 100 and one asserting the new value 80.
-
-(The numbers on the left are simply index numbers and not part of the transactional data)
-
-## Transaction meta data
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxMetaData.scala)
+## Tx meta data
 
 
 As we saw, a [transaction](/manual/transactions/) in Datomic is also an entity with a timestamp fact. Since it's an entity as any of our own entities, we can even add more facts that simply share the entity id of the transaction:
@@ -509,7 +786,7 @@ As we saw, a [transaction](/manual/transactions/) in Datomic is also an entity w
 
 Depending on our domain we can tailor any tx meta data that we find valuable to associate with some transactions. We could for instance be interested in "who did it" and "in what use case" it happened and create some generic attributes `user` and `uc` in an `Audit` namespace:
 
-```
+```scala
 trait Audit {
   val user = oneString
   val uc   = oneString
@@ -517,14 +794,14 @@ trait Audit {
 ```
 Then we can assert values of those attributes together with a `save` operation for instance by applying an `Audit` meta molecule
 
-```
+```scala
 Audit.user("Lisa").uc("survey")
 ```
 
 ..to the generic `Tx` namespace:
 
 
-```
+```scala
 Person.name("Fred").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
 ```
 This could read: _"A person Fred liking pizza was saved by Lisa as part of a survey"_
@@ -540,7 +817,7 @@ Molecule simply saves the tx meta data attributes `user` and `uc` with the trans
 
 Now we can query the tx meta data in various ways:
 
-```
+```scala
 // How was Fred added?
 // Fred was added by Lisa as part of a survey
 Person(e5).name.Tx(Audit.user.uc).get === List(("Fred", "Lisa", "survey"))
@@ -563,7 +840,7 @@ Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
 
 If we insert multiple entities in a transaction, the transaction data is only asserted once:
 
-```
+```scala
 Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
   ("John", "sushi"),
   ("Pete", "burgers"),
@@ -576,7 +853,7 @@ Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
 
 Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta data:
 
-```
+```scala
 Article.name.author + 
   Tag.name.weight
   .Tx(MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")) insert List(
@@ -587,7 +864,7 @@ Article.name.author +
 )
 ```
 _"Get serious articles that Brenda submitted"_:
-```
+```scala
 m(Article.name.author + 
   Tag.name_("serious").weight.>=(4)
   .Tx(MetaData.submitter_("Brenda Johnson"))).get === List(
@@ -600,12 +877,12 @@ m(Article.name.author +
 ### Update
 
 Transaction meta data can be attached to updates too so that we can for instance follow who changed data in our system.
-```
+```scala
 Person(johnId).likes("pasta").Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
 ```
 Now when we look at a list of Persons and what they like we can see that some likes were from an original survey and one is from a follow-up survey that Ben did:
 
-```
+```scala
 Person.name.likes.Tx(Audit.user.uc).get === List(
   ("John", "pasta", "Ben", "survey-follow-up"),
   ("Pete", "burgers", "Lisa", "survey"),
@@ -621,11 +898,11 @@ It's valuable also to have meta data about retractions so that we can afterwards
 ### Single attribute
 
 To retract an attribute value we apply an empty arg list to the attribute and `update`. Here we also apply some tx meta data about who took away the `likes` value for Pete:
-```
+```scala
 Person(peteId).likes().Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
 ```
 We can follow the `likes` of Pete through [history](/manual/time/history/) and see that Ben retracted his `likes` value in a survey follow-up:
-```
+```scala
 Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // Pete's liking was saved by Lisa as part of survey
   ("burgers", 1028, true, "Lisa", "survey"),
@@ -636,7 +913,7 @@ Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2,
 ```
 The entity Pete still exists but now has no current liking:
 
-```
+```scala
 Person(peteId).name.likes$.get.head === ("Pete", None) 
 ```
 
@@ -645,14 +922,14 @@ Person(peteId).name.likes$.get.head === ("Pete", None)
 Using the `retract` method (available via `import molecule.imports._`) we can retract one or more entity ids along with a tx meta data:
 
 
-```
+```scala
 retract(johnId, Audit.user("Mona").uc("clean-up"))
 ```
 The `Audit.user("Mona").uc("clean-up")` molecule has the tx meta data that we save with the transaction entity.
 
 John has now ben both saved, updated and retracted:
 
-```
+```scala
 Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // John's liking was saved by Lisa as part of survey
   ("sushi", 1028, true, "Lisa", "survey"), // sushi asserted
@@ -667,7 +944,118 @@ Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2,
 ```
 
 The entity John now currently doesn't exists (although still in history)
-```
+```scala
 Person(johnId).name.likes$.get === Nil 
 ```
 
+
+
+
+
+
+
+## Tx report
+
+
+
+
+All assertions and retractions in Datomic happen within a transaction that guarantees ACID consistency. Along with the domain data involved, Datomic also automatically asserts a timestamp as part of a created Transaction entity for that transaction.
+
+Say that we create a new person with entity id `e5`:
+```scala
+val e5 = Person.name("Fred").likes("pizza").save.eid
+```
+
+Then the following assertions are made:
+
+![](/img/page/transactions/1.png)
+
+The 4th column of the quintuplets is the entity id of the transaction where the fact was asserted or retracted. In this case the two facts about Fred was asserted in transaction `tx4`. `tx4` is an entity id (`Long`) exactly as the entity id of fred `e5`.
+
+The time of the transaction `date1` (`java.util.Date`) is asserted with the transaction entity id `tx4` as its entity id. And since that timestamp fact is also part of the same transaction `tx4` is also the transaction value (4th column) for that fact.
+
+
+### Transactions return TxReport
+
+All transactional operations on molecules return a `TxReport` with information about the transaction like what data was transacted and what entities were created and a timestamp of the transaction:
+
+```scala
+val tx: TxReport = Person.name("Fred").likes("pizza").age(38).save
+
+// Entity id created - useful when we know one entity was created
+val fredId: Long = tx.eid // (same as tx.eids.head)
+
+// Entities id created
+val entities: Seq[Long] = tx.eids
+
+// Transaction time `t` (a sequential number created internally by Datomic identifying the tx)
+val txT: Date = tx.t
+
+// Transaction time as `Date`
+val txTime: Date = tx.inst
+
+// Transaction entity id
+val txEntityId: Long = tx.tx
+
+// Transaction Entity
+val txEntity: datomicEntity = tx.txE
+```
+
+
+
+### Transaction entity id `tx`
+
+Since the transaction is itself an entity exactly as any other entity we can query it as we query our own domain data.
+
+Molecule offers some generic attributes that makes it easy to access transaction data. In our example we could find the transaction entity id of the assertion of Freds `name` by adding the generic attribute `tx` right after the `name_` attribute (that we have made tacit with the underscore since we're not interested in value "Fred"):
+
+_"In what transaction was Freds name asserted?"_
+```scala
+Person(e5).name_.tx.get.head === tx4  // 13194139534340L
+```
+The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity `e5` (Fred) was asserted in transaction `tx4` since the value `tx4` was saved as the `name` quintuplet's 4th value.
+
+### Transaction value `t`
+
+Alternatively we can get a transaction value `t`
+
+```scala
+Person(e5).name_.t.get.head === t4  // 1028L
+```
+
+
+### Transaction time `txInstant`
+
+With the transaction entity available we can then also get to the value of the timestamp fact of that transaction entity. For convenience Molecule has a generic `txIntstant` to lookup the timestamp which is a `date.util.Date`:
+
+_"When was Freds name asserted?"_
+```scala
+Person(e5).name_.txInstant.get.head === date1  // Tue Apr 26 18:35:41
+```
+
+### Transaction data per attribute
+
+Since each fact of an entity could have been stated in different transactions, transaction data is always tied to only one attribute.
+
+Say for instance that we assert Fred's `age` in another transaction `tx5`, then we could subsequently get the two transactions involved:
+
+_"Was Fred's name and age asserted in the same transaction?"_
+```scala
+// Second transaction
+val tx5 = Person(e5).age(38).update.tx
+
+// Retrieve transactions of multiple attributes
+Person(e5).name_.tx.age_.tx.get.head === (tx4, tx5)
+
+// No, name and age were asserted in different transactions
+tx4 !== tx5
+```
+Likewise we could ask
+
+_"At what time was Fred's name and age asserted"_
+```scala
+Person(e5).name_.txInstant.age_.txInstant.get.head === (date1, date2)
+
+// Fred's name was asserted before his age
+date1.before(date2) === true
+```

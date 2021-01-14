@@ -1,5 +1,4 @@
 ---
-date: 2014-05-14T02:13:50Z
 title: "About"
 ---
 
@@ -12,12 +11,12 @@ Molecule is created by Marc Grue who both plays the double bass in the Gothenbur
 
 The plan is to use Molecule as the optimal database access DSL for a big website for all classical musicians that Marc works on.
 
-![](/img/about/mg.jpg)
+![](/img/page/about/mg.jpg)
 
 
 Watch [Molecule presentations](/resources/videos/2017-04-25_marc_grue/)
     
-[![](/img/presentation.jpg)](/resources/videos/2017-04-25_marc_grue/)
+[![](/img/page/about/presentation.jpg)](/resources/videos/2017-04-25_marc_grue/)
 
 
 About Marc:

@@ -5,10 +5,6 @@ menu:
   main:
     parent: code
     identifier: generic
-up:   /manual/time
-prev: /manual/time/testing
-next: /manual/generic/datom
-down: /manual/debug
 ---
 
 # Generic attributes
@@ -21,14 +17,15 @@ Molecule provides access to generic data about data and Schema with the followin
 #### [Datom](datom)
 
 Get id of Ben entity with generic Datom attribute `e`
-```
+```scala
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
+
 
 #### [EAVT Index](indexes)
 
 Attributes and values of entity e1
-```
+```scala
 EAVT(e1).a.v.get === List(
   (":Person/name", "Ben"),
   (":Person/age", 42),
@@ -39,7 +36,7 @@ EAVT(e1).a.v.get === List(
 #### [AVET Index](indexes)
 
 Values, entities and transactions where attribute :Person/age is involved
-```
+```scala
 AVET(":Person/age").e.v.t.get === List(
   (42, e1, t2),
   (37, e2, t5)
@@ -56,7 +53,7 @@ AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
 #### [AEVT Index](indexes)
 
 Entities, values and transactions where attribute :Person/name is involved 
-```
+```scala
 AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
@@ -66,7 +63,7 @@ AEVT(":Person/name").e.v.t.get === List(
 #### [VAET Index](indexes)
 
 Get entities pointing to entity a1
-```
+```scala
 VAET(a1).v.a.e.get === List(
   (a1, ":Release/artists", r1),
   (a1, ":Release/artists", r2),
@@ -77,7 +74,7 @@ VAET(a1).v.a.e.get === List(
 #### [Log](log)
 
 Data from transaction t1 until t4 (exclusive)
-```
+```scala
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 41, true),
@@ -93,13 +90,104 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 #### [Schema](schema)
 
 Get entities pointing to entity a1 
-```
+```scala
 Schema.part.ns.attr.fulltext$.doc.get === List(
   ("ind", "person", "name", Some(true), "Person name"), // fulltext search enabled
   ("ind", "person", "age", None, "Person age"),
   ("cat", "sport", "name", None, "Sport category name")
 )
 ``` 
+
+
+
+
+
+
+
+## Entity
+
+An entity in Datomic is a group of Datoms/facts that share an entity id:
+
+![](/img/page/entity/entity1.png)
+
+
+Attributes with any seemingly unrelated namespaces can group as entities by simply sharing the entity id:
+
+![](/img/page/entity/entity2.png)
+
+This demonstrates that Datomic/Molecule Namespaces are not like Tables in SQL. The above entity for instance has attributes asserted from 2 different namespaces that could be completely unrelated/have no reference to each other. Attributes from any number of namespaces could be asserted sharing the same entity id.
+
+
+At runtime we can see the facts of an entity by calling `touch` on the entity id (of type `Long`):
+
+```scala
+101L.touch === Map(
+  ":db/id" -> 101L,
+  ":Person/name"  -> "Fred", 
+  ":Person/likes" -> "pizza", 
+  ":Person/age"   -> 38, 
+  ":Person/addr"  -> 102L,        // reference to an address entity with entity id 102 
+  ":Site/cat"     -> "customer"
+)
+```
+
+
+
+### Optional attribute values
+
+We can look for an optionally present attribute value. Here we ask the entity id `fredId` if it has a `:Site/cat` attribute value (of type `String`) and we get a typed optional value back:
+```scala
+val siteCat_? : Option[String] = fredId[String](":Site/cat")
+```
+
+
+### Traversing
+
+The `touch` method can recursively retrieve referenced entities. We could for instance traverse an `Order` with `LineItems`:
+
+
+```scala
+orderId.touch === Map(
+  ":db/id" -> orderId,
+  ":Order/lineItems" -> List(
+    Map(
+      ":db/id" -> 102L, 
+      ":LineItem/qty" -> 3, 
+      ":LineItem/product" -> "Milk",
+      ":LineItem/price" -> 12.0),
+    Map(
+      ":db/id" -> 103L, 
+      ":LineItem/qty" -> 2, 
+      ":LineItem/product" -> "Coffee",
+      ":LineItem/price" -> 46.0)))
+```
+
+The entity attributes graph might be deep and wide so we can apply a max level to `touch(<maxLevel>)`:
+
+```scala
+fredId.touchMax(2) === Map(
+  ":db/id" -> fredId,
+  ":Person/name" -> "Fred"
+  ":Person/friends" -> List(
+    Map(
+      ":db/id" -> lisaId,
+      ":Person/name" -> "Lisa"
+      ":Person/friends" -> List(
+        Map(
+          ":db/id" -> monaId,
+          ":Person/name" -> "Mona"
+          ":Person/friends" -> Set(ids...) // Mona's friends (3 levels deep) only as ids - not attribute maps
+        ),
+        Map(...) // + more friends of Lisa (2 levels deep)
+      )
+    ),
+    Map(...) // + more friends of Fred (1 level deep)
+  )
+)
+```
+
+
+
 
 ## Datom
 
@@ -132,21 +220,21 @@ The Transaction value has two more representations
 
 Generic attributes like `e` can be added to retrieve an entity id of a custom molecule:
 
-```
+```scala
 // Get entity id of Ben with generic datom attribute `e` on a custom molecule
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
 
 And we can get information about the transaction time of the assertion of some custom attribute value:
 
-```
+```scala
 // When was Ben's age updated? Using `txInstant`
 Person(benEntityId).age.txInstant.get.head === (42, <April 4, 2019>) // (Date)
 ```
 
 With a history db we can access the transaction number `t` and assertion/retraction statusses with `op`
 
-```
+```scala
 // 
 Person(benEntityId).age.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
   (41, t1, true),  // age 41 asserted in transaction t1
@@ -162,7 +250,7 @@ In molecule, attribute names (the `A` of the Datom) are modelled as our custom D
 
 Sometimes we will be interested in more generic data where we don't know in advance what attributes will be involved. Then we can use the generic Datom attribute `a` for Attribute name and `v` for value. We could for instance ask what we know about an entity over time in the database:
 
-```
+```scala
 // What do we know about the fred entity?
 Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
   (":Person/name", "Fred", t3, true), 
@@ -176,7 +264,7 @@ Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
 
 By applying values to generic attributes we can filter search results:
 
-```
+```scala
 // What was asserted/retracted in transaction tx3 about what Fred likes? 
 Person(fred).likes.tx(tx6).op.getHistory.sortBy(r => (r._2, r._3)) === List(
   ("pizza", t6, false), // Fred no longer likes pizza
@@ -220,7 +308,7 @@ The following standard generic Index attributes can be used to build Index molec
 
 The EAVT index provides efficient access to everything about a given entity. Conceptually this is very similar to row access style in a SQL database, except that entities can possess arbitrary attributes rather then being limited to a predefined set of columns.
 
-```
+```scala
 // Create EAVT Index molecule with 1 entity id argument
 EAVT(e1).e.a.v.t.get === List(
   (e1, ":Person/name", "Ben", t1),
@@ -246,7 +334,7 @@ EAVT(e1, ":Person/age").a.v.get === List(
 
 The AVET index provides efficient access to particular combinations of attribute and value.
 
-```
+```scala
 // Create AVET Index molecule with 1 entity id argument
 AVET(":Person/age").v.e.t.get === List(
   (42, e1, t2),
@@ -262,7 +350,7 @@ AVET(":Person/age", 42, e1, t2).e.v.get === List( (e1, t2) )
 
 The AVET Index can be filtered by a range of values between `from` (inclusive) and `until` (exclusive) for an attribute:
 
-```
+```scala
 AVET.range(":Person/age", Some(14), Some(37)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
                // 37 not included in value range
@@ -286,7 +374,7 @@ AVET.range(":Person/age", Some(20), None).v.e.t.get === List(
 
 The AEVT index provides efficient access to all values for a given attribute, comparable to traditional column access style.
 
-```
+```scala
 // Create AEVT Index molecule with 1 entity id argument
 AEVT(":Person/name").e.v.t.get === List(
   (e1, "Ben", t2),
@@ -303,7 +391,7 @@ AEVT(":Person/name", e1, "Ben", t2).e.v.get === List( (e1, "Ben") )
 
 The VAET index contains all and only datoms whose attribute has a :db/valueType of :db.type/ref. This is also known as the reverse index, since it allows efficient navigation of relationships in reverse.
 
-```
+```scala
 // Say we have 3 entities pointing to one entity:
 Release.e.name.Artists.e.name.get === List(
   (r1, "Abbey Road", a1, "The Beatles"),
@@ -347,7 +435,7 @@ The Molecule Log implementation takes two arguments to define a range of transac
 
 Contrary to Datomic's Log implementation, Molecule returns data as a flat list of tuples of data that matches the generic attributes in the Log molecule. This is to transparently sharing the same semantics as other molecules.
 
-```
+```scala
 // Data from transaction t1 (inclusive) until t4 (exclusive)
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
@@ -364,7 +452,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 ### From beginning
 
 If the `from` argument is `None` data from the beginning of the log is matched:
-```
+```scala
 Log(None, Some(t3)).v.e.t.get === List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 41, true),
@@ -379,7 +467,7 @@ Log(None, Some(t3)).v.e.t.get === List(
 ### Until end
 
 If the `until` argument is `None` data from until the end of the log is matched:
-```
+```scala
 Log(Some(t2), None).v.e.t.get === List(
   // t1 not included
 
@@ -429,14 +517,14 @@ The following Schema attributes can be used to build Schema molecules:
 
 ### Querying the Schema structure
 
-```
+```scala
 // List of attribute entity ids
 val attrIds: Seq[Long] = Schema.id.get
 ```
 
 ### Partition/Namespace/Attribute names
 
-```
+```scala
 // Attribute name elements
 Schema.a.part.ns.nsFull.attr.get === List (
   (":sales_Customer/name", "sales", "Customer", "sales_Customer", "name"),
@@ -447,7 +535,7 @@ Schema.a.part.ns.nsFull.attr.get === List (
 
 ### Types and cardinality
 
-```
+```scala
 // Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
   (":sales_Customer/name", "string", "one"),
@@ -478,7 +566,7 @@ Scala `Int` and `Long` are both represented as Datomic type `long`:
 
 These can be retrieved as mandatory or optional attribute values
 
-```
+```scala
 Schema.a
       .index
       .doc$
@@ -509,7 +597,7 @@ Schema.a
 ### Enum values
 
 Enumerated values can be defined in the schema and then retrieved generically with `Schema.enum`:
-```
+```scala
 // Defined enum values
 Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
   ":Person/gender" -> List("female", "male"),
@@ -520,7 +608,7 @@ Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
 ### Schema transaction times
 
 "In what transaction/when were the attributes created in the schema?"
-```
+```scala
 Schema.t.tx.txInstant.get === List(
   (t1, tx1, <Date: 2018-11-07 09:28:10>), // Initial schema transaction
   (t2, tx2, <Date: 2019-01-12 12:43:27>), // Additional schema attribute definitions...

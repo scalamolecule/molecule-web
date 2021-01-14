@@ -24,9 +24,8 @@ body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
-  xbackground-image: url("/bg/furley_bg.png");
-  xbackground-color: rgba(245, 246, 248, 1);
   color: #444;
+  xposition: relative;
 }
 .wrapper {
     min-height: calc(100vh - 140px - 70px - 60px);
@@ -52,7 +51,7 @@ a:hover {
 
 h1, .h1 {
     margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     /*font-family: "Earth2073", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     /*font-family: "Merriweather Sans", Arial, sans-serif;*/
     /*font-family: "Work Sans", Arial, sans-serif;*/
@@ -72,32 +71,49 @@ h2, .h2 {
     color: #222;
 }
 h3, .h3 {
-    margin-top: 40px;
-    margin-bottom: 12px;
+    margin-top: 30px;
+    margin-bottom: 18px;
     /*font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;*/
     font-family: "Jura", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 28px;
     color: #444;
 }
 h4, .h4 {
-    margin-top: 26px;
+    margin-top: 24px;
     margin-bottom: 10px;
-    color: #444;
+    font-weight: 400;
+    color: #555;
+}
+h5, .h5 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
 }
 
 
+
 pre {
-    background-color: rgba(255, 206, 150, 0.2);
+    position:relative;
+    background-color: #f6f6f6;
     border-radius: 4px;
     overflow: auto;
     padding: 13px;
     word-wrap: normal;
     margin-bottom: 15px;
+    color: #777;
 }
 pre.clean {
     background-color: #f9f9f9;
-    color: #777;
+}
+pre.chroma.front {
+    border: 0;
+    background: none;
+    font-size: 24px;
+
 }
 code {
     padding: 1px 4px;
@@ -109,18 +125,55 @@ code {
     white-space: pre;
     width: auto;
     display: inline;
-
 }
 pre code {
-    display:inline;
+    display: inline;
     white-space: pre;
-    overflow: auto
+    overflow: auto;
+    color: #777;
 }
-.hljs {
-    display:inline;
+
+
+/* Highlighting of code using Hugo's chroma syntax highlighter:
+   https://gohugo.io/content-management/syntax-highlighting/
+   Running:
+   hugo gen chromastyles --style=solarized-light > syntax.css
+   and then moving syntax.css to static/css/syntax.css
+   Using a customized of this (see difference to syntax_generated.css)
+*/
+.highlight > .chroma {
+    background-color: rgba(255, 206, 150, 0.2);
+}
+.highlight {
+    position: relative;
+}
+
+/* Copy button */
+.copy-code-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #777;
+    cursor: pointer;
+    opacity: 0.6;
+    border: none;
     background: none;
-    padding: 0;
 }
+.copy-code-button:hover {
+    cursor: pointer;
+    background-color: #93e0ff;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #111;
+}
+.copy-code-button:focus {
+    /* Avoid an ugly focus outline on click in Chrome,
+       but darken the button for accessibility.
+       See https://stackoverflow.com/a/25298082/1481479 */
+    background-color: #E6E6E6;
+    outline: 0;
+}
+
 
 
 blockquote {
@@ -132,9 +185,23 @@ blockquote {
     padding: 15px 20px 15px 15px;
     margin-bottom: 30px;
     margin-top: 20px;
-    Xmargin-left: -26px;
     margin-right: 0px;
 }
+
+
+
+.table {
+    margin-top: 20px;
+    font-size: 15px;
+    width: auto;
+}
+.table thead {
+    background-color: #f4f4f4;
+}
+.table.table-bordered.headerless > thead {
+    display:  none;
+}
+
 
 
 
@@ -214,16 +281,31 @@ nav .nav li {
 
 
 
+
 /* Side menu */
 .bs-docs-sidenav {
     padding-left: 0px;
-    xpadding-right: 10px;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 12rem);
     overflow-y: auto;
 }
 .bs-docs-sidenav #TableOfContents {
     padding-left: 5px;
-    padding-bottom: 3px;
+}
+.bs-docs-sidenav #TableOfContents li.active a {
+    border-left-color: #00ADE3;
+    border-left-width: 2px;
+    border-left-style: solid;
+    margin-left: -7px;
+    padding-left: 5px;
+}
+
+.bs-docs-sidenav.nav > li > a {
+    padding: 0;
+    margin: 0;
+}
+.bs-docs-sidenav.nav > li > a:hover {
+    background-color: transparent;
+    text-decoration: underline;
 }
 .bs-docs-sidenav li {
     list-style: none;
@@ -240,13 +322,11 @@ nav .nav li {
     padding-top: 4px;
     font-size: 14px;
 }
-.bs-docs-sidenav > li.active {
-    xmargin-top: 4px;
-}
-.bs-docs-sidenav > li.active a {
+.bs-docs-sidenav > li.open a {
     color: #555;
+    background: none;
 }
-.bs-docs-sidenav > li.active a:hover {
+.bs-docs-sidenav > li.open a:hover {
     color: #00A0D6;
     text-decoration: none;
 }
@@ -264,24 +344,6 @@ nav .nav li {
 }
 
 
-
-.bs-docs-sidenav >  ul {
-    font-size: 13px;
-    list-style: none;
-    padding-left: 23px;
-    text-indent: -8px;
-}
-.bs-docs-sidenav >  ul a {
-    color: #555;
-    font-weight:300;
-}
-.bs-docs-sidenav >  ul a:hover {
-    color: #00A0D6;
-    text-decoration: none;
-}
-
-
-
 .bs-docs-sidenav > ul.level2 {
     font-size: 13px;
     list-style: none;
@@ -297,6 +359,17 @@ nav .nav li {
     color: #00A0D6;
     text-decoration: none;
 }
+.bs-docs-sidenav > ul.level2 a.sub {
+    color: #00A0D6;
+    font-weight:300;
+}
+.bs-docs-sidenav > ul.level2 a.sub:hover {
+    color: #00A0D6;
+    text-decoration: none;
+}
+
+
+
 
 
 
@@ -341,8 +414,8 @@ nav .nav li {
 }
 .bs-docs-header-links li {
   display: inline-block;
-   margin-top: 17px;
-   vertical-align: middle;
+  margin-top: 17px;
+  vertical-align: middle;
 }
 .bs-docs-header-links li + li {
   margin-left: 15px;
@@ -450,6 +523,63 @@ nav .nav li {
     text-align: left;
     height: 250px !important;
 }
+
+
+
+
+
+.carousel.vertical .carousel-inner {
+  height: 100%;
+  width: 600px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 190px;
+}
+
+.carousel.vertical .item {
+   -webkit-transition:  top;
+   -moz-transition:  top;
+   -ms-transition:  top;
+   -o-transition:  top;
+   transition:  top;
+}
+
+.carousel.vertical .active {
+   top: 0;
+}
+
+.carousel.vertical .next {
+   top: 400px;
+}
+
+.carousel.vertical .prev {
+   top: -400px;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+   top: 0;
+}
+
+.carousel.vertical .active.left {
+   top: -400px;
+}
+
+.carousel.vertical .active.right {
+   top: 400px;
+}
+
+.carousel.vertical .item {
+   left: 0;
+}
+
+
+
+
+
+
+
+
 
 .bs-example{
 	margin: 20px;

@@ -73,7 +73,7 @@ _2020-07-17 v0.22.7_
 
 Implicit widening conversion of numeric variables is now allowed in Molecule:
 
-```
+```scala
 val int   = 1
 val long  = 1L
 val float = 1f
@@ -91,7 +91,7 @@ Ns.double(float).get === List(1.0)
 The widening feature is deprecated in Scala and will thus be gone when removed from Scala.
 
 Variables with Int values can now also be applied to Long attributes:
-```
+```scala
 val int = 1
 Ns.long(int).get === List(1L)
 ```
@@ -152,7 +152,7 @@ _2019-12-20 v0.21.0_
 
 Optional nested data can now be queried with the `*?` operator:
 
-```
+```scala
 m(Ns.int.Refs1 * Ref1.str1) insert List(
   (1, List("a", "b")),
   (2, List()) // (no nested data)
@@ -240,7 +240,7 @@ _2019-03-07 v0.18.0_
 
 In order to synchronize scala molecule boilerplate code and its internal representation, namespace names are now capitalized also in molecule model/query/datalog. This applies when no custom partitions are defined (and namespaces not partition-prefixed): 
 
-```
+```scala
 // Namespace names are now capitalized in the model
 m(Community.name)._model === Model(List(
   Atom("Community", "name", "String", 1, VarValue) // "Community" now uppercase
@@ -267,7 +267,7 @@ This change takes away the need to lower/capitalize namespace names back and for
 
 As before, custom partition-prefixed namespaces are unaffected: 
 
-```
+```scala
 // Namespace names are now capitalized in the model
 m(accounting_Invoice.invoiceLine)._model === Model(List(
   Atom("accounting_Invoice", "invoiceLine", "ref", 1, VarValue)
@@ -297,7 +297,7 @@ The sbt-plugin (as of version 0.8) now generates two additional schema transacti
 
 When importing external data ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala#L367-L368)) from a database with lowercase namespace names then you can transact lowercase attribute aliases ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L18)) so that your uppercase Molecule code can recognize the imported lowercase data:
 
-```
+```scala
 conn.datomicConn.transact(SchemaUpperToLower.namespaces)
 ```
 
@@ -305,7 +305,7 @@ conn.datomicConn.transact(SchemaUpperToLower.namespaces)
 
 If both external schema and data is created with lowercase namespace names, then you can transact uppercase attribute aliases with the live database so that it will recognize your uppercase molecule code ([example](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/mbrainz/MBrainz.scala#L38)):
 
-```
+```scala
 conn.datomicConn.transact(MBrainzSchemaLowerToUpper.namespaces)
 ```
 
@@ -317,14 +317,14 @@ _2019-01-15 v0.17.0_
 #### Datoms
 
 Entity id of Ben with generic datom attribute `e` on a custom molecule...
-```
+```scala
 Person.e.name.get.head === (benEntityId, "Ben")
 ```
 
 #### EAVT index
 
 Attributes/values of entity id `e1`...
-```
+```scala
 EAVT(e1).e.a.v.t.get === List(
   (e1, ":person/name", "Ben", t1),
   (e1, ":person/age", 42, t2),
@@ -334,7 +334,7 @@ EAVT(e1).e.a.v.t.get === List(
 
 #### AVET index
 Values and entity associations for attribute `:person/age`...
-```
+```scala
 AVET(":person/age").v.e.t.get === List(
   (42, e1, t2),
   (37, e2, t5),
@@ -342,7 +342,7 @@ AVET(":person/age").v.e.t.get === List(
 )
 ```
 Datomic's [indexRange API](http://docs.datomic.com/on-prem/javadoc/datomic/Database.html#indexRange(java.lang.Object,%20java.lang.Object,%20java.lang.Object)) is also implemented...
-```
+```scala
 // Entities and transactions of age attribute with values between 14 and 37
 AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
@@ -352,7 +352,7 @@ AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
 #### AEVT index
 
 Entity ids, values and transaction t's of attribute `:person/name`:
-```
+```scala
 AEVT(":person/name").e.v.t.get === List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
@@ -362,7 +362,7 @@ AEVT(":person/name").e.v.t.get === List(
 #### VAET index
 
 Reverse index for ref attributes...
-```
+```scala
 // Say we have 3 entities pointing to one entity:
 Release.e.name.Artists.e.name.get === List(
   (r1, "Abbey Road", a1, "The Beatles"),
@@ -381,7 +381,7 @@ VAET(a1).v.a.e.get === List(
 #### Log index
 
 Access to datoms index sorted by transaction/time:
-```
+```scala
 // Data from transaction t1 (inclusive) until t4 (exclusive)
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":person/name", "Ben", true),
@@ -398,7 +398,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 #### Schema
 
 Programatically explore your `Schema` structure...
-```
+```scala
 // Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
   (":sales_customer/name", "string", "one"),
@@ -406,7 +406,7 @@ Schema.a.tpe.card.get === List (
 )
 ```
 
-### Debugging
+### Debugging (now: Inspecting)
 
 Various debugging methods to explore molecule queries and transactional commands.
 
@@ -456,7 +456,7 @@ Any complexity of logic can be performed within a tx function as long as no side
 
 Tx functions in Datomic are untyped (takes arguments of type `Object`). But Molecule allows you to define typed tx methods inside a `@TxFns`-annotated object that will automatically create equivalent "twin" functions with the shape that Datomic expects and save them in the Datamic database transparently for you.
 
-```
+```scala
 @TxFns
 object myTxFns {
   // Constraint check before multiple updates
@@ -479,7 +479,7 @@ object myTxFns {
 ```
 
 Tx function are invoked in application code with the `transact` or `transactAsync` method:
-```
+```scala
 transact(transfer(fromAccount, toAccount, 20))
 ```
 `transact` (or `transactAsync`) is a macro that analyzes the tx function signature to be able to invoke its generated twin method within Datomic.
@@ -489,7 +489,7 @@ transact(transfer(fromAccount, toAccount, 20))
 
 If the transactional logic is not dependent on access to the transaction database value, multiple "bundled" tx statements can now be created by adding molecule tx statements to one of the bundling `transact` or `transactAsync` methods:
 
-```
+```scala
 transact(
   // retract
   e1.getRetractTx,
@@ -506,7 +506,7 @@ Tx statement getters for the molecule operations are used to get the tx statemen
 
 ### Composite syntax
 Composite molecules are now tied together with `+` instead of `~`.
-```
+```scala
 m(Ref2.int2 + Ns.int).get.sorted === Seq(
   (1, 11),
   (2, 22)
@@ -516,7 +516,7 @@ This change was made to avoid collision with the upcoming splice operator `~` in
 
 Composite inserts previously had its own special insert method but now shares syntax with other inserts
 
-```
+```scala
 val List(e1, e2) = Ref2.int2 + Ns.int insert Seq(
   // Two rows of data
   (1, 11),
@@ -622,7 +622,7 @@ Internally, Molecule builds the json string in a StringBuffer directly from the 
 
 Normal "flat" molecules creates json with a row on each line in the output:
 
-```
+```scala
 Person.name.age.getJson ===
   """[
     |{"name": "Fred", "age": 38},
@@ -635,7 +635,7 @@ Person.name.age.getJson ===
 
 Composite data has potential field name clashes so each sub part of the composite is rendered as a separate json object tied together in an array for each row: 
  
-```
+```scala
 m(Person.name.age ~ Category.name.importance).getJson ===
   """[
     |[{"name": "Fred", "age": 38}, {"name": "Marketing", "importance": 6}],
@@ -649,7 +649,7 @@ Note how a field `name` appears in each sub object. Since the molecule is define
 
 Nested date is rendered as a json array with json objects for each nested row: 
 
-```
+```scala
 (Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
   """[
     |{"no": 1, "customer": "Johnson", "invoiceLines": [
@@ -672,7 +672,7 @@ Often, form submissions have some optional field values. Molecule now allow us t
 
 We could for instance have `aName`,  `optionalLikes` and `anAge` values from a form submission that we want to save. We can now apply those values directly to a mandatory `name` attribute, an optional `likes$` attribute (`$` appended makes it optional) and a mandatory `age` attribute of a save-molecule and then save it:
 
-```
+```scala
 Person
   .name(aName)
   .likes$(optionalLikes)
@@ -682,7 +682,7 @@ Person
 
 We can also, as before, _insert_ the data using an "insert-molecule" as a template:
 
-```
+```scala
 Person.name.likes$.age.insert(
   aName, optionalLikes, anAge
 )
@@ -706,7 +706,7 @@ Datomic has some extremely powerful time functionality that Molecule now makes a
 Ad-hoc time queries against our database can now be made with the following time-aware getter methods on a molecule:
 
 
-```
+```scala
 Person.name.age.getAsOf(t) === ... // Persons as of a point in time `t`
 
 Person.name.age.getSince(t) === ... // Persons added after a point in time `t`
@@ -718,7 +718,7 @@ Person(fredId).age.getHistory === ... // Current and previous ages of Fred in th
 
 If we want to test the outcome of some transaction without affecting the production db we can apply transaction data to the `getWith(txData)` method:
 
-```
+```scala
 Person.name.age.getWith(
   // Testing adding some transactional data to the current db
   Person.name("John").age(42).saveTx, // Save transaction data
@@ -742,7 +742,7 @@ When the connection/db goes out of scope it is simply garbage collected automati
  
 To make a few tests with our filtered db we can now do like this:
 
-```
+```scala
 // Current state
 Person(fredId).name.age.get.head === ("Fred", 27)
 
@@ -771,7 +771,7 @@ When we test against a temporary database, Molecule internally uses the `with` f
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:
 
-```
+```scala
 // Some domain object that we want to test
 val domainObj = MyDomainClass(params..) // having molecule transactions inside...
 domainObj.myState === "some state"
@@ -800,7 +800,7 @@ Since internal domain methods will in turn call other domain methods that also e
 
 We can apply the above approach with several time views of our database:
  
-```
+```scala
 conn.testDbAsOfNow
 conn.testDbAsOf(t)
 conn.testDbSince(t)
@@ -816,7 +816,7 @@ _2016-10-19 [v0.10.0](https://github.com/scalamolecule/molecule/releases/tag/v0.
 
 Molecule now allows retrieving attribute values of selected entities:
 
-```
+```scala
 val List(e1, e2, e3) = Ns.int.insert(1, 2, 3).eids
 
 // Use selected entity ids to access attributes of those entities
@@ -829,7 +829,7 @@ Ns(e23).int.get === List(2, 3)
 
 Likewise we can update attribute values of selected entities (group editing):
 
-```
+```scala
 val List(a, b, c) = Ns.str.int insert List(("a", 1), ("b", 2), ("c", 3)) eids
 
 // Apply value to attribute of multiple entities
@@ -851,31 +851,31 @@ Major upgrade of Molecule introducing _Bidirectional_ references.
 
 Normal Datomic references are unidirectional. If we add a friend reference from Ann to Ben
 
-```
+```scala
 Person.name("Ann").Friends.name("Ben").save
 ```
 
 Then we can naturally query to get friends of Ann
 
-```
+```scala
 Person.name_("Ann").Friends.name.get === List("Ben")
 ```
 
 But what if we want to find friends of Ben? This will give us nothing:
 
-```
+```scala
 Person.name_("Ben").Friends.name.get === List()
 ```
 
 Instead we would have to think backwards to get the back reference
 
-```
+```scala
  Person.name.Friends.name_("Ben").get === List("Ann")
 ```
 
 If we want to traverse deeper into a friendship graph we would have to query both forward and backward for each step in the graph which would quickly become a pain. With Molecules new bidirectional references we can uniformly query from both ends:
 
-```
+```scala
  Person.name_("Ann").Friends.name.get === List("Ben")
  Person.name_("Ben").Friends.name.get === List("Ann")
 ```
@@ -900,7 +900,7 @@ An obvious candidate for composites is cross-cutting data that could be applied 
 
 Even transaction meta data can now be applied:
 
-```
+```scala
 // Insert comma-separated molecules that become one composite molecule
 insert(
   Article.name.author, Tag.name.weight
@@ -916,7 +916,7 @@ insert(
 
 And we can then query the composed molecule:
 
-```
+```scala
 // Important articles submitted by Brenda Johnson
 // In queries we tie composite molecule parts together with `~`
 m(Article.name.author ~ Tag.weight.>=(4).tx_(MetaData.submitter_("Brenda Johnson"))).get === List(
@@ -956,7 +956,7 @@ _2016-04-25 [v0.6.1](https://github.com/scalamolecule/molecule/releases/tag/v0.6
 
 Each defined attribute map now adds an additional attribute with a "K" appended to the attribute name. This "Keyed attribute map" expects a key and will then return the single value type instead of a Map of key/values:
 
-```
+```scala
 // Normal attribute map returning maps of key/values
 Ns.int.greetings("en").get === List(
   (1, Map("en" -> "Hi there")),
@@ -985,7 +985,7 @@ _2015-12-14 [v0.5.0](https://github.com/scalamolecule/molecule/releases/tag/v0.5
 
 Molecule now supports an easy way to handle multilingual values; say, names of greetings in different languages for various entities - all with one "Map Attribute" like `greetings`:
 
-```
+```scala
 Ns.int.greetings insert List(
   (1, Map("en" -> "Hi there")),
   (2, Map("fr" -> "Bonjour", "en" -> "Hi")),
@@ -998,7 +998,7 @@ Other types are supported too. So we could for instance have timezones as Float 
 
 Each key is prepended to its value and saved as a cardinality many value ("en@Hi there") in Datomic. When we then retrieve the values, Molecule automatically splits the values into typed key/value pairs in a map so that we can conveniently continue to work with them in Scala:
 
-```
+```scala
 Ns.int.greetings.get === List(
   (1, Map("en" -> "Hi there")),
   (2, Map("fr" -> "Bonjour", "en" -> "Hi")),
@@ -1035,7 +1035,7 @@ _2015-11-14 [v0.4.3](https://github.com/scalamolecule/molecule/releases/tag/v0.4
 
 If we insert a nested data structure like this:
 
-```
+```scala
 m(Ns.str.Refs1 * (Ref1.int1.Refs2 * Ref2.int2)) insert List(
   ("a", List(
     (1, List(11)))),
@@ -1046,7 +1046,7 @@ m(Ns.str.Refs1 * (Ref1.int1.Refs2 * Ref2.int2)) insert List(
 
 we can now query for each `Ns.str` paired with all its nested `Ref2.int2`'s:
 
-```
+```scala
 m(Ns.str.Refs1 * Ref1.Refs2.int2).get === List(
   ("a", List(11)),
   ("b", List(22, 21, 31)))
@@ -1063,7 +1063,7 @@ _2015-11-13 [v0.4.2](https://github.com/scalamolecule/molecule/releases/tag/v0.4
 
 Now we can insert/get related values from multiple related namespaces in one go:
 
-```
+```scala
 m(lit_Book.title.Author.name._Book.Reviewers * gen_Person.name) insert List(
   ("book", "John", List("Marc"))
 )
@@ -1085,7 +1085,7 @@ _2015-10-28 [v0.4.1](https://github.com/scalamolecule/molecule/releases/tag/v0.4
 
 Single optional values should be retrievable. But when inserting we want to avoid creating orphan referenced entities with no asserted attribute values. Example from [Relations](https://github.com/scalamolecule/molecule/blob/8e5c0437c245201f5e174cb407ae74cdbc654257/coretest/src/test/scala/molecule/Relations.scala#L196-L236) test:
 
-```
+```scala
 "No mandatory attributes after card-one ref" in new CoreSetup {
   m(Ns.str.Ref1.int1) insert List(
     ("a", 1),
@@ -1117,7 +1117,7 @@ _2015-10-25 [v0.4.0](https://github.com/scalamolecule/molecule/releases/tag/v0.4
 
 Molecule now supports optional values:
 
-```
+```scala
 val names = Person.firstName.middleName$.lastName.get map { 
   case (firstName, Some(middleName), lastName) => s"$firstName $middleName $lastName" 
   case (firstName, None, lastName)             => s"$firstName $lastName" 
@@ -1126,7 +1126,7 @@ val names = Person.firstName.middleName$.lastName.get map {
 
 Also when inserting varying data sets, this comes in handy, like for instance if middle names are sometimes present and sometimes not:
 
-```
+```scala
 Person.firstName.middleName$.lastName insert List(
   ("John", None, "Doe"),
   ("Lisa", Some("van"), "Hauen")

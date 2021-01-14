@@ -48,4 +48,4 @@ Highlights of [Datomic](https://www.datomic.com/on-prem.html):
 - Built-in caching - extremely low latency
 - Built-in auditing - query entire history of data
 - ACID-compliant transactions
-- Flexible and sound data model
+- Flexible and sound Data Model

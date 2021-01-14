@@ -5,565 +5,418 @@ menu:
   main:
     parent: code
     identifier: time
-up:   /manual/transactions
-prev: /manual/transactions/tx-meta-data
-next: /manual/time/asof-since
 ---
 
 # Time
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time)
-
-Datomic has powerful ways of accessing the immutable data that accumulates over time in the database.
-
-Molecule maps those to 5 data getters that we can illustrate with a time line of transactions.
-
+Datomic has powerful ways of accessing all the immutable data that accumulates over time in the database:
 
 ![](/img/page/time/all.png)
 
 
-The 5 ways of getting data have the following semantics:
+The 5 time getters offer us valuable insight into the database from various perspectives:
 
-- `get` - snapshot of tx 1-7 accumulated. This is the current view of the database ("as of now") that we normally use.
-- [☞ `getAsOf(t4)`](/manual/time/asof-since/) - snapshot of tx 1-4 accumulated. How the db looked after tx 4 was transacted.
-- [☞ `getSince(t4)`](/manual/time/asof-since/) - snapshot of tx 5-7 accumulated. What has happened since tx 4 until now.
-- [☞ `getHistory`](/manual/time/history/) - all transactions! See all that has happened over time.
-- [☞ `getWith(tx8data)`](/manual/time/with/) - snapshot of tx 1-8 accumulated given some tx 8 data. "What if"-look into the future.
+{{< bootstrap-table "table table-bordered" >}}
+| Semantics | Sync | Async |
+| :- | :- | :- |
+| Current view of the database                       | get                                  | getAsync              |                     
+| How the db looked after tx2 was transacted        | [getAsOf(t2)](/code/time/#asof)      | getAsyncAsOf(t2)      |
+| Db with only data since (excluding) tx2 until now | [getSince(t2)](/code/time/#since)    | getAsyncSince(t2)     |
+| All transactions over time                         | [getHistory](/code/time/#history)    | getAsyncHistory       |
+| "What if"-look into the future of Now + tx4data    | [getWith(tx4data)](/code/time/#with) | getAsyncWith(tx4data) |
+{{< /bootstrap-table >}}
+
+The synchronous getters return a `List` of tuples and the asynchronous a `Future` of `List` of tuples.
 
 
-
-### Point in time {#pointintime}
-
-The two methods `getAsOf(t)` and `getSince(t)` takes a _point in time_ in the database that can be supplied in 4 different ways:
-
-
-### 1. Transaction entity id 
-
-A transaction entity id is the 4th value of Datomic quintuplets that tells us in what transaction this Datom/fact was asserted/retracted.
- 
-![](/img/page/time/tx.png)
-
-In Molecule code we can get this information by adding the generic `tx` attribute after an attribute:
+### json getters
+  
+We can also return the data as json:
 
 ```
-Person(e5).likes.tx.get.head === ("pizza", tx4)
+getJson                getAsyncJson
+getJsonAsOf(t2)        getAsyncJsonAsOf(t2)
+getJsonSince(t2)       getAsyncJsonSince(t2)
+getJsonHistory         getAsyncJsonHistory
+getJsonWith(tx4data)   getAsyncJsonWith(tx4data)
 ```
-Here we get some transaction entity id `tx4` (a `Long` number) for the transaction where it was asserted that Person entity `fredId` likes pizza. 
-
-Such transaction entity id can then be used as a point in time `t` for `getAsOf(t)` or `getSince(t)` in other queries.
-
-
-### 2. Transaction value
-
-An alternative to the transaction entity id is a "transaction value" that is an auto-incremented number that Datomic generates automatically in the background for each transaction taking place. This can be useful if we for instance want to examine "the previous" transaction.
-
-As when getting the transaction entity id with `tx` we can get the transaction value by appending the generic Molecule attribute `t` after some attribute:
-
-```
-val someT = Person(e5).likes_.t.get.head
-```
-Then we could ask "was there another value in the previous transaction?"
-
-```
-val previousT = someT - 1
-Person(e5).likes.getAsOf(previousT) === Nil // There were no `likes` value before...
-```
-
-Transaction values can be converted to transaction entity ids and vice versa if needed with the Datomic Peer methods `toTx` and `toT`
-
-```
-// t -> tx
-datomic.Peer.toTx(t1) === tx1
-
-// tx -> t
-datomic.Peer.toT(tx2) === t2
-```
-
-
-### 3. Transaction report
-
-Each transaction returns a `TxReport` with information about the transaction and we can use the report itself as a point in time:
-
-
-```
-val txReport1 = Person.name("Fred").likes("pizza").save
-val fred = txReport1.eid // Getting created entity id from tx report
-
-val txReport2 = Person(fred).likes("sushi").update
-
-Person(fred).likes.get === List("sushi")
-Person(fred).likes.getAsOf(txReport1) === List("pizza")
-```
-
-
-
-### 4. `java.util.Date`
-
-Lastly we can also supply a human time/date of type `java.util.Date` 
-
-```
-val criticalDate = new Date("2017-04-26")
-Person(e5).likes.getAsOf(criticalDate) === List("pizza")
-```
-
-
-
-### Data getters
-
-
-### `get` or `getAsync` - the current view
-
-Normally we get the current state of the database with the `get` method on a molecule.
-
-```
-// Sync
-val personsCurrently: List[(String, Int)] = Person.name.age.get
-
-// Async - wraps data in a Future
-val personsCurrentlyAsync: Future[List[(String, Int)]] = Person.name.age.getAsync
-```
-But we might be interested in how the data looked at another point in time:
-
-
-### [☞ `getAsOf(t)`](/manual/time/asof-since/) or [`getAsyncAsOf(t)`](/manual/time/asof-since/)
-
-When we call `getAsOf(t)` on a molecule we get the data as it looked at some point in time `t`. 
-
-We could for instance want to know what Persons existed in the database the 5th of November:
-
-```
-val personsAsOfNov5 = Person.name.age.getAsOf(nov5date) 
-val personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date) 
-```
-
-
-### [☞ `getSince(t)`](/manual/time/asof-since/) or [`getSince(t)`](/manual/time/asof-since/)
-
-Likewise we might want to know what Persons have been added _after_ or _since_ 5th of November. When we call `getSince(nov5date)` we will get a snapshot of the current database filtered with only the data added/retracted after November 5:
-
-```
-val personsAddedSinceNov5 = Person.name.age.getSince(nov5date)
-val personsAddedSinceNov5Async = Person.name.age.getAsyncSince(nov5date)
-```
-
-
-### [☞ `getHistory`](/manual/time/history/) or [`getAsyncHistory`](/manual/time/history/)
-
-The `getHistory` can for instance tell us how a Persons age attribute value has changed over time
-
-```
-val currentAndPreviousAgesOfFred = Person(fredId).age.getHistory
-val currentAndPreviousAgesOfFredAsync = Person(fredId).age.getAsyncHistory
-```
-Note that this is not a snapshot in time but a series of all assertions and retractions over time that matches the query!
-
-
-### [☞ `getWith(txTestData)`](/manual/time/with/) or [`getAsyncWith(txTestData)`](/manual/time/with/)
-
-By supplying some test transaction data to `getWith(txTestData)` we filter the current database by applying the test transaction data. This is a very powerful way of testing future-like "what-if" scenarios. 
-
-Transactional test data to be tested can be obtained by calling one of the following methods on some test-molecules:
-
-- `<molecule>.getSaveTx`  
-- `<molecule>.getInsertTx`  
-- `<molecule>.getUpdateTx`  
-- `<entityId>.getRetractTx`  
-
-```
-// Apply one or more tx test data molecules
-val personsWithNewData = Person.name.age.getWith(<txTestData>*) 
-val personsWithNewDataAsync = Person.name.age.getAsyncWith(<txTestData>*) 
-```
-
-The "test db" that such query works on is simply garbage collected when it goes out of scope. We therefore don't need to do any tear-down as we would normally need to when testing with a mutable database.
 
 
 ### Limit returned data
 
-The amount of data returned with 
-
-- get
-- getAsOf
-- getSince
-- getWith
-
-can be limitted by adding a max row parameter:
-```
-val some30personsCurrently = Person.name.age.get(30)
-
-val some20personsAsOfNov5Async = Person.name.age.getAsyncAsOf(nov5date, 20) 
-
+The amount of data returned can be limited by adding a max row parameter (to any of the getters above):
+```scala
+val some30persons               = Person.name.age.get(30)
+val some20personsAsOfNov5       = Person.name.age.getAsOf(nov5date, 20) 
 val some10personsAddedSinceNov5 = Person.name.age.getSince(nov5date, 10)
 
-// The `with` methods have the limit parameter as their first argument since the last argument is a vararg
+// The `with` methods have the limit parameter as their first argument since 
+// the last argument is a vararg for the test data.
 val some25personsWithNewData = Person.name.age.getWith(25, <txTestData>) 
 ```
 
-`getHistory(n: Int)` is not implemented since the whole data set normally needs to be sorted to give chronological meaningful information.
+`getHistory(n: Int)` (with a limit) is not implemented since the whole history data set normally needs to be retrieved and sorted to give chronological meaningful information.
 
-#### Why not an `offSet` method for pagination?
 
-Since Datomic has no sorting option in queries (like `ORDER BY` in sql for instance), we sort data in application code. This sorting could be arbitrary complex and Molecule therefore has no "standard" sorting API implemented. 
 
-Pagination is and example that needs sorting, and we do that in our application code on the server as it would be done on a sql database server too except that we apply our logic on the raw data ourselves. The limit option is therefore mainly implemented to be able to work on a smaller data set. 
 
-## AsOf / Since
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time)
+
+
+
+
+## Point in time
+
+The two methods `getAsOf(t)` and `getSince(t)` takes a _point in time_ in the database. Each transaction in Datomic is an _entity_ with an id like all other entities saved in the database. The transaction id, or `tx`, and its equivalent transaction value `t`, both of type `Long`, or a `java.util.Date` can be used as a _point in time_ for the time getters. 
+
+`t` is a `Long` value that Datomic creates along the transaction id. It's not necessarily continuous like a traditional auto-increment id, so you can't expect a previous or next `t` to represent a transaction.
+
+### Getting a point in time from a transaction 
+When we perform a transaction, a Molecule `TxReport` is returned with information about the transaction result. We can get the three _points in time_ mentioned above from this:
+
+````scala
+val txReport = Person.name("bob").save
+val t        = txReport.t
+val tx       = txReport.tx
+val date     = txReport.inst // `inst` for Datomics `instant` type (java.util.Date)
+````
+
+
+### Getting a point in time with a molecule
+
+Another way to get a point in time is to add one or the other generic point-in-time attribute to a molecule. We could for instance ask at what point in time, bob's name was asserted:
+
+```scala
+val t     : Long = Person.name_("bob").t.get
+val tx    : Long = Person.name_("bob").tx.get
+val txInst: Date = Person.name_("bob").txInst.get
+```
+
+### Using a clock time/date
+
+Or we can simply apply a `java.util.Date` of interest, like `getAsOf(nov5at1015am)`.
+
+### Applying a point in time
+
+As a convenience, we can also simply pass the txReport itself as a "_point in time_".
+
+So, here are , and we end being able to call for instance `getAsOf(...)` in 4 different ways:
+
+```scala
+Person.name.getAsOf(t)
+Person.name.getAsOf(tx)
+Person.name.getAsOf(txInst) // or some clock time
+Person.name.getAsOf(txReport)
+```
+Whenever `t` is mentioned in the following text, you can also think of `tx`, `txInst` (`Date`) or `txReport`.
+
+
+
+
+
+
+
+
+
+## AsOf
 
 `getAsOf(t)` and `getSince` are complementary functions that either get us a snapshop of the database at some point in time or a current snapshot filtered with only changes after a point in time. Like before/after scenarios.
 
 
-##" AsOf
-
-[AsOf test...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/GetAsOf.scala)
-
-Calling `getAsOf(t)` on a molecule gives us the data as of a certain point in time like `t4`:
+Calling `getAsOf(t)` on a molecule gives us the data as of a certain point in time like `t2`:
 
 
 ![](/img/page/time/as-of.png)
 
 
-As we saw in [point in time](/manual/time#pointintime), a `t` can be either a transaction entity id like `txE4`, a transaction number `t4`, the resulting transaction report `tx4` from some transactional operation or a `java.util.Date` like `date4`. So we could get to the same data in 4 different ways:
+Let's look at an example of a database that has 3 transactions:
 
+```scala
+val txReport1 = Person.name("Fred").likes("pizza").save
+val fred      = txReport1.eid // getting created entity id from tx report
+val t1        = txReport1.t   // getting t from tx report
+
+val t2 = Person(fred).likes("sushi").update.t 
+
+val t3 = Person.name("Lisa").likes("thai").update.t 
 ```
-Person.name.age.getAsOf(txE4) === ... // Persons as of transaction entity id `txE4` (inclusive)
- 
-Person.name.age.getAsOf(t4) === ... // Persons as of transaction value `t4` (inclusive) 
 
-Person.name.age.getAsOf(tx4) === ... // Persons as of transaction report `tx4` (inclusive) 
-
-Person.name.age.getAsOf(date4) === ... // Persons as of some Date `date4` (inclusive) 
+We can then get the db value as it looked like at 3 points in time:
+```scala
+Person.name.likes.getAsOf(t1) === List(("Fred", "pizza"))
+Person.name.likes.getAsOf(t2) === List(("Fred", "sushi"))
+Person.name.likes.getAsOf(t3) === List(("Fred", "sushi"), ("Lisa", "thai"))
 ```
 
-Note that `t` is "inclusive" meaning that it is how the database looked right _after_ transaction `txE4`/`t4`/`tx4`/`date4`.
-
-### AsOf
-
-Data AsOf some point in time `t` can be returned as
-
-- `List` for convenient access to smaller data sets
-- `Array` for fastest retrieval and traversing of large typed data sets
-- `Iterable` for lazy traversing with an Iterator
-- Json (`String`)
-- Raw (`java.util.Collection[java.util.List[AnyRef]]`) for fast access to untyped data
-
-where `t` can be any of:
-
-- Transaction entity id (`Long`)
-- Transaction number (`Long`)
-- Transaction report (`molecule.facade.TxReport`)
-- Date (`java.util.Date`)
-
-Combine the needed return type with some representation of `t` and optionally a row limit by calling one of the corresponding `AsOf` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
-
-|| &nbsp;&nbsp;&nbsp;&nbsp; ||
-| :- | :- | :- |
-| `getAsOf(t)` (List)         || `getAsyncAsOf(t)` (List)         |
-| `getArrayAsOf(t)`           || `getAsyncArrayAsOf(t)`           |
-| `getIterableAsOf(t)`        || `getAsyncIterableAsOf(t)`        |
-| `getJsonAsOf(t)`            || `getAsyncJsonAsOf(t)`            |
-| `getRawAsOf(t)`             || `getAsyncRawAsOf(t)`             |
-| &nbsp;                      ||                                  |
-| `getAsOf(t, limit)` (List)  || `getAsyncAsOf(t, limit)` (List)  |
-| `getArrayAsOf(t, limit)`    || `getAsyncArrayAsOf(t, limit)`    |
-| `getIterableAsOf(t, limit)` || `getAsyncIterableAsOf(t, limit)` |
-| `getJsonAsOf(t, limit)`     || `getAsyncJsonAsOf(t, limit)`     |
-| `getRawAsOf(t, limit)`      || `getAsyncRawAsOf(t, limit)`      |
-| &nbsp;                      ||                                  |
-| &nbsp;                      ||                                  |
 
 
 
-`getIterableAsOf(t, limit)` and `getAsyncIterableAsOf(t, limit)` are not implemented since the data is lazily evaluated with calls to `next` on the `Iterator`.
 
 
-### Since
-[Since tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/GetSince.scala)
+
+
+
+
+## Since
+
 
 As a complementary function to `getAsOf(t)` we have `getSince(t)` that gives us a snapshot of the current database filtered with only changes added _after/since_ `t`:
 
 ![](/img/page/time/since.png)
 
-Contrary to the getAsOf(t) method, the `t` is _not_ included in `getSince(t)`.
+Contrary to the getAsOf(t) method, the `t` is _not_ included in `getSince(t)`. Using our example we can ask of accumulated values since various points in time:
 
-`t` can be either a transaction entity id like `txE4`, a transaction number `t4`, the resulting transaction report `tx4` from some transactional operation or a `java.util.Date` like `date4`. So we could get to the same data in 4 different ways:
+```scala
+// since t1 (not included): t2 + t3 accumulated
+Person.name.likes.getAsOf(t1) === List(("Fred", "sushi"), ("Lisa", "thai"))
 
+// since t2 (not included): t3 
+Person.name.likes.getAsOf(t2) === List(("Lisa", "thai"))
+
+// since t3 (not included): nothing since t3
+Person.name.likes.getAsOf(t3) === List()
 ```
-Person.name.age.getSince(txE4) === ... // Persons added since/after transaction entity id `txE4` (exclusive)
- 
-Person.name.age.getSince(t4) === ... // Persons added since/after transaction value `t4` (exclusive) 
 
-Person.name.age.getSince(tx4) === ... // Persons added since/after transaction report `tx4` (exclusive)
-
-Person.name.age.getSince(date4) === ... // Persons added since/after some Date `date4` (exclusive) 
-```
+As you can see, it can be valuable to ask "What happened since t2?" and get the answer "'Lisa liked thai' was added". 
 
 
 
-### Since APIs
-
-Data Since some point in time `t` can be returned as
-
-- `List` for convenient access to smaller data sets
-- `Array` for fastest retrieval and traversing of large typed data sets
-- `Iterable` for lazy traversing with an Iterator
-- Json (`String`)
-- Raw (`java.util.Collection[java.util.List[AnyRef]]`) for fast access to untyped data
-
-where `t` can be any of:
-
-- Transaction entity id (`Long`)
-- Transaction number (`Long`)
-- Transaction report (`molecule.facade.TxReport`)
-- Date (`java.util.Date`)
-
-Combine the needed return type with some representation of `t` and optionally a row limit by calling one of the corresponding `Since` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
 
 
-|| &nbsp;&nbsp;&nbsp;&nbsp; ||
-| :- | :- | :- |
-| `getSince(t)` (List)         || `getAsyncSince(t)` (List)         |
-| `getArraySince(t)`           || `getAsyncArraySince(t)`           |
-| `getIterableSince(t)`        || `getAsyncIterableSince(t)`        |
-| `getJsonSince(t)`            || `getAsyncJsonSince(t)`            |
-| `getRawSince(t)`             || `getAsyncRawSince(t)`             |
-| &nbsp;                       ||                                   |
-| `getSince(t, limit)` (List)  || `getAsyncSince(t, limit)` (List)  |
-| `getArraySince(t, limit)`    || `getAsyncArraySince(t, limit)`    |
-| `getIterableSince(t, limit)` || `getAsyncIterableSince(t, limit)` |
-| `getJsonSince(t, limit)`     || `getAsyncJsonSince(t, limit)`     |
-| `getRawSince(t, limit)`      || `getAsyncRawSince(t, limit)`      |
-| &nbsp;                       ||                                   |
-| &nbsp;                       ||                                   |
 
 
-`getIterableSince(t, limit)` and `getAsyncIterableSince(t, limit)` are not implemented since the data is lazily evaluated with calls to `next` on the `Iterator`.
 
-The asynchronous implementations simply wraps the synchronous result in a Future as any other database server would normally do internally. The difference is that the Peer (the "database server") runs in the same process as our application code which makes it natural to do the Future-wrapping in Molecule as part of running our application.
 
 
 ## History
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetHistory.scala)
-
-
-The history perspective gives us all the assertions and retractions that has happened over time.
+The history perspective gives us all the assertions and retractions that has happened in the lifetime of the database(!)
 
 
 ![](/img/page/time/history.png)
 
 
-Normally we get a snapshot of the database at a certain point in time. But when we call the `getHistory` method on a molecule we get all the assertions and retractions that has happened over time for the attributes of the molecule.
+Theoretically we could ask for all historical values (although Datomic doesn't allow a full scan of the whole database):
 
-As an example we can imagine Fred being added in tx3 and then updated in tx6.
-
-```
-// tx 3 (save)
-val result3 = Person.name("Fred").likes("pizza").save
-val tx3 = result3.tx
-val fred = result3.eid
-
-// tx 6 (update)
-val result6 = Person(fred).likes("pasta").update
-val tx6 = result6.tx
-```
-
-The two transactions (save + update) produces the following 4 facts in the database:
-
-
-![](/img/page/time/2-txs.png)
-
-### Generic attributes
-
-#### `tx`, `op`
-
-The 4th column in the facts schema above shows the transaction entity id that is saved with each fact. We get this value by appending the "generic attribute" `tx` after an attribute.
-
-The 5th column shows the operation performed. `true` for added/asserted and `false` for retracted. We get this value by adding the generic attribute `op` after an attribute.
-
-Let's see the transaction values and operations over time for the attribute `likes`:
-
-```
-Person(fred).likes.tx.op.getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
-  ("pizza", tx3, true), // 2nd fact
-  ("pizza", tx6, false),// 3rd fact
-  ("pasta", tx6, true)  // 4th fact
-)
-```
-Since output order is not guaranteed by Datomic we sort by transaction and then operation to get a chronological view of the historical data (Datomic of course keeps internal order). For brevity we omit the sorting in the following examples.
-
-
-#### `t`, `txInstant`
-
-Instead of getting the transaction entity id with `tx` we could also get the transaction value (an auto-incremented internal number for each transaction) with the generic attribute `t`:
-
-```
-Person(fred).likes.t.op.getHistory === List(
-  ("pizza", t3, true), 
-  ("pizza", t6, false),
-  ("pasta", t6, true)  
-)
-```
-.. or the time/date of the transaction with `txInstant`:
-
-```
-Person(fred).likes.txInstant.op.getHistory === List(
-  ("pizza", date3, true), 
-  ("pizza", date6, false),
-  ("pasta", date6, true)  
-)
-```
-.. or all at once:
-
-```
-Person(fred).likes.tx.t.txInstant.op.getHistory === List(
-  ("pizza", tx3, t3, date3, true), 
-  ("pizza", tx6, t6, date6, false),
-  ("pasta", tx6, t6, date6, true)  
+```scala
+// Theoretical full scan (just to show all datoms in our example)
+Person.e.a.v.t.op.getHistory === List(
+  fred, ":Person/name",  "Fred",  t1, true,
+  fred, ":Person/likes", "pizza", t1, true,
+  
+  fred, ":Person/likes", "pizza", t2, false,
+  fred, ":Person/likes", "sushi", t2, true,
+  
+  lisa, ":Person/name",  "Lisa",  t3, true,
+  lisa, ":Person/likes", "thai",  t3, true  
 )
 ```
 
-#### `a`, `v`
+We use the generic Molecule attributes `e`, `a`, `v`, `t`/`tx`/ `txInst`, `op` to retrieve the Datom values: 
+{{< bootstrap-table "table table-bordered" >}}
+`e`|`a`|`v`|`t` / `tx`/ `txInst` |`op`
+:-:|:-:|:-:|:-:|:-:
+Entity|Attribute|Value|Transaction|Operation<br>Assert (true) / Retract (false)
+`Long`|`String`|`Any`|`Long`/`Long`/`Date`|`Boolean`
+{{< /bootstrap-table >}}
 
-We can even use a generic attribute `a` for the attribute name and `v` for the value of an attribute. This allow us to for instance track changes to all atrributes of an entity:
 
+### History of an entity
+
+Now let's extract some useful information, like how the `fred` entity has changed over time:
+
+```scala
+Person(fred).e.a.v.t.op.getHistory === List(
+  fred, ":Person/name",  "Fred",  t1, true,
+  fred, ":Person/likes", "pizza", t1, true,
+  
+  fred, ":Person/likes", "pizza", t2, false,
+  fred, ":Person/likes", "sushi", t2, true
+)
 ```
-Person(fred).a.v.t.op.getHistory === List(
-  (":Person/name", "Fred", t3, true), 
-  (":Person/likes", "pizza", t3, true), 
-  (":Person/likes", "pizza", t6, false),
-  (":Person/likes", "pasta", t6, true)  
+As you see, we have now filtered the history database to only contain datoms with entity id `fred`. A Molecule convenience method lets us apply an entity id to the initial Namespace. We could also apply it to the generic `e` attribute and get the same result.
+
+Another thing is also, that order of the returned data set is not guaranteed, so we will normally need to sort the output, in this case by transaction value, then operation to get the desired order (in the following examples we'll skip sorting for clarity though):
+
+```scala
+Person.e(fred).a.v.t.op.getHistory.sortBy(r => (r._4, r._5)) === List(
+  fred, ":Person/name",  "Fred",  t1, true,
+  fred, ":Person/likes", "pizza", t1, true,
+  
+  fred, ":Person/likes", "pizza", t2, false,
+  fred, ":Person/likes", "sushi", t2, true
 )
 ```
 
-### Expressions
+We can involve specific attributes like `Person.like`:
 
-We can apply values to generic attributes in history queries to narrow our results:
+_How has Fred's taste developed?:_
 
-```
-// "What has been retracted for the entity `fred`"
-// - Fred disliked "pizza" at date6
-Person(fred).a.v.txInstant.op_(false).getHistory === List(
-  (":Person/likes", "pizza", date6, false) 
-)
-
-// What happened for Fred in tx 3?
-// - Fred's name and liking was asserted
-Person(fred).a.v.tx(tx3).op.getHistory === List(
-  (":Person/name", "Fred", t3, true), 
-  (":Person/likes", "pizza", t3, true)
+```scala
+Person(fred).like_.v.t.op.getHistory === List(
+  "pizza", t1, true,  // pizza
+  "pizza", t2, false, // no longer pizza
+  "sushi", t2, true   // sushi
 )
 ```
+Since we declared which attribute to look for, there was no reason to return it, and we made it tacit with an underscore to `like_`.
 
-### Combining with tx meta data
+_What has Fred liked?:_
 
-Things become really interesting when we combine history with tx meta data since we can then go back and see what a transaction was about and what changes were involved.
-
-Here some examples from the [Provenance](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/dayOfDatomic/Provenance.scala) examples from the Day of Datomic tutorials:
-
-_"Who created/updated stories?"_
-
-```
-Story.url_(ecURL).title.op.tx_(MetaData.usecase.User.firstName).history.get.reverse === List(
-  ("ElastiCache in 6 minutes", true, "AddStories", "Stu"),  // Stu adds the story
-  ("ElastiCache in 6 minutes", false, "UpdateStory", "Ed"), // retraction automatically added by Datomic
-  ("ElastiCache in 5 minutes", true, "UpdateStory", "Ed")   // Ed's update of the title
+```scala
+Person(fred).like_.v.op_(true).getHistory === List(
+  "pizza",  // pizza
+  "sushi"   // sushi
 )
 ```
-And we can narrow with expressions:
 
-_"What did Ed retract and in what use cases?"_
-```
-Story.url_(ecURL).title.op_(false).tx_(MetaData.usecase.User.firstName_("Ed")).getHistory === List(
-  ("ElastiCache in 6 minutes", "UpdateStory") 
+### History of an attribute
+
+We could also follow the values of an attribute for multiple entities:
+
+_Who liked what and when?_
+```scala
+Person.e.like_.v.txInst.op_(true).getHistory === List(
+  fred, "pizza", date1,
+  fred, "sushi", date2,
+  lisa, "thai",  date3  
 )
 ```
+
+_What was disliked and when?_
+```scala
+Person.like_.v.txInst.op_(false).getHistory === List(
+  "sushi", date2
+)
+```
+
+### History with Tx meta data
+
+We can even track historical [transaction meta data](/code/transactions/#tx-meta-data), here with an example from the [Provenance example](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic/Provenance.scala) in the Day-of-Datomic test suite:
+
+_Who changed the title and when?_
+
+```scala
+Story.url_(ecURL).title.op.tx
+  .Tx(MetaData.usecase.User.firstName).getHistory === List(
+  ("ElastiCache in 6 minutes", true, stuTxId, "AddStories", "Stu"), // Stu adds story
+  ("ElastiCache in 6 minutes", false, edTxId, "UpdateStory", "Ed"), // Ed updates title
+  ("ElastiCache in 5 minutes", true, edTxId, "UpdateStory", "Ed")   // Ed updates title
+)
+```
+
+_"What titles did Ed retract and in what use cases?"_
+```scala
+Story.url_(ecURL).title.op_(false)
+  .Tx(MetaData.usecase.User.firstName_("Ed")).getHistory === List(
+  ("ElastiCache in 6 minutes", "UpdateStory")
+)
+```
+
+Note the `Tx` (with capital T) that initiates adding a transaction meta data molecule. This is information that is added to the _transaction entity_, independently of the main data - like cross-cutting audit data.
+
+Another example of transaction meta data could be internal company auditing data like "use case id", "who took this step in the use case", "what state is the use case currently in" etc. Being able to model and query such auditing data back in time seems like an extremely valuable feature. 
+
+
+
+
+
+
+
+
+
 
 ## With
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/GetWith.scala)
+We can make a "fake" transaction with `getWith(txData)` and see how the database would look then:
 
-By supplying some test transaction data to `getWith(testTxData)` we filter the current database with the test transaction data applied in-memory. This is a very powerful way of testing future-like "what-if" scenarios.
 
 
 ![](/img/page/time/with.png)
 
-We could for instance add some transaction data `tx8` to a Person molecule to see if we would get the extected persons back:
+The current database is filtered in-memory with the applied extra transaction data. This is a very powerful way of testing future-like "what-if" scenarios. We don't need to do any clean-up since all transaction data is automatically garbage-collected.
 
+#### with save tx
+
+Continuing our example we could add another person and see how the database would then look. We can construct the transaction data to add with a call to `getSaveTx` on a save molecule:
+
+```scala
+Person.name.likes.getWith( 
+  // "Transaction molecule" with "transact John" tx data
+  Person.name("Eddy").likes("cakes").getSaveTx 
+) === List(
+  ("Fred", "sushi"),
+  ("Lisa", "thai"),
+  ("Eddy", "cakes") // Eddy correctly saved
+)
 ```
-Person.name.likes.getWith(<tx8Data>) === ... // Persons after applying tx8 
+
+Likewise we can test the effect of other operations:
+
+#### with insert tx
+
+```scala
+Person.name.likes.getWith( 
+  Person.name.likes.getInsertTx(
+    ("John", "burger"),
+    ("Sara", "french")
+  ) 
+) === List(
+  ("Fred", "sushi"),
+  ("Lisa", "thai"),
+  ("John", "burger"), // John and Sara were correctly inserted
+  ("Sara", "french")  
+)
 ```
 
-### Applying transaction data
+#### with update tx
 
-To make it easier to supply transaction data to the `getWith(txData)` method, you can simply add `Tx` to a Molecule transaction function to get some valid transaction data:
-
-Transaction data is supplied to `getWith(txData)` by calling a transaction data getter on a molecule:
-
+```scala
+Person.name.likes.getWith( 
+  Person(lisa).likes("lebanese").getUpdateTx 
+) === List(
+  ("Fred", "sushi"),
+  ("Lisa", "lebanese") // Lisa correctly now likes lebanese food
+)
 ```
-Person(fred).likes("sushi").getUpdateTx === List(
-  [:db/retract, 17592186045445, :Person/likes, "pasta"]
-  [:db/add    , 17592186045445, :Person/likes, "sushi"]
-) 
-```
-`getUpdateTx` returns the transaction data that would have been used to update Fred. In that way we can supply this data to the `getWith(txData)` method to answer the question _"What if we updated Fred?"_.
 
-When getting the transaction data from a simulated molecule transaction like this, we call it a "transaction molecule":
+#### with retract tx
+
+```scala
+Person.name.likes.getWith( 
+  fred.getRetractTx 
+) === List(
+  ("Lisa", "thai")
+  // (Fred was correctly retracted) 
+)
 ```
+
+#### with multiple operations
+And here we transact all the above operations as one what-if scenario:
+
+```scala
 Person.name.likes.getWith(
-  Person(fred).likes("sushi").getUpdateTx // "Transaction molecule" with tx8 data
-) === List(
-  ("Fred", "sushi") // Expected result if applying tx8
-)
-```
-
-Fred will remain unaffected in the live database after `getWith(tx8)` has been called:
-
-```
-Person.name.likes.get.head === ("Fred", "pasta") 
-```
-The `getWith(txData)` works on a filtered database and is automatically garbage collected. So there is no need to set up and tear down database mockups!
-
-
-### Transaction molecules
-
-We can generate transaction test data by invoking a transactional data getter on a molecule or in the case of retraction on an entity id. The tx getters return the transactional data that the 4 transaction functions `save`, `insert`, `update` or `retract` would normally have transacted.
-
-- `<molecule>.getInsertTx`
-- `<molecule>.getSaveTx`
-- `<molecule>.getUpdateTx`
-- `<entityId>.getRetractTx`
-
-Here's an example of combining transaction molecules of all types:
-
-```
-Person.name.age.getWith(
-  // Transaction molecules:
-  Person.name("John").age(44).getSaveTx, // John saved
-  Person.name.age getInsertTx List(   // Get insert tx with supplied data
-    ("Lisa", 23),                     // Lisa and Pete inserted
-    ("Pete", 24)
+  Person.name("Eddy").likes("cakes").getSaveTx,
+  Person.name.likes.getInsertTx(
+    ("John", "burger"),
+    ("Sara", "french")
   ),
-  Person(fred).age(43).getUpdateTx,   // Fred updated
-  someOtherPersonId.getRetractTx      // Some other person retracted (using id)    
+  Person(lisa).likes("lebanese").getUpdateTx,
+  fred.getRetractTx 
 ) === List(
-  // Expected result
-  ("John", 44), // Saved
-  ("Lisa", 23), // Inserted
-  ("Pete", 24), // Inserted
-  ("Fred", 43)  // Updated
-  // (other person retracted)
+  ("Eddy", "cakes"),   // saved
+  ("John", "burger"),  // inserted
+  ("Sara", "french"),  // inserted
+  ("Lisa", "lebanese") // updated
+                       // (fred retracted)
 )
 ```
-This allow us to test any transactions and build complex "what-if" test scenarios without affecting our live database.
-
 
 ### Modularizing tx data
 
 Assigning transaction molecules to variables can help us modularize tests where we could for instance be interested in seeing if various orders of transactions will produce the same result:
 
-```
+```scala
 val save    = Person.name("John").age(44).getSaveTx
 val insert  = Person.name.age getInsertTx List(("Lisa", 23), ("Pete", 24))
 val update  = Person(fred).age(43).getUpdateTx
@@ -580,67 +433,24 @@ Person.name.age.getWith(save, insert, update, retract) === expectedResult
 Person.name.age.getWith(insert, update, retract, save) === expectedResult
 // etc..
 ```
-Since you can apply any number of transaction molecules, the testing options are extremely powerful.
+There's no limit on the amount of transaction data applied, so the most complex scenarios can be simulated.
 
 
 
-### With APIs
-
-Data With some `txTestData` can be returned as
-
-- `List` for convenient access to smaller data sets
-- `Array` for fastest retrieval and traversing of large typed data sets
-- `Iterable` for lazy traversing with an Iterator
-- Json (`String`)
-- Raw (`java.util.Collection[java.util.List[AnyRef]]`) for fast access to untyped data
-
-where `txTestData` can be either:
-
-- One or more transaction molecules, each returning `Seq[Seq[Statement]]`
-- Raw transaction data from edn file (`java.util.List[_]`)
-
-Combine the needed return type with some transactional data `txTestData` and optionally a row limit by calling one of the corresponding `With` implementations. All return type/parameter combinations have a synchronous and asynchronous implementation:
-
-|| &nbsp;&nbsp;&nbsp;&nbsp; ||
-| :- | :- | :- |
-| `getWith(txTestData)` (List)         || `getAsyncWith(txTestData)` (List)         |
-| `getArrayWith(txTestData)`           || `getAsyncArrayWith(txTestData)`           |
-| `getIterableWith(txTestData)`        || `getAsyncIterableWith(txTestData)`        |
-| `getJsonWith(txTestData)`            || `getAsyncJsonWith(txTestData)`            |
-| `getRawWith(txTestData)`             || `getAsyncRawWith(txTestData)`             |
-| &nbsp;                               ||                                           |
-| `getWith(txTestData, limit)` (List)  || `getAsyncWith(txTestData, limit)` (List)  |
-| `getArrayWith(txTestData, limit)`    || `getAsyncArrayWith(txTestData, limit)`    |
-| `getIterableWith(txTestData, limit)` || `getAsyncIterableWith(txTestData, limit)` |
-| `getJsonWith(txTestData, limit)`     || `getAsyncJsonWith(txTestData, limit)`     |
-| `getRawWith(txTestData, limit)`      || `getAsyncRawWith(txTestData, limit)`      |
-| &nbsp;                               ||                                           |
+## Test against TestDb
 
 
+All molecules expect an implicit database connection object to be in scope. The connection object normal communicates with the real database, but we can ask it to communicate with an in-memory "test database" instead that accepts what-if transactional data as we saw above. But this time continuously for all ordinary transaction molecules. 
 
->The asynchronous implementations simply wraps the synchronous result in a Future as any
->other database server would normally do internally. The difference is that the Peer (the "database server")
->runs in the same process as our application code which makes it natural to do the Future-wrapping
->in Molecule as part of running our application.
+It's a bit lit a git branch where we can always go back to the master branch / the live database.
 
+When the connection/db goes out of scope it is simply garbage collected automatically by the JVM. At any point we can also explicitly go back to continuing using our live db.
 
-## Testing
+### Test against current db
 
-[TestDbAsOf](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/time/TestDbAsOf.scala),
-[TestDbSince](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbSince.scala) and
-[TestDbWith](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/time/TestDbWith.scala)
+To make a few tests with our filtered db we can call `conn.testDbAsOfNow`:
 
-For more complex test scenarios we can use a "test database" where we can freely make multiple separate molecule queries against a temporary filtered database.
-
-### Test db
-
-All molecules expect an implicit connection object to be in scope. If we then set a temporary test database on such `conn` object we can subsequentially freely perform tests against this temporary filtered database as though it was a "branch" (think git).
-
-When the connection/db goes out of scope it is simply garbage collected automatically by the JVM. At any point we can also explicitly go back to continuing using our live production db.
-
-To make a few tests with our filtered db we call `conn.testDbAsOfNow`:
-
-```
+```scala
 // Current state
 Person(fredId).name.age.get.head === ("Fred", 27)
 
@@ -654,10 +464,10 @@ Person(fredId).age(28).update
 // Verify expected outcome of operations
 Person(fredId).name.age.get.head === ("Frederik", 28)
 
-// Then go back to production state
+// Then go back to live db
 conn.useLiveDb
 
-// Production state is unchanged!
+// Live state is unchanged!
 Person(fredId).name.age.get.head === ("Fred", 27)
 ```
 
@@ -666,11 +476,11 @@ Person(fredId).name.age.get.head === ("Fred", 27)
 
 When molecules are used inside domain classes we want to test the domain operations also without affecting the state of our production database. And also ideally without having to create mockups of our domain objects. This is now possible by setting a temporary test database on the implicit connection object that all molecules expect to be present in their scope - which includes the molecules inside domain classes.
 
-When we test against a temporary filtered database, Molecule internally uses the `with` function of Datomic to apply transaction data to a filtered database that is simply garbage collected when it goes out of scope!
+When we test against a temporary filtered database, Molecule internally uses the `with` function of Datomic to apply transaction data to a filtered database that is simply garbage collected when it goes out of scope.
 
 To make a few tests on a domain object that have molecule calls internally we can now do like this:
 
-```
+```scala
 // Some domain object that we want to test
 val domainObj = MyDomainClass(params..) // having molecule transactions inside...
 domainObj.myState === "some state"
@@ -699,7 +509,7 @@ Since internal domain methods will in turn call other domain methods that also e
 
 We can apply the above approach with various time views of our database:
 
-```
+```scala
 conn.testDbAsOfNow
 conn.testDbAsOf(t)
 conn.testDbSince(t)

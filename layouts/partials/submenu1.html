@@ -1,0 +1,111 @@
+<nav class="bs-docs-sidebar" id="myScrollspy">
+
+  <ul class="bs-docs-sidenav nav">{{ $currentNode := . }}
+
+    {{ range where .Site.Menus.main "Identifier" .Section }}
+<!--{{ $currentNode.Name }}-->
+      {{ if .HasChildren }}
+
+        {{ if .Params.anchors }}
+
+          <!-- Custom rendering of anchors instead of sub-pages -->
+          {{ range .Children }}
+            <!-- Page -->
+            {{if $currentNode.IsMenuCurrent "main" . }}
+              <li class="active" aria-current="page"><b><a href="#top">{{ .Name }}</a></b></li>
+              {{ if .Page }}
+                {{ .Page.TableOfContents }}
+              {{ end }}
+            {{else}}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{end}}
+          {{end}}
+
+        {{else}}
+
+
+
+          <!-- Render sub-pages -->
+          {{ range .Children }}
+            {{ $childNode := . }}
+            {{if $currentNode.IsMenuCurrent "main" . }}
+<br>X {{ .Name }}
+              <li class="active" aria-current="page"><b>{{ .Name }}</b></li>
+              {{if .HasChildren}}
+<br>Y {{ .Name }}
+                <ul class="level2">{{ range .Children }}
+                  <li><a class="x" href="{{.URL}}">{{ .Name }}</a></li>
+                  {{end}}
+                </ul>
+              {{end}}
+
+            {{else}}
+
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+
+
+
+<!--    <br>1 {{ eq $currentNode.Name .Parent }}-->
+<!--    <br>1 {{ eq $currentNode.Parent . }}-->
+<!--    <br>1 {{ $currentNode.Parent.Name }}-->
+<!--    <br>2 {{ .Name }}-->
+<!--    <br>3 {{ eq $currentNode.Parent.Name .Name }}-->
+<!--    <br>4 {{ $currentNode.IsPage }}-->
+<!--    <br>2 {{ .Identifier }}-->
+<!--    <br>3 {{ .KeyName }}-->
+<!--    <br>3 {{ .Parent }}-->
+<!--    <br>4 {{ .HasChildren }}-->
+<!--    <br>6 {{ $currentNode.IsMenuCurrent "main" . }}-->
+<!--    <br>7 {{ $childNode.KeyName }}-->
+<!--        {{ .HasChildren }}-->
+<!--        {{ $currentNode.IsPage }}-->
+<!--        {{ $currentNode.IsMenuCurrent "main" . }}-->
+
+
+
+<!--    {if and .HasChildren (or $currentNode.IsPage ($currentNode.IsMenuCurrent "main" .)) }}-->
+<!--    { if and(.HasChildren $currentNode.IsPage) }}-->
+<!--    {if and .HasChildren $currentNode.IsPage }}-->
+<!--    {if and .HasChildren ($currentNode.IsMenuCurrent "main" .) }}-->
+<!--    {if and .HasChildren (and $currentNode.IsPage (eq $currentNode.Parent.Name .Name)) }}-->
+    {{if and .HasChildren (eq $currentNode.Parent.Name .Name) }}
+
+                <ul class="level2 page">{{ range .Children }}
+                    {{if $currentNode.IsMenuCurrent "main" . }}
+                      <li class="active"><b>{{ .Name }}</b></li>
+                    {{else}}
+                      <li><a class="x" href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{end}}
+                  {{end}}
+                </ul>
+              {{end}}
+            {{end}}
+          {{end}}
+
+        {{end}}
+
+      {{end}}
+    {{end}}
+  </ul>
+
+</nav>
+
+
+
+
+<!-- H2 Anchors for other pages - see https://github.com/gohugoio/hugo/issues/1778 -->
+<!--{{ if 0 }}-->
+<!--{{ if .Page }}-->
+<!--{{ $headers := findRE "<h2 id=\"[^\"]+\">[^<]+</h2>" .Page.Content }}-->
+<!--{{ $dir := .Page.Permalink }}-->
+<!--{{ $page := .Name }}-->
+<!--<ul>-->
+<!--  {{ range $i, $header := $headers }}-->
+<!--  {{ $pair := split (substr $header 8 -5) "\">"}}-->
+<!--  {{ $anchorId := (index $pair 0 | plainify | htmlEscape | anchorize) }}-->
+<!--  {{ $title := htmlUnescape (index $pair 1) }}-->
+<!--  <li><a href="{{ $dir }}#{{ $anchorId }}">{{ $title }}</a></li>-->
+<!--  {{end}}-->
+<!--</ul>-->
+<!--{{ end }}-->
+<!--{{ end }}-->

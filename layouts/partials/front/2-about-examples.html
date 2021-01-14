@@ -3,15 +3,53 @@
     <div class="container" style="padding-top:0px;align:center;">
         <div class="col-sm-2 column "></div>
         <div class="col-sm-8 column" style="text-align: center">
-            <h2>A query language of your domain terms</h2>
+<!--            <h2>A query language of your domain terms</h2>-->
+<!--            <h2>A Scala eco-system for your <br><nobr>domain Data Model</nobr> and queries</h2>-->
+<!--            <h2>A unified <nobr>Data Model</nobr> and query language</h2>-->
+<!--            <h2>A Scala meta-DSL to model and query your domain data</h2>-->
+<!--            <h2>Your Data Model is <nobr>Your query language</nobr></h2>-->
+            <h2>Your Data Model =><br>Your Query Language</h2>
             <div style="font-size:22px;font-weight:300;">
                 <p>
-                    Molecule is a query language that uses your domain terms as database query tokens in the most
-                    compact and intuitive way possible.
+<!--                    Molecule offers a query language that uses your domain terms as database query tokens in the most-->
+<!--                    compact and intuitive way possible.-->
+
+                    Molecule is a Scala eco-system to define your domain <nobr>Data Model</nobr> and then directly use its attributes
+                    as your query language.
+
+
+                </p>
+                    them
+                    as tokens directly in queries and transactions against a database.
+
+
+<!--                    Distinctively model the atomic data attributes of your domain.-->
+                <p>
+                    Molecule lets you model the atomic data attributes of your domain.
+
+                    Molecule macros then generate Scala boilerplate code so that you can express both your
+                    domain Data Model and perform queries and transactions against the Datomic database.
 
                 </p>
                 <p>
-                    Molecule macros compile your domain definitions to flexible Scala query code
+                    Let the compiler keep your domain model and queries in sync!
+                </p>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                    Your domain model and database will be enforced to stay in sync by the compiler
+                <p>
+                    Molecule macros compile your domain Data Model to flexible Scala query code
+                    that you can combine endlessly and easily to transact and fetch exactly the
+                    data that your domain requires.
+                    Molecule macros compile your domain Data Model to flexible Scala query code
+                    that you can combine endlessly and easily to transact and fetch exactly the
+                    data that your domain requires.
+                    Your domain model and access to the database will
+
+                    Molecule macros compile your domain Data Model to flexible Scala query code
                     that you can combine endlessly and easily to transact and fetch exactly the
                     data that your domain requires.
                 </p>
@@ -24,7 +62,6 @@
         </div>
         <div class="col-sm-2 column "></div>
 
-
     </div>
 
 
@@ -34,7 +71,7 @@
 
             <div id="myCarousel" class="carousel slide" data-interval="9000" data-ride="carousel">
                 <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
+                <ol class="carousel-indicators" style="z-index:1">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -50,8 +87,8 @@
                         <div class="carousel-caption">
                             <h3>Type-inferred Queries</h3>
                             <p>Build query molecules with your domain attributes</p>
-                            <pre><code class="language-scala">val persons: List[(String, Int)] = Person.name.age.get
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="k">val</span> <span class="n">persons</span><span class="k">:</span> <span class="kt">List</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">get</span>
+</code></pre></div>
                             <p><em>&ldquo;Name and age of Persons&rdquo;</em></p>
                         </div>
                     </div>
@@ -60,8 +97,8 @@
                             <h3>Relationships</h3>
                             <p>Pick attributes across namespaces</p>
 
-                            <pre><code class="language-scala">Person.name.age.Address.street.Country.name.get
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">.</span><span class="nc">Country</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">get</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Name, age, street and country of residence&rdquo;</em></p>
                         </div>
@@ -72,8 +109,8 @@
 
                             <p>Apply required values for certain attributes</p>
 
-                            <pre><code class="language-scala">Person.name(&quot;Johnson&quot;).age.Address.City.name(&quot;New York&quot;).get
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">(</span><span class="s">&#34;Johnson&#34;</span><span class="o">).</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="nc">City</span><span class="o">.</span><span class="n">name</span><span class="o">(</span><span class="s">&#34;New York&#34;</span><span class="o">).</span><span class="n">get</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Age of Johnsons in New York&rdquo; - name, age and city returned</em></p>
                         </div>
@@ -84,8 +121,8 @@
 
                             <p>Add an underscore to omit an attribute from the result set:</p>
 
-                            <pre><code class="language-scala">Person.name_(&quot;Johnson&quot;).age.Address.City.name_(&quot;New York&quot;).get
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name_</span><span class="o">(</span><span class="s">&#34;Johnson&#34;</span><span class="o">).</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="nc">City</span><span class="o">.</span><span class="n">name_</span><span class="o">(</span><span class="s">&#34;New York&#34;</span><span class="o">).</span><span class="n">get</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Age of Johnsons in New York&rdquo; - only ages returned</em></p>
                         </div>
@@ -96,8 +133,8 @@
 
                             <p>Apply logical options and ranges</p>
 
-                            <pre><code class="language-scala">Person.name(&quot;Dean&quot; or &quot;Johnson&quot;).age.&lt;(25).Address.Country.iso2(&quot;US&quot;).get
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">(</span><span class="s">&#34;Dean&#34;</span> <span class="n">or</span> <span class="s">&#34;Johnson&#34;</span><span class="o">).</span><span class="n">age</span><span class="o">.&lt;(</span><span class="mi">25</span><span class="o">).</span><span class="nc">Address</span><span class="o">.</span><span class="nc">Country</span><span class="o">.</span><span class="n">iso2</span><span class="o">(</span><span class="s">&#34;US&#34;</span><span class="o">).</span><span class="n">get</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Young Dean and Johnsons in the US&rdquo;</em></p>
                         </div>
@@ -109,8 +146,8 @@
 
                             <p>Save data for multiple namespace levels in one go:</p>
 
-                            <pre><code class="language-scala">Person.name(&quot;Johnson&quot;).age(35).Address.street(&quot;5th&quot;).City.name(&quot;New York&quot;).save
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">(</span><span class="s">&#34;Johnson&#34;</span><span class="o">).</span><span class="n">age</span><span class="o">(</span><span class="mi">35</span><span class="o">).</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">(</span><span class="s">&#34;5th&#34;</span><span class="o">).</span><span class="nc">City</span><span class="o">.</span><span class="n">name</span><span class="o">(</span><span class="s">&#34;New York&#34;</span><span class="o">).</span><span class="n">save</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Add a 35-year-old Johnson living on 5th street in New York&rdquo;</em></p>
                         </div>
@@ -121,8 +158,8 @@
 
                             <p>Update molecules with new data</p>
 
-                            <pre><code class="language-scala">Person(johnsonId).Address.street(&quot;Broadway&quot;).update
-</code></pre>
+                            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">(</span><span class="n">johnsonId</span><span class="o">).</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">(</span><span class="s">&#34;Broadway&#34;</span><span class="o">).</span><span class="n">update</span>
+</code></pre></div>
 
                             <p><em>&ldquo;Johnson now lives on Broadway&rdquo;</em></p>
                         </div>
