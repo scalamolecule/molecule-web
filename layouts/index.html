@@ -1,10 +1,15 @@
 {{ partial "header.html" . }}
 
-<section>{{- partial "front/1-hero" . -}}</section>
-<section>{{- partial "front/2-about-examples" . -}}</section>
-<section>{{- partial "front/3-one-api-dbs" . -}}</section>
+<section style="background-image:url(/bg/furley_bg.png)">{{- partial "front/1-hero" . -}}</section>
+
+<section>{{- partial "front/2-about" . -}}</section>
+
+<section style="background-image:url(/bg/furley_bg.png)">{{- partial "front/3-one-api-dbs" . -}}</section>
+
 <section>{{- partial "front/4-molecule-datomic" . -}}</section>
-<section>{{- partial "front/5-schema-transact-query" . -}}</section>
+
+<section style="background-image:url(/bg/furley_bg.png)">{{- partial "front/5-examples" . -}}</section>
+
 <section>{{- partial "front/6-links" . -}}</section>
 
 {{ partial "footer.html" . }}

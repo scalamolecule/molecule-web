@@ -1,123 +1,100 @@
 <div style="background-color:rgba(51, 185, 255, 0.28); align:center;padding-top:50px;padding-bottom:65px;">
-    <div class="container" style="padding-top:20px">
+    <div class="container" style="padding-top:20px;">
         <div class="col-sm-12 column " style="padding-left:8px;padding-right:0px;text-align: center">
-            <img src="/img/logo/MoleculeLogo600.png">
+            <img id="molecule-big-logo" src="/img/logo/MoleculeLogo600.png">
             <br>
             <br>
-<!--            <h1>Query your Scala domain model</h1>-->
-<!--            <h2>Write queries in Scala with your <nobr>domain model</nobr></h2>-->
-<!--            <h1>A Molecule Domain Query Language</h1>-->
-<!--            <h1>Molecule DomainQL</h1>-->
-<!--            <h1>Write queries with your <nobr>domain model</nobr></h1>-->
-<!--            <h1 style="margin-top:30px;margin-bottom:30px">Model and query with one language</h1>-->
-<!--            <h1 style="margin-top:30px;margin-bottom:30px">Model and query your domain data</h1>-->
             <h1 style="margin-top:30px;margin-bottom:30px">Your own query language</h1>
-<!--            <h1 style="margin-top:30px;margin-bottom:30px">A Scala meta-DSL to model and query your domain data.</h1>-->
-<!--            <h2>Ask for</h2>-->
 
-            <div class="highlight" style="padding-bottom:10px">
-<!--                <pre class="chroma front" style="margin-bottom:0"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">.</span><span class="n">get</span></code></pre>-->
-                <pre class="chroma front" style="margin-bottom:0"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span></code></pre>
+            <div class="highlight"><!-- whitespace avoids copy button -->
+                <pre class="chroma front"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">.</span><span class="n">get</span>
+</code></pre></div>
+
+
+<!--            <div class="highlight">-->
+<!--                <pre class="chroma front" style="margin-bottom:0"><code class="language-scala" data-lang="scala"><span-->
+<!--                        class="nc">Person</span><span class="o">.</span><span class="n">name</span><span-->
+<!--                        class="o">.</span><span class="n">age</span><span class="o">.</span><span-->
+<!--                        class="nc">Address</span><span class="o">.</span><span class="n">street</span></code></pre>-->
+<!--            </div>-->
+
+
+            <div class="highlight" ><!-- whitespace avoids copy button -->
+                <pre class="chroma front"><code
+                        class="language-scala" data-lang="scala"><span class="o">(</span><span
+                        class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span
+                        class="mi">20</span><span class="o">,</span> <span
+                        class="s">&#34;Broadway&#34;</span><span class="o">)</span></code></pre>
             </div>
 
 
-<!--            <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala">Person.name.age.Address.street.get</code></pre></div>-->
-<!--            <h2>Fetch typed data matching your domain model</h2>-->
-<!--            <h2>Fetch typed data from <a href="http://datomic.com">Datomic</a><span style="font-size:18px;vertical-align: super">®</span> matching your <nobr>domain model</nobr></h2>-->
-<!--            <h2>Get matching typed data from <a href="http://datomic.com">Datomic</a><span style="font-size:18px;vertical-align: super">®</span></h2>-->
-<!--            <h2>get typed matching data</h2>-->
-<!--            <div class="highlight">-->
-<!--                <pre class="chroma front"><code class="language-scala" data-lang="scala"><span class="nc">List</span><span class="o">((</span><span class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="s">&#34;Broadway&#34;</span><span class="o">),</span> <span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="mi">22</span><span class="o">,</span> <span class="s">&#34;Fifth Avenue&#34;</span><span class="o">))</span>-->
-<!--</code></pre>-->
-<!--            </div>-->
-<!--            <pre class="front"><code class="language-scala" style="color:#555">List(("Lisa", 20, "Broadway"), ("John", 22, "Fifth Avenue"))</code></pre>-->
 
 
-<!--<div class="highlight"><div style="display:inline-block"><pre class="chroma front" style="text-align: left;"><code class="language-scala" data-lang="scala"><span class="nc">List</span><span class="o">(</span>-->
-<!--  <span class="o">(</span><span class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="s">&#34;Broadway&#34;</span><span class="o">),</span>-->
-<!--  <span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="mi">22</span><span class="o">,</span> <span class="s">&#34;Fifth Avenue&#34;</span><span class="o">)</span>-->
-<!--<span class="o">)</span>-->
-<!--</code></pre></div></div>-->
+<!--            <div style="height: 170px">-->
+<!--                <div id="myCarousel-1" class="carousel slide vertical" data-interval="2500" data-ride="carousel">-->
+<!--                    &lt;!&ndash; Carousel indicators &ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <ol class="carousel-indicators" style="z-index:1">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <li data-target="#myCarousel" data-slide-to="1"></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <li data-target="#myCarousel" data-slide-to="2"></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        </ol>&ndash;&gt;-->
 
 
+<!--                    &lt;!&ndash; Carousel items &ndash;&gt;-->
+<!--                    <div class="carousel-inner">-->
 
-
-                <div style="height: 170px">
-                    <div id="myCarousel" class="carousel slide vertical" data-interval="3000" data-ride="carousel">
-                        <!-- Carousel indicators -->
-<!--                        <ol class="carousel-indicators" style="z-index:1">-->
-<!--                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-<!--                            <li data-target="#myCarousel" data-slide-to="1"></li>-->
-<!--                            <li data-target="#myCarousel" data-slide-to="2"></li>-->
-<!--                        </ol>-->
-                        <!-- Carousel items -->
-                        <div class="carousel-inner">
-
-                            <div class="active item">
-                                <div class="highlight"><div style="display:inline-block;padding-left:20px"><pre class="chroma front" style="text-align: left;"><code class="language-scala" data-lang="scala"><span class="o">(</span><span class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="s">&#34;Broadway&#34;</span><span class="o">)</span>
-</code></pre></div></div>
-                            </div>
-
-                            <div class="item">
-                                <div class="highlight"><div style="display:inline-block;margin-top:-10px;"><pre class="chroma front" style="text-align: left;"><code class="language-scala" data-lang="scala"><span class="o">{</span>
-  <span class="s">&#34;Person.name&#34;</span>   <span class="k">:</span> <span class="err">&#34;</span><span class="kt">Lisa</span><span class="err">&#34;</span><span class="o">,</span>
-  <span class="s">&#34;Person.age&#34;</span>    <span class="k">:</span> <span class="err">20</span><span class="o">,</span>
-  <span class="s">&#34;Address.street&#34;</span><span class="k">:</span> <span class="err">&#34;</span><span class="kt">Broadway</span><span class="err">&#34;</span>
-<span class="o">}</span>
-</code></pre></div></div>
-                            </div>
-
-<!--                            <div class="item">-->
-<!--                                <div class="highlight"><div style="display:inline-block;padding-left:30px"><pre class="chroma front" style="text-align: left;"><code class="language-scala" data-lang="scala"><span class="n">obj</span><span class="o">.</span><span class="n">name</span>   <span class="k">=</span> <span class="s">&#34;Lisa&#34;</span>-->
-<!--<span class="n">obj</span><span class="o">.</span><span class="n">age</span>    <span class="k">=</span> <span class="mi">20</span>-->
-<!--<span class="n">obj</span><span class="o">.</span><span class="n">street</span> <span class="k">=</span> <span class="s">&#34;Broadway&#34;</span>-->
-<!--</code></pre></div></div>-->
-
-<!--&lt;!&ndash;                                <div class="highlight"><div style="display:inline-block;padding-left:30px"><pre class="chroma front" style="text-align: left;"><code class="language-scala" data-lang="scala"><span class="n">person</span><span class="o">.</span><span class="n">name</span>   <span class="k">=</span> <span class="s">&#34;Lisa&#34;</span>&ndash;&gt;-->
-<!--&lt;!&ndash;<span class="n">person</span><span class="o">.</span><span class="n">age</span>    <span class="k">=</span> <span class="mi">20</span>&ndash;&gt;-->
-<!--&lt;!&ndash;<span class="n">person</span><span class="o">.</span><span class="n">street</span> <span class="k">=</span> <span class="s">&#34;Broadway&#34;</span>&ndash;&gt;-->
-<!--&lt;!&ndash;</code></pre></div></div>&ndash;&gt;-->
-
+<!--                        <div class="active item">-->
+<!--                            <div class="highlight" style="display:inline-block;padding-left:20px;margin-top:53px;">&lt;!&ndash; whitespace avoids copy button &ndash;&gt;-->
+<!--                                <pre class="chroma front" style="text-align: left;"><code-->
+<!--                                        class="language-scala" data-lang="scala"><span class="o">(</span><span-->
+<!--                                        class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span-->
+<!--                                        class="mi">20</span><span class="o">,</span> <span-->
+<!--                                        class="s">&#34;Broadway&#34;</span><span class="o">)</span></code></pre>-->
 <!--                            </div>-->
+<!--                        </div>-->
 
-                        </div>
-                    </div>
-                </div>
+<!--&lt;!&ndash;                        <div class=" item">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="highlight" style="display:inline-block;margin-top:-15px;">&lt;!&ndash; whitespace avoids copy button &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <pre class="chroma front" style="text-align: left;"><code&ndash;&gt;-->
+<!--&lt;!&ndash;                                        class="language-scala" data-lang="scala"><span class="o">{</span>&ndash;&gt;-->
+<!--&lt;!&ndash;  <span class="s">&#34;Person.name&#34;</span>   <span class="k">:</span> <span class="err">&#34;</span><span&ndash;&gt;-->
+<!--&lt;!&ndash;                                            class="kt">Lisa</span><span class="err">&#34;</span><span class="o">,</span>&ndash;&gt;-->
+<!--&lt;!&ndash;  <span class="s">&#34;Person.age&#34;</span>    <span class="k">:</span> <span class="err">20</span><span&ndash;&gt;-->
+<!--&lt;!&ndash;                                            class="o">,</span>&ndash;&gt;-->
+<!--&lt;!&ndash;  <span class="s">&#34;Address.street&#34;</span><span class="k">:</span> <span class="err">&#34;</span><span&ndash;&gt;-->
+<!--&lt;!&ndash;                                            class="kt">Broadway</span><span class="err">&#34;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="o">}</span></code></pre>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="highlight" style="display:inline-block;padding-left:10px;margin-top:19px;">&lt;!&ndash; whitespace avoids copy button &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <pre class="chroma front"><code class="language-scala" data-lang="scala"><span class="n">obj</span><span class="o">.</span><span class="n">name</span>           <span class="k">=</span> <span class="s">&#34;Lisa&#34;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="n">obj</span><span class="o">.</span><span class="n">age</span>            <span class="k">=</span> <span class="mi">20</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="n">obj</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span> <span class="k">=</span> <span class="s">&#34;Broadway&#34;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</code></pre></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Carousel items &ndash;&gt;-->
+
+<!--                </div>-->
+<!--            </div>-->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="btn-group" style="padding-top:50px;">
+<!--            <div class="btn-group" style="padding-top:50px;">-->
+            <div class="btn-group" style="padding-top:80px;">
                 <a href="/intro" class="btn btn-lg" role="button"
                    style="background:none;border-color:#888;">Learn More</a>
                 <a href="/setup" class="btn btn-lg" role="button"
                    style="background:none;border-color:#888;">Get Started</a>
-                <a href="/intro/code-examples" class="btn btn-lg" role="button"
+                <a href="/code/" class="btn btn-lg" role="button"
                    style="background:none;border-color:#888;">Show code</a>
             </div>
 
-
         </div>
-
-
 
     </div>
 </div>

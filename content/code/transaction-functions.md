@@ -1,16 +1,13 @@
 ---
-title: "Transaction Function"
+title: "Transaction Functions"
 weight: 85
 menu:
   main:
     parent: code
-    identifier: code-transaction-function
 ---
 
 
 # Transaction functions
-
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/transaction/TxFunctions.scala)
 
 
 ### Atomic processing within the transaction
@@ -66,7 +63,7 @@ libraryDependencies ++= Seq(
 
 >Macro annotations have been considered experimental in Scala and for version 2.12 requires an
 >import of the scala paradise plugin. In version 2.13 they have been incorporated into the core
->language itself and importing the paradise plugin will no longer be necessary.
+>language itself and importing the paradise plugin is no longer necessary in 2.13.
 
 
 ### Tx functions on the transactor classpath
@@ -120,7 +117,7 @@ object myTxFunctions {
     val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
 
     // Update accounts
-    Account(from).balance(newFromBalance).getUpdateTx ++ Account(to).balance(newToBalance).getUpdateTx
+    Account(from).balance(newFromBalance).getUpdateStmts ++ Account(to).balance(newToBalance).getUpdateStmts
   }
 }
 ```
@@ -129,14 +126,14 @@ The signature of a tx functions must include an implicit `Conn` parameter. This 
 
 We first check the available-funds constraint by looking up the current balance and throw an exception if there is not enough money available. Throwing an exception inside a tx function will cancel the whole transaction and thereby guarantee atomicity.
 
-Tx functions need to return transaction statements. We use Molecule's tx methods on molecules for the equivalent operations to get the necessary statements. So, to get the transaction statements of an update we simply replace a normal `update` call too `getUpdateTx` which will give us the transaction statements produced:
+Tx functions need to return transaction statements. We use Molecule's tx methods on molecules for the equivalent operations to get the necessary statements. So, to get the transaction statements of an update we simply replace a normal `update` call too `getUpdateStmts` which will give us the transaction statements produced:
 
 ```scala
 // Isolated update transaction (not in tx function)
 Account(from).balance(newFromBalance).update
 
-// .. equivalent to the transaction statements returned by `getUpdateTx` 
-Account(from).balance(newFromBalance).getUpdateTx
+// .. equivalent to the transaction statements returned by `getUpdateStmts` 
+Account(from).balance(newFromBalance).getUpdateStmts
 ```
 
 
@@ -209,14 +206,14 @@ def withdraw(from: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] 
     throw new TxFnException(s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
 
   val newFromBalance = curFromBalance - amount
-  Account(from).balance(newFromBalance).getUpdateTx
+  Account(from).balance(newFromBalance).getUpdateStmts
 }
 
 
 // "Sub" tx fn - can be used on its own or in other tx functions
 def deposit(to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
   val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
-  Account(to).balance(newToBalance).getUpdateTx
+  Account(to).balance(newToBalance).getUpdateStmts
 }
 
 
@@ -302,3 +299,10 @@ Updating the from-account balance from 100 to 80 for instance creates two Datoms
 
 
 
+
+
+
+
+### Next
+
+[Time...](/code/time)

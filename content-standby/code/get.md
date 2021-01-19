@@ -26,7 +26,7 @@ In Molecule you can either `save` a populated molecule or `insert` multiple tupl
 #### `save`
 3 facts asserted for a new entity:
 ```scala
-Person.name("Fred").likes("pizza").age(38).save // or saveAsync
+Person.name("Fred").likes("pizza").age(37).save // or saveAsync
 ```
 
 More on [save](/manual/crud/save/)...
@@ -36,7 +36,7 @@ More on [save](/manual/crud/save/)...
 3 facts asserted for each of 3 new entities: 
 ```scala
 Person.name.age.likes insert List( // or insertAsync
-  ("Fred", 38, "pizza"),
+  ("Fred", 37, "pizza"),
   ("Lisa", 7, "sushi"),
   ("Ben", 5, "pizza")
 )
@@ -52,7 +52,7 @@ To read data from the database we call `get` on a molecule
 
 ```scala
 Person.name.age.likes.get === List( // or getAsync
-  ("Fred", 38, "pizza"),
+  ("Fred", 37, "pizza"),
   ("Lisa", 7, "sushi"),
   ("Ben", 5, "pizza")
 )
@@ -126,7 +126,7 @@ More on [retract](/manual/crud/retract/)...
 In Molecule we can populate a molecule with data and save it:
 
 ```scala
-Person.name("Fred").likes("pizza").age(38).save
+Person.name("Fred").likes("pizza").age(37).save
 ```
 
 This will assert 3 facts in Datomic that all share the id of the new entity id `fredId` that is automatically created by Datomic:
@@ -134,7 +134,7 @@ This will assert 3 facts in Datomic that all share the id of the new entity id `
 ```scala
 fredId    :Person/name    "Fred"
 fredId    :Person/likes   "pizza"
-fredId    :Person/age     38
+fredId    :Person/age     37
 ```
 
 ### Type-safety
@@ -150,22 +150,22 @@ Here, we map over the result of saving asynchronously:
 
 ```scala
 // Map over a Future
-Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report from successful save transaction
+Person.name("Fred").likes("pizza").age(37).saveAsync.map { tx => // tx report from successful save transaction
   // (synchronous get)
-  Person.name.likes.age.get.head === ("Ben", "pizza", 42)
+  Person.name.likes.age.get.head === ("Fred", "pizza", 37)
 }
 ```
 
 Or we could defer the resolution of the `Future`
 
 ```scala
-val futureSave: Future[TxReport] = Person.name("Fred").likes("pizza").age(42).saveAsync
+val futureSave: Future[TxReport] = Person.name("Fred").likes("pizza").age(37).saveAsync
 for {
   _ <- futureSave
   result <- Person.name.likes.age.getAsync
 } yield {
   // Data was saved
-  result.head === ("Ben", "pizza", 42)
+  result.head === ("Ben", "pizza", 37)
 }
 ```
 
@@ -177,14 +177,14 @@ For brevity, the following examples use the synchronous `save` operation.
 
 We can even save related date in the same operation
 ```scala
-Person.name("Fred").likes("pizza").age(38).Home.street("Baker St. 7").city("Boston").save
+Person.name("Fred").likes("pizza").age(37).Home.street("Baker St. 7").city("Boston").save
 ```
 In this case, 6 facts will be asserted for the entity of Fred. A `:Person/home` ref attribute will resolve to the value of a new Address entity with id `addrId` and thereby establish the relationship from Fred to his Address:
 
 ```
 fredId    :Person/name    "Fred"
 fredId    :Person/likes   "pizza"
-fredId    :Person/age     38
+fredId    :Person/age     37
 fredId    :Person/home    addrId
 addrId    :Addr/street    "Baker St. 7"
 addrId    :Addr/city      "Boston"
@@ -219,7 +219,7 @@ When this molecule is saved, only 2 facts will be asserted:
 
 ```
 fredId    :Person/name    "Fred"
-fredId    :Person/age     38
+fredId    :Person/age     37
 ```
 
 This is different from SQL where we would save a NULL value in a `likes` column.
@@ -228,7 +228,7 @@ Molecule lets us fetch data sets with optional facts asserted for an attribute a
 
 ```scala
 Person.name.likes$.age.get === List(
-  ("Fred", None, 38),
+  ("Fred", None, 37),
   ("Pete", Some("sushi"), 17)
 )
 ```
@@ -236,14 +236,14 @@ Person.name.likes$.age.get === List(
 If we specifically want to find Persons that have no `likes` asserted we can say
 ```scala
 Person.name.likes_(nil).age.get === List(
-  ("Fred", 38)
+  ("Fred", 37)
   // Pete not returned since he likes something
 )
 ```
 .. or
 ```scala
 Person.name.likes$(None).age.get === List(
-  ("Fred", None, 38)
+  ("Fred", None, 37)
   // Pete not returned since he likes something
 )
 ```
@@ -257,7 +257,7 @@ Data can be inserted by making a molecule that matches the values of each row.
 One row of data can be applied directly with matching arguments
 
 ```scala
-Person.name.likes.age.insert("Fred", "pizza", 38)
+Person.name.likes.age.insert("Fred", "pizza", 37)
 ```
 
 Multiple rows of data can be applied as any `Iterable` of tuples of data each matching the molecule attributes:
@@ -284,7 +284,7 @@ Here, we insert data as argument list/tuples asynchronously:
 
 ```scala
 // Insert single row of data with individual args
-val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("Fred", "pizza", 38)
+val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("Fred", "pizza", 37)
 
 // Insert Iterable of multiple rows of data
 val multipleInsertFuture: Future[TxReport] = Person.name.likes.age insertAsync List(
@@ -299,7 +299,7 @@ for {
 } yield {
   // Both inserts applied
   result === List(
-    ("Fred", "pizza", 38),
+    ("Fred", "pizza", 37),
     ("Lisa", "pizza", 7),
     ("Ben", "pasta", 5)
   )
@@ -314,7 +314,7 @@ For brevity, the following examples use the synchronous `save` operation.
 
 ```scala
 Person.name.likes$.age insert List(
-  ("Fred", None, 38),
+  ("Fred", None, 37),
   ("Pete", Some("sushi"), 17)
 )
 ```
@@ -327,7 +327,7 @@ Related data can be inserted
 
 ```scala
 Person.name.likes$.age.Home.street.city insert List(
-  ("Fred", None, 38, "Baker St. 7", "Boston"),
+  ("Fred", None, 37, "Baker St. 7", "Boston"),
   ("Pete", Some("sushi"), 17, "Sunset Boulevard 1042", "Foxville")
 )
 ```
@@ -353,7 +353,7 @@ Likewise we might often have the whole data set saved in a variable that we can 
 
 ```scala
 val data = List(
-  ("Fred", None, 38),
+  ("Fred", None, 37),
   ("Pete", Some("sushi"), 17)
 )
 Person.name.likes$.age insert data
@@ -368,7 +368,7 @@ val bakerSt7 = Addr.street("Baker St. 7").city("Boston").save.eid
 val sunsetB = Addr.street("Sunset Boulevard 1042").city("Foxville").save.eid
 
 Person.name.likes$.age.home insert List(
-  ("Fred", Some("pizza"), 38, bakerSt7),
+  ("Fred", Some("pizza"), 37, bakerSt7),
   ("Lisa", None, 12, bakerSt7),
   ("Ben", Some("pasta"), 7, bakerSt7),
   ("Pete", Some("sushi"), 17, sunsetB)
@@ -385,7 +385,7 @@ We can assign an Insert-molecule to a variable in order to re-use it as a temple
 val insertPerson = Person.name.likes.age.insert
 
 // Insert 3 persons re-using the insert-molecule
-insertPerson("Fred", "pizza", 38)
+insertPerson("Fred", "pizza", 37)
 insertPerson("Lisa", "pizza", 12)
 insertPerson("Ben", "pasta", 7)
 ```
@@ -396,7 +396,7 @@ We can use insert-molecules with data assigned to variables too:
 val insertPerson = Person.name.likes.age.insert
 
 val personsData = List(
-  ("Fred", "pizza", 38),
+  ("Fred", "pizza", 37),
   ("Lisa", "pizza", 7),
   ("Ben", "pasta", 5)
 )
@@ -432,9 +432,6 @@ val array: Array[(String, Int)] = m(Person.name.age).getArray
 // Iterable for lazy traversing with an Iterator
 val iterable: Iterable[(String, Int)] = m(Person.name.age).getIterable
 
-// Json formatted string 
-val json: String = m(Person.name.age).getJson
-
 // Raw untyped Datomic data if data doesn't need to be typed
 val raw: java.util.Collection[java.util.List[AnyRef]] = m(Person.name.age).getRaw
 ```
@@ -447,7 +444,6 @@ Molecule provide all operations both synchronously and asynchronously, so the 5 
 val list    : Future[List[(String, Int)]] = m(Person.name.age).getAsync
 val array   : Future[Array[(String, Int)]] = m(Person.name.age).getAsyncArray
 val iterable: Future[Iterable[(String, Int)]] = m(Person.name.age).getAsyncIterable
-val json    : Future[String] = m(Person.name.age).getAsyncJson
 val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.name.age).getAsyncRaw
 ```
 
@@ -458,7 +454,7 @@ val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.na
 Attributes of some entity are easily fetched by applying an entity id to the first namespace in the molecule
 
 ```scala
-Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza")
+Person(fredId).name.age.likes.get.head === List("Fred", 37, "pizza")
 ```
 The entity id is used for the first attribute of the molecule, here `name` having entity id `fredId`.
 
@@ -471,7 +467,7 @@ Molecules can get optional attributes which make them flexible to get irregular 
 
 ```scala
 Person.name.age.likes$.get === List(
-  ("Fred", 38, Some("pizza")),
+  ("Fred", 37, Some("pizza")),
   ("Lisa", 7, None),
   ("Ben", 5, Some("pizza"))
 )
@@ -495,54 +491,7 @@ val data: List[(String, Int, Option[String])] = seed.map { case (e, name, age) =
 ```
 For this simple example, the original molecule with an optional `likes` attribute would of course have been sufficient and more concise. But for more complex interconnected data this approach can be a good extra tool in the toolbox.
 
-### Get Json formatted Data
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/json)
-
-We can get data in json format directly from the database by calling `getJson` on a molecule. So instead of converting tuples of data to json with some 3rd party library we can call `getJson` and pass the json data string directly to an Angular table for instance.
-
-Internally, Molecule builds the json string in a StringBuffer directly from the raw data coming from Datomic (with regards to types being quoted or not). This should make it the fastest way of supplying json data when needed.
-
-To avoid ambiguity all attribute names are prefixed with their namespace name, all in lower case and separated by a dot:
-
-```scala
-Person.name.age.getJson ===
-  """[
-    |{"person.name": "Fred", "person.age": 38},
-    |{"person.name": "Lisa", "person.age": 35}
-    |]""".stripMargin
-```
-
-
-### Composite data
-
-Each sub part of the composite is rendered as a separate json object tied together in an array for each row:
-
-```scala
-m(Person.name.age + Category.name.importance).getJson ===
-  """[
-    |[{"person.name": "Fred", "person.age": 38}, {"category.name": "Marketing", "category.importance": 6}],
-    |[{"person.name": "Lisa", "person.age": 35}, {"category.name": "Management", "category.importance": 7}]
-    |]""".stripMargin
-``` 
-Note the `name` field is prefixed by a different namespace in each json sub-object.
-
-
-### Nested data
-
-Nested date is rendered as a json array with json objects for each nested row:
-
-```scala
-m(Invoice.no.customer.InvoiceLines * InvoiceLine.item.qty.amount).getJson ===
-  """[
-    |{"invoice.no": 1, "invoice.customer": "Johnson", "invoice.invoiceLines": [
-    |   {"invoiceline.item": "apples", "invoiceline.qty": 10, "invoiceline.amount": 12.0},
-    |   {"invoiceline.item": "oranges", "invoiceline.qty": 7, "invoiceline.amount": 3.5}]},
-    |{"no": 2, "customer": "Benson", "invoiceLines": [
-    |   {"invoiceline.item": "bananas", "invoiceline.qty": 3, "invoiceline.amount": 3.0},
-    |   {"invoiceline.item": "oranges", "invoiceline.qty": 1, "invoiceline.amount": 0.5}]}
-    |]""".stripMargin
-```
 
 ### Render strategies...
 
@@ -578,7 +527,7 @@ Person(fredId).age(39).update
 
 Molecule uses the `fredId` to
 
-1. find the current `age` attribute value (38) and retract that value
+1. find the current `age` attribute value (37) and retract that value
 2. assert the new `age` attribute value 39
 
 
@@ -706,13 +655,13 @@ for {
   List(ben, liz) = saveTx.eids
 
   // Update Liz' age
-  updateTx <- Ns(liz).age(38).updateAsync
+  updateTx <- Ns(liz).age(37).updateAsync
 
   // Get result
   result <- Person.name.age.getAsync
 } yield {
   // Liz had a birthday
-  result === List(("Ben", 42), ("Liz", 38))
+  result === List(("Ben", 42), ("Liz", 37))
 }
 ```
 
@@ -838,7 +787,7 @@ Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistor
 If a ref attribute is defined with the option `isComponent` then it "owns" its related entities - or "subcomponents", as when an `Order` own its `LineItem`s.
 
 ```scala
-object ProductsOrderDefinition {
+object ProductsOrderDataModel {
 
   trait Order {
     val id    = oneInt

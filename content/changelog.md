@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-01-16 v0.24.0 [Json output dropped](#43)
 - 2021-01-03 v0.23.0 [Targeting Datomic Peer + Peer-Server + Cloud](#42)
 - 2020-10-31 v0.22.8 [Upgrade to ScalaJS 1.3](#41)
 - 2020-07-17 v0.22.7 [Allow all implicit widening conversions for numeric variables](#40)
@@ -49,6 +50,17 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+
+## [☝︎](#top) Json output dropped {#43}
+
+_2021-01-16 v0.24.0_
+
+Json as output is dropped which means that methods `getJson` and `getAsyncJson` are no longer available on molecules.
+
+The semantics were unclear and json can anyway easily be made with any desired semantics from Model and typed tuples instead. Json output also felt like a black sheep in the typed Molecule eco-system. Moving forward now with what Molecule does best: outputting typed and molecule-matching data.
+
 
 
 ## [☝︎](#top) Targeting Datomic Peer + Peer-Server + Cloud {#42}
@@ -473,7 +485,7 @@ object myTxFns {
     val newToBalance = Ns(to).int.get.headOption.getOrElse(0) + amount
 
     // Update accounts
-    Ns(from).int(newFromBalance).getUpdateTx ++ Ns(to).int(newToBalance).getUpdateTx
+    Ns(from).int(newFromBalance).getUpdateStmts ++ Ns(to).int(newToBalance).getUpdateStmts
   }
 }
 ```
@@ -492,13 +504,13 @@ If the transactional logic is not dependent on access to the transaction databas
 ```scala
 transact(
   // retract
-  e1.getRetractTx,
+  e1.getRetractStmts,
   // save
-  Ns.int(4).getSaveTx,
+  Ns.int(4).getSaveStmts,
   // insert
-  Ns.int.getInsertTx(List(5, 6)),
+  Ns.int.getInsertStmts(List(5, 6)),
   // update
-  Ns(e2).int(20).getUpdateTx
+  Ns(e2).int(20).getUpdateStmts
 )
 ```
 Tx statement getters for the molecule operations are used to get the tx statements to be transacted in one transaction. As with tx functions, only all tx statements will atomically transact or none will if there is some transactional error. 
@@ -625,7 +637,7 @@ Normal "flat" molecules creates json with a row on each line in the output:
 ```scala
 Person.name.age.getJson ===
   """[
-    |{"name": "Fred", "age": 38},
+    |{"name": "John", "age": 38},
     |{"name": "Lisa", "age": 35}
     |]""".stripMargin
 ```
@@ -638,7 +650,7 @@ Composite data has potential field name clashes so each sub part of the composit
 ```scala
 m(Person.name.age ~ Category.name.importance).getJson ===
   """[
-    |[{"name": "Fred", "age": 38}, {"name": "Marketing", "importance": 6}],
+    |[{"name": "John", "age": 38}, {"name": "Marketing", "importance": 6}],
     |[{"name": "Lisa", "age": 35}, {"name": "Management", "importance": 7}]
     |]""".stripMargin
 ``` 
@@ -711,7 +723,7 @@ Person.name.age.getAsOf(t) === ... // Persons as of a point in time `t`
 
 Person.name.age.getSince(t) === ... // Persons added after a point in time `t`
 
-Person(fredId).age.getHistory === ... // Current and previous ages of Fred in the db
+Person(johnId).age.getHistory === ... // Current and previous ages of John in the db
 ```
 
 `t` can be a transaction entity id (`Long`), a transaction number (`Long`) or a `java.util.Date`.
@@ -721,11 +733,11 @@ If we want to test the outcome of some transaction without affecting the product
 ```scala
 Person.name.age.getWith(
   // Testing adding some transactional data to the current db
-  Person.name("John").age(42).saveTx, // Save transaction data
+  Person.name("John").age(24).saveTx, // Save transaction data
   Person.name.age.insertTx(
-    List(("Lisa", 34), ("Pete", 55)) // Insert transaction data
+    List(("Lisa", 20), ("Pete", 55)) // Insert transaction data
   ),
-  Person(fredId).age(28).updateTx, // Update transaction data
+  Person(johnId).age(28).updateTx, // Update transaction data
   someEntityId.retractTx // Retraction transaction data
 ) === ... // Persons from db including transactions tested 
 ```
@@ -744,23 +756,23 @@ To make a few tests with our filtered db we can now do like this:
 
 ```scala
 // Current state
-Person(fredId).name.age.get.head === ("Fred", 27)
+Person(johnId).name.age.get.head === ("John", 37)
 
 // Create "branch" of our production db as it is right now
 conn.testDbAsOfNow  
 
 // Perform multiple operations on test db
-Person(fredId).name("Frederik").update
-Person(fredId).age(28).update
+Person(johnId).name("Johnny").update
+Person(johnId).age(38).update
 
 // Verify expected outcome of operations
-Person(fredId).name.age.get.head === ("Frederik", 28)
+Person(johnId).name.age.get.head === ("Johnny", 38)
 
 // Then go back to production state
 conn.useLiveDb
 
 // Production state is unchanged!
-Person(fredId).name.age.get.head === ("Fred", 27)
+Person(johnId).name.age.get.head === ("John", 37)
 ```
 
 ### Test db with domain classes

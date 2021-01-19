@@ -4,7 +4,6 @@ weight: 90
 menu:
   main:
     parent: code
-    identifier: time
 ---
 
 # Time
@@ -27,19 +26,6 @@ The 5 time getters offer us valuable insight into the database from various pers
 {{< /bootstrap-table >}}
 
 The synchronous getters return a `List` of tuples and the asynchronous a `Future` of `List` of tuples.
-
-
-### json getters
-  
-We can also return the data as json:
-
-```
-getJson                getAsyncJson
-getJsonAsOf(t2)        getAsyncJsonAsOf(t2)
-getJsonSince(t2)       getAsyncJsonSince(t2)
-getJsonHistory         getAsyncJsonHistory
-getJsonWith(tx4data)   getAsyncJsonWith(tx4data)
-```
 
 
 ### Limit returned data
@@ -132,20 +118,20 @@ Calling `getAsOf(t)` on a molecule gives us the data as of a certain point in ti
 Let's look at an example of a database that has 3 transactions:
 
 ```scala
-val txReport1 = Person.name("Fred").likes("pizza").save
-val fred      = txReport1.eid // getting created entity id from tx report
+val txReport1 = Person.name("John").likes("pizza").save
+val johnId      = txReport1.eid // getting created entity id from tx report
 val t1        = txReport1.t   // getting t from tx report
 
-val t2 = Person(fred).likes("sushi").update.t 
+val t2 = Person(johnId).likes("sushi").update.t 
 
 val t3 = Person.name("Lisa").likes("thai").update.t 
 ```
 
 We can then get the db value as it looked like at 3 points in time:
 ```scala
-Person.name.likes.getAsOf(t1) === List(("Fred", "pizza"))
-Person.name.likes.getAsOf(t2) === List(("Fred", "sushi"))
-Person.name.likes.getAsOf(t3) === List(("Fred", "sushi"), ("Lisa", "thai"))
+Person.name.likes.getAsOf(t1) === List(("John", "pizza"))
+Person.name.likes.getAsOf(t2) === List(("John", "sushi"))
+Person.name.likes.getAsOf(t3) === List(("John", "sushi"), ("Lisa", "thai"))
 ```
 
 
@@ -168,7 +154,7 @@ Contrary to the getAsOf(t) method, the `t` is _not_ included in `getSince(t)`. U
 
 ```scala
 // since t1 (not included): t2 + t3 accumulated
-Person.name.likes.getAsOf(t1) === List(("Fred", "sushi"), ("Lisa", "thai"))
+Person.name.likes.getAsOf(t1) === List(("John", "sushi"), ("Lisa", "thai"))
 
 // since t2 (not included): t3 
 Person.name.likes.getAsOf(t2) === List(("Lisa", "thai"))
@@ -201,11 +187,11 @@ Theoretically we could ask for all historical values (although Datomic doesn't a
 ```scala
 // Theoretical full scan (just to show all datoms in our example)
 Person.e.a.v.t.op.getHistory === List(
-  fred, ":Person/name",  "Fred",  t1, true,
-  fred, ":Person/likes", "pizza", t1, true,
+  johnId, ":Person/name",  "John",  t1, true,
+  johnId, ":Person/likes", "pizza", t1, true,
   
-  fred, ":Person/likes", "pizza", t2, false,
-  fred, ":Person/likes", "sushi", t2, true,
+  johnId, ":Person/likes", "pizza", t2, false,
+  johnId, ":Person/likes", "sushi", t2, true,
   
   lisa, ":Person/name",  "Lisa",  t3, true,
   lisa, ":Person/likes", "thai",  t3, true  
@@ -223,37 +209,37 @@ Entity|Attribute|Value|Transaction|Operation<br>Assert (true) / Retract (false)
 
 ### History of an entity
 
-Now let's extract some useful information, like how the `fred` entity has changed over time:
+Now let's extract some useful information, like how the `johnId` entity has changed over time:
 
 ```scala
-Person(fred).e.a.v.t.op.getHistory === List(
-  fred, ":Person/name",  "Fred",  t1, true,
-  fred, ":Person/likes", "pizza", t1, true,
+Person(johnId).e.a.v.t.op.getHistory === List(
+  johnId, ":Person/name",  "John",  t1, true,
+  johnId, ":Person/likes", "pizza", t1, true,
   
-  fred, ":Person/likes", "pizza", t2, false,
-  fred, ":Person/likes", "sushi", t2, true
+  johnId, ":Person/likes", "pizza", t2, false,
+  johnId, ":Person/likes", "sushi", t2, true
 )
 ```
-As you see, we have now filtered the history database to only contain datoms with entity id `fred`. A Molecule convenience method lets us apply an entity id to the initial Namespace. We could also apply it to the generic `e` attribute and get the same result.
+As you see, we have now filtered the history database to only contain datoms with entity id `johnId`. A Molecule convenience method lets us apply an entity id to the initial Namespace. We could also apply it to the generic `e` attribute and get the same result.
 
 Another thing is also, that order of the returned data set is not guaranteed, so we will normally need to sort the output, in this case by transaction value, then operation to get the desired order (in the following examples we'll skip sorting for clarity though):
 
 ```scala
-Person.e(fred).a.v.t.op.getHistory.sortBy(r => (r._4, r._5)) === List(
-  fred, ":Person/name",  "Fred",  t1, true,
-  fred, ":Person/likes", "pizza", t1, true,
+Person.e(johnId).a.v.t.op.getHistory.sortBy(r => (r._4, r._5)) === List(
+  johnId, ":Person/name",  "John",  t1, true,
+  johnId, ":Person/likes", "pizza", t1, true,
   
-  fred, ":Person/likes", "pizza", t2, false,
-  fred, ":Person/likes", "sushi", t2, true
+  johnId, ":Person/likes", "pizza", t2, false,
+  johnId, ":Person/likes", "sushi", t2, true
 )
 ```
 
 We can involve specific attributes like `Person.like`:
 
-_How has Fred's taste developed?:_
+_How has John's taste developed?:_
 
 ```scala
-Person(fred).like_.v.t.op.getHistory === List(
+Person(johnId).like_.v.t.op.getHistory === List(
   "pizza", t1, true,  // pizza
   "pizza", t2, false, // no longer pizza
   "sushi", t2, true   // sushi
@@ -261,10 +247,10 @@ Person(fred).like_.v.t.op.getHistory === List(
 ```
 Since we declared which attribute to look for, there was no reason to return it, and we made it tacit with an underscore to `like_`.
 
-_What has Fred liked?:_
+_What has John liked?:_
 
 ```scala
-Person(fred).like_.v.op_(true).getHistory === List(
+Person(johnId).like_.v.op_(true).getHistory === List(
   "pizza",  // pizza
   "sushi"   // sushi
 )
@@ -277,8 +263,8 @@ We could also follow the values of an attribute for multiple entities:
 _Who liked what and when?_
 ```scala
 Person.e.like_.v.txInst.op_(true).getHistory === List(
-  fred, "pizza", date1,
-  fred, "sushi", date2,
+  johnId, "pizza", date1,
+  johnId, "sushi", date2,
   lisa, "thai",  date3  
 )
 ```
@@ -292,7 +278,7 @@ Person.like_.v.txInst.op_(false).getHistory === List(
 
 ### History with Tx meta data
 
-We can even track historical [transaction meta data](/code/transactions/#tx-meta-data), here with an example from the [Provenance example](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic/Provenance.scala) in the Day-of-Datomic test suite:
+We can even track historical [transaction meta data](/code/transactions/#tx-meta-data), here with an example from the Provenance example in the [Day-of-Datomic test suite](https://github.com/scalamolecule/molecule/tree/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic):
 
 _Who changed the title and when?_
 
@@ -338,14 +324,14 @@ The current database is filtered in-memory with the applied extra transaction da
 
 #### with save tx
 
-Continuing our example we could add another person and see how the database would then look. We can construct the transaction data to add with a call to `getSaveTx` on a save molecule:
+Continuing our example we could add another person and see how the database would then look. We can construct the transaction data to add with a call to `getSaveStmts` on a save molecule:
 
 ```scala
 Person.name.likes.getWith( 
   // "Transaction molecule" with "transact John" tx data
-  Person.name("Eddy").likes("cakes").getSaveTx 
+  Person.name("Eddy").likes("cakes").getSaveStmts 
 ) === List(
-  ("Fred", "sushi"),
+  ("John", "sushi"),
   ("Lisa", "thai"),
   ("Eddy", "cakes") // Eddy correctly saved
 )
@@ -357,12 +343,12 @@ Likewise we can test the effect of other operations:
 
 ```scala
 Person.name.likes.getWith( 
-  Person.name.likes.getInsertTx(
+  Person.name.likes.getInsertStmts(
     ("John", "burger"),
     ("Sara", "french")
   ) 
 ) === List(
-  ("Fred", "sushi"),
+  ("John", "sushi"),
   ("Lisa", "thai"),
   ("John", "burger"), // John and Sara were correctly inserted
   ("Sara", "french")  
@@ -373,9 +359,9 @@ Person.name.likes.getWith(
 
 ```scala
 Person.name.likes.getWith( 
-  Person(lisa).likes("lebanese").getUpdateTx 
+  Person(lisa).likes("lebanese").getUpdateStmts 
 ) === List(
-  ("Fred", "sushi"),
+  ("John", "sushi"),
   ("Lisa", "lebanese") // Lisa correctly now likes lebanese food
 )
 ```
@@ -384,10 +370,10 @@ Person.name.likes.getWith(
 
 ```scala
 Person.name.likes.getWith( 
-  fred.getRetractTx 
+  johnId.getRetractStmts 
 ) === List(
   ("Lisa", "thai")
-  // (Fred was correctly retracted) 
+  // (John was correctly retracted) 
 )
 ```
 
@@ -396,19 +382,19 @@ And here we transact all the above operations as one what-if scenario:
 
 ```scala
 Person.name.likes.getWith(
-  Person.name("Eddy").likes("cakes").getSaveTx,
-  Person.name.likes.getInsertTx(
+  Person.name("Eddy").likes("cakes").getSaveStmts,
+  Person.name.likes.getInsertStmts(
     ("John", "burger"),
     ("Sara", "french")
   ),
-  Person(lisa).likes("lebanese").getUpdateTx,
-  fred.getRetractTx 
+  Person(lisa).likes("lebanese").getUpdateStmts,
+  johnId.getRetractStmts 
 ) === List(
   ("Eddy", "cakes"),   // saved
   ("John", "burger"),  // inserted
   ("Sara", "french"),  // inserted
   ("Lisa", "lebanese") // updated
-                       // (fred retracted)
+                       // (johnId retracted)
 )
 ```
 
@@ -417,16 +403,15 @@ Person.name.likes.getWith(
 Assigning transaction molecules to variables can help us modularize tests where we could for instance be interested in seeing if various orders of transactions will produce the same result:
 
 ```scala
-val save    = Person.name("John").age(44).getSaveTx
-val insert  = Person.name.age getInsertTx List(("Lisa", 23), ("Pete", 24))
-val update  = Person(fred).age(43).getUpdateTx
-val retract = someOtherPersonId.getRetractTx
+val save    = Person.name("John").age(24).getSaveStmts
+val insert  = Person.name.age getInsertStmts List(("Lisa", 20), ("Pete", 55))
+val update  = Person(johnId).age(25).getUpdateStmts
+val retract = someOtherPersonId.getRetractStmts
     
 val expectedResult = List(
-    ("John", 44),
-    ("Lisa", 23),
-    ("Pete", 24),
-    ("Fred", 43) 
+    ("John", 25),
+    ("Lisa", 20),
+    ("Pete", 55) 
 )     
     
 Person.name.age.getWith(save, insert, update, retract) === expectedResult 
@@ -452,23 +437,23 @@ To make a few tests with our filtered db we can call `conn.testDbAsOfNow`:
 
 ```scala
 // Current state
-Person(fredId).name.age.get.head === ("Fred", 27)
+Person(johnId).name.age.get.head === ("John", 24)
 
 // Create "branch" of our production db as it is right now
 conn.testDbAsOfNow  
 
 // Perform multiple operations on test db
-Person(fredId).name("Frederik").update
-Person(fredId).age(28).update
+Person(johnId).name("Johnny").update
+Person(johnId).age(25).update
 
 // Verify expected outcome of operations
-Person(fredId).name.age.get.head === ("Frederik", 28)
+Person(johnId).name.age.get.head === ("Johnny", 25)
 
 // Then go back to live db
 conn.useLiveDb
 
 // Live state is unchanged!
-Person(fredId).name.age.get.head === ("Fred", 27)
+Person(johnId).name.age.get.head === ("John", 24)
 ```
 
 
@@ -517,3 +502,11 @@ conn.testWith(txData)
 ```
 
 This make it possible to run arbitrarily complex test scenarios directly against our production data at any point in time without having to do any manual setup or tear-down of mock domain/database objects!
+
+
+
+
+
+### Next
+
+[Generic APIs...](/code/generic)

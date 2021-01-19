@@ -6,7 +6,7 @@ menu:
     parent: code
 ---
 
-# Molecule Code overview
+# Molecule overview
 
 On this page we'll quickly get an intuitive overview of how Molecule queries and transactions look like.
 
@@ -43,22 +43,22 @@ In Datomic, data is not deleted but instead "retracted" since all changes are ac
 
 ```scala
 // Save populated molecule
-Person.name("John").likes("pizza").age(24).save
+Person.name("Fred").likes("pizza").age(38).save
 
 // Insert multiple tuples of data using a molecule template
 Person.name.age.likes insert List(
-  ("John", 24, "pizza"),
-  ("Lisa", 20, "sushi")
+  ("Fred", 23, "pizza"),
+  ("Lisa", 7, "sushi")
 )
 
 // Update one or more attributes of a given entity id
-Person(johnId).age(25).likes("thai").update
+Person(fredEntityId).age(24).likes("thai").update
 
 // Retract (delete) entity
-johnId.retract
+fredEntityId.retract
 
 // Retract attribute value
-Person(johnId).likes().update
+Person(fredEntityId).likes().update
 ```
 
 
@@ -313,20 +313,20 @@ transact(
 
 Add meta data to the transaction entity itself about the transaction:
 ```scala
-Person.name("John").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
+Person.name("Fred").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
 ```
 
 We can then query for specific tx meta data
 ```scala
-// How was John added?
-// John was added by Lisa as part of a survey
-Person(johnId).name.Tx(Audit.user.uc).get === List(("John", "Lisa", "survey"))
+// How was Fred added?
+// Fred was added by Lisa as part of a survey
+Person(fredId).name.Tx(Audit.user.uc).get === List(("Fred", "Lisa", "survey"))
 
-// When did Lisa survey John?
-Person(johnId).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
+// When did Lisa survey Fred?
+Person(fredId).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
   
 // Who were surveyed?  
-Person.name.Tx(Audit.uc_("survey")).get === List("John")
+Person.name.Tx(Audit.uc_("survey")).get === List("Fred")
 
 // What did people that Lisa surveyed like? 
 Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
@@ -448,7 +448,7 @@ Attributes and values of entity e1
 ```scala
 EAVT(e1).a.v.get === List(
   (":Person/name", "Ben"),
-  (":Person/age", 25),
+  (":Person/age", 42),
   (":Golf/score", 5.7)
 )
 ``` 
@@ -458,15 +458,15 @@ EAVT(e1).a.v.get === List(
 Values, entities and transactions where attribute `:Person/age` is involved
 ```scala
 AVET(":Person/age").e.v.t.get === List(
-  (25, e1, t2),
-  (23, e2, t5)
+  (42, e1, t2),
+  (37, e2, t5)
   (14, e3, t7),
 )
 
 // AVET index filtered with an attribute name and a range of values
-AVET.range(":Person/age", Some(14), Some(24)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
   (14, e4, t7),
-  (23, e2, t5)
+  (37, e2, t5)
 )
 ``` 
 
@@ -497,13 +497,13 @@ Data from transaction `t1` until `t4` (exclusive)
 ```scala
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
-  (t1, e1, ":Person/age", 25, true),
+  (t1, e1, ":Person/age", 41, true),
 
   (t2, e2, ":Person/name", "Liz", true),
-  (t2, e2, ":Person/age", 23, true),
+  (t2, e2, ":Person/age", 37, true),
 
-  (t3, e1, ":Person/age", 25, false),
-  (t3, e1, ":Person/age", 26, true)
+  (t3, e1, ":Person/age", 41, false),
+  (t3, e1, ":Person/age", 42, true)
 )
 ``` 
 
@@ -521,4 +521,4 @@ Schema.part.ns.attr.fulltext$.doc.get === List(
 
 ### Next
 
-[Attributes...](/code/attributes/)
+Let's learn about [Attributes...](/code/attributes/)

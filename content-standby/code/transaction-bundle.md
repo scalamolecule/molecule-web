@@ -19,10 +19,10 @@ menu:
 
 Each of the above operations has an equivalent method for getting the transaction statements it produces:
 
-- `<molecule>.getSaveTx`
-- `<molecule>.getInsertTx`
-- `<molecule>.getUpdateTx`
-- `<entityId>.getRetractTx`
+- `<molecule>.getSaveStmts`
+- `<molecule>.getInsertStmts`
+- `<molecule>.getUpdateStmts`
+- `<entityId>.getRetractStmts`
 
 We can use those methods to build a bundled transaction to atomically perform 4 operations in one transaction:
 ```scala
@@ -32,13 +32,13 @@ val List(e1, e2, e3) = Ns.int insert List(1, 2, 3) eids
 // Transact multiple molecule statements in one bundled transaction
 transact(
   // retract entity
-  e1.getRetractTx,
+  e1.getRetractStmts,
   // save new entity
-  Ns.int(4).getSaveTx,
+  Ns.int(4).getSaveStmts,
   // insert multiple new entities
-  Ns.int.getInsertTx(List(5, 6)),
+  Ns.int.getInsertStmts(List(5, 6)),
   // update entity
-  Ns(e2).int(20).getUpdateTx
+  Ns(e2).int(20).getUpdateStmts
 )
 
 // Data after group transaction
@@ -56,10 +56,10 @@ Bundled transactions can also use Datomic's asynchronous API by calling `transac
 ```scala
 Await.result(
   transactAsync(
-    e1.getRetractTx,
-    Ns.int(4).getSaveTx,
-    Ns.int.getInsertTx(List(5, 6)),
-    Ns(e2).int(20).getUpdateTx
+    e1.getRetractStmts,
+    Ns.int(4).getSaveStmts,
+    Ns.int.getInsertStmts(List(5, 6)),
+    Ns(e2).int(20).getUpdateStmts
   ) map { bundleTx =>
     Ns.int.getAsync map { queryResult => 
       queryResult === List(3, 4, 5, 6, 20)    
@@ -77,13 +77,13 @@ If you want to see the transactional output from a bundled transaction you can c
 // Print inspect info for group transaction without affecting live db
 inspectTransact(
   // retract
-  e1.getRetractTx,
+  e1.getRetractStmts,
   // save
-  Ns.int(4).getSaveTx,
+  Ns.int(4).getSaveStmts,
   // insert
-  Ns.int.getInsertTx(List(5, 6)),
+  Ns.int.getInsertStmts(List(5, 6)),
   // update
-  Ns(e2).int(20).getUpdateTx
+  Ns(e2).int(20).getUpdateStmts
 )
 
 // Prints transaction data to output:

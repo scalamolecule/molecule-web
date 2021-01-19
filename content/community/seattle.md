@@ -620,7 +620,6 @@ insertCommunity(newCommunitiesData) === List(
 ```
 This approach gives us a clean way of populating a database where we can supply raw data from any source easily as long as we can format it as a list of tuples of values each matching our template molecule. 
 
-We use an insert-molecule also when we initially [populate the Seattle database](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleSpec.scala#L43). 
 
 ### Optional attribute values
 
@@ -713,6 +712,6 @@ The other thing to know is that, because we can access database values as they e
 
 
 [seattle]: https://web.archive.org/web/20161007085359/http://docs.datomic.com/tutorial.html
-[setup]: /setup/connect
-[populate]: /code/insert/
+[setup]: /setup/
+[populate]: /code/transactions/#insert
 

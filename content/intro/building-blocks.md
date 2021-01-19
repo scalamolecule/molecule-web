@@ -1,41 +1,122 @@
 ---
-title: "Building Blocks"
-weight: 15
+title: "Building blocks"
+weight: 30
 menu:
   main:
     parent: intro
 ---
 
-# Building blocks
 
-Molecule lets you model and query your domain data structures directly with the words of your domain.
+# Molecule building blocks
 
-Here are some examples of what we can do with Molecules:
 
-## Queries
+Here's a quick overview of various building blocks in the Molecule eco-system.
 
-Let's say we want to find Persons in the Datomic database. Then we can build a molecule to get this data for us:
+
+
+
+## Molecule
+
+A _molecule_ is a model of a data structure containing one or more _attributes_.
+
+Here we describe a data structure of `name`, `age` of persons and what `street` they live on:
+```scala
+Person.name.age.Address.street.get.head === ("John", 24, "5th Avenue")
+```
+Calling `get` on a molecule returns typed data that matches the molecular data structure.
+
+
+## Attribute
+
+An _attribute_ is the core element of Molecule. Molecules are composed of attributes.
+
+We could also call it a "property" a "field" etc. It's an intrinsic value of an atomic piece of information about something.
+
+Attributes have
+
+- _Type_ - `String`, `Int` etc.
+- _Cardinality_ - "one" for a single thing, "many" for multiple
+- _Options_ - is the value indexed, searcheable, unique etc.
+- _Descriptions_ - meta info about the attribute - that can be queried
+
+
+
+## Datom
+
+A _Datom_ brings context to an Attribute.
+
+A Datom describes a _fact_, for instance that "John likes pizza". A timestamp adds information about _when_ John stated that he likes pizza. A fifth piece of information "added" tells if the fact is asserted (true - John likes) or retracted (false - John no longer likes). 
+
+So, a Datom consists of 5 components of information:
+```
+johnId    likes    pizza      12:35:54      true
+   |        |        |           |            |
+Entity  Attribute  Value  Transaction/time  Added
+```
+A molecule can retrieve this information:
+```scala
+// Q: Who likes what and when did they state it?
+Person.e.likes.txInstant.get.head === 
+  // A: John said he likes pizza at 12:35:54
+  (johnId, "pizza", Date("12:35:54"))
+```
+
+## Entity
+
+When multiple different Datoms (attributes) share the same entity id, _they together describe this entity_. Or we say that _"the Entity has 3 attributes"_. 
+
+In our example John is an entity that has a name "John", likes "pizza" and is 24 years old - a pizza-liking 24-year-old John: 
+
+{{< bootstrap-table "table table-bordered" >}}
+Entity id  | Attribue      | Value    
+:---:      | :---          | :---  
+**101**    | :Person/name  | "John"
+**101**    | :Person/likes | "pizza"
+**101**    | :Person/age   | 24
+{{< /bootstrap-table >}}
+
+As you see, the concept of an entity is very flexible since it can be defined by endless combination of attributes and values that will give it unique characteristics. 
+
+This is far more powerful than thinking in terms of "defining a Person class"! When we instead let the combinations of atomic attributes define entities of molecular data structures, our semantic capabilities and expressiveness explode exponentially. 
+
+
+## Namespace
+
+Attributes are loosely organized in _Namespaces_ to semantically group qualities of a subset of our domain:
+<br><br>
+
+![](/img/page/intro/DatomicElements1.png)
+<br><br>
+
+As we saw, an Entity can have _any_ Attribute from _any_ Namespace associated to it:
+<br><br>
+
+![](/img/page/intro/DatomicElements2.png)
+<br><br>
+
+An entity is therefore _not_ like a row in a table but rather a "cross-cutting" thing that we can freely associate any attribute value to.
+
+
+## Time
+
+Since the transaction time is part of all Datoms, we can ask time-related questions:
 
 ```scala
-val persons: List[(String, Int)] = m(Person.name.age).get
+// Who liked what on the 5th of november?
+Person.name.likes.txInstant_(nov5date).get.head === ("John", "pizza")
 ```
-This fetches a List of tuples of Strings/Int's that are the types of the `name` and `age` Attributes that we asked for. We can continue adding more and more Attributes as with the builder pattern to define what data we are interested in.
+
+Datomic even offers various powerful ways to work with the [time](/code/time) dimension of our data:
+
+- `getAsOf` of some point in time 
+- `getSince` some point in time
+- `getHistory` of an entity or attribute
+- `getWith(tx-stmts)` to test a future what-if scenario
 
 
+## Expression
 
-Attributes are atomic pieces of information that are prefixed by a Namespace, in this case `Person`. Namespaces are not like SQL tables but just a common meaningful prefix to Attributes that have something in common.
-
-The `m` method (for Molecule) is an implicit macro method in the Molecule library that consumes the data structure that we have modelled with our custom DSL and produces a molecule. We can then for instance call `get` on the molecule to fetch data from Datomic that matches the data structure of the molecule. Since the `m` method is implicit we can simply write
-```scala
-val persons = Person.name.age.get
-```
-That way, we can use our domain terms directly in our code in a type-safe and semantically meaningful way to communicate with our Datomic database. Since we are working with auto-generated boilerplate code for our domain terms, our IDE can help us infer the type of each of our molecules and prevents us from making any invalid queries.
-
-
-
-### Expressions
-
-We can apply conditional values, ranges etc to our molecules to express more subtle data structures:
+We can mix relationships, conditional values, logic etc in our molecules to express complex and precise data structures:
 
 ```scala
 Community.name.`type`("twitter" or "facebook_page")
@@ -44,36 +125,6 @@ Community.name.`type`("twitter" or "facebook_page")
 which will find "names of twitter/facebook_page communities in neighborhoods of southern districts".
 
 
-## Operations
+### Next
 
-For single entities we can apply data to the attributes of a molecule and then save it:
-
-```scala
-// Save Lisa entity and retrieve new entity id
-val lisaId = Person.name("Lisa").age("27").save.eid
-```
-Or we can add data for multiple entities with an `insert`:
-
-```scala
-// Save Lisa entity and retrieve new entity id
-Person.name.age insert List(
-  ("Lisa", 27), // Inserting Lisa entity
-  ("John", 32)  // Inserting John entity  
-)
-```
-Using an entity id we can update attribute values of an entity:
-```scala
-// Update age attribute value of Lisa entity
-Person(lisaId).age("28").update
-```
-In Datomic, an update is actually a retraction of the old data and an assertion of the new data. In this example, Lisa's age 27 is retracted and her new age 28 asserted. With this information model, Datomic allow us to go back in time and see when Lisa's age was changed to 28.
-
-Or we can retract an entity entirely by calling `retract` on an entity id
-```scala
-// Retract ("delete") Lisa entity
-lisaId.retract
-```
-Since the entity is retracted and not deleted, Datomic allow us to go back in time before the retraction to see that Lisa existed.
-
-
-
+[Compare](/intro/compare) Molecule with another query language, [set up a Molecule project](/setup/) or learn more about [molecule code...](/code) 

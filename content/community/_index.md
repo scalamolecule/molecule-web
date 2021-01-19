@@ -8,8 +8,8 @@ menu:
 
 # Community
 
+- [Molecule gitter](https://gitter.im/scalamolecule/Lobby)
 - [Molecule forum](https://groups.google.com/forum/#!forum/molecule-dsl)
-- [Molecule gitter]("https://gitter.im/scalamolecule/Lobby")
 
 
 ### Links
@@ -24,7 +24,7 @@ menu:
 
 ### Tutorials
 
-- [Seattle tutorial](tutorials/seattle/)
+- [Seattle tutorial](/community/seattle/)
 
 
 ### Code

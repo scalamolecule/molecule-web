@@ -8,17 +8,18 @@ menu:
 
 # Molecule vs SQL
 
-We'll make a similar comparison to SQL in general as [Slick](http://slick.lightbend.com/doc/3.3.3/sql-to-slick.html#select) does:
 
 #### SELECT *
 
 ```
 sql"select * from PERSON".as[Person].list
 ```
-In molecule we would declare each attribute we are interested in also to infer the exact return type
+With Molecule we only need to fetch the attributes that we need:
 ```scala
-val persons: List[(String, Int)] = Person.name.age.get
+Person.name.age.get
 ```
+
+Returned type is `List[(String, Int)]`
 
 #### SELECT
 
@@ -32,13 +33,7 @@ With Molecule we would concatenate `name` and `id` with the returned result set:
 ```scala
 Person.age.name.e.get map { case (age, name, id) => (age, s"$name ($id)" }
 ```
-Actually, Molecule treats attributes as mandatory values whereas Select-attributes in a SQL query could be Null values (if allowed). Molecule can also ask for optional values too if a `$` sign is appended to an attribute name which gives us full control of the output:
-```scala
-Person.age.firstName.middleName$.lastName.e.get map { 
-  case (age, firstName, Some(middleName), lastName, id) => (age, s"$firstName $middleName $lastName ($id)" 
-  case (age, firstName, None, lastName, id)             => (age, s"$firstName $lastName ($id)" 
-}
-```
+
 
 
 #### WHERE
@@ -225,26 +220,6 @@ Person.address(1 or 2).get map {
 
 
 
+### Next
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Compare Slick...](/intro/compare/slick/)

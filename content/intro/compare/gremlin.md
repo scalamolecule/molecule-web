@@ -45,7 +45,7 @@ peter.addEdge("created", lop, T.id, 12, "weight", 0.2f);
 In Molecule we first define a schema. Since we won't use the `weight` properties yet, we'll start off defining a schema without those:
 
 ```scala
-object ModernGraph1Definition {
+object ModernGraph1DataModel {
 
   trait Person {
     val name = oneString
@@ -388,3 +388,12 @@ Person(marko) // marko entity
 ```
 
 
+
+
+
+
+
+
+### Next
+
+[Setup...](/setup)

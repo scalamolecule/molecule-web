@@ -26,7 +26,7 @@ Person.e.firstName.lastName.age.Address.street.zip.city.get
 ```
 Varying api arities can be set for each code file. 
 
-The Molecule library has more than 1400 tests with easily 30-100 molecules each, and we have simply set the api import to match the highest molecule arity in each file.
+The Molecule library has more than 1300 tests with easily 30-100 molecules each, and we have simply set the api import to match the highest molecule arity in each file.
 
 If you use input molecules then you can add `inX` where X is how many [inputs](/code/attributes/#input-molecules) (1, 2 or 3) your molecule expects:
 ```scala
@@ -48,7 +48,7 @@ Data is by default returned as `List`s of tuples where all rows of data have bee
 val list : List[(String, Int)] = m(Person.name.age).get
 ```
 
-By using the above mentioned specialized api you will also get access to the following return types when getting data: 
+But we can also return data with the following collection types that can be more efficient in various ways:
 
 ```scala
 // Mutable Array for fast traversing and retrieval
@@ -77,7 +77,7 @@ getAsOf(…)    getAsyncAsOf(…)
 getSince(…)   getAsyncSince(…)
 getWith(…)    getAsyncWith(…)
 ```
-Again, by importing the specialized api described above, the time getters can return tuples in alternative collection types:
+Again, we can use more specialized collection types:
 
 ```
 getArrayAsOf(…)       getAsyncArrayAsOf(…)
@@ -94,3 +94,15 @@ getRawWith(…)         getAsyncRawWith(…)
 ```
 
 `getHistory` is only implemented to return a List (the default) since the result order is not guaranteed and we therefore always need a fully realized sortable collection.
+
+
+
+
+## Automatic Query optimization
+
+Molecule transparently optimize all queries sent to Datomic.
+
+Most selective Clauses are automatically grouped first in the :where section of the Datomic query as per the recommendation in [Datomic Best Practices](https://docs.datomic.com/on-prem/best-practices.html).
+
+This brings dramatic performance gains of in some cases beyond 100x compared to un-optimized queries. The optimization happens automatically in the background so that you can focus entirely on your domain without concern for the optimal order of attributes in your molecules.
+

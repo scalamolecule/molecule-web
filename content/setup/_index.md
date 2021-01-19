@@ -8,22 +8,24 @@ menu:
 
 # Molecule setup
 
-Preparing to use Molecule involves 3 initial steps:
+Using Molecule involves 3 initial steps:
 
-- [Define your Data Model](/setup/data-model),
-- [Setup your project with sbt](/setup/setup-sbt)
-- [Create database](/setup/create-db)
+1. [Define your Data Model](/setup/data-model),
+2. [Setup your project with sbt](/setup/sbt-setup)
+3. [Get a database connection](/setup/db-connection)
 
 On the next pages we'll walk through those steps. 
 
 
 ## Quick-start Molecule demo
 
-The fastest way to try out molecule is to clone the [molecule-demo](https://github.com/scalamolecule/molecule-demo) Github repository
+The fastest way to try out molecule is to clone the [molecule-demo](https://github.com/scalamolecule/molecule-demo) Github repository:
 
 ```
 git clone https://github.com/scalamolecule/molecule-demo.git
 ```
 
-Open in your IDE and play around making more molecules...
+and then open in your IDE and play around making more molecules.  
+
+
 

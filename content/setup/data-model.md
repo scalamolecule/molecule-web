@@ -1,30 +1,12 @@
 ---
-title: "Define Data Model"
+title: "1. Data Model"
 weight: 20
 menu:
   main:
     parent: setup
 ---
 
-# Define Data Model
-
-Molecule sees a "domain model" semantically in 3 layers, each supporting the layer above:
-
-- Processes of interacting data structures (business logic)
-- Molecular data structures (like traditional domain classes)
-- Atomic attributes - the **Data Model**
-
-Attributes are the slowest changing part of a domain model since the intrinsic definitions of say an "atomic" `firstName` attribute will rarely, if ever, change. This layer is what we call the **Data Model** of our domain, which given it's slow pace of change lends itself naturally to be _defined_.
-
-In the layer above, groups of attributes form data-structures, or "molecules", that are tailored to the specific needs of business processes of the top layer. How to build molecules are covered in-deth in [Code]("/code).
-
-Here we'll walk through how to define your _Data Model_:
-
-
-
-
-
-## Data Model file
+# Data Model
 
 Your Data Model is defined in a plain Scala file that you can have anywhere in your project. Molecule interprets this file and creates Molecule boilerplate code based on your Data Model so that you can write molecule queries with your domain terms.
 
@@ -34,7 +16,7 @@ For Molecule to recognize your Data Model, a simple Data Model definition DSL is
 package path.to.your.project
 import molecule.core.data.model._  // Data Model DSL
 
-object YourDomainDataModel {
+object YourDomainDataModel { // Name ending in "DataModel"
 
     // ... Attribute definitions within Namespaces
 }
@@ -49,9 +31,9 @@ Next, attributes needs to be defined within Namespaces.
 
 An attribute is the smallest unit of information of a Data Model. It's like a field in a database, a property, or, well, an "attribute" of something.
 
-Attributes are organised within "namespaces" that semantically group related attributes. If used with SQL it would correspond to fields in a Table. But with Datomic, the semantics of a namespace is more of a "prefix" to the attribute since Datomic entities can have attributes from various namespaces (see [Composites](/code/relationships/#composites)).
+Attributes are organised within "namespaces" that semantically group related attributes. If used with SQL it would correspond to fields in a Table. But with Datomic, the semantics of a namespace is more of a "prefix" to the attribute.
 
-Let's look at an example Data Model from the [Seattle tutorial](/resources/tutorials/seattle):
+Let's look at an example Data Model from the [Seattle tutorial](/community/seattle/):
 
 ```scala
 package path.to.your.project
@@ -86,13 +68,13 @@ object SeattleDataModel {
 
 ### Molecule arity
 
-The `@InOut(2, 8)` arity annotation at the top instructs the generated boilerplate code to able to create molecules with up to 8 attributes including up to 2 [input attributes](/code/attributes/#input-molecules).
+The `@InOut(2, 8)` arity annotation at the top instructs the generated boilerplate code to able to create molecules with up to 2 [input attributes](/code/attributes/#input-molecules) and up to 8 "output" attributes.
 
 When developing your Data Model you might just set the first arity annotation variable for input attributes to `0` and then later when your model is stabilizing, then you can add the ability to make input molecules by setting it to 1, 2 or 3 (the maximum). Using parameterized input attributes can be a performance optimization since using input values in queries allows Datomic to cache the query. 
 
-The second arity annotation parameter basically tells how long molecules you can build. This doesn't affect how many attributes you can _define_ in each namespace. The maximum arity of a molecule and for this annotation parameter is 22, the same as for tuples. 
+The second arity annotation parameter basically tells how long molecules you can build. This doesn't affect how many attributes you can _define_ in each namespace in the Data Model. The maximum arity of a molecule and for this annotation parameter is 22, the same as for tuples. 
  
->If you at some point need to make molecules with more than 22 attributes you can use [composite molecules](/code/relationships/#composites) or insert/query in two steps as described in [attribute basics](/manual/attributes/basics).
+>If you at some point need to make molecules with more than 22 attributes you can use [composite molecules](/code/relationships/#composite-molecules).
 
 
 
@@ -101,13 +83,13 @@ The second arity annotation parameter basically tells how long molecules you can
 
 If your Data Model gets big, you can use an extra layer of organization with "Partitions" that encapsulate multiple related Namespaces. 
 
-A "Partition" in Molecule is used as a conceptual term and not as a physical database partition. The whole Data Model should be regarded as a conceptual model that can be projected later onto various databases. A database admin might choose to partition a database according to our conceptual partitions and in that case the terms would correlate. 
+A "Partition" in Molecule is used as a conceptual term and not in the traditional sense as a physical database partition. The whole Data Model should be regarded as a conceptual model that can be projected later onto various databases. A database admin might choose to partition a database according to our conceptual partitions and in that case the terms would correlate. 
 
 We could for instance group some generic namespaces (and their respective attribues) in a `gen` partition. And some Namespaces about literature in a `lit` Partition:
 
 ```scala
-@InOut(0, 4)
-object LiteratureAndMoreDataModel {
+@InOut(3, 22)
+object BookstoreDataModel {
 
   object gen {
     trait Person {
@@ -119,20 +101,21 @@ object LiteratureAndMoreDataModel {
 
   object lit {
     trait Book {
-      val title  = oneString
-      val author = one[gen.Person]
-      // To avoid attr/partition name clashes we can prepend the definition object name
-      // (in case we would have needed an attribute named `gen` for instance)
-      val editor = one[PartitionTestDefinition.gen.Person]
-      val cat    = oneEnum("good", "bad")
+      val title     = oneString
+      val author    = one[gen.Person] // ref to namespace in other partition
+      val publisher = one[Publisher]  // ref to namespace in this partition
+      val cat       = oneEnum("good", "bad")
+    }
+    trait Publisher {
+      val name = oneString
     }
     // ..more namespaces in the `lit` partition
   }
 }
 ```
-Each partition can contain as many namespaces as you want. Partition names have to be in lowercase and are prepended to the namespaces it contains.
+Each partition can contain as many namespaces as you want. 
 
-When we build molecules the partition name is prepended to the namespace like this:
+Partition names have to be in lowercase and are prepended to the namespaces it contains with an underscore inbetween:
 
 ```scala
 lit_Book.title.cat.Author.name.gender.get === ...
@@ -143,7 +126,7 @@ Since `Author` is already defined as a related namespace we don't need to prepen
 
 ## Attribute types
 
-In the Seattle example we see the attributes being defined with the following types that should be pretty self-explanatory:
+In the Seattle example we saw how attributes are defined by assigning various DSL settings to a named variable:
 
 - `oneString`, `manyString` etc defines cardinality and type of an attribute.
 - `oneEnum`/`manyEnum` defines enumerated values (pre-defined words).
@@ -152,7 +135,7 @@ In the Seattle example we see the attributes being defined with the following ty
 We can define the following types of attributes:
 
 ```
-Cardinality one             Cardinality many                 Mapped cardinality many
+Cardinality-one             Cardinality-many                 Mapped cardinality-many
 -------------------         -------------------------        --------------------------------
 oneString    : String       manyString    : Set[String]      mapString    : Map[String, String]
 oneInt       : Int          manyInt       : Set[Int]         mapInt       : Map[String, Int]
@@ -170,12 +153,13 @@ oneEnum      : String       manyEnum      : Set[String]
 
 Cardinality-one attributes can have one value per entity.
 
-Cardinality-many attributes can have a _Set of unique values_ per entity. Often we choose instead to model many-values as a many-reference to another entity that could have more than one attribute.
+Cardinality-many attributes can have a `Set` of unique values per entity. Often we choose instead to model many-values as a many-reference to another entity that could have more than one attribute.
 
-Mapped cardinality many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/manual/attributes/mapped)...
+Mapped cardinality-many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/code/attributes/#map-attributes)...
 
 
-### Reference types
+
+## References
 
 References are also treated like attributes. It's basically a reference to one or many entities. We define such relationship by supplying the referenced namespace as the type parameter to `one`/`many`:
 ```
@@ -186,7 +170,13 @@ one[<Ref-namespace>]    many[<Ref-namespace>]
 In the example above we saw a reference from Community to Neighborhood defined as `one[Neighborhood]`. We would for instance likely define an Order/OrderLine relationship in an Order namespace as `many[OrderLine]`.
 
 
-### Attribute options
+### Bidirectional references
+
+In [Bidirectional relationships](/code/relationships/#bidirectional) some specialized reference definitions for bidirectional graphs are explained.
+
+
+
+## Attribute options
 
 In Datomic, each attribute can have some extra options:
 
@@ -207,12 +197,13 @@ noHistory       |         | Whether past values of an attribute should not be re
 
 Datomic indexes the values of all attributes having an option except for the `doc` and `noHistory` options.
 
-As you saw, we added `fulltext` to some of the attributes in the Seattle definition above. Molecule's schema definition DSL let's you only choose allowed options for any attribute type.
+We saw examples of adding options by when we added `fulltext` to some of the attributes in the Seattle definition above. Molecule's schema definition DSL let's you only choose allowed options for any attribute type.
+
 
 
 
 
 ### Next
 
-[Tell sbt](/setup/setup-sbt) where your Data Model is...
+[Setup sbt...](/setup/sbt-setup)
 

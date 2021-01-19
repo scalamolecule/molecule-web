@@ -4,170 +4,46 @@ weight: 100
 menu:
   main:
     parent: code
-    identifier: generic
 ---
 
-# Generic attributes
+# Generic APIs
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic)
-
-Molecule provides access to generic data about data and Schema with the following 7 generic interfaces (each with a little example - read more by clicking on each title):
-
-
-#### [Datom](datom)
-
-Get id of Ben entity with generic Datom attribute `e`
-```scala
-Person.e.name.get.head === (benEntityId, "Ben")
-```
-
-
-#### [EAVT Index](indexes)
-
-Attributes and values of entity e1
-```scala
-EAVT(e1).a.v.get === List(
-  (":Person/name", "Ben"),
-  (":Person/age", 42),
-  (":Golf/score", 5.7)
-)
-``` 
-
-#### [AVET Index](indexes)
-
-Values, entities and transactions where attribute :Person/age is involved
-```scala
-AVET(":Person/age").e.v.t.get === List(
-  (42, e1, t2),
-  (37, e2, t5)
-  (14, e3, t7),
-)
-
-// AVET index filtered with an attribute name and a range of values
-AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
-  (14, e4, t7),
-  (37, e2, t5)
-)
-``` 
-
-#### [AEVT Index](indexes)
-
-Entities, values and transactions where attribute :Person/name is involved 
-```scala
-AEVT(":Person/name").e.v.t.get === List(
-  (e1, "Ben", t2),
-  (e2, "Liz", t5)
-)
-``` 
-
-#### [VAET Index](indexes)
-
-Get entities pointing to entity a1
-```scala
-VAET(a1).v.a.e.get === List(
-  (a1, ":Release/artists", r1),
-  (a1, ":Release/artists", r2),
-  (a1, ":Release/artists", r3),
-)
-``` 
-
-#### [Log](log)
-
-Data from transaction t1 until t4 (exclusive)
-```scala
-Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
-  (t1, e1, ":Person/name", "Ben", true),
-  (t1, e1, ":Person/age", 41, true),
-
-  (t2, e2, ":Person/name", "Liz", true),
-  (t2, e2, ":Person/age", 37, true),
-
-  (t3, e1, ":Person/age", 41, false),
-  (t3, e1, ":Person/age", 42, true)
-)
-``` 
-
-#### [Schema](schema)
-
-Get entities pointing to entity a1 
-```scala
-Schema.part.ns.attr.fulltext$.doc.get === List(
-  ("ind", "person", "name", Some(true), "Person name"), // fulltext search enabled
-  ("ind", "person", "age", None, "Person age"),
-  ("cat", "sport", "name", None, "Sport category name")
-)
-``` 
+Here, we'll walk through how Molecule provides access to Datomic's various generic interfaces and apis.
 
 
 
+## Entity API
 
+As we saw in [building blocks](/intro/building-blocks/#entity), an entity can have attributes from multiple namespaces
+{{< bootstrap-table "table table-bordered" >}}
+Entity id | Attribue      | Value    
+:---:     | :---          | :---  
+johnId    | :Person/name  | "John"
+johnId    | :Person/likes | "pizza"
+johnId    | :Person/age   | 24
+johnId    | :Site/cat     | "customer"
+{{< /bootstrap-table >}}
 
-
-
-## Entity
-
-An entity in Datomic is a group of Datoms/facts that share an entity id:
-
-![](/img/page/entity/entity1.png)
-
-
-Attributes with any seemingly unrelated namespaces can group as entities by simply sharing the entity id:
-
-![](/img/page/entity/entity2.png)
-
-This demonstrates that Datomic/Molecule Namespaces are not like Tables in SQL. The above entity for instance has attributes asserted from 2 different namespaces that could be completely unrelated/have no reference to each other. Attributes from any number of namespaces could be asserted sharing the same entity id.
-
-
-At runtime we can see the facts of an entity by calling `touch` on the entity id (of type `Long`):
+At runtime we can explore what attributes an entity has by calling `touch` directly on a `Long` entity id:
 
 ```scala
-101L.touch === Map(
-  ":db/id" -> 101L,
-  ":Person/name"  -> "Fred", 
+johnId.touch === Map(
+  ":db/id" -> johnId,
+  ":Person/name"  -> "John", 
   ":Person/likes" -> "pizza", 
-  ":Person/age"   -> 38, 
-  ":Person/addr"  -> 102L,        // reference to an address entity with entity id 102 
+  ":Person/age"   -> 24, 
   ":Site/cat"     -> "customer"
 )
 ```
 
+The `touch` method recursively retrieves referenced entities.
 
-
-### Optional attribute values
-
-We can look for an optionally present attribute value. Here we ask the entity id `fredId` if it has a `:Site/cat` attribute value (of type `String`) and we get a typed optional value back:
-```scala
-val siteCat_? : Option[String] = fredId[String](":Site/cat")
-```
-
-
-### Traversing
-
-The `touch` method can recursively retrieve referenced entities. We could for instance traverse an `Order` with `LineItems`:
-
+So if John had references, we migh want to apply a max depth level with `touch(<maxLevel>)`:
 
 ```scala
-orderId.touch === Map(
-  ":db/id" -> orderId,
-  ":Order/lineItems" -> List(
-    Map(
-      ":db/id" -> 102L, 
-      ":LineItem/qty" -> 3, 
-      ":LineItem/product" -> "Milk",
-      ":LineItem/price" -> 12.0),
-    Map(
-      ":db/id" -> 103L, 
-      ":LineItem/qty" -> 2, 
-      ":LineItem/product" -> "Coffee",
-      ":LineItem/price" -> 46.0)))
-```
-
-The entity attributes graph might be deep and wide so we can apply a max level to `touch(<maxLevel>)`:
-
-```scala
-fredId.touchMax(2) === Map(
-  ":db/id" -> fredId,
-  ":Person/name" -> "Fred"
+johnId.touchMax(2) === Map(
+  ":db/id" -> johnId,
+  ":Person/name" -> "John"
   ":Person/friends" -> List(
     Map(
       ":db/id" -> lisaId,
@@ -181,79 +57,136 @@ fredId.touchMax(2) === Map(
         Map(...) // + more friends of Lisa (2 levels deep)
       )
     ),
-    Map(...) // + more friends of Fred (1 level deep)
+    Map(...) // + more friends of John (1 level deep)
   )
 )
 ```
 
+If we want to sort the key-value pairs we can also ask for a List with sorted pairs.
+```scala
+johnId.touchList === List(
+  ":db/id" -> johnId,
+  ":Person/age"   -> 24, 
+  ":Person/likes" -> "pizza", 
+  ":Person/name"  -> "John", 
+  ":Site/cat"     -> "customer"
+)
+```
+The entity id pair `":db/id" -> johnId` is present for all touch calls and will always be first. The remaining pairs are hereafter sorted by key. Nested Lists likewise. 
+     
+#### Testing
 
-
-
-## Datom
-
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic/Datom.scala)
-
-
-### Datoms / quintuplets
-
-Attribute values are saved as quintuplets of information in Datomic:
-
-![](/img/page/generic/datom.png)
-
-
-
-The Datom API in Molecule let us retrieve each element generically for any molecule we are working on by providing the following "generic attributes" that we can add to our custom molecules:
-
-- `e` - Entity id (`Long`)
-- `a` - Attribute (`String`)
-- `v` - Value (`Any`)
-- `t` - Transaction point in time (`Long` alternatively `Int`)
-- `op` - Operation: assertion / retraction (`Boolean` true/false)
-
-The Transaction value has two more representations
-
-- `tx` - Transaction entity id (`Long`)
-- `txInstant` - Transaction wall-clock time (`java.util.Date`)
-
-
-### Mixing custom and generic attributes
-
-Generic attributes like `e` can be added to retrieve an entity id of a custom molecule:
+When testing we also have a convenience method `touchListQuoted` that returns output that we can paste into tests so that we can avoid having to quote keys and Strings etc. For our example this would look like this: 
 
 ```scala
-// Get entity id of Ben with generic datom attribute `e` on a custom molecule
-Person.e.name.get.head === (benEntityId, "Ben")
+johnId.touchListQuoted ===
+  s"""List(
+     |  ":db/id" -> 101L,
+     |  ":Person/age"   -> 24, 
+     |  ":Person/likes" -> "pizza", 
+     |  ":Person/name"  -> "John", 
+     |  ":Site/cat"     -> "customer")""".stripMargin
 ```
 
-And we can get information about the transaction time of the assertion of some custom attribute value:
+`touch`, `touchList` and `touchQuoted` can all have a max-depth applied.
 
+
+### Optional attribute values
+
+We can look for an optionally present attribute value. Here we ask the entity id `johnId` if it has a `:Site/cat` attribute value (of type `String`):
 ```scala
-// When was Ben's age updated? Using `txInstant`
-Person(benEntityId).age.txInstant.get.head === (42, <April 4, 2019>) // (Date)
+johnId[String](":Site/cat") === Some("customer")
+johnId[Int](":Person/age")  === Some(24)
+
+// Likewise, a non-present attribute returns None
+johnId[String](":Site/member") === None 
 ```
 
-With a history db we can access the transaction number `t` and assertion/retraction statusses with `op`
+
+
+
+
+
+
+
+
+
+
+
+
+## Generic components
+
+In the following sections, we'll refer to the 5 basic components E-A-V-T-Op of a [datom](/intro/building-blocks/#datom):
+
+{{< bootstrap-table "table table-bordered" >}}
+E      | A             | V     | T   | Op    
+:-:    | :-:           | :-:   | :-: | :-:  
+johnId | :Person/likes | pizza | t3  | true
+{{< /bootstrap-table >}}
+
+
+The T component can be either a point in time `t` in the database, a transaction entity id `tx` or transaction time `txInstant`.  
+
+In Molecule we use the following syntax for generic attributes to represent the various components of datoms:
+
+{{< bootstrap-table "table table-bordered" >}}
+Generic attr | Type      | Component | Generic information   
+:-           | :-        | :-:       | :-
+`e`          | `Long`    | E         | Entity id
+`a`          | `String`  | A         | Attribute
+`v`          | `Any`     | V         | Value
+`t`          | `Long`    | T         | Point in time in database
+`tx`         | `Long`    | T         | Transaction entity id
+`txInstant`  | `Date`    | T         | Transaction time
+`op`         | `Boolean` | Op        | Operation: assertion (true) / retraction (false)
+{{< /bootstrap-table >}}
+
+
+
+
+
+## Datom API
+
+The Datom API in Molecule is a set of generic attributes, as described above, that can be mixed with your custom attributes to handle generic information.
+
+Here are some examples:
+
+Get the entity id with `e`:
+```scala
+Person.e.name.get.head === (benId, "Ben")
+```
+
+Get transaction info with `txInstant`, `t` or `tx`:
+```scala
+// When was Ben's age updated?
+Person(benId).age.txInstant.get.head === (26, Date("April 4, 2019"))
+
+// In which transaction entity was Ben's age updated?  
+Person(benId).age.tx.get.head === (26, tx2)
+
+// What's the transaction value t where Ben's age was updated?  
+Person(benId).age.t.get.head === (26, t2)
+```
+
+With a history db we can access the point in time `t` in the database and assertion/retraction statuses with `op`
 
 ```scala
-// 
-Person(benEntityId).age.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
-  (41, t1, true),  // age 41 asserted in transaction t1
-  (41, t2, false), // age 41 retracted in transaction t2
-  (42, t2, true)   // age 42 asserted in transaction t2
+// When was Ben's age updated back in time?
+Person(benId).age.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
+  (25, t1, true),  // age 25 asserted in transaction t1
+  (25, t2, false), // age 25 retracted in transaction t2
+  (26, t2, true)   // age 26 asserted in transaction t2
 )
 ```
 
-
 ### Fully generic Datom molecules
-
-In molecule, attribute names (the `A` of the Datom) are modelled as our custom DSL attributes as we saw above when we retrieved the `Person.age` attribute value along with some generic datom data.
 
 Sometimes we will be interested in more generic data where we don't know in advance what attributes will be involved. Then we can use the generic Datom attribute `a` for Attribute name and `v` for value. We could for instance ask what we know about an entity over time in the database:
 
 ```scala
-// What do we know about the fred entity?
-Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
-  (":Person/name", "Fred", t3, true), 
+// What do we know about the johnId entity?
+Person(johnId).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
+  (":Person/name", "John", t3, true), 
   (":Person/likes", "pizza", t3, true), 
   (":Person/likes", "pizza", t6, false),
   (":Person/likes", "pasta", t6, true)  
@@ -265,19 +198,26 @@ Person(fred).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
 By applying values to generic attributes we can filter search results:
 
 ```scala
-// What was asserted/retracted in transaction tx3 about what Fred likes? 
-Person(fred).likes.tx(tx6).op.getHistory.sortBy(r => (r._2, r._3)) === List(
-  ("pizza", t6, false), // Fred no longer likes pizza
-  ("pasta", t6, true)   // Fred now likes pasta
+// What was asserted/retracted in transaction tx3 about what John likes? 
+Person(johnId).likes.tx(tx6).op.getHistory.sortBy(r => (r._2, r._3)) === List(
+  ("pizza", t6, false), // John no longer likes pizza
+  ("pasta", t6, true)   // John now likes pasta
 )
 ```
 
-## Index
-
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic/Index.scala)
 
 
-_Some index descriptions in the following sections respectfully quoted from the [Datomic documentation](https://docs.datomic.com/on-prem/indexes.html)._
+
+
+
+
+
+
+
+
+## 4 Index APIs
+
+_Some index descriptions in the following sections are respectfully quoted from the [Datomic documentation](https://docs.datomic.com/on-prem/indexes.html)._
 
 Datomic maintains four indexes that contain ordered sets of datoms. Each of these indexes is named based on the sort order used.  E, A, and V are always sorted in ascending order, while T is always in descending order:
 
@@ -290,19 +230,6 @@ Molecule provides access to each index by instantiating a corresponding Index ob
 
 Contrary to Datomic's datoms API that returns Datoms, Molecule returns tuples of data matching the generic attributes added to the Index object. This way, Index molecules transparently share the same return type semantics as normal molecules.
 
-### Generic Index attributes
-
-The following standard generic Index attributes can be used to build Index molecules:
-
-- `e` - Entity id (`Long`)
-- `a` - Attribute (`String`)
-- `v` - Value (`Any`)
-- `t` - Transaction point in time (`Long` alternatively `Int`)
-- `tx` - Transaction entity id (`Long`)
-- `txInstant` - Transaction wall-clock time (`java.util.Date`)
-- `op` - Operation: assertion / retraction (`Boolean` true/false)
-
-
 
 ### EAVT
 
@@ -312,20 +239,20 @@ The EAVT index provides efficient access to everything about a given entity. Con
 // Create EAVT Index molecule with 1 entity id argument
 EAVT(e1).e.a.v.t.get === List(
   (e1, ":Person/name", "Ben", t1),
-  (e1, ":Person/age", 42, t2),
+  (e1, ":Person/age", 25, t2),
   (e1, ":Golf/score", 5.7, t2)
 )
 
 // Maybe we are only interested in the attribute/value pairs:
 EAVT(e1).a.v.get === List(
   (":Person/name", "Ben"),
-  (":Person/age", 42),
+  (":Person/age", 25),
   (":Golf/score", 5.7)
 )
 
 // Two arguments to narrow the search
 EAVT(e1, ":Person/age").a.v.get === List(
-  (":Person/age", 42)
+  (":Person/age", 25)
 )
 ``` 
 
@@ -337,36 +264,36 @@ The AVET index provides efficient access to particular combinations of attribute
 ```scala
 // Create AVET Index molecule with 1 entity id argument
 AVET(":Person/age").v.e.t.get === List(
-  (42, e1, t2),
-  (37, e2, t5),
+  (25, e1, t2),
+  (23, e2, t5),
   (14, e3, t7)
 )
 
 // Narrow search with multiple arguments
-AVET(":Person/age", 42).e.t.get === List( (e1, t2) )
-AVET(":Person/age", 42, e1).e.v.get === List( (e1, t2) )
-AVET(":Person/age", 42, e1, t2).e.v.get === List( (e1, t2) )
+AVET(":Person/age", 25).e.t.get === List( (e1, t2) )
+AVET(":Person/age", 25, e1).e.v.get === List( (e1, t2) )
+AVET(":Person/age", 25, e1, t2).e.v.get === List( (e1, t2) )
 ```
 
 The AVET Index can be filtered by a range of values between `from` (inclusive) and `until` (exclusive) for an attribute:
 
 ```scala
-AVET.range(":Person/age", Some(14), Some(37)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(20)).v.e.t.get === List(
   (14, e4, t7) // 14 is included in value range
-               // 37 not included in value range
-               // 42 outside value range
+               // 23 not included in value range
+               // 25 outside value range
 )
 
 // If `from` is None, the range starts from the beginning
 AVET.range(":Person/age", None, Some(40)).v.e.t.get === List(
   (14, e3, t7),
-  (37, e2, t5)
+  (23, e2, t5)
 )
 
 // If `until` is None, the range goes to the end
 AVET.range(":Person/age", Some(20), None).v.e.t.get === List(
-  (37, e2, t5),
-  (42, e1, t2)
+  (23, e2, t5),
+  (25, e1, t2)
 )
 ```
 
@@ -412,40 +339,44 @@ VAET(a1, ":Release/artist", r2).e.get === List(r2)
 VAET(a1, ":Release/artist", r2, t7).e.get === List(r2)
 ```
 
-## Log
 
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic/Log.scala)
 
-_Some index descriptions in the following sections respectfully quoted from the [Datomic documentation](https://docs.datomic.com/on-prem/indexes.html)._
+
+
+
+
+
+
+
+
+
+
+
+## Log API
+
+_Some index descriptions in the following sections respectfully quoted from the [Datomic documentation](https://docs.datomic.com/on-prem/log.html)._
 
 Datomic's database log is a recording of all transaction data in historic order, organized for efficient access by transaction. The Log is therefore an efficient source of finding data by transaction time.
 
 
 ### Tx range and generic Log attributes
 
-The Molecule Log implementation takes two arguments to define a range of transactions between `from` (inclusive) and `until` (exclusive). One or more generic attributes are then added to the Log molecule to define what data to return. The following standard generic attributes can be combined to match the required data structure:
+The Molecule Log implementation takes two arguments to define a range of transactions between `from` (inclusive) and `until` (exclusive). One or more generic attributes are then added to the Log molecule to define what data to return.
 
-- `e` - Entity id (`Long`)
-- `a` - Attribute (`String`)
-- `v` - Value (`Any`)
-- `t` - Transaction point in time (`Long` alternatively `Int`)
-- `tx` - Transaction entity id (`Long`)
-- `txInstant` - Transaction wall-clock time (`java.util.Date`)
-- `op` - Operation: assertion / retraction (`Boolean` true/false)
 
-Contrary to Datomic's Log implementation, Molecule returns data as a flat list of tuples of data that matches the generic attributes in the Log molecule. This is to transparently sharing the same semantics as other molecules.
+Contrary to Datomic's Log implementation, Molecule returns data as a flat list of tuples of data that matches the generic attributes in the Log molecule. This is to transparently share the same return semantics as other molecules.
 
 ```scala
 // Data from transaction t1 (inclusive) until t4 (exclusive)
 Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
   (t1, e1, ":Person/name", "Ben", true),
-  (t1, e1, ":Person/age", 41, true),
+  (t1, e1, ":Person/age", 25, true),
 
   (t2, e2, ":Person/name", "Liz", true),
-  (t2, e2, ":Person/age", 37, true),
+  (t2, e2, ":Person/age", 23, true),
 
-  (t3, e1, ":Person/age", 41, false),
-  (t3, e1, ":Person/age", 42, true)
+  (t3, e1, ":Person/age", 25, false),
+  (t3, e1, ":Person/age", 26, true)
 )
 ``` 
 
@@ -455,10 +386,10 @@ If the `from` argument is `None` data from the beginning of the log is matched:
 ```scala
 Log(None, Some(t3)).v.e.t.get === List(
   (t1, e1, ":Person/name", "Ben", true),
-  (t1, e1, ":Person/age", 41, true),
+  (t1, e1, ":Person/age", 25, true),
 
   (t2, e2, ":Person/name", "Liz", true),
-  (t2, e2, ":Person/age", 37, true)
+  (t2, e2, ":Person/age", 23, true)
 
   // t3 not included
 )
@@ -472,25 +403,32 @@ Log(Some(t2), None).v.e.t.get === List(
   // t1 not included
 
   (t2, e2, ":Person/name", "Liz", true),
-  (t2, e2, ":Person/age", 37, true),
+  (t2, e2, ":Person/age", 23, true),
 
-  (t3, e1, ":Person/age", 41, false),
-  (t3, e1, ":Person/age", 42, true)
+  (t3, e1, ":Person/age", 25, false),
+  (t3, e1, ":Person/age", 26, true)
 )
 ``` 
 
-## Schema
-
-[Tests...](https://github.com/scalamolecule/molecule/tree/master/coretests/src/test/scala/molecule/coretests/generic/SchemaTest.scala)
 
 
-The generic Schema interface provides attributes to build a Schema molecule that query the Schema structure of the current database. Datomic's bootstrapped attributes are transparently filtered out so that only schema data of the current database is returned.
 
 
-### Generic Schema attributes
 
-The following Schema attributes can be used to build Schema molecules:
 
+
+
+
+
+
+
+## Schema API
+
+A Datomic database schema is saved as data which makes it possible to make queries about the structure of the schema.
+
+Query your schema with `Schema` and build on with schema attributes:
+
+{{< bootstrap-table "table table-bordered" >}}
 | Attribute                       | Description                                                      | Example value                                         |
 | :-                              | :-                                                               | :-                                                    |
 | `id`                            | Attribute definition entity id                                   | `Long`                                                |
@@ -511,21 +449,19 @@ The following Schema attributes can be used to build Schema molecules:
 | `t`                             | Attribute definition transaction point in time                   | `Long` / `Int`                                        |
 | `tx`                            | Attribute definition transaction entity id                       | `Long`                                                |
 | `txInstant`                     | Attribute definition transaction wall-clock time                 | `java.util.Date`                                      |
+{{< /bootstrap-table >}}
 
+Since the schema is based on your Data Model, Schema queries are also a way to query your Data Model.
 
+Datomic's bootstrapped attributes are transparently filtered out so that only custom schema data based on your Data Model is returned.
 
+Here are some examples:
 
-### Querying the Schema structure
+### Attribute names
+
+Here we find various elements of attribute names:
 
 ```scala
-// List of attribute entity ids
-val attrIds: Seq[Long] = Schema.id.get
-```
-
-### Partition/Namespace/Attribute names
-
-```scala
-// Attribute name elements
 Schema.a.part.ns.nsFull.attr.get === List (
   (":sales_Customer/name", "sales", "Customer", "sales_Customer", "name"),
   (":accounting_Invoice/invoiceLine", "accounting", "Invoice", "accounting_Invoice", "invoiceLine"),
@@ -535,8 +471,8 @@ Schema.a.part.ns.nsFull.attr.get === List (
 
 ### Types and cardinality
 
+Datomic type and cardinality of attributes
 ```scala
-// Datomic type and cardinality of attributes
 Schema.a.tpe.card.get === List (
   (":sales_Customer/name", "string", "one"),
   (":accounting_Invoice/invoiceLine", "ref", "many")
@@ -544,7 +480,7 @@ Schema.a.tpe.card.get === List (
 ```
 Scala `Int` and `Long` are both represented as Datomic type `long`:
 
-
+{{< bootstrap-table "table table-bordered" >}}
 | Datomic type &nbsp;&nbsp;&nbsp; | Scala type       |
 | :-                              | :-               |
 | _string_                        | `String`         |
@@ -559,12 +495,13 @@ Scala `Int` and `Long` are both represented as Datomic type `long`:
 | _uuid_                          | `java.util.UUID` |
 | _uri_                           | `java.net.URI`   |
 | _ref_                           | `Long`           |
+{{< /bootstrap-table >}}
 
 
 
 ### Optional docs and attribute options
 
-These can be retrieved as mandatory or optional attribute values
+These can be retrieved as mandatory or optional attribute values:
 
 ```scala
 Schema.a

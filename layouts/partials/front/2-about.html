@@ -1,0 +1,70 @@
+<div style="align:center;padding-top:70px;padding-bottom:100px">
+
+    <div class="container" style="padding-top:0px;align:center;">
+        <div class="col-sm-2 column "></div>
+        <div class="col-sm-8 column" style="text-align: center">
+            <h2>Your Data Model =><br>Your Query Language</h2>
+            <div style="font-size:22px;font-weight:300;">
+                <p>
+                    Molecule is a Scala eco-system to define your domain <nobr>Data Model</nobr> and use
+                    that as your query language.
+                </p>
+                <p>
+                    Use your Data Model attributes to build molecules of data structures that you can transact
+                    and query against the powerful
+                    <a href="https://www.datomic.com">Datomic</a><span style="font-size:14px;vertical-align: super">®</span> database.
+                </p>
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <div class="col-sm-2 column "></div>
+    </div>
+
+
+
+    <div class="container-fluid" style="padding-top:0px;max-width:1170px">
+
+        <div class="col-sm-4 column">
+            <h2 style="padding-left:15px">Model</h2>
+            <div class="highlight"> <!-- space avoids copy button --><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="k">trait</span> <span class="nc">Person</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">name</span>    <span class="k">=</span> <span class="n">oneString</span>
+  <span class="k">val</span> <span class="n">age</span>     <span class="k">=</span> <span class="n">oneInt</span>
+  <span class="k">val</span> <span class="n">address</span> <span class="k">=</span> <span class="n">one</span><span class="o">[</span><span class="kt">Address</span><span class="o">]</span>
+<span class="o">}</span>
+<span class="k">trait</span> <span class="nc">Address</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">street</span> <span class="k">=</span> <span class="n">oneString</span>
+<span class="o">}</span>
+</code></pre></div>
+        </div>
+
+        <div class="col-sm-4 column">
+            <h2 style="padding-left:15px">Transact</h2>
+            <div class="highlight"> <!-- space avoids copy button --><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span> <span class="n">insert</span>
+  <span class="nc">List</span><span class="o">(</span>
+    <span class="o">(</span><span class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="s">&#34;Broadway&#34;</span><span class="o">),</span>
+    <span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="mi">24</span><span class="o">,</span> <span class="s">&#34;5th Avenue&#34;</span><span class="o">)</span>
+  <span class="o">)</span>
+</code></pre></div>
+        </div>
+
+        <div class="col-sm-4 column">
+            <h2 style="padding-left:15px">Query</h2>
+            <div class="highlight"> <!-- space avoids copy button --><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="nc">Address</span><span class="o">.</span><span class="n">street</span><span class="o">.</span><span class="n">get</span> <span class="o">===</span>
+  <span class="nc">List</span><span class="o">(</span>
+    <span class="o">(</span><span class="s">&#34;Lisa&#34;</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="s">&#34;Broadway&#34;</span><span class="o">),</span>
+    <span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="mi">24</span><span class="o">,</span> <span class="s">&#34;5th Avenue&#34;</span><span class="o">)</span>
+  <span class="o">)</span>
+</code></pre></div>
+        </div>
+
+    </div>
+
+
+
+</div>

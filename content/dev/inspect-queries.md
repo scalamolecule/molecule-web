@@ -323,14 +323,14 @@ The `with` time filter is a bit special since transactional data is supplied to 
 
 ```scala
 // Normal `getWith` call with some sample data
-val fred = Ns.str("Fred").int(42).save.eid
+val johnId = Ns.str("John").int(24).save.eid
 Ns.str.int.inspectGetWith(
-  Ns.str("John").int(44).getSaveTx,
-  Ns.str.int getInsertTx List(
-    ("Lisa", 23),
-    ("Pete", 24)
+  Ns.str("John").int(24).getSaveStmts,
+  Ns.str.int getInsertStmts List(
+    ("Lisa", 20),
+    ("Pete", 55)
   ),
-  Ns(fred).int(43).getUpdateTx
+  Ns(johnId).int(25).getUpdateStmts
 )
 ```
 Will print Model &#10230; Query &#10230; Datalog Query &#10230; Data + statements for the 3 transaction molecules applied:
@@ -358,7 +358,7 @@ RULES: none
 INPUTS: none
 
 OUTPUTS:
-1  ["Fred" 42]
+1  ["John" 25]
 (showing up to 500 rows)
 --------------------------------------------------------------------------
 
@@ -367,7 +367,7 @@ OUTPUTS:
 1          List(
   1          List(
     1          :db/add    #db/id[:db.part/user -1000123]   :Ns/str              John
-    2          :db/add    #db/id[:db.part/user -1000123]   :Ns/int              44))
+    2          :db/add    #db/id[:db.part/user -1000123]   :Ns/int              24))
 ================================================================================================================
 
 ## 2 ## Statements, transaction molecule 2: 
@@ -375,16 +375,16 @@ OUTPUTS:
 1          List(
   1          List(
     1          :db/add    #db/id[:db.part/user -1000124]   :Ns/str              Lisa
-    2          :db/add    #db/id[:db.part/user -1000124]   :Ns/int              23)
+    2          :db/add    #db/id[:db.part/user -1000124]   :Ns/int              20)
   2          List(
     1          :db/add    #db/id[:db.part/user -1000125]   :Ns/str              Pete
-    2          :db/add    #db/id[:db.part/user -1000125]   :Ns/int              24))
+    2          :db/add    #db/id[:db.part/user -1000125]   :Ns/int              55))
 ================================================================================================================
 
 ## 3 ## Statements, transaction molecule 3: 
 ================================================================================================================
 1          List(
   1          List(
-    1          :db/add    17592186045451                   :Ns/int              43))
+    1          :db/add    17592186045451                   :Ns/int              25))
 ================================================================================================================
 ```

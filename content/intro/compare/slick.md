@@ -1,5 +1,5 @@
 ---
-title: "SQL / Slick"
+title: "Slick"
 weight: 40
 menu:
   main:
@@ -206,20 +206,6 @@ Person.address(1 or 2).get map {
 
 
 
+### Next
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[Compare Gremlin...](/intro/compare/gremlin/)

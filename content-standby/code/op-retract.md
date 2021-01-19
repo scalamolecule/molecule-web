@@ -89,7 +89,7 @@ Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistor
 If a ref attribute is defined with the option `isComponent` then it "owns" its related entities - or "subcomponents", as when an `Order` own its `LineItem`s.
 
 ```scala
-object ProductsOrderDefinition {
+object ProductsOrderDataModel {
 
   trait Order {
     val id    = oneInt

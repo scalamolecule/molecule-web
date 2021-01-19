@@ -4,100 +4,128 @@ weight: 40
 menu:
   main:
     parent: code
-    identifier: relationships
 ---
 
 # Relationships
 
-[Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/ref)
+A relationship (or reference) in Molecule is when an entity has a _ref-attribute_ holding the entity id of another entity.
 
-## Card-one relationships
-
-A relationship in Datomic is simply when a ref attribute of entity A has an entity B id value. Then there is a relationship from A to B!
-
-In the following example, entity `101` has a ref attribute `:Person/home` with a value `102`. That makes the relationship between entity `101` and entity `102`, or that Fred has an Address:
-
-
-![](/img/page/relationships/ref.png)
-
-
-We can illustrate the same data as two entities (groups of facts with a shared entity id) with the link between them:
-
-![](/img/page/relationships/card-one.png)
-
-In Molecule we model a cardinality-one relationship in our [Data Model](/setup/data-model) with the `one[<RefNamespace>]` syntax:
+A _ref-attribute_ is defined in our Data Model like this:
 
 ```scala
-object YourDomainDefinition {
+object PersonDataModel {
+  
   trait Person {
-    val name = oneString
-    val home = one[Addr]
+    val name    = oneString
+    val pet     = one[Animal]    // `pet` is a card-one ref attribute
+    val hobbies = many[Activity] // `hobbies` is a card-many ref attribute
   }
-  trait Addr {
-    val street = oneString
-    val city   = oneString
+  
+  trait Animal {
+    val name = oneString
+  }
+  
+  trait Activity {
+    val name = oneString
   }
 }
 ```
-The ref attribute `home` is a card-one relationship to namespace `Addr`. When our schema is then translated to Molecule boilerplate code our `home` ref attribute is accessible as a value by using its lower case name (`home` instead of `Home`):
+`pet` can hold one `Long` which is the id of a referenced Animal entity (the pet).
+
+`hobbies` can hold multiple `Long`s which are the ids of referenced Activity entities (the hobbies). 
+
+
+
+
+## Card-one
+
+
+### Saving relational data
+
+Given the example Data Model above, we can save a card-one relationship between "Dan" and his pet "Rex":
 
 ```scala
-Person.name.home.get === List(("Fred", 102))
+val List(danId, rexId) = Person.name("Dan").Pet.name("Rex").save.eids
 ```
-This can be practical when we want to get a related entity id like `102` in this case.
+A Dan and a Rex entity were created.
+
+The `pet` ref-attribute of the Dan entity holds `rexId`. That's the relationship from Dan to Rex.
+
+If a `rexId` already existed, we could have saved it directly by applying it to the `pet` ref-attribute:
+
+```scala
+val List(danId) = Person.name("Dan").pet(rexId).save.eids
+```
+Now only Dan was created, having two attributes: `name` with value "Dan" and `pet` with value `rexId`. 
+
+
+### Retrieving relational data
+
+We can ask for related data by using a Capitalized ref-attribute name `Pet`:
+
+```scala
+Person.name.Pet.name.get.head === ("Dan", "Rex")
+```
+
+And related entity ids with the lowercase ref-attribute name `pet`:
+
+```scala
+Person.e.name_("Dan").pet.get.head === (danId, rexId)
+```
 
 
 ### Ref namespace
 
-More often though we want to collect the values of the referenced entity attributes. Molecule therefore also creates an Uppercase method `Home` that allow us to add attributes from the `Home` (`Addr`) namespace:
+As you see, Molecule generates a Capitalized version of all ref-attributes serving as a "bridge" to the referenced Namespace attributes. We call these "Ref namespaces".
 
-```scala
-Person.name.Home.street.city.get.head === ("Fred", "Baker St. 7", "Boston")
-```
-Describing the relationship we can simply say that a "Person has an Address". It's important to understand though that the namespace names `Person` and `Addr` are not like SQL tables. So there is no "instance of a Person" but rather _"an **entity** with some Person attribute values"_ (and maybe other attribute values). It's the entity id that tie groups of facts/attribute values together.
+In our example we used `Pet` to get to the `Animal.name` attribute and `pet` to get the referenced entity id value `rexId`.
+
+>_Capitalized_ ref-attribute names are _Ref namespaces_
+>
+>_Lowercase_ ref-attributes hold referenced entity ids
+
 
 
 ### One-to-one or one-to-many
 
-If Fred is living by himself on Baker St. 7 we could talk about a one-to-one relationship between him and his address.
+If John is living by himself on 5th Avenue we could talk about a one-to-one relationship between him and his address.
 
-But if several people live on the same address each person entity would reference the same address entity and we would then see each persons relation to the address as a one-to-many relationship since other persons also share the address:
+But if several people live on the same address, say entity id `102`, then we have a one-to-many relationship since multiple people entities have a reference to `102`:
 
 ```scala
 Person.name.home.get === List(
-  ("Fred", 102),
+  ("John", 102),
   ("Lisa", 102),
   ("Mona", 102)
 )
 ```
-Wether a relationship is a one-to-one or one-to-many relationship is therefore determined by the data and not the schema.
+Wether a relationship is a one-to-one or one-to-many relationship is determined by the data. In our Data Model, we just model it as a card-one relationship `one[Address]`.
 
 
 ### Relationship graph
 
-Relationships can nest arbitrarily deep. We could for instance in the `Addr` namespace have a relationship to a `Country` namespace and then get the country `name` too:
+Relationship graphs can become arbitrarily deep. We could for instance in a `Address` namespace have a relationship to a `Country` namespace and then get the country `name` too and so on:
 
 ```scala
-Person.name.Home.street.city.Country.name.get.head === ("Fred", "Baker St. 7", "Boston", "USA")
+Person.name.Home.street.city.Country.name.get.head === ("John", "5th Avenue", "Boston", "USA")
+// etc...
 ```
 
 
 
-## Card-many relationships
-
-
-Since datomic has cardinality many attributes, ref attributes can also be of cardinality many.
-
-We could for instance have a classic Order/LineItems card-many example where the `:Order/items` card-many ref attribute has two LineItem entity id values `102` and `103`:
-
-![](/img/page/relationships/card-many.png)
 
 
 
-Cardinality-many relationships in Molecule are modelled with the `many[<RefNamespace>]` syntax:
+
+
+
+## Card-many
+
+
+Cardinality-many ref-attributes can simply hold a `Set` of referenced entity ids and are modelled with the `many[<RefNamespace>]` syntax:
 
 ```scala
-object OrderDefinition {
+object OrderDataModel {
 
   trait Order {
     val id    = oneString
@@ -113,7 +141,7 @@ object OrderDefinition {
 ```
 An `Order` can have multiple `LineItem`s so we define a cardinality-many ref attribute `items` that points to the `LineItem` namespace.
 
-Note how we also make LineItems a component with the `isComponent` option. That means that `LineItem`s are _owned_ by an `Order` and will get automatically retracted if the `Order` is retracted. Subsequent component-defined referenced entities will be recursively retracted too.
+Note how we in this example make LineItems a component with the `isComponent` option. That means that `LineItem`s are _owned_ by an `Order` and will get automatically retracted if the `Order` is retracted. Subsequent component-defined referenced entities will be recursively retracted too.
 
 Now we can get an Order and its Line Items:
 
@@ -127,7 +155,7 @@ Order.id.Items.qty.product.price.get === List(
 The Order data is repeated for each line Item which is kind of redundant. We can avoid that with a "nested" Molecule instead:
 
 
-## Nested data
+### Nested data
 
 We can nest the result from the above example with the Molecule operator `*` indicating "with many":
 
@@ -139,6 +167,9 @@ m(Order.id.Items * LineItem.qty.product.price).get === List(
   ("order2", List(
     (4, "Bread", 5.00)))
 )
+
+// or
+Order.id.Items.*(LineItem.qty.product.price).get === List( ...
 ```
 Now each Order has its own list of typed Line Item data and there is no Order redundancy.
 
@@ -148,6 +179,7 @@ Now each Order has its own list of typed Line Item data and there is no Order re
 Optional nested data can be queried with the `*?` operator:
 
 ```scala
+// Sample data
 m(Ns.int.Refs1 * Ref1.str1) insert List(
   (1, List("a", "b")),
   (2, List()) // (no nested data)
@@ -167,145 +199,269 @@ m(Ns.int.Refs1 *? Ref1.str1).get === List(
 
 Molecule can nest data structures up to 7 levels deep.
 
-All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity.
 
 
-### Entity API
 
-We can get a similar - but un-typed - nested hierarchy of data with the Entity API by calling `touch` on an order id:
 
-```scala
-// Touch entity facts hierarchy recursively
-orderId.touch === Map(
-  ":db/id" -> 101L,
-  ":Order/id" -> "order1",
-  ":Order/items" -> List(
-    Map(
-      ":db/id" -> 102L, 
-      ":LineItem/qty" -> 3, 
-      ":LineItem/product" -> "Milk",
-      ":LineItem/price" -> 12.0),
-    Map(
-      ":db/id" -> 103L, 
-      ":LineItem/qty" -> 2, 
-      ":LineItem/product" -> "Coffee",
-      ":LineItem/price" -> 46.0)))
-```
 
-## Composites
 
-As we saw earlier, [Entities](/manual/entities/) are simply groups of facts that share an entity id:
 
-![](/img/page/entity/entity2.png)
 
-The last fact is kind of a black sheep though since the `:Site/cat` attribute is not in the `Person` namespace.
 
-### Avoid non-intrinsic pollution
 
-Since entities can have attributes from **any** namespace we have a challenge of how to model this in our schema definiton. It would be quick and easy to just make a relationship from a `Person` namespace to the `Site` namespace:
 
+
+
+
+
+
+
+
+## Self-join
+
+Self-joins can be used to compare values of the _same attribute_ for multiple entities. They don't require any special definition in our Data Model.
+
+Let's consider an example of `Person`s with an `age`, `name` and beverage preferences.
 
 ```scala
-object YourDomainDefinition {
-  trait Person {
-    val name  = oneString
-    val likes = oneString
-    val age   = oneInt
-    val addr  = one[Addr]
-    val site  = one[Site]
-  }
-  trait Addr {
-    val street = oneString
-    val city   = oneString
-  }
-  trait Site {
-    val cat    = oneString
-  }
-}
-```
-Then we could easily build a molecule to get the `Site` category:
-
-```scala
-Person.name.likes.age.Site.cat.get.head === ("Fred", "pizza", 38, "customer")
-```
-
-
-Modelling-wise this is just not the best idea since we could easily end up making lots of redundant relationships from various namespaces to `Site`:
-
-```scala
-object YourDomainDefinition {
-  trait Person {
-    val site  = one[Site]
-  }
-  trait Company {
-    val site  = one[Site]
-  }
-  trait Project {
-    val site  = one[Site]
-  }
-  // etc...
-  
-  trait Site {
-    val cat    = oneString
-  }
-}
-```
-Relationships to `Site` are simply not _intrinsic_ to or a natural core part of neither `Person`, `Company` or `Project`. Littering non-intrinsic relationships to `Site` - and possibly other cross-cutting namespaces like `Tags`, `Likes` etc - all over the place quickly clutters and pollutes our domain model.
-
-Instead we want to create an "associative relationship" to `Site`. This is what Datomic allow us to do by letting an entity id tie _any_ attributes together as we see in the list of facts at the top of this page.
-
-
-### Composite modelling
-
-In Molecule we model associative relationships as Composites by chaining "sub-molecules" with the `+` operator:
-
-```scala
-m(Person.name.likes.age + Site.cat).get === List(
-  (("Fred", "pizza", 38), "customer")
-)
-```
-We make a composite molecule from two sub-molecules `Person.name.likes.age` and `Site.cat`.
-
-The composite result set is a list of tuples with a sub-tuple for each sub-molecule.
-
-Since in this case the last sub-molecule only has one attribute value "customer" a single value for that is returned. If it had 2 attributes we would get a sub-tuple for that too:
-
-```scala
-m(Person.name.likes.age + Site.cat.status).get === List(
-  (("Fred", "pizza", 38), ("customer", "good"))
-)
-```
-And so on..
-
-```scala
-m(Person.name.likes.age + Site.cat.status + Loc.tags + Emotion.like).get === List(
-  (("Fred", "pizza", 38), ("customer", "good"), Set("inner city", "hipster"), true)
+m(Person.age.name.Likes * Score.beverage.rating) insert List(
+  (23, "Joe", List(("Coffee", 3), ("Cola", 2), ("Pepsi", 3))),
+  (25, "Ben", List(("Coffee", 2), ("Tea", 3))),
+  (23, "Liz", List(("Coffee", 1), ("Tea", 3), ("Pepsi", 1)))
 )
 ```
 
-We can compose up to 22 sub-molecules (!) which should give us plenty of room to model even the most complex composite aspects of our domain.
+Normally we ask for values accross attributes like attr1 AND attr2 AND etc as in age==23 AND name AND rating==Pepsi
+```scala
+Person.age_(23).name.Likes.beverage_("Pepsi").get === List("Liz", "Joe")
+```
+But when we need to compare values of the same attribute across entities we need self-joins.
+
+Here's an example of a self-join where we take pairs of person entities where one is 23 years old and the other 25 years old and then see which of those pairs have a shared preferred beverage. We say that we "unify" by the attribute values that the two entities have in common (`Likes.beverage`).
+
+Self-joins lets us answer a lot of interesting questions:
+
+What beverages do pairs of 23- AND 25-year-olds like in common?
+```scala
+// (unifying on Likes.beverage)
+Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
+// Joe (23) AND Ben (25) likes Coffee (Coffee unifies)
+// Liz (23) AND Ben (25) likes Coffee (Coffee unifies)
+// Liz (23) AND Ben (25) likes Tea    (Tea unifies)
+// Distinct values of Coffee and Tea returned
+```
+
+Does 23- and 25-years-old have some common beverage ratings?
+```scala
+// (unifying on Likes.rating)
+Person.age_(23 and 25).Likes.rating.get === List(2, 3)
+```
+Any 23- and 25-year-olds with the same name? (no)
+```scala
+// (unifying on Person.name)
+Person.age_(23 and 25).name.get === List()
+```
+
+Which beverages do Joe and Liz both like?
+```scala
+// (unifying on Likes.beverage)
+Person.name_("Joe" and "Liz").Likes.beverage.get === List("Pepsi", "Coffee")
+```
+Do Joe and Liz have some common ratings?
+```scala
+// (unifying on Likes.rating)
+Person.name_("Joe" and "Liz").Likes.rating.get === List(3)
+```
+Do Joe and Liz have a shared age?
+```scala
+// (unifying on Person.age)
+Person.name_("Joe" and "Liz").age.get === List(23)
+```
+
+Who likes both Coffee and Tea?
+```scala
+// (unifying on Person.name)
+Person.name.Likes.beverage_("Coffee" and "Tea").get === List("Ben", "Liz")
+```
+What ages have those who like both Coffe and Tea?
+```scala
+// (unifying on Person.age)
+Person.age.Likes.beverage_("Coffee" and "Tea").get === List(23, 25)
+```
+What shared ratings do Coffee and Tea have?
+```scala
+// (unifying on Score.rating)
+Score.beverage_("Coffee" and "Tea").rating.get === List(3)
+```
+
+Who rated both 2 and 3?
+```scala
+// (unifying on Person.name)
+Person.name.Likes.rating_(2 and 3).get === List("Ben", "Joe")
+```
+What ages have those who rated both 2 and 3?
+```scala
+// (unifying on Person.age)
+Person.age.Likes.rating_(2 and 3).get === List(23, 25)
+```
+Which beverages are rated 2 and 3?
+```scala
+// (unifying on Likes.beverage)
+Score.rating_(2 and 3).beverage.get === List("Coffee")
+```
 
 
-### ...with expressions
+### Unifying by 2 attributes
+Which 23- and 25-year-olds with the same name like the same beverage? (none)
+```scala
+// (unifying on Person.name and Likes.beverage)
+Person.age_(23 and 25).name.Likes.beverage.get === List()
+```
+Do Joe and Liz share age and beverage preferences? (yes)
+```scala
+// (unifying on Person.age and Likes.beverage)
+Person.age.name_("Joe" and "Liz").Likes.beverage.get === List(
+  (23, "Coffee"),
+  (23, "Pepsi"))
+```
 
-_"Which positive elder hipster customers like what?"_
+### Multiple ANDs
 
 ```scala
-m(Person.name.likes.age_.>(35) 
- + Site.cat_("customer")
- + Loc.tags_("hipster") 
- + Emotion.like_(true)).get === List(
-  ("Fred", "pizza")
+Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
+```
+
+
+### Explicit self-join
+
+All the examples above use the `and` notation to construct simple self-joins. Any of them could be re-written to use a more powerful and expressive `Self`-notation:
+
+```scala
+Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
+
+// ..can be re-written to:
+Person.age_(23).Likes.beverage._Person.Self
+  .age_(25).Likes.beverage_(unify).get === List("Coffee", "Tea")
+```
+
+Let's walk through that one...
+
+First we ask for a tacit `age` of 23 being asserted with one Person (entity). After asking for the `beverage` value of the first person we "go back" with `_Person` to the initial namespace `Person` and then say that we want to make a self-join with `Self` to start defining another Person/entity. We want the other person to be 25 years old. When we define the `beverage` value for the other person we tell molecule to "unify" that value with the equivalent `beverage` value of the first person.
+
+This second notation gives us freedom to fetch more values that shouldn't be unified. Say for instance that we want to know the names of 23-/25-year-olds sharing a beverage preference:
+
+```scala
+Person.age_(23).name.Likes.beverage._Person.Self
+  .age_(25).name.Likes.beverage_(unify).get.sorted === List(
+  ("Joe", "Coffee", "Ben"),
+  ("Liz", "Coffee", "Ben"),
+  ("Liz", "Tea", "Ben")
 )
 ```
-The combinations are quite endless - while you can keep your domain model/schema clean and intrinsic!
+Now we also fetch the name of beverage which is not being unified between the two entities.
+
+Let's add the ratings too
+```scala
+Person.age_(23).name.Likes.rating.beverage._Person.Self
+  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
+  ("Joe", 3, "Coffee", "Ben", 2),
+  ("Liz", 1, "Coffee", "Ben", 2),
+  ("Liz", 3, "Tea", "Ben", 3)
+)
+```
+
+We can arrange the attributes in the previous molecule in other orders too:
+```scala
+Person.age_(23).name.Likes.rating.beverage._Person.Self
+  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
+  ("Joe", 3, "Coffee", "Ben", 2),
+  ("Liz", 1, "Coffee", "Ben", 2),
+  ("Liz", 3, "Tea", "Ben", 3)
+)
+// or
+Person.age_(23).name.Likes.beverage.rating._Person.Self
+  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
+  ("Joe", "Coffee", 3, "Ben", 2),
+  ("Liz", "Coffee", 1, "Ben", 2),
+  ("Liz", "Tea", 3, "Ben", 3)
+)
+// or
+Person.age_(23).name.Likes.beverage.rating._Person.Self
+  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
+  ("Joe", "Coffee", 3, "Ben", 2),
+  ("Liz", "Coffee", 1, "Ben", 2),
+  ("Liz", "Tea", 3, "Ben", 3)
+)
+```
+
+Only higher rated beverages
+```scala
+Person.age_(23).name.Likes.rating.>(1).beverage._Person.Self
+  .age_(25).name.Likes.rating.>(1).beverage_(unify).get.sorted === List(
+  ("Joe", 3, "Coffee", "Ben", 2),
+  ("Liz", 3, "Tea", "Ben", 3)
+)
+```
+
+Only highest rated beverages
+```scala
+Person.age_(23).name.Likes.rating(3).beverage._Person.Self
+  .age_(25).name.Likes.rating(3).beverage_(unify).get.sorted === List(
+  ("Liz", 3, "Tea", "Ben", 3)
+)
+```
+
+Common beverage of 23-year-old with low rating and 25-year-old with high rating
+```scala
+Person.age_(23).name.Likes.rating(1).beverage._Person.Self
+  .age_(25).name.Likes.rating(2).beverage_(unify).get.sorted === List(
+  ("Liz", 1, "Coffee", "Ben", 2)
+)
+```
+
+Any 23- and 25-year-olds wanting to drink tea together?
+```scala
+Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
+  .age_(25).name.Likes.beverage_("Tea").get === List(("Liz", "Ben"))
+```
+
+Any 23-year old Tea drinker and a 25-year-old Coffee drinker?
+```scala
+Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
+  .age_(25).name.Likes.beverage_("Coffee").get === List(("Liz", "Ben"))
+```
+
+Any pair of young persons drinking respectively Tea and Coffee?
+```scala
+Person.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
+  .age_.<(24).name.Likes.beverage_("Coffee").get === List(
+  ("Liz", "Joe"),
+  ("Liz", "Liz")
+)
+```
+Since Liz is under 24 and drinks both Tea and Coffee she shows up as two persons (one drinking Tea, the other Coffee). We can filter the result to only get different persons:
+```scala
+Person.e.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
+  .e.age_.<(24).name.Likes.beverage_("Coffee").get
+  .filter(r => r._1 != r._3).map(r => (r._2, r._4)) === List(
+  ("Liz", "Joe")
+)
+```
+
+### Multiple explicit self-joins
+
+Beverages liked by all 3 different people
+```scala
+Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
+
+// or
+
+Person.name_("Joe").Likes.beverage._Person.Self
+  .name_("Ben").Likes.beverage_(unify)._Person.Self
+  .name_("Liz").Likes.beverage_(unify).get === List("Coffee")
+```
 
 
-### Arity 22+ molecules
-
-Since composites are composed of up to 22 sub-molecules we could potentially insert and retrieve mega composite molecules with up to 22 x 22 = 484 attributes!
-
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
 
 
 
@@ -314,11 +470,16 @@ Since composites are composed of up to 22 sub-molecules we could potentially ins
 
 
 
-## Bidirectional references
 
-Relationships in Datomic are unidirectional but can be queried in reverse when needed. When working with graph structures we can benefit from being able to traverse the graph recursively without worrying about in which direction each relationship was created. 
 
-Molecule offers to define bidirectional relationships that makes traversal easy. 
+
+## Bidirectional
+
+Relationships in Datomic are unidirectional but can be queried in reverse when needed. 
+
+When working with graph structures we can benefit from being able to traverse the graph recursively without worrying about in which direction each relationship was created. 
+
+Molecule offers to define bidirectional relationships that makes uniform traversals easy. 
 
 ### Unidirectional reference limitations
 
@@ -568,247 +729,204 @@ Please have a look at the [Gremlin examples](/intro/compare/gremlin/).
 
 
 
-## Self-join
-
-Self-joins can be used to compare values of an attribute of one entity with values of the same attribute for other entities.
-
-Let's consider an example of `Person`s with an `age`, `name` and beverage preferences. 
 
 
-```scala
-m(Person.age.name.Likes * Score.beverage.rating) insert List(
-  (23, "Joe", List(("Coffee", 3), ("Cola", 2), ("Pepsi", 3))),
-  (25, "Ben", List(("Coffee", 2), ("Tea", 3))),
-  (23, "Liz", List(("Coffee", 1), ("Tea", 3), ("Pepsi", 1)))
-)
-```
-
-Normally we ask for values accross attributes like attr1 AND attr2 AND etc as in age==23 AND name AND rating==Pepsi
-```scala
-Person.age_(23).name.Likes.beverage_("Pepsi").get === List("Liz", "Joe")
-```
-But when we need to compare values of the same attribute across entities we need self-joins.
-
-Here's an example of a self-join where we take pairs of person entities where one is 23 years old and the other 25 years old and then see which of those pairs have a shared preferred beverage. We say that we "unify" by the attribute values that the two entities have in common (`Likes.beverage`). 
-
-Self-joins lets us answer a lot of interesting questions:
-
-What beverages do pairs of 23- AND 25-year-olds like in common?
-```scala
-// (unifying on Likes.beverage)
-Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
-// Joe (23) AND Ben (25) likes Coffee (Coffee unifies)
-// Liz (23) AND Ben (25) likes Coffee (Coffee unifies)
-// Liz (23) AND Ben (25) likes Tea    (Tea unifies)
-// Distinct values of Coffee and Tea returned
-```
-
-Does 23- and 25-years-old have some common beverage ratings?
-```scala
-// (unifying on Likes.rating)
-Person.age_(23 and 25).Likes.rating.get === List(2, 3)
-```
-Any 23- and 25-year-olds with the same name? (no)
-```scala
-// (unifying on Person.name)
-Person.age_(23 and 25).name.get === List()
-```
-
-Which beverages do Joe and Liz both like?
-```scala
-// (unifying on Likes.beverage)
-Person.name_("Joe" and "Liz").Likes.beverage.get === List("Pepsi", "Coffee")
-```
-Do Joe and Liz have some common ratings?
-```scala
-// (unifying on Likes.rating)
-Person.name_("Joe" and "Liz").Likes.rating.get === List(3)
-```
-Do Joe and Liz have a shared age?
-```scala
-// (unifying on Person.age)
-Person.name_("Joe" and "Liz").age.get === List(23)
-```
-
-Who likes both Coffee and Tea?
-```scala
-// (unifying on Person.name)
-Person.name.Likes.beverage_("Coffee" and "Tea").get === List("Ben", "Liz")
-```
-What ages have those who like both Coffe and Tea?
-```scala
-// (unifying on Person.age)
-Person.age.Likes.beverage_("Coffee" and "Tea").get === List(23, 25)
-```
-What shared ratings do Coffee and Tea have?
-```scala
-// (unifying on Score.rating)
-Score.beverage_("Coffee" and "Tea").rating.get === List(3)
-```
-
-Who rated both 2 and 3?
-```scala
-// (unifying on Person.name)
-Person.name.Likes.rating_(2 and 3).get === List("Ben", "Joe")
-```
-What ages have those who rated both 2 and 3?
-```scala
-// (unifying on Person.age)
-Person.age.Likes.rating_(2 and 3).get === List(23, 25)
-```
-Which beverages are rated 2 and 3?
-```scala
-// (unifying on Likes.beverage)
-Score.rating_(2 and 3).beverage.get === List("Coffee")
-```
 
 
-### Unifying by 2 attributes
-Which 23- and 25-year-olds with the same name like the same beverage? (none)
-```scala
-// (unifying on Person.name and Likes.beverage)
-Person.age_(23 and 25).name.Likes.beverage.get === List()
-```
-Do Joe and Liz share age and beverage preferences? (yes)
-```scala
-// (unifying on Person.age and Likes.beverage)
-Person.age.name_("Joe" and "Liz").Likes.beverage.get === List(
-  (23, "Coffee"),
-  (23, "Pepsi"))
-```
 
-### Multiple ANDs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Associative
+
+Datomic allows for a very powerful special type of relationship that Molecule calls an _associative relationship_. This is simply when entities contain attributes from different namespaces. In the SQL world it would be like the ability to "borrow" columns from other tables.
+
+
+You might recall how [entities](/intro/building-blocks/#entity) are composed of attributes sharing the same entity id, like the pizza-liking 24-year-old John:
+
+{{< bootstrap-table "table table-bordered" >}}
+Entity id | Attribue      | Value    
+:---:     | :---          | :---  
+101       | :Person/name  | "John"
+101       | :Person/likes | "pizza"
+101       | :Person/age   | 24
+{{< /bootstrap-table >}}
+
+Say, John registers with our website, and we want to categorize John as a customer. Then the challenge arises, how should we model that John is in a certain category? Since categories are applied to many things, this is a classical [cross-cutting concern](https://en.wikipedia.org/wiki/Cross-cutting_concern).
+
+A traditional way of modelling this is to make a relationship from Person to Site.cat, from this to Site.cat, from that to Site.cat etc. Not optimal. Having an external join table is not optimal either.
+
+Instead we can simply create an _association_ by simply letting a Datom with a `Site.cat` attribute have a John id!: 
+
+{{< bootstrap-table "table table-bordered" >}}
+Entity id | Attribue       | Value    
+:---:     | :---           | :---  
+101       | :Person/name   | "John"
+101       | :Person/likes  | "pizza"
+101       | :Person/age    | 24
+**101**   | **:Site/cat**  | **"customer"**
+{{< /bootstrap-table >}}
+
+In Molecule we associate with the `+` operator. We could therefore save John like this:
 
 ```scala
-Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
-```
-
-
-### Explicit self-join
-
-All the examples above use the `and` notation to construct simple self-joins. Any of them could be re-written to use a more powerful and expressive `Self`-notation:
-
-```scala
-Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
-
-// ..can be re-written to:
-Person.age_(23).Likes.beverage._Person.Self
-  .age_(25).Likes.beverage_(unify).get === List("Coffee", "Tea")
-```
-
-Let's walk through that one...
-
-First we ask for a tacit `age` of 23 being asserted with one Person (entity). After asking for the `beverage` value of the first person we "go back" with `_Person` to the initial namespace `Person` and then say that we want to make a self-join with `Self` to start defining another Person/entity. We want the other person to be 25 years old. When we define the `beverage` value for the other person we tell molecule to "unify" that value with the equivalent `beverage` value of the first person.
-
-This second notation gives us freedom to fetch more values that shouldn't be unified. Say for instance that we want to know the names of 23-/25-year-olds sharing a beverage preference:
-
-```scala
-Person.age_(23).name.Likes.beverage._Person.Self
-  .age_(25).name.Likes.beverage_(unify).get.sorted === List(
-  ("Joe", "Coffee", "Ben"),
-  ("Liz", "Coffee", "Ben"),
-  ("Liz", "Tea", "Ben")
-)
-```
-Now we also fetch the name of beverage which is not being unified between the two entities.
-
-Let's add the ratings too
-```scala
-Person.age_(23).name.Likes.rating.beverage._Person.Self
-  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
-  ("Joe", 3, "Coffee", "Ben", 2),
-  ("Liz", 1, "Coffee", "Ben", 2),
-  ("Liz", 3, "Tea", "Ben", 3)
-)
-```
-
-We can arrange the attributes in the previous molecule in other orders too:
-```scala
-Person.age_(23).name.Likes.rating.beverage._Person.Self
-  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
-  ("Joe", 3, "Coffee", "Ben", 2),
-  ("Liz", 1, "Coffee", "Ben", 2),
-  ("Liz", 3, "Tea", "Ben", 3)
-)
-// or
-Person.age_(23).name.Likes.beverage.rating._Person.Self
-  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
-  ("Joe", "Coffee", 3, "Ben", 2),
-  ("Liz", "Coffee", 1, "Ben", 2),
-  ("Liz", "Tea", 3, "Ben", 3)
-)
-// or
-Person.age_(23).name.Likes.beverage.rating._Person.Self
-  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
-  ("Joe", "Coffee", 3, "Ben", 2),
-  ("Liz", "Coffee", 1, "Ben", 2),
-  ("Liz", "Tea", 3, "Ben", 3)
-)
-```
-
-Only higher rated beverages
-```scala
-Person.age_(23).name.Likes.rating.>(1).beverage._Person.Self
-  .age_(25).name.Likes.rating.>(1).beverage_(unify).get.sorted === List(
-  ("Joe", 3, "Coffee", "Ben", 2),
-  ("Liz", 3, "Tea", "Ben", 3)
-)
-```
-
-Only highest rated beverages
-```scala
-Person.age_(23).name.Likes.rating(3).beverage._Person.Self
-  .age_(25).name.Likes.rating(3).beverage_(unify).get.sorted === List(
-  ("Liz", 3, "Tea", "Ben", 3)
-)
-```
-
-Common beverage of 23-year-old with low rating and 25-year-old with high rating
-```scala
-Person.age_(23).name.Likes.rating(1).beverage._Person.Self
-  .age_(25).name.Likes.rating(2).beverage_(unify).get.sorted === List(
-  ("Liz", 1, "Coffee", "Ben", 2)
-)
-```
-
-Any 23- and 25-year-olds wanting to drink tea together?
-```scala
-Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
-  .age_(25).name.Likes.beverage_("Tea").get === List(("Liz", "Ben"))
-```
-
-Any 23-year old Tea drinker and a 25-year-old Coffee drinker?
-```scala
-Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
-  .age_(25).name.Likes.beverage_("Coffee").get === List(("Liz", "Ben"))
-```
-
-Any pair of young persons drinking respectively Tea and Coffee?
-```scala
-Person.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
-  .age_.<(24).name.Likes.beverage_("Coffee").get === List(
-  ("Liz", "Joe"),
-  ("Liz", "Liz")
-)
-```
-Since Liz is under 24 and drinks both Tea and Coffee she shows up as two persons (one drinking Tea, the other Coffee). We can filter the result to only get different persons:
-```scala
-Person.e.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
-  .e.age_.<(24).name.Likes.beverage_("Coffee").get
-  .filter(r => r._1 != r._3).map(r => (r._2, r._4)) === List(
-  ("Liz", "Joe")
-)
-```
-
-### Multiple explicit self-joins
-
-Beverages liked by all 3 different people
-```scala
-Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
+m(Person.name("John").age(24).likes("pizza") + Site.cat("customer")).save
 
 // or
 
-Person.name_("Joe").Likes.beverage._Person.Self
-  .name_("Ben").Likes.beverage_(unify)._Person.Self
-  .name_("Liz").Likes.beverage_(unify).get === List("Coffee")
+Person.name("John").age(24).likes("pizza").+(Site.cat("customer")).save
 ```
+And we can retrieve "customers", also using the `+` operator:
+
+```scala
+// With tacit associated attribute category value "customer"
+Person.name.age.likes.+(Site.cat_("customer")).get.head === ("John", 24, "pizza")
+```
+
+### Avoiding non-intrinsic model pollution
+
+If we imagine that we had created a normal relationship from a Person namespace to a Site namespace in order to save the category connection, we could say that we had _polluted the semantic integrity of the Person namespace!_
+
+A traditional relationships from `Person` to `Site` would simply not be _intrinsic_ to or a natural core part of what a `Person` is. 
+
+Littering non-intrinsic relationships to `Site` - and possibly other cross-cutting namespaces like `Tags`, `Likes` etc - all over the place, would quickly clutter and pollute our Data Model.
+
+Instead we want to create associative relationships to `Site`, `Tags`, `Likes` etc. 
+
+
+
+## Composite molecules
+
+We call molecules with one or more associations a _composite_ molecule, or simply a _composite_.
+
+A composite contains two or more _sub-molecules_. Sub-molecules are like normal molecules.
+
+When we get data with composites, each sub-molecule is returned as a sub-tuple, and a single value if it has only one attribute:
+
+```scala
+m(Person.name.likes.age + Site.cat).get === List(
+  (("John", "pizza", 24), "customer")
+)
+```
+This composite had two sub-molecules: `Person.name.likes.age` and `Site.cat`.
+
+If the last sub-molecule had 2 attributes we would get a sub-tuple for that too:
+```scala
+m(Person.name.likes.age + Site.cat.status).get === List(
+  (("John", "pizza", 24), ("customer", "good"))
+)
+```
+And we can add even more sub-molecules...
+```scala
+m(Person.name.likes.age + Site.cat.status + Loc.tags + Emotion.like).get === List(
+  (("John", "pizza", 24), ("customer", "good"), Set("inner city", "hipster"), true)
+)
+```
+
+And expressions too...
+```scala
+// Which positive elder hipster customers like what?
+m(Person.name.likes.age_.>(35) 
+ + Site.cat_("customer")
+ + Loc.tags_("hipster") 
+ + Emotion.like_(true)).get === List(
+  ("John", "pizza")
+)
+```
+The combinations are quite endless - while you can keep your domain model/schema clean and intrinsic!
+
+
+### Arity 22+ molecules
+
+Composites can be composed of up to 22 sub-molecules! So, we can potentially insert and retrieve mega composite molecules with up to 22 x 22 = 484 attributes!
+
+Since sub-molecules don't necessarily have to be about another namespace, we can simply use the same mechanism to add sub-molecules with more attributes from the same namespace. Here's an example of inserting composite data with 3 sub-molecules having 23 attributes in total:
+```scala
+// Insert composite data with 3 sub-molecules
+Ns.bool.bools.date.dates.double.doubles.enum.enums +
+  Ns.float.floats.int.ints.long.longs.ref1 +
+  Ns.refSub1.str.strs.uri.uris.uuid.uuids.refs1 insert Seq(
+  // Two rows with tuples of 3 sub-tuples that type-safely match the 3 sub-molecules above
+  (
+    (true, Set(true), date1, Set(date2, date3), 1.0, Set(2.0, 3.0), "enum1", Set("enum2", "enum3")),
+    (1f, Set(2f, 3f), 1, Set(2, 3), 1L, Set(2L, 3L), r1),
+    (r2, "a", Set("b", "c"), uri1, Set(uri2, uri3), uuid1, Set(uuid2), Set(42L))
+  ),
+  (
+    (false, Set(false), date4, Set(date5, date6), 4.0, Set(5.0, 6.0), "enum4", Set("enum5", "enum6")),
+    (4f, Set(5f, 6f), 4, Set(5, 6), 4L, Set(5L, 6L), r3),
+    (r4, "d", Set("e", "f"), uri4, Set(uri5, uri6), uuid4, Set(uuid5), Set(43L))
+  )
+)
+```
+Retrieve the same composite data:
+```scala
+m(Ns.bool.bools.date.dates.double.doubles.enum.enums +
+  Ns.float.floats.int.ints.long.longs.ref1 +
+  Ns.refSub1.str.strs.uri.uris.uuid.uuids.refs1).get === Seq(
+  (
+    (false, Set(false), date4, Set(date5, date6), 4.0, Set(5.0, 6.0), "enum4", Set("enum5", "enum6")),
+    (4f, Set(5f, 6f), 4, Set(5, 6), 4L, Set(5L, 6L), r3),
+    (r4, "d", Set("e", "f"), uri4, Set(uri5, uri6), uuid4, Set(uuid5), Set(42L))
+  ),
+  (
+    (true, Set(true), date1, Set(date2, date3), 1.0, Set(2.0, 3.0), "enum1", Set("enum2", "enum3")),
+    (1f, Set(2f, 3f), 1, Set(2, 3), 1L, Set(2L, 3L), r1),
+    (r2, "a", Set("b", "c"), uri1, Set(uri2, uri3), uuid1, Set(uuid2), Set(43L))
+  )
+)
+```
+
+..or a subset of the same composite data:
+```scala
+m(Ns.bool.bools.date.dates +
+  Ns.float.floats.int +
+  Ns.refSub1.str.strs).get === Seq(
+  (
+    (false, Set(false), date4, Set(date5, date6)),
+    (4f, Set(5f, 6f), 4),
+    (r4, "d", Set("e", "f"))
+  ),
+  (
+    (true, Set(true), date1, Set(date2, date3)),
+    (1f, Set(2f, 3f), 1),
+    (r2, "a", Set("b", "c"))
+  )
+)
+```
+
+Since the subset uses less than 22 attributes, we can return single tuples without the need for a composite:
+```scala
+m(Ns.bool.bools.date.dates
+  .float.floats.int
+  .refSub1.str.strs).get === Seq(
+  (
+    false, Set(false), date1, Set(date2, date3),
+    1f, Set(2f, 3f), 1,
+    r2, "a", Set("b", "c")
+  ),
+  (
+    true, Set(true), date4, Set(date5, date6),
+    4f, Set(5f, 6f), 4,
+    r4, "d", Set("e", "f")
+  )
+)
+```
+
+
+
+
+### Next
+
+[Transactions...](/code/transactions)

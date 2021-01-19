@@ -8,7 +8,13 @@ function addCopyButtons(clipboard) {
         button.type = 'button';
         button.innerText = 'Copy';
         button.addEventListener('click', function () {
-            clipboard.writeText(codeBlock.innerText).then(function () {
+            if (pre.parentNode.classList.contains('highlight')) {
+                 var code = codeBlock.innerText.trim(); // chroma with language
+             } else {
+                 var code = codeBlock.innerText.trim().replace("Copy\n", ""); // raw code
+             };
+
+            clipboard.writeText(code).then(function () {
                 /* Chrome doesn't seem to blur automatically,
                    leaving the button in a focused state. */
                 button.blur();
@@ -25,8 +31,12 @@ function addCopyButtons(clipboard) {
         var pre = codeBlock.parentNode;
         if (pre.parentNode.classList.contains('highlight')) {
             var highlight = pre.parentNode;
-            console.log(1);
-            highlight.firstChild.insertBefore(button, highlight.firstChild.firstChild);
+            if (highlight.firstChild.nodeName === 'PRE') {
+                // <div class="highligh"><pre ... no space between ensures copy button is added!
+                highlight.firstChild.insertBefore(button, highlight.firstChild.firstChild);
+            } else {
+                // <div class="highligh"> <pre ... space between avoids copy button being added!
+            }
         } else {
             pre.firstChild.insertBefore(button, pre.firstChild.firstChild);
         }

@@ -53,7 +53,7 @@ Community.name.type_("twitter")
       
 Note how we add an underscore to the `type` attribute to tell Molecule that we want to omit returning this value in the result set (since it will have the value "twitter" for all returned entities). We then call it a "tacit" attribute.
 
-Since the `type` attribute is defined as en enumeration Molecule checks the "twitter" value at _compile time_ against the defined enumeration values that we have definied in our schema for the `Community` namespace to ensure that "twitter" is one of the enums. If it is not, our molecule won't compile and we'll get an error showing the available enum values.
+Since the `type` attribute is defined as an enumeration, Molecule checks the "twitter" value at _compile time_ against the defined enumeration values that we have definied in our schema for the `Community` namespace to ensure that "twitter" is one of the enums. If it is not, our molecule won't compile and we'll get an error showing the available enum values.
  
 For a cardinality-many attribute like `category` Datalog applies logical OR with Datalog rules as input:
 
@@ -492,3 +492,10 @@ List(
 ```scala
 Community(belltownId).name("belltown 3").url().category().update
 ```
+
+
+
+
+### Next
+
+[Compare SQL...](/intro/compare/sql/)

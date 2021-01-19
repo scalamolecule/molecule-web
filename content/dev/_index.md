@@ -10,7 +10,7 @@ menu:
 
 Here's some info for developers about how Molecule works in the background.
 
-During project compilation with sbt, the [MoleculePlugin](/setup/setup-sbt) generates boilerplate code for us that we can write molecules with in our programs. 
+During project compilation with sbt, the [MoleculePlugin](https://github.com/scalamolecule/sbt-molecule) generates boilerplate code for us that we can write molecules with in our programs. 
 
 Our Molecule source code is then during compilation of each Scala file transformed through 4 stages into a Datomic query text string or formatted transaction data that Datomic understands. The response from Datomic is then sent back to your program, typed and formatted.
 
@@ -28,7 +28,7 @@ Community.name.`type`("twitter" or "facebook_page")
 
 ## 2. Model AST
 
-The source code of our molecule is pattern matched in [Molecule2Model](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Molecule2Model.scala) element by element in order to create an abstracted internal Molecule `Model` of `Atom`s and `Bond`s with information about Namespace, Atribute name, type, cardinality, value, generic options etc. for each attribute/`Atom` and relationship/`Bond`  (just a simple selection shown here):
+The source code of our molecule is pattern matched in [Dsl2Model](https://github.com/scalamolecule/molecule/blob/master/molecule/jvm/src/main/scala/molecule/core/transform/Dsl2Model.scala) element by element in order to create an abstracted internal Molecule `Model` of `Atom`s and `Bond`s with information about Namespace, Atribute name, type, cardinality, value, generic options etc. for each attribute/`Atom` and relationship/`Bond`  (just a simple selection shown here):
 
 ```scala
 Model(List(
@@ -43,7 +43,7 @@ This Molecule `Model` is the generic representation of how we combine the Attrib
 
 
 ## 3. Query AST
-Our Molecule Model is then transformed in [Model2Query](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Model2Query.scala) to a Query AST which is a little more elaborate:
+Our Molecule Model is then transformed in [Model2Query](https://github.com/scalamolecule/molecule/blob/master/molecule/shared/src/main/scala/molecule/core/transform/Model2Query.scala) to a Query AST which is a little more elaborate:
 
 ```scala
 Query(
@@ -68,14 +68,14 @@ Query(
     RuleInvocation("rule2", List(Var("e")))))
 )
 ``` 
-As you see this [Query AST](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/ast/query.scala) is tailored to Datomic.
+As you see this [Query AST](https://github.com/scalamolecule/molecule/blob/master/molecule/shared/src/main/scala/molecule/core/ast/query.scala) is tailored to Datomic.
 
 In principle we should be able to use the same model to create other Query abstractions tailored to other database systems!...
 
 
 ## 4. Datomic query string
 
-Finally Molecule transforms our Query AST in [Query2String](https://github.com/scalamolecule/molecule/blob/master/core/src/main/scala/molecule/transform/Query2String.scala) to a Datomic query text strings:
+Finally Molecule transforms our Query AST in [Query2String](https://github.com/scalamolecule/molecule/blob/master/molecule/shared/src/main/scala/molecule/core/transform/Query2String.scala) to a Datomic query text strings:
 
 <pre>
 [:find  ?b
@@ -98,4 +98,10 @@ List(
 
 All 3 transformations happen at compile time and therefore have no impact on the runtime performance.
 
-See more examples of [transformation of the Seattle molecules](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTransformationTests.scala)...
+See more examples of [transformation of the Seattle molecules...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/seattle/SeattleTransformationTests.scala)
+
+
+
+## Transactional data
+
+Transactional data is created by transforming a molecule Model to a Transaction Model in [Model2Transaction](https://github.com/scalamolecule/molecule/blob/master/molecule/jvm/src/main/scala-2.13%2B/molecule/core/transform/Model2Transaction.scala).

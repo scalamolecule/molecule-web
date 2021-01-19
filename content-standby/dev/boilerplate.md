@@ -12,7 +12,7 @@ menu:
 An attribute definition like
 ```
 @InOut(3, 8)
-trait SeattleDefinition {
+trait SeattleDataModel {
   trait Community {
     val name = oneString.fulltext
   }

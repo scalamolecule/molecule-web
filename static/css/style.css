@@ -109,12 +109,6 @@ pre {
 pre.clean {
     background-color: #f9f9f9;
 }
-pre.chroma.front {
-    border: 0;
-    background: none;
-    font-size: 24px;
-
-}
 code {
     padding: 1px 4px;
     font-size: 14px;
@@ -348,7 +342,7 @@ nav .nav li {
     font-size: 13px;
     list-style: none;
     padding-left: 15px;
-    padding-left: 23px;
+    padding-left: 19px;
     text-indent: -8px;
 }
 .bs-docs-sidenav > ul.level2 a {
@@ -397,8 +391,6 @@ nav .nav li {
   padding-top: 6px;
   color: #999;
   background-color: #222;
-  xbackground-color: none;
-
   position: sticky;
   top: 0;
   z-index: 1;
@@ -514,8 +506,8 @@ nav .nav li {
     margin: 0;
     width: 13px;
     height: 13px;
-    border: 1px solid #888;
-    background-color: #444
+    border: 0px;
+    background-color: #00ade3ba;
 }
 
 .item{
@@ -526,14 +518,42 @@ nav .nav li {
 
 
 
-
-
 .carousel.vertical .carousel-inner {
-  height: 100%;
-  width: 600px;
+  width: 500px;
+  margin-left: 90px;
   display: inline-block;
-  vertical-align: middle;
-  margin-left: 190px;
+}
+
+pre.chroma.front {
+    border: 0;
+    background: none;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 620px) {
+    .carousel.vertical .carousel-inner {
+      width: 400px;
+      margin-left: 0px;
+    }
+
+    h1, .h1 {
+        font-size: 42px;
+    }
+
+    pre.chroma.front {
+        font-size: 20px;
+    }
+    img#molecule-big-logo {
+        width: 450px;
+        Xbackground-color: green;
+        /*"/img/logo/MoleculeLogo600.png"*/
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    img#molecule-big-logo {
+        width: 300px;
+    }
 }
 
 .carousel.vertical .item {
