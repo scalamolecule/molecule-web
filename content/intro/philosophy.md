@@ -7,7 +7,7 @@ menu:
 ---
 
 
-# Molecules - your new domain data?
+# Molecules - your new <nobr>domain data?</nobr>
 
 >Business processes are fluent and need an equally flexible data counterpart: _molecules_.
 

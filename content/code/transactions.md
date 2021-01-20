@@ -8,6 +8,13 @@ menu:
 
 # Transactions
 
+Molecule has 4 basic transaction operations:
+
+- `save`
+- `insert`
+- `update`
+- `retract`
+
 
 
 ## Save
@@ -20,7 +27,7 @@ Person.name("John").likes("pizza").age(24).save
 
 This will assert 3 facts in Datomic that all share the id of the new entity id `johnId` that is automatically created by Datomic:
 
-```scala
+```
 johnId    :Person/name    "John"
 johnId    :Person/likes   "pizza"
 johnId    :Person/age     24
@@ -149,7 +156,7 @@ Person.name.likes$(None).age.get === List(
 
 ## Insert
 
-Data can be inserted by making a molecule that matches the values of each row.
+An `insert` Molecule can act as a template for insterting one or more rows of data that matches the molecule.
 
 One row of data can be applied directly with matching arguments
 
@@ -275,7 +282,7 @@ Person.name.likes$.age.home insert List(
 
 ### Insert-molecule as template
 
-We can assign an Insert-molecule to a variable in order to re-use it as a temple to insert data with various inputs.
+We can assign an Insert-molecule to a variable in order to re-use it as a template to insert data with various inputs.
 
 ```scala
 // Insert-molecule
@@ -310,7 +317,7 @@ An "update" is a two-step process in Datomic:
 1. Retract old fact
 2. Assert new fact
 
-Datomic doesn't overwrite data. "Retract" is a statement that says "this data is no longer current" which means that it won't turn up when you query for it _as of now_. If you query for it _as of before_ you will see it!
+Datomic doesn't overwrite data. "Retract" is a statement that says "this data is no longer current" which means that it won't turn up when you query the current database. If you query for it _as of before_ you will see it!
 
 Being able to see how data develops over time is a brillant core feature of Datomic. We don't need to administrate cumbersome historical changes manually. Auditing is built-in at the core of Datomic.
 
@@ -372,11 +379,13 @@ All operations generally accepts varargs or `Lists` of the type of the attribute
 ```scala
 // Assert vararg values
 Person(johnId).hobbies.assert("walks", "jogging").update
-Person(johnId).hobbies.get.head === Set("golf", "cars", "walks", "jogging")
+Person(johnId).hobbies.get.head === Set(
+  "golf", "cars", "walks", "jogging")
 
 // Add Set of values
 Person(johnId).hobbies.assert(Set("skating", "biking")).update
-Person(johnId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "skating", "biking")
+Person(johnId).hobbies.get.head === Set(
+  "golf", "cars", "walks", "jogging", "skating", "biking")
 ```
 
 
@@ -387,7 +396,8 @@ Since Cardinality-many attributes have multiple values we need to specify which 
 ```scala
 // Cardinality-many attribute value updated
 Person(johnId).hobbies.replace("skating" -> "surfing").update
-Person(johnId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "surfing", "biking")
+Person(johnId).hobbies.get.head === Set(
+  "golf", "cars", "walks", "jogging", "surfing", "biking")
 ```
 Here we tell that the "skating" value should now be "surfing". The old value is retracted and the new value asserted so that we can go back in time and see what the values were before our update.
 
@@ -397,7 +407,8 @@ Update several values in one go
 Person(johnId).hobbies(
   "golf" -> "badminton",
   "cars" -> "trains").update
-Person(johnId).hobbies.get.head === Set("badminton", "trains", "walks", "jogging", "surfing", "biking")
+Person(johnId).hobbies.get.head === Set(
+  "badminton", "trains", "walks", "jogging", "surfing", "biking")
 ```
 
 
@@ -407,10 +418,12 @@ We can retract one or more values from the set of values
 
 ```scala
 Person(johnId).hobbies.retract("badminton").update
-Person(johnId).hobbies.get.head === Set("trains", "walks", "jogging", "surfing", "biking")
+Person(johnId).hobbies.get.head === Set(
+  "trains", "walks", "jogging", "surfing", "biking")
 
 Person(johnId).hobbies.retract(List("walks", "surfing")).update
-Person(johnId).hobbies.get.head === Set("trains", "jogging", "biking")
+Person(johnId).hobbies.get.head === Set(
+  "trains", "jogging", "biking")
 ```
 The retracted facts can still be tracked in the history of the database.
 
@@ -540,17 +553,16 @@ johnId.retract
 ```
 All attributes having the entity id `johnId` are retracted.
 
-### Add Tx meta data to retraction on entity id
-
-Associate transaction meta data to a retraction on an entity id
+Add transaction meta-data to a retraction of an entity id:
 ```scala
 johnId.Tx(MyUseCase.name("Terminate membership")).retract
 ```
 
-We can then afterwards use the tx meta data to get information of retracted data:
+We can then afterwards use the tx meta-data to get information about the retraction:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false)
+  .Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
   (johnId, "John", t3, false) // John terminated his membership at transaction t3 and was retracted
 )
 ```
@@ -558,38 +570,30 @@ Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistor
 
 ### Retract multiple entities
 
-Alternatively we can use the `retract` method (available via `import molecule.imports._`)
+Alternatively we can apply one or more entity ids to be retracted to a `retract` method:
 
 ```scala
 retract(johnId)
-```
-This `retract` method can also retract multiple entities
-
-```scala
-val eids: List[Long] = // some entity ids 
-
-// Retract all supplied entity ids
-retract(eids)
+retract(johnId, lisaId) // etc
 ```
 
-### Add Tx meta data to retraction of multiple entity ids
-
-.. and even associate transaction meta data to the retraction
+Optionally add Tx meta-data to describe the retraction:
 ```scala
-// Retract multiple entity ids and some tx meta data about the transaction
+// Retract multiple entity ids and some tx meta-data about the transaction
 retract(eids, MyUseCase.name("Terminate membership"))
 ```
-Again, we can then afterwards use the tx meta data to get information of retracted data:
+Again, we can then afterwards use the tx meta-data to get information about the retraction:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false)
+  .Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
   (johnId, "John", t3, false), // John terminated his membership at transaction t3 and was retracted
   (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
 )
 ```
 
 
-### Retract component entity
+### Retract a component entity
 
 If a ref attribute is defined with the option `isComponent` then it "owns" its related entities - or "subcomponents", as when an `Order` own its `LineItem`s.
 
@@ -689,7 +693,7 @@ The 4th column of the quintuplets is the entity id of the transaction where the 
 The time of the transaction `date1` (`java.util.Date`) is asserted with the transaction entity id `tx2` as its entity id. And since that timestamp fact is also part of the same transaction `tx2` is also the transaction value (4th column) for that fact.
 
 
-### Transactions return TxReport
+### Transactions return a TxReport
 
 All transactional operations on molecules return a `TxReport` with information about the transaction like what data was transacted and what entities were created and a timestamp of the transaction:
 
@@ -724,7 +728,7 @@ Molecule offers some generic attributes that makes it easy to access transaction
 
 _"In what transaction was Johns name asserted?"_
 ```scala
-Person(johnId).name_.tx.get.head === tx2  // 13194139534340L
+Person(johnId).name_.tx.get.head === tx2
 ```
 The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity `johnId` (John) was asserted in transaction `tx2` since the value `tx2` was saved as the `name` quintuplet's 4th value.
 
@@ -733,17 +737,17 @@ The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in 
 Alternatively we can get a transaction value `t`
 
 ```scala
-Person(johnId).name_.t.get.head === t2  // 1028L
+Person(johnId).name_.t.get.head === t2
 ```
 
 
 ### Transaction time `txInstant`
 
-With the transaction entity available we can then also get to the value of the timestamp fact of that transaction entity. For convenience Molecule has a generic `txIntstant` to lookup the timestamp which is a `date.util.Date`:
+With the transaction entity available we can then also get to the value of the timestamp fact of that transaction entity. For convenience Molecule has a generic `txIntstant` attribute to lookup the timestamp which is a `date.util.Date`:
 
 _"When was Johns name asserted?"_
 ```scala
-Person(johnId).name_.txInstant.get.head === date1  // Tue Apr 26 18:35:41
+Person(johnId).name_.txInstant.get.head === date1
 ```
 
 ### Transaction data per attribute
@@ -758,7 +762,9 @@ _"Was John's name and age asserted in the same transaction?"_
 val tx3 = Person(johnId).age(25).update.tx
 
 // Retrieve transactions of multiple attributes
-Person(johnId).name_.tx.age_.tx.get.head === (tx2, tx3)
+Person(johnId)
+  .name_.tx
+  .age_.tx.get.head === (tx2, tx3)
 
 // No, name and age were asserted in different transactions
 tx2 !== tx3
@@ -767,7 +773,9 @@ Likewise we could ask
 
 _"At what time was John's name and age asserted"_
 ```scala
-Person(johnId).name_.txInstant.age_.txInstant.get.head === (date1, date2)
+Person(johnId)
+  .name_.txInstant
+  .age_.txInstant.get.head === (date1, date2)
 
 // John's name was asserted before his age
 date1.before(date2) === true
@@ -915,7 +923,7 @@ Updating 2 to 20 for instance creates two Datoms, one retracting the old value 2
 
 
 
-## Tx meta data
+## Tx meta-data
 
 A timestamp fact is transacted as part of all transactions in Datomic. Since a transaction is an entity itself, we can even add more facts that simply share the entity id of the transaction:
 
@@ -923,7 +931,7 @@ A timestamp fact is transacted as part of all transactions in Datomic. Since a t
 
 ### Save
 
-Depending on our domain we can tailor any tx meta data that we find valuable to associate with some transactions. We could for instance be interested in "who did it" and "in what use case" it happened and create some generic attributes `user` and `uc` in an `Audit` namespace:
+Depending on our domain we can tailor any tx meta-data that we find valuable to associate with a transaction. We could for instance be interested in "who did it" and "in what use case" it happened and create some generic attributes `user` and `uc` in an `Audit` namespace:
 
 ```scala
 trait Audit {
@@ -936,17 +944,15 @@ Then we can assert values of those attributes together with a `save` operation f
 ```scala
 Audit.user("Lisa").uc("survey")
 ```
-
 ..to the generic `Tx` namespace:
-
-
 ```scala
-Person.name("John").likes("pizza").Tx(Audit.user("Lisa").uc("survey")).save
+Person.name("John").likes("pizza")
+  .Tx(Audit.user("Lisa").uc("survey")).save
 ```
 This could read: _"A person John liking pizza was saved by Lisa as part of a survey"_
 
 
-Molecule simply saves the tx meta data attributes `user` and `uc` with the transaction entity id `tx2` as their entity id:
+Molecule simply saves the tx meta-data attributes `user` and `uc` with the transaction entity id `tx2` as their entity id:
 
 ![](/img/page/transactions/2.png)
 
@@ -954,21 +960,25 @@ Molecule simply saves the tx meta data attributes `user` and `uc` with the trans
 
 ### Get
 
-Now we can query the tx meta data in various ways:
+Now we can query the tx meta-data in various ways:
 
 ```scala
 // How was John added?
 // John was added by Lisa as part of a survey
-Person(johnId).name.Tx(Audit.user.uc).get === List(("John", "Lisa", "survey"))
+Person(johnId).name.Tx(Audit.user.uc).get === List(
+  ("John", "Lisa", "survey"))
 
 // When did Lisa survey John?
-Person(johnId).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
+Person(johnId).name_.txInstant
+  .Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
   
 // Who were surveyed?  
-Person.name.Tx(Audit.uc_("survey")).get === List("John")
+Person.name
+  .Tx(Audit.uc_("survey")).get === List("John")
 
 // What did people that Lisa surveyed like? 
-Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
+Person.likes
+  .Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
 
 // etc..
 ```
@@ -976,25 +986,31 @@ Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
 
 ### Insert
 
-If we insert multiple entities in a transaction, the transaction data is only asserted once:
+If we insert multiple entities in a transaction, the transaction meta-data is only asserted once:
 
 ```scala
-Person.name.likes.Tx(Audit.user_("Lisa").uc_("survey")) insert List(
+Person.name.likes
+  .Tx(Audit.user_("Lisa").uc_("survey")) insert List(
   ("John", "sushi"),
   ("Pete", "burgers"),
   ("Mona", "snacks")
 )
 ```
 
+For inserts, we need to apply the tx meta-data to tacit tx meta attributes (add underscore!).
+
 
 ### Composites
 
-Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta data:
+Similarly we can insert composite molecules composed of sub-molecules/sub-tuples of data - and some tx meta-data:
 
 ```scala
-Article.name.author + 
+m(Article.name.author + 
   Tag.name.weight
-  .Tx(MetaData.submitter_("Brenda Johnson").usecase_("AddArticles")) insert List(
+  .Tx(MetaData
+      .submitter_("Brenda Johnson") // needs underscore for inserts
+      .usecase_("AddArticles")
+  )) insert List(
   // 2 rows of data (Articles) 
   // The 2 sub-tuples of each row matches the 2 sub-molecules
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
@@ -1013,9 +1029,10 @@ m(Article.name.author +
 
 ### Update
 
-Transaction meta data can be attached to updates too so that we can for instance follow who changed data in our system.
+Transaction meta-data can be attached to updates too so that we can for instance follow who changed data in our system.
 ```scala
-Person(johnId).likes("pasta").Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
+Person(johnId).likes("pasta")
+  .Tx(Audit.user("Ben").uc("survey-follow-up")).update
 ```
 Now when we look at a list of Persons and what they like we can see that some likes were from an original survey and one is from a follow-up survey that Ben did:
 
@@ -1030,17 +1047,19 @@ Person.name.likes.Tx(Audit.user.uc).get === List(
 
 ### Retract
 
-It's valuable also to have meta data about retractions so that we can afterwards ask questions like "Who deleted this?".
+It's valuable also to have meta-data about retractions so that we can afterwards ask questions like "Who deleted this?".
 
 ### Single attribute
 
-To retract an attribute value we apply an empty arg list to the attribute and `update`. Here we also apply some tx meta data about who took away the `likes` value for Pete:
+To retract an attribute value we apply an empty arg list to the attribute and `update`. Here we also apply some tx meta-data about who took away the `likes` value for Pete:
 ```scala
-Person(peteId).likes().Tx(Audit.user_("Ben").uc_("survey-follow-up")).update
+Person(peteId).likes()
+  .Tx(Audit.user("Ben").uc("survey-follow-up")).update
 ```
 We can follow the `likes` of Pete through [history](/code/time/#history) and see that Ben retracted his `likes` value in a survey follow-up:
 ```scala
-Person(peteId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
+Person(peteId).likes.t.op
+  .Tx(Audit.user.uc).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // Pete's liking was saved by Lisa as part of survey
   ("burgers", t1, true, "Lisa", "survey"),
   
@@ -1056,16 +1075,17 @@ Person(peteId).name.likes$.get.head === ("Pete", None)
 
 ### Entities
 
-Using the `retract` method we can retract one or more entity ids along with a tx meta data:
+Using the `retract` method we can retract one or more entity ids along with a tx meta-data:
 ```scala
 retract(johnId, Audit.user("Mona").uc("clean-up"))
 ```
-The `Audit.user("Mona").uc("clean-up")` molecule has the tx meta data that we save with the transaction entity.
+The `Audit.user("Mona").uc("clean-up")` molecule has the tx meta-data that we save with the transaction entity.
 
 John has now been both saved, updated and retracted:
 
 ```scala
-Person(johnId).likes.t.op.Tx(Audit.user.uc)).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
+Person(johnId).likes.t.op
+  .Tx(Audit.user.uc).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
   // John's liking was saved by Lisa as part of survey
   ("sushi", t1, true, "Lisa", "survey"), // sushi asserted
   

@@ -39,9 +39,8 @@ object myTxFunctions {
   def myTxFunction2(args...)(implicit conn: Conn): Seq[Seq[Statement]] = {
     ...
   }
-  etc...
+  // etc...
 }
-
 
 @TxFns
 object myTxFunctionsSomewhereElse {...}
@@ -49,12 +48,11 @@ etc...
 ```
 The macro annotation `@TxFns` creates an internal "twin" method at compile time for each Scala tx function that you define. The twin method basically adapts to the way Datomic expects tx functions and automatically gets saved into the Datomic database transparently without any work on your part.
 
-### Enabling the macro annotation
+#### Enabling the macro annotation for Scala 2.12
 
-To use the `@TxFns` macro annotation, you'll need to include the Macro Paradise compiler plugin in your build:
+To use the `@TxFns` macro annotation with Scala 2.12, you'll need to include the Macro Paradise compiler plugin in your build:
 
 ```scala
-
 libraryDependencies ++= Seq(
   ...,
   compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.patch)
@@ -144,11 +142,11 @@ Tx functions can't modify the database within the body of the tx method. You cou
 
 ### Invoking tx functions
 
-We call the transaction function inside a `transact` method:
+We call the transaction function inside a `transactFn` method:
 ```scala
-transact(transfer(fromAccount, toAccount, okAmount))
+transactFn(transfer(fromAccount, toAccount, okAmount))
 ```
-`transact` is a macro that needs the tx function invocation itself as its argument in order to be able to analyze the tx function at compile time.
+`transactFn` is a macro that needs the tx function invocation itself as its argument in order to be able to analyze the tx function at compile time.
 
 So our complete example could look like this:
 
@@ -157,8 +155,8 @@ So our complete example could look like this:
 Account(fromAccount).balance.get.head === 100
 Account(toAccount).balance.get.head === 700
 
-// Invoke tx function to do the transfer and pass the produced tx statements to `transact`
-transact(transfer(fromAccount, toAccount, 20))
+// Invoke tx function to do the transfer and pass the produced tx statements to `transactFn`
+transactFn(transfer(fromAccount, toAccount, 20))
 
 // Balances after transfer
 Account(fromAccount).balance.get.head === 80
@@ -169,7 +167,7 @@ Account(toAccount).balance.get.head === 720
 
 ```scala
 // Trying to transfer a too big amount will throw an exception 
-(transact(transfer(fromAccount, toAccount, 500)) must throwA[TxFnException])
+(transactFn(transfer(fromAccount, toAccount, 500)) must throwA[TxFnException])
   .message === s"Got the exception molecule.macros.exception.TxFnException: " +
   s"Can't transfer 500 from account $fromAccount having a balance of only 100."
   
@@ -183,7 +181,7 @@ Tx functions can also be invoked asynchronously:
 
 ```scala
 Await.result(
-  transactAsync(transfer(fromAccount, toAccount, 20)) map { txReport =>
+  transactFnAsync(transfer(fromAccount, toAccount, 20)) map { txReport =>
     // (for brevity we check the current balances synchronously)
     Account(fromAccount).balance.get.head === 80
     Account(toAccount).balance.get.head === 720
@@ -227,10 +225,10 @@ def transferComposed(from: Long, to: Long, amount: Int)(implicit conn: Conn): Se
 
 ### Adding tx meta data to tx function invocations
 
-Tx meta data can be added to a tx function invocation by adding one or more tx meta data molecules with applied tx meta data to the `transact`/`transactAsync` method. Say we want to add meta information about "who did the transfer" then we can add it to the transaction entity like this:
+Tx meta data can be added to a tx function invocation by adding one or more tx meta data molecules with applied tx meta data to the `transactFn`/`transactFnAsync` method. Say we want to add meta information about "who did the transfer" then we can add it to the transaction entity like this:
 ```scala
 // Add tx meta data that John did the transfer
-transact(transfer(fromAccount, toAccount, 20), Person.name("John"))
+transactFn(transfer(fromAccount, toAccount, 20), Person.name("John"))
 
 // We can then query for the transfer that John did
 Account(fromAccount).balance.Tx(Person.name_("John")).get.head === 80
@@ -241,7 +239,7 @@ Note how the tx meta data applies to both accounts since they were both modified
 We can add arbitrary and possibly unrelated tx meta data to a tx function invocation by applying two or more tx meta data molecules:
 ```scala
 // Add tx meta data that John did the transfer and that it is a scheduled transfer
-transact(
+transactFn(
   transfer(fromAccount, toAccount, 20), 
   Person.name("John"), 
   UseCase.name("Scheduled transfer"))
@@ -258,11 +256,11 @@ Account(toAccount).balance
 
 ### Inspecting tx function invocations
 
-If you want to see the `Statement`s produced by a tx function you can invoke it within `inspectTransact` without affecting the live database:
+If you want to see the `Statement`s produced by a tx function you can invoke it within `inspectTransactFn` without affecting the live database:
 
 ```scala
 // Print inspect info for tx function invocation
-inspectTransact(transfer(fromAccount, toAccount, 20))
+inspectTransactFn(transfer(fromAccount, toAccount, 20))
 
 // Prints produced tx statements to output:
 /*

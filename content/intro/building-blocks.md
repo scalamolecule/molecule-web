@@ -49,9 +49,9 @@ A Datom describes a _fact_, for instance that "John likes pizza". A timestamp ad
 
 So, a Datom consists of 5 components of information:
 ```
-johnId    likes    pizza      12:35:54      true
-   |        |        |           |            |
-Entity  Attribute  Value  Transaction/time  Added
+johnId    likes    pizza      12:35:54        true
+   |        |        |           |             |
+Entity  Attribute  Value  Transaction/time  Operation
 ```
 A molecule can retrieve this information:
 ```scala
@@ -108,7 +108,7 @@ Person.name.likes.txInstant_(nov5date).get.head === ("John", "pizza")
 
 Datomic even offers various powerful ways to work with the [time](/code/time) dimension of our data:
 
-- `getAsOf` of some point in time 
+- `getAsOf` some point in time 
 - `getSince` some point in time
 - `getHistory` of an entity or attribute
 - `getWith(tx-stmts)` to test a future what-if scenario

@@ -767,7 +767,7 @@ Say, John registers with our website, and we want to categorize John as a custom
 
 A traditional way of modelling this is to make a relationship from Person to Site.cat, from this to Site.cat, from that to Site.cat etc. Not optimal. Having an external join table is not optimal either.
 
-Instead we can simply create an _association_ by simply letting a Datom with a `Site.cat` attribute have a John id!: 
+Instead we can simply create an _association_ by letting a Datom with a `Site.cat` attribute have a John id!: 
 
 {{< bootstrap-table "table table-bordered" >}}
 Entity id | Attribue       | Value    
@@ -808,7 +808,7 @@ Instead we want to create associative relationships to `Site`, `Tags`, `Likes` e
 
 ## Composite molecules
 
-We call molecules with one or more associations a _composite_ molecule, or simply a _composite_.
+We call a molecule with one or more associations a _composite_ molecule, or simply a _composite_.
 
 A composite contains two or more _sub-molecules_. Sub-molecules are like normal molecules.
 
@@ -829,18 +829,26 @@ m(Person.name.likes.age + Site.cat.status).get === List(
 ```
 And we can add even more sub-molecules...
 ```scala
-m(Person.name.likes.age + Site.cat.status + Loc.tags + Emotion.like).get === List(
-  (("John", "pizza", 24), ("customer", "good"), Set("inner city", "hipster"), true)
+m(Person.name.likes.age 
+  + Site.cat.status 
+  + Loc.tags 
+  + Emotion.like).get === List(
+  (
+    ("John", "pizza", 24), 
+    ("customer", "good"), 
+    Set("inner city", "hipster"), 
+    true
+  )
 )
 ```
 
 And expressions too...
 ```scala
-// Which positive elder hipster customers like what?
-m(Person.name.likes.age_.>(35) 
- + Site.cat_("customer")
- + Loc.tags_("hipster") 
- + Emotion.like_(true)).get === List(
+// Which positive adult hipster customers like what?
+m(Person.name.likes.age_.>(20) 
+  + Site.cat_("customer")
+  + Loc.tags_("hipster") 
+  + Emotion.like_(true)).get === List(
   ("John", "pizza")
 )
 ```

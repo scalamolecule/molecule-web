@@ -11,7 +11,7 @@ menu:
 
 Every database language has its strengths and weaknesses and we'll try here to compare existing languages with Molecule and see how they accomplish similar tasks.
 
-Many query languages lets you define data objects matching your domain that are then _consumed_ by the host language (Scala) in combination with DSL tokens. Molecule instead let you use your domain terms directly as the query tokens.
+Many query languages let you define data objects matching your domain that are then _consumed_ by the host language (Scala) in combination with DSL tokens. Molecule instead let you use your domain terms directly as the query tokens.
 
 
 ### Slick

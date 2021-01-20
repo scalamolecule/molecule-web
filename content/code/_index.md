@@ -54,7 +54,7 @@ Person.name.age.likes insert List(
 // Update one or more attributes of a given entity id
 Person(johnId).age(25).likes("thai").update
 
-// Retract (delete) entity
+// Retract ("delete") entity
 johnId.retract
 
 // Retract attribute value

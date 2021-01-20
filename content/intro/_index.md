@@ -12,7 +12,9 @@ menu:
 ## What is it?
 
 
-Molecule is a Scala eco-system to define your domain Data Model and use that as your query language against the powerful [Datomic](http://datomic.com) database. 
+Molecule is a Scala eco-system to define your domain Data Model and use that as your query language.
+
+Molecule uses the powerful [Datomic](http://datomic.com) database. 
 
 
 
@@ -21,7 +23,7 @@ Molecule is a Scala eco-system to define your domain Data Model and use that as 
 - Express queries more intuitively than ever possible - since it's _your_ language.
 - Enjoy having the compiler enforce that your Data Model and data stay in sync.
 - Dynamically compose the exact data structures/molecules that your business logic needs.
-- Avoid traditional over-fetching with rigid bloating domain case classes.
+- Avoid traditional over-fetching with rigid bloating domain classes.
 - Leverage built-in auditing, time-travel etc of the powerful [Datomic](http://datomic.com) database. 
 - Let go of "query construction" and a separate "query language".
 - Save time, increase clarity and have more fun!
