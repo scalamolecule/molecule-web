@@ -4,7 +4,7 @@ weight: 50
 menu:
   main:
     parent: setup
-    identifier: setup-examples
+    identifier: setup-db-setups
 ---
 
 # Database setups
@@ -17,9 +17,9 @@ From a Molecule perspective these can be summarized in a configuration matrix of
 {{< bootstrap-table "table table-bordered" >}}
 |                 | [Free](https://my.datomic.com/downloads/free)       | [Starter/Pro](https://www.datomic.com/get-datomic.html) | [Dev-Tools](https://cognitect.com/dev-tools) |
 | :-                    | :-         | :-          | :-        |
-| **[Peer](https://docs.datomic.com/on-prem/peer-getting-started.html)**              | [mem](/setup/examples/datomic-peer-free-mem/) / [free](http://localhost:1313/setup/examples/datomic-peer-free-free/) | [mem](http://localhost:1313/setup/examples/datomic-peer-pro-mem/) / [dev](http://localhost:1313/setup/examples/datomic-peer-pro-dev/)   |           |
-| **[Peer Server](https://docs.datomic.com/on-prem/peer-server.html)**       |            | [mem](http://localhost:1313/setup/examples/datomic-peerserver-mem/) / [dev](http://localhost:1313/setup/examples/datomic-peerserver-dev/)   |           |
-| **[Dev Local (Cloud)](https://docs.datomic.com/cloud/dev-local.html)** |            |             | [dev-local](http://localhost:1313/setup/examples/datomic-devlocal/) |
+| **[Peer](https://docs.datomic.com/on-prem/peer-getting-started.html)**              | [mem](/setup/db-setups/datomic-peer-free-mem/) / [free](http://localhost:1313/setup/db-setups/datomic-peer-free-free/) | [mem](http://localhost:1313/setup/db-setups/datomic-peer-pro-mem/) / [dev](http://localhost:1313/setup/db-setups/datomic-peer-pro-dev/)   |           |
+| **[Peer Server](https://docs.datomic.com/on-prem/peer-server.html)**       |            | [mem](http://localhost:1313/setup/db-setups/datomic-peerserver-mem/) / [dev](http://localhost:1313/setup/db-setups/datomic-peerserver-dev/)   |           |
+| **[Dev Local (Cloud)](https://docs.datomic.com/cloud/dev-local.html)** |            |             | [dev-local](http://localhost:1313/setup/db-setups/datomic-devlocal/) |
 {{< /bootstrap-table >}}
 
 

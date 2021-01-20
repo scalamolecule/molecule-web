@@ -1,0 +1,223 @@
+/*
+    DEMO STYLE
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+*/
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+-----------------------------------------------------
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #7386D5;
+  color: #fff;
+  Xtransition: all 0.3s;
+
+  display: inline-table;
+}
+
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  color: inherit;
+}
+
+#sidebar.active {
+  Xmargin-left: -250px;
+  margin-left: 80px;
+  Xmargin-left: 250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: white;
+}
+*/
+
+/* ---------------------------------------------------
+    sidemenu
+----------------------------------------------------- */
+
+
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 135px;
+    right: -315px;
+    width: 300px;
+    background-color: yellow;
+  }
+
+  #sidebar.active {
+    position: fixed;
+    top: 135px;
+    right: 0px;
+    width: 260px;
+
+    padding: 20px;
+
+    background-color: #f2f2f2;
+
+    border-style: solid;
+    border-width: 3px;
+    border-color: #888;
+    xborder-color: #00ade3;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    border-right-width: 0;
+  }
+
+  #sidebar.active  a {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  #sidebar.active  b {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  #sidebarCollapse {
+    position: fixed;
+    top: 70px;
+    right: 6px;
+
+    background-color: #8787874f;
+    padding: 6px;
+  }
+
+  #sidebarCollapse:focus {
+      /* Avoid an ugly focus outline on click in Chrome,
+         but darken the button for accessibility.
+         See https://stackoverflow.com/a/25298082/1481479 */
+      Xbackground-color: #E6E6E6;
+      outline: 0;
+  }
+}
+
+/*
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+a[aria-expanded="false"]::before,
+a[aria-expanded="true"]::before {
+  content: '\e259';
+  display: block;
+  position: absolute;
+  right: 20px;
+  font-family: 'Glyphicons Halflings';
+  font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+  content: '\e260';
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+a.download {
+  background: #fff;
+  color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}
+*/
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+

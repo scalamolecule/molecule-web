@@ -3,12 +3,12 @@ title: "Datomic Peer Server, dev"
 weight: 31
 menu:
   main:
-    parent: setup-examples
+    parent: setup-db-setups
 ---
 
 # Datomic Peer Server, persisted
 
-Minimal project setup to persist data to disk with [Molecule](http://scalamolecule.org) and a [Datomic Peer Server](https://docs.datomic.com/on-prem/peer-server.html) database (protocol: dev).
+Minimal project setup to persist data to disk with Molecule and a [Datomic Peer Server](https://docs.datomic.com/on-prem/peer-server.html) database (protocol: dev).
 
 ```scala
 import sbt.Keys._

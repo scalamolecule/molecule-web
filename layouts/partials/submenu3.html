@@ -1,9 +1,4 @@
-
-<button type="button" id="sidebarCollapse" class="navbar-toggle collapsed" data-toggle="collapse" style="color:#bbb">
-  <i class="glyphicon glyphicon-align-left"></i>
-</button>
-
-<nav class="bs-docs-sidebar" id="sidebar">
+<nav class="bs-docs-sidebar" id="myScrollspy">
   <ul class="bs-docs-sidenav nav">{{ $currentNode := . }}
     {{ range where .Site.Menus.main "Identifier" .Section }}
       {{ if .HasChildren }}

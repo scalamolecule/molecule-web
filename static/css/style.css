@@ -218,81 +218,128 @@ blockquote {
 
 
 
-/* Top menu */
+/* Top hamburger menu */
 
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus
-{
-    Xbackground-color: #00ADE3;
-    background-color: #222;
-    xmargin-top: 17px;
-    xvertical-align: middle;
-    border-radius: 0px;
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #ccc;
+    padding: 10px 9px;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #00ADE3;
+}
+.navbar-inverse .navbar-nav > li.active > a {
+    background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li.active > a:hover {
+    background-color: transparent;
+    cursor: default;
+}
 
+.navbar-inverse .navbar-nav > li.active > div {
+    margin-top:-7px;
+    background-color: transparent;
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: #00ADE3;
-
-}
-.nav-pills > li > a:hover{
-    background-color: transparent;
-    color: #00ADE3;
 }
 
-.nav>li>a {
-    padding: 2px 9px;
-    margin-top: 17px;
-    vertical-align: middle;
-}
-nav .nav li {
-    Xlist-style: none;
+.container-fluid>.navbar-header {
+    margin-left: 0;
 }
 
-.dropdown:hover > .level1 {
-	display: block;
-    top: 41px;
+/* Open settings */
+@media only screen and (max-width: 767px) {
+    .navbar-toggle {
+        margin-top: 3px;
+    }
+    .navbar-header {
+        margin-left: 0;
+    }
+    .navbar-inverse .navbar-nav > li {
+        margin-left: 6px;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        padding: 7px;
+    }
+    .navbar-inverse .navbar-nav > li.active {
+        margin-left: 3px;
+        border-left-style: solid;
+        border-left-width: 3px;
+        border-left-color: #00ADE3;
+        background-color: black;
+    }
+    .navbar-inverse .navbar-nav > li.active > div {
+        border-bottom-width: 0px;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover  {
+        background-color: black;
+    }
 }
-.dropdown-submenu {
-    position: relative;
-}
-.dropdown-submenu > .dropdown-menu {
-    left: 100%;
-    margin-top: -32px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
-}
-.dropdown:hover>.dropdown-submenu {
-    display: block;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
-.dropdown-submenu>a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
+
+
+
+/* ---------------------------------------------------
+    sidebar collapsing
+----------------------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    position: fixed;
+    top: 35px;
+    right: -315px;
+    width: 300px;
+    background-color: yellow;
+  }
+
+  #sidebar.active {
+    position: fixed;
+    top: 35px;
+    right: 0px;
+    width: 260px;
+
+    padding: 20px;
+
+    background-color: #f2f2f2;
+
     border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
+    border-width: 3px;
+    border-color: #888;
+    xborder-color: #00ade3;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    border-right-width: 0;
+  }
+
+  #sidebar.active  a {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  #sidebar.active  b {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+
+  #sidebarCollapse {
+    z-index: 2;
+    position: fixed;
+    top: 65px;
+    right: 6px;
+
+    background-color: #c2c2c24f;
+    padding: 6px;
+  }
+
+  #sidebarCollapse:focus {
+      outline: 0;
+  }
 }
-.dropdown-submenu:hover>a:after {
-    border-left-color: #00A0D6;
-}
-.dropdown-submenu.pull-left {
-    float: none;
-}
-
-
-
-
 
 
 /* Side menu */
@@ -412,7 +459,7 @@ nav .nav li {
   background-color: #222;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
 
   font-size: 15px;
 }
@@ -560,12 +607,14 @@ pre.chroma.front {
     }
 
     pre.chroma.front {
-        font-size: 20px;
+        font-size: 16px;
     }
     img#molecule-big-logo {
         width: 450px;
-        Xbackground-color: green;
-        /*"/img/logo/MoleculeLogo600.png"*/
+    }
+    a.btn.btn-lg {
+        font-size: 16px;
+        padding: 8px;
     }
 }
 

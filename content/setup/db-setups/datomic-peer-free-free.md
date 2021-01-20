@@ -3,12 +3,12 @@ title: "Datomic Peer free, free"
 weight: 11
 menu:
   main:
-    parent: setup-examples
+    parent: setup-db-setups
 ---
 
 # Datomic Peer (free), persisted
 
-Minimal project setup to persist data to disk with [Molecule](http://scalamolecule.org) and a free [Datomic Peer](https://docs.datomic.com/on-prem/peer-getting-started.html) database (protocol: free).
+Minimal project setup to persist data to disk with Molecule and a free [Datomic Peer](https://docs.datomic.com/on-prem/peer-getting-started.html) database (protocol: free).
 
 ```scala
 import sbt.Keys._

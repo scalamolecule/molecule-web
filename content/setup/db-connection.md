@@ -107,4 +107,4 @@ With a transactor running and a local Datomic database saving to disk, the ident
 
 ### Next
 
-To help you choose a database setup, you can explore the [Example database setups...](/setup/examples)
+To help you choose a database setup, you can explore the [Example database setups...](/setup/db-setups)

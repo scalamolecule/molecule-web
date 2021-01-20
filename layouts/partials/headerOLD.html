@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,600,700,700italic,800,800italic'
+          rel='stylesheet' type='text/css'>
+    <title>{{ .Title }}</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <link href="/css/highlight/styles/solarized_light.css" rel="stylesheet"/>
+    <link href="/css/syntax-custom.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+
+<!--    <link href="/css/copy2.css" rel="stylesheet">-->
+<!--    <link href="/css/copy3.css" rel="stylesheet">-->
+    <!--    <link href="/css/copy.css" rel="stylesheet">-->
+
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-57-precomposed.png">
+
+    {{ $title := .Site.Title }}
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $title }}"/>
+    {{ end }}
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="110">
+<header class="bs-docs-header">
+    <div class="container-fluid" style="max-width:1170px">
+
+        <div class="col-sm-12 column" style="padding-left:0px; padding-right:0px;">
+
+
+
+
+
+            <div class="col-sm-9 column" style="padding-left:0px;height:50px;">
+                <ul class="nav nav-pills" style="margin-top:-6px;">
+                    <li><a href="/" style="padding-left: 6px; padding-right: 13px; vertical-align: top; margin-top: 7px;"><img
+                            src="/img/logo/MoleculeLogo150.png"></a></li>
+                    {{ $section := .Section }}
+                    {{ range .Site.Menus.main }}
+                    {{ $main := .Name }}
+                    <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">
+                        <a href="{{ .URL }}" target="_top">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+
+
+
+            <div class="col-sm-3 column" style="padding-top:13px;padding-right:0px;text-align:right;display:inline-block">
+                <a href="https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html" target="_blank" style="margin-top:-2px;color:#999;padding-right:12px;">docs</a>
+                <a href="/changelog" style="margin-top:-2px;color:#999">v0.24.0</a>
+                <a href="https://github.com/scalamolecule/molecule" target="_blank">
+                    <img src="/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"
+                         style="margin-top:-4px;padding-left:15px;opacity:0.6;width:42px;">
+                </a>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</header>
+
+<div class="wrapper">

@@ -3,7 +3,7 @@ title: "Datomic dev-local/cloud"
 weight: 40
 menu:
   main:
-    parent: setup-examples
+    parent: setup-db-setups
 ---
 
 # Datomic dev-local/cloud

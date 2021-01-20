@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v0.24 Complete re-design">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="Small corrections">
+      <change afterPath="$PROJECT_DIR$/layouts/partials/header2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/headerOLD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/menuOLD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/partials/submenu3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/sidemenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/sidebar-collapser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/code/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/code/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/relationships.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/code/transaction-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/transaction-functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/code/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/code/transactions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/intro/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/building-blocks.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/building-blocks.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/compare/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/compare/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/philosophy.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/philosophy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-connection.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-connection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-devlocal.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peer-free-free.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peer-free-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peer-pro-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peer-pro-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peerserver-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/examples/datomic-peerserver-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/_default/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/_default/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/submenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/earth2073-demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/earth2073-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/earth2073.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/generator_config.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/specimen_files/grid_12-825-55-15.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/specimen_files/specimen_stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/earth/stylesheet.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +86,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/content-standby/code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/layouts" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -92,11 +98,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/layouts/partials" />
       <recent name="$PROJECT_DIR$/content-standby/code" />
       <recent name="$PROJECT_DIR$/content/intro" />
-      <recent name="$PROJECT_DIR$/content/setup/dbs" />
-      <recent name="$PROJECT_DIR$/content/dev" />
-      <recent name="$PROJECT_DIR$/content-standby/dev" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/content-standby/intro" />
@@ -455,7 +461,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="0.16.0" />
     <MESSAGE value="0.16.1" />
     <MESSAGE value="0.17.0" />
     <MESSAGE value="0.17.1" />
@@ -480,7 +485,8 @@
     <MESSAGE value="code graphics and tables fixed" />
     <MESSAGE value="connect-to-db" />
     <MESSAGE value="v0.24 Complete re-design" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.24 Complete re-design" />
+    <MESSAGE value="Small corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small corrections" />
   </component>
   <component name="masterDetails">
     <states>

@@ -17,12 +17,6 @@
 
     <link href="/css/style.css" rel="stylesheet">
 
-
-<!--    <link href="/css/copy2.css" rel="stylesheet">-->
-<!--    <link href="/css/copy3.css" rel="stylesheet">-->
-    <!--    <link href="/css/copy.css" rel="stylesheet">-->
-
-
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72-precomposed.png">
@@ -33,24 +27,51 @@
     <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $title }}"/>
     {{ end }}
 </head>
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="110">
+<body data-spy="scroll" data-target="#sidebar" data-offset="110">
 <header class="bs-docs-header">
-    <div class="container-fluid" style="max-width:1170px">
-        <div class="col-sm-12 column" style="padding-left:0px; padding-right:0px;">
-            {{ partial "menu.html" . }}
 
-            <div class="col-sm-3 column" style="padding-top:13px;padding-right:0px;text-align:right;display:inline-block">
-                <a href="https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html" target="_blank" style="margin-top:-2px;color:#999;padding-right:12px;">docs</a>
-                <a href="/changelog" style="margin-top:-2px;color:#999">v0.24.0</a>
-                <a href="https://github.com/scalamolecule/molecule" target="_blank">
-                    <img src="/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"
-                         style="margin-top:-4px;padding-left:15px;opacity:0.6;width:42px;">
-                </a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" style="max-width:1170px;padding-top:3px">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" style="padding-left: 6px; padding-right: 13px;"><img src="/img/logo/MoleculeLogo150.png"></a>
             </div>
 
-        </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    {{ $section := .Section }}
+                    {{ range .Site.Menus.main }}
+                        {{ if eq .Identifier $section }}
+                            <li class="active">
+                                <a href="{{ .URL }}" target="_top">{{ .Name }}</a>
+                                <div></div>
+                            </li>
+                        {{ else }}
+                            <li class="dropdown">
+                                <a href="{{ .URL }}" target="_top">{{ .Name }}</a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://javadoc.io/doc/org.scalamolecule/molecule_2.13/latest/index.html" target="_blank" style="">Docs</a></li>
+                    <li><a href="/changelog" style="">v0.24.0</a></li>
+                    <li><a href="https://github.com/scalamolecule/molecule" target="_blank">
+                        <img src="/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"
+                             style="margin-top:-4px;padding-left:15px;opacity:0.6;width:42px;">
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 
-    </div>
 </header>
 
 <div class="wrapper">

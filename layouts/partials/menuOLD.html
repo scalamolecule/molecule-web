@@ -1,0 +1,58 @@
+<div class="col-sm-9 column" style="padding-left:0px;height:50px;">
+
+    <ul class="nav nav-pills" style="margin-top:-6px;">
+        <li><a href="/" style="padding-left: 6px; padding-right: 13px; vertical-align: top; margin-top: 7px;"><img
+                src="/img/logo/MoleculeLogo150.png"></a></li>
+        {{ $section := .Section }}
+        {{ range .Site.Menus.main }}
+            {{ $main := .Name }}
+            <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">
+                <a href="{{ .URL }}" target="_top">{{ .Name }}</a>
+            </li>
+        {{ end }}
+    </ul>
+
+
+
+<!--    <ul class="nav nav-pills" style="margin-top:-6px;">-->
+<!--        <li><a href="/" style="padding-left: 6px; padding-right: 13px; vertical-align: top; margin-top: 6px;"><img-->
+<!--                src="/img/logo/MoleculeLogo150.png"></a></li>-->
+<!--        {{ $section := .Section }}-->
+<!--        {{ range .Site.Menus.main }}-->
+<!--            {{ $main := .Name }}-->
+<!--            <li class="dropdown {{ if eq .Identifier $section }}active{{ end }}">-->
+<!--                <a data-toggle="dropdown" href="{{ .URL }}" target="_top"-->
+<!--                   onclick="javascript:top.location = '{{ .URL }}';return true;">{{ .Name }}</a>-->
+<!--                {{ if .HasChildren }}-->
+<!--                    <ul class="dropdown-menu level1" role="menu" aria-labelledby="dropdownMenu">-->
+<!--                        {{ range .Children }}-->
+<!--                            {{ if ne $main .Name }}-->
+<!--                                {{ if .HasChildren }}-->
+<!--                                    <li class="dropdown-submenu">-->
+<!--                                        <a href="{{ .URL }}">{{ .Name }}</a>-->
+<!--                                        <ul class="dropdown-menu">-->
+<!--                                            {{ range .Children }}-->
+<!--                                            <li><a href="{{.URL}}">{{ .Name }}</a></li>-->
+<!--                                            {{ end }}-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                {{ else }}-->
+<!--                                    <li><a href="{{.URL}}">{{ .Name }}</a></li>-->
+<!--                                {{ end }}-->
+<!--                            {{ end }}-->
+<!--                        {{ end }}-->
+<!--                    </ul>-->
+<!--                {{ end }}-->
+<!--            </li>-->
+<!--        {{ end }}-->
+<!--        <li>-->
+<!--            &lt;!&ndash;<div style="padding-left:14px;padding-top:0px;height:0px;float:right;">-->
+<!--                <a href="https://github.com/scalamolecule/molecule" class="github-button" data-icon="octicon-star">Github</a>-->
+<!--                &lt;!&ndash; Add this when there are more stargazers...-->
+<!--                  data-count-href="/scalamolecule/stargazers"-->
+<!--                  data-count-api="/repos/scalamolecule/molecule#stargazers_count" &ndash;&gt;-->
+<!--            </div>&ndash;&gt;-->
+<!--        </li>-->
+<!--    </ul>-->
+
+</div>

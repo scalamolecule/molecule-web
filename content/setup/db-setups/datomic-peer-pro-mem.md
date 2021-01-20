@@ -3,12 +3,12 @@ title: "Datomic Peer pro, mem"
 weight: 20
 menu:
   main:
-    parent: setup-examples
+    parent: setup-db-setups
 ---
 
 # Datomic Peer (pro), in-mem
 
-Minimal project setup to test using [Molecule](http://scalamolecule.org) with a starter/pro [Datomic Peer](https://docs.datomic.com/on-prem/peer-getting-started.html) in-memory database (protocol: mem).
+Minimal project setup to test using Molecule with a starter/pro [Datomic Peer](https://docs.datomic.com/on-prem/peer-getting-started.html) in-memory database (protocol: mem).
 
 ```scala
 import sbt.Keys._

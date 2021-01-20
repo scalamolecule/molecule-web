@@ -73,7 +73,7 @@ Yes:
 ```
 git clone https://github.com/scalamolecule/molecule-demo.git
 ```
-Open the [demo project](https://github.com/scalamolecule/molecule-demo) in your IDE and run molecule queries with a ready-to-run in-memory database, no configuration. Make your own molecules and test straight away, or add new attributes to use. Or look at other [database setups](/setup/examples).
+Open the [demo project](https://github.com/scalamolecule/molecule-demo) in your IDE and run molecule queries with a ready-to-run in-memory database, no configuration. Make your own molecules and test straight away, or add new attributes to use. Or look at other [database setups](/setup/db-setups).
 
 
 
