@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
 - 2021-01-16 v0.24.0 [Json output dropped](#43)
 - 2021-01-03 v0.23.0 [Targeting Datomic Peer + Peer-Server + Cloud](#42)
 - 2020-10-31 v0.22.8 [Upgrade to ScalaJS 1.3](#41)
@@ -51,6 +52,46 @@ title: "Changelog"
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
 
+
+## [☝︎](#top) Molecule object output and dynamic molecules {#44}
+
+_2021-03-04 v0.25.0_
+
+Return each data row as an object with named properties.
+
+As an alternative to tuple output, object properties make it easy to map molecules to forms and other larger structures that benefit from being able to navigate many attributes/properties by name rather than tuple arity position (_1, _2 etc). Property names and types are inferred by the IDE even for references to related data that can nest up to 7 levels deep.
+
+```scala
+val ben = Person.name_("Ben").age.gender.Address.street.City.name.getObj
+
+ben.age === 23
+ben.gender === "male"
+ben.Address.street === "Broadway"
+ben.Address.City.name === "New York"
+```
+Fetch multiple objects with `getObjList`:
+```scala
+Person.name.age.Address.street.City.name.getObjList.foreach { person =>
+  println(s"${person.name} is ${person.age} yeas old and lives on ${person.Address.street}, ${person.Address.City.name}")
+}
+```
+
+### Dynamic molecules
+An exotic new feature that could help domain modelling is the ability to add a code body to a molecule! A Molecule macro makes data of a single molecule object available to a locally defined body of code. And Scala's Dynamic feature makes the code dynamically available from the outside:
+
+```scala
+val ben = m(Person.name("Ben").age.gender.Address.street.City.name.getObj) { self =>
+  def info = s"${self.name} (${self.age}, ${self.gender}) lives on ${self.Address.street}, ${self.Address.City.name}" 
+}
+
+// We can now both access data and call body code
+ben.age === 23
+ben.gender === "male"
+ben.Address.street === "Broadway"
+ben.Address.City.name === "New York"
+ben.info === "Ben (23, male) lives on Broadway, New York"
+```
+Dynamic molecules offer combined data and functionality as an alternative to populating more rigid external domain case classes.
 
 
 ## [☝︎](#top) Json output dropped {#43}

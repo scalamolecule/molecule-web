@@ -1,0 +1,2 @@
+
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" {{if eq .Level 2}}class="safari_anchor_hack"{{ end }}>{{ .Text | safeHTML }} <a href="#{{ .Anchor | safeURL }}"></a></h{{ .Level }}>

@@ -1,38 +1,9 @@
 @font-face {
     font-family: 'Jura';
-    src:
-         url('/fonts/Jura/static/Jura-Medium.ttf')  format('truetype');
-         /*url('/fonts/Jura/static/Jura-Regular.ttf')  format('truetype');
-        url('/fonts/Jura/Jura-VariableFont_wght.ttf')  format('truetype');
-         url('/fonts/Jura/static/Jura-Regular.ttf')  format('truetype'),
-         url('/fonts/Jura/static/Jura-Medium.ttf')  format('truetype'),
-         url('/fonts/Jura/static/Jura-Light.ttf')  format('truetype'),
-         url('/fonts/Jura/static/Jura-Bold.ttf')  format('truetype'),
-         url('/fonts/Jura/static/Jura-SemiBold.ttf')  format('truetype')
-         ;*/
+    src: url('/fonts/Jura/static/Jura-Medium.ttf')  format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-/*
-@font-face {
-    font-family: 'Robotox';
-    src:
-         url('/fonts/Roboto/Roboto-Light.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Thin.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Medium.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Italic.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Black.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-BlackItalic.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Bold.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-BoldItalic.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-LightItalic.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-MediumItalic.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-Regular.ttf')  format('truetype'),
-         url('/fonts/Roboto/Roboto-ThinItalic.ttf')  format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-*/
 @font-face {
     font-family: 'frau-hex';
     src: url('/fonts/fraulein-hex/frau-hex.ttf')  format('truetype');
@@ -50,20 +21,10 @@ body {
   font-size: 18px;
   font-weight: 300;
   color: #444;
-  xposition: relative;
 }
+
 .wrapper {
     min-height: calc(100vh - 140px - 70px - 60px);
-}
-
-html, body {
-    /* anchor-linking not behind header bar */
-    scroll-padding-top: 100px;
-}
-
-
-h1, h2, h3, .h1, .h2, .h3 {
-  font-weight: 100;
 }
 
 a {
@@ -72,7 +33,6 @@ a {
 a:hover {
     color: #00A0D6;
 }
-
 
 h1, .h1 {
     margin-top: 50px;
@@ -83,7 +43,8 @@ h1, .h1 {
     color: #222;
 }
 h2, .h2 {
-    margin-top: 45px;
+    margin-top: -60px;
+    padding-top: 100px;
     margin-bottom: 24px;
     font-family: "Jura", Helvetica, Arial, sans-serif;
     font-weight: 500;

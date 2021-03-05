@@ -30,7 +30,7 @@ Calling `get` on a molecule returns typed data that matches the molecular data s
 
 An _attribute_ is the core element of Molecule. Molecules are composed of attributes.
 
-We could also call it a "property" a "field" etc. It's an intrinsic value of an atomic piece of information about something.
+We could also call it a "property" a "field" etc. It's an intrinsic atomic piece of information about something.
 
 Attributes have
 
@@ -45,7 +45,7 @@ Attributes have
 
 A _Datom_ brings context to an Attribute.
 
-A Datom describes a _fact_, for instance that "John likes pizza". A timestamp adds information about _when_ John stated that he likes pizza. A fifth piece of information "added" tells if the fact is asserted (true - John likes) or retracted (false - John no longer likes). 
+A Datom describes a _fact_, for instance that "John likes pizza". A timestamp adds information about _when_ John stated that he likes pizza. A fifth piece of information about the operation performed tells if the fact is asserted (true - John likes) or retracted (false - John no longer likes). 
 
 So, a Datom consists of 5 components of information:
 ```
@@ -75,9 +75,9 @@ Entity id  | Attribue      | Value
 **101**    | :Person/age   | 24
 {{< /bootstrap-table >}}
 
-As you see, the concept of an entity is very flexible since it can be defined by endless combination of attributes and values that will give it unique characteristics. 
+As you see, the concept of an entity is very flexible since it can be defined by endless combinations of attributes and values that will give it unique characteristics. 
 
-This is far more powerful than thinking in terms of "defining a Person class"! When we instead let the combinations of atomic attributes define entities of molecular data structures, our semantic capabilities and expressiveness explode exponentially. 
+This is far more powerful than thinking in terms of "defining a Person class"! When we instead let the combinations of atomic attributes define entities of molecular data structures, our semantic capabilities and expressiveness increase exponentially. 
 
 
 ## Namespace

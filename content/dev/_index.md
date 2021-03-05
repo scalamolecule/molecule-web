@@ -10,9 +10,9 @@ menu:
 
 Here's some info for developers about how Molecule works in the background.
 
-During project compilation with sbt, the [MoleculePlugin](https://github.com/scalamolecule/sbt-molecule) generates boilerplate code for us that we can write molecules with in our programs. 
+During _project_ compilation with sbt, the [MoleculePlugin](https://github.com/scalamolecule/sbt-molecule) generates boilerplate code for us so that we can write molecules in our programs. 
 
-Our Molecule source code is then during compilation of each Scala file transformed through 4 stages into a Datomic query text string or formatted transaction data that Datomic understands. The response from Datomic is then sent back to your program, typed and formatted.
+Our Molecule source code is then during _program_ compilation transformed through 4 stages into a Datomic query text string or formatted transaction data that Datomic understands. The response from Datomic is then sent back to your program, typed and formatted.
 
 
 

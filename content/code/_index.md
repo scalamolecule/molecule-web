@@ -26,8 +26,6 @@ implicit val conn = recreateDbFrom(SomeSchema)
 ```
 
 
-
-
 ## "CRUD"
 
 We use the builder pattern to compose molecules of attributes and get back typed tuples of data that matches our molecule by calling `get` on a molecule:
@@ -38,6 +36,27 @@ val namesAndAges    : List[(String, Int)]          = Person.name.age.get
 val namesAgesMembers: List[(String, Int, Boolean)] = Person.name.age.isMember.get
 // etc..
 ```
+Or we can return an object for each row of data 
+```scala
+// Single row/object
+val ben = Person.name_("Ben").age.gender.Address.street.City.name.getObj
+ben.age === 23
+ben.gender === "male"
+ben.Address.street === "Broadway"
+ben.Address.City.name === "New York"
+
+// Multiple rows/objects
+Person.name.age.Address.street.City.name.getObjList.foreach { person =>
+  println(
+    s"${person.name} is ${person.age} yeas old and lives on " +
+            s"${person.Address.street}, ${person.Address.City.name}"
+  )
+  // "Ben is 23 years old and lives on Broadway, New York"
+  // "Lisa is ..." etc...
+}
+```
+
+
 
 In Datomic, data is not deleted but instead "retracted" since all changes are accumulated. That makes it possible to go back and see _what data_ was retracted and is no longer current. That's why we say "CRUD" instead of CRUD.
 
