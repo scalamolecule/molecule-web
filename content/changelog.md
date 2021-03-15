@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-03-14 v0.25.1 [Time getters for object output](#45)
 - 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
 - 2021-01-16 v0.24.0 [Json output dropped](#43)
 - 2021-01-03 v0.23.0 [Targeting Datomic Peer + Peer-Server + Cloud](#42)
@@ -51,6 +52,46 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+
+## [☝︎](#top) Time getters for object output {#45}
+
+_2021-03-14 v0.25.1_
+
+All time getters implemented for object output.
+
+Each getter comes in a synchronous and asynchronous version:
+
+```
+// All objects materialized in List
+getObjListAsOf(…)       getAsyncObjListAsOf(…)
+getObjListSince(…)      getAsyncObjListSince(…)
+getObjListWith(…)       getAsyncObjListWith(…)
+getObjListHistory(…)    getAsyncObjListHistory(…) // History only for List of objects
+
+// All objects materialized in fast Array
+getObjArrayAsOf(…)      getAsyncObjArrayAsOf(…)
+getObjArraySince(…)     getAsyncObjArraySince(…)
+getObjArrayWith(…)      getAsyncObjArrayWith(…)
+
+// Object creation/casting deferred for each `next` call
+getObjIterableAsOf(…)   getAsyncObjIterableAsOf(…)
+getObjIterableSince(…)  getAsyncObjIterableSince(…)
+getObjIterableWith(…)   getAsyncObjIterableWith(…)
+```
+
+Each getter can have a `t` (time t or transaction id), `java.util.Date` or `TxReport` applied plus optionally a limit on output. A List of objects as of some point in time can for instance be retrieved with the following getter signatures:
+
+```
+getObjListAsOf(t: Long) // t or tx
+getObjListAsOf(tx: TxReport)
+getObjListAsOf(date: java.util.Date)
+
+getObjListAsOf(t: Long, limit: Int)
+getObjListAsOf(tx: TxReport, limit: Int)
+getObjListAsOf(date: java.util.Date, limit: Int)
+```
 
 
 ## [☝︎](#top) Molecule object output and dynamic molecules {#44}

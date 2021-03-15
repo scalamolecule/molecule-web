@@ -77,7 +77,7 @@ getAsOf(…)    getAsyncAsOf(…)
 getSince(…)   getAsyncSince(…)
 getWith(…)    getAsyncWith(…)
 ```
-Again, we can use more specialized collection types:
+And for optimization purposes we can use more specialized collection types:
 
 ```
 getArrayAsOf(…)       getAsyncArrayAsOf(…)
@@ -95,7 +95,25 @@ getRawWith(…)         getAsyncRawWith(…)
 
 `getHistory` is only implemented to return a List (the default) since the result order is not guaranteed and we therefore always need a fully realized sortable collection.
 
+#### Object getters
 
+```
+// All objects materialized in List
+getObjListAsOf(…)       getAsyncObjListAsOf(…)
+getObjListSince(…)      getAsyncObjListSince(…)
+getObjListWith(…)       getAsyncObjListWith(…)
+getObjListHistory(…)    getAsyncObjListHistory(…) // History only for List of objects
+
+// All objects materialized in fast Array
+getObjArrayAsOf(…)      getAsyncObjArrayAsOf(…)
+getObjArraySince(…)     getAsyncObjArraySince(…)
+getObjArrayWith(…)      getAsyncObjArrayWith(…)
+
+// Object creation/casting deferred for each `next` call on Iterator
+getObjIterableAsOf(…)   getAsyncObjIterableAsOf(…)
+getObjIterableSince(…)  getAsyncObjIterableSince(…)
+getObjIterableWith(…)   getAsyncObjIterableWith(…)
+```
 
 
 ## Automatic Query optimization

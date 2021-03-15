@@ -13,22 +13,24 @@ On this page we'll quickly get an intuitive overview of how Molecule queries and
 Then the following pages in the side menu will explain in more detail.
 
 
-### Db connection
+## Db connection
 
-We'll presume that we have [set up](/setup) an implicit connection to an in-memory Peer database:
+An implicit connection to a database is needed to create and execute molecule queries.
+
+Here's an example of importing the molecule api and setting up the Datomic Peer in-memory database:
 
 ```scala
-import app.dsl.someDomain._
 import molecule.datomic.api._
-import molecule.datomic.peer.facade.Datomic_Peer
+import molecule.datomic.peer.facade.Datomic_Peer._
 
 implicit val conn = recreateDbFrom(SomeSchema)
 ```
+[Setup](/setup) describes the various database setups that can be used with molecules.
 
 
-## "CRUD"
+## Retrieve tuples/objects
 
-We use the builder pattern to compose molecules of attributes and get back typed tuples of data that matches our molecule by calling `get` on a molecule:
+Data is retrieved by building molecules of attributes from a namespace. Calling `get` on a molecule will fetch typed data from the database that match the molecule:
 
 ```scala
 val names           : List[String]                 = Person.name.get
@@ -36,7 +38,8 @@ val namesAndAges    : List[(String, Int)]          = Person.name.age.get
 val namesAgesMembers: List[(String, Int, Boolean)] = Person.name.age.isMember.get
 // etc..
 ```
-Or we can return an object for each row of data 
+
+Data can also be returned as an object for each row of data that has properties matching the attributes of the molecule:
 ```scala
 // Single row/object
 val ben = Person.name_("Ben").age.gender.Address.street.City.name.getObj
@@ -55,6 +58,32 @@ Person.name.age.Address.street.City.name.getObjList.foreach { person =>
   // "Lisa is ..." etc...
 }
 ```
+
+
+
+
+
+## Sync/Async APIs
+
+All commands in Molecule can be synchronous or asynchronous:
+
+```scala
+// sync 
+val list: List[(String, Int)] = Person.name.age.get 
+
+// async
+val listAsync: Future[List[(String, Int)]] = Person.name.age.getAsync
+
+saveAsync
+insertAsync
+updateAsync
+retractAsync
+```
+
+
+
+
+## "CRUD"
 
 
 
@@ -79,27 +108,6 @@ johnId.retract
 // Retract attribute value
 Person(johnId).likes().update
 ```
-
-
-
-
-## Sync/Async APIs
-
-All commands in Molecule can be synchronous or asynchronous:
-
-```scala
-// sync 
-val list: List[(String, Int)] = Person.name.age.get 
-
-// async
-val listAsync: Future[List[(String, Int)]] = Person.name.age.getAsync
-
-saveAsync
-insertAsync
-updateAsync
-retractAsync
-```
-
 
 
 
