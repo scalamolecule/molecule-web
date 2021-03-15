@@ -1,11 +1,19 @@
 {{ partial "header.html" . }}
 
-<div class="col-sm-10 column" style="padding-left:8px;">
-	Sorry, you might have come to a page no longer in use. Please choose a new page from the menu above.
-</div>
+<div class="container-fluid" style="max-width:1170px">
 
-<div class="col-sm-2 column" style="padding-left:20px;padding-top:22px;padding-right: 0px;">
-  {{ partial "submenu.html" . }}
-</div>
+
+    <div class="col-sm-10" style="padding-left:8px;padding-top:40px">
+        <p>
+        Sorry, you might have come to a page that is no longer in use.
+        </p>
+        <p>
+        Please choose another page from the menu above.
+        </p>
+    </div>
+
+    <div class="col-sm-2"></div>
+
+</div> <!--container-->
 
 {{ partial "footer.html" . }}

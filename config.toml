@@ -1,5 +1,5 @@
 title = "Molecule"
-baseURL = "http://scalamolecule.org/"
+baseURL = "http://www.scalamolecule.org/"
 languageCode = "en-us"
 metaDataFormat = "yaml"
 pygmentsUseClasses=true
