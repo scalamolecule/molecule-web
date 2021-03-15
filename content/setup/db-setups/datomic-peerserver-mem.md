@@ -20,7 +20,7 @@ lazy val demo = project.in(file("."))
 lazy val app = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
-    scalaVersion := "2.13.4",
+    scalaVersion := "2.13.5",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
       "clojars" at "https://clojars.org/repo",
@@ -41,8 +41,8 @@ lazy val app = project.in(file("app"))
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.24.0",
-      "com.datomic" % "datomic-pro" % "1.0.6222"
+      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
 
     // Important to exclude fee version when using pro to avoid clashes with pro version

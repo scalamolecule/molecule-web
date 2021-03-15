@@ -20,14 +20,14 @@ lazy val demo = project.in(file("."))
 lazy val app = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
-    scalaVersion := "2.13.4",
+    scalaVersion := "2.13.5",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
       "clojars" at "https://clojars.org/repo"
     ),
   
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.24.0",
+      "org.scalamolecule" %% "molecule" % "0.25.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 

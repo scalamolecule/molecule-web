@@ -18,7 +18,7 @@ The sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-molecule) generate
 Add the latest version of the plugin in `project/buildinfo.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.12.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.13.0")
 ```
 And add it to the project `build.sbt` file
 
@@ -51,7 +51,7 @@ Each of the 3 libraries resolve differently:
       "clojars" at "https://clojars.org/repo" 
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.0",
+      "org.scalamolecule" %% "molecule" % "0.25.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     //...
@@ -79,8 +79,8 @@ And then we can resolve the dependencies by giving sbt access to our credentials
     ),
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.24.0",
-      "com.datomic" % "datomic-pro" % "1.0.6222"
+      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
     //...
   )
@@ -99,8 +99,8 @@ The [dev-local library](https://docs.datomic.com/cloud/dev-local.html) is part o
     ),
   
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.24.0",
-      "com.datomic" % "dev-local" % "0.9.229"
+      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "com.datomic" % "dev-local" % "0.9.232"
     ),
     //...
   )
@@ -211,7 +211,7 @@ Then the jars are not created and the generated source code available in the `sr
 
 ### moleculeAllIndexed
 
-This is a Datomic-specific sbt settings key that tells wether schema attributes should all be indexed:
+This is a Datomic-specific sbt settings key that tells whether schema attributes should all be indexed:
 ```scala
 moleculeAllIndexed := true // (default)
 ```
@@ -237,14 +237,14 @@ lazy val demo = project.in(file("."))
 lazy val app = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
-    scalaVersion := "2.13.4",
+    scalaVersion := "2.13.5",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
       "clojars" at "https://clojars.org/repo",
     ),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.24.0",
+      "org.scalamolecule" %% "molecule" % "0.25.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 
