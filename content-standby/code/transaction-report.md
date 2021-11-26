@@ -3,7 +3,7 @@ title: "Transaction Report"
 weight: 85
 menu:
   main:
-    parent: code
+    parent: manual
     identifier: code-transaction-report
 ---
 
@@ -66,7 +66,7 @@ Molecule offers some generic attributes that makes it easy to access transaction
 
 _"In what transaction was Freds name asserted?"_
 ```scala
-Person(e5).name_.tx.get.head === tx4  // 13194139534340L
+Person(e5).name_.tx.get.map(_.head ==> tx4  // 13194139534340L
 ```
 The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity `e5` (Fred) was asserted in transaction `tx4` since the value `tx4` was saved as the `name` quintuplet's 4th value.
 
@@ -75,7 +75,7 @@ The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in 
 Alternatively we can get a transaction value `t`
 
 ```scala
-Person(e5).name_.t.get.head === t4  // 1028L
+Person(e5).name_.t.get.map(_.head ==> t4  // 1028L
 ```
 
 
@@ -85,7 +85,7 @@ With the transaction entity available we can then also get to the value of the t
 
 _"When was Freds name asserted?"_
 ```scala
-Person(e5).name_.txInstant.get.head === date1  // Tue Apr 26 18:35:41
+Person(e5).name_.txInstant.get.map(_.head ==> date1  // Tue Apr 26 18:35:41
 ```
 
 ### Transaction data per attribute
@@ -100,7 +100,7 @@ _"Was Fred's name and age asserted in the same transaction?"_
 val tx5 = Person(e5).age(38).update.tx
 
 // Retrieve transactions of multiple attributes
-Person(e5).name_.tx.age_.tx.get.head === (tx4, tx5)
+Person(e5).name_.tx.age_.tx.get.map(_.head ==> (tx4, tx5)
 
 // No, name and age were asserted in different transactions
 tx4 !== tx5
@@ -109,7 +109,7 @@ Likewise we could ask
 
 _"At what time was Fred's name and age asserted"_
 ```scala
-Person(e5).name_.txInstant.age_.txInstant.get.head === (date1, date2)
+Person(e5).name_.txInstant.age_.txInstant.get.map(_.head ==> (date1, date2)
 
 // Fred's name was asserted before his age
 date1.before(date2) === true

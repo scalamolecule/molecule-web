@@ -3,7 +3,7 @@ title: "Generic APIs"
 weight: 100
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 # Generic APIs
@@ -27,13 +27,13 @@ johnId    | :Site/cat     | "customer"
 At runtime we can explore what attributes an entity has by calling `touch` directly on a `Long` entity id:
 
 ```scala
-johnId.touch === Map(
+johnId.touch.map(_ ==> Map(
   ":db/id" -> johnId,
   ":Person/name"  -> "John", 
   ":Person/likes" -> "pizza", 
   ":Person/age"   -> 24, 
   ":Site/cat"     -> "customer"
-)
+))
 ```
 
 The `touch` method recursively retrieves referenced entities.
@@ -41,7 +41,7 @@ The `touch` method recursively retrieves referenced entities.
 So if John had references, we migh want to apply a max depth level with `touch(<maxLevel>)`:
 
 ```scala
-johnId.touchMax(2) === Map(
+johnId.touchMax(2).map(_ ==> Map(
   ":db/id" -> johnId,
   ":Person/name" -> "John"
   ":Person/friends" -> List(
@@ -59,18 +59,18 @@ johnId.touchMax(2) === Map(
     ),
     Map(...) // + more friends of John (1 level deep)
   )
-)
+))
 ```
 
 If we want to sort the key-value pairs we can also ask for a List with sorted pairs.
 ```scala
-johnId.touchList === List(
+johnId.touchList.map(_ ==> List(
   ":db/id" -> johnId,
   ":Person/age"   -> 24, 
   ":Person/likes" -> "pizza", 
   ":Person/name"  -> "John", 
   ":Site/cat"     -> "customer"
-)
+))
 ```
 The entity id pair `":db/id" -> johnId` is present for all touch calls and will always be first. The remaining pairs are hereafter sorted by key. Nested Lists likewise. 
      
@@ -79,13 +79,14 @@ The entity id pair `":db/id" -> johnId` is present for all touch calls and will 
 When testing we also have a convenience method `touchListQuoted` that returns output that we can paste into tests so that we can avoid having to quote keys and Strings etc. For our example this would look like this: 
 
 ```scala
-johnId.touchListQuoted ===
-  s"""List(
-     |  ":db/id" -> 101L,
-     |  ":Person/age"   -> 24, 
-     |  ":Person/likes" -> "pizza", 
-     |  ":Person/name"  -> "John", 
-     |  ":Site/cat"     -> "customer")""".stripMargin
+johnId.touchListQuoted.map(_ ==>
+  """List(
+    |  ":db/id" -> 101L,
+    |  ":Person/age"   -> 24, 
+    |  ":Person/likes" -> "pizza", 
+    |  ":Person/name"  -> "John", 
+    |  ":Site/cat"     -> "customer")""".stripMargin
+)
 ```
 
 `touch`, `touchList` and `touchQuoted` can all have a max-depth applied.
@@ -93,13 +94,13 @@ johnId.touchListQuoted ===
 
 ### Optional attribute values
 
-We can look for an optionally present attribute value. Here we ask the entity id `johnId` if it has a `:Site/cat` attribute value (of type `String`):
+We can look for an optionally present attribute value. Here we ask the entity id `johnId` if it has a `:Site/cat` attribute value:
 ```scala
-johnId[String](":Site/cat") === Some("customer")
-johnId[Int](":Person/age")  === Some(24)
+johnId(":Site/cat").map(_ ==> Some("customer"))
+johnId(":Person/age").map(_ ==> Some(24))
 
 // Likewise, a non-present attribute returns None
-johnId[String](":Site/member") === None 
+johnId(":Site/member").map(_ ==> None) 
 ```
 
 
@@ -153,30 +154,30 @@ Here are some examples:
 
 Get the entity id with `e`:
 ```scala
-Person.e.name.get.head === (benId, "Ben")
+Person.e.name.get.map(_.head ==> (benId, "Ben"))
 ```
 
 Get transaction info with `txInstant`, `t` or `tx`:
 ```scala
 // When was Ben's age updated?
-Person(benId).age.txInstant.get.head === (26, Date("April 4, 2019"))
+Person(benId).age.txInstant.get.map(_.head ==> (26, Date("April 4, 2019")))
 
 // In which transaction entity was Ben's age updated?  
-Person(benId).age.tx.get.head === (26, tx2)
+Person(benId).age.tx.get.map(_.head ==> (26, tx2))
 
 // What's the transaction value t where Ben's age was updated?  
-Person(benId).age.t.get.head === (26, t2)
+Person(benId).age.t.get.map(_.head ==> (26, t2))
 ```
 
 With a history db we can access the point in time `t` in the database and assertion/retraction statuses with `op`
 
 ```scala
 // When was Ben's age updated back in time?
-Person(benId).age.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
+Person(benId).age.t.op.getHistory.map(_.sortBy(r => (r._2, r._3)) ==> List(
   (25, t1, true),  // age 25 asserted in transaction t1
   (25, t2, false), // age 25 retracted in transaction t2
   (26, t2, true)   // age 26 asserted in transaction t2
-)
+))
 ```
 
 ### Fully generic Datom molecules
@@ -185,12 +186,12 @@ Sometimes we will be interested in more generic data where we don't know in adva
 
 ```scala
 // What do we know about the johnId entity?
-Person(johnId).a.v.t.op.getHistory.sortBy(r => (r._2, r._3)) === List(
+Person(johnId).a.v.t.op.getHistory.map(_.sortBy(r => (r._2, r._3)) ==> List(
   (":Person/name", "John", t3, true), 
   (":Person/likes", "pizza", t3, true), 
   (":Person/likes", "pizza", t6, false),
   (":Person/likes", "pasta", t6, true)  
-)
+))
 ```
 
 ### Filtering with expressions
@@ -199,10 +200,10 @@ By applying values to generic attributes we can filter search results:
 
 ```scala
 // What was asserted/retracted in transaction tx3 about what John likes? 
-Person(johnId).likes.tx(tx6).op.getHistory.sortBy(r => (r._2, r._3)) === List(
+Person(johnId).likes.tx(tx6).op.getHistory.map(_.sortBy(r => (r._2, r._3)) ==> List(
   ("pizza", t6, false), // John no longer likes pizza
   ("pasta", t6, true)   // John now likes pasta
-)
+))
 ```
 
 
@@ -237,23 +238,23 @@ The EAVT index provides efficient access to everything about a given entity. Con
 
 ```scala
 // Create EAVT Index molecule with 1 entity id argument
-EAVT(e1).e.a.v.t.get === List(
+EAVT(e1).e.a.v.t.get.map(_ ==> List(
   (e1, ":Person/name", "Ben", t1),
   (e1, ":Person/age", 25, t2),
   (e1, ":Golf/score", 5.7, t2)
-)
+))
 
 // Maybe we are only interested in the attribute/value pairs:
-EAVT(e1).a.v.get === List(
+EAVT(e1).a.v.get.map(_ ==> List(
   (":Person/name", "Ben"),
   (":Person/age", 25),
   (":Golf/score", 5.7)
-)
+))
 
 // Two arguments to narrow the search
-EAVT(e1, ":Person/age").a.v.get === List(
+EAVT(e1, ":Person/age").a.v.get.map(_ ==> List(
   (":Person/age", 25)
-)
+))
 ``` 
 
 
@@ -263,38 +264,38 @@ The AVET index provides efficient access to particular combinations of attribute
 
 ```scala
 // Create AVET Index molecule with 1 entity id argument
-AVET(":Person/age").v.e.t.get === List(
+AVET(":Person/age").v.e.t.get.map(_ ==> List(
   (25, e1, t2),
   (23, e2, t5),
   (14, e3, t7)
-)
+))
 
 // Narrow search with multiple arguments
-AVET(":Person/age", 25).e.t.get === List( (e1, t2) )
-AVET(":Person/age", 25, e1).e.v.get === List( (e1, t2) )
-AVET(":Person/age", 25, e1, t2).e.v.get === List( (e1, t2) )
+AVET(":Person/age", 25).e.t.get.map(_ ==> List( (e1, t2) ))
+AVET(":Person/age", 25, e1).e.v.get.map(_ ==> List( (e1, t2) ))
+AVET(":Person/age", 25, e1, t2).e.v.get.map(_ ==> List( (e1, t2) ))
 ```
 
 The AVET Index can be filtered by a range of values between `from` (inclusive) and `until` (exclusive) for an attribute:
 
 ```scala
-AVET.range(":Person/age", Some(14), Some(20)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(20)).v.e.t.get.map(_ ==> List(
   (14, e4, t7) // 14 is included in value range
                // 23 not included in value range
                // 25 outside value range
-)
+))
 
 // If `from` is None, the range starts from the beginning
-AVET.range(":Person/age", None, Some(40)).v.e.t.get === List(
+AVET.range(":Person/age", None, Some(40)).v.e.t.get.map(_ ==> List(
   (14, e3, t7),
   (23, e2, t5)
-)
+))
 
 // If `until` is None, the range goes to the end
-AVET.range(":Person/age", Some(20), None).v.e.t.get === List(
+AVET.range(":Person/age", Some(20), None).v.e.t.get.map(_ ==> List(
   (23, e2, t5),
   (25, e1, t2)
-)
+))
 ```
 
 ### AEVT
@@ -303,15 +304,15 @@ The AEVT index provides efficient access to all values for a given attribute, co
 
 ```scala
 // Create AEVT Index molecule with 1 entity id argument
-AEVT(":Person/name").e.v.t.get === List(
+AEVT(":Person/name").e.v.t.get.map(_ ==> List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
-)
+))
 
 // Narrow search with multiple arguments
-AEVT(":Person/name", e1).e.v.get === List( (e1, "Ben") )
-AEVT(":Person/name", e1, "Ben").e.v.get === List( (e1, "Ben") )
-AEVT(":Person/name", e1, "Ben", t2).e.v.get === List( (e1, "Ben") )
+AEVT(":Person/name", e1).e.v.get.map(_ ==> List( (e1, "Ben") ))
+AEVT(":Person/name", e1, "Ben").e.v.get.map(_ ==> List( (e1, "Ben") ))
+AEVT(":Person/name", e1, "Ben", t2).e.v.get.map(_ ==> List( (e1, "Ben") ))
 ```
 
 ### VAET
@@ -320,23 +321,23 @@ The VAET index contains all and only datoms whose attribute has a :db/valueType 
 
 ```scala
 // Say we have 3 entities pointing to one entity:
-Release.e.name.Artists.e.name.get === List(
+Release.e.name.Artists.e.name.get.map(_ ==> List(
   (r1, "Abbey Road", a1, "The Beatles"),
   (r2, "Magical Mystery Tour", a1, "The Beatles"),
   (r3, "Let it be", a1, "The Beatles")
-)
+))
 
 // .. then we can get the reverse relationships with the VAET Index:
-VAET(a1).v.a.e.get === List(
+VAET(a1).v.a.e.get.map(_ ==> List(
   (a1, ":Release/artists", r1),
   (a1, ":Release/artists", r2),
   (a1, ":Release/artists", r3)
-)
+))
 
 // Narrow search with multiple arguments
-VAET(a1, ":Release/artist").e.get === List(r1, r2, r3)
-VAET(a1, ":Release/artist", r2).e.get === List(r2)
-VAET(a1, ":Release/artist", r2, t7).e.get === List(r2)
+VAET(a1, ":Release/artist").e.get.map(_ ==> List(r1, r2, r3))
+VAET(a1, ":Release/artist", r2).e.get.map(_ ==> List(r2))
+VAET(a1, ":Release/artist", r2, t7).e.get.map(_ ==> List(r2))
 ```
 
 
@@ -368,7 +369,7 @@ Contrary to Datomic's Log implementation, Molecule returns data as a flat list o
 
 ```scala
 // Data from transaction t1 (inclusive) until t4 (exclusive)
-Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
+Log(Some(t1), Some(t4)).t.e.a.v.op.get.map(_ ==> List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 25, true),
 
@@ -377,14 +378,14 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 
   (t3, e1, ":Person/age", 25, false),
   (t3, e1, ":Person/age", 26, true)
-)
+))
 ``` 
 
 ### From beginning
 
 If the `from` argument is `None` data from the beginning of the log is matched:
 ```scala
-Log(None, Some(t3)).v.e.t.get === List(
+Log(None, Some(t3)).v.e.t.get.map(_ ==> List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 25, true),
 
@@ -392,14 +393,14 @@ Log(None, Some(t3)).v.e.t.get === List(
   (t2, e2, ":Person/age", 23, true)
 
   // t3 not included
-)
+))
 ``` 
 
 ### Until end
 
 If the `until` argument is `None` data from until the end of the log is matched:
 ```scala
-Log(Some(t2), None).v.e.t.get === List(
+Log(Some(t2), None).v.e.t.get.map(_ ==> List(
   // t1 not included
 
   (t2, e2, ":Person/name", "Liz", true),
@@ -407,7 +408,7 @@ Log(Some(t2), None).v.e.t.get === List(
 
   (t3, e1, ":Person/age", 25, false),
   (t3, e1, ":Person/age", 26, true)
-)
+))
 ``` 
 
 
@@ -438,13 +439,13 @@ Query your schema with `Schema` and build on with schema attributes:
 | `ns`                            | Namespace name                                                   | "Person"                                              |
 | `attr`                          | Attribute name                                                   | "name"                                                |
 | `tpe`                           | Attribute Datomic type                                           | See types below                                       |
-| `card`                          | Attribute cardinality                                            | "one"/"many"                                          |
+| `card`                          | Attribute cardinality                                            | "one" / "many"                                        |
 | `doc`                           | Attribute documentation string                                   | `String`                                              |
-| `index`                         | Attribute index status                                           | true / not set                                        |
-| `unique`                        | Attribute uniqueness status                                      | true / not set                                        |
-| `fulltext`                      | Attribute fulltext search status                                 | true / not set                                        |
-| `isComponent`&nbsp;&nbsp;&nbsp; | Attribute isComponent status                                     | true / not set                                        |
-| `noHistory`                     | Attribute noHistory status                                       | true / not set                                        |
+| `index`                         | Attribute index status                                           | true / false                                          |
+| `unique`                        | Attribute uniqueness status                                      | true / false                                          |
+| `fulltext`                      | Attribute fulltext search status                                 | true / false                                          |
+| `isComponent`&nbsp;&nbsp;&nbsp; | Attribute isComponent status                                     | true / false                                          |
+| `noHistory`                     | Attribute noHistory status                                       | true / false                                          |
 | `enum`                          | Attribute enum values                                            | `String`                                              |
 | `t`                             | Attribute definition transaction point in time                   | `Long` / `Int`                                        |
 | `tx`                            | Attribute definition transaction entity id                       | `Long`                                                |
@@ -462,21 +463,21 @@ Here are some examples:
 Here we find various elements of attribute names:
 
 ```scala
-Schema.a.part.ns.nsFull.attr.get === List (
+Schema.a.part.ns.nsFull.attr.get.map(_ ==> List (
   (":sales_Customer/name", "sales", "Customer", "sales_Customer", "name"),
   (":accounting_Invoice/invoiceLine", "accounting", "Invoice", "accounting_Invoice", "invoiceLine"),
   // etc..
-)
+))
 ```
 
 ### Types and cardinality
 
 Datomic type and cardinality of attributes
 ```scala
-Schema.a.tpe.card.get === List (
+Schema.a.tpe.card.get.map(_ ==> List (
   (":sales_Customer/name", "string", "one"),
   (":accounting_Invoice/invoiceLine", "ref", "many")
-)
+))
 ```
 Scala `Int` and `Long` are both represented as Datomic type `long`:
 
@@ -486,7 +487,7 @@ Scala `Int` and `Long` are both represented as Datomic type `long`:
 | _string_                        | `String`         |
 | _long_                          | `Int`            |
 | _long_                          | `Long`           |
-| _float_                         | `Float`          |
+| _float_                         | `Double` *       |
 | _double_                        | `Double`         |
 | _bigint_                        | `BigInt`         |
 | _bigdec_                        | `BigDecimal`     |
@@ -497,6 +498,7 @@ Scala `Int` and `Long` are both represented as Datomic type `long`:
 | _ref_                           | `Long`           |
 {{< /bootstrap-table >}}
 
+*) Due to [limitations in JavaScript](http://www.scala-js.org/doc/semantics.html), some `Float` precision is lost on the js platform. Please use `Double` instead to ensure safe double precision.
 
 
 ### Optional docs and attribute options
@@ -511,7 +513,7 @@ Schema.a
       .fulltext$
       .isComponent$
       .noHistory$
-      .get === List(
+      get.map(_ ==> List(
   (":sales_Customer/name",
     true,            // indexed
     "Customer name", // doc
@@ -528,7 +530,7 @@ Schema.a
     Some(true),             // Invoice is a component - owns invoice lines
     None                    // History is preserved (noHistory not set)
     ),
-)
+))
 ```
 
 ### Enum values
@@ -536,19 +538,19 @@ Schema.a
 Enumerated values can be defined in the schema and then retrieved generically with `Schema.enum`:
 ```scala
 // Defined enum values
-Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) === Map(
+Schema.a.enum.get.groupBy(_._1).map(g => g._1 -> g._2) ==> Map(
   ":Person/gender" -> List("female", "male"),
   ":Interests/sports" -> List("golf", "basket", "badminton")
-)
+))
 ```
 
 ### Schema transaction times
 
 "In what transaction/when were the attributes created in the schema?"
 ```scala
-Schema.t.tx.txInstant.get === List(
+Schema.t.tx.txInstant.get.map(_ ==> List(
   (t1, tx1, <Date: 2018-11-07 09:28:10>), // Initial schema transaction
   (t2, tx2, <Date: 2019-01-12 12:43:27>), // Additional schema attribute definitions...
-)
+))
 ``` 
 

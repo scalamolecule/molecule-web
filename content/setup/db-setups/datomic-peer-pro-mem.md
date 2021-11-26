@@ -41,7 +41,7 @@ lazy val app = project.in(file("app"))
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
 
@@ -78,10 +78,10 @@ Having an implicit connection in scope, we can start transacting and querying `s
 
 ```scala
 // Transact
-Person.name("John").age(24).save.eid
+Person.name("John").age(24).save
 
 // Query
-assert(Person.name.age.get.head == ("John", 24))
+Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 

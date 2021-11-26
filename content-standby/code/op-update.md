@@ -3,7 +3,7 @@ title: Update
 weight: 52
 menu:
   main:
-    parent: code
+    parent: manual
     identifier: code-op-update
 ---
 
@@ -56,7 +56,7 @@ This will retract the `age` value 39 of the Fred entity.
 A cardinality many attribute like `hobbies` holds a `Set` of values:
 
 ```scala
-Person(fredId).hobbies.get.head === Set("golf", "cars")
+Person(fredId).hobbies.get.map(_.head ==> Set("golf", "cars")
 ```
 
 
@@ -77,11 +77,11 @@ All operations generally accepts varargs or `Lists` of the type of the attribute
 ```scala
 // Assert vararg values
 Person(fredId).hobbies.assert("walks", "jogging").update
-Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging")
+Person(fredId).hobbies.get.map(_.head ==> Set("golf", "cars", "walks", "jogging")
 
 // Add Set of values
 Person(fredId).hobbies.assert(Set("skating", "biking")).update
-Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "skating", "biking")
+Person(fredId).hobbies.get.map(_.head ==> Set("golf", "cars", "walks", "jogging", "skating", "biking")
 ```
 
 
@@ -92,7 +92,7 @@ Since Cardinality-many attributes have multiple values we need to specify which 
 ```scala
 // Cardinality-many attribute value updated
 Person(fredId).hobbies.replace("skating" -> "surfing").update
-Person(fredId).hobbies.get.head === Set("golf", "cars", "walks", "jogging", "surfing", "biking")
+Person(fredId).hobbies.get.map(_.head ==> Set("golf", "cars", "walks", "jogging", "surfing", "biking")
 ```
 Here we tell that the "skating" value should now be "surfing". The old value is retracted and the new value asserted so that we can go back in time and see what the values were before our update.
 
@@ -102,7 +102,7 @@ Update several values in one go
 Person(fredId).hobbies(
   "golf" -> "badminton",
   "cars" -> "trains").update
-Person(fredId).hobbies.get.head === Set("badminton", "trains", "walks", "jogging", "surfing", "biking")
+Person(fredId).hobbies.get.map(_.head ==> Set("badminton", "trains", "walks", "jogging", "surfing", "biking")
 ```
 
 
@@ -112,10 +112,10 @@ We can retract one or more values from the set of values
 
 ```scala
 Person(fredId).hobbies.retract("badminton").update
-Person(fredId).hobbies.get.head === Set("trains", "walks", "jogging", "surfing", "biking")
+Person(fredId).hobbies.get.map(_.head ==> Set("trains", "walks", "jogging", "surfing", "biking")
 
 Person(fredId).hobbies.retract(List("walks", "surfing")).update
-Person(fredId).hobbies.get.head === Set("trains", "jogging", "biking")
+Person(fredId).hobbies.get.map(_.head ==> Set("trains", "jogging", "biking")
 ```
 The retracted facts can still be tracked in the history of the database.
 
@@ -127,7 +127,7 @@ As with cardinality one attributes we can `apply` completely new values to an at
 
 ```scala
 Person(fredId).hobbies("meditaion").update
-Person(fredId).hobbies.get.head === Set("meditation")
+Person(fredId).hobbies.get.map(_.head ==> Set("meditation")
 ```
 
 #### `apply()`
@@ -136,7 +136,7 @@ Applying nothing (empty parenthesises) retracts all values of an attribute
 
 ```scala
 Person(fredId).hobbies().update
-Person(fredId).hobbies.get === Nil
+Person(fredId).hobbies.get.map(_ ==> Nil
 ```
 
 
@@ -187,7 +187,7 @@ Ns.str.int insertAsync List(
 ) map { tx => // tx report from successful insert transaction
   // 4 inserted entities
   val List(a, b, c, d) = tx.eids
-  Ns.int.get === List(
+  Ns.int.get.map(_ ==> List(
     ("a", 1),
     ("b", 2),
     ("c", 3),
@@ -253,7 +253,7 @@ fredId.Tx(MyUseCase.name("Terminate membership")).retract
 We can then afterwards use the tx meta data to get information of retracted data:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (fredId, "Fred", t3, false) // Fred terminated his membership at transaction t3 and was retracted
 )
 ```
@@ -285,7 +285,7 @@ retract(eids, MyUseCase.name("Terminate membership"))
 Again, we can then afterwards use the tx meta data to get information of retracted data:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (fredId, "Fred", t3, false), // Fred terminated his membership at transaction t3 and was retracted
   (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
 )
@@ -338,12 +338,12 @@ Here, we map over the result of retracting an entity asynchronously (in the inne
 Ns.int.insertAsync(1, 2).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2) = tx.eids
-  Ns.int.get === List(1, 2)
+  Ns.int.get.map(_ ==> List(1, 2)
 
   // Retract first entity asynchronously
   e1.retractAsync.map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(2)
+    Ns.int.get.map(_ ==> List(2)
   }
 }
 ```
@@ -353,12 +353,12 @@ Retract multiple entities asynchronously:
 Ns.int.insertAsync(1, 2, 3).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2, e3) = tx.eids
-  Ns.int.get === List(1, 2, 3)
+  Ns.int.get.map(_ ==> List(1, 2, 3)
 
   // Retract first entity asynchronously
   retractAsync(Seq(e1, e2)).map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(3)
+    Ns.int.get.map(_ ==> List(3)
   }
 }
 ```

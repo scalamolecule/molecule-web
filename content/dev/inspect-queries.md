@@ -26,11 +26,11 @@ a test for instance:
 
 ```scala
 // Molecule to be inspected
-Community.name.Neighborhood.District.region_("ne" or "sw").get(3) === List(
+Community.name.Neighborhood.District.region_("ne" or "sw").get(3).map(_ ==> List(
   "Beach Drive Blog", 
   "KOMO Communities - Green Lake", 
   "Delridge Produce Cooperative"
-)
+))
 
 // Inspect `get`
 Community.name.Neighborhood.District.region_("ne" or "sw").inspectGet
@@ -129,10 +129,10 @@ Using inspectGet can also be a quick way to test if a required data set is corre
 
 ### Experiment with Datalog query
 
-If you want to experiment with changing the raw Datalog query, you can copy an paste the Datalog query from console into the query call on the connection object:
+Inspections can be used to copy some Datalog query and paste it into a raw query on the connection object:
 
 ```scala
-conn.q(
+conn.query(
   // Datalog query:
   """[:find  ?b
     | :in    $ %
@@ -145,7 +145,7 @@ conn.q(
     | [(rule1 ?d) [?d :District/region ":District.region/ne"]]
     | [(rule1 ?d) [?d :District/region ":District.region/sw"]]
     |]""".stripMargin
-) foreach println
+).map(_ foreach println)
 ``` 
 Which will print the raw Datomic rows of data to console:
 
@@ -163,15 +163,17 @@ List(Laurelhurst Community Club)
 
 When examining data spanning multiple transactions, the time filter inspect commands can be very useful. Say we have 3 transactions:
 ```scala
-val tx1 = Ns.str("a").int(1).save
-val e1  = tx1.eid
-val t1  = tx1.t // 1028
+for {
+  tx1 <- Ns.str("a").int(1).save
+  e1  = tx1.eid
+  t1  = tx1.t // 1028
 
-val tx2 = Ns(e1).str("b").update
-val t2  = tx2.t // 1030
+  tx2 <- Ns(e1).str("b").update
+  t2  = tx2.t // 1030
 
-val tx3 = Ns(e1).int(2).update
-val t3  = tx3.t // 1031
+  tx3 <- Ns(e1).int(2).update
+  t3  = tx3.t // 1031
+} yield ()
 ```
 Then we can for instance inspect the history of the `:Ns/str` attribute by calling the `inspectGetHistory` method:
 ```scala
@@ -322,16 +324,18 @@ OUTPUTS:
 The `with` time filter is a bit special since transactional data is supplied to the method. So the `inspectGetWith(..)` method will also display the transactional data:
 
 ```scala
-// Normal `getWith` call with some sample data
-val johnId = Ns.str("John").int(24).save.eid
-Ns.str.int.inspectGetWith(
-  Ns.str("John").int(24).getSaveStmts,
-  Ns.str.int getInsertStmts List(
-    ("Lisa", 20),
-    ("Pete", 55)
-  ),
-  Ns(johnId).int(25).getUpdateStmts
-)
+for {
+  // Normal `getWith` call with some sample data
+  johnId <- Ns.str("John").int(24).save.map(_.eid)
+  _ <- Ns.str.int.inspectGetWith(
+    Ns.str("John").int(24).getSaveStmts,
+    Ns.str.int getInsertStmts List(
+      ("Lisa", 20),
+      ("Pete", 55)
+    ),
+    Ns(johnId).int(25).getUpdateStmts
+  )
+} yield ()
 ```
 Will print Model &#10230; Query &#10230; Datalog Query &#10230; Data + statements for the 3 transaction molecules applied:
 

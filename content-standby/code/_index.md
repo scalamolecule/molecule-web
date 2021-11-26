@@ -3,7 +3,7 @@ title: "Overview"
 weight: 10
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 # Molecule overview
@@ -89,13 +89,13 @@ retractAsync
 ### Card-one attributes
 `name` here is a card-one attribute with a single value
 ```scala
-Person.name.get.head === "Bob"
+Person.name.get.map(_.head ==> "Bob"
 ```
 
 ### Card-many attributes
 `interests` here is a card-many attribute with a Set of distinct values
 ```scala
-Person.name.interests.get === List(
+Person.name.interests.get.map(_ ==> List(
   "Bob", Set("Baseball", "Origami"),
   "Liz", Set("Painting", "Traveling", "Tae Kwondo")
 )
@@ -104,9 +104,11 @@ Person.name.interests.get === List(
 ### Map attributes
 Keyed card-many attributes, or "Map attributes", are useful for i18n for instance
 ```scala
-Phrases.greeting("en" -> "hello", "de" -> "hallo").save
-Phrases.greeting("en" -> "hello").get.head === Map("en" -> "hello")
-Phrases.greeting.k("de").get.head          === Map("de" -> "hallo")
+for{
+  _ <- Phrases.greeting("en" -> "hello", "de" -> "hallo").save
+  _ <- Phrases.greeting("en" -> "hello").get.map(_.head ==> Map("en" -> "hello"))
+  _ <- Phrases.greeting.k("de").get.map(_.head ==> Map("de" -> "hallo"))
+} yield ()
 ```
 
 
@@ -134,7 +136,6 @@ Cardinality one             Cardinality many                 Mapped cardinality 
 oneString    : String       manyString    : Set[String]      mapString    : Map[String, String]
 oneInt       : Int          manyInt       : Set[Int]         mapInt       : Map[String, Int]
 oneLong      : Long         manyLong      : Set[Long]        mapLong      : Map[String, Long]
-oneFloat     : Float        manyFloat     : Set[Float]       mapFloat     : Map[String, Float]
 oneDouble    : Double       manyDouble    : Set[Double]      mapDouble    : Map[String, Double]
 oneBigInt    : BigInt       manyBigInt    : Set[BigInt]      mapBigInt    : Map[String, BigInt]
 oneBigDecimal: BigDecimal   manyBigDecimal: Set[BigDecimal]  mapBigDecimal: Map[String, BigDecimal]
@@ -203,7 +204,7 @@ Person.age(List(42, 43))
 
 AND: card-many attribute `category` has both a "restaurants" and a "shopping" value:
 ```scala
-Community.name.category_("restaurants" and "shopping").get === List("Ballard Gossip Girl")
+Community.name.category_("restaurants" and "shopping").get.map(_ ==> List("Ballard Gossip Girl")
 ```
 
 
@@ -217,8 +218,8 @@ Community.name.category_("restaurants" and "shopping").get === List("Ballard Gos
 ```scala
 val personsOfAge = m(Person.name.age_(?))
 
-personsOfAge(23).get === List("Bob")
-personsOfAge(24).get === List("Liz", "Don")
+personsOfAge(23).get.map(_ ==> List("Bob")
+personsOfAge(24).get.map(_ ==> List("Liz", "Don")
 ```
 
 2 inputs + logic (and relationships)
@@ -237,7 +238,7 @@ typeAndRegion(("twitter" or "facebook_page") and ("sw" or "s" or "se"))
 
 ### Card-one
 ```scala
-Person.name.age.Address.street.get === List(
+Person.name.age.Address.street.get.map(_ ==> List(
   ("Bob", 23, "5th Avenue") 
 ) 
 ```
@@ -245,13 +246,13 @@ Person.name.age.Address.street.get === List(
 ### Card-many
 ```scala
 // flat
-Invoice.no.InvoiceLines.item.get === List(
+Invoice.no.InvoiceLines.item.get.map(_ ==> List(
   (42, "coffee"),
   (42, "sugar")
 )
 
 // nested
-Invoice.no.InvoiceLines.*(InvoiceLine.item).get === List(
+Invoice.no.InvoiceLines.*(InvoiceLine.item).get.map(_ ==> List(
   (42, List("coffee", "sugar"))
 )
 ```
@@ -260,14 +261,14 @@ Invoice.no.InvoiceLines.*(InvoiceLine.item).get === List(
 
 Relationship to the same Namespace type (Person -> Person)
 ```scala
-Person.name.Spouse.name.get.head === ("Bob", "Liz")
+Person.name.Spouse.name.get.map(_.head ==> ("Bob", "Liz")
 ```
 
 ### Directional
 
 Relationships can be defined to go in both directions so that we can traverse a graph uniformly:
 ```scala
-Person.name.Knows.name.Knows.name.get === List(
+Person.name.Knows.name.Knows.name.get.map(_ ==> List(
   ("Bob", "Liz", "Dan"),
   ("Dan", "Liz", "Bob")
   // etc...
@@ -279,7 +280,7 @@ Person.name.Knows.name.Knows.name.get === List(
 Attributes from different Namespaces that are not explicitly related can be _associated_ by sharing the same entity id. We call molecules with associative relationships "Composite molecules":
 ```scala
 m(Person.name("Bob") + Bar.status("regular")).save
-m(Person.name + Bar.status).get.head === ("Bob", "regular")
+m(Person.name + Bar.status).get.map(_.head ==> ("Bob", "regular")
 ```
 
 
@@ -320,16 +321,16 @@ We can then query for specific tx meta data
 ```scala
 // How was Fred added?
 // Fred was added by Lisa as part of a survey
-Person(fredId).name.Tx(Audit.user.uc).get === List(("Fred", "Lisa", "survey"))
+Person(fredId).name.Tx(Audit.user.uc).get.map(_ ==> List(("Fred", "Lisa", "survey"))
 
 // When did Lisa survey Fred?
-Person(fredId).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
+Person(fredId).name_.txInstant.Tx(Audit.user_("Lisa").uc_("survey")).get.map(_.head ==> dateX
   
 // Who were surveyed?  
-Person.name.Tx(Audit.uc_("survey")).get === List("Fred")
+Person.name.Tx(Audit.uc_("survey")).get.map(_ ==> List("Fred")
 
 // What did people that Lisa surveyed like? 
-Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
+Person.likes.Tx(Audit.user_("Lisa").uc_("survey")).get.map(_ ==> List("pizza")
 
 // etc..
 ```
@@ -432,10 +433,10 @@ Retrieve generic data about entities and attributes:
 
 ```scala
 // Entity id of Ben with generic Datom attribute `e`
-Person.e.name.get.head === (benEntityId, "Ben")
+Person.e.name.get.map(_.head ==> (benEntityId, "Ben")
 
 // When was the Ben's age last changed?
-Person.age.txInstant.get.head === (24, <April 4>) // (Date)
+Person.age.txInstant.get.map(_.head ==> (24, <April 4>) // (Date)
 
 // etc...
 ```
@@ -446,7 +447,7 @@ Person.age.txInstant.get.head === (24, <April 4>) // (Date)
 
 Attributes and values of entity e1
 ```scala
-EAVT(e1).a.v.get === List(
+EAVT(e1).a.v.get.map(_ ==> List(
   (":Person/name", "Ben"),
   (":Person/age", 42),
   (":Golf/score", 5.7)
@@ -457,14 +458,14 @@ EAVT(e1).a.v.get === List(
 
 Values, entities and transactions where attribute `:Person/age` is involved
 ```scala
-AVET(":Person/age").e.v.t.get === List(
+AVET(":Person/age").e.v.t.get.map(_ ==> List(
   (42, e1, t2),
   (37, e2, t5)
   (14, e3, t7),
 )
 
 // AVET index filtered with an attribute name and a range of values
-AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
+AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get.map(_ ==> List(
   (14, e4, t7),
   (37, e2, t5)
 )
@@ -474,7 +475,7 @@ AVET.range(":Person/age", Some(14), Some(40)).v.e.t.get === List(
 
 Entities, values and transactions where attribute `:Person/name` is involved
 ```scala
-AEVT(":Person/name").e.v.t.get === List(
+AEVT(":Person/name").e.v.t.get.map(_ ==> List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
 )
@@ -484,7 +485,7 @@ AEVT(":Person/name").e.v.t.get === List(
 
 Get entities pointing to entity a1
 ```scala
-VAET(a1).v.a.e.get === List(
+VAET(a1).v.a.e.get.map(_ ==> List(
   (a1, ":Release/artists", r1),
   (a1, ":Release/artists", r2),
   (a1, ":Release/artists", r3),
@@ -495,7 +496,7 @@ VAET(a1).v.a.e.get === List(
 
 Data from transaction `t1` until `t4` (exclusive)
 ```scala
-Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
+Log(Some(t1), Some(t4)).t.e.a.v.op.get.map(_ ==> List(
   (t1, e1, ":Person/name", "Ben", true),
   (t1, e1, ":Person/age", 41, true),
 
@@ -511,7 +512,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 
 Get information about the Datomic schema which is also a way to access your Data Model programatically.
 ```scala
-Schema.part.ns.attr.fulltext$.doc.get === List(
+Schema.part.ns.attr.fulltext$.doc.get.map(_ ==> List(
   ("ind", "Person", "name", Some(true), "Person name"), // fulltext search enabled
   ("ind", "Person", "age", None, "Person age"),
   ("cat", "Sport", "name", None, "Sport category name")
@@ -521,4 +522,4 @@ Schema.part.ns.attr.fulltext$.doc.get === List(
 
 ### Next
 
-Let's learn about [Attributes...](/code/attributes/)
+Let's learn about [Attributes...](/manual/attributes/)

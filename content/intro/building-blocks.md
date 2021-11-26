@@ -21,7 +21,7 @@ A _molecule_ is a model of a data structure containing one or more _attributes_.
 
 Here we describe a data structure of `name`, `age` of persons and what `street` they live on:
 ```scala
-Person.name.age.Address.street.get.head === ("John", 24, "5th Avenue")
+Person.name.age.Address.street.get.map(_.head ==> ("John", 24, "5th Avenue"))
 ```
 Calling `get` on a molecule returns typed data that matches the molecular data structure.
 
@@ -56,9 +56,10 @@ Entity  Attribute  Value  Transaction/time  Operation
 A molecule can retrieve this information:
 ```scala
 // Q: Who likes what and when did they state it?
-Person.e.likes.txInstant.get.head === 
+Person.e.likes.txInstant.get.map(_.head ==> 
   // A: John said he likes pizza at 12:35:54
   (johnId, "pizza", Date("12:35:54"))
+)
 ```
 
 ## Entity
@@ -103,10 +104,10 @@ Since the transaction time is part of all Datoms, we can ask time-related questi
 
 ```scala
 // Who liked what on the 5th of november?
-Person.name.likes.txInstant_(nov5date).get.head === ("John", "pizza")
+Person.name.likes.txInstant_(nov5date).get.map(_.head ==> ("John", "pizza"))
 ```
 
-Datomic even offers various powerful ways to work with the [time](/code/time) dimension of our data:
+Datomic even offers various powerful ways to work with the [time](/manual/time) dimension of our data:
 
 - `getAsOf` some point in time 
 - `getSince` some point in time

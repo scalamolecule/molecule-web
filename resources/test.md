@@ -10,7 +10,7 @@ Await.result(
   // Asynchronously get Person data and related Address
   Person.name.age.Address.street.getAsync, 
   1 second
-) === List(
+).map(_ ==> List(
   ("Lisa", 20, "Broadway"),
   ("John", 22, "Fifth Avenue")
 )

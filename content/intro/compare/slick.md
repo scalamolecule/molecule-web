@@ -29,7 +29,7 @@ people.map(p => (p.age, p.name ++ " (" ++ p.id.asColumnOf[String] ++ ")")).resul
 ```
 With Molecule we would concatenate `name` and `id` with the returned result set:
 ```scala
-Person.age.name.e.get map { case (age, name, id) => (age, s"$name ($id)" }
+Person.age.name.e.get.map(_.map { case (age, name, id) => (age, s"$name ($id)" } )
 ```
 
 #### filter / WHERE
@@ -91,7 +91,7 @@ people.groupBy(p => p.addressId)
        .result
 ```
 ```scala
-Person.address.age(avg).get.filter(_._2 > 50)
+Person.address.age(avg).get.map(_.filter(_._2 > 50))
 ```
 
 #### Implicit join
@@ -161,9 +161,11 @@ people.filter(_.name === "M Odersky")
        .update(("M. Odersky",54321))
 ```
 ```scala
-// Find entity id with meta Molecule attribute `e`
-val oderskyId = Person.e.name_("M Odersky").get.head
-Person(oderskyId).name("M. Odersky").age(54321).update
+for {
+  // Find entity id with meta Molecule attribute `e`
+  oderskyId <- Person.e.name_("M Odersky").get.map(_.head)
+  _ <- Person(oderskyId).name("M. Odersky").age(54321).update
+} yield ()
 ```
 
 #### delete
@@ -186,21 +188,11 @@ people.map(p =>
 ).list
 ```
 ```scala
-Person.address(1 or 2).get map {
+Person.address(1 or 2).get.map(_.map {
   case 1 => "A"
   case 2 => "B"
-}
+})
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 

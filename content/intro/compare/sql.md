@@ -19,7 +19,7 @@ With Molecule we only need to fetch the attributes that we need:
 Person.name.age.get
 ```
 
-Returned type is `List[(String, Int)]`
+Returned type is `Future[List[(String, Int)]]`
 
 #### SELECT
 
@@ -31,7 +31,7 @@ sql"""
 ```
 With Molecule we would concatenate `name` and `id` with the returned result set:
 ```scala
-Person.age.name.e.get map { case (age, name, id) => (age, s"$name ($id)" }
+Person.age.name.e.get.map(_.map { case (age, name, id) => (age, s"$name ($id)" })
 ```
 
 
@@ -55,7 +55,7 @@ sql"select * from PERSON order by AGE asc, NAME".as[Person].list
 ```
 Ordering is applied on the result set:
 ```scala
-Person.age.name.get.toSeq.sortBy(_._1)
+Person.age.name.get.map(_.sortBy(_._1))
 ```
 
 #### Aggregations
@@ -99,7 +99,7 @@ sql"""
 """.as[Int].list
 ```
 ```scala
-Person.address.age(avg).get.toSeq.filter(_._2 > 50)
+Person.address.age(avg).get.map(_.filter(_._2 > 50))
 ```
 
 #### Implicit join
@@ -139,10 +139,10 @@ sql"""
 ```
 ```scala
 // Add `$` to attribute name to get optional values
-val persons: List[(Option[String], String)] = Person.name$.Address.city.get
+val persons: Future[List[(Option[String], String)]] = Person.name$.Address.city.get
 ```
 
-#### Subquery
+#### Sub query
 
 ```
 sql"""
@@ -176,9 +176,11 @@ sqlu"""
 """.first
 ```
 ```scala
-// Find entity id with generic Molecule attribute `e`
-val oderskyId = Person.e.name_("M Odersky").get.head
-Person(oderskyId).name("M. Odersky").age(54321).update
+for {
+  // Find entity id with generic Molecule attribute `e`
+  oderskyId <- Person.e.name_("M Odersky").get.map(_.head)
+  _ <- Person(oderskyId).name("M. Odersky").age(54321).update
+} yield ()
 ```
 
 #### DELETE
@@ -189,8 +191,8 @@ sqlu"""
 """.first
 ```
 ```scala
-// Retract entity
-Person.e.name_("M. Odersky").get.head.retract
+// Retract entity by calling `retract` on the entity id
+Person.e.name_("M. Odersky").get.map(_.head.retract)
 ```
 
 #### CASE
@@ -206,10 +208,10 @@ sql"""
 """.as[Option[String]].list
 ```
 ```scala
-Person.address(1 or 2).get map {
+Person.address(1 or 2).get.map(_.map {
   case 1 => "A"
   case 2 => "B"
-}
+})
 ```
 
 

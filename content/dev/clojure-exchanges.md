@@ -18,12 +18,12 @@ To ease exchanging Datomic schemas with the Clojure world where Namespaces start
 If you for instance want to use Molecule with an externally defined Datomic database Schema or data sets with lowercase namespace names you can define the Data Model as usual in Molecule with uppercase Namespace names and then rea:
 
 ```scala
-// Read lowercase schema
+// Read lowercase schema from edn data
 val lowercaseExternalSchema = datomic.Util.readAll(new FileReader("external-schema.dtm"))
 conn.transact(lowercaseExternalSchema)
 
 // Convert to uppercase schema
-conn.transact(ExternalSchemaLowerToUpper.namespaces)
+conn.transact(ExternalSchemaLowerToUpper.edn)
 
 // Make molecules with uppercase Namespace names...
 ```
@@ -35,7 +35,7 @@ When we test the mBrainz dataset for instance, we [convert from from lower to Up
 Vice versa, you can "export" an Uppercase schema to lowercase by transacting `<your-domain>SchemaUpperToLower`:
 
 ```scala
-conn.transact(YourSchemaUpperToLower.namespaces)
+conn.transact(YourSchemaUpperToLower.edn)
 ```
 You can then backup the database and let it be conveniently restored in a Clojure setting:
 

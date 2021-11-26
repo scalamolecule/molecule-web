@@ -18,7 +18,7 @@ The sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-molecule) generate
 Add the latest version of the plugin in `project/buildinfo.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "0.13.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.0.0")
 ```
 And add it to the project `build.sbt` file
 
@@ -27,6 +27,16 @@ lazy val yourProject = project.in(file("app"))
     .enablePlugins(MoleculePlugin)
     //...
   )
+```
+
+In ScalaJS projects, enable the plugin in the shared project:
+
+```scala
+lazy val shared = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Pure)
+  .in(file("shared"))
+  .enablePlugins(MoleculePlugin)
+  // ...
 ```
 
 ## Dependencies
@@ -51,7 +61,7 @@ Each of the 3 libraries resolve differently:
       "clojars" at "https://clojars.org/repo" 
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
     //...
@@ -79,7 +89,7 @@ And then we can resolve the dependencies by giving sbt access to our credentials
     ),
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
     //...
@@ -99,7 +109,7 @@ The [dev-local library](https://docs.datomic.com/cloud/dev-local.html) is part o
     ),
   
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "dev-local" % "0.9.232"
     ),
     //...
@@ -244,7 +254,7 @@ lazy val app = project.in(file("app"))
     ),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 

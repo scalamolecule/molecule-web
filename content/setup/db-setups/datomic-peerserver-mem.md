@@ -41,7 +41,7 @@ lazy val app = project.in(file("app"))
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
 
@@ -64,7 +64,7 @@ lazy val app = project.in(file("app"))
 
 First, you need to start the Peer Server with an automatically created in-memory database:
 
-    cd <your-datomic-distribution (starter/pro)>
+    cd <your-datomic-starter/pro-distribution>
     bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d sampledb,datomic:mem://sampledb
 
 In this setup we use a [database connection URI](https://docs.datomic.com/on-prem/javadoc/datomic/Peer.html#connect-java.lang.Object-) with the "mem" protocol which is intended for in-memory databases.
@@ -113,10 +113,10 @@ From here on, we can start transacting and querying `sampledb` with molecules:
 
 ```scala
 // Transact
-Person.name("John").age(24).save.eid
+Person.name("John").age(24).save
 
 // Query
-assert(Person.name.age.get.head == ("John", 24))
+Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 

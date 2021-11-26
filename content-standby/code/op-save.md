@@ -3,7 +3,7 @@ title: Save / Insert
 weight: 51
 menu:
   main:
-    parent: code
+    parent: manual
     identifier: code-op-save
 ---
 
@@ -41,7 +41,7 @@ Here, we map over the result of saving asynchronously:
 // Map over a Future
 Person.name("Fred").likes("pizza").age(42).saveAsync.map { tx => // tx report from successful save transaction
   // (synchronous get)
-  Person.name.likes.age.get.head === ("Ben", "pizza", 42)
+  Person.name.likes.age.get.map(_.head ==> ("Ben", "pizza", 42)
 }
 ```
 
@@ -116,7 +116,7 @@ This is different from SQL where we would save a NULL value in a `likes` column.
 Molecule lets us fetch data sets with optional facts asserted for an attribute as optional values:
 
 ```scala
-Person.name.likes$.age.get === List(
+Person.name.likes$.age.get.map(_ ==> List(
   ("Fred", None, 38),
   ("Pete", Some("sushi"), 17)
 )
@@ -124,14 +124,14 @@ Person.name.likes$.age.get === List(
 
 If we specifically want to find Persons that have no `likes` asserted we can say
 ```scala
-Person.name.likes_(nil).age.get === List(
+Person.name.likes_(nil).age.get.map(_ ==> List(
   ("Fred", 38)
   // Pete not returned since he likes something
 )
 ```
 .. or
 ```scala
-Person.name.likes$(None).age.get === List(
+Person.name.likes$(None).age.get.map(_ ==> List(
   ("Fred", None, 38)
   // Pete not returned since he likes something
 )

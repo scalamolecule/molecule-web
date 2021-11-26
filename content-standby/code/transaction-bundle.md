@@ -3,7 +3,7 @@ title: "Transaction Bundle"
 weight: 85
 menu:
   main:
-    parent: code
+    parent: manual
     identifier: code-transaction-bundle
 ---
 
@@ -42,7 +42,7 @@ transact(
 )
 
 // Data after group transaction
-Ns.int.get.sorted === List(
+Ns.int.get.sorted.map(_ ==> List(
   // 1 retracted
   3, // unchanged
   4, // saved
@@ -62,7 +62,7 @@ Await.result(
     Ns(e2).int(20).getUpdateStmts
   ) map { bundleTx =>
     Ns.int.getAsync map { queryResult => 
-      queryResult === List(3, 4, 5, 6, 20)    
+      queryResult.map(_ ==> List(3, 4, 5, 6, 20)    
     }  
   },
   2.seconds
@@ -90,31 +90,31 @@ inspectTransact(
 /*
   ## 1 ## TxReport
   ========================================================================
-  1          ArrayBuffer(
-    1          List(
-      1          :db.fn/retractEntity   17592186045445)
-    2          List(
-      1          :db/add       #db/id[:db.part/user -1000247]     :Ns/int          4           Card(1))
-    3          List(
-      1          :db/add       #db/id[:db.part/user -1000252]     :Ns/int          5           Card(1))
-    4          List(
-      1          :db/add       #db/id[:db.part/user -1000253]     :Ns/int          6           Card(1))
-    5          List(
-      1          :db/add       17592186045446                     :Ns/int          20          Card(1)))
+  ArrayBuffer(
+    List(
+      :db.fn/retractEntity   17592186045445)
+    List(
+      :db/add       #db/id[:db.part/user -1000247]     :Ns/int          4           Card(1))
+    List(
+      :db/add       #db/id[:db.part/user -1000252]     :Ns/int          5           Card(1))
+    List(
+      :db/add       #db/id[:db.part/user -1000253]     :Ns/int          6           Card(1))
+    List(
+      :db/add       17592186045446                     :Ns/int          20          Card(1)))
   ------------------------------------------------
-  2          List(
-    1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018
+  List(
+    added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018
 
-    2    2     added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 1
+    added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 1
 
-    3    3     added: true ,   t: 13194139534345,   e: 17592186045450,   a: 64,   v: 4
+    added: true ,   t: 13194139534345,   e: 17592186045450,   a: 64,   v: 4
 
-    4    4     added: true ,   t: 13194139534345,   e: 17592186045451,   a: 64,   v: 5
+    added: true ,   t: 13194139534345,   e: 17592186045451,   a: 64,   v: 5
 
-    5    5     added: true ,   t: 13194139534345,   e: 17592186045452,   a: 64,   v: 6
+    added: true ,   t: 13194139534345,   e: 17592186045452,   a: 64,   v: 6
 
-    6    6     added: true ,   t: 13194139534345,   e: 17592186045446,   a: 64,   v: 20
-         7     added: false,  -t: 13194139534345,  -e: 17592186045446,  -a: 64,  -v: 2)
+    added: true ,   t: 13194139534345,   e: 17592186045446,   a: 64,   v: 20
+    added: false,  -t: 13194139534345,  -e: 17592186045446,  -a: 64,  -v: 2)
   ========================================================================
 */
 ```
@@ -127,7 +127,4 @@ Two groups of data are shown. The first group is an internal representation in M
 - `v`: value
 
 Updating 2 to 20 for instance creates two Datoms, one retracting the old value 2 and one asserting the new value 20.
-
-(The numbers on the left are simply index numbers and not part of the transactional data)
-
 

@@ -43,16 +43,16 @@ Since the `m` method is implicit we can generally just write
 val nameUrls = Community.name.url.get
 ```
 
-If you look at the generated namespace code you'll see that it is a little more complex behind the scenes. That's because we want our IDE to be able to infer the type of each attribute. If we for instance had an `age` attribute of type `Int` we could infer the return types of calling the `get` method on a molecule. That would return a List of name/age tuples of type `List[(String, Int)]`:
+If you look at the generated namespace code you'll see that it is a little more complex behind the scenes. That's because we want our IDE to be able to infer the type of each attribute. If we for instance had an `age` attribute of type `Int` we could infer the return types of calling the `get` method on a molecule. That would return a `Future` with a List of name/age tuples of type `List[(String, Int)]`:
 
 ```scala
-val nameAges: List[(String, Int)] = Community.name.age.get
+val nameAges: Future[List[(String, Int)]] = Community.name.age.get
 ```
 
 A feature of Molecule is to omit the values of an attribute from the result set by adding an underscore to the attribute name:
 
 ```scala
-val names: List[String] = Community.name.age_.get
+val names: Future[List[String]] = Community.name.age_.get
 ```
 
 This is handy if we want to query for entities that we want to be sure have an age and where we at the same time don't need the age returned.
@@ -70,21 +70,22 @@ To find communities we can make a `communities` molecule looking for entities wi
 val communities = m(Community.name)
 ```
 
-With this molecule at hand we can get the community names, or we can ask for the size of our returned data set:
+With this molecule at hand we can get the community names, or we can ask for the size of our returned data set by mapping over the Future:
 
 ```scala
-communities.get === // List of community names...
+communities.get.map(_ ==> List(...)) // List of community names...
 ```
+_(We use the `==>` comparator from the [uTest](https://github.com/com-lihaoyi/utest) test library)_
 
-or we could check how many communities we have
+Or we could check how many communities we have
 
 ```scala
-communities.get.size === 150
+communities.get.map(_.size ==> 150)
 ```
 If we want the entity ids of our communities we can add the generic attribute `e` to our molecule. We might not be interested in the names but we want to make sure that we find entities having a name, so we add the `name` attribute with an underscore (to omit it from the result set):
 
 ```scala
-Community.e.name_.get(3) === List(17592186045518L, 17592186045516L, 17592186045514L)
+Community.e.name_.get(3).map(_ ==> List(17592186045518L, 17592186045516L, 17592186045514L))
 ```
 
 
@@ -98,7 +99,7 @@ A way to get additional attribute values once we have an entity id is to `touch`
 val communityId = Community.e.name_.get.head
 
 // Use the community id to touch all the entity's attribute values
-communityId.touch === Map(
+communityId.touch.map(_ ==> Map(
   ":Community/type" -> ":Community.type/website",
   ":Community/url" -> "http://www.greenlakecommunitycouncil.org/",
   ":Community/category" -> List("community council"),
@@ -111,16 +112,17 @@ communityId.touch === Map(
       ":db/id" -> 17592186045667L,
       ":District/name" -> "Northwest",
       ":District/region" -> ":District.region/sw"),
-    ":Neighborhood/name" -> "Green Lake"))
+    ":Neighborhood/name" -> "Green Lake")
+))
 ```
 
-We can also retrive attribute values one by one by simply applying an attribute name to the entity id:
+We can also retrieve attribute values one by one by applying an attribute name to the entity id:
 
 ```scala
-communityId(":Community/name") === Some("Greenlake Community Council")
-communityId(":Community/url") === Some("http://www.greenlakecommunitycouncil.org/")
-communityId(":Community/category") === Some(Set("community council"))
-communityId(":Community/emptyOrBogusAttribute") === None
+communityId(":Community/name").map(_ ==> Some("Greenlake Community Council"))
+communityId(":Community/url").map(_ ==> Some("http://www.greenlakecommunitycouncil.org/"))
+communityId(":Community/category").map(_ ==> Some(Set("community council")))
+communityId(":Community/emptyOrBogusAttribute").map(_ ==> None)
 ```
 
 
@@ -130,19 +132,21 @@ communityId(":Community/emptyOrBogusAttribute") === None
 After defining a molecule like `Community.name` we can call the `get` method on it to retrieve values that matches it. When there's only one attribute defined in the molecule we'll get a list of this attribute's value back.
 
 ```scala
-Community.name.get(3) === List(
+Community.name.get(3).map(_ ==> List(
   "KOMO Communities - Ballard",
   "Ballard Blog",
-  "Ballard Historical Society")
+  "Ballard Historical Society"
+))
 ```
 
 If our molecule defines two or more attributes we'll get tuples of values back.
 
 ```scala
-Community.name.url.get(3) === List(
+Community.name.url.get(3).map(_ ==> List(
   ("Broadview Community Council", "http://groups.google.com/group/broadview-community-council"),
   ("KOMO Communities - Wallingford", "http://wallingford.komonews.com"),
-  ("Aurora Seattle", "http://www.auroraseattle.com/"))
+  ("Aurora Seattle", "http://www.auroraseattle.com/")
+))
 ```
 
 
@@ -151,18 +155,20 @@ Community.name.url.get(3) === List(
 When applying a value to an attribute we narrow the selection of entities that will match our molecule data structure. Let's find communities of type "twitter":
 
 ```scala
-Community.name.`type`("twitter").get(3) === List(
+Community.name.tpe("twitter").get(3).map(_ ==> List(
   ("Columbia Citizens", "twitter"),
   ("Discover SLU", "twitter"),
-  ("Fremont Universe", "twitter"))
+  ("Fremont Universe", "twitter")
+))
 ```
 (We use the back-ticks to avoid having Scala to think of `type` as a Scala keyword)
 
 Since the `type` will always be "twitter" we could omit it from the result set by adding an underscore to the `type` attribute (and we don't need the back-ticks anymore).
 
 ```scala
-Community.name.type_("twitter").get(3) === List(
-  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
+Community.name.tpe_("twitter").get(3).map(_ ==> List(
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU"
+))
 ```
 Notice that we get some different communities. We are not guaranteed a specific order of returned values and the first 3 values can therefore vary as we see here even though the molecules/queries are similar.
 
@@ -171,24 +177,26 @@ In most of our examples we supply static data like "twitter" but even though our
 
 ```scala
 val tw = "twitter"
-Community.name.type_(tw).get(3) === List(
-  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
+Community.name.tpe_(tw).get(3).map(_ ==> List(
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU"
+))
 ```
 
 Retrieving values of many-attributes like `category` gives us sets of values back
 
 ```scala
-Community.name_("belltown").category.get.head === Set("events", "news")
+Community.name_("belltown").category.get.map(_.head ==> Set("events", "news"))
 ```
 Since we often want a single result back, Molecule supplies a `one` convenience method that calls `get.head`.
 
 We can apply multiple values to many-attributes like `category` and it will match entities having any of those values (OR-semantics).
 
 ```scala
-Community.name.category_("news", "arts").get(3) === List(
+Community.name.category_("news", "arts").get(3).map(_ ==> List(
   "Beach Drive Blog",
   "KOMO Communities - Ballard",
-  "Ballard Blog")
+  "Ballard Blog"
+))
 ```
 
 
@@ -198,18 +206,20 @@ Community.name.category_("news", "arts").get(3) === List(
 The sample Data Model includes three main entity types communities, neighborhoods and districts that are related to each other with references. Molecule lets you traverse those references by going from one namespace to the next. Let's find communities in the noth-eastern region:
 
 ```scala
-Community.name.Neighborhood.District.region_("ne").get(3) === List(
+Community.name.Neighborhood.District.region_("ne").get(3).map(_ ==> List(
   "Maple Leaf Community Council",
   "Hawthorne Hills Community Website",
-  "KOMO Communities - View Ridge")
+  "KOMO Communities - View Ridge"
+))
 ```
 Or comunity names and their region:
 
 ```scala
-Community.name.Neighborhood.District.region.get(3) === List(
+Community.name.Neighborhood.District.region.get(3).map(_ ==> List(
   ("KOMO Communities - North Seattle","n"),
   ("Morgan Junction Community Association","sw"),
-  ("Friends of Seward Park","se"))
+  ("Friends of Seward Park","se")
+))
 ```
 
 
@@ -220,10 +230,10 @@ When you apply values to molecules, the resulting query string is cached by Dato
 
 ### Single input value for an attribute
 
-Instead of applying the constant value "twitter" to a molecule `Community.type("twitter")` we can use the `?` input placeholder in an "input molecule" telling us that it waits for an input value.
+Instead of applying the constant value "twitter" to a molecule `Community.tpe("twitter")` we can use the `?` input placeholder in an "input molecule" telling us that it waits for an input value.
 
 ```scala
-val communitiesOfType = m(Community.name.type_(?))
+val communitiesOfType = m(Community.name.tpe_(?))
 ```
 
 When can then apply different input values to our input molecule:
@@ -235,22 +245,25 @@ val facebookCommunities = communitiesOfType("facebook_page")
 Those two molecules re-use the same cached query and just apply different input values. Now we can more efficiently get out results. 
 
 ```scala
-twitterCommunities.get(3) === List(
-  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
+twitterCommunities.get(3).map(_ ==> List(
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU"
+))
   
-facebookCommunities.get(3) === List(
-  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
+facebookCommunities.get(3).map(_ ==> List(
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU"
+))
 ```
 
 If we omit the underscore we can get the type too
 
 ```scala
-val communitiesWithType = m(Community.name.`type`(?))
+val communitiesWithType = m(Community.name.tpe(?))
 
-communitiesWithType("twitter").get(3) === List(
+communitiesWithType("twitter").get(3).map(_ ==> List(
   ("Discover SLU", "twitter"),
   ("Fremont Universe", "twitter"),
-  ("Columbia Citizens", "twitter"))
+  ("Columbia Citizens", "twitter")
+))
 ```
 
 ### Multiple input values for an attribute - logical OR
@@ -258,10 +271,11 @@ communitiesWithType("twitter").get(3) === List(
 Find communities of type "facebook_page" OR "twitter":
 
 ```scala
-communitiesWithType("facebook_page" or "twitter").get(3) === List(
+communitiesWithType("facebook_page" or "twitter").get(3).map(_ ==> List(
   ("Eastlake Community Council", "facebook_page"),
   ("Discover SLU", "twitter"),
-  ("MyWallingford", "facebook_page"))
+  ("MyWallingford", "facebook_page")
+))
 ```
 Alternative syntaxes where comma-separations act as logical OR:
 
@@ -275,17 +289,18 @@ communitiesWithType(Seq("facebook_page", "twitter"))
 In addition to passing multiple values for a single attribute, you can pass a tuple of values for multiple attributes ensuring that both values are present.
 
 ```scala
-val typeAndOrgtype = m(Community.name.type_(?).orgtype_(?))
+val typeAndOrgtype = m(Community.name.tpe_(?).orgtype_(?))
 ```
-With this input molecule we can find communities that are of `type` "email_list" AND `orgtype` "community".
+With this input molecule we can find communities that are of `tpe` "email_list" AND `orgtype` "community".
 
 ```scala
-typeAndOrgtype("email_list" and "community").get(3) === List(
+typeAndOrgtype("email_list" and "community").get(3).map(_ ==> List(
   "Ballard Moms",
   "Admiral Neighborhood Association",
-  "15th Ave Community")
+  "15th Ave Community"
+))
 ```
-The order of arguments in the logical AND expression will correspond to the order of the input placeholders in the input molecule so that "email_list" corresponds to `type_(?)` and "community" corresponds to `community_(?)`. 
+The order of arguments in the logical AND expression will correspond to the order of the input placeholders in the input molecule so that "email_list" corresponds to `tpe_(?)` and "community" corresponds to `community_(?)`. 
 
 Arguments in expressions are also type-checked against the expected types of the corresponding attributes. Our IDE would infer that the `orgtype` attribute doesn't expect an `Int` as the second argument if we were to pass the expression "email_list and 42". This helps us avoid populating our database with unexpected data.
 
@@ -296,7 +311,7 @@ We can express logical AND expressions with a list of arguments too:
 typeAndOrgtype("email_list", "community")
 ```
 
-Or we can pass a list of arguments. IMPORTANT: note how the semantics of a list of arguments change compared to the OR semantics that we saw with the single-input molecule above that had OR-semantics. When we have multiple inputs the semantics change to AND-semantics!
+Or we can pass a list of arguments. Note how the semantics of a list of arguments change compared to the OR semantics that we saw with the single-input molecule above that had OR-semantics. When we have multiple inputs the semantics change to AND-semantics!
 
 ```scala
 // AND-semantics given an input molecule expecting 2 inputs!
@@ -308,7 +323,7 @@ typeAndOrgtype(Seq(("email_list", "community")))
 We can also ask for alternative tuples of data structures. Since the input values can then vary, we could ask our molecule to return the input values too.
 
 ```scala
-val typeAndOrgtype2 = m(Community.name.`type`(?).orgtype(?))
+val typeAndOrgtype2 = m(Community.name.tpe(?).orgtype(?))
 ```
 Now let's ask for email-list communities OR commercial website communities. Note how this combines logical AND and OR.
 
@@ -316,12 +331,13 @@ Now let's ask for email-list communities OR commercial website communities. Note
 typeAndOrgtype2(
   ("email_list" and "community") or 
   ("website" and "commercial")
-).get(5) === List(
+).get(5).map(_ ==> List(
   ("Fremont Arts Council", "email_list", "community"),
   ("Greenwood Community Council Announcements", "email_list", "community"),
   ("Broadview Community Council", "email_list", "community"),
   ("Alki News", "email_list", "community"),
-  ("Beacon Hill Burglaries", "email_list", "community"))
+  ("Beacon Hill Burglaries", "email_list", "community")
+))
 ```
 As usual we can use alternative syntaxes as well. Here we group the AND expression arguments as tuple values. Comma-separations between the tuples act as logical OR.
 
@@ -338,24 +354,27 @@ typeAndOrgtype2(Seq(("email_list", "community"), ("website", "commercial")))
 Datomic lets you invoke functions in queries. Molecule use this to apply comparison operations on attribute values. Here we can for instance find communities whose `name` come before "C" in alphabetical order.
 
 ```scala
-m(Community.name < "C").get(3) === List(
-  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
+m(Community.name < "C").get(3).map(_ ==> List(
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog"
+))
 ```
 Note how we use the `m` method here to allow the postfix notation (spaces around `<`). Alternatively you can call the `<` method explicitly if you prefer this syntax:
 
 ```scala
-Community.name.<("C").get(3) === List(
-  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
+Community.name.<("C").get(3).map(_ ==> List(
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog"
+))
 ```
 We can also parameterize the molecule.
 
 ```scala
 val communitiesBefore = m(Community.name < ?)
 
-communitiesBefore("C").get(3) === List(
-  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
+communitiesBefore("C").get(3).map(_ ==> List(
+  "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog"
+))
   
-communitiesBefore("A").get(3) === List("15th Ave Community")
+communitiesBefore("A").get(3).map(_ ==> List("15th Ave Community"))
 ```
 
 
@@ -365,16 +384,18 @@ communitiesBefore("A").get(3) === List("15th Ave Community")
 Datomic supports fulltext searching. When you define an attribute of string value, you can indicate whether it should be indexed for fulltext search. For instance Community `name` and `category` have the fulltext option defined in the Seattle schema. Let's find communities with "Wallingford" in the name.
 
 ```scala
-(Community.name contains "Wallingford" take 3) === List(
-  "KOMO Communities - Wallingford")
+Community.name.contains("Wallingford").get.map(_ ==> List(
+  "KOMO Communities - Wallingford"
+))
 ```
 And we can parameterize fulltext searches too:
 
 ```scala
 val communitiesWith = m(Community.name contains ?)
 
-(communitiesWith("Wallingford") take 3) === List(
-  "KOMO Communities - Wallingford")
+communitiesWith("Wallingford").get.map(_ ==> List(
+  "KOMO Communities - Wallingford"
+))
 ```
 
 ### Fulltext search on many-cardinality attributes
@@ -382,22 +403,22 @@ val communitiesWith = m(Community.name contains ?)
 The `category` attribute can have several values so when we do a fulltext search on its values we'll get back a set of its values that match our seed. We can also combine fulltext search with other constraints. Here we look for website communities with a `category` containing the word "food":
 
 ```scala
-m(Community.name.type_("website").category contains "food").get(3) === List(
+m(Community.name.tpe_("website").category contains "food").get(3).map(_ ==> List(
   ("Community Harvest of Southwest Seattle", Set("sustainable food")),
-  ("InBallard", Set("food")))
-)
+  ("InBallard", Set("food"))
+))
 ```
 And parameterized:
 
 ```scala
-val typeAndCategory = m(Community.name.type_(?).category contains ?)
+val typeAndCategory = m(Community.name.tpe_(?).category contains ?)
 
-typeAndCategory("website", Set("food")).get(3) === List(
+typeAndCategory("website", Set("food")).get(3).map(_ ==> List(
   ("Community Harvest of Southwest Seattle", Set("sustainable food")),
-  ("InBallard", Set("food")))
-)
+  ("InBallard", Set("food"))
+))
 ```
-Note how the values of the `category` attribute are now returned since they can vary across the result set contrary to the `type` attribute which is not since it will have the same value for all matches.
+Note how the values of the `category` attribute are now returned since they can vary across the result set contrary to the `tpe` attribute which is not since it will have the same value for all matches.
 
 
 
@@ -408,16 +429,18 @@ Datomic rules are named groups of Datomic clauses that can be plugged into Datom
 We can for instance find social media communities with a logical OR expresion:
 
 ```scala
-Community.name.type_("twitter" or "facebook_page").get(3) === List(
-  "Magnolia Voice", "Columbia Citizens", "Discover SLU")
+Community.name.tpe_("twitter" or "facebook_page").get(3).map(_ ==> List(
+  "Magnolia Voice", "Columbia Citizens", "Discover SLU"
+))
 ```
 ... or find communities in the NE or SW regions.
 
 ```scala
-Community.name.Neighborhood.District.region_("ne" or "sw").get(3) === List(
+Community.name.Neighborhood.District.region_("ne" or "sw").get(3).map(_ ==> List(
   "Beach Drive Blog", 
   "KOMO Communities - Green Lake", 
-  "Delridge Produce Cooperative")
+  "Delridge Produce Cooperative"
+))
 ```
 And we can combine them to find social-media communities in southern regions.
 
@@ -428,26 +451,26 @@ val southernSocialMedia = List(
   "MyWallingford",
   "Blogging Georgetown")
 
-Community.name.type_("twitter" or "facebook_page")
+Community.name.tpe_("twitter" or "facebook_page")
   .Neighborhood
-  .District.region_("sw" or "s" or "se").get === southernSocialMedia
+  .District.region_("sw" or "s" or "se").get.map(_ ==> southernSocialMedia)
 ```
 
 Let's parameterized the same query:
 
 ```scala
-val typeAndRegion = m(Community.name.type_(?).Neighborhood.District.region_(?))
+val typeAndRegion = m(Community.name.tpe_(?).Neighborhood.District.region_(?))
 
 typeAndRegion(
   ("twitter" or "facebook_page") and 
   ("sw" or "s" or "se")
-).get === southernSocialMedia
+).get.map(_ ==> southernSocialMedia)
 
 // or
 typeAndRegion(
   Seq("twitter", "facebook_page"), 
   Seq("sw", "s", "se")
-).get === southernSocialMedia
+).get.map(_ ==> southernSocialMedia)
 ```
 Note how this syntax for the ((a OR b) AND (c OR d)) expression is different from the syntax we had earlier in the section "Multiple tuples of input values for multiple attributes" where we had a ((a AND b) OR (c AND d)) expression.
 
@@ -462,12 +485,14 @@ One of the key concepts in Datomic is that new facts don't replace old facts. In
 
 When you submit a transaction to a database, Datomic keeps track of the entities, attributes and values you add or retract. It also keeps track of the transaction itself. Transactions are entities in their own right, and you can write queries to find them. The system associates one attribute with each transaction entity, Db.txInstant, which records the time the transaction was processed.
 
-Molecule has a `Db` namespace with a `txInstant` attribute that we can use to query for transactions instants (represented as java.util.Date instances) that has been created. We've only executed two transactions, but the earlier system executed a few as part of its bootstrapping process. We know, though, that our two are the most recent. The code below uses a `Db.txInstant` molecule to retrieve transaction times, sort them into reverse chronological order, and store the most recent two as dataTxDate and schemaTxDate, when we added our data and our schema, respectively.
+
+Molecule has a `Schema` namespace to query schema changes. With this we can get the time point `t` when our Seattle schema was transacted. Likewise we can make a similar query for the time point `t` when an attribute value was asserted:
 
 ```scala
-val txDates = Db.txInstant.get.toSeq.sorted.reverse
-val dataTxDate = txDates(0)
-val schemaTxDate = txDates(1)
+for {
+  schemaTxT <- Schema.t.get.map(_.head)
+  dataTxT <- Community.name_.t.get.map(_.head)
+  ...
 ```
 
 ### Revisiting the past - `getAsOf(PastDate)`
@@ -476,15 +501,15 @@ Once we have the relevant transaction times, we can look at the database as of t
 An example will help make this clear. The code below gets the value of the database as of our schema transaction. Then it runs our very first query, which retrieves entities representing communities, and prints the size of the results. Because we're using a database value from before we ran the transaction to load seed data, the size is 0.
 
 ```scala
-// Take all Community entities
-val communities = m(Community.e.name_)
-    
-communities.getAsOf(schemaTxDate).size === 0
+  // Molecule to find all Community entities
+  communities = m(Community.e.name_)
+      
+  _ <- communities.getAsOf(schemaTxDate).map(_.size ==> 0)
 ```
 If we do the same thing using the date of our seed data transaction, the query returns 150 results, because as of that moment, the seed data is there.
 
 ```scala
-communities.getAsOf(dataTxDate).size === 150
+  _ <- communities.getAsOf(dataTxDate).map(_.size ==> 150)
 ```
 
 ### Changes since a date - `getSince(compareDate)`
@@ -494,12 +519,13 @@ The `getAsOf` method allows us to look at a database value containing data chang
 The code below gets the value of the database since our schema transaction and counts the number of communities. Because we're using a database value containing changes made since we ran the transaction to load our schema - including the changes made when we loaded our seed data - the size is 150.
 
 ```scala
-communities.getSince(schemaTxDate).size === 150
+  _ <- communities.getSince(schemaTxDate).size === 150
 ```
 If we do the same thing using the date of our seed data transaction, the query returns 0 results, because we haven't added any communities since that time.
 
 ```scala
-communities.getSince(dataTxDate).size === 0
+  _ <- communities.getSince(dataTxDate).size === 0
+} yield ()
 ```
 While we passed specific transaction dates to `getAsOf` and `getSince`, you can pass any date. The system find the closest relevant transaction and use that as the basis for filtering.
 
@@ -512,35 +538,7 @@ Revisiting the past is a very powerful feature. It's also possible to imagine th
 
 When a `getWith(TestTxData)` database object goes out of scope it is simply garbage collected. So we don't need to do any tear down of some state as is common with normal database mockups.
 
-We can explore this feature using a second seed data file provided with the sample application, "samples/seattle/seattle-data1.edn". The code below reads it into a list.
-
-```scala
-val data_rdr2 = new FileReader("examples/resources/seattle/seattle-data1a.dtm")
-val newDataTx = Util.readAll(data_rdr2).get(0).asInstanceOf[java.util.List[Object]]
-```
-Once we have this new data transaction, we can build a database value that includes it. To do that, we simply get the current database value (or one as of or since a point in time) and call `getWith`, passing in the transaction data. `getWith` returns a molecule based on the new value of the database after the new data is added. If we execute our community counting query against it, we get 258 results.
-
-```scala
-// test db
-communities.getWith(newDataTx).get.size === 258
-```
-
-The actual data hasn't changed yet, so if we query the current database value, we still get 150 results. We won't see a change in the current database value until we submit the new transaction. After that, querying the current database value returns 258 results. Finally, if we get another database value containing data since our first seed data transaction ran, and query for communities we get 108 results, the number added by new data transaction.
-
-```scala
-// existing db
-communities.get.size === 150
-
-// transact
-conn.transact(newDataTx)
-
-// updated db
-communities.get.size === 258
-
-// number of new transactions
-communities.getSince(dataTxDate).size === 108
-```
-
+Please see the [getWith examples](/manual/time/#with) in the manual.
 
 
 ## Insert data
@@ -557,7 +555,7 @@ To insert a single data structure you can populate a molecule with values and th
 Community
   .name("AAA")
   .url("myUrl")
-  .`type`("twitter")
+  .tpe("twitter")
   .orgtype("personal")
   .category("my", "favorites")
   .Neighborhood.name("myNeighborhood")
@@ -576,7 +574,7 @@ A more efficient way to add larger sets of data is to define an "Insert-Molecule
 
 ```scala
 val insertCommunity = m(
-  Community.name.url.`type`.orgtype.category
+  Community.name.url.tpe.orgtype.category
     .Neighborhood.name
     .District.name.region
 ).insert
@@ -588,7 +586,7 @@ insertCommunity(
   "BBB", "url B", "twitter", "personal", Set("some", "cat B"), 
     "neighborhood B", 
     "district B", "s"
-).eids === List(17592186045895L, 17592186045896L, 17592186045897L)
+).map(_.eids === List(17592186045895L, 17592186045896L, 17592186045897L))
 ```
 As before, three entities are created here since we reference a new Neighborhood and District.
 
@@ -613,10 +611,11 @@ val newCommunitiesData = List(
 )
 
 // Insert 3 new communities with 3 new neighborhoods
-insertCommunity(newCommunitiesData) === List(
+insertCommunity(newCommunitiesData).map(_ ==> List(
   17592186045909L, 17592186045910L, 17592186045911L,
   17592186045912L, 17592186045913L, 17592186045914L,
-  17592186045915L, 17592186045916L, 17592186045917L)
+  17592186045915L, 17592186045916L, 17592186045917L
+))
 ```
 This approach gives us a clean way of populating a database where we can supply raw data from any source easily as long as we can format it as a list of tuples of values each matching our template molecule. 
 
@@ -627,7 +626,7 @@ We might have a data set with some optional attribute values. We can append a `$
 
 ```scala
 val insertCommunity = m(
-  Community.name.url.`type`.orgtype$.category
+  Community.name.url.tpe.orgtype$.category
     .Neighborhood.name
     .District.name.region
 ) insert
@@ -657,15 +656,17 @@ A data set having the value `42` as a value for the `orgtype` attribute won't co
 To update data with Molecule, we first need the id of the entity that we want to update.
 
 ```scala
-val belltown = Community.e.name_("belltown").get.head
-```
-Then we can "replace" some attributes
-
-```scala
-Community(belltown).name("belltown 2").url("url 2").update
+for {
+  // Retrieve an entity id to be updated
+  belltown <- Community.e.name_("belltown").get.map(_.head)
+  
+  // Then we can "replace" some attributes
+  _ <- Community(belltown).name("belltown 2").url("url 2").update
+} yield ()
 ```
 
 What really happens is not a mutation of data since no data is ever deleted or over-written in Datomic. Instead the old/current data is retracted and the _new fact for the attribute is asserted_. The new fact will turn up when queried for. But if we go back in time we can see the previous value at that point in time - many updates could have been performed over time, and all previous values are stored.
+
 
 ### Updating cardinality-many attributes
 
@@ -713,5 +714,5 @@ The other thing to know is that, because we can access database values as they e
 
 [seattle]: https://web.archive.org/web/20161007085359/http://docs.datomic.com/tutorial.html
 [setup]: /setup/
-[populate]: /code/transactions/#insert
+[populate]: /manual/transactions/#insert
 

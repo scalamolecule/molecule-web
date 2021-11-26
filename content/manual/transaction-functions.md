@@ -3,7 +3,7 @@ title: "Transaction Functions"
 weight: 85
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 
@@ -12,13 +12,14 @@ menu:
 
 ### Atomic processing within the transaction
 
-Transaction functions
+Transaction functions 
 
 - run on the transactor inside of transactions
 - can atomically analyze and transform database values
 - can perform arbitrary logic
 - must have no side effect
-- must return transaction data (`Seq[Seq[Statement]]`)
+- must return transaction data (`Future[Seq[Statement]]`)
+- are available for Peers on the jvm platform only
 
 Since tx functions have access to the tx database value they are essential to guaranteeing atomicity in updates for instance. You can query the current db value within the transaction logic and thus be sure certain assertions hold before doing some operation.
 
@@ -32,11 +33,13 @@ import molecule.macros.TxFns
 @TxFns
 object myTxFunctions {
 
-  def myTxFunction1(args...)(implicit conn: Conn): Seq[Seq[Statement]] = {
+  def myTxFunction1(args...)
+    (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
     ...
   }
   
-  def myTxFunction2(args...)(implicit conn: Conn): Seq[Seq[Statement]] = {
+  def myTxFunction2(args...)
+    (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
     ...
   }
   // etc...
@@ -44,7 +47,7 @@ object myTxFunctions {
 
 @TxFns
 object myTxFunctionsSomewhereElse {...}
-etc...
+// etc...
 ```
 The macro annotation `@TxFns` creates an internal "twin" method at compile time for each Scala tx function that you define. The twin method basically adapts to the way Datomic expects tx functions and automatically gets saved into the Datomic database transparently without any work on your part.
 
@@ -53,10 +56,7 @@ The macro annotation `@TxFns` creates an internal "twin" method at compile time 
 To use the `@TxFns` macro annotation with Scala 2.12, you'll need to include the Macro Paradise compiler plugin in your build:
 
 ```scala
-libraryDependencies ++= Seq(
-  ...,
-  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.patch)
-)
+libraryDependencies += compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.patch)
 ```
 
 >Macro annotations have been considered experimental in Scala and for version 2.12 requires an
@@ -103,24 +103,31 @@ Let's look at a simple tx function implementation:
 object myTxFunctions {
 
   // Pass in entity ids of from/to accounts and the amount to be transferred
-  def transfer(from: Long, to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-    // Validate sufficient funds in from-account
-    val curFromBalance = Account(from).balance.get.headOption.getOrElse(0)
-    if (curFromBalance < amount)
-      throw new TxFnException(
-        s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
+  def transfer(from: Long, to: Long, amount: Int)
+              (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
+    for {
+      // Validate sufficient funds in from-account
+      curFromBalance <- Ns(from).int.get.map(_.headOption.getOrElse(0))
 
-    // Calculate new balances
-    val newFromBalance = curFromBalance - amount
-    val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
+      _ = if (curFromBalance < amount)
+      // Throw exception to abort the whole transaction
+        throw TxFnException(
+          s"Can't transfer $amount from account $from having a balance of only $curFromBalance."
+        )
 
-    // Update accounts
-    Account(from).balance(newFromBalance).getUpdateStmts ++ Account(to).balance(newToBalance).getUpdateStmts
+      // Calculate new balances
+      newFromBalance = curFromBalance - amount
+      newToBalance <- Ns(to).int.get.map(_.headOption.getOrElse(0) + amount)
+
+      // Update accounts
+      newFromStmts <- Ns(from).int(newFromBalance).getUpdateStmts
+      newToStmts <- Ns(to).int(newToBalance).getUpdateStmts
+    } yield newFromStmts ++ newToStmts
   }
 }
 ```
 
-The signature of a tx functions must include an implicit `Conn` parameter. This makes sure that the macro annotation can inject a database value in the generated transparent twin function for Datomic.
+The signature of a tx functions must include implicit `Conn` and `ExecutionContext` parameters. This makes sure that the macro annotation can inject a database value in the generated transparent twin function for Datomic.
 
 We first check the available-funds constraint by looking up the current balance and throw an exception if there is not enough money available. Throwing an exception inside a tx function will cancel the whole transaction and thereby guarantee atomicity.
 
@@ -152,44 +159,37 @@ So our complete example could look like this:
 
 ```scala
 // Initial balances
-Account(fromAccount).balance.get.head === 100
-Account(toAccount).balance.get.head === 700
+Account(fromAccount).balance.get.map(_.head ==> 100)
+Account(toAccount).balance.get.map(_.head ==> 700)
 
 // Invoke tx function to do the transfer and pass the produced tx statements to `transactFn`
 transactFn(transfer(fromAccount, toAccount, 20))
 
 // Balances after transfer
-Account(fromAccount).balance.get.head === 80
-Account(toAccount).balance.get.head === 720
+Account(fromAccount).balance.get.map(_.head ==> 80)
+Account(toAccount).balance.get.map(_.head ==> 720)
 ```
 
 ### Error handling - ensuring atomicity
 
 ```scala
-// Trying to transfer a too big amount will throw an exception 
-(transactFn(transfer(fromAccount, toAccount, 500)) must throwA[TxFnException])
-  .message === s"Got the exception molecule.macros.exception.TxFnException: " +
-  s"Can't transfer 500 from account $fromAccount having a balance of only 100."
+for {
+  fromAccount <- Ns.int(100).save.map(_.eid)
+  toAccount <- Ns.int(700).save.map(_.eid)
+  tooBigAmount = 200
   
-// No data has been changed
-Account(fromAccount).balance.get.head === 100
-Account(toAccount).balance.get.head === 700
+  // Trying to transfer a too big amount will return a failed Future with an exception 
+  _ <- transactFn(transfer(fromAccount, toAccount, tooBigAmount))
+    .map(_ ==> "Unexpected success")
+    .recover { case TxFnException(msg) =>
+      msg ==> s"Can't transfer 200 from account $fromAccount having a balance of only 100."
+    }
+  
+  // No data has been changed
+  _ <- Account(fromAccount).balance.get.map(_.head ==> 100)
+  _ <- Account(toAccount).balance.get.map(_.head ==> 700)
+} yield ()
 ```
-
-### Async invocations
-Tx functions can also be invoked asynchronously:
-
-```scala
-Await.result(
-  transactFnAsync(transfer(fromAccount, toAccount, 20)) map { txReport =>
-    // (for brevity we check the current balances synchronously)
-    Account(fromAccount).balance.get.head === 80
-    Account(toAccount).balance.get.head === 720
-  },
-  2.seconds
-)
-```
-For brevity examples show synchronous invocations but could as well have used async invocations.
 
 
 ### Composing tx functions
@@ -198,28 +198,38 @@ A tx function can be called from another tx function. We can thus compose more c
 
 ```scala
 // "Sub" tx fn - can be used on its own or in other tx functions
-def withdraw(from: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  val curFromBalance = Account(from).balance.get.headOption.getOrElse(0)
-  if (curFromBalance < amount)
-    throw new TxFnException(s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
+def withdraw(from: Long, amount: Int)
+            (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
+  for {
+    curFromBalance <- Ns(from).int.get.map(_.headOption.getOrElse(0))
 
-  val newFromBalance = curFromBalance - amount
-  Account(from).balance(newFromBalance).getUpdateStmts
+    _ = if (curFromBalance < amount)
+      throw TxFnException(
+        s"Can't transfer $amount from account $from having a balance of only $curFromBalance.")
+
+    newFromBalance = curFromBalance - amount
+    stmts <- Ns(from).int(newFromBalance).getUpdateStmts
+  } yield stmts
 }
-
 
 // "Sub" tx fn - can be used on its own or in other tx functions
-def deposit(to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  val newToBalance = Account(to).balance.get.headOption.getOrElse(0) + amount
-  Account(to).balance(newToBalance).getUpdateStmts
+def deposit(to: Long, amount: Int)
+           (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
+  for {
+    newToBalance <- Ns(to).int.get.map(_.headOption.getOrElse(0) + amount)
+    stmts <- Ns(to).int(newToBalance).getUpdateStmts
+  } yield stmts
 }
 
-
 // Compose tx function by calling other tx functions
-def transferComposed(from: Long, to: Long, amount: Int)(implicit conn: Conn): Seq[Seq[Statement]] = {
-  // This tx function guarantees atomicity when calling multiple sub tx functions.
-  // If they were called independently outside a tx function, atomicity wouldn't be guaranteed.
-  withdraw(from, amount) ++ deposit(to, amount)
+def transferComposed(from: Long, to: Long, amount: Int)
+                    (implicit conn: Future[Conn], ec: ExecutionContext): Future[Seq[Statement]] = {
+  for {
+    // This tx function guarantees atomicity when calling multiple sub tx functions.
+    // If they were called independently outside a tx function, atomicity wouldn't be guaranteed.
+    withdrawStmts <- withdraw(from, amount)
+    depositStmts <- deposit(to, amount)
+  } yield withdrawStmts ++ depositStmts
 }
 ```
 
@@ -231,8 +241,8 @@ Tx meta data can be added to a tx function invocation by adding one or more tx m
 transactFn(transfer(fromAccount, toAccount, 20), Person.name("John"))
 
 // We can then query for the transfer that John did
-Account(fromAccount).balance.Tx(Person.name_("John")).get.head === 80
-Account(toAccount).balance.Tx(Person.name_("John")).get.head === 720
+Account(fromAccount).balance.Tx(Person.name_("John")).get.map(_.head ==> 80)
+Account(toAccount).balance.Tx(Person.name_("John")).get.map(_.head ==> 720)
 ```
 Note how the tx meta data applies to both accounts since they were both modified in the same transaction that the tx meta data was applied to.
 
@@ -242,15 +252,17 @@ We can add arbitrary and possibly unrelated tx meta data to a tx function invoca
 transactFn(
   transfer(fromAccount, toAccount, 20), 
   Person.name("John"), 
-  UseCase.name("Scheduled transfer"))
+  UseCase.name("Scheduled transfer")
+)
 
 // Query multiple Tx meta data molecules
 Account(fromAccount).balance
   .Tx(Person.name_("John"))
-  .Tx(UseCase.name_("Scheduled transfer")).get.head === 80
+  .Tx(UseCase.name_("Scheduled transfer")).get.map(_.head ==> 80)
+
 Account(toAccount).balance
   .Tx(Person.name_("John"))
-  .Tx(UseCase.name_("Scheduled transfer")).get.head === 720
+  .Tx(UseCase.name_("Scheduled transfer")).get.map(_.head ==> 720)
 ```
 
 
@@ -266,20 +278,20 @@ inspectTransactFn(transfer(fromAccount, toAccount, 20))
 /*
 ## 1 ## TxReport 
 ========================================================================
-1          ArrayBuffer(
-  1          List(
-    1          :db/add       17592186045445       :Account/balance    80        Card(1))
-  2          List(
-    1          :db/add       17592186045447       :Account/balance    720       Card(1)))
+ArrayBuffer(
+  List(
+    :db/add       17592186045445       :Account/balance    80        Card(1))
+  List(
+    :db/add       17592186045447       :Account/balance    720       Card(1)))
 ------------------------------------------------
-2          List(
-  1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Thu Nov 22 16:23:09 CET 2018
+List(
+  added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Thu Nov 22 16:23:09 CET 2018
 
-  2    2     added: true ,   t: 13194139534345,   e: 17592186045445,   a: 64,   v: 80
-       3     added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 100
+  added: true ,   t: 13194139534345,   e: 17592186045445,   a: 64,   v: 80
+  added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 100
 
-  3    4     added: true ,   t: 13194139534345,   e: 17592186045447,   a: 64,   v: 720
-       5     added: false,  -t: 13194139534345,  -e: 17592186045447,  -a: 64,  -v: 700)
+  added: true ,   t: 13194139534345,   e: 17592186045447,   a: 64,   v: 720
+  added: false,  -t: 13194139534345,  -e: 17592186045447,  -a: 64,  -v: 700)
 ========================================================================
 */
 ```
@@ -293,8 +305,6 @@ Two groups of data are shown. The first group is an internal representation in M
 
 Updating the from-account balance from 100 to 80 for instance creates two Datoms, one retracting the old value 100 and one asserting the new value 80.
 
-(The numbers on the left are simply index numbers and not part of the transactional data)
-
 
 
 
@@ -303,4 +313,4 @@ Updating the from-account balance from 100 to 80 for instance creates two Datoms
 
 ### Next
 
-[Time...](/code/time)
+[Time...](/manual/time)

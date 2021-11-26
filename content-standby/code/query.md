@@ -3,7 +3,7 @@ title: Query
 weight: 50
 menu:
     main:
-        parent: code
+        parent: manual
 identifier: code-op-get
 ---
 
@@ -56,7 +56,7 @@ val raw     : Future[java.util.Collection[java.util.List[AnyRef]]] = m(Person.na
 Attributes of some entity are easily fetched by applying an entity id to the first namespace in the molecule
 
 ```scala
-Person(fredId).name.age.likes.get.head === List("Fred", 38, "pizza")
+Person(fredId).name.age.likes.get.map(_.head ==> ("Fred", 38, "pizza"))
 ```
 The entity id is used for the first attribute of the molecule, here `name` having entity id `fredId`.
 
@@ -68,7 +68,7 @@ The entity id is used for the first attribute of the molecule, here `name` havin
 Molecules can get optional attributes which make them flexible to get irregular data sets. We could for instance fetch some Persons where some of them has no `likes` asserted:
 
 ```scala
-Person.name.age.likes$.get === List(
+Person.name.age.likes$.get.map(_ ==> List(
   ("Fred", 38, Some("pizza")),
   ("Lisa", 7, None),
   ("Ben", 5, Some("pizza"))

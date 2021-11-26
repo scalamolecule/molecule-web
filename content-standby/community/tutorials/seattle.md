@@ -85,7 +85,7 @@ val communities = m(Community.name)
 With this molecule at hand we can get the community names, or we can ask for the size of our returned data set:
 
 ```
-communities.get === // List of community names...
+communities.get.map(_ ==> // List of community names...
 ```
 
 or we could check how many communities we have
@@ -96,7 +96,7 @@ communities.get.size === 150
 If we want the entity ids of our communities we can add the generic attribute `e` to our molecule. We might not be interested in the names but we want to make sure that we find entities having a name, so we add the `name` attribute with an underscore (to omit it from the result set):
 
 ```
-Community.e.name_.get(3) === List(17592186045518L, 17592186045516L, 17592186045514L)
+Community.e.name_.get(3).map(_ ==> List(17592186045518L, 17592186045516L, 17592186045514L)
 ```
 
 
@@ -142,7 +142,7 @@ communityId(":Community/emptyOrBogusAttribute") === None
 After defining a molecule like `Community.name` we can call the `get` method on it to retrieve values that matches it. When there's only one attribute defined in the molecule we'll get a list of this attribute's value back.
 
 ```
-Community.name.get(3) === List(
+Community.name.get(3).map(_ ==> List(
   "KOMO Communities - Ballard",
   "Ballard Blog",
   "Ballard Historical Society")
@@ -151,7 +151,7 @@ Community.name.get(3) === List(
 If our molecule defines two or more attributes we'll get tuples of values back.
 
 ```
-Community.name.url.get(3) === List(
+Community.name.url.get(3).map(_ ==> List(
   ("Broadview Community Council", "http://groups.google.com/group/broadview-community-council"),
   ("KOMO Communities - Wallingford", "http://wallingford.komonews.com"),
   ("Aurora Seattle", "http://www.auroraseattle.com/"))
@@ -163,7 +163,7 @@ Community.name.url.get(3) === List(
 When applying a value to an attribute we narrow the selection of entities that will match our molecule data structure. Let's find communities of type "twitter":
 
 ```
-Community.name.`type`("twitter").get(3) === List(
+Community.name.`type`("twitter").get(3).map(_ ==> List(
   ("Columbia Citizens", "twitter"),
   ("Discover SLU", "twitter"),
   ("Fremont Universe", "twitter"))
@@ -173,7 +173,7 @@ Community.name.`type`("twitter").get(3) === List(
 Since the `type` will always be "twitter" we could omit it from the result set by adding an underscore to the `type` attribute (and we don't need the back-ticks anymore).
 
 ```
-Community.name.type_("twitter").get(3) === List(
+Community.name.type_("twitter").get(3).map(_ ==> List(
   "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 Notice that we get some different communities. We are not guaranteed a specific order of returned values and the first 3 values can therefore vary as we see here even though the molecules/queries are similar.
@@ -183,21 +183,21 @@ In most of our examples we supply static data like "twitter" but even though our
 
 ```
 val tw = "twitter"
-Community.name.type_(tw).get(3) === List(
+Community.name.type_(tw).get(3).map(_ ==> List(
   "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 
 Retrieving values of many-attributes like `category` gives us sets of values back
 
 ```
-Community.name_("belltown").category.get.head === Set("events", "news")
+Community.name_("belltown").category.get.map(_.head ==> Set("events", "news")
 ```
 Since we often want a single result back, Molecule supplies a `one` convenience method that calls `get.head`.
 
 We can apply multiple values to many-attributes like `category` and it will match entities having any of those values (OR-semantics).
 
 ```
-Community.name.category_("news", "arts").get(3) === List(
+Community.name.category_("news", "arts").get(3).map(_ ==> List(
   "Beach Drive Blog",
   "KOMO Communities - Ballard",
   "Ballard Blog")
@@ -210,7 +210,7 @@ Community.name.category_("news", "arts").get(3) === List(
 The sample Data Model includes three main entity types communities, neighborhoods and districts that are related to each other with references. Molecule lets you traverse those references by going from one namespace to the next. Let's find communities in the noth-eastern region:
 
 ```
-Community.name.Neighborhood.District.region_("ne").get(3) === List(
+Community.name.Neighborhood.District.region_("ne").get(3).map(_ ==> List(
   "Maple Leaf Community Council",
   "Hawthorne Hills Community Website",
   "KOMO Communities - View Ridge")
@@ -218,7 +218,7 @@ Community.name.Neighborhood.District.region_("ne").get(3) === List(
 Or comunity names and their region:
 
 ```
-Community.name.Neighborhood.District.region.get(3) === List(
+Community.name.Neighborhood.District.region.get(3).map(_ ==> List(
   ("KOMO Communities - North Seattle","n"),
   ("Morgan Junction Community Association","sw"),
   ("Friends of Seward Park","se"))
@@ -247,10 +247,10 @@ val facebookCommunities = communitiesOfType("facebook_page")
 Those two molecules re-use the same cached query and just apply different input values. Now we can more efficiently get out results. 
 
 ```
-twitterCommunities.get(3) === List(
+twitterCommunities.get(3).map(_ ==> List(
   "Magnolia Voice", "Columbia Citizens", "Discover SLU")
   
-facebookCommunities.get(3) === List(
+facebookCommunities.get(3).map(_ ==> List(
   "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 
@@ -259,7 +259,7 @@ If we omit the underscore we can get the type too
 ```
 val communitiesWithType = m(Community.name.`type`(?))
 
-communitiesWithType("twitter").get(3) === List(
+communitiesWithType("twitter").get(3).map(_ ==> List(
   ("Discover SLU", "twitter"),
   ("Fremont Universe", "twitter"),
   ("Columbia Citizens", "twitter"))
@@ -270,7 +270,7 @@ communitiesWithType("twitter").get(3) === List(
 Find communities of type "facebook_page" OR "twitter":
 
 ```
-communitiesWithType("facebook_page" or "twitter").get(3) === List(
+communitiesWithType("facebook_page" or "twitter").get(3).map(_ ==> List(
   ("Eastlake Community Council", "facebook_page"),
   ("Discover SLU", "twitter"),
   ("MyWallingford", "facebook_page"))
@@ -292,7 +292,7 @@ val typeAndOrgtype = m(Community.name.type_(?).orgtype_(?))
 With this input molecule we can find communities that are of `type` "email_list" AND `orgtype` "community".
 
 ```
-typeAndOrgtype("email_list" and "community").get(3) === List(
+typeAndOrgtype("email_list" and "community").get(3).map(_ ==> List(
   "Ballard Moms",
   "Admiral Neighborhood Association",
   "15th Ave Community")
@@ -328,7 +328,7 @@ Now let's ask for email-list communities OR commercial website communities. Note
 typeAndOrgtype2(
   ("email_list" and "community") or 
   ("website" and "commercial")
-).get(5) === List(
+).get(5).map(_ ==> List(
   ("Fremont Arts Council", "email_list", "community"),
   ("Greenwood Community Council Announcements", "email_list", "community"),
   ("Broadview Community Council", "email_list", "community"),
@@ -350,13 +350,13 @@ typeAndOrgtype2(Seq(("email_list", "community"), ("website", "commercial")))
 Datomic lets you invoke functions in queries. Molecule use this to apply comparison operations on attribute values. Here we can for instance find communities whose `name` come before "C" in alphabetical order.
 
 ```
-m(Community.name < "C").get(3) === List(
+m(Community.name < "C").get(3).map(_ ==> List(
   "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
 ```
 Note how we use the `m` method here to allow the postfix notation (spaces around `<`). Alternatively you can call the `<` method explicitly if you prefer this syntax:
 
 ```
-Community.name.<("C").get(3) === List(
+Community.name.<("C").get(3).map(_ ==> List(
   "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
 ```
 We can also parameterize the molecule.
@@ -364,10 +364,10 @@ We can also parameterize the molecule.
 ```
 val communitiesBefore = m(Community.name < ?)
 
-communitiesBefore("C").get(3) === List(
+communitiesBefore("C").get(3).map(_ ==> List(
   "Ballard Blog", "Beach Drive Blog", "Beacon Hill Blog")
   
-communitiesBefore("A").get(3) === List("15th Ave Community")
+communitiesBefore("A").get(3).map(_ ==> List("15th Ave Community")
 ```
 
 
@@ -394,7 +394,7 @@ val communitiesWith = m(Community.name contains ?)
 The `category` attribute can have several values so when we do a fulltext search on its values we'll get back a set of its values that match our seed. We can also combine fulltext search with other constraints. Here we look for website communities with a `category` containing the word "food":
 
 ```
-m(Community.name.type_("website").category contains "food").get(3) === List(
+m(Community.name.type_("website").category contains "food").get(3).map(_ ==> List(
   ("Community Harvest of Southwest Seattle", Set("sustainable food")),
   ("InBallard", Set("food")))
 )
@@ -404,7 +404,7 @@ And parameterized:
 ```
 val typeAndCategory = m(Community.name.type_(?).category contains ?)
 
-typeAndCategory("website", Set("food")).get(3) === List(
+typeAndCategory("website", Set("food")).get(3).map(_ ==> List(
   ("Community Harvest of Southwest Seattle", Set("sustainable food")),
   ("InBallard", Set("food")))
 )
@@ -420,13 +420,13 @@ Datomic rules are named groups of Datomic clauses that can be plugged into Datom
 We can for instance find social media communities with a logical OR expresion:
 
 ```
-Community.name.type_("twitter" or "facebook_page").get(3) === List(
+Community.name.type_("twitter" or "facebook_page").get(3).map(_ ==> List(
   "Magnolia Voice", "Columbia Citizens", "Discover SLU")
 ```
 ... or find communities in the NE or SW regions.
 
 ```
-Community.name.Neighborhood.District.region_("ne" or "sw").get(3) === List(
+Community.name.Neighborhood.District.region_("ne" or "sw").get(3).map(_ ==> List(
   "Beach Drive Blog", 
   "KOMO Communities - Green Lake", 
   "Delridge Produce Cooperative")
@@ -442,7 +442,7 @@ val southernSocialMedia = List(
 
 Community.name.type_("twitter" or "facebook_page")
   .Neighborhood
-  .District.region_("sw" or "s" or "se").get === southernSocialMedia
+  .District.region_("sw" or "s" or "se").get.map(_ ==> southernSocialMedia
 ```
 
 Let's parameterized the same query:
@@ -453,13 +453,13 @@ val typeAndRegion = m(Community.name.type_(?).Neighborhood.District.region_(?))
 typeAndRegion(
   ("twitter" or "facebook_page") and 
   ("sw" or "s" or "se")
-).get === southernSocialMedia
+).get.map(_ ==> southernSocialMedia
 
 // or
 typeAndRegion(
   Seq("twitter", "facebook_page"), 
   Seq("sw", "s", "se")
-).get === southernSocialMedia
+).get.map(_ ==> southernSocialMedia
 ```
 Note how this syntax for the ((a OR b) AND (c OR d)) expression is different from the syntax we had earlier in the section "Multiple tuples of input values for multiple attributes" where we had a ((a AND b) OR (c AND d)) expression.
 
@@ -625,7 +625,7 @@ val newCommunitiesData = List(
 )
 
 // Insert 3 new communities with 3 new neighborhoods
-insertCommunity(newCommunitiesData) === List(
+insertCommunity(newCommunitiesData).map(_ ==> List(
   17592186045909L, 17592186045910L, 17592186045911L,
   17592186045912L, 17592186045913L, 17592186045914L,
   17592186045915L, 17592186045916L, 17592186045917L)

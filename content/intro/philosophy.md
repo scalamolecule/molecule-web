@@ -7,24 +7,20 @@ menu:
 ---
 
 
-# Molecules - your new <nobr>domain data?</nobr>
-
->Business processes are fluent and need an equally flexible data counterpart: _molecules_.
-
-
-## The problem
+# The Molecular Domain Model
 
 Traditionally, domain classes are too often:
 
 - **Dumb** crud-containers of domain data being populated and consumed back and forth.
 - **Rigid** abstractions being bad fits for complex business processes.
 - **Bloated** with more and more properties serving business processes scattered all over.
+- **Fragmented** in ever more sub-classed hierarchies or hard to overview complex design pattern arrangments.
 
-Abstraction often has its price. 
+Too many abstractions can easily make it hard to reason about _what the program does_ from a process/use case level.
 
-A "Person" can be endlessly many things and doesn't like being trapped in any domain class.
+>A "Person" can be endlessly many things in various contexts and doesn't like being trapped in any domain class.
 
-The impedance mismatch between fluent business processes and rigid class-based data abstractions pollutes our mental model about our domain.
+The impedance mismatch between fluent business processes and rigid class-based data abstractions pollutes our mental model about our domain. The atomic natur of molecule attributes can help here.
 
 
 ## Filling the gap
@@ -44,15 +40,17 @@ Molecules can match the exact data needs of business processes, from case to cas
 
 We see a "domain model" semantically in 3 layers, each supporting the layer above:
 
-- Business processes
-- Molecules of attributes 
+- Business processes of interacting entities
+- Entities or molecules of attributes 
 - Atomic attributes - our _Data Model_
 
 
 Attributes are the slowest changing part of a domain model since the intrinsic definitions of say an "atomic" `firstName` attribute will rarely, if ever, change. We define those attributes in a [Data model](/setup/data-model/). 
 
 
-In the layer above, groups of attributes form data-structures, or "molecules", that are tailored to the _exact_ needs of business processes of the top layer. No more or less.
+In the layer above, groups of attributes form entity data-structures, or "molecules", that are tailored to the _exact_ needs of business processes of the top layer. 
+
+Molecules allows this more fluid and flexible "Molecular Domain Modeling" that can be tailored to the exact requirements of various contexts/use cases. 
 
 
 

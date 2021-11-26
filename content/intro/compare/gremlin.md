@@ -70,22 +70,24 @@ When we compile our project with `sbt compile`, the sbt-molecule plugin will gen
 // Create database and save implicit connection
 implicit val conn = recreateDbFrom(ModernGraph1Schema)
 
-// Software
-val List(lop, ripple) = Software.name.lang insert Seq(
-  ("lop", "java"),
-  ("ripple", "java")
-) eids
-
-// People and software created
-val List(marko, vadas, josh, peter) = Person.name.age.software insert Seq(
-  ("marko", 29, Set(lop)),
-  ("vadas", 27, Set[Long]()),
-  ("josh", 32, Set(lop, ripple)),
-  ("peter", 35, Set(lop))
-) eids
-
-// Friendships
-Person(marko).friends(vadas, josh).update
+for {
+  // Software
+  List(lop, ripple) <- Software.name.lang insert Seq(
+    ("lop", "java"),
+    ("ripple", "java")
+  ) map(_.eids)
+  
+  // People and software created
+  List(marko, vadas, josh, peter) <- Person.name.age.software insert Seq(
+    ("marko", 29, Set(lop)),
+    ("vadas", 27, Set[Long]()),
+    ("josh", 32, Set(lop, ripple)),
+    ("peter", 35, Set(lop))
+  ) map(_.eids)
+  
+  // Friendships
+  _ <- Person(marko).friends(vadas, josh).update
+} yield ()
 ```
 We'll use the variables with entity ids above for the coming examples.
 
@@ -111,7 +113,7 @@ Since Molecule uses the domain terms as custom building blocks directly, we can 
 _What is the Person name of entity `marko`?_
 
 ```scala
-Person(marko).name.get.head === "marko"
+Person(marko).name.get.map(_.head ==> "marko")
 ```
 
 ### Edges / Entities
@@ -126,7 +128,7 @@ gremlin> g.V(1).outE('knows')
 _Marko's friends_
 
 ```scala
-Person(marko).friends.get.head === Set(vadas, josh)
+Person(marko).friends.get.map(_.head ==> Set(vadas, josh))
 ```
 
 ### Values
@@ -141,7 +143,7 @@ gremlin> g.V(1).out('knows').values('name')
 In Molecule we can jump from one namespace like `Person` to `Friends` since there's a relationship defined between the two. That way we can get Marko's referenced Friends entities:
 
 ```scala
-Person(marko).Friends.name.get.head === Set("vadas", "josh")
+Person(marko).Friends.name.get.map(_.head ==> Set("vadas", "josh"))
 ```
 Note though, that a namespace is not like a SQL table but rather just a meaningful prefix for a group of attributes.
 
@@ -157,7 +159,7 @@ gremlin> g.V(1).out('knows').has('age', gt(30)).values('name') //(7)
 _Names of Marko's friends over the age of 30._
 
 ```scala
-Person(marko).Friends.name.age_.>(30).get === Set("josh")
+Person(marko).Friends.name.age_.>(30).get.map(_ ==> Set("josh"))
 ```
 
 
@@ -173,7 +175,7 @@ gremlin> g.V().has('name','marko')
 Prepending the generic attribute `e` before an attribute finds the entity that it belongs to:
 
 ```scala
-Person.e.name_("marko").get.head === marko
+Person.e.name_("marko").get.map(_.head ==> marko)
 ```
 We also append an underscore `_` to the `name` attribute so that it becomes `name_`. In Molecule this makes the attribute "tacit", or "silent", meaning that we don't need to return its value "marko" since we're already applying it as a value that we expect the attribute to have.
 
@@ -189,7 +191,7 @@ gremlin> g.V().has('name','marko').out('created').values('name')
 _What software did Marko create?_ - here we use a relationship again to get to the referenced Software entities and their names
 
 ```scala
-Person.name_("marko").Software.name.get === Seq("lop")
+Person.name_("marko").Software.name.get.map(_ ==> List("lop"))
 ```
 
 ### OR logic
@@ -204,9 +206,9 @@ gremlin> g.V().has('name',within('vadas','marko')).values('age')
 To get both names we us Molecule's OR-logic by applying multiple values to an attribute. `name` should be either "marko" OR "vadas" and we can use various syntaxes:
 
 ```scala
-Person.name_("marko", "vadas").age.get === Seq(27, 29)       // Vararg
-Person.name_("marko" or "vadas").age.get === Seq(27, 29)     // `or`
-Person.name_(Seq("marko", "vadas")).age.get === Seq(27, 29)  // Seq
+Person.name_("marko", "vadas").age.get.map(_ ==> List(27, 29))       // Vararg
+Person.name_("marko" or "vadas").age.get.map(_ ==> List(27, 29))     // `or`
+Person.name_(Seq("marko", "vadas")).age.get.map(_ ==> List(27, 29))  // Seq
 ```
 
 ### Aggregates
@@ -220,7 +222,7 @@ gremlin> g.V().has('name',within('vadas','marko')).values('age').mean()
 Molecule implements Datomics aggregate functions by applying the keyword `avg` to a number attribute like `age`
 
 ```scala
-Person.name_("marko", "vadas").age(avg).get.head === 28.0
+Person.name_("marko", "vadas").age(avg).get.map(_.head ==> 28.0)
 ```
 
 ### Where / 2-step queries
@@ -241,7 +243,7 @@ It's idiomatic with Datomic to split such query and use the output of one query 
 val markoSoftware = Person.name_("marko").software.get.head
 
 // Then find names of persons that have participated in those projects
-Person.name.software_(markoSoftware).get === Seq("peter", "josh", "marko")
+Person.name.software_(markoSoftware).get.map(_ ==> List("peter", "josh", "marko"))
 ```
 <br>
 Excluding marko from the result
@@ -253,7 +255,7 @@ gremlin> g.V().has('name','marko').as('exclude').out('created').in('created').wh
 ```
 
 ```scala
-Person.name.not("marko").software_(markoSoftware).get === Seq("peter", "josh")
+Person.name.not("marko").software_(markoSoftware).get.map(_ ==> List("peter", "josh"))
 ```
 
 
@@ -269,8 +271,8 @@ gremlin> g.V().group().by(label).by('name')
 Since Molecule is typed we would probably ask for specific `name` attribute values:
 
 ```scala
-Person.name.get === Seq("peter", "vadas", "josh", "marko")
-Software.name.get === Seq("ripple", "lop")
+Person.name.get.map(_ ==> List("peter", "vadas", "josh", "marko"))
+Software.name.get.map(_ ==> List("ripple", "lop"))
 ```
 
 
@@ -289,33 +291,33 @@ Let's ask a few more complex questions - a reminder of the graph could be useful
 Who knows young people?
 ```scala
 // Since we save bidirectional references we get friendships in both directions:
-Person.name.Friends.name.age.<(30).get === List(
+Person.name.Friends.name.age.<(30).get.map(_ ==> List(
   ("vadas", "marko", 29), // vadas knows marko who is 29
   ("josh", "marko", 29), // josh knows marko who is 29
   ("marko", "vadas", 27) // marko knows vadas who is 27
-)
+))
 ```
 
 How many young friends does the older people have?
 ```scala
-Person.name.age.>=(30).friends(count).age_.<(30).get === List(
+Person.name.age.>=(30).friends(count).age_.<(30).get.map(_ ==> List(
   ("josh", 32, 1) // josh (32) knows 1 young person (Marko, 29)
-)
+))
 ```
 
 Marko's friends and their friends
 ```scala
-Person.name("marko").Knows.Person.name.Knows.Person.name.get === List(
+Person.name("marko").Knows.Person.name.Knows.Person.name.get.map(_ ==> List(
   ("marko", "vadas", "peter"),
   ("marko", "josh", "marko"),
   ("marko", "vadas", "marko")
-)
+))
 
 // Same, nested
 Person.name("marko").Knows.*(
   Person.name.Knows.*(
-    Person.name)).get
-        .map(t1 => (t1._1, t1._2.map(t2 => (t2._1, t2._2.sorted)).sortBy(_._1))) ===
+    Person.name)).get.map(
+      _.map(t1 => (t1._1, t1._2.map(t2 => (t2._1, t2._2.sorted)).sortBy(_._1))) ==>
         List(
           (
             "marko",
@@ -325,28 +327,29 @@ Person.name("marko").Knows.*(
             )
           )
         )
+      )
 ```
 
 Marko's friends and their friends (excluding marko)
 ```scala
-Person.name("marko").Knows.Person.name.Knows.Person.name.not("marko").get === List(
+Person.name("marko").Knows.Person.name.Knows.Person.name.not("marko").get.map(_ ==> List(
   ("marko", "vadas", "peter")
-)
+))
 ```
 
 Marko's friends' friends
 ```scala
-Person.name_("marko").Knows.Person.Knows.Person.name.not("marko").get === List(
+Person.name_("marko").Knows.Person.Knows.Person.name.not("marko").get.map(_ ==> List(
   "peter"
-)
+))
 ```
 
 Marko's friends' friends that are not already marko's friends (or marko)
 ```scala
 val ownCircle = Person(marko).Knows.Person.name.get.toSeq :+ "marko"
-Person(marko).Knows.Person.Knows.Person.name.not(ownCircle).get === List(
+Person(marko).Knows.Person.Knows.Person.name.not(ownCircle).get.map(_ ==> List(
   "peter"
-)
+))
 ```
 
 ### Using the edge properties
@@ -360,19 +363,22 @@ Person(marko).Knows.Person.Knows.Person.name.not(ownCircle).get === List(
 
 Well-known friends
 ```scala
-Person(marko).Knows.weight_.>(0.8).Person.name.get === List("josh")
+Person(marko).Knows.weight_.>(0.8).Person.name.get.map(_ ==> List("josh"))
 ```
 
 Well-known friends heavily involved in projects
 ```scala
-Person(marko).Knows.weight_.>(0.8).Person.name.Created.weight_.>(0.8).Software.name.get ===
-  List(("josh", "ripple"))
+Person(marko).Knows.weight_.>(0.8).Person.name.Created.weight_.>(0.8).Software.name.get.map(_ ==> List(
+  ("josh", "ripple")
+))
 ```
 
 Friends of friends' side projects
 ```scala
-Person(marko).Knows.Person.Knows.Person.name.not("marko").Created.weight.<(0.5).Software.name.get ===
-  List(("peter", 0.2, "lop"))
+Person(marko).Knows.Person.Knows.Person.name.not("marko").Created.weight.<(0.5).Software.name.get
+  .map(_ ==> List(
+    ("peter", 0.2, "lop")
+  ))
 
 // .. or elaborated:
 Person(marko) // marko entity
@@ -380,11 +386,11 @@ Person(marko) // marko entity
   .Knows.Person.name.not("marko") // friends of friends of marko that are not marko
   .Created.weight.<(0.5) // Created (software) with a low weight property
   .Software.name // name of software created
-  .get === List((
+  get.map(_ ==> List((
   "peter", // peter is a friend of vadas who is a friend of marko
   0.2,     // peter participated with a weight of 0.2 in creating
   "lop"    // the software "lop"
-))
+)))
 ```
 
 

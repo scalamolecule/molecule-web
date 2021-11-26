@@ -27,7 +27,7 @@ lazy val app = project.in(file("app"))
     ),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "0.25.1",
+      "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 
@@ -46,7 +46,7 @@ lazy val app = project.in(file("app"))
 
 First, you need to [start a Datomic transactor](https://docs.datomic.com/on-prem/storage.html#start-transactor) in its own process:
 
-    cd <your-datomic-distribution (free/starter/pro)>
+    cd <your-datomic-free-distribution>
     bin/transactor config/samples/free-transactor-template.properties
 
 Note that although the Peer in your application code in this project setup is the free version of Peer, the transactor can be of any type - a free or a starter/pro. As long as your application code can reach it via a matching host:port it will work. A datomic database is in other words interchangeable between free/pro.
@@ -74,10 +74,10 @@ Having an implicit connection in scope, we can start transacting and querying `s
 
 ```scala
 // Transact
-Person.name("John").age(24).save.eid
+Person.name("John").age(24).save
 
 // Query
-assert(Person.name.age.get.head == ("John", 24))
+Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `SampleApp`.

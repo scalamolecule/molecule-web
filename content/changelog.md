@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-12-01 v1.0.0 [Complete non-blocking asynchronous api for jvm/js](#46)
 - 2021-03-14 v0.25.1 [Time getters for object output](#45)
 - 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
 - 2021-01-16 v0.24.0 [Json output dropped](#43)
@@ -52,6 +53,13 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+
+## [☝︎](#top) Time getters for object output {#46}
+
+_2021-12.01 v1.0.0_
+
 
 
 
@@ -173,13 +181,13 @@ val long  = 1L
 val float = 1f
 
 // -> Float
-Ns.float(int).get === List(1.0f)
-Ns.float(long).get === List(1.0f)
+Ns.float(int).get.map(_ ==> List(1.0f)
+Ns.float(long).get.map(_ ==> List(1.0f)
 
 // -> Double
-Ns.double(int).get === List(1.0)
-Ns.double(long).get === List(1.0)
-Ns.double(float).get === List(1.0)
+Ns.double(int).get.map(_ ==> List(1.0)
+Ns.double(long).get.map(_ ==> List(1.0)
+Ns.double(float).get.map(_ ==> List(1.0)
 ```
 
 The widening feature is deprecated in Scala and will thus be gone when removed from Scala.
@@ -187,7 +195,7 @@ The widening feature is deprecated in Scala and will thus be gone when removed f
 Variables with Int values can now also be applied to Long attributes:
 ```scala
 val int = 1
-Ns.long(int).get === List(1L)
+Ns.long(int).get.map(_ ==> List(1L)
 ```
 
 
@@ -253,12 +261,12 @@ m(Ns.int.Refs1 * Ref1.str1) insert List(
 )
 
 // Mandatory nested data
-m(Ns.int.Refs1 * Ref1.str1).get === List(
+m(Ns.int.Refs1 * Ref1.str1).get.map(_ ==> List(
   (1, List("a", "b"))
 )
 
 // Optional nested data
-m(Ns.int.Refs1 *? Ref1.str1).get === List(
+m(Ns.int.Refs1 *? Ref1.str1).get.map(_ ==> List(
   (1, List("a", "b")),
   (2, List())
 )
@@ -341,7 +349,7 @@ m(Community.name)._model === Model(List(
 ))
 
 // Uppercase namespace names are also retrieved when querying the schema
-Schema.a.part.ns.nsFull.attr.get === List((
+Schema.a.part.ns.nsFull.attr.get.map(_ ==> List((
   ":Community/name", // namespace name now uppercase 
   "db.part/user", // default partition (not prefixed to namespaces)
   "Community", // now uppercase
@@ -368,7 +376,7 @@ m(accounting_Invoice.invoiceLine)._model === Model(List(
 ))
 
 // Querying the schema
-Schema.a.part.ns.nsFull.attr.get === List((
+Schema.a.part.ns.nsFull.attr.get.map(_ ==> List((
   ":accounting_Invoice/invoiceLine", 
   "accounting", // custom partition (always lowercase)
   "Invoice", // namespace now uppercase
@@ -412,14 +420,14 @@ _2019-01-15 v0.17.0_
 
 Entity id of Ben with generic datom attribute `e` on a custom molecule...
 ```scala
-Person.e.name.get.head === (benEntityId, "Ben")
+Person.e.name.get.map(_.head ==> (benEntityId, "Ben")
 ```
 
 #### EAVT index
 
 Attributes/values of entity id `e1`...
 ```scala
-EAVT(e1).e.a.v.t.get === List(
+EAVT(e1).e.a.v.t.get.map(_ ==> List(
   (e1, ":person/name", "Ben", t1),
   (e1, ":person/age", 42, t2),
   (e1, ":golf/score", 5.7, t2)
@@ -429,7 +437,7 @@ EAVT(e1).e.a.v.t.get === List(
 #### AVET index
 Values and entity associations for attribute `:person/age`...
 ```scala
-AVET(":person/age").v.e.t.get === List(
+AVET(":person/age").v.e.t.get.map(_ ==> List(
   (42, e1, t2),
   (37, e2, t5),
   (14, e3, t7)
@@ -438,7 +446,7 @@ AVET(":person/age").v.e.t.get === List(
 Datomic's [indexRange API](http://docs.datomic.com/on-prem/javadoc/datomic/Database.html#indexRange(java.lang.Object,%20java.lang.Object,%20java.lang.Object)) is also implemented...
 ```scala
 // Entities and transactions of age attribute with values between 14 and 37
-AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
+AVET.range(":person/age", Some(14), Some(37)).v.e.t.get.map(_ ==> List(
   (14, e4, t7) // 14 is included in value range
 )
 ```
@@ -447,7 +455,7 @@ AVET.range(":person/age", Some(14), Some(37)).v.e.t.get === List(
 
 Entity ids, values and transaction t's of attribute `:person/name`:
 ```scala
-AEVT(":person/name").e.v.t.get === List(
+AEVT(":person/name").e.v.t.get.map(_ ==> List(
   (e1, "Ben", t2),
   (e2, "Liz", t5)
 )
@@ -458,14 +466,14 @@ AEVT(":person/name").e.v.t.get === List(
 Reverse index for ref attributes...
 ```scala
 // Say we have 3 entities pointing to one entity:
-Release.e.name.Artists.e.name.get === List(
+Release.e.name.Artists.e.name.get.map(_ ==> List(
   (r1, "Abbey Road", a1, "The Beatles"),
   (r2, "Magical Mystery Tour", a1, "The Beatles"),
   (r3, "Let it be", a1, "The Beatles"),
 )
 
 // .. then we can get the reverse relationships with the VAET Index:
-VAET(a1).v.a.e.get === List(
+VAET(a1).v.a.e.get.map(_ ==> List(
   (a1, ":release/artists", r1),
   (a1, ":release/artists", r2),
   (a1, ":release/artists", r3)
@@ -477,7 +485,7 @@ VAET(a1).v.a.e.get === List(
 Access to datoms index sorted by transaction/time:
 ```scala
 // Data from transaction t1 (inclusive) until t4 (exclusive)
-Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
+Log(Some(t1), Some(t4)).t.e.a.v.op.get.map(_ ==> List(
   (t1, e1, ":person/name", "Ben", true),
   (t1, e1, ":person/age", 41, true),
 
@@ -494,7 +502,7 @@ Log(Some(t1), Some(t4)).t.e.a.v.op.get === List(
 Programatically explore your `Schema` structure...
 ```scala
 // Datomic type and cardinality of attributes
-Schema.a.tpe.card.get === List (
+Schema.a.tpe.card.get.map(_ ==> List (
   (":sales_customer/name", "string", "one"),
   (":accounting_invoice/invoiceLine", "ref", "many"),
 )
@@ -838,7 +846,7 @@ To make a few tests with our filtered db we can now do like this:
 
 ```scala
 // Current state
-Person(johnId).name.age.get.head === ("John", 37)
+Person(johnId).name.age.get.map(_.head ==> ("John", 37)
 
 // Create "branch" of our production db as it is right now
 conn.testDbAsOfNow  
@@ -848,13 +856,13 @@ Person(johnId).name("Johnny").update
 Person(johnId).age(38).update
 
 // Verify expected outcome of operations
-Person(johnId).name.age.get.head === ("Johnny", 38)
+Person(johnId).name.age.get.map(_.head ==> ("Johnny", 38)
 
 // Then go back to production state
 conn.useLiveDb
 
 // Production state is unchanged!
-Person(johnId).name.age.get.head === ("John", 37)
+Person(johnId).name.age.get.map(_.head ==> ("John", 37)
 ```
 
 ### Test db with domain classes
@@ -914,11 +922,11 @@ Molecule now allows retrieving attribute values of selected entities:
 val List(e1, e2, e3) = Ns.int.insert(1, 2, 3).eids
 
 // Use selected entity ids to access attributes of those entities
-Ns(e1, e2).int.get === List(1, 2)
+Ns(e1, e2).int.get.map(_ ==> List(1, 2)
 
 // Or use a variable with a collection of entity ids
 val e23 = Seq(e2, e3)
-Ns(e23).int.get === List(2, 3)
+Ns(e23).int.get.map(_ ==> List(2, 3)
 ```
 
 Likewise we can update attribute values of selected entities (group editing):
@@ -952,26 +960,26 @@ Person.name("Ann").Friends.name("Ben").save
 Then we can naturally query to get friends of Ann
 
 ```scala
-Person.name_("Ann").Friends.name.get === List("Ben")
+Person.name_("Ann").Friends.name.get.map(_ ==> List("Ben")
 ```
 
 But what if we want to find friends of Ben? This will give us nothing:
 
 ```scala
-Person.name_("Ben").Friends.name.get === List()
+Person.name_("Ben").Friends.name.get.map(_ ==> List()
 ```
 
 Instead we would have to think backwards to get the back reference
 
 ```scala
- Person.name.Friends.name_("Ben").get === List("Ann")
+ Person.name.Friends.name_("Ben").get.map(_ ==> List("Ann")
 ```
 
 If we want to traverse deeper into a friendship graph we would have to query both forward and backward for each step in the graph which would quickly become a pain. With Molecules new bidirectional references we can uniformly query from both ends:
 
 ```scala
- Person.name_("Ann").Friends.name.get === List("Ben")
- Person.name_("Ben").Friends.name.get === List("Ann")
+ Person.name_("Ann").Friends.name.get.map(_ ==> List("Ben")
+ Person.name_("Ben").Friends.name.get.map(_ ==> List("Ann")
 ```
 
 Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidirectional%20refs/) for more information and the [Gremlin graph examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/).
@@ -1013,7 +1021,7 @@ And we can then query the composed molecule:
 ```scala
 // Important articles submitted by Brenda Johnson
 // In queries we tie composite molecule parts together with `~`
-m(Article.name.author ~ Tag.weight.>=(4).tx_(MetaData.submitter_("Brenda Johnson"))).get === List(
+m(Article.name.author ~ Tag.weight.>=(4).tx_(MetaData.submitter_("Brenda Johnson"))).get.map(_ ==> List(
   (("Battle of Waterloo", "Ben Bridge"), 5)
 )
 ```
@@ -1052,14 +1060,14 @@ Each defined attribute map now adds an additional attribute with a "K" appended 
 
 ```scala
 // Normal attribute map returning maps of key/values
-Ns.int.greetings("en").get === List(
+Ns.int.greetings("en").get.map(_ ==> List(
   (1, Map("en" -> "Hi there")),
   (2, Map("en" -> "Hi")),
   (3, Map("en" -> "Hello"))
 )
 
 // "Keyed attribute map" returning values directly (matching the key)
-Ns.int.greetingsK("en").get === List(
+Ns.int.greetingsK("en").get.map(_ ==> List(
   (1, "Hi there"),
   (2, "Hi"),
   (3, "Hello")
@@ -1088,12 +1096,12 @@ Ns.int.greetings insert List(
 )
 ```
 
-Other types are supported too. So we could for instance have timezones as Float values for different countries etc.
+Other types are supported too. So we could for instance have timezones as Double values for different countries etc.
 
 Each key is prepended to its value and saved as a cardinality many value ("en@Hi there") in Datomic. When we then retrieve the values, Molecule automatically splits the values into typed key/value pairs in a map so that we can conveniently continue to work with them in Scala:
 
 ```scala
-Ns.int.greetings.get === List(
+Ns.int.greetings.get.map(_ ==> List(
   (1, Map("en" -> "Hi there")),
   (2, Map("fr" -> "Bonjour", "en" -> "Hi")),
   (3, Map("en" -> "Hello")),
@@ -1101,20 +1109,20 @@ Ns.int.greetings.get === List(
 )
 
 // English values only (find all values having "en" as key)
-Ns.int.greetings("en").get === List(
+Ns.int.greetings("en").get.map(_ ==> List(
   (1, Map("en" -> "Hi there")),
   (2, Map("en" -> "Hi")),
   (3, Map("en" -> "Hello"))
 )
 
 // English values containing the substring "Hi"
-Ns.int.greetings("en" -> "Hi").get === List(
+Ns.int.greetings("en" -> "Hi").get.map(_ ==> List(
   (1, Map("en" -> "Hi there")),
   (2, Map("en" -> "Oh, Hi"))
 )
 
 // All values containing the substring "He"
-Ns.int.greetings("_" -> "He").get === List(
+Ns.int.greetings("_" -> "He").get.map(_ ==> List(
   (3, Map("en" -> "Hello")),
   (4, Map("da" -> "Hej"))
 )
@@ -1141,7 +1149,7 @@ m(Ns.str.Refs1 * (Ref1.int1.Refs2 * Ref2.int2)) insert List(
 we can now query for each `Ns.str` paired with all its nested `Ref2.int2`'s:
 
 ```scala
-m(Ns.str.Refs1 * Ref1.Refs2.int2).get === List(
+m(Ns.str.Refs1 * Ref1.Refs2.int2).get.map(_ ==> List(
   ("a", List(11)),
   ("b", List(22, 21, 31)))
 ```
@@ -1161,7 +1169,7 @@ Now we can insert/get related values from multiple related namespaces in one go:
 m(lit_Book.title.Author.name._Book.Reviewers * gen_Person.name) insert List(
   ("book", "John", List("Marc"))
 )
-m(lit_Book.title.Author.name._Book.Reviewers * gen_Person.name).get === List(
+m(lit_Book.title.Author.name._Book.Reviewers * gen_Person.name).get.map(_ ==> List(
   ("book", "John", List("Marc"))
 )
 ```
@@ -1186,7 +1194,7 @@ Single optional values should be retrievable. But when inserting we want to avoi
     ("b", 2))
 
   // Ok to ask for an optional referenced value
-  m(Ns.str.Ref1.int1$).get === List(
+  m(Ns.str.Ref1.int1$).get.map(_ ==> List(
     ("a", Some(1)),
     ("b", Some(2)))
 

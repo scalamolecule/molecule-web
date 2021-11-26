@@ -3,7 +3,7 @@ title: "Attributes"
 weight: 20
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 # Attributes
@@ -30,7 +30,7 @@ As you see we start our molecule from some Namespace and then build on Attribute
 
 The size of molecules are limited to Scala's arity limit of 22 for tuples.
 
-But we can create a [composite molecule](/code/relationships/#composite-molecules) with up to 22 x 22 = 484 attributes!
+But we can create a [composite molecule](/manual/relationships/#composite-molecules) with up to 22 x 22 = 484 attributes!
 
 
 
@@ -41,10 +41,10 @@ The attributes `name`, `age` and `gender` that we saw above are typical cardinal
 Datomic also has cardinality-many attributes that have a `Set` of values. This means that the same value cannot be saved multiple times, or that only unique values are saved. An example could be a cardinality-many attribute `hobbies` of a `Person`:
 
 ```scala
-Person.name.hobbies.get.head === ("John", Set("Trains", "Chess"))
+Person.name.hobbies.get.map(_.head ==> ("John", Set("Trains", "Chess")))
 ```
 
-In the [Update](/code/transactions/#update) section of CRUD we will see how multiple values are managed with Molecule.
+In the [Update](/manual/transactions/#update) section of CRUD we will see how multiple values are managed with Molecule.
 
 
 
@@ -83,11 +83,11 @@ If for instance we wanted to find all names of Persons that have an age attribut
 ```scala
 val names = Person.name.age_.get
 ```
-This will return names of person entities having both a name and age Attribute set. Note how the age values are no longer returned from the type signatures:
+This will return a Future with names of person entities having both a name and age Attribute set. Note how the age values are no longer returned from the type signatures:
 
 ```scala
-val persons: List[(String, Int)] = Person.name.age.get
-val names  : List[String]        = Person.name.age_.get
+val persons: Future[List[(String, Int)]] = Person.name.age.get
+val names  : Future[List[String]]        = Person.name.age_.get
 ```
 This way we can switch on and off individual attributes from the result set without affecting the data structures we look for.
 
@@ -98,7 +98,7 @@ This way we can switch on and off individual attributes from the result set with
 If an attribute value is only sometimes set, we can ask for it's optional value by adding a dollar sign `$` after the attribute:
 
 ```scala
-val names: List[(String, Option[String], String)] = Person.firstName.middleName$.lastName.get
+val names: Future[List[(String, Option[String], String)]] = Person.firstName.middleName$.lastName.get
 ```
 That way we can get all person names with or without middleNames. As you can see from the return type, the middle name is wrapped in an `Option`.
 
@@ -135,14 +135,14 @@ Person.id.name.insert(
 )
 
 // Retrieve mapped data
-Person.id.name.get.head === (1, 
+Person.id.name.get.map(_.head ==> (1, 
   Map(
     "en" -> "Dmitri Shostakovich",
     "de" -> "Dmitri Schostakowitsch",
     "fr" -> "Dmitri Chostakovitch",
     "es" -> "Dmitri Shostakóvich"
   )
-)
+))
 ```
 
 Molecule concatenates the key and value of each pair to one of several values of an underlying cardinality-many attribute. When data is then retrieved Molecule splits the concatenated string into a typed pair. This all happens automatically and let's us focus on their use in our code.
@@ -183,16 +183,16 @@ Person.likes("pizza")
 Since the applied value "pizza" ensures that the attributes returned has this value we will get redundant information back for the `likes` attribute ("pizza" is returned for all persons):
 
 ```scala
-Person.name.likes("pizza").get === List(
+Person.name.likes("pizza").get.map(_ ==> List(
   ("John", "pizza"),
   ("Ben", "pizza")
-)
+))
 ```
 This is an ideomatic place to use a tacit attribute `likes_` to say "Give me names of persons that like pizza" without returning the `likes` value "pizza" over and over again. Then we get a nice list of only the pizza likers:
 ```scala
-Person.name.likes_("pizza").get === List(
+Person.name.likes_("pizza").get.map(_ ==> List(
   "John", "Ben"
-)
+))
 ```
 _Note that since we get an arity-1 result back it is simply a list of those values._
 
@@ -260,8 +260,9 @@ Person.age.>=(42)
 ```
 Comparison of all types are performed with java's `compareTo` method. Text strings can for instance also be sorted by a letter:
 ```scala
-Community.name.<("C").get(3) === List(
-  "ArtsWest", "All About South Park", "Ballard Neighbor Connection")
+Community.name.<("C").get(3).map(_ ==> List(
+  "ArtsWest", "All About South Park", "Ballard Neighbor Connection"
+))
 ```
 
 ### Null
@@ -437,7 +438,7 @@ Molecules can have up to 3 `?` placeholder parameters.
 
 ```scala
 val person      = m(Person.name(?).age(?))
-val john        = person("John" and 24).get.head // AND
+val john        = person("John" and 24).get.map(_.head) // AND
 val johnOrJonas = person(("John" and 24) or ("Lisa" and 20)).get // AND/OR
 ```
 
@@ -454,6 +455,6 @@ val americanBabies       = americansYoungerThan(1).get
 
 ### Next
 
-[Relationships...](/code/relationships/)
+[Relationships...](/manual/relationships/)
 
 

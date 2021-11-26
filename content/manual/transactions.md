@@ -3,7 +3,7 @@ title: Transactions
 weight: 50
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 # Transactions
@@ -48,7 +48,7 @@ Here, we map over the result of saving asynchronously:
 // Map over a Future
 Person.name("John").likes("pizza").age(24).saveAsync.map { tx => // tx report from successful save transaction
   // (synchronous get)
-  Person.name.likes.age.get.head === ("Ben", "pizza", 24)
+  Person.name.likes.age.get.map(_.head ==> ("Ben", "pizza", 24)
 }
 ```
 
@@ -122,7 +122,7 @@ This is different from SQL where we would save a NULL value in a `likes` column.
 Molecule lets us fetch data sets with optional facts asserted for an attribute as optional values:
 
 ```scala
-Person.name.likes$.age.get === List(
+Person.name.likes$.age.get.map(_ ==> List(
   ("John", None, 24),
   ("Pete", Some("sushi"), 55)
 )
@@ -130,14 +130,14 @@ Person.name.likes$.age.get === List(
 
 If we specifically want to find Persons that have no `likes` asserted we can say
 ```scala
-Person.name.likes_(nil).age.get === List(
+Person.name.likes_(nil).age.get.map(_ ==> List(
   ("John", 24)
   // Pete not returned since he likes something
 )
 ```
 .. or
 ```scala
-Person.name.likes$(None).age.get === List(
+Person.name.likes$(None).age.get.map(_ ==> List(
   ("John", None, 24)
   // Pete not returned since he likes something
 )
@@ -240,7 +240,7 @@ When the John entity is created, a 5th Avenue Address entity is also created and
 
 ### Composite data
 
-Data with associative relationships can be inserted with a [Composite molecule](/code/relationships/#composite-molecules).
+Data with associative relationships can be inserted with a [Composite molecule](/manual/relationships/#composite-molecules).
 ```scala
 Article.name.author + Tag.name.weight insert List(
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
@@ -358,7 +358,7 @@ This will retract the `age` value 25 of the John entity.
 A cardinality many attribute like `hobbies` holds a `Set` of values:
 
 ```scala
-Person(johnId).hobbies.get.head === Set("golf", "cars")
+Person(johnId).hobbies.get.map(_.head ==> Set("golf", "cars")
 ```
 
 
@@ -379,12 +379,12 @@ All operations generally accepts varargs or `Lists` of the type of the attribute
 ```scala
 // Assert vararg values
 Person(johnId).hobbies.assert("walks", "jogging").update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "golf", "cars", "walks", "jogging")
 
 // Add Set of values
 Person(johnId).hobbies.assert(Set("skating", "biking")).update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "golf", "cars", "walks", "jogging", "skating", "biking")
 ```
 
@@ -396,7 +396,7 @@ Since Cardinality-many attributes have multiple values we need to specify which 
 ```scala
 // Cardinality-many attribute value updated
 Person(johnId).hobbies.replace("skating" -> "surfing").update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "golf", "cars", "walks", "jogging", "surfing", "biking")
 ```
 Here we tell that the "skating" value should now be "surfing". The old value is retracted and the new value asserted so that we can go back in time and see what the values were before our update.
@@ -407,7 +407,7 @@ Update several values in one go
 Person(johnId).hobbies(
   "golf" -> "badminton",
   "cars" -> "trains").update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "badminton", "trains", "walks", "jogging", "surfing", "biking")
 ```
 
@@ -418,11 +418,11 @@ We can retract one or more values from the set of values
 
 ```scala
 Person(johnId).hobbies.retract("badminton").update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "trains", "walks", "jogging", "surfing", "biking")
 
 Person(johnId).hobbies.retract(List("walks", "surfing")).update
-Person(johnId).hobbies.get.head === Set(
+Person(johnId).hobbies.get.map(_.head ==> Set(
   "trains", "jogging", "biking")
 ```
 The retracted facts can still be tracked in the history of the database.
@@ -435,7 +435,7 @@ As with cardinality one attributes we can `apply` completely new values to an at
 
 ```scala
 Person(johnId).hobbies("meditaion").update
-Person(johnId).hobbies.get.head === Set("meditation")
+Person(johnId).hobbies.get.map(_.head ==> Set("meditation")
 ```
 
 #### `apply()`
@@ -444,7 +444,7 @@ Applying nothing (empty parenthesises) retracts all values of an attribute
 
 ```scala
 Person(johnId).hobbies().update
-Person(johnId).hobbies.get === Nil
+Person(johnId).hobbies.get.map(_ ==> Nil
 ```
 
 
@@ -493,7 +493,7 @@ Ns.str.int insertAsync List(
 ) map { tx => // tx report from successful insert transaction
   // 4 inserted entities
   val List(a, b, c, d) = tx.eids
-  Ns.int.get === List(
+  Ns.int.get.map(_ ==> List(
     ("a", 1),
     ("b", 2),
     ("c", 3),
@@ -531,7 +531,7 @@ Ns.str.int insertAsync List(
 
 In Datomic, retracting a fact saves a Datom with the fifth component `op` set to `false`. 
 
-Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/code/time/#asof) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since nothing is deleted!
+Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/manual/time/#asof) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since nothing is deleted!
 
 ### Retract facts
 
@@ -562,7 +562,7 @@ We can then afterwards use the tx meta-data to get information about the retract
 ```scala
 // Who got their membership terminated and when?
 Person.e.name.t.op(false)
-  .Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  .Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (johnId, "John", t3, false) // John terminated his membership at transaction t3 and was retracted
 )
 ```
@@ -586,7 +586,7 @@ Again, we can then afterwards use the tx meta-data to get information about the 
 ```scala
 // Who got their membership terminated and when?
 Person.e.name.t.op(false)
-  .Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+  .Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (johnId, "John", t3, false), // John terminated his membership at transaction t3 and was retracted
   (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
 )
@@ -639,12 +639,12 @@ Here, we map over the result of retracting an entity asynchronously (in the inne
 Ns.int.insertAsync(1, 2).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2) = tx.eids
-  Ns.int.get === List(1, 2)
+  Ns.int.get.map(_ ==> List(1, 2)
 
   // Retract first entity asynchronously
   e1.retractAsync.map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(2)
+    Ns.int.get.map(_ ==> List(2)
   }
 }
 ```
@@ -654,12 +654,12 @@ Retract multiple entities asynchronously:
 Ns.int.insertAsync(1, 2, 3).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2, e3) = tx.eids
-  Ns.int.get === List(1, 2, 3)
+  Ns.int.get.map(_ ==> List(1, 2, 3)
 
   // Retract first entity asynchronously
   retractAsync(Seq(e1, e2)).map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(3)
+    Ns.int.get.map(_ ==> List(3)
   }
 }
 ```
@@ -728,7 +728,7 @@ Molecule offers some generic attributes that makes it easy to access transaction
 
 _"In what transaction was Johns name asserted?"_
 ```scala
-Person(johnId).name_.tx.get.head === tx2
+Person(johnId).name_.tx.get.map(_.head ==> tx2
 ```
 The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in a molecule. We can see that `name` of entity `johnId` (John) was asserted in transaction `tx2` since the value `tx2` was saved as the `name` quintuplet's 4th value.
 
@@ -737,7 +737,7 @@ The `tx` attribute gets the 4th quintuplet value of its preceeding attribute in 
 Alternatively we can get a transaction value `t`
 
 ```scala
-Person(johnId).name_.t.get.head === t2
+Person(johnId).name_.t.get.map(_.head ==> t2
 ```
 
 
@@ -747,7 +747,7 @@ With the transaction entity available we can then also get to the value of the t
 
 _"When was Johns name asserted?"_
 ```scala
-Person(johnId).name_.txInstant.get.head === date1
+Person(johnId).name_.txInstant.get.map(_.head ==> date1
 ```
 
 ### Transaction data per attribute
@@ -764,7 +764,7 @@ val tx3 = Person(johnId).age(25).update.tx
 // Retrieve transactions of multiple attributes
 Person(johnId)
   .name_.tx
-  .age_.tx.get.head === (tx2, tx3)
+  .age_.tx.get.map(_.head ==> (tx2, tx3)
 
 // No, name and age were asserted in different transactions
 tx2 !== tx3
@@ -775,7 +775,7 @@ _"At what time was John's name and age asserted"_
 ```scala
 Person(johnId)
   .name_.txInstant
-  .age_.txInstant.get.head === (date1, date2)
+  .age_.txInstant.get.map(_.head ==> (date1, date2)
 
 // John's name was asserted before his age
 date1.before(date2) === true
@@ -797,7 +797,7 @@ date1.before(date2) === true
 
 ### Multiple actions in one atomic transaction
 
-[save](/code/transactions/#save), [insert](/code/transactions/#insert), [update](/code/transactions/#update) and [retract](/code/transactions/#retract-1) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
+[save](/manual/transactions/#save), [insert](/manual/transactions/#insert), [update](/manual/transactions/#update) and [retract](/manual/transactions/#retract-1) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
 
 Each of the above operations has an equivalent method for getting the transaction statements it produces:
 
@@ -873,31 +873,31 @@ inspectTransact(
 /*
   ## 1 ## TxReport
   ========================================================================
-  1          ArrayBuffer(
-    1          List(
-      1          :db.fn/retractEntity   17592186045445)
-    2          List(
-      1          :db/add       #db/id[:db.part/user -1000247]     :Ns/int          4           Card(1))
-    3          List(
-      1          :db/add       #db/id[:db.part/user -1000252]     :Ns/int          5           Card(1))
-    4          List(
-      1          :db/add       #db/id[:db.part/user -1000253]     :Ns/int          6           Card(1))
-    5          List(
-      1          :db/add       17592186045446                     :Ns/int          20          Card(1)))
+  ArrayBuffer(
+    List(
+      :db.fn/retractEntity   17592186045445)
+    List(
+      :db/add       #db/id[:db.part/user -1000247]     :Ns/int          4           Card(1))
+    List(
+      :db/add       #db/id[:db.part/user -1000252]     :Ns/int          5           Card(1))
+    List(
+      :db/add       #db/id[:db.part/user -1000253]     :Ns/int          6           Card(1))
+    List(
+      :db/add       17592186045446                     :Ns/int          20          Card(1)))
   ------------------------------------------------
-  2          List(
-    1    1     added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018
+  List(
+    added: true ,   t: 13194139534345,   e: 13194139534345,   a: 50,   v: Wed Nov 14 23:38:15 CET 2018
 
-    2    2     added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 1
+    added: false,  -t: 13194139534345,  -e: 17592186045445,  -a: 64,  -v: 1
 
-    3    3     added: true ,   t: 13194139534345,   e: 17592186045450,   a: 64,   v: 4
+    added: true ,   t: 13194139534345,   e: 17592186045450,   a: 64,   v: 4
 
-    4    4     added: true ,   t: 13194139534345,   e: 17592186045451,   a: 64,   v: 5
+    added: true ,   t: 13194139534345,   e: 17592186045451,   a: 64,   v: 5
 
-    5    5     added: true ,   t: 13194139534345,   e: 17592186045452,   a: 64,   v: 6
+    added: true ,   t: 13194139534345,   e: 17592186045452,   a: 64,   v: 6
 
-    6    6     added: true ,   t: 13194139534345,   e: 17592186045446,   a: 64,   v: 20
-         7     added: false,  -t: 13194139534345,  -e: 17592186045446,  -a: 64,  -v: 2)
+    added: true ,   t: 13194139534345,   e: 17592186045446,   a: 64,   v: 20
+    added: false,  -t: 13194139534345,  -e: 17592186045446,  -a: 64,  -v: 2)
   ========================================================================
 */
 ```
@@ -965,20 +965,20 @@ Now we can query the tx meta-data in various ways:
 ```scala
 // How was John added?
 // John was added by Lisa as part of a survey
-Person(johnId).name.Tx(Audit.user.uc).get === List(
+Person(johnId).name.Tx(Audit.user.uc).get.map(_ ==> List(
   ("John", "Lisa", "survey"))
 
 // When did Lisa survey John?
 Person(johnId).name_.txInstant
-  .Tx(Audit.user_("Lisa").uc_("survey")).get.head === dateX
+  .Tx(Audit.user_("Lisa").uc_("survey")).get.map(_.head ==> dateX
   
 // Who were surveyed?  
 Person.name
-  .Tx(Audit.uc_("survey")).get === List("John")
+  .Tx(Audit.uc_("survey")).get.map(_ ==> List("John")
 
 // What did people that Lisa surveyed like? 
 Person.likes
-  .Tx(Audit.user_("Lisa").uc_("survey")).get === List("pizza")
+  .Tx(Audit.user_("Lisa").uc_("survey")).get.map(_ ==> List("pizza")
 
 // etc..
 ```
@@ -1021,7 +1021,7 @@ _"Get serious articles that Brenda submitted"_:
 ```scala
 m(Article.name.author + 
   Tag.name_("serious").weight.>=(4)
-  .Tx(MetaData.submitter_("Brenda Johnson"))).get === List(
+  .Tx(MetaData.submitter_("Brenda Johnson"))).get.map(_ ==> List(
   (("Battle of Waterloo", "Ben Bridge"), 5)
 )
 ```
@@ -1037,7 +1037,7 @@ Person(johnId).likes("pasta")
 Now when we look at a list of Persons and what they like we can see that some likes were from an original survey and one is from a follow-up survey that Ben did:
 
 ```scala
-Person.name.likes.Tx(Audit.user.uc).get === List(
+Person.name.likes.Tx(Audit.user.uc).get.map(_ ==> List(
   ("John", "pasta", "Ben", "survey-follow-up"),
   ("Pete", "burgers", "Lisa", "survey"),
   ("Mona", "snacks", "Lisa", "survey")
@@ -1056,7 +1056,7 @@ To retract an attribute value we apply an empty arg list to the attribute and `u
 Person(peteId).likes()
   .Tx(Audit.user("Ben").uc("survey-follow-up")).update
 ```
-We can follow the `likes` of Pete through [history](/code/time/#history) and see that Ben retracted his `likes` value in a survey follow-up:
+We can follow the `likes` of Pete through [history](/manual/time/#history) and see that Ben retracted his `likes` value in a survey follow-up:
 ```scala
 Person(peteId).likes.t.op
   .Tx(Audit.user.uc).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
@@ -1070,7 +1070,7 @@ Person(peteId).likes.t.op
 The entity Pete still exists but now has no current liking:
 
 ```scala
-Person(peteId).name.likes$.get.head === ("Pete", None) 
+Person(peteId).name.likes$.get.map(_.head ==> ("Pete", None) 
 ```
 
 ### Entities
@@ -1100,7 +1100,7 @@ Person(johnId).likes.t.op
 
 The entity John now currently doesn't exists (although still in history)
 ```scala
-Person(johnId).name.likes$.get === Nil 
+Person(johnId).name.likes$.get.map(_ ==> Nil 
 ```
 
 
@@ -1115,4 +1115,4 @@ Person(johnId).name.likes$.get === Nil
 
 ### Next
 
-[Transaction Functions...](/code/transaction-functions)
+[Transaction Functions...](/manual/transaction-functions)

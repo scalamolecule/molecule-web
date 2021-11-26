@@ -47,7 +47,7 @@ object SeattleDataModel {
     val url          = oneString
     val category     = manyString.fulltext
     val orgtype      = oneEnum("community", "commercial", "nonprofit", "personal")
-    val `type`       = oneEnum("email_list", "twitter", "facebook_page") // + more...
+    val tpe          = oneEnum("email_list", "twitter", "facebook_page" /* more..*/).alias("type")
     val neighborhood = one[Neighborhood]
   }
 
@@ -62,19 +62,19 @@ object SeattleDataModel {
   }
 }
 ```
-
+Since `type` is a reserved word in Scala, we choose another name and make an alias called "type". This allows for accessing imported data that uses `type` as attribute name.
 
 
 
 ### Molecule arity
 
-The `@InOut(2, 8)` arity annotation at the top instructs the generated boilerplate code to able to create molecules with up to 2 [input attributes](/code/attributes/#input-molecules) and up to 8 "output" attributes.
+The `@InOut(2, 8)` arity annotation at the top instructs the generated boilerplate code to able to create molecules with up to 2 [input attributes](/manual/attributes/#input-molecules) and up to 8 "output" attributes.
 
 When developing your Data Model you might just set the first arity annotation variable for input attributes to `0` and then later when your model is stabilizing, then you can add the ability to make input molecules by setting it to 1, 2 or 3 (the maximum). Using parameterized input attributes can be a performance optimization since using input values in queries allows Datomic to cache the query. 
 
 The second arity annotation parameter basically tells how long molecules you can build. This doesn't affect how many attributes you can _define_ in each namespace in the Data Model. The maximum arity of a molecule and for this annotation parameter is 22, the same as for tuples. 
  
->If you at some point need to make molecules with more than 22 attributes you can use [composite molecules](/code/relationships/#composite-molecules).
+>If you at some point need to make molecules with more than 22 attributes you can use [composite molecules](/manual/relationships/#composite-molecules).
 
 
 
@@ -118,7 +118,7 @@ Each partition can contain as many namespaces as you want.
 Partition names have to be in lowercase and are prepended to the namespaces it contains with an underscore inbetween:
 
 ```scala
-lit_Book.title.cat.Author.name.gender.get === ...
+lit_Book.title.cat.Author.name.gender.get.map(_ ==> ...)
 ```
 
 Since `Author` is already defined as a related namespace we don't need to prepend the partition name there.
@@ -140,22 +140,22 @@ Cardinality-one             Cardinality-many                 Mapped cardinality-
 oneString    : String       manyString    : Set[String]      mapString    : Map[String, String]
 oneInt       : Int          manyInt       : Set[Int]         mapInt       : Map[String, Int]
 oneLong      : Long         manyLong      : Set[Long]        mapLong      : Map[String, Long]
-oneFloat     : Float        manyFloat     : Set[Float]       mapFloat     : Map[String, Float]
 oneDouble    : Double       manyDouble    : Set[Double]      mapDouble    : Map[String, Double]
-oneBigInt    : BigInt       manyBigInt    : Set[BigInt]      mapBigInt    : Map[String, BigInt]
-oneBigDecimal: BigDecimal   manyBigDecimal: Set[BigDecimal]  mapBigDecimal: Map[String, BigDecimal]
 oneBoolean   : Boolean      manyBoolean   : Set[Boolean]     mapBoolean   : Map[String, Boolean]
 oneDate      : Date         manyDate      : Set[Date]        mapDate      : Map[String, Date]
 oneUUID      : UUID         manyUUID      : Set[UUID]        mapUUID      : Map[String, UUID]
 oneURI       : URI          manyURI       : Set[URI]         mapURI       : Map[String, URI]
+oneBigInt    : BigInt       manyBigInt    : Set[BigInt]      mapBigInt    : Map[String, BigInt]
+oneBigDecimal: BigDecimal   manyBigDecimal: Set[BigDecimal]  mapBigDecimal: Map[String, BigDecimal]
 oneEnum      : String       manyEnum      : Set[String]
 ```
+Due to [limitations in JavaScript](http://www.scala-js.org/doc/semantics.html), some `Float` precision is lost on the js platform. Please use `Double` instead to ensure safe double precision.
 
 Cardinality-one attributes can have one value per entity.
 
 Cardinality-many attributes can have a `Set` of unique values per entity. Often we choose instead to model many-values as a many-reference to another entity that could have more than one attribute.
 
-Mapped cardinality-many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/code/attributes/#map-attributes)...
+Mapped cardinality-many attributes are a special Molecule variation based on cardinality-many attributes. Read more [here](/manual/attributes/#map-attributes)...
 
 
 
@@ -172,7 +172,7 @@ In the example above we saw a reference from Community to Neighborhood defined a
 
 ### Bidirectional references
 
-In [Bidirectional relationships](/code/relationships/#bidirectional) some specialized reference definitions for bidirectional graphs are explained.
+In [Bidirectional relationships](/manual/relationships/#bidirectional) some specialized reference definitions for bidirectional graphs are explained.
 
 
 

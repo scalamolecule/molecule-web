@@ -3,7 +3,7 @@ title: Retract
 weight: 53
 menu:
   main:
-    parent: code
+    parent: manual
     identifier: code-op-retract
 ---
 
@@ -45,7 +45,7 @@ fredId.Tx(MyUseCase.name("Terminate membership")).retract
 We can then afterwards use the tx meta data to get information of retracted data:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (fredId, "Fred", t3, false) // Fred terminated his membership at transaction t3 and was retracted
 )
 ```
@@ -77,7 +77,7 @@ retract(eids, MyUseCase.name("Terminate membership"))
 Again, we can then afterwards use the tx meta data to get information of retracted data:
 ```scala
 // Who got their membership terminated and when?
-Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory === List(
+Person.e.name.t.op(false).Tx(MyUseCase.name_("Termminate membership")).getHistory.map(_ ==> List(
   (fredId, "Fred", t3, false), // Fred terminated his membership at transaction t3 and was retracted
   (lisaId, "Lisa", t5, false)  // Lisa terminated her membership at transaction t5 and was retracted
 )
@@ -130,12 +130,12 @@ Here, we map over the result of retracting an entity asynchronously (in the inne
 Ns.int.insertAsync(1, 2).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2) = tx.eids
-  Ns.int.get === List(1, 2)
+  Ns.int.get.map(_ ==> List(1, 2)
 
   // Retract first entity asynchronously
   e1.retractAsync.map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(2)
+    Ns.int.get.map(_ ==> List(2)
   }
 }
 ```
@@ -145,12 +145,12 @@ Retract multiple entities asynchronously:
 Ns.int.insertAsync(1, 2, 3).map { tx => // tx report from successful insert transaction
   // 2 inserted entities
   val List(e1, e2, e3) = tx.eids
-  Ns.int.get === List(1, 2, 3)
+  Ns.int.get.map(_ ==> List(1, 2, 3)
 
   // Retract first entity asynchronously
   retractAsync(Seq(e1, e2)).map { tx2 => // tx report from successful retract transaction
     // Current data
-    Ns.int.get === List(3)
+    Ns.int.get.map(_ ==> List(3)
   }
 }
 ```

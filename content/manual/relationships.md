@@ -3,7 +3,7 @@ title: "Relationships"
 weight: 40
 menu:
   main:
-    parent: code
+    parent: manual
 ---
 
 # Relationships
@@ -45,7 +45,9 @@ object PersonDataModel {
 Given the example Data Model above, we can save a card-one relationship between "Dan" and his pet "Rex":
 
 ```scala
-val List(danId, rexId) = Person.name("Dan").Pet.name("Rex").save.eids
+for {
+  List(danId, rexId) <- Person.name("Dan").Pet.name("Rex").save.map(_.eids)
+} yield ()
 ```
 A Dan and a Rex entity were created.
 
@@ -54,7 +56,9 @@ The `pet` ref-attribute of the Dan entity holds `rexId`. That's the relationship
 If a `rexId` already existed, we could have saved it directly by applying it to the `pet` ref-attribute:
 
 ```scala
-val List(danId) = Person.name("Dan").pet(rexId).save.eids
+for {
+  List(danId) <- Person.name("Dan").pet(rexId).save.map(_.eids)
+} yield ()
 ```
 Now only Dan was created, having two attributes: `name` with value "Dan" and `pet` with value `rexId`. 
 
@@ -64,13 +68,13 @@ Now only Dan was created, having two attributes: `name` with value "Dan" and `pe
 We can ask for related data by using a Capitalized ref-attribute name `Pet`:
 
 ```scala
-Person.name.Pet.name.get.head === ("Dan", "Rex")
+Person.name.Pet.name.get.map(_.head ==> ("Dan", "Rex"))
 ```
 
 And related entity ids with the lowercase ref-attribute name `pet`:
 
 ```scala
-Person.e.name_("Dan").pet.get.head === (danId, rexId)
+Person.e.name_("Dan").pet.get.map(_.head ==> (danId, rexId))
 ```
 
 
@@ -82,7 +86,7 @@ In our example we used `Pet` to get to the `Animal.name` attribute and `pet` to 
 
 >_Capitalized_ ref-attribute names are _Ref namespaces_
 >
->_Lowercase_ ref-attributes hold referenced entity ids
+>_Lowercase_ ref-attributes are reference attributes holding entity ids
 
 
 
@@ -93,11 +97,11 @@ If John is living by himself on 5th Avenue we could talk about a one-to-one rela
 But if several people live on the same address, say entity id `102`, then we have a one-to-many relationship since multiple people entities have a reference to `102`:
 
 ```scala
-Person.name.home.get === List(
+Person.name.home.get.map(_ ==> List(
   ("John", 102),
   ("Lisa", 102),
   ("Mona", 102)
-)
+))
 ```
 Wether a relationship is a one-to-one or one-to-many relationship is determined by the data. In our Data Model, we just model it as a card-one relationship `one[Address]`.
 
@@ -107,7 +111,9 @@ Wether a relationship is a one-to-one or one-to-many relationship is determined 
 Relationship graphs can become arbitrarily deep. We could for instance in a `Address` namespace have a relationship to a `Country` namespace and then get the country `name` too and so on:
 
 ```scala
-Person.name.Home.street.city.Country.name.get.head === ("John", "5th Avenue", "Boston", "USA")
+Person.name.Home.street.city.Country.name.get.map(_.head ==> 
+  ("John", "5th Avenue", "Boston", "USA")
+)
 // etc...
 ```
 
@@ -146,11 +152,11 @@ Note how we in this example make LineItems a component with the `isComponent` op
 Now we can get an Order and its Line Items:
 
 ```scala
-Order.id.Items.qty.product.price.get === List(
+Order.id.Items.qty.product.price.get.map(_ ==> List(
   ("order1", 3, "Milk", 12.00),
   ("order1", 2, "Coffee", 46.00),
   ("order2", 4, "Bread", 5.00)
-)
+))
 ```
 The Order data is repeated for each line Item which is kind of redundant. We can avoid that with a "nested" Molecule instead:
 
@@ -160,16 +166,16 @@ The Order data is repeated for each line Item which is kind of redundant. We can
 We can nest the result from the above example with the Molecule operator `*` indicating "with many":
 
 ```scala
-m(Order.id.Items * LineItem.qty.product.price).get === List(
+m(Order.id.Items * LineItem.qty.product.price).get.map(_ ==> List(
   ("order1", List(
     (3, "Milk", 12.00), 
     (2, "Coffee", 46.00))),
   ("order2", List(
     (4, "Bread", 5.00)))
-)
+))
 
 // or
-Order.id.Items.*(LineItem.qty.product.price).get === List( ...
+Order.id.Items.*(LineItem.qty.product.price).get.map(_ ==> List(...))
 ```
 Now each Order has its own list of typed Line Item data and there is no Order redundancy.
 
@@ -186,15 +192,15 @@ m(Ns.int.Refs1 * Ref1.str1) insert List(
 )
 
 // Mandatory nested data
-m(Ns.int.Refs1 * Ref1.str1).get === List(
+m(Ns.int.Refs1 * Ref1.str1).get.map(_ ==> List(
   (1, List("a", "b"))
-)
+))
 
 // Optional nested data
-m(Ns.int.Refs1 *? Ref1.str1).get === List(
+m(Ns.int.Refs1 *? Ref1.str1).get.map(_ ==> List(
   (1, List("a", "b")),
   (2, List())
-)
+))
 ```
 
 Molecule can nest data structures up to 7 levels deep.
@@ -233,7 +239,7 @@ m(Person.age.name.Likes * Score.beverage.rating) insert List(
 
 Normally we ask for values accross attributes like attr1 AND attr2 AND etc as in age==23 AND name AND rating==Pepsi
 ```scala
-Person.age_(23).name.Likes.beverage_("Pepsi").get === List("Liz", "Joe")
+Person.age_(23).name.Likes.beverage_("Pepsi").get.map(_ ==> List("Liz", "Joe"))
 ```
 But when we need to compare values of the same attribute across entities we need self-joins.
 
@@ -244,7 +250,7 @@ Self-joins lets us answer a lot of interesting questions:
 What beverages do pairs of 23- AND 25-year-olds like in common?
 ```scala
 // (unifying on Likes.beverage)
-Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
+Person.age_(23 and 25).Likes.beverage.get.map(_ ==> List("Coffee", "Tea"))
 // Joe (23) AND Ben (25) likes Coffee (Coffee unifies)
 // Liz (23) AND Ben (25) likes Coffee (Coffee unifies)
 // Liz (23) AND Ben (25) likes Tea    (Tea unifies)
@@ -254,60 +260,60 @@ Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
 Does 23- and 25-years-old have some common beverage ratings?
 ```scala
 // (unifying on Likes.rating)
-Person.age_(23 and 25).Likes.rating.get === List(2, 3)
+Person.age_(23 and 25).Likes.rating.get.map(_ ==> List(2, 3))
 ```
 Any 23- and 25-year-olds with the same name? (no)
 ```scala
 // (unifying on Person.name)
-Person.age_(23 and 25).name.get === List()
+Person.age_(23 and 25).name.get.map(_ ==> List())
 ```
 
 Which beverages do Joe and Liz both like?
 ```scala
 // (unifying on Likes.beverage)
-Person.name_("Joe" and "Liz").Likes.beverage.get === List("Pepsi", "Coffee")
+Person.name_("Joe" and "Liz").Likes.beverage.get.map(_ ==> List("Pepsi", "Coffee"))
 ```
 Do Joe and Liz have some common ratings?
 ```scala
 // (unifying on Likes.rating)
-Person.name_("Joe" and "Liz").Likes.rating.get === List(3)
+Person.name_("Joe" and "Liz").Likes.rating.get.map(_ ==> List(3))
 ```
 Do Joe and Liz have a shared age?
 ```scala
 // (unifying on Person.age)
-Person.name_("Joe" and "Liz").age.get === List(23)
+Person.name_("Joe" and "Liz").age.get.map(_ ==> List(23))
 ```
 
 Who likes both Coffee and Tea?
 ```scala
 // (unifying on Person.name)
-Person.name.Likes.beverage_("Coffee" and "Tea").get === List("Ben", "Liz")
+Person.name.Likes.beverage_("Coffee" and "Tea").get.map(_ ==> List("Ben", "Liz"))
 ```
 What ages have those who like both Coffe and Tea?
 ```scala
 // (unifying on Person.age)
-Person.age.Likes.beverage_("Coffee" and "Tea").get === List(23, 25)
+Person.age.Likes.beverage_("Coffee" and "Tea").get.map(_ ==> List(23, 25))
 ```
 What shared ratings do Coffee and Tea have?
 ```scala
 // (unifying on Score.rating)
-Score.beverage_("Coffee" and "Tea").rating.get === List(3)
+Score.beverage_("Coffee" and "Tea").rating.get.map(_ ==> List(3))
 ```
 
 Who rated both 2 and 3?
 ```scala
 // (unifying on Person.name)
-Person.name.Likes.rating_(2 and 3).get === List("Ben", "Joe")
+Person.name.Likes.rating_(2 and 3).get.map(_ ==> List("Ben", "Joe"))
 ```
 What ages have those who rated both 2 and 3?
 ```scala
 // (unifying on Person.age)
-Person.age.Likes.rating_(2 and 3).get === List(23, 25)
+Person.age.Likes.rating_(2 and 3).get.map(_ ==> List(23, 25))
 ```
 Which beverages are rated 2 and 3?
 ```scala
 // (unifying on Likes.beverage)
-Score.rating_(2 and 3).beverage.get === List("Coffee")
+Score.rating_(2 and 3).beverage.get.map(_ ==> List("Coffee"))
 ```
 
 
@@ -315,20 +321,21 @@ Score.rating_(2 and 3).beverage.get === List("Coffee")
 Which 23- and 25-year-olds with the same name like the same beverage? (none)
 ```scala
 // (unifying on Person.name and Likes.beverage)
-Person.age_(23 and 25).name.Likes.beverage.get === List()
+Person.age_(23 and 25).name.Likes.beverage.get.map(_ ==> List())
 ```
 Do Joe and Liz share age and beverage preferences? (yes)
 ```scala
 // (unifying on Person.age and Likes.beverage)
-Person.age.name_("Joe" and "Liz").Likes.beverage.get === List(
+Person.age.name_("Joe" and "Liz").Likes.beverage.get.map(_ ==> List(
   (23, "Coffee"),
-  (23, "Pepsi"))
+  (23, "Pepsi")
+))
 ```
 
 ### Multiple ANDs
 
 ```scala
-Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
+Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get.map(_ ==> List("Coffee"))
 ```
 
 
@@ -337,11 +344,11 @@ Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
 All the examples above use the `and` notation to construct simple self-joins. Any of them could be re-written to use a more powerful and expressive `Self`-notation:
 
 ```scala
-Person.age_(23 and 25).Likes.beverage.get === List("Coffee", "Tea")
+Person.age_(23 and 25).Likes.beverage.get.map(_ ==> List("Coffee", "Tea"))
 
 // ..can be re-written to:
 Person.age_(23).Likes.beverage._Person.Self
-  .age_(25).Likes.beverage_(unify).get === List("Coffee", "Tea")
+  .age_(25).Likes.beverage_(unify).get.map(_ ==> List("Coffee", "Tea"))
 ```
 
 Let's walk through that one...
@@ -352,92 +359,92 @@ This second notation gives us freedom to fetch more values that shouldn't be uni
 
 ```scala
 Person.age_(23).name.Likes.beverage._Person.Self
-  .age_(25).name.Likes.beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.beverage_(unify).get.map(_.sorted ==> List(
   ("Joe", "Coffee", "Ben"),
   ("Liz", "Coffee", "Ben"),
   ("Liz", "Tea", "Ben")
-)
+))
 ```
 Now we also fetch the name of beverage which is not being unified between the two entities.
 
 Let's add the ratings too
 ```scala
 Person.age_(23).name.Likes.rating.beverage._Person.Self
-  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
+  .age_(25).name.Likes.beverage_(unify).rating.get.map(_.sorted ==> List(
   ("Joe", 3, "Coffee", "Ben", 2),
   ("Liz", 1, "Coffee", "Ben", 2),
   ("Liz", 3, "Tea", "Ben", 3)
-)
+))
 ```
 
 We can arrange the attributes in the previous molecule in other orders too:
 ```scala
 Person.age_(23).name.Likes.rating.beverage._Person.Self
-  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.rating.beverage_(unify).get.map(_.sorted ==> List(
   ("Joe", 3, "Coffee", "Ben", 2),
   ("Liz", 1, "Coffee", "Ben", 2),
   ("Liz", 3, "Tea", "Ben", 3)
-)
+))
 // or
 Person.age_(23).name.Likes.beverage.rating._Person.Self
-  .age_(25).name.Likes.beverage_(unify).rating.get.sorted === List(
+  .age_(25).name.Likes.beverage_(unify).rating.get.map(_.sorted ==> List(
   ("Joe", "Coffee", 3, "Ben", 2),
   ("Liz", "Coffee", 1, "Ben", 2),
   ("Liz", "Tea", 3, "Ben", 3)
-)
+))
 // or
 Person.age_(23).name.Likes.beverage.rating._Person.Self
-  .age_(25).name.Likes.rating.beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.rating.beverage_(unify).get.map(_.sorted ==> List(
   ("Joe", "Coffee", 3, "Ben", 2),
   ("Liz", "Coffee", 1, "Ben", 2),
   ("Liz", "Tea", 3, "Ben", 3)
-)
+))
 ```
 
 Only higher rated beverages
 ```scala
 Person.age_(23).name.Likes.rating.>(1).beverage._Person.Self
-  .age_(25).name.Likes.rating.>(1).beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.rating.>(1).beverage_(unify).get.map(_.sorted ==> List(
   ("Joe", 3, "Coffee", "Ben", 2),
   ("Liz", 3, "Tea", "Ben", 3)
-)
+))
 ```
 
 Only highest rated beverages
 ```scala
 Person.age_(23).name.Likes.rating(3).beverage._Person.Self
-  .age_(25).name.Likes.rating(3).beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.rating(3).beverage_(unify).get.map(_.sorted ==> List(
   ("Liz", 3, "Tea", "Ben", 3)
-)
+))
 ```
 
 Common beverage of 23-year-old with low rating and 25-year-old with high rating
 ```scala
 Person.age_(23).name.Likes.rating(1).beverage._Person.Self
-  .age_(25).name.Likes.rating(2).beverage_(unify).get.sorted === List(
+  .age_(25).name.Likes.rating(2).beverage_(unify).get.map(_.sorted ==> List(
   ("Liz", 1, "Coffee", "Ben", 2)
-)
+))
 ```
 
 Any 23- and 25-year-olds wanting to drink tea together?
 ```scala
 Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
-  .age_(25).name.Likes.beverage_("Tea").get === List(("Liz", "Ben"))
+  .age_(25).name.Likes.beverage_("Tea").get.map(_ ==> List(("Liz", "Ben")))
 ```
 
 Any 23-year old Tea drinker and a 25-year-old Coffee drinker?
 ```scala
 Person.age_(23).name.Likes.beverage_("Tea")._Person.Self
-  .age_(25).name.Likes.beverage_("Coffee").get === List(("Liz", "Ben"))
+  .age_(25).name.Likes.beverage_("Coffee").get.map(_ ==> List(("Liz", "Ben")))
 ```
 
 Any pair of young persons drinking respectively Tea and Coffee?
 ```scala
 Person.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
-  .age_.<(24).name.Likes.beverage_("Coffee").get === List(
+  .age_.<(24).name.Likes.beverage_("Coffee").get.map(_ ==> List(
   ("Liz", "Joe"),
   ("Liz", "Liz")
-)
+))
 ```
 Since Liz is under 24 and drinks both Tea and Coffee she shows up as two persons (one drinking Tea, the other Coffee). We can filter the result to only get different persons:
 ```scala
@@ -445,20 +452,20 @@ Person.e.age_.<(24).name.Likes.beverage_("Tea")._Person.Self
   .e.age_.<(24).name.Likes.beverage_("Coffee").get
   .filter(r => r._1 != r._3).map(r => (r._2, r._4)) === List(
   ("Liz", "Joe")
-)
+))
 ```
 
 ### Multiple explicit self-joins
 
 Beverages liked by all 3 different people
 ```scala
-Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get === List("Coffee")
+Person.name_("Joe" and "Ben" and "Liz").Likes.beverage.get.map(_ ==> List("Coffee"))
 
 // or
 
 Person.name_("Joe").Likes.beverage._Person.Self
   .name_("Ben").Likes.beverage_(unify)._Person.Self
-  .name_("Liz").Likes.beverage_(unify).get === List("Coffee")
+  .name_("Liz").Likes.beverage_(unify).get.map(_ ==> List("Coffee"))
 ```
 
 
@@ -491,19 +498,19 @@ Person.name("Ann").Friends.name("Ben").save
 Then we can naturally query to get friends of Ann
 
 ```scala
-Person.name_("Ann").Friends.name.get === List("Ben")
+Person.name_("Ann").Friends.name.get.map(_ ==> List("Ben"))
 ```
 
 But what if we want to find friends of Ben? This will give us nothing since our reference only went from Ann to Ben:
 
 ```scala
-Person.name_("Ben").Friends.name.get === List()
+Person.name_("Ben").Friends.name.get.map(_ ==> List())
 ```
 
 Instead we would have to think backwards to get the back reference "who referenced Ben?":
 
 ```scala
- Person.name.Friends.name_("Ben").get === List("Ann")
+ Person.name.Friends.name_("Ben").get.map(_ ==> List("Ann"))
 ```
 Since we can't know from which person a friendship reference is made we will always have to query separately in both directions. If we were to traverse say 3 levels into a friendship graph we would end up with 6 queries - one in each direction for all three levels. It can quickly become a pain.
 
@@ -515,16 +522,16 @@ val friends = manyBi[Person]
 ```
 we can start treating friendship relationships uniformly in both directions and get the intuitively expected results
 ```scala
- Person.name_("Ann").Friends.name.get === List("Ben")
- Person.name_("Ben").Friends.name.get === List("Ann")
+ Person.name_("Ann").Friends.name.get.map(_ ==> List("Ben"))
+ Person.name_("Ben").Friends.name.get.map(_ ==> List("Ann"))
 ```
 
 And the graph example becomes easy
 ```scala
- Person.name_("Ann").Friends.Friends.Friends.name.get === List(...)
+ Person.name_("Ann").Friends.Friends.Friends.name.get.map(_ ==> List(...))
  
  // Or without recycling to Ann
- Person.name_("Ann").Friends.Friends.name_.not("Ann").Friends.name.not("Ann").get === List(...)
+ Person.name_("Ann").Friends.Friends.name_.not("Ann").Friends.name.not("Ann").get.map(_ ==> List(...))
 ```
 
 ### Direct bidirectional refs
@@ -541,8 +548,8 @@ val spouse = oneBi[Person]
 where the relationship goes in both directions but only between two persons. If Ann is spouse to Ben, then Ben is also spouse to Ann and we want to be able to query that information uniformly in both directions:
 
 ```scala
- Person.name_("Ann").Spouse.name.get === List("Ben")
- Person.name_("Ben").Spouse.name.get === List("Ann")
+ Person.name_("Ann").Spouse.name.get.map(_ ==> List("Ben"))
+ Person.name_("Ben").Spouse.name.get.map(_ ==> List("Ann"))
 ```
 
 
@@ -570,9 +577,9 @@ Each `manyBi` reference definition takes a type parameter that points back to th
 As with friends we can now query uniformly no matter from which end the reference was entered:
 
 ```scala
- Person.name_("Joe").Buddies.name.get === List("Leo", "Gus")
- Animal.name_("Leo").Buddies.name.get === List("Joe")
- Animal.name_("Gus").Buddies.name.get === List("Joe")
+ Person.name_("Joe").Buddies.name.get.map(_ ==> List("Leo", "Gus"))
+ Animal.name_("Leo").Buddies.name.get.map(_ ==> List("Joe"))
+ Animal.name_("Gus").Buddies.name.get.map(_ ==> List("Joe"))
 ```
 An interesting aspect is that we can give the reference attributes different names on each end. Say Persons have 1 Pet and we model that as a bidirectional cardinality-one reference:
 
@@ -597,8 +604,8 @@ Person.name("Liz").Pet.name("Rex").save
 then we can get access to that information uniformly from both ends even though different attribute names are used:
 
 ```scala
- Person.name_("Liz").Pet.name.get === List("Rex")
- Animal.name_("Rex").Master.name.get === List("Liz")
+ Person.name_("Liz").Pet.name.get.map(_ ==> List("Rex"))
+ Animal.name_("Rex").Master.name.get.map(_ ==> List("Liz"))
 ```
 
 
@@ -643,9 +650,9 @@ Person.name.Knows.*(Knows.weight.Person.name).insert("Ann", List((7, "Ben"), (8,
 And uniformly retrieve that information from any end:
 
 ```scala
-Person.name_("Ann").Knows.*(Knows.weight.Person.name).get.head === List((7, "Ben"), (8, "Joe"))
-Person.name_("Ben").Knows.*(Knows.weight.Person.name).get.head === List((7, "Ann"))
-Person.name_("Joe").Knows.*(Knows.weight.Person.name).get.head === List((8, "Ann"))
+Person.name_("Ann").Knows.*(Knows.weight.Person.name).get.map(_ ==> List((7, "Ben"), (8, "Joe")))
+Person.name_("Ben").Knows.*(Knows.weight.Person.name).get.map(_ ==> List((7, "Ann")))
+Person.name_("Joe").Knows.*(Knows.weight.Person.name).get.map(_ ==> List((8, "Ann")))
 ```
 
 ### A <---> Edge.properties... <---> B
@@ -697,11 +704,11 @@ We can now uniformly retrieve the weighed friendship information from any end:
 
 ```scala
 // Querying from Person
-Person.name_("Joe").CloseTo.*(CloseTo.weight.Animal.name).get.head === List((7, "Gus"), (8, "Leo"))
+Person.name_("Joe").CloseTo.*(CloseTo.weight.Animal.name).get.map(_ ==> List((7, "Gus"), (8, "Leo")))
 
 // Querying from Animal
-Animal.name_("Gus").CloseTo.*(CloseTo.weight.Person.name).get.head === List((7, "Joe"))
-Animal.name_("Leo").CloseTo.*(CloseTo.weight.Person.name).get.head === List((8, "Joe"))
+Animal.name_("Gus").CloseTo.*(CloseTo.weight.Person.name).get.map(_ ==> List((7, "Joe")))
+Animal.name_("Leo").CloseTo.*(CloseTo.weight.Person.name).get.map(_ ==> List((8, "Joe")))
 ```
 
 ### How it works
@@ -725,7 +732,7 @@ Since Molecule is a closed eco-system it can manage this redundancy with 100% co
 
 ### More bidirectional graph examples...
 
-Please have a look at the [Gremlin examples](/intro/compare/gremlin/).
+Please have a look at the [Gremlin examples](/intro/compare/gremlin/) or the [Bidirectional test suite](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/shared/src/test/scala/moleculeTests/tests/core/bidirectionals).
 
 
 
@@ -791,7 +798,7 @@ And we can retrieve "customers", also using the `+` operator:
 
 ```scala
 // With tacit associated attribute category value "customer"
-Person.name.age.likes.+(Site.cat_("customer")).get.head === ("John", 24, "pizza")
+Person.name.age.likes.+(Site.cat_("customer")).get.map(_.head ==> ("John", 24, "pizza"))
 ```
 
 ### Avoiding non-intrinsic model pollution
@@ -815,31 +822,31 @@ A composite contains two or more _sub-molecules_. Sub-molecules are like normal 
 When we get data with composites, each sub-molecule is returned as a sub-tuple, and a single value if it has only one attribute:
 
 ```scala
-m(Person.name.likes.age + Site.cat).get === List(
+m(Person.name.likes.age + Site.cat).get.map(_ ==> List(
   (("John", "pizza", 24), "customer")
-)
+))
 ```
 This composite had two sub-molecules: `Person.name.likes.age` and `Site.cat`.
 
 If the last sub-molecule had 2 attributes we would get a sub-tuple for that too:
 ```scala
-m(Person.name.likes.age + Site.cat.status).get === List(
+m(Person.name.likes.age + Site.cat.status).get.map(_ ==> List(
   (("John", "pizza", 24), ("customer", "good"))
-)
+))
 ```
 And we can add even more sub-molecules...
 ```scala
 m(Person.name.likes.age 
   + Site.cat.status 
   + Loc.tags 
-  + Emotion.like).get === List(
+  + Emotion.like).get.map(_ ==> List(
   (
     ("John", "pizza", 24), 
     ("customer", "good"), 
     Set("inner city", "hipster"), 
     true
   )
-)
+))
 ```
 
 And expressions too...
@@ -848,9 +855,9 @@ And expressions too...
 m(Person.name.likes.age_.>(20) 
   + Site.cat_("customer")
   + Loc.tags_("hipster") 
-  + Emotion.like_(true)).get === List(
+  + Emotion.like_(true)).get.map(_ ==> List(
   ("John", "pizza")
-)
+))
 ```
 The combinations are quite endless - while you can keep your domain model/schema clean and intrinsic!
 
@@ -863,17 +870,17 @@ Since sub-molecules don't necessarily have to be about another namespace, we can
 ```scala
 // Insert composite data with 3 sub-molecules
 Ns.bool.bools.date.dates.double.doubles.enum.enums +
-  Ns.float.floats.int.ints.long.longs.ref1 +
+  Ns.int.ints.long.longs.ref1 +
   Ns.refSub1.str.strs.uri.uris.uuid.uuids.refs1 insert Seq(
   // Two rows with tuples of 3 sub-tuples that type-safely match the 3 sub-molecules above
   (
     (true, Set(true), date1, Set(date2, date3), 1.0, Set(2.0, 3.0), "enum1", Set("enum2", "enum3")),
-    (1f, Set(2f, 3f), 1, Set(2, 3), 1L, Set(2L, 3L), r1),
+    (1, Set(2, 3), 1L, Set(2L, 3L), r1),
     (r2, "a", Set("b", "c"), uri1, Set(uri2, uri3), uuid1, Set(uuid2), Set(42L))
   ),
   (
     (false, Set(false), date4, Set(date5, date6), 4.0, Set(5.0, 6.0), "enum4", Set("enum5", "enum6")),
-    (4f, Set(5f, 6f), 4, Set(5, 6), 4L, Set(5L, 6L), r3),
+    (4, Set(5, 6), 4L, Set(5L, 6L), r3),
     (r4, "d", Set("e", "f"), uri4, Set(uri5, uri6), uuid4, Set(uuid5), Set(43L))
   )
 )
@@ -881,55 +888,52 @@ Ns.bool.bools.date.dates.double.doubles.enum.enums +
 Retrieve the same composite data:
 ```scala
 m(Ns.bool.bools.date.dates.double.doubles.enum.enums +
-  Ns.float.floats.int.ints.long.longs.ref1 +
-  Ns.refSub1.str.strs.uri.uris.uuid.uuids.refs1).get === Seq(
+  Ns.int.ints.long.longs.ref1 +
+  Ns.refSub1.str.strs.uri.uris.uuid.uuids.refs1).get.map(_ ==> List(
   (
     (false, Set(false), date4, Set(date5, date6), 4.0, Set(5.0, 6.0), "enum4", Set("enum5", "enum6")),
-    (4f, Set(5f, 6f), 4, Set(5, 6), 4L, Set(5L, 6L), r3),
+    (4, Set(5, 6), 4L, Set(5L, 6L), r3),
     (r4, "d", Set("e", "f"), uri4, Set(uri5, uri6), uuid4, Set(uuid5), Set(42L))
   ),
   (
     (true, Set(true), date1, Set(date2, date3), 1.0, Set(2.0, 3.0), "enum1", Set("enum2", "enum3")),
-    (1f, Set(2f, 3f), 1, Set(2, 3), 1L, Set(2L, 3L), r1),
+    (1, Set(2, 3), 1L, Set(2L, 3L), r1),
     (r2, "a", Set("b", "c"), uri1, Set(uri2, uri3), uuid1, Set(uuid2), Set(43L))
   )
-)
+))
 ```
 
 ..or a subset of the same composite data:
 ```scala
 m(Ns.bool.bools.date.dates +
-  Ns.float.floats.int +
-  Ns.refSub1.str.strs).get === Seq(
+  Ns.int +
+  Ns.refSub1.str.strs).get.map(_ ==> List(
   (
     (false, Set(false), date4, Set(date5, date6)),
-    (4f, Set(5f, 6f), 4),
+    4,
     (r4, "d", Set("e", "f"))
   ),
   (
     (true, Set(true), date1, Set(date2, date3)),
-    (1f, Set(2f, 3f), 1),
+    1,
     (r2, "a", Set("b", "c"))
   )
-)
+))
 ```
 
 Since the subset uses less than 22 attributes, we can return single tuples without the need for a composite:
 ```scala
-m(Ns.bool.bools.date.dates
-  .float.floats.int
-  .refSub1.str.strs).get === Seq(
+m(Ns.bool.bools.date.dates.int
+  .refSub1.str.strs).get.map(_ ==> List(
   (
-    false, Set(false), date1, Set(date2, date3),
-    1f, Set(2f, 3f), 1,
+    false, Set(false), date1, Set(date2, date3), 1,
     r2, "a", Set("b", "c")
   ),
   (
-    true, Set(true), date4, Set(date5, date6),
-    4f, Set(5f, 6f), 4,
+    true, Set(true), date4, Set(date5, date6), 4,
     r4, "d", Set("e", "f")
   )
-)
+))
 ```
 
 
@@ -937,4 +941,4 @@ m(Ns.bool.bools.date.dates
 
 ### Next
 
-[Transactions...](/code/transactions)
+[Transactions...](/manual/transactions)
