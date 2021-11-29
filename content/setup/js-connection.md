@@ -28,7 +28,7 @@ The Molecule ajax server configuration is very simple. Basically, three lines ne
 
 By extending `MoleculeRpcHandler` the method `moleculeRpcResult` encoder for the third step becomes available.
 
-On a Play server, a Controller could be setup like in [this sample project]():
+On a Play server, a Controller could be setup like in [this sample project](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-rpc-transparent):
 
 ```scala
 // 1. Extend MoleculeRpcHandler
@@ -76,7 +76,7 @@ implicit val conn = Future(Conn_Js(
 ))
 ```
 
-There are [3 Proxy connection types]() that all require the following two schema/attribute arguments:
+There are [3 Proxy connection types](https://github.com/scalamolecule/molecule/blob/master/molecule/shared/src/main/scala/molecule/core/marshalling/ConnProxy.scala) that all require the following two schema/attribute arguments:
 
 - A Seq of Schema transaction data that is supplied from the sbt-molecule plugin generated boilerplate code.
 - A Map of Attribute meta data, also supplied from the sbt-molecule plugin generated boilerplate code.
@@ -148,7 +148,7 @@ DatomicPeerServerProxy(
 )
 ```
 
-For examples of complete Client setups, please have a look at the two rpc projects in the [molecule samples repo]()
+For examples of complete Client setups, please have a look at the two rpc projects in the [molecule samples repo](https://github.com/scalamolecule/molecule-samples)
 
 
 ### Next

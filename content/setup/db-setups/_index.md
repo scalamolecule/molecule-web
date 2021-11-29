@@ -49,7 +49,7 @@ Several more protocols exist for various [Storage Services](https://docs.datomic
 
 ## Client Database setups
 
-For examples of setting up sbt for a Scala.js project, please see the rpc projects in the [molecule sample projects repo](). Most sbt settings will be equal to the various following Server setups examples.
+For examples of setting up sbt for a Scala.js project, please see the rpc projects in the [molecule sample projects repo](https://github.com/scalamolecule/molecule-samples). Most sbt settings will be equal to the various following Server setups examples.
 
 
 ### Next

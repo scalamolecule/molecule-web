@@ -7,7 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
-- 2021-11-29 v1.0.0 [First major Molecule release](#46)
+- 2021-11-29 v1.0.0 [Molecule 1.0.0](#46)
 - 2021-03-14 v0.25.1 [Time getters for object output](#45)
 - 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
 - 2021-01-16 v0.24.0 [Json output dropped](#43)
@@ -56,17 +56,17 @@ title: "Changelog"
 
 
 
-## [☝︎](#top) First major Molecule release {#46}
+## [☝︎](#top) Molecule 1.0.0 {#46}
 
 _2021-11.29 v1.0.0_
 
-This is the first major release of Molecule. Here are some of the major changes compared to earlier iterations:
+This is the first major release of Molecule! Here are some of the major changes compared to earlier iterations:
 
 ### Asynchronous and non-blocking api
 
 Molecule is now fully asynchronous and non-blocking. Futures with data are returned that we can then map over:
 
-```
+```scala
 // transactions
 Person.name("Ben").age(42).save.map(txReport => ...)
 
@@ -102,7 +102,6 @@ Fetched data can now be returned as tuples, objects or json:
 val names           : Future[List[String]]                 = Person.name.get
 val namesAndAges    : Future[List[(String, Int)]]          = Person.name.age.get
 val namesAgesMembers: Future[List[(String, Int, Boolean)]] = Person.name.age.isMember.get
-// etc..
 ```
 
 ```scala
@@ -118,9 +117,10 @@ for {
   _ <- Person.name.age.Address.street.City.name.getObjList.map { person =>
     println(
       s"${person.name} is ${person.age} yeas old and lives on " +
-              s"${person.Address.street}, ${person.Address.City.name}"
+        s"${person.Address.street}, ${person.Address.City.name}"
     )
     // "Ben is 23 years old and lives on Broadway, New York"
+    // "Lisa is..." etc.
   }
 } yield ()
 ```
