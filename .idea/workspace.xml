@@ -5,57 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/content/setup/js-connection.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layouts/partials/front/2-fetch.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layouts/partials/front/5-one-api-dbs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/get-all.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/get-all.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/get.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/get.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-retract.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/op-retract.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-save.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/op-save.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-update.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/op-update.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/query.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/query.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/relationships.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/transaction-bundle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/transaction-bundle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/transaction-report.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/code/transaction-report.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/community/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/community/tutorials/seattle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/setup/schema-tx-code.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/setup/schema-tx-code.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/community/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/community/seattle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/dev/optimizations.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/optimizations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/building-blocks.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/building-blocks.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/intro/philosophy.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/philosophy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/attributes.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/attributes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/dynamic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/dynamic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/generic.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/generic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/relationships.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/relationships.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/time.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/time.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transaction-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/transaction-functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/manual/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/transactions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/data-model.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/data-model.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-connection.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/jvm-connection.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/sbt-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/sbt-setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/2-about.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/4-model-transact-query.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/3-one-api-dbs.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/3-rpc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/4-molecule-datomic.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/6-molecule-datomic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/5-examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/7-examples.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/6-links.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/8-links.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -495,7 +445,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="0.18.4 / sbt-molecule 0.8.1" />
     <MESSAGE value="0.18.5 / sbt-molecule 0.8.1" />
     <MESSAGE value="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10" />
     <MESSAGE value="v0.20.0 Molecule for Scala.js" />
@@ -520,7 +469,8 @@
     <MESSAGE value="v0.25.1" />
     <MESSAGE value="remote sourcemaps" />
     <MESSAGE value="All code examples asynchronous" />
-    <option name="LAST_COMMIT_MESSAGE" value="All code examples asynchronous" />
+    <MESSAGE value="v1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0" />
   </component>
   <component name="masterDetails">
     <states>
