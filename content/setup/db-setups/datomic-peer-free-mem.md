@@ -20,7 +20,7 @@ lazy val demo = project.in(file("."))
 lazy val app = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
-    scalaVersion := "2.13.5",
+    scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
       "clojars" at "https://clojars.org/repo"

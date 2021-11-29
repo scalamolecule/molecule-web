@@ -34,7 +34,7 @@ Varying api arities can be set for each code file.
 
 The Molecule library has more than 1300 tests with easily 30-100 molecules each, and we have simply set the api import to match the highest molecule arity in each file.
 
-If you use input molecules then you can add `inX` where X is how many [inputs](/manual/attributes/#input-molecules) (1, 2 or 3) your molecule expects:
+If you use input molecules then you can add `inX` where X is how many [inputs](/documentation/attributes/#input-molecules) (1, 2 or 3) your molecule expects:
 ```scala
 import molecule.datomic.api.in2_out4._
 

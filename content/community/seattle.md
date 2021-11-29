@@ -538,7 +538,7 @@ Revisiting the past is a very powerful feature. It's also possible to imagine th
 
 When a `getWith(TestTxData)` database object goes out of scope it is simply garbage collected. So we don't need to do any tear down of some state as is common with normal database mockups.
 
-Please see the [getWith examples](/manual/time/#with) in the manual.
+Please see the [getWith examples](/documentation/time/#with) in the manual.
 
 
 ## Insert data
@@ -714,5 +714,5 @@ The other thing to know is that, because we can access database values as they e
 
 [seattle]: https://web.archive.org/web/20161007085359/http://docs.datomic.com/tutorial.html
 [setup]: /setup/
-[populate]: /manual/transactions/#insert
+[populate]: /documentation/transactions/#insert
 

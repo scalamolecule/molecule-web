@@ -3,7 +3,7 @@ title: "Generic APIs"
 weight: 100
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Generic APIs

@@ -3,7 +3,7 @@ title: "Overview"
 weight: 10
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Molecule overview
@@ -522,4 +522,4 @@ Schema.part.ns.attr.fulltext$.doc.get.map(_ ==> List(
 
 ### Next
 
-Let's learn about [Attributes...](/manual/attributes/)
+Let's learn about [Attributes...](/documentation/attributes/)

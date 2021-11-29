@@ -3,7 +3,7 @@ title: "Attributes"
 weight: 20
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Attributes
@@ -30,7 +30,7 @@ As you see we start our molecule from some Namespace and then build on Attribute
 
 The size of molecules are limited to Scala's arity limit of 22 for tuples.
 
-But we can create a [composite molecule](/manual/relationships/#composite-molecules) with up to 22 x 22 = 484 attributes!
+But we can create a [composite molecule](/documentation/relationships/#composite-molecules) with up to 22 x 22 = 484 attributes!
 
 
 
@@ -44,7 +44,7 @@ Datomic also has cardinality-many attributes that have a `Set` of values. This m
 Person.name.hobbies.get.map(_.head ==> ("John", Set("Trains", "Chess")))
 ```
 
-In the [Update](/manual/transactions/#update) section of CRUD we will see how multiple values are managed with Molecule.
+In the [Update](/documentation/transactions/#update) section of CRUD we will see how multiple values are managed with Molecule.
 
 
 
@@ -455,6 +455,6 @@ val americanBabies       = americansYoungerThan(1).get
 
 ### Next
 
-[Relationships...](/manual/relationships/)
+[Relationships...](/documentation/relationships/)
 
 

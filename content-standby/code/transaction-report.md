@@ -3,7 +3,7 @@ title: "Transaction Report"
 weight: 85
 menu:
   main:
-    parent: manual
+    parent: documentation
     identifier: code-transaction-report
 ---
 

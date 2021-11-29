@@ -24,9 +24,9 @@
                     <div class="active item">
                         <div class="carousel-caption">
                             <h3>Type-inferred Queries</h3>
-                            <p>Build query molecules with your domain attributes</p>
+                            <p>Build type-inferred molecule queries with your domain attributes</p>
                             <div class="highlight"> <!-- space avoids copy button -->
-                                <pre class="chroma"><code class="language-scala" data-lang="scala"><span class="k">val</span> <span class="n">persons</span><span class="k">:</span> <span class="kt">List</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">get</span>
+                                <pre class="chroma"><code class="language-scala" data-lang="scala"><span class="k">val</span> <span class="n">persons</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">List</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]]</span> <span class="k">=</span> <span class="nc">Person</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">get</span>
 </code></pre></div>
                             <p><em>&ldquo;Name and age of Persons&rdquo;</em></p>
                         </div>

@@ -3,7 +3,7 @@ title: "Time"
 weight: 90
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Time
@@ -19,10 +19,10 @@ The 5 time getters offer us valuable insight into the database from various pers
 | Semantics | method |
 | :- | :- |
 | Current view of the database                       | get                                    |                     
-| How the db looked after tx2 was transacted         | [getAsOf(t2)](/manual/time/#asof)      |
-| Db with only data since (excluding) tx2 until now  | [getSince(t2)](/manual/time/#since)    |
-| All transactions over time                         | [getHistory](/manual/time/#history)    |
-| "What if"-look into the future of Now + tx4data    | [getWith(tx4data)](/manual/time/#with) |
+| How the db looked after tx2 was transacted         | [getAsOf(t2)](/documentation/time/#asof)      |
+| Db with only data since (excluding) tx2 until now  | [getSince(t2)](/documentation/time/#since)    |
+| All transactions over time                         | [getHistory](/documentation/time/#history)    |
+| "What if"-look into the future of Now + tx4data    | [getWith(tx4data)](/documentation/time/#with) |
 {{< /bootstrap-table >}}
 
 
@@ -283,7 +283,7 @@ Person.like_.v.txInst.op_(false).getHistory.map(_ ==> List(
 
 ### History with Tx meta data
 
-We can even track historical [transaction meta data](/manual/transactions/#tx-meta-data), here with an example from the Provenance example in the [Day-of-Datomic test suite](https://github.com/scalamolecule/molecule/tree/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic):
+We can even track historical [transaction meta data](/documentation/transactions/#tx-meta-data), here with an example from the Provenance example in the [Day-of-Datomic test suite](https://github.com/scalamolecule/molecule/tree/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic):
 
 _Who changed the title and when?_
 
@@ -523,4 +523,4 @@ This make it possible to run arbitrarily complex test scenarios directly against
 
 ### Next
 
-[Generic APIs...](/manual/generic)
+[Generic APIs...](/documentation/generic)

@@ -107,7 +107,7 @@ Since the transaction time is part of all Datoms, we can ask time-related questi
 Person.name.likes.txInstant_(nov5date).get.map(_.head ==> ("John", "pizza"))
 ```
 
-Datomic even offers various powerful ways to work with the [time](/manual/time) dimension of our data:
+Datomic even offers various powerful ways to work with the [time](/documentation/time) dimension of our data:
 
 - `getAsOf` some point in time 
 - `getSince` some point in time

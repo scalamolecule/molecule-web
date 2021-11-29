@@ -3,7 +3,7 @@ title: Query
 weight: 50
 menu:
     main:
-        parent: manual
+        parent: documentation
 identifier: code-op-get
 ---
 

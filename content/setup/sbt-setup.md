@@ -25,8 +25,6 @@ And add it to the project `build.sbt` file
 ```scala
 lazy val yourProject = project.in(file("app"))
     .enablePlugins(MoleculePlugin)
-    //...
-  )
 ```
 
 In ScalaJS projects, enable the plugin in the shared project:
@@ -36,7 +34,6 @@ lazy val shared = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("shared"))
   .enablePlugins(MoleculePlugin)
-  // ...
 ```
 
 ## Dependencies
@@ -63,8 +60,7 @@ Each of the 3 libraries resolve differently:
     libraryDependencies ++= Seq(
       "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-free" % "0.9.5697"
-    ),
-    //...
+    )
   )
 ```
 
@@ -91,8 +87,7 @@ And then we can resolve the dependencies by giving sbt access to our credentials
     libraryDependencies ++= Seq(
       "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "datomic-pro" % "1.0.6269"
-    ),
-    //...
+    )
   )
 ```
 
@@ -111,8 +106,7 @@ The [dev-local library](https://docs.datomic.com/cloud/dev-local.html) is part o
     libraryDependencies ++= Seq(
       "org.scalamolecule" %% "molecule" % "1.0.0",
       "com.datomic" % "dev-local" % "0.9.232"
-    ),
-    //...
+    )
   )
 ```
 
@@ -157,8 +151,7 @@ We list these paths like this in our `build.sbt`:
       "molecule/tests/examples/datomic/mbrainz",
       "molecule/tests/examples/datomic/seattle",
       "molecule/tests/examples/gremlin/gettingStarted"
-    ),
-    //...
+    )
   )
 ```
 
@@ -209,8 +202,6 @@ Normally you want generated Molecule boilerplate code available as an immutable 
 moleculeMakeJars := true // (default)
 ```
 
-
-
 If you want to be able to modify or test things with the generated boilerplate code, you can set the key to false:
 
 ```scala
@@ -218,6 +209,14 @@ moleculeMakeJars := false
 ```
 Then the jars are not created and the generated source code available in the `src_managed` directory in `target`.
 
+
+### moleculeSchemaConversions
+
+Generate schema to lower/upper conversions. This is only need when importing databases from the Clojure world. Defaults to false.
+
+```scala
+moleculeSchemaConversions := false // (default)
+```
 
 ### moleculeAllIndexed
 
@@ -235,7 +234,7 @@ If you set it to false, your settings in your Data Model determines which attrib
 
 ## Complete sbt example
 
-Putting all the configuration together, we here have a minimal project `build.sbt` setup for a free Datomic Peer system:
+Putting all the configuration together, we here have a minimal project `build.sbt` setup for a free Datomic Peer system on the jvm platform:
 
 ```scala
 import sbt.Keys._
@@ -247,11 +246,11 @@ lazy val demo = project.in(file("."))
 lazy val app = project.in(file("app"))
   .enablePlugins(MoleculePlugin)
   .settings(
-    scalaVersion := "2.13.5",
+    scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
       "clojars" at "https://clojars.org/repo",
-    ),
+    )
 
     libraryDependencies ++= Seq(
       "org.scalamolecule" %% "molecule" % "1.0.0",
@@ -264,6 +263,9 @@ lazy val app = project.in(file("app"))
     // Generate Molecule boilerplate code with `sbt clean compile -Dmolecule=true`
     moleculePluginActive := sys.props.get("molecule") == Some("true"),
 
+    // Generate lover/upper schema conversion files (default is false)
+    moleculeSchemaConversions := true,
+            
     // Let IDE detect created jars in unmanaged lib directory
     exportJars := true
   )

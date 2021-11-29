@@ -3,7 +3,7 @@ title: Transactions
 weight: 50
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Transactions
@@ -240,7 +240,7 @@ When the John entity is created, a 5th Avenue Address entity is also created and
 
 ### Composite data
 
-Data with associative relationships can be inserted with a [Composite molecule](/manual/relationships/#composite-molecules).
+Data with associative relationships can be inserted with a [Composite molecule](/documentation/relationships/#composite-molecules).
 ```scala
 Article.name.author + Tag.name.weight insert List(
   (("Battle of Waterloo", "Ben Bridge"), ("serious", 5)),
@@ -531,7 +531,7 @@ Ns.str.int insertAsync List(
 
 In Datomic, retracting a fact saves a Datom with the fifth component `op` set to `false`. 
 
-Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/manual/time/#asof) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since nothing is deleted!
+Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/documentation/time/#asof) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since nothing is deleted!
 
 ### Retract facts
 
@@ -797,7 +797,7 @@ date1.before(date2) === true
 
 ### Multiple actions in one atomic transaction
 
-[save](/manual/transactions/#save), [insert](/manual/transactions/#insert), [update](/manual/transactions/#update) and [retract](/manual/transactions/#retract-1) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
+[save](/documentation/transactions/#save), [insert](/documentation/transactions/#insert), [update](/documentation/transactions/#update) and [retract](/documentation/transactions/#retract-1) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
 
 Each of the above operations has an equivalent method for getting the transaction statements it produces:
 
@@ -1056,7 +1056,7 @@ To retract an attribute value we apply an empty arg list to the attribute and `u
 Person(peteId).likes()
   .Tx(Audit.user("Ben").uc("survey-follow-up")).update
 ```
-We can follow the `likes` of Pete through [history](/manual/time/#history) and see that Ben retracted his `likes` value in a survey follow-up:
+We can follow the `likes` of Pete through [history](/documentation/time/#history) and see that Ben retracted his `likes` value in a survey follow-up:
 ```scala
 Person(peteId).likes.t.op
   .Tx(Audit.user.uc).getHistory.toSeq.sortBy(r => (r._2, r._3)) === List(
@@ -1115,4 +1115,4 @@ Person(johnId).name.likes$.get.map(_ ==> Nil
 
 ### Next
 
-[Transaction Functions...](/manual/transaction-functions)
+[Transaction Functions...](/documentation/transaction-functions)

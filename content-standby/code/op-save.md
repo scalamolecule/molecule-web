@@ -3,7 +3,7 @@ title: Save / Insert
 weight: 51
 menu:
   main:
-    parent: manual
+    parent: documentation
     identifier: code-op-save
 ---
 

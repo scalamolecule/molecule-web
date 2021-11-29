@@ -1,19 +1,17 @@
 ---
-title: "3. Db connection"
+title: "3.1 Db Connection, jvm"
 weight: 40
 menu:
   main:
     parent: setup
 ---
 
-# Database connection
+# Database connection, jvm
 
-To use Molecule we need a few imports and a connection to a [Datomic](https://www.datomic.com/) database. 
-
-There are some smaller variations in how the different setups connect to the database. But the principles are the same, so let's walk through those:
+To use Molecule on the server/jvm side we need a few imports and a connection to a [Datomic](https://www.datomic.com/) database. 
 
 
-## API & DSL imports
+## Imports
 
 Import the Molecule api and the generated DSL for your Data Model
 
@@ -22,9 +20,7 @@ import molecule.datomic.api._
 import app.dsl.yourDomain._
 ```
 
-## Database system
-
-Choose a Datomic database system:
+Also, choose a Datomic database system:
 
 #### Peer
 The [Datomic Peer](https://docs.datomic.com/on-prem/peer-getting-started.html) runs in your application process.
@@ -46,7 +42,7 @@ import molecule.datomic.client.facade.Datomic_DevLocal._
 
 ## Connection
 
-Get a connection to the database in 3 different ways:
+Get a connection to the database in one of 3 ways:
 
 ### Re-create database and schema
 
@@ -73,7 +69,7 @@ implicit val conn = transactSchema(YourDomainSchema)
 // .. or with storage service
 implicit val conn = transactSchema(YourDomainSchema, datomic-db-uri, protocol)
 ```
-We can transact our complete schema as often as we want. If a transaction value is the same as the current value in the database, Datomic simply ignores it. Whereas changes we make to your Data Model / Schema will be transacted.
+We can transact our complete schema as often as we want. If a transaction value is the same as the current value in the database, Datomic simply ignores it. Whereas changes we make to our Data Model / Schema will be transacted.
 
 This makes it easy to migrate our schema: we make changes to our Data Model, `sbt compile -Dmolecule=true` and transact our updated generated Schema transaction file. 
 
@@ -107,4 +103,4 @@ With a transactor running and a local Datomic database saving to disk, the ident
 
 ### Next
 
-To help you choose a database setup, you can explore the [Example database setups...](/setup/db-setups)
+Setting up a [Client database connection](/setup/js-connection)

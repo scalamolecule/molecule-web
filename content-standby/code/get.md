@@ -3,7 +3,7 @@ title: Query
 weight: 80
 menu:
   main:
-    parent: manual
+    parent: documentation
     identifier: query
 ---
 
@@ -17,7 +17,7 @@ The classical Create-Read-Update-Delete operations on data are a bit different u
 Molecule tries to bridge the vocabulary between these two worlds.
 
 
->All getters and operators below have an [asynchronous equivalent](/manual/attributes/#syncasync-apis). Synchronous getters/operators are shown for brevity.
+>All getters and operators below have an [asynchronous equivalent](/documentation/attributes/#syncasync-apis). Synchronous getters/operators are shown for brevity.
 
 ### Create
 
@@ -29,7 +29,7 @@ In Molecule you can either `save` a populated molecule or `insert` multiple tupl
 Person.name("Fred").likes("pizza").age(37).save // or saveAsync
 ```
 
-More on [save](/manual/crud/save/)...
+More on [save](/documentation/crud/save/)...
 
 
 #### `insert`
@@ -41,7 +41,7 @@ Person.name.age.likes insert List( // or insertAsync
   ("Ben", 5, "pizza")
 )
 ```
-More on [insert](/manual/crud/insert/)...
+More on [insert](/documentation/crud/insert/)...
 
 
 ### Read / get
@@ -57,7 +57,7 @@ Person.name.age.likes.get.map(_ ==> List( // or getAsync
   ("Ben", 5, "pizza")
 )
 ```
-More on [get](/manual/crud/get/)...
+More on [get](/documentation/crud/get/)...
 
 
 ### Time getters
@@ -70,7 +70,7 @@ Since data is only appended in Datomic we can also go back in time to look at ou
 <molecule>.getWith(txData) // or getAsyncWith(txData)
 <molecule>.getHistory      // or getAsyncHistory
 ```
-These are such cool features that we have a whole section about [time](/manual/time)...
+These are such cool features that we have a whole section about [time](/documentation/time)...
 
 
 
@@ -90,7 +90,7 @@ Person(fredId).likes.get.map(_.head ==> "pasta"
 ```
 
 
-More on [update](/manual/crud/update/)...
+More on [update](/documentation/crud/update/)...
 
 
 ### Retract ("delete")
@@ -116,7 +116,7 @@ fredId.retract
 // Fred is retracted from current view (but still in history)
 Person(fredId).name.likes.get.map(_ ==> Nil
 ```
-More on [retract](/manual/crud/retract/)...
+More on [retract](/documentation/crud/retract/)...
 
 
 ## Save
@@ -711,7 +711,7 @@ Update-tests with:
 [Tests...](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/tests/core/crud/Retract.scala)
 
 
-In Datomic, retracting a fact saves a retracted Datom with the `added` operation set to `false`. Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/manual/time/asof-since/) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since none is deleted!
+In Datomic, retracting a fact saves a retracted Datom with the `added` operation set to `false`. Retracted datoms will not show up in queries of the current data. But if you query historical data with for instance [asOf](/documentation/time/asof-since/) you'll see what the value was before it was retracted. This mechanism provides Datomic with built-in auditing of all of its data since none is deleted!
 
 ### Retract facts
 

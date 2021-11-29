@@ -23,9 +23,10 @@ Molecule uses the powerful [Datomic](http://datomic.com) database that can model
 ## Why use it?
 
 - Express queries intuitively with type interferrence.
-- Have your Data Model and data guaranteed to be in sync.
+- Have your Data Model and data guaranteed to be in sync by the compiler.
 - Dynamically compose the exact data structures/molecules that your business logic needs.
 - Avoid traditional over-fetching with rigid bloating domain classes.
+- Make transparent RPC calls from the Client side.
 - Leverage built-in auditing, time-travel etc of the powerful [Datomic](http://datomic.com) database. 
 - Avoid query construction with a separate query language.
   
@@ -66,7 +67,7 @@ for {
 
 Molecule is just a thin DataModel-to-query Scala translation layer on top of the heavy-weight [Datomic](https://www.datomic.com) database made by industry leaders like Rich Hickey, Stuart Halloway and more from [Cognitect](https://www.cognitect.com/), the people behind the Clojure Language. 
 
-Datomic serves huge complex systems like [Walmart](https://www.cognitect.com/walmart-case-study.html), [Nubank](https://www.cognitect.com/nubank-case-study.html) in Brasil and [many more industries](https://www.cognitect.com/clients.html). If you want expressive power over a complex domain, Datomic and Molecule will serve you well.
+Datomic serves huge complex systems like [Walmart](https://www.cognitect.com/walmart-case-study.html), [Nubank](https://www.cognitect.com/nubank-case-study.html) in Brasil and [many more industries](https://www.cognitect.com/clients.html). If you want expressive power over a complex domain, Datomic and Molecule will safely serve you well.
 
 
 

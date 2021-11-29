@@ -725,6 +725,6 @@ The other thing to know is that, because we can access database values as they e
 
 
 [seattle]: https://web.archive.org/web/20161007085359/http://docs.datomic.com/tutorial.html
-[setup]: /manual/getting-started/
-[populate]: /manual/insert/
+[setup]: /documentation/getting-started/
+[populate]: /documentation/insert/
 

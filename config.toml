@@ -34,9 +34,9 @@ canonifyURLs = true
 
 [[menu.main]]
     weight = 40
-    name = "Manual"
-    identifier = "manual"
-    url = "/manual/"
+    name = "Documentation"
+    identifier = "documentation"
+    url = "/documentation/"
 
 #[[menu.main]]
 #    weight = 50

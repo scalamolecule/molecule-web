@@ -3,7 +3,7 @@ title: "Transaction Bundle"
 weight: 85
 menu:
   main:
-    parent: manual
+    parent: documentation
     identifier: code-transaction-bundle
 ---
 
@@ -15,7 +15,7 @@ menu:
 
 ### Multiple actions in one atomic transaction
 
-[save](/manual/crud/save), [insert](/manual/crud/insert), [update](/manual/crud/update) and [retract](/manual/crud/retract) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
+[save](/documentation/crud/save), [insert](/documentation/crud/insert), [update](/documentation/crud/update) and [retract](/documentation/crud/retract) operations on molecules each execute in their own transaction. By bundling transactions statements from several of those operations we can execute a single transaction that will guarantee atomicity. The bundled transaction will either complete as a whole or abort if there are any transactional errors.
 
 Each of the above operations has an equivalent method for getting the transaction statements it produces:
 

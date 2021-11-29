@@ -7,7 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
-- 2021-12-01 v1.0.0 [Complete non-blocking asynchronous api for jvm/js](#46)
+- 2021-12-01 v1.0.0 [Complete asynchronous api and adaption to Scala.js too](#46)
 - 2021-03-14 v0.25.1 [Time getters for object output](#45)
 - 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
 - 2021-01-16 v0.24.0 [Json output dropped](#43)
@@ -56,11 +56,11 @@ title: "Changelog"
 
 
 
-## [☝︎](#top) Time getters for object output {#46}
+## [☝︎](#top) Complete asynchronous api and adaption to Scala.js too {#46}
 
 _2021-12.01 v1.0.0_
 
-
+Fundamental revision of Molecule to be only asynchronous and work for both Scala and Scala.js.
 
 
 ## [☝︎](#top) Time getters for object output {#45}
@@ -982,7 +982,7 @@ If we want to traverse deeper into a friendship graph we would have to query bot
  Person.name_("Ben").Friends.name.get.map(_ ==> List("Ann")
 ```
 
-Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidirectional%20refs/) for more information and the [Gremlin graph examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/).
+Please see [Bidirectional refs](http://www.scalamolecule.org/documentation/query/bidirectional%20refs/) for more information and the [Gremlin graph examples](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/).
 
 - This release also adds support for BigInts and BigDecimals. Only bytes is not supported now due to the limited capabilities this type has in Datomic.
 - Input molecules can now also include nested data structures.
@@ -994,7 +994,7 @@ Please see [Bidirectional refs](http://www.scalamolecule.org/manual/query/bidire
 ## [☝︎](#top) Composites & Tx meta data {#12}
 _2016-06-13 [v0.8.0](https://github.com/scalamolecule/molecule/releases/tag/v0.8.0)_
 
-[Composites](http://www.scalamolecule.org/manual/query/composites/) and [Transaction meta data](http://www.scalamolecule.org/manual/query/txMetaData/) are two new major functionalities added to Molecule.
+[Composites](http://www.scalamolecule.org/documentation/query/composites/) and [Transaction meta data](http://www.scalamolecule.org/documentation/query/txMetaData/) are two new major functionalities added to Molecule.
 
 Merge up to 22 sub-molecules as a Composite. Composite inserts create entities with data of attributes type-checking against each sub-molecule. Sub-molecules don't need to be related. The created entity is what ties it all together which is a core feature of Datomic that sets it apart from table/join-thinking.
 

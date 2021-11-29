@@ -3,14 +3,14 @@ title: "Overview"
 weight: 10
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Molecule overview
 
 On this page we'll quickly get an intuitive overview of how Molecule queries and transactions look like.
 
-Pages in the side menu give more details.
+Pages in the side menu on the right go into more detail.
 
 
 ## Db connection
@@ -41,7 +41,7 @@ val namesAgesMembers: Future[List[(String, Int, Boolean)]] = Person.name.age.isM
 // etc..
 ```
 
-Data can also be returned as an object for each row of data that has properties matching the attributes of the molecule:
+Data can also be returned as an object for each row of data that has properties matching the attributes of the molecule. Note the namespacings `ben.Address` and `ben.Address.City`.
 ```scala
 for {
   // Single row/object
@@ -568,4 +568,4 @@ Schema.part.ns.attr.fulltext$.doc.get.map(_ ==> List(
 
 ### Next
 
-[Attributes...](/manual/attributes/)
+[Attributes...](/documentation/attributes/)

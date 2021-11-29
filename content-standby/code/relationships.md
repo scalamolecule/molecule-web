@@ -3,7 +3,7 @@ title: "Relationships"
 weight: 40
 menu:
   main:
-    parent: manual
+    parent: documentation
     identifier: relationships
 ---
 
@@ -175,7 +175,7 @@ m(Ns.int.Refs1 *? Ref1.str1).get.map(_ ==> List(
 
 Molecule can nest data structures up to 7 levels deep.
 
-All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity.
+All getters have an [asynchronous equivalent](/documentation/attributes/basics). Synchronous getters shown for brevity.
 
 
 ### Entity API
@@ -211,7 +211,7 @@ orderId.touch === Map(
 
 ## Associative
 
-As we saw earlier, [Entities](/manual/entities/) are simply groups of facts that share an entity id:
+As we saw earlier, [Entities](/documentation/entities/) are simply groups of facts that share an entity id:
 
 ![](/img/page/entity/entity2.png)
 
@@ -322,7 +322,7 @@ The combinations are quite endless - while you can keep your domain model/schema
 
 Since composites are composed of up to 22 sub-molecules we could potentially insert and retrieve mega composite molecules with up to 22 x 22 = 484 attributes!
 
-(All getters have an [asynchronous equivalent](/manual/attributes/basics). Synchronous getters shown for brevity)
+(All getters have an [asynchronous equivalent](/documentation/attributes/basics). Synchronous getters shown for brevity)
 
 
 

@@ -3,7 +3,7 @@ title: "Relationships"
 weight: 40
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 # Relationships
@@ -941,4 +941,4 @@ m(Ns.bool.bools.date.dates.int
 
 ### Next
 
-[Transactions...](/manual/transactions)
+[Transactions...](/documentation/transactions)

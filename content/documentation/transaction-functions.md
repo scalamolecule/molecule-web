@@ -3,11 +3,13 @@ title: "Transaction Functions"
 weight: 85
 menu:
   main:
-    parent: manual
+    parent: documentation
 ---
 
 
 # Transaction functions
+
+Transaction functions allow to atomically make multiple data operations within one transaction. This feature is available for Datomic Peer systems.
 
 
 ### Atomic processing within the transaction
@@ -23,7 +25,12 @@ Transaction functions
 
 Since tx functions have access to the tx database value they are essential to guaranteeing atomicity in updates for instance. You can query the current db value within the transaction logic and thus be sure certain assertions hold before doing some operation.
 
-### Calling tx functions
+
+
+
+
+
+## Defining tx functions
 
 Molecule facilitates writing tx functions by annotating one or more objects that contain tx function methods:
 
@@ -89,7 +96,11 @@ The Free version can't set the classpath variable so we need to provide the tx f
 ```
 
 
-### Tx function example
+
+
+
+
+## Tx function example
 
 A typical example of needing access to the tx database value before doing an operation on it could be to transfer money from one account to another.
 
@@ -147,7 +158,13 @@ Account(from).balance(newFromBalance).getUpdateStmts
 Tx functions can't modify the database within the body of the tx method. You couldn't for instance do an update within the method body. Any operations on the database have to be encoded in the returned transaction statements.
 
 
-### Invoking tx functions
+
+
+
+
+
+
+## Invoking tx functions
 
 We call the transaction function inside a `transactFn` method:
 ```scala
@@ -266,7 +283,11 @@ Account(toAccount).balance
 ```
 
 
-### Inspecting tx function invocations
+
+
+
+
+## Inspecting invocations
 
 If you want to see the `Statement`s produced by a tx function you can invoke it within `inspectTransactFn` without affecting the live database:
 
@@ -313,4 +334,4 @@ Updating the from-account balance from 100 to 80 for instance creates two Datoms
 
 ### Next
 
-[Time...](/manual/time)
+[Time...](/documentation/time)
