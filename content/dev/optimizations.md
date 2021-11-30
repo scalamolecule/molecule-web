@@ -48,7 +48,7 @@ val male22 = personsOfAgeGender(22, "male").get
 
 Molecule transparently optimize all queries sent to Datomic.
 
-Most selective Clauses are automatically grouped first in the :where section of the Datomic query as per the recommendation in [Datomic Best Practices](https://docs.datomic.com/on-prem/best-practices.html).
+Most selective Clauses are automatically grouped first in the :where section of the Datomic query as per the recommendation in [Datomic Query Best Practices](https://docs.datomic.com/on-prem/best-practices.html#datomic-query).
 
 This brings dramatic performance gains of in some cases beyond 100x compared to un-optimized queries. The optimization happens automatically in the background so that you can focus entirely on your domain without concern for the optimal order of attributes in your molecules.
 

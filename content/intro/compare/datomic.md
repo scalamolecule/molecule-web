@@ -12,7 +12,7 @@ Let's see how Molecule queries compare to Datalog queries used with the Datomic 
 
 Code examples are taken from the [Seattle tutorial](/community/seattle).
 
-[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/seattle/SeattleTests.scala) from which we will pick a few examples.
+[Follow along in the code](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/shared/src/test/scala/moleculeTests/tests/examples/datomic/seattle/SeattleTests.scala) from which we will pick a few examples.
 
 ### Querying _for_ attribute values
 

@@ -10,7 +10,17 @@ menu:
 
 # Clojure Schemas
 
-To ease exchanging Datomic schemas with the Clojure world where Namespaces start with a lowercase letter by convention, Molecule also creates two convenience Schema "converters" that transact aliased attribute names where the first letter is either raised or lowered.
+To ease exchanging Datomic schemas with the Clojure world where Namespaces start with a lowercase letter by convention, Molecule can also creates two convenience Schema "converters" that transact aliased attribute names where the first letter is either raised or lowered. To generate these converters, set the MoleculePlugin parameter `moleculeSchemaConversions` to true in your `build.sbt` file:
+
+Putting all the configuration together, we here have a minimal project `build.sbt` setup for a free Datomic Peer system on the jvm platform:
+
+```scala
+  .settings(
+    // Generate lover/upper schema conversion files (default is false)
+    moleculeSchemaConversions := true,
+    ...
+  )
+```
 
 
 ### lowercase to Uppercase
@@ -28,7 +38,7 @@ conn.transact(ExternalSchemaLowerToUpper.edn)
 // Make molecules with uppercase Namespace names...
 ```
 
-When we test the mBrainz dataset for instance, we [convert from from lower to Upper](https://github.com/scalamolecule/molecule/blob/master/molecule-tests/src/test/scala/molecule/TestSpec.scala#L166-L170).
+When we test the mBrainz dataset for instance, we [convert from from lower to Upper](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/jvm/src/test/scala/moleculeTests/setup/AsyncTestSuiteImpl.scala#L76).
 
 ### Uppercase to lowercase
 

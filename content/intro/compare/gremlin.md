@@ -9,7 +9,7 @@ menu:
 # Molecule vs Gremlin
 
 
-Let's compare the queries/traversals in the [Gremlin Getting Started Tutorial](http://tinkerpop.apache.org/docs/current/tutorials/getting-started/) with equivalent [Molecule queries](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/Friends.scala).
+Let's compare the queries/traversals in the [Gremlin Getting Started Tutorial](http://tinkerpop.apache.org/docs/current/tutorials/getting-started/) with equivalent [Molecule queries](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/shared/src/test/scala/moleculeTests/tests/examples/gremlin/gettingStarted/Friends.scala).
 
 
 For the examples we'll use the same "Modern" graph as the tutorial:
@@ -278,7 +278,7 @@ Software.name.get.map(_ ==> List("ripple", "lop"))
 
 ## Edge property queries
 
-The Gremlin tutorial doesn't actually use any of the `weight` properties so we made the [Knows](https://github.com/scalamolecule/molecule/blob/master/examples/src/test/scala/molecule/examples/gremlin/gettingStarted/Knows.scala) test suite to see how we can work with edge property molecules.
+The Gremlin tutorial doesn't actually use any of the `weight` properties so we made the [Friends2](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/shared/src/test/scala/moleculeTests/tests/examples/gremlin/gettingStarted/Friends2.scala) test suite to see how we can work with edge property molecules.
 
 Let's ask a few more complex questions - a reminder of the graph could be useful here
 

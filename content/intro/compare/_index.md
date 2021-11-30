@@ -16,7 +16,7 @@ Many query languages let you define data objects matching your domain that are t
 
 ### Slick
 
-If we take [Slick](http://slick.typesafe.com/doc/3.0.0-M1/queries.html#joining-and-zipping) for instance we could say that it "_consumes_" the domain terms `coffees` and `suppliers` in this Scala sequence comprehension:
+If we take [Slick](https://scala-slick.org/doc/3.3.3/queries.html#joining-and-zipping) for instance we could say that it "_consumes_" the domain terms `coffees` and `suppliers` in this Scala sequence comprehension:
 
 ```
 // Slick
@@ -36,7 +36,7 @@ We get the exact same type-inferred result back, a `Future[List[(String, String)
 
 ### Squeryl
 
-[Squeryl](https://www.squeryl.org/) also _consumes_ data objects, now in another DSL construct:
+[Squeryl](https://www.squeryl.org/docs/0.9.5/selects.html) also _consumes_ data objects, now in another DSL construct:
 
 ```
 // Squeryl

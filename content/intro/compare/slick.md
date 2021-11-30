@@ -8,7 +8,7 @@ menu:
 
 # Molecule vs Slick
 
-Using examples from [Coming from SQL to Slick](http://slick.lightbend.com/doc/3.3.3/sql-to-slick.html#select):
+Using examples from [SQL vs. Slick examples](https://scala-slick.org/doc/3.3.3/sql-to-slick.html#sql-vs.-slick-examples):
 
 #### Select all table values
 

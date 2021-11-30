@@ -8,6 +8,8 @@ menu:
 
 # Database connection, js
 
+### Transparent RPC
+
 Molecule is fully implemented with Scala.js too. This allows us to transact and query data directly from the client/js side. Molecule calls are identical on both the server and client side and are therefore easy to refactor between the two platforms if needed.
 
 Molecule transparently sends and retrieves data via ajax calls to the server and takes care of marshalling data back and forth with highly efficient Byte encoding/decoding using [BooPickle](https://boopickle.suzaku.io).

@@ -72,14 +72,14 @@ Peer Servers do not own databases. As such, the Peer Server cannot create or des
 You can instead manage databases with the Peer library by for instance running the code in CreateSampleDb or by using the Datomic shell (in a separate process from the transactor):
 
     bin/shell
-    datomic % Peer.createDatabase("datomic:dev://localhost:4334/personDb");
+    datomic % Peer.createDatabase("datomic:dev://localhost:4334/sampleDb");
 
 Exit the datomic shell with ctrl-c or similar.
 
 
 ### 3. Start Peer Server
 
-    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d personDb,datomic:dev://localhost:4334/personDb
+    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d sampleDb,datomic:dev://localhost:4334/sampleDb
 
 In this setup we use a [database connection URI](https://docs.datomic.com/on-prem/javadoc/datomic/Peer.html#connect-java.lang.Object-) with the "dev" protocol which is intended for development databases that are persisted on local disk. See [other storage options](https://docs.datomic.com/on-prem/storage.html) for alternative storage options.
 
@@ -89,23 +89,23 @@ The other connection options explained:
     -h localhost                                       // host name
     -p 8998                                            // port number
     -a k,s                                             // access-key,secret
-    -d personDb,datomic:dev://localhost:4334/personDb  // dbName-alias,URI
+    -d sampleDb,datomic:dev://localhost:4334/sampleDb  // dbName-alias,URI
 
 There can be no space after comma in the pairs of options!
 
 For simplicity, we just chose to write "k,s" for access-key,secret. The important thing is that you need to supply the same pair when you connect to the Peer Server in your code (as with host/port names).
 
-If successful, it will show something like "Serving datomic:mem://personDb as personDb".
+If successful, it will show something like "Serving datomic:mem://sampleDb as sampleDb".
 
 
 ### 4. Connect to Peer Server
 
-Presuming the transactor is running and the Peer Server is serving `personDb` we can connect to it:
+Presuming the transactor is running and the Peer Server is serving `sampleDb` we can connect to it:
 
 ```scala
 implicit val conn = 
   Datomic_PeerServer("k", "s", "localhost:8998")
-   .connect("personDb")
+   .connect("sampleDb")
 ```
 
 We use the same coordinates here as when we started the Peer Server.
@@ -115,13 +115,13 @@ For the purpose of testing, we want to make sure that our schema is up-to-date a
 ```scala
 implicit val conn = 
   Datomic_PeerServer("k", "s", "localhost:8998")
-    .transactSchema(PersonSchema, "personDb")
+    .transactSchema(SampleSchema, "sampleDb")
 ```
 
 
 ### 5. Make molecules
 
-From here on, we can start transacting and querying `personDb` with molecules:
+From here on, we can start transacting and querying `sampleDb` with molecules:
 
 ```scala
 // Transact

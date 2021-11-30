@@ -45,19 +45,19 @@ lazy val `molecule-basic` = project.in(file("."))
 ### 1. Create local client
 
 ```scala
-implicit val conn = Datomic_DevLocal("datomic-samples").recreateDbFrom(PersonSchema, "personDb")
+implicit val conn = Datomic_DevLocal("datomic-samples").recreateDbFrom(SampleSchema, "sampleDb")
 ```
 
 Or, when the database has been created, only connect to it:
 
 ```scala
-implicit val conn = Datomic_DevLocal("datomic-samples").connect("personDb")
+implicit val conn = Datomic_DevLocal("datomic-samples").connect("sampleDb")
 ```
 
 
 ### 2. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `sampleDb` with molecules:
 
 ```scala
 // Transact

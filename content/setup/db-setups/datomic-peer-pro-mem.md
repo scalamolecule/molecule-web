@@ -61,7 +61,7 @@ lazy val `molecule-basic` = project.in(file("."))
 Connect, recreate in-memory database and get database connection
 
 ```scala
-implicit val conn = Datomic_Peer.recreateDbFrom(PersonSchema) 
+implicit val conn = Datomic_Peer.recreateDbFrom(SampleSchema) 
 ```
 
 Since we are not persisting the database, we let Molecule create a random database name. We don't need to supply the default "mem" protocol either. So this is really simple.
@@ -71,7 +71,7 @@ If you need persisting data, please see [other storage options](https://docs.dat
 
 ### 2. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `sampleDb` with molecules:
 
 ```scala
 // Transact
@@ -82,5 +82,5 @@ Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 
-Add/change definitions in the PersonDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.
+Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.
 

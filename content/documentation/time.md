@@ -283,7 +283,7 @@ Person.like_.v.txInst.op_(false).getHistory.map(_ ==> List(
 
 ### History with Tx meta data
 
-We can even track historical [transaction meta data](/documentation/transactions/#tx-meta-data), here with an example from the Provenance example in the [Day-of-Datomic test suite](https://github.com/scalamolecule/molecule/tree/master/molecule-tests/src/test/scala/molecule/tests/examples/datomic/dayOfDatomic):
+We can even track historical [transaction meta data](/documentation/transactions/#tx-meta-data), here with an example from the Provenance example in the [Day-of-Datomic test suite](https://github.com/scalamolecule/molecule/tree/master/moleculeTests/shared/src/test/scala/moleculeTests/tests/examples/datomic/dayOfDatomic):
 
 _Who changed the title and when?_
 

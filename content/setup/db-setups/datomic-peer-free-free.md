@@ -53,13 +53,13 @@ Note that although the Peer in your application code in this project setup is th
 Then connect to the database:
 
 ```scala
-implicit val conn = Datomic_Peer.connect("localhost:4334/personDb", "free")
+implicit val conn = Datomic_Peer.connect("localhost:4334/sampleDb", "free")
 ```
 
 Or, if we want to test a clean database each time, we could recreate the database and transact the schema on each run:
 
 ```scala
-implicit val conn = Datomic_Peer.recreateDbFrom(PersonSchema, "localhost:4334/personDb", "free")
+implicit val conn = Datomic_Peer.recreateDbFrom(SampleSchema, "localhost:4334/sampleDb", "free")
 ```
 
 In this setup we use the "free" protocol which is intended for development databases that are persisted on local disk. See [other storage options](https://docs.datomic.com/on-prem/storage.html) for alternative storage options.
@@ -67,7 +67,7 @@ In this setup we use the "free" protocol which is intended for development datab
 
 ### 3. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `sampleDb` with molecules:
 
 ```scala
 // Transact

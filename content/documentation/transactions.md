@@ -33,39 +33,7 @@ johnId    :Person/likes   "pizza"
 johnId    :Person/age     24
 ```
 
-### Type-safety
-
-Type-safety is guaranteed since each attribute only accepts values of its defined type.
-
-
-### Asynchronous save
-
-All transactional operators have an asynchronous equivalent. Saving data asynchronously with `saveAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
-
-Here, we map over the result of saving asynchronously:
-
-```scala
-// Map over a Future
-Person.name("John").likes("pizza").age(24).saveAsync.map { tx => // tx report from successful save transaction
-  // (synchronous get)
-  Person.name.likes.age.get.map(_.head ==> ("Ben", "pizza", 24)
-}
-```
-
-Or we could defer the resolution of the `Future`
-
-```scala
-val futureSave: Future[TxReport] = Person.name("John").likes("pizza").age(24).saveAsync
-for {
-  _ <- futureSave
-  result <- Person.name.likes.age.getAsync
-} yield {
-  // Data was saved
-  result.head === ("Ben", "pizza", 24)
-}
-```
-
-For brevity, the following examples use the synchronous `save` operation.
+Type-safety is guaranteed since each molecule attribute only accepts values of its defined type.
 
 
 ### Related data

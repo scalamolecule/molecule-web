@@ -128,4 +128,4 @@ which will find "names of twitter/facebook_page communities in neighborhoods of 
 
 ### Next
 
-[Compare](/intro/compare) Molecule with another query language, [set up a Molecule project](/setup/) or learn more about [molecule code...](/code) 
+[Compare](/intro/compare) Molecule with another query language, [set up a Molecule project](/setup/) or learn more in [documentation](/documentation).

@@ -355,7 +355,7 @@ VAET(a1, ":Release/artist", r2, t7).e.get.map(_ ==> List(r2))
 
 ## Log API
 
-_Some index descriptions in the following sections respectfully quoted from the [Datomic documentation](https://docs.datomic.com/on-prem/log.html)._
+_Some index descriptions in the following sections respectfully quoted from the [Datomic Log api documentation](https://docs.datomic.com/on-prem/api/log.html)._
 
 Datomic's database log is a recording of all transaction data in historic order, organized for efficient access by transaction. The Log is therefore an efficient source of finding data by transaction time.
 
@@ -410,9 +410,6 @@ Log(Some(t2), None).v.e.t.get.map(_ ==> List(
   (t3, e1, ":Person/age", 26, true)
 ))
 ``` 
-
-
-
 
 
 
@@ -553,4 +550,12 @@ Schema.t.tx.txInstant.get.map(_ ==> List(
   (t2, tx2, <Date: 2019-01-12 12:43:27>), // Additional schema attribute definitions...
 ))
 ``` 
+
+
+
+
+
+### Next
+
+[Dynamic molecules...](/documentation/dynamic)
 

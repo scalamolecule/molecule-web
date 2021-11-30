@@ -118,7 +118,7 @@ You can have a single or several Data Model files in a project, each correspondi
 
 Data Model files should reside in directories named `dataModel` anywhere in your source code. Use the `moleculeDataModelPaths` sbt settings key of the MoleculePlugin to list paths to those directories.
 
-Say you have a project `app` like the [molecule-basic project](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) project and a single Data Model file `YourDomainDataModel.scala`:
+Say you have a project `app` like the [molecule-basic project](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) project and a single Data Model file `PersonDataModel.scala`:
 
 ![](/img/page/setup/setup1.png)
 
@@ -142,15 +142,15 @@ We list these paths like this in our `build.sbt`:
 ```scala
   .settings(
     moleculeDataModelPaths := Seq(
-      "molecule/tests/core/base",
-      "molecule/tests/core/bidirectionals",
-      "molecule/tests/core/ref",
-      "molecule/tests/core/schemaDef",
-  
-      "molecule/tests/examples/datomic/dayOfDatomic",
-      "molecule/tests/examples/datomic/mbrainz",
-      "molecule/tests/examples/datomic/seattle",
-      "molecule/tests/examples/gremlin/gettingStarted"
+      "moleculeTests/dataModels/core/base",
+      "moleculeTests/dataModels/core/bidirectionals",
+      "moleculeTests/dataModels/core/ref",
+      "moleculeTests/dataModels/core/schemaDef",
+
+      "moleculeTests/dataModels/examples/datomic/dayOfDatomic",
+      "moleculeTests/dataModels/examples/datomic/mbrainz",
+      "moleculeTests/dataModels/examples/datomic/seattle",
+      "moleculeTests/dataModels/examples/gremlin/gettingStarted"
     )
   )
 ```
@@ -299,7 +299,7 @@ In our [basic sample projects](https://github.com/scalamolecule/molecule-samples
 
 ![](/img/page/setup/setup3.png)
 
-`dsl` contains the generated Molecule boilerplate code for the defined Person Data Model and `schema` contains boilerplate code for transacting our Datomic schema. 
+`dsl` contains the generated Molecule boilerplate code for the defined Person Data Model and `schema` contains boilerplate code for transacting our Datomic schema. The name of each jar (one for compiled classes, one for source code) has "molecule-" prepended to your project name to avoid name clashes in `lib`.
 
 Whenever you make changes to your Data Model, you can simply `sbt compile -Dmolecule=true` and have your Schema transaction boilerplate code re-generated with your latest changes.
 
@@ -311,4 +311,4 @@ Whenever you make changes to your Data Model, you can simply `sbt compile -Dmole
 
 ### Next
 
-[Get a database connection...](/setup/db-connection)
+[Get a database connection...](/setup/jvm-connection/)
