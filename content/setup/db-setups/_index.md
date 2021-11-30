@@ -28,7 +28,7 @@ The protocols links (_free_, _mem_, _dev_) point to descriptions of various comb
 
 ## Server Database setups
 
-All the database setup sample projects are contained in the [molecule-database-setups](https://github.com/scalamolecule/molecule-sample-projects) github project that your can
+All the database setup sample projects are contained in the [molecule-database-setups](https://github.com/scalamolecule/molecule-database-setups) github project that your can
 
 ```
 git clone https://github.com/scalamolecule/molecule-database-setups.git

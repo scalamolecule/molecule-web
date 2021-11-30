@@ -13,13 +13,10 @@ Minimal project setup to persist data to disk with Molecule and a [Datomic Peer 
 ```scala
 import sbt.Keys._
 
-lazy val demo = project.in(file("."))
-  .aggregate(app)
-  .settings(name := "molecule-datomic-peerserver-dev")
-
-lazy val app = project.in(file("app"))
+lazy val `molecule-basic` = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
+    name := "molecule-datomic-peerserver-dev",
     scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
@@ -75,14 +72,14 @@ Peer Servers do not own databases. As such, the Peer Server cannot create or des
 You can instead manage databases with the Peer library by for instance running the code in CreateSampleDb or by using the Datomic shell (in a separate process from the transactor):
 
     bin/shell
-    datomic % Peer.createDatabase("datomic:dev://localhost:4334/sampledb");
+    datomic % Peer.createDatabase("datomic:dev://localhost:4334/personDb");
 
 Exit the datomic shell with ctrl-c or similar.
 
 
 ### 3. Start Peer Server
 
-    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d sampledb,datomic:dev://localhost:4334/sampledb
+    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d personDb,datomic:dev://localhost:4334/personDb
 
 In this setup we use a [database connection URI](https://docs.datomic.com/on-prem/javadoc/datomic/Peer.html#connect-java.lang.Object-) with the "dev" protocol which is intended for development databases that are persisted on local disk. See [other storage options](https://docs.datomic.com/on-prem/storage.html) for alternative storage options.
 
@@ -92,23 +89,23 @@ The other connection options explained:
     -h localhost                                       // host name
     -p 8998                                            // port number
     -a k,s                                             // access-key,secret
-    -d sampledb,datomic:dev://localhost:4334/sampledb  // dbName-alias,URI
+    -d personDb,datomic:dev://localhost:4334/personDb  // dbName-alias,URI
 
 There can be no space after comma in the pairs of options!
 
 For simplicity, we just chose to write "k,s" for access-key,secret. The important thing is that you need to supply the same pair when you connect to the Peer Server in your code (as with host/port names).
 
-If successful, it will show something like "Serving datomic:mem://sampledb as sampledb".
+If successful, it will show something like "Serving datomic:mem://personDb as personDb".
 
 
 ### 4. Connect to Peer Server
 
-Presuming the transactor is running and the Peer Server is serving `sampledb` we can connect to it:
+Presuming the transactor is running and the Peer Server is serving `personDb` we can connect to it:
 
 ```scala
 implicit val conn = 
   Datomic_PeerServer("k", "s", "localhost:8998")
-   .connect("sampledb")
+   .connect("personDb")
 ```
 
 We use the same coordinates here as when we started the Peer Server.
@@ -118,13 +115,13 @@ For the purpose of testing, we want to make sure that our schema is up-to-date a
 ```scala
 implicit val conn = 
   Datomic_PeerServer("k", "s", "localhost:8998")
-    .transactSchema(SampleSchema, "sampledb")
+    .transactSchema(PersonSchema, "personDb")
 ```
 
 
 ### 5. Make molecules
 
-From here on, we can start transacting and querying `sampledb` with molecules:
+From here on, we can start transacting and querying `personDb` with molecules:
 
 ```scala
 // Transact
@@ -135,4 +132,4 @@ Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 
-Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `SampleApp`.
+Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.

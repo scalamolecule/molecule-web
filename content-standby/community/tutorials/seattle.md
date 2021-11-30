@@ -518,42 +518,6 @@ While we passed specific transaction dates to `getAsOf` and `getSince`, you can 
 Keeping track of data over time is a very powerful feature. However, there may be some data you don't want to keep old versions of. You can control whether old versions are kept on a per-attribute basis by adding `noHistory` to your attribute definition when you create your schema. If you choose not to keep history for a given attribute and you look at a database as of a time before the most recent change to a given entity's value for that attribute, you will not find any value for it.
 
 
-### Imagining the future - `getWith(TestTxData)`
-
-Revisiting the past is a very powerful feature. It's also possible to imagine the future. The `getAsOf` and `getSince` methods work by removing data from the current database value. You can also _add_ data to a database value, using the Molecule method `getWith`. The result is a database value that's been modified without submitting a transaction and changing the data stored in the system. The modified database value can be used to execute queries, allowing you to perform "what if" calculations before committing to data changes. 
-
-When a `getWith(TestTxData)` database object goes out of scope it is simply garbage collected. So we don't need to do any tear down of some state as is common with normal database mockups.
-
-We can explore this feature using a second seed data file provided with the sample application, "samples/seattle/seattle-data1.edn". The code below reads it into a list.
-
-```
-val data_rdr2 = new FileReader("examples/resources/seattle/seattle-data1a.dtm")
-val newDataTx = Util.readAll(data_rdr2).get(0).asInstanceOf[java.util.List[Object]]
-```
-Once we have this new data transaction, we can build a database value that includes it. To do that, we simply get the current database value (or one as of or since a point in time) and call `getWith`, passing in the transaction data. `getWith` returns a molecule based on the new value of the database after the new data is added. If we execute our community counting query against it, we get 258 results.
-
-```
-// test db
-communities.getWith(newDataTx).get.size === 258
-```
-
-The actual data hasn't changed yet, so if we query the current database value, we still get 150 results. We won't see a change in the current database value until we submit the new transaction. After that, querying the current database value returns 258 results. Finally, if we get another database value containing data since our first seed data transaction ran, and query for communities we get 108 results, the number added by new data transaction.
-
-```
-// existing db
-communities.get.size === 150
-
-// transact
-conn.transact(newDataTx)
-
-// updated db
-communities.get.size === 258
-
-// number of new transactions
-communities.getSince(dataTxDate).size === 108
-```
-
-
 
 ## Insert data {#10}
 

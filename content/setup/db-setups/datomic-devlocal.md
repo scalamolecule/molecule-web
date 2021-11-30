@@ -14,13 +14,10 @@ Minimal project setup to test a [Cloud setup locally](https://docs.datomic.com/c
 ```scala
 import sbt.Keys._
 
-lazy val demo = project.in(file("."))
-  .aggregate(app)
-  .settings(name := "molecule-datomic-devlocal")
-
-lazy val app = project.in(file("app"))
+lazy val `molecule-basic` = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
+    name := "molecule-datomic-devlocal",
     scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
@@ -48,19 +45,19 @@ lazy val app = project.in(file("app"))
 ### 1. Create local client
 
 ```scala
-implicit val conn = Datomic_DevLocal("datomic-samples").recreateDbFrom(SampleSchema, "sampledb")
+implicit val conn = Datomic_DevLocal("datomic-samples").recreateDbFrom(PersonSchema, "personDb")
 ```
 
 Or, when the database has been created, only connect to it:
 
 ```scala
-implicit val conn = Datomic_DevLocal("datomic-samples").connect("sampledb")
+implicit val conn = Datomic_DevLocal("datomic-samples").connect("personDb")
 ```
 
 
 ### 2. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `sampledb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
 
 ```scala
 // Transact
@@ -73,5 +70,5 @@ Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 
-Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `SampleApp`.
+Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.
 

@@ -13,13 +13,10 @@ Minimal project setup to test using Molecule with a starter/pro [Datomic Peer](h
 ```scala
 import sbt.Keys._
 
-lazy val demo = project.in(file("."))
-  .aggregate(app)
-  .settings(name := "molecule-datomic-peer-pro-mem")
-
-lazy val app = project.in(file("app"))
+lazy val `molecule-basic` = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
+    name := "molecule-datomic-peer-pro-mem",
     scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
@@ -64,7 +61,7 @@ lazy val app = project.in(file("app"))
 Connect, recreate in-memory database and get database connection
 
 ```scala
-implicit val conn = Datomic_Peer.recreateDbFrom(SampleSchema) 
+implicit val conn = Datomic_Peer.recreateDbFrom(PersonSchema) 
 ```
 
 Since we are not persisting the database, we let Molecule create a random database name. We don't need to supply the default "mem" protocol either. So this is really simple.
@@ -74,7 +71,7 @@ If you need persisting data, please see [other storage options](https://docs.dat
 
 ### 2. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `sampledb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
 
 ```scala
 // Transact
@@ -85,5 +82,5 @@ Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 
-Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `SampleApp`.
+Add/change definitions in the PersonDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.
 

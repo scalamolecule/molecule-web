@@ -9,7 +9,7 @@ menu:
 # ![](/img/logo/molecule-logo-m-75a.png) Molecule
 
 
-Molecule is a non-blocking asynchronous Scala eco-system to define your domain Data Model and use the defined terms and relationships as your type-inferred query language.
+Molecule is a non-blocking asynchronous Scala platform to define your domain Data Model and use the defined terms and relationships as your type-inferred query language.
 
 
 Molecule works on both the jvm and Scala.js platform. On the js platform you can fetch and transact data a bit like with GraphQL. But with molecules, all your domain terms are recognized by your IDE and fully type inferred so that any molecule query/transaction is guaranteed to be valid already when writing the code. Molecule then transparently makes a RPC call retrieving typed data without having to implement a shared interface on the server side.

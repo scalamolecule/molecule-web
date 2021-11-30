@@ -19,12 +19,12 @@ Setting up Molecule involves 3 steps:
 On the next pages we'll walk through those steps. 
 
 
-## Quick-start Molecule demo
+## Quick-start Molecule sample projects
 
 The fastest way to try out molecule is to clone the [molecule-samples](https://github.com/scalamolecule/molecule-samples) Github repository:
 
 ```
-git clone https://github.com/scalamolecule/molecule-demo.git
+git clone https://github.com/scalamolecule/molecule-samples.git
 ```
 
 and then open one of the sample projects in your IDE and play around making more molecules or add new attributes to the Data Model.  

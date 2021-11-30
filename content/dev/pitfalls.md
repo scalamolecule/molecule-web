@@ -36,7 +36,7 @@ Datomic transactor is not running - please [start it again](https://docs.datomic
     bin/transactor config/samples/dev-transactor-template.properties
     
     cd <your-datomic-starter/pro-distribution>
-    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d sampledb,datomic:mem://sampledb
+    bin/run -m datomic.peer-server -h localhost -p 8998 -a k,s -d personDb,datomic:mem://personDb
 
 See [Database setups](/setup/db-setups/) for more info.
 

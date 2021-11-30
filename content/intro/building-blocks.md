@@ -10,7 +10,7 @@ menu:
 # Molecule building blocks
 
 
-Here's a quick overview of various building blocks in the Molecule eco-system.
+Here's a quick overview of various building blocks in the Molecule platform.
 
 
 

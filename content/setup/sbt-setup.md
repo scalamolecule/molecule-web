@@ -118,7 +118,7 @@ You can have a single or several Data Model files in a project, each correspondi
 
 Data Model files should reside in directories named `dataModel` anywhere in your source code. Use the `moleculeDataModelPaths` sbt settings key of the MoleculePlugin to list paths to those directories.
 
-Say you have a project `app` like the [molecule-demo](https://github.com/scalamolecule/molecule-demo) project and a single Data Model file `YourDomainDataModel.scala`:
+Say you have a project `app` like the [molecule-basic project](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) project and a single Data Model file `YourDomainDataModel.scala`:
 
 ![](/img/page/setup/setup1.png)
 
@@ -239,13 +239,10 @@ Putting all the configuration together, we here have a minimal project `build.sb
 ```scala
 import sbt.Keys._
 
-lazy val demo = project.in(file("."))
-  .aggregate(app)
-  .settings(name := "molecule-datomic-peer-free")
-
-lazy val app = project.in(file("app"))
+lazy val `molecule-basic` = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
+    name := "molecule-datomic-peer-free",
     scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
@@ -298,7 +295,7 @@ During project compilation, a series of operations are then performed:
 4. Generated source code and compiled classes are removed.
 
 
-In our [demo example](https://github.com/scalamolecule/molecule-demo) these two jars are created:
+In our [basic sample projects](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) these two jars are created:
 
 ![](/img/page/setup/setup3.png)
 

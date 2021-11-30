@@ -13,13 +13,10 @@ Minimal project setup to persist data to disk with Molecule and a starter/pro [D
 ```scala
 import sbt.Keys._
 
-lazy val demo = project.in(file("."))
-  .aggregate(app)
-  .settings(name := "molecule-datomic-peer-pro-dev")
-
-lazy val app = project.in(file("app"))
+lazy val `molecule-basic` = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
+    name := "molecule-datomic-peer-pro-dev",
     scalaVersion := "2.13.7",
     resolvers ++= Seq(
       Resolver.sonatypeRepo("releases"),
@@ -73,13 +70,13 @@ Note that although the Peer in your application code in this project setup is th
 Then connect to the database:
 
 ```scala
-implicit val conn = Datomic_Peer.connect("localhost:4334/sampledb", "dev")
+implicit val conn = Datomic_Peer.connect("localhost:4334/personDb", "dev")
 ```
 
 Or, if we want to test a clean database each time, we could recreate the database and transact the schema on each run:
 
 ```scala
-implicit val conn = Datomic_Peer.recreateDbFrom(SampleSchema, "localhost:4334/sampledb", "dev")
+implicit val conn = Datomic_Peer.recreateDbFrom(PersonSchema, "localhost:4334/personDb", "dev")
 ```
 
 In this setup we use the "dev" protocol which is intended for development databases that are persisted on local disk. See [other storage options](https://docs.datomic.com/on-prem/storage.html) for alternative storage options.
@@ -87,7 +84,7 @@ In this setup we use the "dev" protocol which is intended for development databa
 
 ### 3. Make molecules
 
-Having an implicit connection in scope, we can start transacting and querying `sampledb` with molecules:
+Having an implicit connection in scope, we can start transacting and querying `personDb` with molecules:
 
 ```scala
 // Transact
@@ -98,5 +95,5 @@ Person.name.age.get.map(_.head ==> ("John", 24))
 ```
 
 
-Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `SampleApp`.
+Add/change definitions in the SampleDataModel and run `sbt clean compile -Dmolecule=true` in your project root to have Molecule re-generate boilerplate code. Then you can try out using your new attributes in new molecules in `App`.
 

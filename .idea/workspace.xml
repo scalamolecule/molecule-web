@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
+    <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="v1.0.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/_index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/js-connection.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/js-connection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content-standby/community/tutorials/seattle.md" beforeDir="false" afterPath="$PROJECT_DIR$/content-standby/community/tutorials/seattle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/pitfalls.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/dev/pitfalls.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/building-blocks.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/intro/building-blocks.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/sbt-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/sbt-setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
