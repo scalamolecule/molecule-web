@@ -58,7 +58,7 @@ Each of the 3 libraries resolve differently:
       "clojars" at "https://clojars.org/repo" 
     ),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     )
   )
@@ -85,7 +85,7 @@ And then we can resolve the dependencies by giving sbt access to our credentials
     ),
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
       "com.datomic" % "datomic-pro" % "1.0.6269"
     )
   )
@@ -104,7 +104,7 @@ The [dev-local library](https://docs.datomic.com/cloud/dev-local.html) is part o
     ),
   
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
       "com.datomic" % "dev-local" % "0.9.232"
     )
   )
@@ -250,7 +250,7 @@ lazy val `molecule-basic` = project.in(file("."))
     )
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 
@@ -295,7 +295,7 @@ During project compilation, a series of operations are then performed:
 4. Generated source code and compiled classes are removed.
 
 
-In our [basic sample projects](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) these two jars are created:
+In our [basic sample project](https://github.com/scalamolecule/molecule-samples/tree/main/molecule-basic) these two jars are created:
 
 ![](/img/page/setup/setup3.png)
 

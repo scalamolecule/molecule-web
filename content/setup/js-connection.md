@@ -52,7 +52,7 @@ class AppController extends MoleculeRpcHandler("localhost", 9000) with InjectedC
 ```
 
 
-## Client side imports
+## Client imports
 
 To use Molecule on the client/js side we need a few imports: the Molecule api, the generated DSL for your Data Model and a `Conn_Js` that holds a proxy connection:
 
@@ -152,6 +152,33 @@ DatomicPeerServerProxy(
 
 For examples of complete Client setups, please have a look at the two rpc projects in the [molecule samples repo](https://github.com/scalamolecule/molecule-samples)
 
+
+
+
+## jsdom environment
+
+To make the DOM available on the Client side, add the following to your project/plugins.sbt:
+
+```scala
+libraryDependencies += "org.scala-js" %% "scalajs-env-jsdom-nodejs" % "1.1.0"
+```
+
+and the following to your build.sbt:
+
+```scala
+jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
+```
+
+This will use the jsdom library to simulate a DOM in Node.js. You need to install it separately. It is usually best to install it locally for this project. You can initialize a private package.json as follows:
+
+```
+$ npm init private
+```
+Then you can install jsdom:
+
+```
+$ npm install jsdom
+```
 
 ### Next
 

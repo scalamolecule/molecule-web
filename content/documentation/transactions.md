@@ -147,39 +147,6 @@ Type-safety is guaranteed since the type of each tuple of data is enforced by th
 If the data set is not accepted type-wise, then either the molecule needs to be adjusted to match the type of data rows. Or, the data set might be irregular and have some variable size of tuples or varying types within tuples that need to be sorted out.
 
 
-
-### Asynchronous insert
-
-All transactional operators have an asynchronous equivalent. Inserting data asynchronously with `insertAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
-
-Here, we insert data as argument list/tuples asynchronously:
-
-```scala
-// Insert single row of data with individual args
-val singleInsertFuture: Future[TxReport] = Person.name.likes.age.insertAsync("John", "pizza", 24)
-
-// Insert Iterable of multiple rows of data
-val multipleInsertFuture: Future[TxReport] = Person.name.likes.age insertAsync List(
-  ("Lisa", "pizza", 20),
-  ("Ben", "pasta", 25)
-)
-
-for {
-  _ <- singleInsertFuture
-  _ <- multipleInsertFuture
-  result <- Person.name.likes.age.getAsync
-} yield {
-  // Both inserts applied
-  result === List(
-    ("John", "pizza", 24),
-    ("Lisa", "pizza", 20),
-    ("Ben", "pasta", 25)
-  )
-}
-```
-For brevity, the following examples use the synchronous `save` operation.
-
-
 ### Optional values
 
 `null` values are not allowed as data-input values whereas Optional values are:
@@ -426,67 +393,6 @@ Person(bobId, annId).age(25).memberOf("cool club").update
 ```
 
 
-### Asynchronous update
-
-All transactional operators have an asynchronous equivalent. Updating data asynchronously with `updateAsync` uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
-
-Here, we map over the result of updating an entity asynchronously:
-
-```scala
-for {
-  // Initial data
-  saveTx <- Person.name.age insertAsync List(("Ben", 25), ("Liz", 23))
-  List(ben, liz) = saveTx.eids
-
-  // Update Liz' age
-  updateTx <- Ns(liz).age(24).updateAsync
-
-  // Get result
-  result <- Person.name.age.getAsync
-} yield {
-  // Liz had a birthday
-  result === List(("Ben", 25), ("Liz", 24))
-}
-```
-
-### Updating multiple entities asynchronously
-
-```scala
-// Initial data
-Ns.str.int insertAsync List(
-  ("a", 1),
-  ("b", 2),
-  ("c", 3),
-  ("d", 4)
-) map { tx => // tx report from successful insert transaction
-  // 4 inserted entities
-  val List(a, b, c, d) = tx.eids
-  Ns.int.get.map(_ ==> List(
-    ("a", 1),
-    ("b", 2),
-    ("c", 3),
-    ("d", 4)
-  )
-
-  // Update multiple entities asynchronously
-  Ns(a, b).int(5).updateAsync.map { tx2 => // tx report from successful update transaction
-    // Current data
-    Ns.int.get.sorted === List(
-      ("a", 5),
-      ("b", 5),
-      ("c", 3),
-      ("d", 4)
-    )
-  }
-}
-```
-
-
-
-
-
-
-
 
 
 
@@ -590,49 +496,6 @@ orderId.retract // All related `LineItem`s are also retracted!
 retract(orderId)
 ```
 Component entities are recursively retracted! So if `LineItem` would have had subcomponents then those would have been retracted too when the order was retracted - and so on down the hierarchy of subcomponents.
-
-
-
-
-### Asynchronous retract
-
-All transactional operators have an asynchronous equivalent.
-
-Retracting entities asynchronously uses Datomic's asynchronous API and returns a `Future` with a `TxReport`.
-
-Here, we map over the result of retracting an entity asynchronously (in the inner mapping):
-
-```scala
-// Initial data
-Ns.int.insertAsync(1, 2).map { tx => // tx report from successful insert transaction
-  // 2 inserted entities
-  val List(e1, e2) = tx.eids
-  Ns.int.get.map(_ ==> List(1, 2)
-
-  // Retract first entity asynchronously
-  e1.retractAsync.map { tx2 => // tx report from successful retract transaction
-    // Current data
-    Ns.int.get.map(_ ==> List(2)
-  }
-}
-```
-Retract multiple entities asynchronously:
-```scala
-// Initial data
-Ns.int.insertAsync(1, 2, 3).map { tx => // tx report from successful insert transaction
-  // 2 inserted entities
-  val List(e1, e2, e3) = tx.eids
-  Ns.int.get.map(_ ==> List(1, 2, 3)
-
-  // Retract first entity asynchronously
-  retractAsync(Seq(e1, e2)).map { tx2 => // tx report from successful retract transaction
-    // Current data
-    Ns.int.get.map(_ ==> List(3)
-  }
-}
-```
-
-
 
 
 
@@ -801,23 +664,6 @@ Ns.int.get.sorted === List(
 )
 ```
 
-Bundled transactions can also use Datomic's asynchronous API by calling `transactAsync`:
-
-```scala
-Await.result(
-  transactAsync(
-    e1.getRetractStmts,
-    Ns.int(4).getSaveStmts,
-    Ns.int.getInsertStmts(List(5, 6)),
-    Ns(e2).int(20).getUpdateStmts
-  ) map { bundleTx =>
-    Ns.int.getAsync map { queryResult => 
-      queryResult === List(3, 4, 5, 6, 20)    
-    }  
-  },
-  2.seconds
-)
-```
 
 
 ### Inspecting bundled transactions

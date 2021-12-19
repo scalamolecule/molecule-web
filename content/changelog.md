@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-12-19 v1.0.1 [Upgrade to Scala.js 1.8, js-dom 2.0](#47)
 - 2021-11-29 v1.0.0 [Molecule 1.0.0](#46)
 - 2021-03-14 v0.25.1 [Time getters for object output](#45)
 - 2021-03-04 v0.25.0 [Molecule object output and dynamic molecules](#44)
@@ -55,10 +56,16 @@ title: "Changelog"
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
 
 
+## [☝︎](#top) Upgrade to Scala.js 1.8, js-dom 2.0 {#47}
+
+_2021-12-19 v1.0.1_
+
+Introduces `"org.scala-js" %%% "scala-js-macrotask-executor" % "1.0.0"` as ExecutionContext in most of the code base.
+
 
 ## [☝︎](#top) Molecule 1.0.0 {#46}
 
-_2021-11.29 v1.0.0_
+_2021-11-29 v1.0.0_
 
 This is the first major release of Molecule! Here are some of the major changes compared to earlier iterations:
 
