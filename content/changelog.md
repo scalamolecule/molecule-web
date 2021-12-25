@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-12-25 v1.0.2 [Upgrade datomic-client-api-java-scala to 1.0.3](#48)
 - 2021-12-19 v1.0.1 [Upgrade to Scala.js 1.8, js-dom 2.0](#47)
 - 2021-11-29 v1.0.0 [Molecule 1.0.0](#46)
 - 2021-03-14 v0.25.1 [Time getters for object output](#45)
@@ -54,6 +55,13 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Upgrade datomic-client-api-java-scala to 1.0.3 {$48}
+
+_2021-12-25 v1.0.2_
+
+Upgrading datomic-client-api-java-scala to 1.0.3 (transient fs2 upgrade to 3.2.3)
 
 
 ## [☝︎](#top) Upgrade to Scala.js 1.8, js-dom 2.0 {#47}

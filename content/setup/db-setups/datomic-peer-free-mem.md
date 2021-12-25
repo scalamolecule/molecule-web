@@ -24,7 +24,7 @@ lazy val `molecule-basic` = project.in(file("."))
     ),
   
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.1",
+      "org.scalamolecule" %% "molecule" % "1.0.2",
       "com.datomic" % "datomic-free" % "0.9.5697"
     ),
 

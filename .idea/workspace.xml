@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583bbafd-e29a-442b-a7cd-607ab8ee6c97" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/admin/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/blog2/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/get-all.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/get.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-retract.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-save.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/op-update.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/query.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/relationships.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/transaction-bundle.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/code/transaction-report.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/community/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/community/tutorials.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/community/tutorials/seattle.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/deploy/_index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/dev/boilerplate.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/dev/pitfalls.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/dev/transformation.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/intro/architecture.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/intro/building-blocks.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/intro/code-examples.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/intro/philosophy.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/setup/choose-db.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content-standby/setup/schema-tx-code.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/changelog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/documentation/transactions.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/documentation/transactions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/js-connection.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/js-connection.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/setup/sbt-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/setup/sbt-setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/partials/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/resources/test.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,7 +445,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="v0.19.0 Cross-compiling to Scala 2.13.1 and 2.12.10" />
     <MESSAGE value="v0.20.0 Molecule for Scala.js" />
     <MESSAGE value="v0.21.0 Optional nested data" />
     <MESSAGE value="v0.22.0 Automatic Query optimizatin" />
@@ -510,7 +469,8 @@
     <MESSAGE value="All code examples asynchronous" />
     <MESSAGE value="v1.0.0" />
     <MESSAGE value="Corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrections" />
+    <MESSAGE value="v1.0.1 Upgrade to Scala.js 1.8, js-dom 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.1 Upgrade to Scala.js 1.8, js-dom 2.0" />
   </component>
   <component name="masterDetails">
     <states>
