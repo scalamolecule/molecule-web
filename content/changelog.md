@@ -7,6 +7,7 @@ title: "Changelog"
 
 [Github releases](https://github.com/scalamolecule/molecule/releases)
 
+- 2021-12-27 v1.0.3 [Adjustments to molecule RPC interface](#49)
 - 2021-12-25 v1.0.2 [Upgrade datomic-client-api-java-scala to 1.0.3](#48)
 - 2021-12-19 v1.0.1 [Upgrade to Scala.js 1.8, js-dom 2.0](#47)
 - 2021-11-29 v1.0.0 [Molecule 1.0.0](#46)
@@ -55,6 +56,13 @@ title: "Changelog"
 - 2015-10-04 v0.3.0 [Nested data structures](#3)
 - 2014-12-25 v0.2.0 [Implemented Day-Of-Datomic and MBrainz](#2)
 - 2014-07-02 v0.1.0 [Initial commit - Seattle tutorial](#1)
+
+
+## [☝︎](#top) Adjustments to molecule RPC interface {$49}
+
+_2021-12-27 v1.0.3_
+
+RPC method args as generic java.nio.ByteBuffer instead of akka.util.ByteString.
 
 
 ## [☝︎](#top) Upgrade datomic-client-api-java-scala to 1.0.3 {$48}

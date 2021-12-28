@@ -38,7 +38,7 @@ lazy val `molecule-basic` = project.in(file("."))
     credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.2",
+      "org.scalamolecule" %% "molecule" % "1.0.3",
       "com.datomic" % "datomic-pro" % "1.0.6269"
     ),
 
