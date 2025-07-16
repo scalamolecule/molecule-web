@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
         with:
-          path: .  # important fix: check out directly in current dir
+          path: .  # checkout directly into the working directory
 
       - name: Print working directory and tree (debug)
         run: |
@@ -21,16 +21,18 @@ jobs:
           ls -al
           ls pnpm-lock.yaml || echo "Still missing lock file"
 
-      - name: Set up Node.js with pnpm caching
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Enable and pin pnpm via corepack
+      - name: Enable and activate pnpm via Corepack
         run: |
           corepack enable
           corepack prepare pnpm@8.15.5 --activate
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install
