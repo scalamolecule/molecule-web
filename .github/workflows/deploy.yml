@@ -13,6 +13,9 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
+      - name: List built files (debug)
+        run: ls -R docs/.vuepress/dist
+
       - name: Install pnpm
         run: npm install -g pnpm
 
