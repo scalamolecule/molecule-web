@@ -1,0 +1,43 @@
+.DS_Store
+/public/
+# Created by .gitignore support plugin (hsz.mobi)
+### Scala template
+*.class
+*.log
+
+# sbt specific
+.cache/
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# idea specific
+*.idea
+*.bsp
+
+# Molecule-generated SQL schema files
+*.sql
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Mac
+*.DS_Store
+*/.DS_Store
+
+
+node_modules/
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+src/.vuepress/dist/
+
+docs/.vitepress/dist
+docs/.vitepress/cache
+node_modules/
+package-lock.json

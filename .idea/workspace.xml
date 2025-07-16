@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/src/main/scala/db/compare/sql/slick/People.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/src/main/scala/db/dataModel/Ns.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/src/test/scala/docs/compare/sql/slick/PeopleTutorial.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/README-3.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/compare/sql-dsl.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/compare/sql-raw.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/compare/tutorials/ScalaSql.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/compare/tutorials/Slick.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/query/binding.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websiteVueHope/src/docs/query/inspection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/about.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/community/seattle.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/credits.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/clojure-exchanges.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/inspect-queries.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/inspect-transactions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/optimizations.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dev/pitfalls.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/attributes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/dynamic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/generic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/relationships.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/time.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/transaction-functions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/documentation/transactions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/building-blocks.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/datomic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/gremlin.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/slick.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/compare/sql.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/intro/philosophy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/data-model.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/_index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-devlocal.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-free.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-free-mem.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-dev.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peer-pro-mem.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-dev.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/db-setups/datomic-peerserver-mem.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/js-connection.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/jvm-connection.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/setup/sbt-setup.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/_markup/Xrender-heading.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/_markup/Xrender-link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/_default/single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/1-hero.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/2-fetch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/3-rpc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/4-model-transact-query.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/5-one-api-dbs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/6-molecule-datomic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/7-examples.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/front/8-links.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/partials/submenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/shortcodes/bootstrap-table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public" beforeDir="false" afterPath="$PROJECT_DIR$/public" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/test.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/45degreee_fabric.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/45degreee_fabric_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/bedge_grunge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/bedge_grunge_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/escheresque.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/escheresque_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/furley_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/gray_jean.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/gray_jean_@2X.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/green_cup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/halftone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/ricepaper2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/ricepaper2_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/sandpaper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/seamless_paper_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/subtle_white_mini_waves.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/swirl_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bg/whitey_@2X.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/arta.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/ascetic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-dune.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-dune.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-forest.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-forest.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-heath.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-heath.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-lakeside.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-lakeside.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-seaside.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/atelier-seaside.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/brown_paper.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/brown_papersq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/codepen-embed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/color-brewer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/docco.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/far.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/foundation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/github.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/googlecode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/hybrid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/idea.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/ir_black.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/kimbie.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/kimbie.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/magula.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/mono-blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/monokai.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/monokai_sublime.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/obsidian.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/paraiso.dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/paraiso.light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/pojoaque.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/pojoaque.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/railscasts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/rainbow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/school_book.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/school_book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/solarized_dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/solarized_light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/sunburst.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/tomorrow-night-blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/tomorrow-night-bright.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/tomorrow-night-eighties.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/tomorrow-night.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/tomorrow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/vs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/xcode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/highlight/styles/zenburn.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/sidemenu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/syntax-custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/syntax.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/MerriweatherSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Work_Sans/static/WorkSans-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fraulein-hex/frau-hex.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fraulein-hex/frau1.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/fraulein-hex/frau2.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/Molecule-logo-600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/Molecule-logo-800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/Molecule-logo-M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/MoleculeLogo150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/MoleculeLogo200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/MoleculeLogo600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/MoleculeLogo697.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/favicon.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/molecule-logo-m-75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo/molecule-logo-m-75a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/about/mg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/about/presentation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/compare/tinkerpop-modern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/entity/entity1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/entity/entity2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/generic/datom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/relationships/card-many.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/relationships/card-one.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/relationships/ref.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/schema/DatomicElements1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/schema/DatomicElements2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/schema/DatomicElements3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/setup/setup1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/setup/setup2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/setup/setup3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/2-txs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/as-of.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/history.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/since.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/tx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/time/with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/transactions/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/transactions/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/page/transactions/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/copy-button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/highlight-obsolete.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/html5shiv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-1.11.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-1.11.2.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-2.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/less-1.3.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/sidebar-collapser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/alerts.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/badges.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/bootstrap.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/breadcrumbs.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/button-groups.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/buttons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/carousel.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/close.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/code.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/component-animations.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/dropdowns.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/forms.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/glyphicons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/grid.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/input-groups.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/jumbotron.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/labels.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/list-group.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/media.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/modals.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/navbar.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/navs.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/normalize.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/pager.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/pagination.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/panels.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/popovers.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/print.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/progress-bars.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/responsive-utilities.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/scaffolding.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/tables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/theme.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/thumbnails.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/tooltip.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/type.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/utilities.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/less/wells.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-32px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-120px-plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/Vector/GitHub-Mark.ai" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/GitHub-Mark/Vector/GitHub-Mark.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="COMPILER_PROCESS_HEAP_SIZE" value="10000" />
+    <option name="REBUILD_ON_DEPENDENCY_CHANGE" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="molecule-web" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;marcgrue&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/scalamolecule/molecule-docs.git&quot;,
+    &quot;accountId&quot;: &quot;0f091203-1b6c-4710-97b5-bb7d91d42e93&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.ivy2/local/org.scalamolecule/molecule-boilerplate_2.13/0.12.1/srcs/molecule-boilerplate_2.13-sources.jar!/molecule/boilerplate/api/expression/ExprOneMan_.scala" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/code/lib/molecule-code.jar!/db/compare/sql/scalasql/dsl/World/Country_1_refs.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/code/lib/molecule-code.jar!/db/compare/sql/scalasql/schema/WorldSchema_H2.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2pnlYyX2N79GRV7RtEZeTXOf4zn" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.docs.query in molecule-web.code.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mg/molecule/web/molecule-web/websiteVueHope/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;scala.compiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/mg/Applications/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;utest.PeopleTutorial\\tests.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\Select certain columns.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\aggregations.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\filter.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\groupBy + filter.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\groupBy.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\implicit join.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\insert.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\left join.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\save.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\select.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\sortBy.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\subquery.executor&quot;: &quot;Run&quot;,
+    &quot;utest.PeopleTutorial\\tests\\update.executor&quot;: &quot;Run&quot;,
+    &quot;utest.UTests in 'docs'.executor&quot;: &quot;Run&quot;,
+    &quot;utest.UTests in 'query'.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial2\\tests.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial2\\tests\\rollback2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial2\\tests\\transactions.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial2\\tests\\transactions2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\Update\\all.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\Update\\computed values 2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\Update\\computed values.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\Update\\single row.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\delete.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\inserts\\arbitrary.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\inserts\\batch.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\inserts\\single row.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\joins\\inner.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\joins\\left.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\joins\\right.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\realistic queries.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\realistic queries\\life expectancy.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\realistic queries\\populous cities.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\realistic queries\\top languages.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\savepoint throw.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\savepoint.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\select2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\subqueries.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\transactions.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\transactions2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.WorldTutorial\\tests\\union/except/intersect.executor&quot;: &quot;Run&quot;,
+    &quot;utest.filterAttrs.executor&quot;: &quot;Run&quot;,
+    &quot;utest.raw\\tests.executor&quot;: &quot;Run&quot;,
+    &quot;utest.raw\\tests\\refs.executor&quot;: &quot;Run&quot;,
+    &quot;utest.raw_datomic.executor&quot;: &quot;Run&quot;,
+    &quot;utest.subscription.executor&quot;: &quot;Run&quot;,
+    &quot;utest.subscription2.executor&quot;: &quot;Run&quot;,
+    &quot;utest.subscription2\\tests.executor&quot;: &quot;Run&quot;,
+    &quot;utest.time_datomic.executor&quot;: &quot;Run&quot;,
+    &quot;utest.time_datomic\\tests\\asOf since.executor&quot;: &quot;Run&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/websiteVueHope/src" />
+      <recent name="$PROJECT_DIR$/websiteVueHope/src/docs/query" />
+      <recent name="$PROJECT_DIR$/websiteVueHope/src/docs/compare" />
+      <recent name="$PROJECT_DIR$/code/src/test/scala/docs/compare/sql" />
+      <recent name="$PROJECT_DIR$/code/src/main/scala/db/compare/sql" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/websiteVueHope/src/docs/compare/tutorials" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="docs.query" />
+      <recent name="docs.compare.sql.scalasql" />
+      <recent name="db.dataModel" />
+    </key>
+  </component>
+  <component name="RunManager" selected="utest.filterAttrs">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="molecule-web_9239" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="filterAttrs" type="uTestRunConfiguration" factoryName="utest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="molecule-web.code.test" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envFilePaths">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="docs.query.filterAttrs" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="subscription2" type="uTestRunConfiguration" factoryName="utest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="molecule-web.code.test" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envFilePaths">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="docs.query.subscription2" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="subscription2\tests" type="uTestRunConfiguration" factoryName="utest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="molecule-web.code.test" />
+      <option name="VMParameters" value="" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="classpathModifications">
+        <list />
+      </option>
+      <option name="envFilePaths">
+        <list />
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <option name="testClassPath" value="docs.query.subscription2" />
+      <option name="testName" value="tests" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="utest.filterAttrs" />
+        <item itemvalue="utest.subscription2\tests" />
+        <item itemvalue="utest.subscription2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="migrateConfigurationsNotificationShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23591.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-6be00b7b0f42-JavaScript-IU-252.23591.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="" />
+      <created>1733409772171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733409772171</updated>
+      <workItem from="1733409773351" duration="62324000" />
+      <workItem from="1734639129735" duration="56504000" />
+      <workItem from="1735777189599" duration="42000" />
+      <workItem from="1735836866061" duration="5694000" />
+      <workItem from="1735844201975" duration="5951000" />
+      <workItem from="1735910524863" duration="16275000" />
+      <workItem from="1736632577004" duration="658000" />
+      <workItem from="1738170319287" duration="1612000" />
+      <workItem from="1738331738164" duration="675000" />
+      <workItem from="1739009638834" duration="9363000" />
+      <workItem from="1739361843123" duration="573000" />
+      <workItem from="1739362466369" duration="623000" />
+      <workItem from="1739363277243" duration="600000" />
+      <workItem from="1739568802994" duration="8064000" />
+      <workItem from="1739618766036" duration="15360000" />
+      <workItem from="1739742545068" duration="9861000" />
+      <workItem from="1741047778078" duration="3071000" />
+      <workItem from="1741454378350" duration="36000" />
+      <workItem from="1742721072418" duration="474000" />
+      <workItem from="1744355832593" duration="1366000" />
+      <workItem from="1744578087518" duration="1311000" />
+      <workItem from="1744796014441" duration="50000" />
+      <workItem from="1748284502527" duration="667000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>jar://$USER_HOME$/.ivy2/local/org.scalamolecule/molecule-sql-core_2.13/0.14.2-SNAPSHOT/srcs/molecule-sql-core_2.13-sources.jar!/molecule/sql/core/facade/JdbcConn_JVM.scala</url>
+          <line>129</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>jar://$USER_HOME$/.ivy2/local/org.scalamolecule/molecule-core_2.13/0.14.2-SNAPSHOT/srcs/molecule-core_2.13-sources.jar!/molecule/core/api/Api_sync.scala</url>
+          <line>94</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
