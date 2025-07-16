@@ -15,8 +15,11 @@ jobs:
         with:
           path: .  # important fix: check out directly in current dir
 
-      - name: Check pnpm-lock.yaml exists
-        run: ls -l pnpm-lock.yaml
+      - name: Print working directory and tree (debug)
+        run: |
+          pwd
+          ls -al
+          ls pnpm-lock.yaml || echo "Still missing lock file"
 
       - name: Set up Node.js with pnpm caching
         uses: actions/setup-node@v4
