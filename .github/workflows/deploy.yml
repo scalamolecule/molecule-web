@@ -3,7 +3,7 @@ name: Deploy VuePress site to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master  # or 'main' if that's your default branch
 
 jobs:
   deploy:
@@ -12,22 +12,23 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
-        with:
-          path: .  # important fix: check out directly in current dir
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Check pnpm-lock.yaml exists
+        run: ls -l pnpm-lock.yaml
 
-      - name: Set up Node and pnpm
+      - name: Set up Node.js with pnpm caching
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Install dependencies
+      - name: Enable and pin pnpm via corepack
         run: |
           corepack enable
-          pnpm install
+          corepack prepare pnpm@8.15.5 --activate
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build VuePress site
         run: pnpm docs:build
