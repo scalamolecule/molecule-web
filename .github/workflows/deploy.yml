@@ -3,7 +3,7 @@ name: Deploy VuePress site to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'main' if that's your default branch
+      - master
 
 jobs:
   deploy:
@@ -13,12 +13,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
         with:
-          path: .  # checkout into the current directory instead of a nested one
-
-      - name: Show working directory and contents
-        run: |
-          echo "PWD: $(pwd)"
-          ls -al
+          path: molecule-web  # this is the key fix
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -30,14 +25,17 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
+        working-directory: molecule-web
         run: |
           corepack enable
           pnpm install
 
       - name: Build VuePress site
+        working-directory: molecule-web
         run: pnpm docs:build
 
       - name: List built files (debug)
+        working-directory: molecule-web
         run: ls -R docs/.vuepress/dist
 
       - name: Deploy to scalamolecule.github.io
@@ -46,5 +44,5 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: scalamolecule/scalamolecule.github.io
           publish_branch: master
-          publish_dir: docs/.vuepress/dist
+          publish_dir: molecule-web/docs/.vuepress/dist
           cname: www.scalamolecule.org
