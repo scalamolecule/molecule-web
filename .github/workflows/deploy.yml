@@ -13,9 +13,6 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
-      - name: List built files (debug)
-        run: ls -R docs/.vuepress/dist
-
       - name: Install pnpm
         run: npm install -g pnpm
 
@@ -32,6 +29,9 @@ jobs:
 
       - name: Build VuePress site
         run: pnpm docs:build
+
+      - name: List built files (debug)
+        run: ls -R docs/.vuepress/dist
 
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3
