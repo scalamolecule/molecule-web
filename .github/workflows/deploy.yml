@@ -28,8 +28,8 @@ jobs:
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: scalamolecule/scalamolecule.github.io
+          publish_branch: master
           publish_dir: docs/.vuepress/dist
-          # Set the repo and branch to deploy to:
-          destination_repo: scalamolecule/scalamolecule.github.io
-          destination_branch: master
+          cname: www.scalamolecule.org
