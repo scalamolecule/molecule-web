@@ -13,26 +13,30 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
         with:
-          path: molecule-web
+          path: ''
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - name: Show current directory and files
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files in current directory:"
+          ls -al
+
       - name: Install dependencies
         run: |
           corepack enable
           pnpm install
-        working-directory: molecule-web
 
       - name: Build site
         run: pnpm docs:build
-        working-directory: molecule-web
 
-      - name: List built files
+      - name: List built files (debug)
         run: ls -R docs/.vuepress/dist
-        working-directory: molecule-web
 
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3
@@ -40,6 +44,6 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: scalamolecule/scalamolecule.github.io
           publish_branch: master
-          publish_dir: molecule-web/docs/.vuepress/dist
+          publish_dir: docs/.vuepress/dist
           cname: www.scalamolecule.org
-          verbose: trueπ
+          verbose: true

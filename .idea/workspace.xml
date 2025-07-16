@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="Fix: checkout path to avoid nested directory issue" />
+    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="Fix: checkout path to avoid nested directory issue">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
