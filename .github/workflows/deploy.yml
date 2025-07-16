@@ -21,6 +21,10 @@ jobs:
           ls -al
           ls pnpm-lock.yaml || echo "Still missing lock file"
 
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
