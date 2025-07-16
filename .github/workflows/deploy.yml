@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
         with:
-          path: molecule-web  # this is the key fix
+          path: .  # important fix: check out directly in current dir
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -25,17 +25,14 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        working-directory: molecule-web
         run: |
           corepack enable
           pnpm install
 
       - name: Build VuePress site
-        working-directory: molecule-web
         run: pnpm docs:build
 
       - name: List built files (debug)
-        working-directory: molecule-web
         run: ls -R docs/.vuepress/dist
 
       - name: Deploy to scalamolecule.github.io
@@ -44,5 +41,5 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: scalamolecule/scalamolecule.github.io
           publish_branch: master
-          publish_dir: molecule-web/docs/.vuepress/dist
+          publish_dir: docs/.vuepress/dist
           cname: www.scalamolecule.org
