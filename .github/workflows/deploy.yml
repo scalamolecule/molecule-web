@@ -8,11 +8,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Setup Node
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          path: .
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,6 +28,9 @@ jobs:
       - name: Build site
         run: pnpm docs:build
 
+      - name: List build output (debug)
+        run: ls -R docs/.vuepress/dist
+
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -33,3 +39,4 @@ jobs:
           publish_branch: master
           publish_dir: docs/.vuepress/dist
           cname: www.scalamolecule.org
+          verbose: true

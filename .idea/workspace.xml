@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="New website" />
+    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="Deploy from master branch instead of main">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,9 +327,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New website" />
-    <option name="LAST_COMMIT_MESSAGE" value="New website" />
+    <MESSAGE value="Deploy from master branch instead of main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy from master branch instead of main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
