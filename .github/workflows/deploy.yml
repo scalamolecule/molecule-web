@@ -1,42 +1,31 @@
-name: Deploy to GitHub Pages
+name: Deploy VuePress site to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - master  # or 'main' if that's your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: Checkout source repo
         uses: actions/checkout@v4
-        with:
-          path: .
 
-      - name: Setup Node.js
+      - name: Set up Node and pnpm
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Show current directory and files
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Files in current directory:"
-          ls -al
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: |
           corepack enable
           pnpm install
 
-      - name: Build site
+      - name: Build VuePress site
         run: pnpm docs:build
-
-      - name: List built files (debug)
-        run: ls -R docs/.vuepress/dist
 
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3
@@ -46,4 +35,3 @@ jobs:
           publish_branch: master
           publish_dir: docs/.vuepress/dist
           cname: www.scalamolecule.org
-          verbose: true
