@@ -1,43 +1,53 @@
+# macOS system files
 .DS_Store
-/public/
-# Created by .gitignore support plugin (hsz.mobi)
-### Scala template
-*.class
-*.log
+*/.DS_Store
 
-# sbt specific
+# Node dependencies and lock files
+node_modules/
+package-lock.json
+
+# pnpm lock file - keep it committed, so NOT ignored
+
+# VuePress / VitePress build output and caches
+docs/.vuepress/dist/
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
+
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Scala / sbt build files and caches
 .cache/
 .history/
 .lib/
-dist/*
+dist/
 target/
 lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
 
-# idea specific
-*.idea
+# Scala IDE files
 *.bsp
-
-# Molecule-generated SQL schema files
-*.sql
-
-# Scala-IDE specific
+*.idea
 .scala_dependencies
 .worksheet
 
-# Mac
-*.DS_Store
-*/.DS_Store
+# Logs and class files
+*.class
+*.log
 
+# Molecule-generated SQL schema files (ignore if generated and not source)
+*.sql
 
-node_modules/
-docs/.vuepress/.cache/
-docs/.vuepress/.temp/
-docs/.vuepress/dist/
+# Other system or editor files
+*.log
+*.swp
+*.swo
+*~
 
-docs/.vitepress/dist
-docs/.vitepress/cache
-node_modules/
-package-lock.json
+# Git submodules file (empty)
+.gitmodules
+
+# IntelliJ IDEA specific files and folders
+.idea/

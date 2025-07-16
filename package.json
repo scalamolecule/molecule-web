@@ -1,0 +1,22 @@
+{
+  "name": "molecule",
+  "description": "Compose and Persist Data with vanilla Scala",
+  "version": "0.1.0",
+  "license": "Apache 2",
+  "type": "module",
+  "scripts": {
+    "docs:build": "vuepress-vite build docs",
+    "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
+    "docs:dev": "vuepress-vite dev docs",
+    "docs:update-package": "npx vp-update",
+    "docs:deploy": "pnpm docs:build && npx gh-pages -d docs/.vuepress/dist"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.14",
+    "mermaid": "^10.9.1",
+    "vue": "^3.4.31",
+    "vuepress": "2.0.0-rc.14",
+    "vuepress-plugin-md-enhance": "2.0.0-rc.52",
+    "vuepress-theme-hope": "2.0.0-rc.52"
+  }
+}
