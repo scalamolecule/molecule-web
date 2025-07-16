@@ -3,7 +3,7 @@ name: Deploy VuePress site to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'main' if that's your default branch
+      - master  # or 'main'
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
         with:
-          path: .  # checkout directly into the working directory
+          path: .  # checkout into working directory
 
       - name: Print working directory and tree (debug)
         run: |
@@ -25,8 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+          # DO NOT include 'cache: pnpm' here
+          # It expects pnpm to already be in $PATH
 
       - name: Enable and activate pnpm via Corepack
         run: |
