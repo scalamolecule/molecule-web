@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
+        with:
+          path: .  # important fix: check out directly in current dir
 
       - name: Check pnpm-lock.yaml exists
         run: ls -l pnpm-lock.yaml
