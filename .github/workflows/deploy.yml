@@ -12,6 +12,13 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
+        with:
+          path: .  # checkout into the current directory instead of a nested one
+
+      - name: Show working directory and contents
+        run: |
+          echo "PWD: $(pwd)"
+          ls -al
 
       - name: Install pnpm
         run: npm install -g pnpm
