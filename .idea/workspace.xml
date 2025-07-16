@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/public/CNAME" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="4577abdf-9a4b-413a-b4dc-2df74900a5f3" name="Changes" comment="New website">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README-3.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database/README-3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/compare/sql-dsl.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/compare/sql-raw.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/compare/tutorials/ScalaSql.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/compare/tutorials/Slick.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/query/binding.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/docs/query/inspection.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +70,9 @@
         <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -333,6 +326,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New website" />
+    <option name="LAST_COMMIT_MESSAGE" value="New website" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
