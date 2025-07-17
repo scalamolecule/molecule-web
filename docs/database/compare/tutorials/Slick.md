@@ -76,7 +76,7 @@ An important difference is also that with Molecule you don't need to decide upfr
 
 The Slick equivalent of `SELECT *` is the result of the plain TableQuery:
 
-```
+```scala
 // Slick
 db.run(people.result)
 ```
@@ -92,7 +92,7 @@ Person.id.name.age.query.get
 
 #### Select certain columns
 
-```
+```scala
 val query = people.map(p =>
   (p.age, p.name ++ " (" ++ p.id.asColumnOf[String] ++ ")")
 )
@@ -109,7 +109,7 @@ Person.id.name.age.query.get.map {
 
 ## filter
 
-```
+```scala
 val query = people.filter(p => p.age >= 18 && p.name === "C. Vogt").result
 db.run(query.result)
 ```
@@ -121,7 +121,7 @@ Person.age.>=(18).name("C. Vogt").query.get
 
 ## sortBy
 
-```
+```scala
 val query = people.sortBy(p => (p.age.asc, p.name)).result
 db.run(query.result)
 ```
@@ -136,7 +136,7 @@ Use a secondary sort order with `a2`/`d2` etc
 
 ## Aggregations
 
-```
+```scala
 val query = people.map(_.age).max.result
 db.run(query.result)
 ```
@@ -154,7 +154,7 @@ Aggregate calculations in Molecule include `min`, `max`, `count`, `countDistinct
 
 ## groupBy
 
-```
+```scala
 val query = people.groupBy(p => p.addressId)
   .map { case (addressId, group) => (addressId, group.map(_.age).avg) }
   .list
@@ -171,7 +171,7 @@ Person.address.age(avg).query.get
 
 ## groupBy + filter
 
-```
+```scala
 val query = people.groupBy(p => p.addressId)
   .map { case (addressId, group) => (addressId, group.map(_.age).avg) }
   .filter { case (addressId, avgAge) => avgAge > 50 }
@@ -189,7 +189,7 @@ Person.address.age(avg).query.get.filter(_._2 > 50)
 
 #### Implicit join
 
-```
+```scala
 val query = people.flatMap(p =>
   addresses.filter(a => p.addressId === a.id)
     .map(a => (p.name, a.city))
@@ -210,7 +210,7 @@ Person.name.Address.city.query.get
 
 #### Explicit join
 
-```
+```scala
 val query = (people join addresses on (_.addressId === _.id))
   .map { case (p, a) => (p.name, a.city) }.result
 db.run(query.result)
@@ -222,7 +222,7 @@ Person.name.Address.city.query.get
 
 #### left/right/outer join
 
-```
+```scala
 val query = (addresses joinLeft people on (_.id === _.addressId))
   .map { case (a, p) => (p.map(_.name), a.city) }.result
 db.run(query.result)
@@ -240,7 +240,7 @@ Person.name.Address.?(Address.city).query.get
 
 ## Subquery
 
-```
+```scala
 val address_ids = addresses.filter(_.city === "New York City").map(_.id)
 val query       = people.filter(_.id in address_ids).result // <- run as one query
 db.run(query.result)
@@ -252,7 +252,7 @@ Person.age.name.Address.city_("New York City").query.get
 
 ## Insert
 
-```
+```scala
 val query = people.map(p => (p.name, p.age, p.addressId))
   .insert(("M Odersky", 12345, 1))
 db.run(query.result)
@@ -270,7 +270,7 @@ Person.name("M Odersky").age(12345).address(1).save.transact
 
 ## Update
 
-```
+```scala
 val query = people.filter(_.name === "M Odersky")
   .map(p => (p.name, p.age))
   .update(("M. Odersky", 54321))
@@ -283,7 +283,7 @@ Person.name_("M Odersky").name("M. Odersky").age(54321).update.transact
 
 ## Delete
 
-```
+```scala
 val query = people.filter(p => p.name === "M. Odersky").delete
 db.run(query.result)
 ```
@@ -294,7 +294,7 @@ Person.name_("M. Odersky").delete.transact
 
 ## case
 
-```
+```scala
 val query = people.map(p =>
   Case
     If (p.addressId === 1) Then "A"

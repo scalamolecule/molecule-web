@@ -15,11 +15,11 @@ jobs:
         with:
           path: .  # checkout into working directory
 
-      - name: Print working directory and tree (debug)
-        run: |
-          pwd
-          ls -al
-          ls pnpm-lock.yaml || echo "Still missing lock file"
+      #      - name: Print working directory and tree (debug)
+      #        run: |
+      #          pwd
+      #          ls -al
+      #          ls pnpm-lock.yaml || echo "Still missing lock file"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -40,8 +40,8 @@ jobs:
       - name: Build VuePress site
         run: pnpm docs:build
 
-      - name: List built files (debug)
-        run: ls -R docs/.vuepress/dist
+      #      - name: List built files (debug)
+      #        run: ls -R docs/.vuepress/dist
 
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3

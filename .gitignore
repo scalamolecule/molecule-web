@@ -13,8 +13,6 @@ docs/.vuepress/dist/
 docs/.vuepress/.cache/
 docs/.vuepress/.temp/
 
-docs/.vitepress/dist/
-docs/.vitepress/cache/
 
 # Scala / sbt build files and caches
 .cache/
