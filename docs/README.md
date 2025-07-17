@@ -15,7 +15,7 @@ actions:
     link: /database/quick-start
 
   - text: Setup
-    link: /database/setup/setup-jvm
+    link: /database/setup/sbt-setup
     
   - text: Transact
     link: /database/transact/save
