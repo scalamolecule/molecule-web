@@ -114,9 +114,9 @@ val persons: cats.effect.IO[List[(String, Int)]] =
 :::
 
 
-[How does it work](/docs/developer/how-doew-it-work) shows how Molecule internally transform
+[How does it work](/database/developer/how-doew-it-work) shows how Molecule internally transform
 
-To see how Molecule internally transform the molecule, see [How does it work](/docs/developer/how-doew-it-work).
+To see how Molecule internally transform the molecule, see [How does it work](/database/developer/how-doew-it-work).
 
 
 
@@ -182,7 +182,7 @@ IO(
 _(In the following examples we'll just show the synchronous result for brevity)_
 
 
-See [setup](/docs/setup) on how to choose a database and API.
+See [setup](/database/setup) on how to choose a database and API.
 
 [//]: # (#### Namespaces and Attributes)
 

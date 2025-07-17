@@ -250,7 +250,7 @@ Person.age_.>=(35).likes("Beef").update.transact
 
 ### More...
 
-Similarly, all [remaining filters](/docs/query/filters.html#string) on strings, numbers and collections can be used as update filters.
+Similarly, all [remaining filters](/database/query/filters.html#string) on strings, numbers and collections can be used as update filters.
 
 
 ## Multiple filters

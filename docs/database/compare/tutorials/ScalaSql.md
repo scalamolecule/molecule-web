@@ -140,7 +140,7 @@ From this model, Molecule generates
 - An SQL schema that we can transact to create the database
 - Boilerplate code to write molecule queries and transactions
 
-An important difference is also that with Molecule you don't need to decide upfront wether an attribute can be optional. You can enforce mandatory values though by adding `mandatory` after the type definition. If for instance we wanted to enforce that a code of a Country is mandatory, we could define `val code = oneString.mandatory`. For all definition options, see [Domain Structure](/docs/setup/domain-structure#attribute-options).
+An important difference is also that with Molecule you don't need to decide upfront wether an attribute can be optional. You can enforce mandatory values though by adding `mandatory` after the type definition. If for instance we wanted to enforce that a code of a Country is mandatory, we could define `val code = oneString.mandatory`. For all definition options, see [Domain Structure](/database/setup/domain-structure#attribute-options).
 
 
 ## Select

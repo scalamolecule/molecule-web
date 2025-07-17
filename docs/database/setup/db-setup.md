@@ -2,10 +2,10 @@
 next: /docs/transact/save
 ---
 
-# Runtime
+# Db setup
 
 
-Once you have defined your [Domain Structure](/docs/setup/data-model), run `sbt moleculeGen` and compiled your project, you're ready to use molecules to transact and fetch data from databases.
+Once you have defined your [Domain Structure](/database/setup/data-model), run `sbt moleculeGen` and compiled your project, you're ready to use molecules to transact and fetch data from databases.
 
 Each setup requires that you
 

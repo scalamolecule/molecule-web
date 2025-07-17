@@ -171,7 +171,7 @@ Person.age_.>=(35).delete.transact
 
 ### More...
 
-Similarly, all [remaining filters](/docs/query/filters.html#string) on strings, numbers and collections can be used as delete filters.
+Similarly, all [remaining filters](/database/query/filters.html#string) on strings, numbers and collections can be used as delete filters.
 
 
 ## Multiple filters

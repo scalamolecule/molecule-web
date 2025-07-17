@@ -81,7 +81,7 @@ Person.name.age.query.get ==> List(
 Likewise, we could update or delete raw data using raw transaction strings for the selected database.
 
 
-See also [raw query](/docs/query/raw-query).
+See also [raw query](/database/query/raw-query).
 
 
 ##### [<i class="fas fa-handshake" style="margin-right: 4px;"></i> Raw transaction compliance tests](https://github.com/scalamolecule/molecule/tree/main/db/compliance/shared/src/test/scala/molecule/db/compliance/test/validation)

@@ -70,4 +70,4 @@ AGE       class java.lang.Integer    INTEGER
 
 Currently, input parameters using `?` placeholders in the query is not supported by `rawQuery`. You would then need to use raw JDBC code.
 
-See also [raw transact](/docs/transact/raw-transact).
+See also [raw transact](/database/transact/raw-transact).

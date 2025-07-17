@@ -1,5 +1,5 @@
 ---
-prev: /docs/setup/runtime
+prev: /docs/setup/db-setup
 ---
 
 # Save
@@ -91,7 +91,7 @@ Person.name.age
   ("Bob", 42, "Main st. 17", "USA")
 ```
 
-Or use [backrefs](/docs/query/relationships#backref):
+Or use [backrefs](/database/query/relationships#backref):
 
 ```scala
 Person.name("Bob").age(42)

@@ -30,7 +30,7 @@ lazy val app = project
 ```
 Use `%%%` instead of `%%` for cross-compiled Scala.js projects.
 
-Define your [Domain Structure](/docs/setup/domain-structure) and then run
+Define your [Domain Structure](/database/setup/domain-structure) and then run
 
 ```
 sbt moleculeGen

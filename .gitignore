@@ -42,6 +42,7 @@ project/plugins/project/
 *.log
 *.swp
 *.swo
+*.xml
 *~
 
 # Git submodules file (empty)

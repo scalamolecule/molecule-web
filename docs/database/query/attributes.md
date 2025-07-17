@@ -34,7 +34,7 @@ val resul1: List[String]                 = Person.name.query.get
 val resul2: List[(String, Int)]          = Person.name.age.query.get
 val resul3: List[(String, Int, Boolean)] = Person.name.age.member.query.get
 ```
-An implicit connection to the database needs to be in scope for calling `get`. See [Runtime](/docs/setup/runtime) on how to acqire the connection.
+An implicit connection to the database needs to be in scope for calling `get`. See [Db setup](/database/setup/db-setup) on how to acqire the connection.
 
 
 ## 4 APIs
@@ -154,7 +154,7 @@ A null value in an SQL table becomes a `None` in the result returned by the mole
 
 ## Types & collections
 
-As we saw when defining a [Domain Structure](/docs/setup/domain-structure), an attribute can be of basically any scalar type, Set, Seq or Map that we use in Scala! Molecule takes care of mapping each type to the database so that you can think freely in terms of Scala code and focus on your business code rather than in SQL types and implementation details.
+As we saw when defining a [Domain Structure](/database/setup/domain-structure), an attribute can be of basically any scalar type, Set, Seq or Map that we use in Scala! Molecule takes care of mapping each type to the database so that you can think freely in terms of Scala code and focus on your business code rather than in SQL types and implementation details.
 
 ## Types & collections.query
 

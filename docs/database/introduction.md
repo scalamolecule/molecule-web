@@ -114,7 +114,7 @@ Person(benId).delete.transact
 
 ## Domain Structure
 
-The [Domain Structure](/docs/setup/domain-structure) for the example above is written in vanilla Scala:
+The [Domain Structure](/database/setup/domain-structure) for the example above is written in vanilla Scala:
 
 ```scala
 import molecule.DomainStructure
