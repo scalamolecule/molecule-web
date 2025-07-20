@@ -1,3 +1,6 @@
+---
+next: /database/compare/tutorials/scalasql
+---
 # SQL raw
 
 Comparing Molecule with popular SQL libraries using SQL interpolation  

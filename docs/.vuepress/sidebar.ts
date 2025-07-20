@@ -92,8 +92,8 @@ export default sidebar({
                     expanded: false,
                     prefix: "tutorials/",
                     children: [
-                        "ScalaSql",
-                        "Slick",
+                        "scalasql",
+                        "slick",
                     ],
                 },
                 // "zio-sql",

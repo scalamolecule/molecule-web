@@ -1,5 +1,5 @@
 ---
-next: /docs/setup/sbt-setup
+next: /database/setup/sbt-setup
 ---
 
 # Quick Start

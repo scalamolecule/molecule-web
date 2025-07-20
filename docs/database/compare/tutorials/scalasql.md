@@ -1,3 +1,7 @@
+---
+prev: /database/compare/sql-raw
+---
+
 # ScalaSql
 
 To compare Molecule with ScalaSql we implement the [ScalaSql Tutorial](https://github.com/com-lihaoyi/scalasql/blob/main/docs/tutorial.md) to see the differences.

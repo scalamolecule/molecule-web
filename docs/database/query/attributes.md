@@ -1,5 +1,5 @@
 ---
-prev: /docs/transact/raw-transact
+prev: /database/transact/raw-transact
 ---
 
 # Attributes

@@ -1,5 +1,5 @@
 ---
-next: /docs/transact/save
+next: /database/transact/save
 ---
 
 # Db setup

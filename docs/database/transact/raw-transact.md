@@ -1,5 +1,5 @@
 ---
-next: /docs/query/attributes
+next: /database/query/attributes
 ---
 
 # Raw Transact

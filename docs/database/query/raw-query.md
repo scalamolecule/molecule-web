@@ -1,3 +1,7 @@
+---
+next: /database/compare/overview
+---
+
 # Raw Query
 
 Molecule queries are translated to raw query strings for each database.

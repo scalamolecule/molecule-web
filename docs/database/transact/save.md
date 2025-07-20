@@ -1,5 +1,5 @@
 ---
-prev: /docs/setup/db-setup
+prev: /database/setup/db-setup
 ---
 
 # Save

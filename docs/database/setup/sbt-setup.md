@@ -1,5 +1,5 @@
 ---
-prev: /docs/quick-start
+prev: /database/quick-start
 ---
 
 # SBT setup
