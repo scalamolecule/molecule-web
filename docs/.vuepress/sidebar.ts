@@ -73,8 +73,8 @@ export default sidebar({
             prefix: "compare/",
             children: [
                 "overview",
-                "scalasql",
                 "slick",
+                "scalasql",
 
                 // "sql-dsl",
                 // "sql-raw",
