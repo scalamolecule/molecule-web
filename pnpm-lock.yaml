@@ -11,6 +11,9 @@ importers:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2)
+      '@vuepress/plugin-google-analytics':
+        specifier: 2.0.0-rc.112
+        version: 2.0.0-rc.112(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17))
       mermaid:
         specifier: ^10.9.1
         version: 10.9.3
@@ -846,6 +849,11 @@ packages:
     resolution: {integrity: sha512-dRJiZ5PVuhhyu+R2BZOlyeqgxVikUUh2Vf6RNVN2DNWv4VHdYybFQuQ+kYDpldYyzoP8932aFRV0d2ocpvxEug==}
     peerDependencies:
       vuepress: 2.0.0-rc.14
+
+  '@vuepress/plugin-google-analytics@2.0.0-rc.112':
+    resolution: {integrity: sha512-G+lCRPgfxvqSROWTAZFVYZzAMMBfOsvqOhn0PcYXc3mr2Eo+vcuczXdbIHNLQkUpWcKSs+jRDc7fH+xnkJ6MBg==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.24
 
   '@vuepress/plugin-links-check@2.0.0-rc.39':
     resolution: {integrity: sha512-2lQHIMO49jYcJnEWHf7yoXnuFUrAQC+LfzSvaeCMUzshEIDTJXy96LSCQCjRWwW02GL65qS9ODfr6b8DDuXMgg==}
@@ -3008,6 +3016,10 @@ snapshots:
   '@vuepress/plugin-git@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17))':
     dependencies:
       execa: 9.6.0
+      vuepress: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17)
+
+  '@vuepress/plugin-google-analytics@2.0.0-rc.112(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17))':
+    dependencies:
       vuepress: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17)
 
   '@vuepress/plugin-links-check@2.0.0-rc.39(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@24.0.14)(sass@1.89.2))(vue@3.5.17))':
