@@ -15,7 +15,6 @@ Popular libraries that focus on letting you write SQL queries and transactions:
 - [ldbc](https://takapi327.github.io/ldbc/)
 - [JDBC (Java)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/)
 
-Comparing Molecule with popular SQL libraries using SQL interpolation
 
 |              |          Molecule          | Doobie  | Magnum  |  Skunk  |      Anorm       |        ldbc        | JDBC<br>(Java) |
 |--------------|:--------------------------:|:-------:|:-------:|:-------:|:----------------:|:------------------:|:--------------:|
@@ -115,7 +114,7 @@ DELETE FROM Person WHERE id IN (benId)
 
 ## DSL
 
-The DSL-based libraries offer a DSL that either resembles Scala collection function
+The DSL-based libraries offer a DSL that either resembles Scala collection-like functionality (map, flatMap etc) or SQL-like operations (join, select etc)
 
 - [Slick](https://scala-slick.org)
 - [Zio-Quill](https://github.com/zio/zio-quill)
@@ -126,7 +125,6 @@ The DSL-based libraries offer a DSL that either resembles Scala collection funct
 - [JOOQ (Java)](https://www.jooq.org)
 
 
-Comparing Molecule with popular SQL libraries using a DSL
 
 |              |          Molecule          |  Slick  |      Quill       | Scala<br>SQL | Scalike<br>JDBC | Squeryl<br>(Java) | JOOQ<br>(Java) |
 |--------------|:--------------------------:|:-------:|:----------------:|:------------:|:---------------:|:-----------------:|:--------------:|
