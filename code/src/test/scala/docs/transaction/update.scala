@@ -19,6 +19,15 @@ object update extends H2Tests {
       Person(1).age(43).update.transact
     }
 
+    "id simple" - h2(Person_MetaDb_h2()) { implicit conn =>
+      val bobId = Person.name("Bob").age(42).save.transact.id
+      Person.age.query.get.head ==> 42
+
+      // Bob is now 43
+      Person(bobId).age(43).update.i.transact
+      Person.age.query.get.head ==> 43
+    }
+
     "id" - h2(Person_MetaDb_h2()) { implicit conn =>
       Person.name("Bob").age(42).save.transact
 
@@ -26,7 +35,7 @@ object update extends H2Tests {
       Person.age.query.get.head ==> 42
 
       // Retrieve id to be updated
-      val bobId = Person.id.name_.apply("Bob").query.get.head
+      val bobId = Person.id.name_("Bob").query.get.head
 
       // Update Bob's age to 43 using his id
       Person(bobId).age(43).update.transact
@@ -45,12 +54,6 @@ object update extends H2Tests {
         |WHERE
         |  Person.name IS NOT NULL AND
         |  Person.age  IS NOT NULL;""".stripMargin
-
-      """[:find ?name ?age ?street
-        |    :where [?a :Person/name ?name]
-        |           [?a :Person/age ?age]
-        |           [?a :Home/address ?b]
-        |           [?b :Address/street ?street]]""".stripMargin
     }
 
 

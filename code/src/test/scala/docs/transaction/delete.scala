@@ -12,6 +12,20 @@ object delete extends H2Tests {
 
   override lazy val tests = Tests {
 
+    "id" - h2(Person_MetaDb_h2()) { implicit conn =>
+      val List(bob, liz) = Person.name.age.insert(
+        ("Bob", 42),
+        ("Liz", 38),
+      ).transact.ids
+
+      // Delete entities with a name
+      Person(bob).delete.i.transact
+
+      Person.name.age.query.get ==> List(
+        ("Liz", 38),
+      )
+    }
+
     "not null" - h2(Person_MetaDb_h2()) { implicit conn =>
       Person.name_?.age.insert(
         (Some("Liz"), 27),

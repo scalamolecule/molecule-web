@@ -18,6 +18,11 @@ object save extends H2Tests {
       Person.name.age.query.get.head ==> ("Bob", 42)
     }
 
+    "mandatory with ref" - h2(Person_MetaDb_h2()) { implicit conn =>
+      Person.name("Bob").age(42).Home.street("Main st.").save.transact
+      Person.name.age.query.get.head ==> ("Bob", 42)
+    }
+
     "raw" - h2(Person_MetaDb_h2()) { implicit conn =>
 
       rawTransact(

@@ -73,9 +73,11 @@ export default sidebar({
             prefix: "compare/",
             children: [
                 "overview",
-                "sql-dsl",
-                "sql-raw",
-                // "datomic",
+                "scalasql",
+                "slick",
+
+                // "sql-dsl",
+                // "sql-raw",
                 // "anorm",
                 // "doobie",
                 // "prisma",
@@ -86,16 +88,16 @@ export default sidebar({
                 // "skunk",
                 // "slick",
                 // "squeryl",
-                {
-                    text: 'Tutorials',
-                    collapsible: true,
-                    expanded: false,
-                    prefix: "tutorials/",
-                    children: [
-                        "scalasql",
-                        "slick",
-                    ],
-                },
+                // {
+                //     text: 'Tutorials',
+                //     collapsible: true,
+                //     expanded: false,
+                //     prefix: "tutorials/",
+                //     children: [
+                //         "scalasql",
+                //         "slick",
+                //     ],
+                // },
                 // "zio-sql",
             ],
         },

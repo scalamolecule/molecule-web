@@ -13,7 +13,6 @@ object insert extends H2Tests {
 
   override lazy val tests = Tests {
 
-
     "varargs" - h2(Person_MetaDb_h2()) { implicit conn =>
       Person.name.age.insert(
         ("Bob", 42),
