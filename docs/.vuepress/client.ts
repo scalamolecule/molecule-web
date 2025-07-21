@@ -16,5 +16,13 @@ defineMermaidConfig({
 });
 
 export default defineClientConfig({
-    // ...
+    enhance() {
+        if (typeof window !== "undefined") {
+            const savedMode = localStorage.getItem("vuepress-theme-hope-scheme");
+            if (!savedMode) {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("vuepress-theme-hope-scheme", "dark");
+            }
+        }
+    },
 });
