@@ -74,6 +74,8 @@ export default sidebar({
             children: [
                 "overview",
                 "slick",
+                "slick-sql",
+                "protoquill",
                 "scalasql",
 
                 // "sql-dsl",

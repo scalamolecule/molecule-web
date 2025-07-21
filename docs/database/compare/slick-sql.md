@@ -1,4 +1,4 @@
-# SQL interpolated
+# Slick SQL
 
 
 #### SELECT *
@@ -207,15 +207,3 @@ Person.address(1 or 2).query.get.map(_.map {
   case 2 => "B"
 })
 ```
-
-
-
-
-
-
-
-
-
-### Next
-
-[Compare Slick...](/intro/compare/slick/)

@@ -117,7 +117,7 @@ DELETE FROM Person WHERE id IN (benId)
 The DSL-based libraries offer a DSL that either resembles Scala collection-like functionality (map, flatMap etc) or SQL-like operations (join, select etc)
 
 - [Slick](https://scala-slick.org) - [compare](/database/compare/slick)
-- [Zio-Quill](https://github.com/zio/zio-quill)
+- [Zio-Quill](https://github.com/zio/zio-quill) - [compare](/database/compare/protoquill)
 - [ScalaSql](https://github.com/com-lihaoyi/scalasql) - [compare](/database/compare/scalasql)
 - [ScalikeJDBC](https://scalikejdbc.org)
 - [Typo](https://github.com/oyvindberg/typo)
