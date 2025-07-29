@@ -86,7 +86,7 @@ When Molecule generates boilerplate code, it also create some meta information f
 @tab h2
 Dependencies in `build.sbt`:
 ```scala
-"org.scalamolecule" %% "molecule-db-h2" % "0.24.0",
+"org.scalamolecule" %% "molecule-db-h2" % "0.24.2",
 // already imports
 // "com.h2database" % "h2" % "2.3.232"
 ```
@@ -114,7 +114,7 @@ See more [H2 setup examples](https://github.com/scalamolecule/molecule/blob/main
 @tab sqlite
 Dependencies in `build.sbt`:
 ```scala
-"org.scalamolecule" %% "molecule-db-sqlite" % "0.24.0",
+"org.scalamolecule" %% "molecule-db-sqlite" % "0.24.2",
 // already imports
 // "org.xerial" % "sqlite-jdbc" % "3.49.1.0"
 ```
@@ -139,7 +139,7 @@ See more [SQlite setup examples](https://github.com/scalamolecule/molecule/blob/
 @tab postgres
 Dependencies in `build.sbt`:
 ```scala
-"org.scalamolecule" %% "molecule-db-postgres" % "0.24.0",
+"org.scalamolecule" %% "molecule-db-postgres" % "0.24.2",
 // already imports
 // "org.testcontainers" % "postgresql" % "1.20.6",
 // "org.postgresql" % "postgresql" % "42.7.5",
@@ -185,7 +185,7 @@ trait PostgresSetup {
 @tab mysql
 Dependencies in `build.sbt`:
 ```scala
-"org.scalamolecule" %% "molecule-db-mysql" % "0.24.0",
+"org.scalamolecule" %% "molecule-db-mysql" % "0.24.2",
 // already imports
 // "org.testcontainers" % "mysql" % "1.20.6",
 // "com.mysql" % "mysql-connector-j" % "9.2.0",
@@ -236,7 +236,7 @@ trait MysqlSetup {
 @tab mariadb
 Dependencies in `build.sbt`:
 ```scala
-"org.scalamolecule" %% "molecule-db-mariadb" % "0.24.0",
+"org.scalamolecule" %% "molecule-db-mariadb" % "0.24.2",
 // already imports
 // "com.dimafeng" %% "testcontainers-scala-mariadb" % "0.43.0",
 // "org.mariadb.jdbc" % "mariadb-java-client" % "3.5.1",
