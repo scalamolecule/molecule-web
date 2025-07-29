@@ -72,7 +72,8 @@ export default sidebar({
             expanded: false,
             prefix: "compare/",
             children: [
-                "overview",
+                "sql-based",
+                "dsl-based",
                 "slick",
                 "slick-sql",
                 "protoquill",

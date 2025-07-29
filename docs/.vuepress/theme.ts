@@ -72,7 +72,7 @@ export default hopeTheme({
     //   editLink: "Edit this page on GitHub",
     // },
 
-    breadcrumb: true,
+    breadcrumb: false,
 
 
     plugins: {

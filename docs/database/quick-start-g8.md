@@ -21,11 +21,12 @@ Press `return` 5 times to just create a default project.
 Or customize your setup by choosing from the presented options during g8 creation:
 
 
-Then compile the project with the `-Dmolecule=true`
+Then generate the boilerplate code and compile the project:
 
 ```
 cd <name-of-app>
-sbt compile -Dmolecule=true
+sbt moleculeGen compile
+
 ```
 
 
