@@ -20,11 +20,11 @@ lazy val app = project
   .settings(
       libraryDependencies ++= Seq(
         // one or more db-specific imports
-        "org.scalamolecule" %% "molecule-db-h2" % "0.24.1",
-        "org.scalamolecule" %% "molecule-db-mariadb" % "0.24.1",
-        "org.scalamolecule" %% "molecule-db-mysql" % "0.24.1",
-        "org.scalamolecule" %% "molecule-db-postgres" % "0.24.1",
-        "org.scalamolecule" %% "molecule-db-sqlite" % "0.24.1",
+        "org.scalamolecule" %% "molecule-db-h2" % "0.24.2",
+        "org.scalamolecule" %% "molecule-db-mariadb" % "0.24.2",
+        "org.scalamolecule" %% "molecule-db-mysql" % "0.24.2",
+        "org.scalamolecule" %% "molecule-db-postgres" % "0.24.2",
+        "org.scalamolecule" %% "molecule-db-sqlite" % "0.24.2",
       )
     )
 ```
