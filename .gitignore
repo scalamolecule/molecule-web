@@ -4,7 +4,7 @@
 
 # Node dependencies and lock files
 node_modules/
-package-lock.json
+#package-lock.json
 
 # pnpm lock file - keep it committed, so NOT ignored
 

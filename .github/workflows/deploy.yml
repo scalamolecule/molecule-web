@@ -12,36 +12,18 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
-        with:
-          path: .  # checkout into working directory
-
-      #      - name: Print working directory and tree (debug)
-      #        run: |
-      #          pwd
-      #          ls -al
-      #          ls pnpm-lock.yaml || echo "Still missing lock file"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # DO NOT include 'cache: pnpm' here
-          # It expects pnpm to already be in $PATH
-
-      - name: Enable and activate pnpm via Corepack
-        run: |
-          corepack enable
-          corepack prepare pnpm@8.15.5 --activate
-          pnpm --version
+          cache: npm  # enables caching for npm installs
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build VuePress site
-        run: pnpm docs:build
-
-      #      - name: List built files (debug)
-      #        run: ls -R docs/.vuepress/dist
+        run: npm run docs:build
 
       - name: Deploy to scalamolecule.github.io
         uses: peaceiris/actions-gh-pages@v3

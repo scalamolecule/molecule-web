@@ -7,7 +7,12 @@ Entities can be identified either by applying ids or by the shape of the molecul
 
 
 ::: warning
-Note that you can either `update` existing values or `upsert` possibly existing values. Upsert will insert the new value if the attribute has no value yet.
+Note that you can either `update` existing values or `upsert` possibly existing values:
+
+- `update` will only update those entities where all values already exist and leave other entities untouched.
+- `upsert` will insert the new value if an attribute has no value yet, otherwise update it.
+
+
 See [upsert](#upsert) further below for more info.
 :::
 
