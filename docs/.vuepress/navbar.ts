@@ -12,7 +12,7 @@ export default navbar([
     {
         icon: "database",
         text: "Database",
-        link: "introduction",
+        link: "database/introduction",
         activeMatch: "/database/.*",
         // link: "docs/introduction",
         // activeMatch: "docs/.*",

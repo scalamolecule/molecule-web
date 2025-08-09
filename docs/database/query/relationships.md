@@ -1,4 +1,6 @@
 
+
+
 # Relationships
 
 
@@ -16,7 +18,7 @@ flowchart LR
     A(Person) -- Home ---> B(Address)
 ```
 
-In our Data Model we give the ref a name, like "home" to describe the relationship:
+In our domain structure we give the ref a name, like "home" to describe the relationship:
 
 ```scala
 trait Person:

@@ -1,8 +1,9 @@
 package docs.transaction
 
-import db.dataModel.dsl.Accounting.metadb.Accounting_MetaDb_h2
+import db.dataModel.dsl.Accounting.*
+import db.dataModel.dsl.Accounting.metadb.Accounting_h2
 import db.dataModel.dsl.Person.*
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
+import db.dataModel.dsl.Person.metadb.Person_h2
 import docs.H2Tests
 import molecule.db.h2.sync.*
 import utest.*
@@ -12,7 +13,7 @@ object delete extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "id" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "id" - h2(Person_h2()) {
       val List(bob, liz) = Person.name.age.insert(
         ("Bob", 42),
         ("Liz", 38),
@@ -26,7 +27,7 @@ object delete extends H2Tests {
       )
     }
 
-    "not null" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "not null" - h2(Person_h2()) {
       Person.name_?.age.insert(
         (Some("Liz"), 27),
         (Some("Bob"), 35),
@@ -44,7 +45,7 @@ object delete extends H2Tests {
       )
     }
 
-    "null" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "null" - h2(Person_h2()) {
       Person.name_?.age.insert(
         (Some("Liz"), 27),
         (Some("Bob"), 35),
@@ -62,7 +63,7 @@ object delete extends H2Tests {
     }
 
 
-    "equality" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "equality" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -79,7 +80,7 @@ object delete extends H2Tests {
     }
 
 
-    "OR logic" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "OR logic" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -98,7 +99,7 @@ object delete extends H2Tests {
     }
 
 
-    "Negation" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Negation" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -114,7 +115,7 @@ object delete extends H2Tests {
       )
     }
 
-    "NOR logic" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "NOR logic" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -133,7 +134,7 @@ object delete extends H2Tests {
     }
 
 
-    "comparison <" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison <" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -149,7 +150,7 @@ object delete extends H2Tests {
       )
     }
 
-    "comparison <=" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison <=" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -165,7 +166,7 @@ object delete extends H2Tests {
       )
     }
 
-    "comparison >" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison >" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -182,7 +183,7 @@ object delete extends H2Tests {
     }
 
 
-    "comparison >=" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison >=" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -199,7 +200,7 @@ object delete extends H2Tests {
     }
 
 
-    "Multiple filters" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Multiple filters" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Liz", 27),
         ("Bob", 35),
@@ -220,8 +221,7 @@ object delete extends H2Tests {
 
     // Ref ------------------------
 
-    "ref" - h2(Accounting_MetaDb_h2()) { implicit conn =>
-      import db.dataModel.dsl.Accounting.*
+    "ref" - h2(Accounting_h2()) {
 
       // Insert 2 invoices, each with 2 invoice lines
       Invoice.no.Lines.*(

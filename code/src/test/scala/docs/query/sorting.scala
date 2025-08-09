@@ -1,9 +1,9 @@
 package docs.query
 
-import db.dataModel.dsl.Products._
-import db.dataModel.dsl.Products.metadb.Products_MetaDb_h2
+import db.dataModel.dsl.Products.*
+import db.dataModel.dsl.Products.metadb.Products_h2
 import docs.H2Tests
-import molecule.base.error.ModelError
+import molecule.core.error.ModelError
 import molecule.db.h2.sync._
 import utest._
 
@@ -12,7 +12,7 @@ object sorting extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "basics" - h2(Products_MetaDb_h2()) { implicit conn =>
+    "basics" - h2(Products_h2()) {
 
       Product.name.price.stars.insert(
         ("Knife", 20, 3),
@@ -139,7 +139,7 @@ object sorting extends H2Tests {
     }
 
 
-    "nested" - h2(Products_MetaDb_h2()) { implicit conn =>
+    "nested" - h2(Products_h2()) {
 
       Category.ordering.name.Products.*(Product.name.price).insert(
         (1, "Home", List(

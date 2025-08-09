@@ -1,4 +1,4 @@
-package db.compare.sql.scalasql
+package db.compare.tutorials.scalasql
 
 import molecule.DomainStructure
 

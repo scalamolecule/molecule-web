@@ -1,4 +1,4 @@
-package db.compare.sql.slick
+package db.compare.tutorials.slick
 
 import molecule.DomainStructure
 

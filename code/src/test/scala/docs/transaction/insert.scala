@@ -1,9 +1,9 @@
 package docs.transaction
 
-import db.dataModel.dsl.Person._
-import db.dataModel.dsl.Accounting.metadb.Accounting_MetaDb_h2
+import db.dataModel.dsl.Accounting.*
+import db.dataModel.dsl.Accounting.metadb.Accounting_h2
 import db.dataModel.dsl.Person.*
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
+import db.dataModel.dsl.Person.metadb.Person_h2
 import docs.H2Tests
 import molecule.db.h2.sync._
 import utest._
@@ -13,7 +13,7 @@ object insert extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "varargs" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "varargs" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Bob", 42),
         ("Liz", 38),
@@ -26,7 +26,7 @@ object insert extends H2Tests {
     }
 
 
-    "list" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "list" - h2(Person_h2()) {
       val listOfData = List(
         ("Bob", Some(42)),
         ("Liz", None),
@@ -40,7 +40,7 @@ object insert extends H2Tests {
     }
 
 
-    "ref" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ref" - h2(Person_h2()) {
       Person.name.age.Home.street.insert(
         ("Bob", 42, "Main st. 17"),
         ("Liz", 38, "5th Ave 1"),
@@ -53,7 +53,7 @@ object insert extends H2Tests {
     }
 
 
-    "ref attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ref attr" - h2(Person_h2()) {
       Country.name("USA").save.transact
       val usaId = Country.id.name_("USA").query.get.head
 
@@ -69,8 +69,7 @@ object insert extends H2Tests {
     }
 
 
-    "nested" - h2(Accounting_MetaDb_h2()) { implicit conn =>
-      import db.dataModel.dsl.Accounting._
+    "nested" - h2(Accounting_h2()) {
 
       Invoice.no.Lines.*(
         InvoiceLine.qty.product.unitPrice.lineTotal
@@ -104,8 +103,7 @@ object insert extends H2Tests {
     }
 
 
-    "nested opt" - h2(Accounting_MetaDb_h2()) { implicit conn =>
-      import db.dataModel.dsl.Accounting._
+    "nested opt" - h2(Accounting_h2()) {
 
       Invoice.no.Lines.*(
         InvoiceLine.qty.product.unitPrice.lineTotal

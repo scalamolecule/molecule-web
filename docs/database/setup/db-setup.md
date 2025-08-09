@@ -65,7 +65,7 @@ This brings in the expressions and actions for your molecules.
 
 ## 2. Import DSL
 
-If you defined your Data Model in `app.Community` you can import the generated boilerplate code with
+If you defined your domain structure in `app.Community` you can import the generated boilerplate code with
 
 ```scala
 import app.dsl.Community.*

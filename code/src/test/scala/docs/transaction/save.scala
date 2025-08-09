@@ -1,8 +1,7 @@
 package docs.transaction
 
-import db.dataModel.dsl.Person._
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
-
+import db.dataModel.dsl.Person.*
+import db.dataModel.dsl.Person.metadb.Person_h2
 import docs.H2Tests
 import molecule.db.h2.sync._
 import utest._
@@ -13,17 +12,17 @@ object save extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "mandatory" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "mandatory" - h2(Person_h2()) {
       Person.name("Bob").age(42).save.transact
       Person.name.age.query.get.head ==> ("Bob", 42)
     }
 
-    "mandatory with ref" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "mandatory with ref" - h2(Person_h2()) {
       Person.name("Bob").age(42).Home.street("Main st.").save.transact
       Person.name.age.query.get.head ==> ("Bob", 42)
     }
 
-    "raw" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "raw" - h2(Person_h2()) {
 
       rawTransact(
         """INSERT INTO Person (
@@ -36,7 +35,7 @@ object save extends H2Tests {
     }
 
 
-    "optional" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "optional" - h2(Person_h2()) {
       val optName = Some("Bob") // or None
       val optAge  = Some(42) // or None
       Person.name_?(optName).age_?(optAge).save.transact
@@ -44,7 +43,7 @@ object save extends H2Tests {
     }
 
 
-    "Set" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Set" - h2(Person_h2()) {
       // Main collection type
       Person.hobbies(Set("stamps", "trains")).save.transact
 
@@ -55,7 +54,7 @@ object save extends H2Tests {
       Person.hobbies.query.get.head ==> Set("stamps", "trains")
     }
 
-    "Seq" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Seq" - h2(Person_h2()) {
       // Main collection type
       Person.scores(Seq(1, 2, 3)).save.transact
 
@@ -66,7 +65,7 @@ object save extends H2Tests {
       Person.scores.query.get.head ==> Seq(1, 2, 3)
     }
 
-    "Map" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Map" - h2(Person_h2()) {
       // Main collection type
       Person.langNames(Map("en" -> "Bob")).save.transact
 
@@ -78,7 +77,7 @@ object save extends H2Tests {
     }
 
 
-    "ref" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ref" - h2(Person_h2()) {
       Person.name("Bob").age(42)
         .Home.street("Main st. 17").save.transact
 
@@ -88,7 +87,7 @@ object save extends H2Tests {
     }
 
 
-    "refs" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "refs" - h2(Person_h2()) {
       Person.name("Bob").age(42)
         .Home.street("Main st. 17")
         .Country.name("USA")
@@ -101,7 +100,7 @@ object save extends H2Tests {
     }
 
 
-    "backref" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "backref" - h2(Person_h2()) {
       Person.name("Bob").age(42)
         .Home.street("Main st. 17")._Person
         .Education.shortName("Harvard")
@@ -114,7 +113,7 @@ object save extends H2Tests {
     }
 
 
-    "ref attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ref attr" - h2(Person_h2()) {
       Country.name("USA").save.transact
       val usaId = Country.id.name_("USA").query.get.head
 

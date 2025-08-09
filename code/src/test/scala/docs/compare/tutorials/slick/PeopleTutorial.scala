@@ -1,8 +1,8 @@
-package docs.compare.sql.slick
+package docs.compare.tutorials.slick
 
 import java.sql.DriverManager
-import db.compare.sql.slick.dsl.People.*
-import db.compare.sql.slick.dsl.People.metadb.People_MetaDb_h2
+import db.compare.tutorials.slick.dsl.People.*
+import db.compare.tutorials.slick.dsl.People.metadb.People_h2
 import docs.H2Tests
 import molecule.db.common.facade.{JdbcConn_JVM, JdbcHandler_JVM}
 import molecule.db.h2.sync.*
@@ -19,7 +19,7 @@ object PeopleTutorial extends H2Tests {
     // Implicit connection to a fresh empty database
     implicit val conn: JdbcConn_JVM = {
       val url     = "jdbc:h2:mem:test" + Random.nextInt().abs
-      val proxy   = JdbcProxy(url, People_MetaDb_h2())
+      val proxy   = JdbcProxy(url, People_h2())
       val sqlConn = DriverManager.getConnection(proxy.url)
       JdbcHandler_JVM.recreateDb(proxy, sqlConn)
     }

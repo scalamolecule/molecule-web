@@ -10,7 +10,7 @@ Molecule uses the sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-mole
 Add the latest version of the plugin in `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.19.4")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.20.0")
 ```
 
 Enable the plugin in your `build.sbt` file and import the molecule library that corresponds to the database(s) that you will use:
@@ -19,18 +19,18 @@ lazy val app = project
   .enablePlugins(MoleculePlugin)
   .settings(
       libraryDependencies ++= Seq(
-        // one or more db-specific imports
-        "org.scalamolecule" %% "molecule-db-h2" % "0.24.2",
-        "org.scalamolecule" %% "molecule-db-mariadb" % "0.24.2",
-        "org.scalamolecule" %% "molecule-db-mysql" % "0.24.2",
-        "org.scalamolecule" %% "molecule-db-postgres" % "0.24.2",
-        "org.scalamolecule" %% "molecule-db-sqlite" % "0.24.2",
+        // One or more database-specific imports
+        "org.scalamolecule" %% "molecule-db-h2" % "0.25.1",
+        "org.scalamolecule" %% "molecule-db-mariadb" % "0.25.1",
+        "org.scalamolecule" %% "molecule-db-mysql" % "0.25.1",
+        "org.scalamolecule" %% "molecule-db-postgres" % "0.25.1",
+        "org.scalamolecule" %% "molecule-db-sqlite" % "0.25.1",
       )
     )
 ```
 Use `%%%` instead of `%%` for cross-compiled Scala.js projects.
 
-Define your [Domain Structure](/database/setup/domain-structure) and then run
+Define a [Domain Structure](/database/setup/domain-structure) and then run
 
 ```
 sbt moleculeGen
@@ -66,52 +66,53 @@ SQL schema files for each available database are generated in the resources fold
 ```
 src
 └── main
-    └── resources
-        └── moleculeGen
-            └── Bar
-                └── Bar_Schema_h2.sql
-                └── Bar_Schema_mariadb.sql
-                └── Bar_Schema_mysql.sql
-                └── Bar_Schema_postgres.sql
-                └── Bar_Schema_sqlite.sql
-            └── Foo
-                └── Foo_Schema_h2.sql
-                └── Foo_Schema_mariadb.sql
-                └── Foo_Schema_mysql.sql
-                └── Foo_Schema_postgres.sql
-                └── Foo_Schema_sqlite.sql
+    ├── resources
+    │   └── moleculeGen
+    │       └── app
+    │           ├── Bar
+    │           │   ├── Bar_h2.sql
+    │           │   ├── Bar_mariadb.sql
+    │           │   ├── Bar_mysql.sql
+    │           │   ├── Bar_postgresql.sql
+    │           │   └── Bar_sqlite.sql
+    │           └── Foo
+    │               ├── Foo_h2.sql
+    │               ├── Foo_mariadb.sql
+    │               ├── Foo_mysql.sql
+    │               ├── Foo_postgresql.sql
+    │               └── Foo_sqlite.sql
     └── scala
         └── app
-            └── Bar.scala
+            ├── Bar.scala
             └── Foo.scala
 ```
 
 ### DSL code
 
-Boilerplate code is generated in `target/scala-3.7.1/src_managed/main/moleculeGen`. Managed source code there is not supposed to be modified since it will be overwritten on each new generation with `sbt moleculeGen`. But you can inspect the code as normal code if you like. The following files are generated there:
+Boilerplate DSL code is generated in `target/scala-3.7.1/src_managed/main/moleculeGen`. Managed source code there is not supposed to be modified since it will be overwritten on each new generation with `sbt moleculeGen`. But you can inspect the code as normal code if you like. The following files are generated:
 
 ```
 moleculeGen
 └── app
     └── dsl
-        └── Bar
-            └── metadb // Internal db meta information
-                └── Bar_MetaDb
-                └── Bar_MetaDb_h2
-                └── Bar_MetaDb_mariadb
-                └── Bar_MetaDb_mysql
-                └── Bar_MetaDb_postgres
-                └── Bar_MetaDb_sqlite
-            └── ops
-                └── Person_     // Person operations                 
-                └── Address_    // Address operations
-            └── Person      // Person entry point
-            └── Address     // Address entry point
+        ├── Bar
+        │   ├── Address.scala   // Address entry point
+        │   ├── Person.scala    // Person entry point
+        │   ├── metadb
+        │   │   ├── Bar_.scala
+        │   │   ├── Bar_h2.scala
+        │   │   ├── Bar_mariadb.scala
+        │   │   ├── Bar_mysql.scala
+        │   │   ├── Bar_postgresql.scala
+        │   │   └── Bar_sqlite.scala
+        │   └── ops
+        │       ├── Address_.scala   // Address operations
+        │       └── Person_.scala    // Person operations
         └── Foo
             // Same as for Bar...
 ```
-The entry points files contain the starting points (`Person`, `Address` etc.) for your molecules:
 
+In the [domain structure](/database/setup/domain-structure) for the domain `Bar`, two entities `Person` and `Address` have been defined. These are the starting point for building molecules:
 ```scala
 import app.dsl.Bar.*
 
@@ -122,7 +123,7 @@ Address.street.zip. // etc...
 
 ## Make jars
 
-You can also choose to package the generated code in a source and class jar with
+Instead of running `sbt moleculeGen` you can also choose to package the generated code in a source and class jar with
 
 ```
 sbt moleculePackage

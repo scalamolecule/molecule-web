@@ -153,7 +153,7 @@ The cursor String returned contains various information encoded with Base64 that
 
 ### Primary unique
 
-The examples above work well since we have a result set sorted by the attribute `rank` that has been defined in our Data Model to be `unique`:
+The examples above work well since we have a result set sorted by the attribute `rank` that has been defined in our domain structure to be `unique`:
 
 ```scala
 val rank = oneInt.unique

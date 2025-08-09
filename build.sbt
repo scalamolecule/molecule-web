@@ -1,5 +1,5 @@
 
-val moleculeVersion = "0.24.2-SNAPSHOT"
+val moleculeVersion = "0.26.0-SNAPSHOT"
 
 inThisBuild(
   List(
@@ -47,11 +47,11 @@ lazy val code = project.in(file("code"))
       // https://www.slf4j.org/codes.html#ignoredBindings
       "ch.qos.logback" % "logback-classic" % "1.5.0" % Test,
 
+      "org.scalamolecule" %% "molecule-db-h2" % moleculeVersion,
+      "org.scalamolecule" %% "molecule-db-mariadb" % moleculeVersion,
+      "org.scalamolecule" %% "molecule-db-mysql" % moleculeVersion,
       "org.scalamolecule" %% "molecule-db-postgresql" % moleculeVersion,
       "org.scalamolecule" %% "molecule-db-sqlite" % moleculeVersion,
-      "org.scalamolecule" %% "molecule-db-mysql" % moleculeVersion,
-      "org.scalamolecule" %% "molecule-db-mariadb" % moleculeVersion,
-      "org.scalamolecule" %% "molecule-db-h2" % moleculeVersion,
 
 
 //      "com.h2database" % "h2" % "2.3.232",
@@ -67,6 +67,8 @@ lazy val code = project.in(file("code"))
 
       "org.xerial" % "sqlite-jdbc" % "3.46.0.0",
 
+      "org.tpolecat" %% "doobie-core" % "1.0.0-RC8",
+      "org.tpolecat" %% "doobie-postgres" % "1.0.0-RC8",
 
       //      "org.slf4j" % "slf4j-nop" % "2.0.17" //% Test
     ),

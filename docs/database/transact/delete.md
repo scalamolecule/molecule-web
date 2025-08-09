@@ -215,7 +215,7 @@ All the previous filters can be applied across namespaces to build complex delet
 
 Make sure that owned referenced entities of a relationship are deleted when the owning entity is deleted. 
 
-The classical example is an Invoice owning its Invoice Lines. This can be modelled in the Data Model by adding the `owner` option after the relationship definition:
+The classical example is an Invoice owning its Invoice Lines. This can be modelled in the domain structure by adding the `owner` option after the relationship definition:
 
 ```scala
 trait Invoice {

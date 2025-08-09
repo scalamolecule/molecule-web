@@ -1,7 +1,7 @@
 package docs.query
 
-import db.dataModel.dsl.Gaming._
-import db.dataModel.dsl.Gaming.metadb.Gaming_MetaDb_h2
+import db.dataModel.dsl.Gaming.*
+import db.dataModel.dsl.Gaming.metadb.Gaming_h2
 import docs.H2Tests
 import molecule.db.h2.sync._
 import utest._
@@ -11,7 +11,7 @@ object pagination extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "offset" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "offset" - h2(Gaming_h2()) {
 
       Gamer.rank.insert(1, 2, 3).transact
 
@@ -95,7 +95,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, unique forward" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, unique forward" - h2(Gaming_h2()) {
       Gamer.rank.insert(1, 2, 3).transact
 
       // First page
@@ -110,7 +110,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, unique backwards" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, unique backwards" - h2(Gaming_h2()) {
       Gamer.rank.insert(1, 2, 3).transact
 
       // Last page
@@ -125,7 +125,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, id" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, id" - h2(Gaming_h2()) {
       Gamer.username.insert("Blaze", "Venom", "Phoenix").transact
 
       val (page1, cursor1, _) = Gamer.id.a1.username.query.from("").limit(2).get
@@ -141,7 +141,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, unique delete before" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, unique delete before" - h2(Gaming_h2()) {
       val ids        = Gamer.rank.insert(1, 2, 3, 4, 5, 6, 7).transact.ids
       val (id2, id5) = (ids(1), ids(4))
 
@@ -165,7 +165,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, sub-unique" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, sub-unique" - h2(Gaming_h2()) {
       Gamer.category.rank.insert(
         ("Arcade", 1),
         ("Arcade", 2),
@@ -185,7 +185,7 @@ object pagination extends H2Tests {
     }
 
 
-    "cursor, non-unique" - h2(Gaming_MetaDb_h2()) { implicit conn =>
+    "cursor, non-unique" - h2(Gaming_h2()) {
       Gamer.score.insert(1, 2, 3).transact
 
       val (page1, cursor1, hasMore1) = Gamer.score.a1.query.from("").limit(2).get

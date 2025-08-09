@@ -1,9 +1,9 @@
 package docs.query
 
 import db.dataModel.dsl.Football.*
-import db.dataModel.dsl.Football.metadb.Football_MetaDb_h2
+import db.dataModel.dsl.Football.metadb.Football_h2
 import docs.H2Tests
-import molecule.base.error.ModelError
+import molecule.core.error.ModelError
 import molecule.db.h2.sync.*
 import utest.*
 
@@ -12,7 +12,7 @@ object filterAttrs extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "same ns" - h2(Football_MetaDb_h2()) { implicit conn =>
+    "same ns" - h2(Football_h2()) {
 
       Player.name.goals.assists.insert(
         ("Celso", 1, 2),
@@ -236,7 +236,7 @@ object filterAttrs extends H2Tests {
     }
 
 
-    "ref" - h2(Football_MetaDb_h2()) { implicit conn =>
+    "ref" - h2(Football_h2()) {
       val List(champions, galactico) = Team.name.goalsToBonus.bonus.insert(
         ("Champions", 3, 1000000),
         ("Galactico", 4, 5000000),
@@ -278,7 +278,7 @@ object filterAttrs extends H2Tests {
     }
 
 
-    "nested" - h2(Football_MetaDb_h2()) { implicit conn =>
+    "nested" - h2(Football_h2()) {
 
       Team.name.goalsToBonus.bonus.Players.*(Player.name.goals).insert(
         ("Champions", 3, 1000000, List(

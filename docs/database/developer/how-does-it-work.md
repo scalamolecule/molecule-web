@@ -12,7 +12,7 @@ sbt clean compile -Dmolecule=true
 
 During project compilation, a series of operations are then performed:
 
-1. Boilerplate source code files based on your Data Model are generated.
+1. Boilerplate source code files based on your domain structure are generated.
 2. Generated source code is compiled.
 3. Sources and classes are packaged into two `jar`s in the `lib` directory.
 4. Generated source code and compiled classes are removed.
@@ -22,9 +22,9 @@ In our [basic sample project](https://github.com/scalamolecule/molecule-samples/
 
 [//]: # (![]&#40;/img/page/setup/setup3.png&#41;)
 
-`dsl` contains the generated Molecule boilerplate code for the defined Person Data Model. The name of each jar (one for compiled classes, one for source code) has "molecule-" prepended to your project name to avoid name clashes in `lib`.
+`dsl` contains the generated Molecule boilerplate code for the defined Person domain structure. The name of each jar (one for compiled classes, one for source code) has "molecule-" prepended to your project name to avoid name clashes in `lib`.
 
-Whenever you make changes to your Data Model, you can simply `sbt compile -Dmolecule=true` and have your Schema transaction boilerplate code re-generated with your latest changes.
+Whenever you make changes to your domain structure, you can simply `sbt compile -Dmolecule=true` and have your Schema transaction boilerplate code re-generated with your latest changes.
 
 
 

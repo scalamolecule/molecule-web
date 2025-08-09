@@ -12,22 +12,21 @@ We could for instance build a molecule to fetch `name` and `age` of persons in a
 ```scala
 Person.name.age
 ```
-And we can continue from there adding more attributes from there. 
-
-### An immutable Query
+And we can continue from there adding more attributes from there. This forms a declarative Data Model of the data that we want to fetch. 
 
 When we're satisfied with the attributes collected - our data model - we call  `query` on the molecule:
 
 ```scala
 val namesAndAges: Query[(String, Int)] = Person.name.age.query
 ```
-This qives us a `Query` that is parameterized by the types involved. Until here, all is immutable and no side effects have been performed.
+This qives us an immutable `Query` that is parameterized by the types involved. No side effects have been performed yet.
 
 
 
 ## Calling the database
 
-When we're ready to submit the query to the database, we call `get` on the query and get back the data result. This can be a List of either single scalar values or tuples of data:
+When we're ready to submit the query to the database, we call `get` on the query and get back the type-safe result. 
+This can be a List of either single scalar values or tuples of data:
 
 ```scala
 val resul1: List[String]                 = Person.name.query.get
@@ -75,22 +74,7 @@ val persons: cats.effect.IO[List[(String, Int)]] =
 ```
 :::
 
-For brevity, we'll show synchronous results in the following examples.
-
-
-## Binding
-
-We can also add value placeholders to attributes of the molecule so that we can later apply concrete values. This way, we can let the database cache the query structure for better performance and supply varying input parameters to the same query structure:
-
-```scala
-// Input molecule
-val namesByAge = Person.name.age_(?).query
-
-// Re-use the query
-namesByAge(42).get ==> List("Bob")
-namesByAge(36).get ==> List("Liz")
-```
-Notice, that instead of adding the `age` attribute, we added `age_` to not return its value. There are 3 ***modes*** of attributes:  
+For brevity, we'll show synchronous results in most examples throughout this documentation.
 
 
 ## 3 modes

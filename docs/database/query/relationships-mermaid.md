@@ -14,7 +14,7 @@ Let's first look at flat cardinality-one relationships:
 Molecule uses the word "ref" for cardinality-one relationship between two namespaces (Tables) since we have a reference from namespace A to B.
 
 
-In our Data Model we give the ref a name, like "home" to describe the relationship:
+In our domain structure we give the ref a name, like "home" to describe the relationship:
 
 [//]: # (```mermaid)
 

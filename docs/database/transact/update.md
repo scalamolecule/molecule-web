@@ -4,6 +4,13 @@ One or more entities can be updated with a molecule populated with the new data.
 
 Entities can be identified either by applying ids or by the shape of the molecule with its relationships and tacit filters as we'll see below.
 
+
+
+::: warning
+Note that you can either `update` existing values or `upsert` possibly existing values. Upsert will insert the new value if the attribute has no value yet.
+See [upsert](#upsert) further below for more info.
+:::
+
 ## Id
 
 Update an entity with an id and new data applied to attributes:

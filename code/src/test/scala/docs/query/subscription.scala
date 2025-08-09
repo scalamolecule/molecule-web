@@ -1,7 +1,7 @@
 package docs.query
 
-import db.dataModel.dsl.ChatRoom._
-import db.dataModel.dsl.ChatRoom.metadb.ChatRoom_MetaDb_h2
+import db.dataModel.dsl.ChatRoom.*
+import db.dataModel.dsl.ChatRoom.metadb.ChatRoom_h2
 import docs.H2Tests
 import molecule.db.h2.sync._
 import utest._
@@ -11,7 +11,7 @@ object subscription extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "refs" - h2(ChatRoom_MetaDb_h2()) { implicit conn =>
+    "refs" - h2(ChatRoom_h2()) {
 
       // Chatroom dummy UI
       var chatRoomUI    = List.empty[(Long, String, String)]

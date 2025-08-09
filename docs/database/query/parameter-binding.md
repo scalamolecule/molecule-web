@@ -1,7 +1,7 @@
 
-# Binding
+# Parameter binding
 
-We can also add value placeholders to attributes of the molecule so that we can later apply concrete values. This way, we can let the database cache the query structure for better performance and supply varying input parameters to the same query structure:
+We can add value placeholders to attributes of the molecule so that we can later apply concrete values. This way, we can let the database cache the query structure for better performance and supply varying input parameters to the same query structure:
 
 ```scala
 // Input molecule

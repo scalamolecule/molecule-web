@@ -1,7 +1,7 @@
 package docs.query
 
-import db.dataModel.dsl.Person._
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
+import db.dataModel.dsl.Person.*
+import db.dataModel.dsl.Person.metadb.Person_h2
 import docs.H2Tests
 import molecule.db.h2.sync._
 import utest._
@@ -11,7 +11,7 @@ object raw extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "refs" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "refs" - h2(Person_h2()) {
 
       // Ref ==============================================
       Person.name.age.insert(

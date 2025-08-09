@@ -40,7 +40,7 @@ Clone the collection of [sample projects](https://github.com/scalamolecule/molec
 ```
 git clone https://github.com/scalamolecule/molecule-samples.git
 ```
-and then open any of the projects in your IDE and play around making more molecules or add new attributes to the Data Model.
+and then open any of the projects in your IDE and play around making more molecules or add new attributes to the domain structure.
 
 No setup required. In-memory database is ready to run your molecules.
 

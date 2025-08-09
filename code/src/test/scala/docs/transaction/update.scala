@@ -1,9 +1,9 @@
 package docs.transaction
 
-import db.dataModel.dsl.Person._
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
+import db.dataModel.dsl.Person.*
+import db.dataModel.dsl.Person.metadb.Person_h2
 import docs.H2Tests
-import molecule.base.error.ModelError
+import molecule.core.error.ModelError
 import molecule.db.h2.sync._
 import utest._
 
@@ -12,14 +12,14 @@ object update extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "id core" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "id core" - h2(Person_h2()) {
       Person.name("Bob").age(42).Home.street("Main st. 1").save.inspect
       Person.name("Bob").age(42).save.transact
 
       Person(1).age(43).update.transact
     }
 
-    "id simple" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "id simple" - h2(Person_h2()) {
       val bobId = Person.name("Bob").age(42).save.transact.id
       Person.age.query.get.head ==> 42
 
@@ -28,7 +28,7 @@ object update extends H2Tests {
       Person.age.query.get.head ==> 43
     }
 
-    "id" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "id" - h2(Person_h2()) {
       Person.name("Bob").age(42).save.transact
 
       // Current data: Bob is 42
@@ -57,7 +57,7 @@ object update extends H2Tests {
     }
 
 
-    "ids" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ids" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Bob", 42),
         ("Joe", 42),
@@ -81,7 +81,7 @@ object update extends H2Tests {
     }
 
 
-    "ids List" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "ids List" - h2(Person_h2()) {
       Person.name.age.insert(
         ("Bob", 42),
         ("Joe", 42),
@@ -102,7 +102,7 @@ object update extends H2Tests {
     }
 
 
-    "not null" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "not null" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -122,7 +122,7 @@ object update extends H2Tests {
       )
     }
 
-    "null" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "null" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -143,7 +143,7 @@ object update extends H2Tests {
     }
 
 
-    "equality" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "equality" - h2(Person_h2()) {
       Person.firstName.lastName.age.insert(
         ("Liz", "Carson", 27),
         ("Bob", "Monroe", 42),
@@ -162,7 +162,7 @@ object update extends H2Tests {
     }
 
 
-    "equality same attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "equality same attr" - h2(Person_h2()) {
       Person.firstName.lastName.age.insert(
         ("Liz", "Carson", 27),
         ("Bob", "Monroe", 42),
@@ -180,14 +180,14 @@ object update extends H2Tests {
       )
     }
 
-    "equality multiple values for card-one attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "equality multiple values for card-one attr" - h2(Person_h2()) {
       intercept[ModelError](
         Person.firstName_("Bob").age(43, 44).update.transact
       ).msg ==> "Can only update one value for attribute `Person.age`. Found: 43, 44"
     }
 
 
-    "OR logic" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "OR logic" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -211,7 +211,7 @@ object update extends H2Tests {
     }
 
 
-    "OR logic dynamic" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "OR logic dynamic" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -232,7 +232,7 @@ object update extends H2Tests {
     }
 
 
-    "Negation" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Negation" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -252,7 +252,7 @@ object update extends H2Tests {
       )
     }
 
-    "NOR logic" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "NOR logic" - h2(Person_h2()) {
       Person.firstName_?.lastName.age.insert(
         (Some("Liz"), "Carson", 27),
         (Some("Bob"), "Monroe", 42),
@@ -273,7 +273,7 @@ object update extends H2Tests {
     }
 
 
-    "comparison <" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison <" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -292,7 +292,7 @@ object update extends H2Tests {
       )
     }
 
-    "comparison <=" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison <=" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -311,7 +311,7 @@ object update extends H2Tests {
       )
     }
 
-    "comparison >" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison >" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -330,7 +330,7 @@ object update extends H2Tests {
       )
     }
 
-    "comparison >=" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "comparison >=" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -350,7 +350,7 @@ object update extends H2Tests {
     }
 
 
-    "Multiple filters" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Multiple filters" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -370,7 +370,7 @@ object update extends H2Tests {
     }
 
 
-    "upsert" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "upsert" - h2(Person_h2()) {
       Person.lastName.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -390,7 +390,7 @@ object update extends H2Tests {
     }
 
 
-    "update all" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "update all" - h2(Person_h2()) {
       Person.name.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -410,7 +410,7 @@ object update extends H2Tests {
       )
     }
 
-    "upsert all" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "upsert all" - h2(Person_h2()) {
       Person.name.age.likes_?.insert(
         ("Carson", 27, Some("Pasta")),
         ("Monroe", 42, Some("Pizza")),
@@ -431,7 +431,7 @@ object update extends H2Tests {
     }
 
 
-    "delete attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "delete attr" - h2(Person_h2()) {
       Person.name("Bob").age(42).save.transact
 
       // Retrieve id to be updated
@@ -447,7 +447,7 @@ object update extends H2Tests {
     }
 
 
-    "Collection replace" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Collection replace" - h2(Person_h2()) {
       Person.name("Bob")
         .hobbies(Set("stamps", "trains"))
         .scores(Seq(1, 2, 3))
@@ -476,7 +476,7 @@ object update extends H2Tests {
     }
 
 
-    "Collection add" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Collection add" - h2(Person_h2()) {
       Person.name("Bob")
         .hobbies(Set("stamps", "trains"))
         .scores(Seq(1, 2, 3))
@@ -499,7 +499,7 @@ object update extends H2Tests {
     }
 
 
-    "Collection remove" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Collection remove" - h2(Person_h2()) {
       Person.name("Bob")
         .hobbies(Set("stamps", "trains"))
         .scores(Seq(1, 2, 3))
@@ -522,7 +522,7 @@ object update extends H2Tests {
     }
 
 
-    "Base update" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Base update" - h2(Person_h2()) {
       Person.name.likes_?.Home.?(Address.street).insert(
         ("Bob", Some("Pasta"), Some("Main st. 17")),
         ("Eva", Some("Sushi"), None),
@@ -542,7 +542,7 @@ object update extends H2Tests {
       )
     }
 
-    "Base upsert" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Base upsert" - h2(Person_h2()) {
       Person.name.likes_?.Home.?(Address.street).insert(
         ("Bob", Some("Pasta"), Some("Main st. 17")),
         ("Eva", Some("Sushi"), None),
@@ -563,7 +563,7 @@ object update extends H2Tests {
     }
 
 
-    "Ref update" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Ref update" - h2(Person_h2()) {
       Person.name.likes_?.Home.?(Address.street).insert(
         ("Bob", Some("Pasta"), Some("Main st. 17")),
         ("Eva", Some("Sushi"), None),
@@ -584,7 +584,7 @@ object update extends H2Tests {
     }
 
 
-    "Ref upsert" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Ref upsert" - h2(Person_h2()) {
       Person.name.likes_?.Home.?(Address.street).insert(
         ("Bob", Some("Pasta"), Some("Main st. 17")),
         ("Eva", Some("Sushi"), None),
@@ -605,7 +605,7 @@ object update extends H2Tests {
     }
 
 
-    "Ref attr" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "Ref attr" - h2(Person_h2()) {
       val List(usaId, ukId) = Country.name.insert("USA", "UK").transact.ids
 
       val bobId = Person.name("Bob")
@@ -621,6 +621,28 @@ object update extends H2Tests {
       Person.name.Home.street.Country.name.query.get ==> List(
         ("Bob", "Kings road 1", "UK"),
       )
+    }
+
+    "Issue #3" - h2(Person_h2()) {
+      // Insert "Bob", no 'age' set yet
+      Person.name("Bob").save.transact
+
+      // Get bob id
+      val bobId = Person.id.name_("Bob").query.get.head
+
+      // Try to update age of bob
+
+      // Fist attempt with optional attr fails
+      // Person(bobId).age_?(Some(42)).update.transact // ERROR: Can't update optional values (Person.age_?)
+       Person(bobId).age_?(Some(42)).upsert.transact // ERROR: Can't update optional values (Person.age_?)
+
+      // Second attempt fails
+//      Person(bobId).age(42).update.transact // UNEXPECTED BEHAVIOR ? : age is not set to 42
+//      assert(Person.name("Bob").age_?.query.get == List(("Bob", None)))
+
+//      Person.name("Bob").age_?.query.get ==> List(("Bob", None))
+      Person(bobId).age(42).upsert.transact // note `upsert` instead of `update`
+      assert(Person.name("Bob").age_?.query.get == List(("Bob", Some(42))))
     }
   }
 }

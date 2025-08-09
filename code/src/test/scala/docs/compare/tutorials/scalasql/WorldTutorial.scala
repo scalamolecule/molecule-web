@@ -1,8 +1,8 @@
-package docs.compare.sql.scalasql
+package docs.compare.tutorials.scalasql
 
 import java.sql.DriverManager
-import db.compare.sql.scalasql.dsl.World.*
-import db.compare.sql.scalasql.dsl.World.metadb.World_MetaDb_h2
+import db.compare.tutorials.scalasql.dsl.World.*
+import db.compare.tutorials.scalasql.dsl.World.metadb.World_h2
 import docs.H2Tests
 import molecule.db.common.facade.{JdbcConn_JVM, JdbcHandler_JVM}
 import molecule.db.common.marshalling.JdbcProxy
@@ -17,15 +17,15 @@ object WorldTutorial extends H2Tests {
   override lazy val tests = Tests {
 
     // Implicit connection to a fresh empty database
-    implicit val conn: JdbcConn_JVM = {
+    given conn: JdbcConn_JVM = {
       val url     = "jdbc:h2:mem:test" + Random.nextInt().abs
-      val proxy   = JdbcProxy(url, World_MetaDb_h2())
+      val proxy   = JdbcProxy(url, World_h2())
       val sqlConn = DriverManager.getConnection(proxy.url)
       JdbcHandler_JVM.recreateDb(proxy, sqlConn)
     }
 
     // Insert data with JDBC from SQL in file
-    val buf = Source.fromFile("code/src/test/scala/docs/compare/sql/scalasql/world-data.sql")
+    val buf = Source.fromFile("code/src/test/scala/docs/compare/tutorials/scalasql/world-data.sql")
     conn.sqlConn.createStatement().executeUpdate(buf.mkString)
     buf.close()
 
@@ -209,6 +209,10 @@ object WorldTutorial extends H2Tests {
         ("Gujarati", "India"),
       )
 
+
+      // CountryLanguage.language.a1.Country.id_(Country.id.population_.d1).name
+
+
       rawQuery(
         """SELECT countrylanguage1.language AS res_0, subquery0.name AS res_1
           |FROM (SELECT
@@ -238,6 +242,11 @@ object WorldTutorial extends H2Tests {
       Country.name.a2.population.a1.query.limit(2).get.map(_._1) ==> Seq("Antarctica", "Bouvet Island")
       Country.name.population.d1.query.limit(2).get.map(_._1) ==> Seq("China", "India")
 
+
+      //      Country.name.a2.population.a1.~(Country.name.population.d1)
+      //      Country.name.a2.population.a1.+(Country.name.population.d1)
+      //      Country.name.a2.population.a1.union(Country.name.population.d1)
+
       rawQuery(
         """SELECT subquery0.res AS res
           |FROM (SELECT country0.name AS res
@@ -258,6 +267,10 @@ object WorldTutorial extends H2Tests {
 
     "realistic queries" - {
       "top languages" - {
+
+        // "Soft relationship" by shared value (not foreign key)
+        // CountryLanguage.language.countryCode.~(City.countryCode_.id(count).d1)
+
         rawQuery(
           """SELECT countrylanguage.language AS res_0, COUNT(1) AS res_1
             |FROM city

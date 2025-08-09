@@ -166,14 +166,24 @@ Overview of all type markers and corresponding Scala types:
 @tab Primitives
 ```scala
 oneString         : String
+oneChar           : Char
+
+oneBoolean        : Boolean
+
+oneByte           : Byte
 oneInt            : Int
 oneLong           : Long
+oneBigInt         : BigInt
+
+oneShort          : Short
 oneFloat          : Float
 oneDouble         : Double
-oneBoolean        : Boolean
-oneBigInt         : BigInt
 oneBigDecimal     : BigDecimal
+
+oneURI            : java.net.URI
+oneUUID           : java.util.UUID
 oneDate           : java.util.Date
+
 oneDuration       : java.time.Duration
 oneInstant        : java.time.Instant
 oneLocalDate      : java.time.LocalDate
@@ -182,24 +192,31 @@ oneLocalDateTime  : java.time.LocalDateTime
 oneOffsetTime     : java.time.OffsetTime
 oneOffsetDateTime : java.time.OffsetDateTime
 oneZonedDateTime  : java.time.ZonedDateTime
-oneUUID           : java.util.UUID
-oneURI            : java.net.URI
-oneByte           : Byte
-oneShort          : Short
-oneChar           : Char
+
+oneEnum[T]        : T where T is a Scala 3 enum
 ```
 
 @tab Set
 ```scala
 setString         : Set[String]
+setChar           : Set[Char]
+
+setBoolean        : Set[Boolean]
+
+setByte           : Set[Byte]
 setInt            : Set[Int]
 setLong           : Set[Long]
+setBigInt         : Set[BigInt]
+
+setShort          : Set[Short]
 setFloat          : Set[Float]
 setDouble         : Set[Double]
-setBoolean        : Set[Boolean]
-setBigInt         : Set[BigInt]
 setBigDecimal     : Set[BigDecimal]
+
+setURI            : Set[java.net.URI]
 setDate           : Set[java.util.Date]
+setUUID           : Set[java.util.UUID]
+
 setDuration       : Set[java.time.Duration]
 setInstant        : Set[java.time.Instant]
 setLocalDate      : Set[java.time.LocalDate]
@@ -208,24 +225,29 @@ setLocalDateTime  : Set[java.time.LocalDateTime]
 setOffsetTime     : Set[java.time.OffsetTime]
 setOffsetDateTime : Set[java.time.OffsetDateTime]
 setZonedDateTime  : Set[java.time.ZonedDateTime]
-setUUID           : Set[java.util.UUID]
-setURI            : Set[java.net.URI]
-setByte           : Set[Byte]
-setShort          : Set[Short]
-setChar           : Set[Char]
 ```
 
 @tab Seq
 ```scala
 seqString         : Seq[String]
+seqChar           : Seq[Char]
+
+seqBoolean        : Seq[Boolean]
+
+arrayByte         : Array[Byte] // special case for byte arrays
 seqInt            : Seq[Int]
 seqLong           : Seq[Long]
+seqBigInt         : Seq[BigInt]
+
+seqShort          : Seq[Short]
 seqFloat          : Seq[Float]
 seqDouble         : Seq[Double]
-seqBoolean        : Seq[Boolean]
-seqBigInt         : Seq[BigInt]
 seqBigDecimal     : Seq[BigDecimal]
+
+seqURI            : Seq[java.net.URI]
 seqDate           : Seq[java.util.Date]
+seqUUID           : Seq[java.util.UUID]
+
 seqDuration       : Seq[java.time.Duration]
 seqInstant        : Seq[java.time.Instant]
 seqLocalDate      : Seq[java.time.LocalDate]
@@ -234,24 +256,29 @@ seqLocalDateTime  : Seq[java.time.LocalDateTime]
 seqOffsetTime     : Seq[java.time.OffsetTime]
 seqOffsetDateTime : Seq[java.time.OffsetDateTime]
 seqZonedDateTime  : Seq[java.time.ZonedDateTime]
-seqUUID           : Seq[java.util.UUID]
-seqURI            : Seq[java.net.URI]
-arrayByte         : Array[Byte] // special case for byte arrays
-seqShort          : Seq[Short]
-seqChar           : Seq[Char]
 ```
 
 @tab Map
 ```scala
 mapString         : Map[String, String]
+mapChar           : Map[String, Char]
+
+mapBoolean        : Map[String, Boolean]
+
+mapByte           : Map[String, Byte]
 mapInt            : Map[String, Int]
 mapLong           : Map[String, Long]
+mapBigInt         : Map[String, BigInt]
+
+mapShort          : Map[String, Short]
 mapFloat          : Map[String, Float]
 mapDouble         : Map[String, Double]
-mapBoolean        : Map[String, Boolean]
-mapBigInt         : Map[String, BigInt]
 mapBigDecimal     : Map[String, BigDecimal]
+
+mapURI            : Map[String, java.net.URI]
+mapUUID           : Map[String, java.util.UUID]
 mapDate           : Map[String, java.util.Date]
+
 mapDuration       : Map[String, java.time.Duration]
 mapInstant        : Map[String, java.time.Instant]
 mapLocalDate      : Map[String, java.time.LocalDate]
@@ -260,11 +287,6 @@ mapLocalDateTime  : Map[String, java.time.LocalDateTime]
 mapOffsetTime     : Map[String, java.time.OffsetTime]
 mapOffsetDateTime : Map[String, java.time.OffsetDateTime]
 mapZonedDateTime  : Map[String, java.time.ZonedDateTime]
-mapUUID           : Map[String, java.util.UUID]
-mapURI            : Map[String, java.net.URI]
-mapByte           : Map[String, Byte]
-mapShort          : Map[String, Short]
-mapChar           : Map[String, Char]
 ```
 :::
 

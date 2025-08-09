@@ -1,11 +1,11 @@
 package docs.query
 
-import db.compare.sql.scalasql.dsl.World.metadb.World_MetaDb_h2
-import db.dataModel.dsl.Person.metadb.Person_MetaDb_h2
-import db.dataModel.dsl.Products.metadb.Products_MetaDb_h2
-import db.dataModel.dsl.School.metadb.School_MetaDb_h2
+import db.compare.tutorials.scalasql.dsl.World.metadb.World_h2
+import db.dataModel.dsl.Person.metadb.Person_h2
+import db.dataModel.dsl.Products.metadb.Products_h2
+import db.dataModel.dsl.School.metadb.School_h2
 import docs.H2Tests
-import molecule.base.error.ModelError
+import molecule.core.error.ModelError
 import molecule.db.h2.sync.*
 import utest.*
 
@@ -14,7 +14,38 @@ object relationships extends H2Tests {
 
   override lazy val tests = Tests {
 
-    "persons" - h2(Person_MetaDb_h2()) { implicit conn =>
+    "compare plain sql" - h2(Person_h2()) {
+      import db.dataModel.dsl.Person.*
+
+      Person.name("Bob").age(42)
+        .Home.street("Main st. 17").zip(10240).Country.name("USA")
+        ._Address.Stats.crimeRate("Low")
+        ._Address._Person
+        .Education.shortName("Harvard").State.abbr("MA")
+        .save.transact
+
+      Person.name("Liz").age(38).save.transact
+
+
+      // Ref ==============================================
+
+      Person.name.age.Home.street.zip.query.get.head ==>
+        ("Bob", 42, "Main st. 17", 10240)
+
+      Person.name.age.home.query.get.head ==>
+        ("Bob", 42, 1L)
+
+      Person.name.age.Home.id.street.zip.query.get.head ==>
+        ("Bob", 42, 1L, "Main st. 17", 10240)
+
+      Person.name.age.
+        Home.street.zip.
+        Country.name.query.get.head ==>
+        ("Bob", 42, "Main st. 17", 10240, "USA")
+
+    }
+
+    "persons" - h2(Person_h2()) {
       import db.dataModel.dsl.Person.*
 
       Person.name("Bob").age(42)
@@ -183,7 +214,7 @@ object relationships extends H2Tests {
     }
 
 
-    "right join" - h2(World_MetaDb_h2()) { implicit conn =>
+    "right join" - h2(World_h2()) {
       import db.dataModel.dsl.Football.*
 
       Player.?(Player.name).Team.name.insert(
@@ -196,7 +227,7 @@ object relationships extends H2Tests {
 
     // Nested ==============================================
 
-    "school" - h2(School_MetaDb_h2()) { implicit conn =>
+    "school" - h2(School_h2()) {
       import db.dataModel.dsl.School.*
 
       Teacher.name.Classes.*(Class.subject).insert(
@@ -218,7 +249,7 @@ object relationships extends H2Tests {
     }
 
 
-    "school2" - h2(School_MetaDb_h2()) { implicit conn =>
+    "school2" - h2(School_h2()) {
       import db.dataModel.dsl.School.*
 
       val List(a, b, c, d, e, f) = Student.name.age.insert(
