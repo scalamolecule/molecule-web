@@ -7,18 +7,13 @@ inThisBuild(
     organizationName := "ScalaMolecule",
     organizationHomepage := Some(url("http://www.scalamolecule.org")),
     version := "0.1.0-SNAPSHOT",
-    scalaVersion := "3.7.1",
+    scalaVersion := "3.7.3",
 
     // Run tests for all systems sequentially to avoid data locks with db
     // Only applies on JVM. On JS platform there's no parallelism anyway.
     Test / parallelExecution := false,
   )
 )
-
-//lazy val root = project.in(file("."))
-//  .settings(name := "molecule-web")
-//  .aggregate(code)
-
 
 lazy val code = project.in(file("code"))
   .enablePlugins(MoleculePlugin)
@@ -39,14 +34,6 @@ lazy val code = project.in(file("code"))
       //      "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion cross CrossVersion.for3Use2_13,
       //      "ch.megard" %% "akka-http-cors" % "1.2.0",
 
-      // Enforce one version to avoid warnings of multiple dependency versions when running tests
-      "org.slf4j" % "slf4j-api" % "1.7.36",
-      "org.slf4j" % "slf4j-nop" % "1.7.36",
-
-      // Add to avoid error message when running tests
-      // https://www.slf4j.org/codes.html#ignoredBindings
-      "ch.qos.logback" % "logback-classic" % "1.5.0" % Test,
-
       "org.scalamolecule" %% "molecule-db-h2" % moleculeVersion,
       "org.scalamolecule" %% "molecule-db-mariadb" % moleculeVersion,
       "org.scalamolecule" %% "molecule-db-mysql" % moleculeVersion,
@@ -54,7 +41,7 @@ lazy val code = project.in(file("code"))
       "org.scalamolecule" %% "molecule-db-sqlite" % moleculeVersion,
 
 
-//      "com.h2database" % "h2" % "2.3.232",
+      //      "com.h2database" % "h2" % "2.3.232",
 
       "com.dimafeng" %% "testcontainers-scala-mariadb" % "0.41.3",
       "org.mariadb.jdbc" % "mariadb-java-client" % "3.4.0",
@@ -70,7 +57,6 @@ lazy val code = project.in(file("code"))
       "org.tpolecat" %% "doobie-core" % "1.0.0-RC8",
       "org.tpolecat" %% "doobie-postgres" % "1.0.0-RC8",
 
-      //      "org.slf4j" % "slf4j-nop" % "2.0.17" //% Test
     ),
 
     Test / fork := true, // necessary for sbt testing

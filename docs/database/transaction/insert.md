@@ -15,6 +15,8 @@ Person.name.age.query.get ==> List(
   ("Liz", 38),
 )
 ```
+Notice how the tuple type (String, Int) matches the molecule attributes (name.age). The compiler guarantees that the inserted data matches the molecule. 
+
 Data can also be applied in a `Seq` of tuples (instead of varargs as above):
 ```scala
 val listOfData = List(
@@ -29,9 +31,9 @@ Optional attributes and collection types can be used as with [`save`](save#optio
 
 
 
-## Ref
+## Relationships
 
-Additional referenced data can be added, and Molecule will transparently create the relationship for each row:
+Additional related data can be added, and Molecule will transparently create the relationship for each row:
 
 ```scala
 Person.name.age.Home.street.insert(
@@ -45,15 +47,15 @@ Person.name.age.Home.street.query.get ==> List(
 )
 ```
 
-## Ref attr
+## Foreign key
 
-Ref attributes like `country` can be inserted to add a relationship for each row without creating a new ref entity each time:
+Foreign key attributes like `country` can be inserted to add a relationship for each row without creating a new related entity each time:
 
 ```scala
 val usaId = Country.id.name_("USA").query.get.head
 
 Person.name.age.Home.street
-  .country // ref attribute
+  .country // foreign key
   .insert(
     ("Bob", 42, "Main st. 17", usaId),
     ("Liz", 38, "5th Ave 1", usaId),
@@ -66,9 +68,9 @@ Person.name.age.Home.street.Country.name.query.get ==> List(
 ```
 
 
-## Nested
+## Nested data
 
-Nest lists of tuples to save hierarchical cardinality-many relationships like `Invoice`s each with multiple `InvoiceLine`s:
+Nest lists of tuples to save hierarchical one-to-many relationships like `Invoice`s each with multiple `InvoiceLine`s:
 
 ```scala
 Invoice.no.Lines.*(
@@ -101,10 +103,10 @@ Invoice.no.Lines.*(
   ))
 )
 ```
-Molecule can insert nested hierarchies 7 levels deep.
+Molecule can insert nested hierarchies up to 7 levels deep.
 
 
-## Opt nested
+## Optional nested
 
 A nested list of data can be empty and no relationship or related data is created:
 
@@ -142,5 +144,7 @@ Invoice.no.Lines.*?(
 )
 ```
 
+## Nested data examples
+For more nested data examples, see the [nested data](nested-data) section.
 
 ##### [<i class="fas fa-handshake" style="margin-right: 4px;"></i> Insert action compliance tests](https://github.com/scalamolecule/molecule/tree/main/db/compliance/shared/src/test/scala/molecule/db/compliance/test/action/insert)

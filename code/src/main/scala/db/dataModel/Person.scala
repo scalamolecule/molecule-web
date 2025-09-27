@@ -10,8 +10,8 @@ object Person extends DomainStructure {
     val lastName  = oneString
     val age       = oneInt
     val likes     = oneString
-    val home      = one[Address]
-    val education = one[University]
+    val home      = manyToOne[Address]
+    val education = manyToOne[University]
 
     // Collection types
     val hobbies   = setString
@@ -22,8 +22,8 @@ object Person extends DomainStructure {
   trait Address {
     val street  = oneString
     val zip     = oneInt
-    val country = one[Country]
-    val stats   = one[Stats]
+    val country = manyToOne[Country]
+    val stats   = manyToOne[Stats]
   }
 
   trait Country {
@@ -33,7 +33,7 @@ object Person extends DomainStructure {
   trait University {
     val shortName = oneString
     val zip       = oneInt
-    val state     = one[State]
+    val state     = manyToOne[State]
   }
 
   trait State {

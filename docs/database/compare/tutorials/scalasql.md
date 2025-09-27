@@ -113,7 +113,7 @@ object World extends DomainStructure {
     val localName      = oneString
     val governmentForm = oneString
     val headOfState    = oneString
-    val capital        = one[City]
+    val capital        = manyToOne[City]
     val code2          = oneString
   }
 
@@ -122,7 +122,7 @@ object World extends DomainStructure {
     val countryCode = oneString
     val district    = oneString
     val population  = oneLong
-    val country     = one[Country]
+    val country     = manyToOne[Country]
   }
 
   trait CountryLanguage {
@@ -130,7 +130,7 @@ object World extends DomainStructure {
     val language    = oneString
     val isOfficial  = oneBoolean
     val percentage  = oneDouble
-    val country     = one[Country]
+    val country     = manyToOne[Country]
   }
 }
 ```

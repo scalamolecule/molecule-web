@@ -33,10 +33,10 @@ export default sidebar({
         // },
 
         {
-            text: 'Transact',
+            text: 'Transaction',
             collapsible: true,
             expanded: false,
-            prefix: "transact",
+            prefix: "transaction",
             children: [
                 "save",
                 "insert",
@@ -57,12 +57,20 @@ export default sidebar({
                 "filterAttr",
                 "parameter-binding",
                 "aggregation",
-                "relationships",
                 "sorting",
                 "pagination",
                 "subscription",
                 "inspection",
                 "raw-query",
+            ],
+        },
+        {
+            text: 'Relationships',
+            collapsible: true,
+            expanded: false,
+            prefix: "relationships",
+            children: [
+                "relationships",
             ],
         },
 

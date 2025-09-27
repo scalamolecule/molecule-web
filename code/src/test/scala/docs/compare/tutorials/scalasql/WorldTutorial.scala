@@ -11,6 +11,7 @@ import utest.*
 import scala.io.Source
 import scala.util.Random
 import scala.util.Using.Manager
+import molecule.core.error.ModelError
 
 object WorldTutorial extends H2Tests {
 
@@ -414,8 +415,27 @@ object WorldTutorial extends H2Tests {
 
 
     "delete" - {
+      // The capital foreign key of the Country Singapore points to the City Singapore ("SGP")
+      // Referential integrity with constraint on `capital` ensures that we can't delete
+      // a City that is already saved as a capital of a Country.
+      intercept[org.h2.jdbc.JdbcBatchUpdateException](
+        City.countryCode_("SGP").delete.transact
+      ).getMessage() ==>
+        """Referential integrity constraint violation: "_CAPITAL: PUBLIC.COUNTRY FOREIGN KEY(CAPITAL) REFERENCES PUBLIC.CITY(ID) (CAST(3208 AS BIGINT))"; SQL statement:
+          |DELETE FROM City
+          |WHERE
+          |  City.countryCode = 'SGP' [23503-232]""".stripMargin
+
+      // Singapore still exists
       City.name(count).countryCode_("SGP").query.get.head ==> 1
+
+      // if we really wanted to delete SGP we would first have to delete that it's the capital
+      Country.code_("SGP").capital().update.transact
+
+      // Now we can delete the city
       City.countryCode_("SGP").delete.transact
+
+      // Singapore is gone
       City.name(count).countryCode_("SGP").query.get.head ==> 0
     }
 
@@ -436,31 +456,32 @@ object WorldTutorial extends H2Tests {
 
 
     "savepoint explicit" - {
-      City.countryCode("SGP").query.get ==> Seq("SGP")
+      City.name.countryCode_("SGP").query.get ==> List("Singapore")
       unitOfWork {
         savepoint { sp =>
-          City.countryCode_("SGP").delete.transact
-          City.countryCode("SGP").query.get ==> Seq()
+          City.name("Li").countryCode("SGP").save.transact
+          City.name.d1.countryCode_("SGP").query.get ==> List("Singapore", "Li")
           sp.rollback()
         }
       }
-      City.countryCode("SGP").query.get ==> Seq("SGP")
+      City.name.countryCode_("SGP").query.get ==> List("Singapore")
     }
 
+
     "savepoint throw" - {
-      City.countryCode("SGP").query.get ==> Seq("SGP")
+      City.name.countryCode_("SGP").query.get ==> List("Singapore")
       try {
         unitOfWork {
           savepoint { _ =>
-            City.countryCode_("SGP").delete.transact
-            City.countryCode("SGP").query.get ==> Seq()
+            City.name("Li").countryCode("SGP").save.transact
+            City.name.d1.countryCode_("SGP").query.get ==> List("Singapore", "Li")
             throw new Exception()
           }
         }
       } catch {
         case _: Exception => ()
       }
-      City.countryCode("SGP").query.get ==> Seq("SGP")
+      City.name.countryCode_("SGP").query.get ==> List("Singapore")
     }
   }
 }

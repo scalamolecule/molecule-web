@@ -3,14 +3,14 @@
 
 One or more entities can be deleted with a molecule identifying the entities. 
 
-When an entity is deleted, all its asserted attribute values are deleted. In SQL, it's deleting a row.
+When an entity is deleted, the SQL table row is deleted.
 
 Entities can be identified either by applying ids or by the shape of the molecule with its relationships and tacit filters as we'll see below.
 
 
 ## Id
 
-Delete an entity by applying an id to a Namespace and call `delete.transact` on it:
+Delete an entity by applying an id to an entity and call `delete.transact` on it:
 
 ```scala
 Person(bobId).delete.transact

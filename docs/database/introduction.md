@@ -6,9 +6,9 @@
 ![Molecule logo](/static/img/logo/Molecule-logo-600.png)
 
 
-Molecule is a Scala 3 library for querying and updating SQL databases using a type-safe DSL — not one for SQL, but one generated from your own domain structure.
+Molecule is a Scala 3 library for querying and mutating SQL databases using a type-safe DSL — not one for SQL, but one generated from your own domain structure.
 
-Most libraries offer a DSL to express _their_ concepts — like SQL or JSON. Molecule inverts that: it builds a DSL directly from your domain structure, letting you model and query data in your own terms.
+Most libraries offer a DSL to express _their_ concepts — like SQL or a SQL-DSL. Molecule inverts that: it builds a DSL directly from your domain structure, letting you model and query data in your own domain terms.
 
 After defining your domain structure, Molecule generates boilerplate code for your custom DSL. You can then declare *what* data you want using this DSL, and Molecule handles *how* to retrieve or modify it.
 
@@ -123,7 +123,7 @@ object MyDomainStructure extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt
-    val address = one[Address]
+    val address = manyToOne[Address]
   }
   trait Address {
     val street = oneString

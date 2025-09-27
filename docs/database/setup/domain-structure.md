@@ -10,7 +10,7 @@ object Community extends DomainStructure {
   trait Person { // entity
     val name    = oneString // attribute
     val age     = oneInt
-    val address = one[Address] // relationship
+    val address = manyToOne[Address] // relationship
   }
   trait Address {
     val street = oneString
@@ -30,7 +30,7 @@ A complex domain can group conceptually related entities in Segments as objects 
 ```scala
 object Company extends DomainStructure {
   
-  // HR seqment 
+  // HR segment 
   object hr { 
     trait Profession {
       val name = oneString
@@ -41,22 +41,22 @@ object Company extends DomainStructure {
     }
   }
 
-  // Accounting seqment
+  // Accounting segment
   object accounting { 
     trait Invoice {
       val no          = oneInt
-      val contact     = one[hr.Person]
-      val mainProduct = one[warehouse.Item]
+      val contact     = manyToOne[hr.Person]
+      val mainProduct = manyToOne[warehouse.Item]
       val lines       = many[InvoiceLine]
     }
     trait InvoiceLine {
       val text    = oneString
       val qty     = oneInt
-      val product = one[warehouse.Item]
+      val product = manyToOne[warehouse.Item]
     }
   }
 
-  // Warehouse seqment
+  // Warehouse segment
   object warehouse { 
     trait Item {
       val name      = oneString
@@ -303,22 +303,27 @@ A collection type is useful when you want to simply save a smaller collection of
 
 ```scala
 trait Person:
-  val hobbies = setString // values only
+  val name    = oneString
+  val hobbies = setString // Set of String values only
 ```
 
-@tab Separate Entity
+@tab Related
 
 ```scala
 trait Person:
-  val hobbies = many[Hobby] // relationship to hobby names and descriptions
+  val name = oneString
 
 trait Hobby:
-  val name        = oneString
-  val description = oneString
+  val name = oneString
+  
+// Many-to-many relationship - Persons and Hobbies are independent
+trait Interest:
+  val person_id = manyToOne[Person]
+  val hobby_id  = manyToOne[Hobby]
 ```
 :::
 
-Sets of unique un-ordered values are saved transparently by Molecule as Arrays or Sets in the Databases supporting this. Alternatively as json arrays. Molecule ensures that values are unique. 
+Sets of unique un-ordered values are saved transparently by Molecule as Arrays or JSON in SQL databases. Molecule ensures that values are unique. 
 
 In your code you can simply think in terms of a Scala `Set`.
 
@@ -341,28 +346,97 @@ In your code you can simply think in terms of a Scala `Map`.
 
 ## Relationships
 
-Relationships are treated like attributes with a descriptive name of the relationship. 
+SQL relationships are modelled with foreign keys, each referencing the primary key of another table.
 
-The referenced entity is given as a type parameter to the relationship marker `one` or `many` as we saw in the examples above:
 
-```scala
-val address = one[Address]      // relationship to one Address
-val lines   = many[InvoiceLine] // relationship to many invoice lines
-```
+### many-to-one
 
-### `owner`
+In Molecule, we always define a relationship on the entity where the foreign key is, the "many" side. 
 
-Add `owner` to a relationship definition to have the defining entity own the related entities. An Invoice is for instance a natural owner of its Invoice Lines. So we would likely define the ownership:
+Many InvoiceLines can for instance have a ref attribute `invoice` - or foreign key - that points to the one Invoice they belong to:
 
 ```scala
-val lines = many[InvoiceLine].owner // Invoice owns its invoice lines
+trait InvoiceLine:
+  val invoice = manyToOne[Invoice] // foreign key to one Invoice
 ```
-If an invoice is then deleted, its invoice lines will also automatically be deleted!
+The `invoice` foreign key, or ref attribute, is accessible as any other attribute:
 
-::: warning
-Beware! Owned relationships are deleted recursively! So if InvoiceLine had an owned relationship to other entities, those would also be deleted if the Invoice was deleted, and so forth!
-:::
+```scala
+val invoiceId: Long = InvoiceLine.invoice.query.get.head
+```
+And from an `InvoiceLine` we can relate to `Invoice` to get the invoice number:
+```scala
+val invoiceNumber: Int = InvoiceLine.Invoice.no.query.get.head
+```
 
+
+
+### one-to-many
+
+We could also say that an `Invoice` has a one-to-many relationship to its invoice lines. But we still always define the relationship on the entity where the foreign key is - the "many" side, in this case on `InvoiceLine`.
+
+Molecule generates a one-to-many relationship accessor so we can access invoice lines directly from an invoice:
+```scala
+val lineCount: Int = Invoice.InvoiceLines.id(count).query.get.head
+```
+Or we can access the invoices lines as nested data:
+```scala
+Invoice.no.InvoiceLines.*(InvoiceLine.text.qty.amount).query.get ==> List(
+  (1, List(
+    ("coffee", 2, 10.0),
+    ("tea", 1, 4.0))),
+  (2, List(
+    ("chocolate", 5, 40.0),
+    ("milk", 2, 3.0))),
+)
+```
+##### One-to-many relationship name
+
+When defined as 
+```scala
+trait InvoiceLine:
+  val invoice = manyToOne[Invoice]
+```
+Molecule will as a default use the plural name of the `InvoiceLine` entity where the relationship is defined as the one-to-many relationship name, in this case `InvoiceLines`.
+
+We can also define the one-to-many relationship name explicitly with `oneToMany("MyName")`:
+```scala
+trait InvoiceLine:
+  val invoice = manyToOne[Invoice].oneToMany("Lines")
+```
+And we would then write this instead:
+```scala
+val lineCount: Int = Invoice.Lines.id(count).query.get.head
+```
+
+### many-to-many
+
+A many-to-many relationship is defined with a join entity that holds two (or more) many-to-one foreign keys.
+
+```scala
+trait Association:
+  val person_id = manyToOne[Person]
+  val group_id  = manyToOne[Group]
+```
+
+And we can access the associations as nested data:
+```scala
+Person.name.Associations.*(Association.Group.name).query.get ==> List(
+  ("Bob", List("Group A", "Group B")),
+  ("Alice", List("Group b", "Group D")),
+)
+```
+Or the other way around:
+```scala
+Group.name.Associations.*(Association.Person.name).query.get ==> List(
+  ("Group B", List("Bob", "Alice")),
+)
+```
+
+
+### one-to-one
+
+A one-to-one relationship is defined with a separate entity that holds a one-to-one foreign key.
 
 ## Attribute options
 
@@ -379,7 +453,8 @@ The following Attribute definition options are available in Molecule:
 
 ### `descr`
 
-A description of an attribute is used to simply clarify the intention of the attribute. The description can be added either with the `descr` method or applied to the type definition:
+A description of an attribute is used to simply clarify the intention of the attribute. 
+The description can be added either with the `descr` method or applied to the type definition:
 
 ```scala
 val lastName = oneString.descr("Last name of person")
@@ -434,7 +509,7 @@ object Community extends DomainStructure {
 And using the enums could look like this:
 ```scala
 Person.name("Bob").favoriteColor(Color.BLUE).save.transact
-Person.name.favoriteColor_().query.get.map(_ ==> List(("Bob", Color.BLUE.toString)))
+Person.name.favoriteColor.query.get.head ==> ("Bob", Color.BLUE.toString)
 ```
 Enum values are saved as strings in the database and returned as such. 
 
@@ -467,8 +542,7 @@ Enforce that the value of an attribute is always unique:
 val lastName = oneString.mandatory
 
 // Relationships can also be enforced
-val neededRef  = one[NeededRef].mandatory
-val neededRefs = many[NeededRef].mandatory // at least one ref
+val neededRef  = manyToOne[NeededRef].mandatory
 ```
 
 ### `require`

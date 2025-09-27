@@ -523,10 +523,11 @@ object update extends H2Tests {
 
 
     "Base update" - h2(Person_h2()) {
-      Person.name.likes_?.Home.?(Address.street).insert(
-        ("Bob", Some("Pasta"), Some("Main st. 17")),
+      val List(a1, a2) = Address.street.insert("Main st. 17", "5th Ave. 1").transact.ids
+      Person.name.likes_?.home_?.insert(
+        ("Bob", Some("Pasta"), Some(a1)),
         ("Eva", Some("Sushi"), None),
-        ("Liz", None, Some("5th Ave. 1")),
+        ("Liz", None, Some(a2)),
         ("Tod", None, None),
       ).transact
 
@@ -542,32 +543,19 @@ object update extends H2Tests {
       )
     }
 
-    "Base upsert" - h2(Person_h2()) {
-      Person.name.likes_?.Home.?(Address.street).insert(
-        ("Bob", Some("Pasta"), Some("Main st. 17")),
-        ("Eva", Some("Sushi"), None),
-        ("Liz", None, Some("5th Ave. 1")),
-        ("Tod", None, None),
-      ).transact
-
-      // Upsert likes of all persons having a street address
-      Person.likes("Beef").Home.street_.upsert.transact
-
-      // Likes of Bob and Liz upserted since they both have a street address
-      Person.name.likes_?.Home.?(Address.street).query.get ==> List(
-        ("Bob", Some("Beef"), Some("Main st. 17")), // likes updated
-        ("Eva", Some("Sushi"), None),
-        ("Liz", Some("Beef"), Some("5th Ave. 1")), // likes inserted
-        ("Tod", None, None),
-      )
+    "No relationships in upserts" - h2(Person_h2()) {
+      intercept[ModelError] {
+        Person.likes("Beef").Home.street_.upsert.transact
+      }.getMessage() ==> "Upsert of related data not allowed. Please use update instead."
     }
 
 
     "Ref update" - h2(Person_h2()) {
-      Person.name.likes_?.Home.?(Address.street).insert(
-        ("Bob", Some("Pasta"), Some("Main st. 17")),
+      val List(a1, a2) = Address.street.insert("Main st. 17", "5th Ave. 1").transact.ids
+      Person.name.likes_?.home_?.insert(
+        ("Bob", Some("Pasta"), Some(a1)),
         ("Eva", Some("Sushi"), None),
-        ("Liz", None, Some("5th Ave. 1")),
+        ("Liz", None, Some(a2)),
         ("Tod", None, None),
       ).transact
 
@@ -578,27 +566,6 @@ object update extends H2Tests {
       Person.name.likes_?.Home.?(Address.street).query.get ==> List(
         ("Bob", Some("Pasta"), Some("Bellevue 8")), // street updated
         ("Eva", Some("Sushi"), None),
-        ("Liz", None, Some("5th Ave. 1")),
-        ("Tod", None, None),
-      )
-    }
-
-
-    "Ref upsert" - h2(Person_h2()) {
-      Person.name.likes_?.Home.?(Address.street).insert(
-        ("Bob", Some("Pasta"), Some("Main st. 17")),
-        ("Eva", Some("Sushi"), None),
-        ("Liz", None, Some("5th Ave. 1")),
-        ("Tod", None, None),
-      ).transact
-
-      // Upsert street addresses of people with preferences
-      Person.likes_.Home.street("Bellevue 8").upsert.transact
-
-      // New relationship and street address inserted for Eva
-      Person.name.likes_?.Home.?(Address.street).query.get ==> List(
-        ("Bob", Some("Pasta"), Some("Bellevue 8")), // street updated
-        ("Eva", Some("Sushi"), Some("Bellevue 8")), // relationship + street inserted
         ("Liz", None, Some("5th Ave. 1")),
         ("Tod", None, None),
       )
@@ -630,17 +597,20 @@ object update extends H2Tests {
       // Get bob id
       val bobId = Person.id.name_("Bob").query.get.head
 
-      // Try to update age of bob
+      // Can't update/upsert optional values
+      intercept[ModelError] {
+        Person(bobId).age_?(Some(42)).update.transact
+      }.getMessage() ==> "Can't update optional values (Person.age_?)"
 
-      // Fist attempt with optional attr fails
-      // Person(bobId).age_?(Some(42)).update.transact // ERROR: Can't update optional values (Person.age_?)
-       Person(bobId).age_?(Some(42)).upsert.transact // ERROR: Can't update optional values (Person.age_?)
+      intercept[ModelError] {
+        Person(bobId).age_?(Some(42)).upsert.transact
+      }.getMessage() ==> "Can't upsert optional values (Person.age_?)"
 
-      // Second attempt fails
-//      Person(bobId).age(42).update.transact // UNEXPECTED BEHAVIOR ? : age is not set to 42
-//      assert(Person.name("Bob").age_?.query.get == List(("Bob", None)))
+      // Update of null value has no effect
+      Person(bobId).age(42).update.transact
+      assert(Person.name("Bob").age_?.query.get == List(("Bob", None)))
 
-//      Person.name("Bob").age_?.query.get ==> List(("Bob", None))
+      // Upsert of null value inserts the value
       Person(bobId).age(42).upsert.transact // note `upsert` instead of `update`
       assert(Person.name("Bob").age_?.query.get == List(("Bob", Some(42))))
     }

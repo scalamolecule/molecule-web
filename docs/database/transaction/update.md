@@ -4,14 +4,11 @@ One or more entities can be updated with a molecule populated with the new data.
 
 Entities can be identified either by applying ids or by the shape of the molecule with its relationships and tacit filters as we'll see below.
 
-
-
 ::: warning
 Note that you can either `update` existing values or `upsert` possibly existing values:
 
 - `update` will only update those entities where all values already exist and leave other entities untouched.
 - `upsert` will insert the new value if an attribute has no value yet, otherwise update it.
-
 
 See [upsert](#upsert) further below for more info.
 :::
@@ -267,7 +264,7 @@ Similarly, all [remaining filters](/database/query/filters.html#string) on strin
 
 ## Multiple filters
 
-Combine filters to make even more specific selections of entities to be deleted:
+Combine filters to make even more specific selections of entities to be updated:
 
 ```scala
 // Update likes of persons with age between 30 and 45
@@ -449,7 +446,7 @@ we can explore updates across relationships:
 
 ### Base update
 
-Here we update data of the base namespace `Person` if there is a relationship to `Address`:
+Here we update data of the base entity `Person` if there is a relationship to `Address`:
 
 ```scala
 // Update likes of all persons having a street address
@@ -481,9 +478,9 @@ Person.name.likes_?.Home.?(Address.street).query.get ==> List(
 )
 ```
 
-### Ref update
+### Related data update
 
-Data in referenced namespaces can be updated too:
+Data in related entities can be updated:
 
 ```scala
 // Update street addresses of people with preferences
@@ -498,9 +495,9 @@ Person.name.likes_?.Home.?(Address.street).query.get ==> List(
 )
 ```
 
-### Ref upsert
+### Related data upsert
 
-Data in referenced namespaces can be updated too:
+Data in related entities can be upserted:
 
 ```scala
 // Upsert street addresses of people with preferences
@@ -516,11 +513,11 @@ Person.name.likes_?.Home.?(Address.street).query.get ==> List(
 ```
 
 
-## Ref attr
+## Foreign keys
 
-We can update a relationship by updating the ref attribute id.
+We can update a relationship by updating the foreign key.
 
-Here we update the ref attribute `country` on `Address` from the id of USA to the id of UK:
+Here we update the foreign key `country` on `Address` from the id of USA to the id of UK:
 
 ```scala
 // Existing Country ids
@@ -529,7 +526,7 @@ val List(usaId, ukId) = Country.name.insert("USA", "UK").transact.ids
 // Bob in USA
 val bobId = Person.name("Bob")
   .Home.street("Main st. 17")
-  .country(usaId) // set ref attribute to US id
+  .country(usaId) // set foreign key to US id
   .save.transact.id
 
 Person.name.Home.street.Country.name.query.get ==> List(
@@ -539,7 +536,7 @@ Person.name.Home.street.Country.name.query.get ==> List(
 // Bob moves to the UK
 Person(bobId)
   .Home.street("Kings road 1")
-  .country(ukId) // update ref attribute to UK id
+  .country(ukId) // update foreign key to UK id
   .update.transact
 
 Person.name.Home.street.Country.name.query.get ==> List(

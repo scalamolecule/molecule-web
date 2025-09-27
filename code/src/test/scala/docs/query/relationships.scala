@@ -230,19 +230,33 @@ object relationships extends H2Tests {
     "school" - h2(School_h2()) {
       import db.dataModel.dsl.School.*
 
-      Teacher.name.Classes.*(Class.subject).insert(
-        ("Maggie", List("Math", "Physics")),
-        ("Ronnie", List("Biology", "English")),
+      val List(t1, t2) = Teacher.name.insert(
+        "Maggie",
+        "Ronnie",
+      ).transact.ids
+
+      val List(c1, c2, c3, c4) = Course.subject.insert(
+        "Math",
+        "Physics",
+        "Biology",
+        "English",
+      ).transact.ids
+
+      Attendance.teacher.course.insert(
+        (t1, c1),
+        (t1, c2),
+        (t2, c3),
+        (t2, c4),
       ).transact
 
-      Teacher.name.a1.Classes.subject.a2.query.get ==> List(
+      Teacher.name.a1.Courses.subject.a2.query.get ==> List(
         ("Maggie", "Math"),
         ("Maggie", "Physics"),
         ("Ronnie", "Biology"),
         ("Ronnie", "English"),
       )
 
-      Teacher.name.a1.Classes.*(Class.subject.a1).query.get ==> List(
+      Teacher.name.a1.Courses.**(Course.subject.a1).query.get ==> List(
         ("Maggie", List("Math", "Physics")),
         ("Ronnie", List("Biology", "English")),
       )
@@ -252,7 +266,22 @@ object relationships extends H2Tests {
     "school2" - h2(School_h2()) {
       import db.dataModel.dsl.School.*
 
-      val List(a, b, c, d, e, f) = Student.name.age.insert(
+      val List(t1, t2, t3) = Teacher.name.insert(
+        "Maggie",
+        "Ronnie",
+        "Veronica" // no students yet
+      ).transact.ids
+
+      val List(c1, c2, c3, c4, c5, c6) = Course.subject.insert(
+        "Math",
+        "Physics",
+        "Biology",
+        "English",
+        "Chemistry", // no students yet
+        "Drama", //     no students yet
+      ).transact.ids
+
+      val List(s1, s2, s3, s4, s5, s6) = Student.name.age.insert(
         ("Ann", 13),
         ("Ben", 14),
         ("Cat", 13),
@@ -261,21 +290,26 @@ object relationships extends H2Tests {
         ("Fay", 15),
       ).transact.ids
 
-      Teacher.name.a1.Classes.*(Class.subject.a1.students).insert(
-        ("Maggie", List(
-          ("Math", Set(a, b, c)),
-          ("Physics", Set(d, e, f)),
-        )),
-        ("Ronnie", List(
-          ("Biology", Set(a, b, c)),
-          ("English", Set(d, e, f)),
-        )),
+      Attendance.teacher.course.student_?.insert(
+        (t1, c1, Some(s1)),
+        (t1, c1, Some(s2)),
+        (t1, c1, Some(s3)),
+        (t1, c2, Some(s4)),
+        (t1, c2, Some(s5)),
+        (t1, c2, Some(s6)),
+        (t2, c3, Some(s1)),
+        (t2, c3, Some(s2)),
+        (t2, c3, Some(s3)),
+        (t2, c4, Some(s4)),
+        (t2, c4, Some(s5)),
+        (t2, c4, Some(s6)),
+        (t3, c5, None),
+        (t3, c6, None),
       ).transact
 
-
       Teacher.name.a1
-        .Classes.*(Class.subject.a1
-          .Students.*(Student.name.a1.age)).query.get ==> List(
+        .Courses.**(Course.subject.a1
+          .Students.**(Student.name.a1.age)).query.get ==> List(
         ("Maggie", List(
           ("Math", List(
             ("Ann", 13),
@@ -302,13 +336,11 @@ object relationships extends H2Tests {
         )),
       )
 
-      Teacher.name.Classes.*(Class.subject).insert(
-        ("Veronica", List("Chemistry", "Drama")),
-      ).transact
+      // Optional data
 
       Teacher.name.a1
-        .Classes.*?(Class.subject.a1
-          .Students.*?(Student.name.a1.age)).query.get ==> List(
+        .Courses.**?(Course.subject.a1
+          .Students.**?(Student.name.a1.age)).query.get ==> List(
         ("Maggie", List(
           ("Math", List(
             ("Ann", 13),

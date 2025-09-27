@@ -1,1 +1,23 @@
-// place your custom styles here
+
+/* Make the main content area expand sooner and reduce side gaps */
+:root {
+  /* Sidebar narrower (if not already set) */
+  --sidebar-width: 200px;
+  --sidebar-mobile-width: 256px;
+
+  /* Main container max width (decrease gap on large screens) */
+  --content-width: 850px;      /* default article width */
+//   --home-page-width: 1000px;   /* home page blocks width, if used */
+}
+
+/* Global: never justify, never hyphenate, no forced breaking */
+[vp-content]:not(.custom) #markdown-content > p,
+[vp-content]:not(.custom) #markdown-content > ul p,
+[vp-content]:not(.custom) #markdown-content > ol p {
+  text-align: left !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}

@@ -10,13 +10,13 @@ object Football extends DomainStructure {
     val name         = oneString
     val goalsToBonus = oneInt
     val bonus        = oneInt
-    val players      = many[Player]
+//    val players      = many[Player]
   }
 
   trait Player {
     val name    = oneString
     val goals   = oneInt
     val assists = oneInt
-    val team    = one[Team]
+    val team    = manyToOne[Team]
   }
 }

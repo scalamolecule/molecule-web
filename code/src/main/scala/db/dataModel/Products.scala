@@ -8,12 +8,12 @@ object Products extends DomainStructure {
     val name  = oneString
     val price = oneInt
     val stars = oneInt
-    val team  = one[Category]
+    val team  = manyToOne[Category]
   }
 
   trait Category {
     val name     = oneString
     val ordering = oneInt
-    val products = many[Product]
+//    val products = many[Product]
   }
 }

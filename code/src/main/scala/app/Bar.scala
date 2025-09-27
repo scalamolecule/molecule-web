@@ -8,7 +8,7 @@ object Bar extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt
-    val address = one[Address]
+    val address = manyToOne[Address]
   }
 
   trait Address {

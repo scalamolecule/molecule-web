@@ -9,14 +9,14 @@ object Pets extends DomainStructure {
 
   trait Person {
     val name       = oneString
-    val pets       = many[Pet].owner
-    val companions = many[Pet].companion
+//    val pets       = many[Pet].owner
+//    val companions = many[Pet].companion
   }
 
   trait Pet {
     val name      = oneString
-    val owner     = one[Person]
-    val companion = one[Person]
+    val owner     = manyToOne[Person]
+    val companion = manyToOne[Person].oneToMany("Companions")
   }
 
 

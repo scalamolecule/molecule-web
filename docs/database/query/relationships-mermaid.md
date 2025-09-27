@@ -48,7 +48,7 @@ In our domain structure we give the ref a name, like "home" to describe the rela
 trait Person:
   val name = oneString
   val age  = oneInt
-  val home = one[Address]
+  val home = manyToOne[Address]
 
 trait Address:
   val street = oneString

@@ -18,13 +18,18 @@ flowchart LR
     A(Person) -- Home ---> B(Address)
 ```
 
+```mermaid
+flowchart LR
+    A(Person) -- Home ---> B(Address) -- Home ---> C(Address)
+```
+
 In our domain structure we give the ref a name, like "home" to describe the relationship:
 
 ```scala
 trait Person:
   val name = oneString
   val age  = oneInt
-  val home = one[Address]
+  val home = manyToOne[Address]
 
 trait Address:
   val street = oneString
@@ -49,7 +54,7 @@ Person.name.age.Home.street.zip.query.get.head ==>
 
 ### Ref attr
 
-We can also retrieve the "ref attribute" or the "ref id" as a value with the lowercase name:
+We can also retrieve the "ref attribute" (or "ref id" / foreign key) as a value with the lowercase name:
 ```scala
 Person.name.age.home.query.get.head ==> 
   ("Bob", 42, 1L) 
