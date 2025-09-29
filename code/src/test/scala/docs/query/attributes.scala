@@ -18,15 +18,15 @@ object attributes extends H2Tests {
       Person.name("Liz").save.transact
 
 
-      Person.name.age.query.get ==> List(
+      Person.name.age.query.i.get ==> List(
         ("Bob", 42),
       )
 
-      Person.name.age_.query.get ==> List(
+      Person.name.age_.query.i.get ==> List(
         "Bob"
       )
 
-      Person.name.age_?.query.get ==> List(
+      Person.name.age_?.query.i.get ==> List(
         ("Bob", Some(42)),
         ("Liz", None),
       )

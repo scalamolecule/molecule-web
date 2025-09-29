@@ -1,5 +1,5 @@
 
-val moleculeVersion = "0.26.0-SNAPSHOT"
+val moleculeVersion = "0.26.0"
 
 inThisBuild(
   List(

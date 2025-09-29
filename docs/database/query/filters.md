@@ -5,53 +5,45 @@ Molecule query results can be filtered by the presence of attributes and various
 
 ## Not null
 
-The simplest filter is asking for a mandatory presence of an attribute value. 
+The simplest filter is asking for a mandatory presence of an attribute value.
 
 Say that we have the following data set where various Persons have either a single food preference in a cardinality-one attribute, or multiple food preferences as a Set, Seq or Map:
 
 ::: code-tabs#types
 @tab One
-
 ```scala
 Person.name.likes_?.query.get ==> List(
-  ("John", Some("pizza")),
+  ("Jon", Some("pizza")),
   ("Ben", Some("pizza")),
   ("Ann", Some("sushi")),
   ("Gus", Some("pasta")),
   ("Liz", None),
 )
 ```
-Notice that 
-
 @tab Set
-
 ```scala
 Person.name.likes_?.query.get ==> List(
-  ("John", Some(Set("pizza", "burger"))),
+  ("Jon", Some(Set("pizza", "burger"))),
   ("Ben", Some(Set("pizza", "pasta"))),
   ("Ann", Some(Set("sushi", "lasagne"))),
   ("Gus", Some(Set("pasta"))),
   ("Liz", None),
 )
 ```
-
 @tab Seq
-
 ```scala
 Person.name.likes_?.query.get ==> List(
-  ("John", Some(List("pizza", "burger"))),
+  ("Jon", Some(List("pizza", "burger"))),
   ("Ben", Some(List("pizza", "pasta"))),
   ("Ann", Some(List("sushi", "lasagne"))),
   ("Gus", Some(List("pasta"))),
   ("Liz", None),
 )
 ```
-
 @tab Map
-
 ```scala
 Person.name.likes_?.query.get ==> List(
-  ("John", Some(Map("morning" -> "bread", "dinner" -> "pizza"))),
+  ("Jon", Some(Map("morning" -> "bread", "dinner" -> "pizza"))),
   ("Ben", Some(Map("morning" -> "bread", "dinner" -> "burger"))),
   ("Ann", Some(Map("morning" -> "yoghurt"))),
   ("Gus", Some(Map("dinner" -> "pasta"))),
@@ -65,102 +57,169 @@ Then we can ask for only persons with a food preference by adding the attribute 
 
 ::: code-tabs#types
 @tab One
-
 ```scala
 Person.name.likes.query.get ==> List(
-  ("John", "pizza"),
+  ("Jon", "pizza"),
   ("Ben", "pizza"),
   ("Ann", "sushi"),
   ("Gus", "pasta"),
 )
 ```
-
 @tab Set
-
 ```scala
 Person.name.likes.query.get ==> List(
-  ("John", Set("pizza", "burger")),
+  ("Jon", Set("pizza", "burger")),
   ("Ben", Set("pizza", "pasta")),
   ("Ann", Set("sushi", "lasagne")),
   ("Gus", Set("pasta")),
 )
 ```
-
 @tab Seq
-
 ```scala
 Person.name.likes.query.get ==> List(
-  ("John", List("pizza", "burger")),
+  ("Jon", List("pizza", "burger")),
   ("Ben", List("pizza", "pasta")),
   ("Ann", List("sushi", "lasagne")),
   ("Gus", List("pasta")),
 
 )
 ```
-
 @tab Map
-
 ```scala
 Person.name.likes.query.get ==> List(
-  ("John", Map("morning" -> "bread", "dinner" -> "pizza")),
+  ("Jon", Map("morning" -> "bread", "dinner" -> "pizza")),
   ("Ben", Map("morning" -> "bread", "dinner" -> "burger")),
   ("Ann", Map("morning" -> "yoghurt")),
   ("Gus", Map("dinner" -> "pasta")),
 )
 ```
-
 :::
+
 
 ## Null
 
 Likewise, we can ask for entities **_not_** having an attribute value by applying empty parentheses to a tacit attribute. This translates to an SQL `where` clause <nobr>`likes is null`</nobr>:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.likes_().query.get ==> List("Liz")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes IS NULL;
+```
+:::
 
 Note that we have to make the `likes_` attribute tacit with the underscore since we can't return non-existing values.
+
 
 ## Equality
 
 Find names of persons liking pizza by applying the value "pizza" to the `likes` attribute:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.likes("pizza").query.get ==> List(
-  ("John", "pizza"),
+  ("Jon", "pizza"),
   ("Ben", "pizza")
 )
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes = 'pizza'
+ORDER BY Person.name;
+```
+:::
 
 Make `likes_` tacit to avoid returning redundant and already known filter data:
 
+::: code-tabs
+@tab Molecule
 ```scala
-Person.name.likes_("pizza").query.get ==> List("John", "Ben")
+Person.name.likes_("pizza").query.get ==> List("Jon", "Ben")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes = 'pizza'
+ORDER BY Person.name;
+```
+:::
 
 In case we have some dynamic optional filter value, we can filter by the optional value by making the `likes_?` attribute optional:
 
+::: code-tabs
+@tab Molecule
 ```scala
 val foodFilter = Some("pizza")
 Person.name.likes_?(foodFilter).query.get ==> List(
-  ("John", Some("pizza")),
+  ("Jon", Some("pizza")),
   ("Ben", Some("pizza"))
 )
-// or
+```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes = 'pizza'
+ORDER BY Person.name;
+```
+:::
+
+or by using the empty `Option` value:
+::: code-tabs
+@tab Molecule
+```scala
 val foodFilter = Option.empty[String]
 Person.name.likes_?(foodFilter).query.get ==> List(
   ("Liz", None)
 )
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes IS NULL
+ORDER BY Person.name;
+```
+:::
 
-#### OR logic
+
+## OR logic
 
 We can apply OR-logic to find a selection of alternatives
 
+::: code-tabs
+@tab Molecule
 ```scala
 // Likes pizza OR sushi
 Person.name.likes("pizza", "sushi").query.get ==> List(
-  ("John", "pizza"),
+  ("Jon", "pizza"),
   ("Ben", "pizza"),
   ("Ann", "sushi"),
   // Gus not included
@@ -169,77 +228,235 @@ Person.name.likes("pizza", "sushi").query.get ==> List(
 // Same as applying filter values as a List
 Person.name.likes(List("pizza", "sushi")) // ...
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes IN ('pizza', 'sushi')
+ORDER BY Person.name;
+```
+:::
 
 Applying an empty `Seq` (or `List`) of values matches nothing
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.likes(List.empty[String]).query.get ==> Nil
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  FALSE       ;
+```
+:::
+
 
 ## Negation
 
 Exclude entities with a certain attribute value by calling `not(<value>)` on the attribute:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.likes.not("pizza").query.get ==> List(
   ("Ann", "sushi"),
   ("Gus", "pasta"),
 )
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes <> 'pizza'
+ORDER BY Person.name;
+```
+:::
 
-#### NOR logic
+
+## NOR logic
 
 Exclude entities by negating multiple values for an attribute
 
+::: code-tabs
+@tab Molecule
 ```scala
 // Likes NEITHER pizza NOR sushi (using varargs)
 Person.name.likes.not("pizza", "sushi").query.get ==> List(
   ("Gus", "pasta"),
 )
 
-// Likes NEITHER pizza NOR burger (using List)
-Person.name.likes.not(List("pizza", "burger")).query.get ==> List(
-  ("Ann", "sushi"),
+// Same as
+Person.name.likes.not(List("pizza", "sushi")).query.get ==> List(
   ("Gus", "pasta"),
 )
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.likes
+FROM Person
+WHERE
+  Person.name  IS NOT NULL AND
+  Person.likes NOT IN ('pizza', 'sushi')
+ORDER BY Person.name;
+```
+:::
+
 
 ## Comparison
 
 We can filter attribute values that satisfy comparison expressions.
 
+::: code-tabs
+@tab Molecule
 ```scala
-Person.age.<(18)
-Person.age.<=(18)
-Person.age.>(18)
-Person.age.>=(18)
+Person.name.a1.age_.<(18).query.i.get ==> List("Ann")
+Person.name.a1.age_.<=(18).query.i.get ==> List("Ann", "Ben")
+Person.name.a1.age_.>(18).query.i.get ==> List("Gus", "Jon")
+Person.name.a1.age_.>=(18).query.i.get ==> List("Ben", "Gus", "Jon")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  < 18
+ORDER BY Person.name;
+----------------------------------
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  <= 18
+ORDER BY Person.name;
+----------------------------------
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  > 18
+ORDER BY Person.name;
+----------------------------------
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  >= 18
+ORDER BY Person.name;
+```
+:::
+
 
 Comparison of all types are performed with java's `compareTo` method. So we can for instance also compare text strings:
 
+::: code-tabs
+@tab Molecule
 ```scala
-Person.likes.<("pi").query.get ==> List("pasta")
-Person.likes.<=("pi").query.get ==> List("pasta", "pizza")
-Person.likes.>("pi").query.get ==> List("sushi")
-Person.likes.>=("pi").query.get ==> List("pizza", "sushi")
+Person.likes.<("pizza").query.i.get ==> List("pasta")
+Person.likes.<=("pizza").query.i.get ==> List("pasta", "pizza")
+Person.likes.>("pizza").query.i.get ==> List("sushi")
+Person.likes.>=("pizza").query.i.get ==> List("pizza", "sushi")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes < 'pizza';
+----------------------------------
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes <= 'pizza';
+----------------------------------
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes > 'pizza';
+----------------------------------
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes >= 'pizza';
+```
+:::
+
 
 ## String
 
 Case-sensitive String filters can be applied
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.likes.startsWith("p").query.get ==> List("pasta", "pizza")
 Person.likes.endsWith("a").query.get ==> List("pasta", "pizza")
 Person.likes.contains("s").query.get ==> List("pasta", "sushi")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes LIKE 'p%';
+----------------------------------  
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes LIKE '%a';
+----------------------------------  
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes LIKE '%s%';    
+```
+:::
 
 Or regex matches
 
+::: code-tabs
+@tab Molecule
 ```scala
 // Starting with any letter r-z
 Person.likes.matches("^[r-z].*").query.get ==> List("sushi")
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Person.likes
+FROM Person
+WHERE
+  Person.likes ~ '^[r-z].*';
+```
+:::
+
 
 ## Number
 
@@ -247,30 +464,106 @@ Person.likes.matches("^[r-z].*").query.get ==> List("sushi")
 
 Use `%(divider, remainder)` to calculate the modulus of a number attribute. Divide attribute number values by the divider and match the remainder.
 
+::: code-tabs
+@tab Molecule
 ```scala
-Game.numbers.insert(1 to 10).transact
+Gamer.rank.insert(-4 to 4).transact
 
-// Use 
-Game.numbers.%(3, 0).query.get ==> List(3, 6, 9)
-Game.numbers.%(3, 1).query.get ==> List(1, 4, 7, 10)
-Game.numbers.%(3, 2).query.get ==> List(2, 5, 8)
-
-// Odd
-Game.numbers.%(2, 1).query.get ==> List(1, 3, 5, 7, 9)
-// Even
-Game.numbers.%(2, 0).query.get ==> List(2, 4, 6, 8, 10)
+Gamer.rank.%(3, 0).query.get ==> List(-3, 0, 3)
+Gamer.rank.%(3, 1).query.get ==> List(-4, -1, 1, 4)
+Gamer.rank.%(3, 2).query.get ==> List(-2, 2)
 ```
+@tab SQL (H2)
+```sql
+SELECT DISTINCT
+  Gamer.rank
+FROM Gamer
+WHERE
+  Gamer.rank % 3 = 0;
+----------------------------------
+SELECT DISTINCT
+  Gamer.rank
+FROM Gamer
+WHERE
+  Gamer.rank % 3 IN (1, -1);
+----------------------------------  
+SELECT DISTINCT
+  Gamer.rank
+FROM Gamer
+WHERE
+  Gamer.rank % 3 IN (2, -2);
+```
+:::
 
 #### `odd` `even`
 
 Since odd/even filters are common, they have their own methods:
 
+::: code-tabs
+@tab Molecule
 ```scala
-Game.numbers.odd.query.get ==> List(1, 3, 5, 7, 9)
-Game.numbers.even.query.get ==> List(2, 4, 6, 8, 10)
+Gamer.rank.odd.query.get ==> List(-3, -1, 1, 3)
+Gamer.rank.even.query.get ==> List(-4, -2, 0, 2, 4)
+```
+@tab SQL (H2)
+```sql
+-- odd
+SELECT DISTINCT
+  Gamer.rank
+FROM Gamer
+WHERE
+  Gamer.rank % 2 IN (1, -1);
+  
+-- even
+SELECT DISTINCT
+  Gamer.rank
+FROM Gamer
+WHERE
+  Gamer.rank % 2 = 0;
+```
+:::
+
+
+## Set
+
+Matching equality of a specific Set/Seq of values is not supported. But we can match a subselection with `has` or `hasNo`:
+
+#### `has(value)`
+
+Check for presence of one or more values in a `Set` or `Seq` (without returning the scores themselves by using tacit `scores_` attribute):
+
+```scala
+Person.name.scores.insert(
+  ("Bob", List(7, 6, 7, 4)),
+  ("Liz", List(9, 3, 6)),
+).transact
+
+Person.name.scores_.has(6).query.get ==> List("Bob", "Liz")
+Person.name.scores_.has(7).query.get ==> List("Bob")
+Person.name.scores_.has(8).query.get ==> List()
+
+// "Has any of"
+Person.name.scores_.has(1, 2, 3).query.get ==> List("Liz")
+// same as
+Person.name.scores_.has(Seq(1, 2, 3)).query.get ==> List("Liz")
 ```
 
-## Set/Seq
+#### `hasNo(value)`
+
+Check for absence of one or more values in a `Set` or `Seq`:
+
+```scala
+Person.name.scores_.hasNo(6).query.get ==> List()
+Person.name.scores_.hasNo(7).query.get ==> List("Liz")
+Person.name.scores_.hasNo(8).query.get ==> List("Bob", "Liz")
+
+// "Has none of"
+Person.name.scores_.hasNo(1, 2, 3).query.get ==> List("Bob")
+// same as
+Person.name.scores_.hasNo(Seq(1, 2, 3)).query.get ==> List("Bob")
+```
+
+## Seq
 
 Matching equality of a specific Set/Seq of values is not supported. But we can match a subselection with `has` or `hasNo`:
 

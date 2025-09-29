@@ -94,11 +94,26 @@ Using the attribute name as-is ensures that only results containing the attribut
 
 Here, both `name` and `age` are mandatory, and only Bob has both:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.age.query.get ==> List(
   ("Bob", 42),
 )
 ```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.age
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  IS NOT NULL;
+```
+:::
+
+
 The equivalent for SQL queries is adding a `where` clause of `<attr> is not null`.
 
 
@@ -109,11 +124,24 @@ Add an underscore to the attribute name to make it "tacit" or silent. This guara
 
 Here we get the `name`s of persons that have an `age` set without returning the age:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.age_.query.get ==> List(
   "Bob"
 )
 ```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Person.name
+FROM Person
+WHERE
+  Person.name IS NOT NULL AND
+  Person.age  IS NOT NULL;
+```
+:::
+
 This way we can switch on and off individual attributes from the result set without affecting the data structures we look for.
 
 The equivalent for SQL queries is again adding a `where` clause of `attr is not null` but this time not having the attribute in the `select` section.
@@ -126,12 +154,24 @@ Add `_?` to an attribute to make it optional. This will return entities that bot
 
 Here we get the `name`s of persons and an optional `age`:
 
+::: code-tabs
+@tab Molecule
 ```scala
 Person.name.age_?.query.get ==> List(
   ("Bob", Some(42)),
   ("Liz", None),
 )
 ```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Person.name,
+  Person.age
+FROM Person
+WHERE
+  Person.name IS NOT NULL;
+```
+:::
 A null value in an SQL table becomes a `None` in the result returned by the molecule.
 
 

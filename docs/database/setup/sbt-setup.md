@@ -10,7 +10,7 @@ Molecule uses the sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-mole
 Add the latest version of the plugin in `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.20.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.21.0")
 ```
 
 Enable the plugin in your `build.sbt` file and import the molecule library that corresponds to the database(s) that you will use:
@@ -20,11 +20,11 @@ lazy val app = project
   .settings(
       libraryDependencies ++= Seq(
         // One or more database-specific imports
-        "org.scalamolecule" %% "molecule-db-h2" % "0.25.1",
-        "org.scalamolecule" %% "molecule-db-mariadb" % "0.25.1",
-        "org.scalamolecule" %% "molecule-db-mysql" % "0.25.1",
-        "org.scalamolecule" %% "molecule-db-postgres" % "0.25.1",
-        "org.scalamolecule" %% "molecule-db-sqlite" % "0.25.1",
+        "org.scalamolecule" %% "molecule-db-h2" % "0.26.0",
+        "org.scalamolecule" %% "molecule-db-mariadb" % "0.26.0",
+        "org.scalamolecule" %% "molecule-db-mysql" % "0.26.0",
+        "org.scalamolecule" %% "molecule-db-postgres" % "0.26.0",
+        "org.scalamolecule" %% "molecule-db-sqlite" % "0.26.0",
       )
     )
 ```
@@ -89,7 +89,7 @@ src
 
 ### DSL code
 
-Boilerplate DSL code is generated in `target/scala-3.7.1/src_managed/main/moleculeGen`. Managed source code there is not supposed to be modified since it will be overwritten on each new generation with `sbt moleculeGen`. But you can inspect the code as normal code if you like. The following files are generated:
+Boilerplate DSL code is generated in `target/scala-3.7.3/src_managed/main/moleculeGen`. Managed source code there is not supposed to be modified since it will be overwritten on each new generation with `sbt moleculeGen`. But you can inspect the code as normal code if you like. The following files are generated:
 
 ```
 moleculeGen
