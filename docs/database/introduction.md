@@ -23,8 +23,8 @@ Compose a "molecule" data model with the words of your domain in plain Scala ins
 Person.name.age.Address.street
 ```
 @tab SQL
-```scala
-sql"""SELECT
+```sql
+SELECT
   Person.name,
   Person.age,
   Address.street
@@ -33,7 +33,7 @@ FROM Person
     ON Person.address = Address.id
 WHERE
   Person.name IS NOT NULL AND
-  Person.age  IS NOT NULL;"""
+  Person.age  IS NOT NULL;
 ```
 @tab ScalaSql
 ```scala

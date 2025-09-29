@@ -225,19 +225,19 @@ object delete extends H2Tests {
 
       // Insert 2 invoices, each with 2 invoice lines
       Invoice.no.Lines.*(
-        InvoiceLine.qty.product.lineTotal
+        InvoiceLine.product.amount
       ).insert(
         // Invoice 1
         (1, List(
           // Invoice lines for invoice 1
-          (2, "Socks", 30),
-          (5, "Bread", 50),
+          ("Socks", 30),
+          ("Bread", 50),
         )),
 
         // Invoice 2
         (2, List(
-          (1, "Knife", 50),
-          (4, "Bread", 40),
+          ("Knife", 50),
+          ("Bread", 40),
         ))
       ).transact
 
@@ -246,18 +246,18 @@ object delete extends H2Tests {
 
       // Invoice 1 and its invoice lines deleted
       Invoice.no.a1.Lines.*?(
-        InvoiceLine.qty.a1.product.lineTotal
+        InvoiceLine.product.a1.amount
       ).query.get ==> List(
         (2, List(
-          (1, "Knife", 50),
-          (4, "Bread", 40),
+          ("Bread", 40),
+          ("Knife", 50),
         ))
       )
 
       // Confirming that invoice lines of invoice have been deleted
-      InvoiceLine.qty.a1.product.lineTotal.query.get ==> List(
-        (1, "Knife", 50),
-        (4, "Bread", 40),
+      InvoiceLine.product.a1.amount.query.get ==> List(
+        ("Bread", 40),
+        ("Knife", 50),
       )
     }
   }

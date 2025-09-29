@@ -191,7 +191,7 @@ Person.name.age.query.get ==> List(
 
 ## Relationships
 
-Delete entities and their relationships with filters across namespaces:
+Delete entities and their relationships with filters across related entities:
 
 ```scala
 Person.name.Home.?(Address.street).insert(
@@ -209,7 +209,7 @@ Person.name.Home.?(Address.street).query.get ==> List(
   ("Tod", None),
 )
 ```
-All the previous filters can be applied across namespaces to build complex deletion selections.
+All the previous filters can be applied across relationships to build complex deletion selections.
 
 ## Owner refs
 
@@ -220,7 +220,7 @@ The classical example is an Invoice owning its Invoice Lines. This can be modell
 ```scala
 trait Invoice {
   ...
-  val lines = many[InvoiceLine].owner // Invoice owns InvoiceLine's
+  val lines = manyToOne[InvoiceLine].owner // Invoice owns InvoiceLine's
 }
 ```
 
@@ -265,7 +265,7 @@ InvoiceLine.qty.product.lineTotal.query.get ==> List(
 )
 ```
 
-Beware that ownership applies recursively! So, if we had definied a further ownership from InvoiceLine to another namespace, this would have been deleted too when an Invoice is deleted.
+Beware that ownership applies recursively! So, if we had defined a further ownership from InvoiceLine to another entity, this would have been deleted too when an Invoice is deleted.
 
 
 ##### [<i class="fas fa-handshake" style="margin-right: 4px;"></i> Delete action compliance tests](https://github.com/scalamolecule/molecule/tree/main/db/compliance/shared/src/test/scala/molecule/db/compliance/test/action/delete)

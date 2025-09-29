@@ -296,7 +296,7 @@ Player.name.goals_.>=(5)
 
 ## Cross ns
 
-So far we have compared attributes of the same namespace. We can also compare an attribute with a filter attribute from a referenced namespace. Let's expand our example data a bit by adding a relationship:
+So far we have compared attributes of the same entity. We can also compare an attribute with a filter attribute from a related entity. Let's expand our example data a bit by adding a relationship:
 
 ```scala
 Player.name.goals
@@ -306,7 +306,7 @@ Player.name.goals
   ("Salah", 5, "Galactico", 4, 5000000),
 )
 ```
-Now we can ask questions across namespaces like "which players of what teams scored enough goals to get a bonus?"
+Now we can ask questions across related entities like "which players of what teams scored enough goals to get a bonus?"
 ```scala
 Player.name.goals.>=(Team.goalsToBonus_)
   .Team.name.goalsToBonus.bonus.query.get ==> List(
@@ -323,7 +323,7 @@ Player.name.goals
 )
 ```
 
-The attribute in the filter expression has to be tacit, and it has to be present and mandatory in the ref namespace. Otherwise, Molecule will warn you:
+The attribute in the filter expression has to be tacit, and it has to be present and mandatory in the related entity. Otherwise, Molecule will warn you:
 
 ```scala
 intercept[ModelError] {

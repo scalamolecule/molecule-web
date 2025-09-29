@@ -70,7 +70,10 @@ export default sidebar({
             expanded: false,
             prefix: "relationships",
             children: [
-                "relationships",
+                "many-to-one",
+                "one-to-many",
+                "many-to-many",
+                "complex-example",
             ],
         },
 

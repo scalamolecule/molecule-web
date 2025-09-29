@@ -173,13 +173,43 @@ div.mermaid-actions {
   display: none;
 }
 
-.mermaid-content .edgeLabel:empty {
-  display: none;
-}
-
-// .edgeLabel {
-//   padding: 8px 8px; // creates space left and right
+// .mermaid-content .edgeLabel:empty {
+//   display: none;
 // }
+
+// /* 1) Expand the foreignObject so padding has room */
+// .mermaid-content .edgeLabels .edgeLabel > g > foreignObject {
+//   /* target extra padding you want: px values below */
+//   --pad-x: 8px;
+//   --pad-y: 4px;
+//   width: calc(100% + (2 * var(--pad-x))) !important;
+//   height: calc(100% + (2 * var(--pad-y))) !important;
+// }
+//
+// /* 2) Counter-translate the inner label group by half the extra size
+//       so the box remains visually centered on the edge */
+// .mermaid-content .edgeLabels .edgeLabel > g {
+//   transform: translate(calc(-1 * var(--pad-x)), calc(-1 * var(--pad-y))) !important;
+// }
+//
+// /* 3) Add actual padding and appearance to the HTML container */
+// .mermaid-content .edgeLabels .edgeLabel .labelBkg,
+// .mermaid-content .edgeLabels .edgeLabel .labelBkg > span,
+// .mermaid-content .edgeLabels .edgeLabel .labelBkg p {
+//   padding: var(--pad-y) var(--pad-x) !important;
+//   border-radius: 4px;
+//   line-height: 1.2;
+//   background-color: rgba(0,0,0,0.35) !important;
+//   color: #fff !important;
+//   white-space: nowrap; /* prevents wrap-induced mis-centering */
+// }
+//
+// /* 4) Hide Mermaid’s background rect to avoid double boxes */
+// .mermaid-content .edgeLabels .edgeLabel rect {
+//   fill: transparent !important;
+//   opacity: 0 !important;
+// }
+
 
 
 p.hint-container-title {

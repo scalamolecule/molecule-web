@@ -245,7 +245,7 @@ UPDATE Person
   SET age = ?
 WHERE
 Person.id IN (benId) AND
-  Person.age IS NOT NULL
+  Person.age IS NOT NULL;
 ```
 
 @tab Delete
@@ -287,20 +287,20 @@ object WebCompany extends DomainStructure {
 
   trait Employee {
     val name      = oneString
-    val frontends = many[Project].designers
-    val backends  = many[Project]
+    val frontends = manyToOne[Project].designers
+    val backends  = manyToOne[Project]
   }
 
   trait Project {
     val name      = oneString
     val budget    = oneInt
-    val designers = many[Employee]
-    val engineers = many[Employee].backends
+    val designers = manyToOne[Employee]
+    val engineers = manyToOne[Employee].backends
   }
 
 
   trait Person {
-    val friends = many[Person]
+    val friends = manyToOne[Person]
   }
 }
 ```

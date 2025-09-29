@@ -1,4 +1,4 @@
-package docs.query
+package docs.relationship
 
 import db.compare.tutorials.scalasql.dsl.World.metadb.World_h2
 import db.dataModel.dsl.Person.metadb.Person_h2
@@ -43,6 +43,10 @@ object relationships extends H2Tests {
         Country.name.query.get.head ==>
         ("Bob", 42, "Main st. 17", 10240, "USA")
 
+      Person.name.age.
+        Home.street.zip.
+        Country.name_("USA").query.get.head ==>
+        ("Bob", 42, "Main st. 17", 10240)
     }
 
     "persons" - h2(Person_h2()) {
@@ -135,10 +139,9 @@ object relationships extends H2Tests {
         (Some("Bob"), "Main st. 17"),
       )
 
-      // Multiple optional related attributes
-      Person.name.age.Home.?(Address.street.zip).query.get ==> List(
-        ("Bob", 42, Some(("Main st. 17", 10240))), // Option[<tuple>]
-        ("Liz", 38, None)
+      Person.?(Person.name.age).Home.street.query.get ==> List(
+        (None, "Lonely st. 1"),
+        (Some(("Bob", 42)), "Main st. 17"),
       )
 
 
@@ -195,7 +198,7 @@ object relationships extends H2Tests {
 
       // Inside
       Person.name.age
-        .Home.?(Address.street.Country.name).query.get ==> List(
+        .Home.?(Address.street.Country.name).query.i.get ==> List(
         ("Bob", 42, Some(("Main st. 17", "USA"))),
         ("Liz", 38, None)
       )

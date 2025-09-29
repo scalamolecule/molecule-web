@@ -16,23 +16,22 @@ object CompanyTest extends H2Tests {
 
       val List(d1, d2, d3) = Department.name.insert("Development", "Design", "Marketing").transact.ids
 
-      val List(e1, e2, e3, e4, e5, e6, e7, e8) = Employee.name.department.insert(
-        ("Alice", d1),
-        ("Bob", d1),
-        ("Carol", d1),
-        ("Diana", d1),
-        ("Eve", d2),
-        ("Frank", d2),
-        ("Grace", d3),
-        ("Boss", d3),
-      ).transact.ids
+      val List(e1, e2, e3, e4, e5, e6, e7, e8) =
+        Employee.name.department.insert(
+          ("Alice", d1),
+          ("Bob", d1),
+          ("Carol", d1),
+          ("Diana", d1),
+          ("Eve", d2),
+          ("Frank", d2),
+          ("Grace", d3),
+          ("Boss", d3),
+        ).transact.ids
 
-//      val List(p1, p2, p3, p4) = Project.name.budget.insert(
       val List(p1, p2, p3) = Project.name.budget.insert(
         ("BigProject", 2000000),
         ("MediumProject", 1200000),
         ("SmallProject", 400000),
-//        ("Pilot", 80000), // no-one assigned yet
       ).transact.ids
 
       Assignment.employee.project.role.insert(
@@ -53,28 +52,27 @@ object CompanyTest extends H2Tests {
         // Boss is not assigned to a project
       ).transact
 
-
-      // Find departments and number of employees
+      // Departments and number of employees
       Department.name.Employees.id(countDistinct).d1
         .query.get ==> List(("Development", 4), ("Design", 2), ("Marketing", 2))
 
-      // Find departments and number of employees working on projects
+      // Departments and number of employees working on projects
       Department.name.Employees.id(countDistinct).d1.Assignments.project_
         .query.get ==> List(("Development", 4), ("Design", 2), ("Marketing", 1)) // Boss not working on a specific project
 
-      // Find departments and number of developers (no boss) working on projects
+      // Departments and number of developers (no boss) working on projects
       Department.name.Employees.id(countDistinct).d1.Assignments.role_("Dev")
         .query.get ==> List(("Development", 3))
 
-      // Find departments and number of employees working on projects with a budget over one million
+      // Departments and number of employees working on projects with a budget over one million
       Department.name.Employees.id(countDistinct).d1.Projects.budget_.>(1000000)
         .query.get ==> List(("Development", 4), ("Design", 2))
 
-      // Find departments and number of employees working on projects with more than 2 developers and a budget over one million
+      // Departments and number of employees working on projects with more than 2 developers and a budget over one million
       Department.name.Employees.id(countDistinct).>(2).d1.Projects.budget_.>(1000000)
         .query.get ==> List(("Development", 4))
 
-      // Find departments and number of developers working on projects with more than 2 developers and a budget over one million
+      // Departments and number of developers working on projects with more than 2 developers and a budget over one million
       // Using attribute `role` of `Assignment` join table
       Department.name.Employees.id(countDistinct).>(2).d1.Assignments.role_("Dev").Project.budget_.>(1000000)
         .query.get ==> List(("Development", 3))
@@ -84,7 +82,7 @@ object CompanyTest extends H2Tests {
         .Employees.id(countDistinct).>(2).d1
         .Assignments.role_("Dev")
         .Project.budget_.>(1000000)
-        .query.i.get ==> List(("Development", 3))
+        .query.get ==> List(("Development", 3))
 
       // SQL equivalent!
       rawQuery(
@@ -113,6 +111,8 @@ object CompanyTest extends H2Tests {
         .query.get ==> List((4, "Development"))
 
 
+
+
       // Many-to-many join
       Employee.name.a1.Projects.**(Project.name).query.get ==> List(
         ("Alice", List("BigProject", "MediumProject")),
@@ -128,6 +128,10 @@ object CompanyTest extends H2Tests {
         ("BigProject", List("Alice", "Bob", "Carol", "Diana")),
         ("MediumProject", List("Alice", "Bob", "Eve", "Frank")),
         ("SmallProject", List("Grace")),
+      )
+      Project.name.a1.Employees.**(Employee.name.Department.name_.startsWith("De")).query.get ==> List(
+        ("BigProject", List("Alice", "Bob", "Carol", "Diana")),
+        ("MediumProject", List("Alice", "Bob", "Eve", "Frank")),
       )
 
       // Same as going through the `Assignment` join table
@@ -147,12 +151,13 @@ object CompanyTest extends H2Tests {
       )
 
 
+
       // Combining one-to-many and many-to-many joins
       Department.name.a1.Employees.*( // one-many, one Department to many Employees
         Employee.name.a1.Projects.**( // many-many, many Employees to many Projects
           Project.name.a1.budget
         )
-      ).query.get ==> List(
+      ).query.i.get ==> List(
         ("Design", List(
           ("Eve", List(
             ("MediumProject", 1200000))),
@@ -173,42 +178,53 @@ object CompanyTest extends H2Tests {
           ("Grace", List(
             ("SmallProject", 400000)))))
       )
-//
-//      Employee.name.a1.Assignments.*(Assignment.role.Project.name).insert(
-//        ("John", List(("Dev", "BigProject")))
-//      ).i.transact
-//
-//      Employee.name.a1.Assignments.*(Assignment.Project.name.budget).insert(
-//        ("John", List(("BigProject", 42)))
-//      ).i.transact
 
       Employee.name.a1.Projects.**(Project.name.budget).insert(
         ("John", List(("OtherProject", 100000)))
-      ).i.transact
+      ).transact
 
-//      Employee.name.a1.Assignments.*(Assignment.role).insert(
-//        ("John", List("Joker"))
-//      ).i.transact
-//
-//      Employee.name.a1.Assignments.*(Assignment.Project.name).insert(
-//        ("John", List("BigProject"))
-//      ).i.transact
 
-//      Employee.name.a1.Projects.**(Project.name).insert(
-//        ("John", List("BigProject", "MediumProject"))
-//      ).transact
-      
-      
-      Employee.name.a1.Projects.**(Project.name).query.get ==> List(
-        ("Alice", List("BigProject", "MediumProject")),
-        ("Bob", List("BigProject", "MediumProject")),
-        ("Carol", List("BigProject")),
-        ("Diana", List("BigProject")),
-        ("Eve", List("MediumProject")),
-        ("Frank", List("MediumProject")),
-        ("Grace", List("SmallProject")),
-        ("John", List("OtherProject")),
+      Project.name.a1.Assignments.*(Assignment.role).query.get ==> List(
+        ("BigProject", List("Dev", "Lead")),
+        ("MediumProject", List("Designer", "Dev", "Lead")),
+        ("SmallProject", List("Marketer"))
       )
+
+      Employee.name.a1.Assignments.*(Assignment.role).query.get ==> List(
+        ("Alice", List("Dev", "Lead")),
+        ("Bob", List("Dev")),
+        ("Carol", List("Lead")),
+        ("Diana", List("Dev")),
+        ("Eve", List("Designer")),
+        ("Frank", List("Designer")),
+        ("Grace", List("Marketer"))
+      )
+
+      Employee.name.a1.Assignments.*(Assignment.role_("Dev").Project.name).query.get ==> List(
+        ("Alice", List("BigProject")),
+        ("Bob", List("BigProject", "MediumProject")),
+        ("Diana", List("BigProject"))
+      )
+
+      Project.name.Assignments.*(Assignment.role.Employee.name.a1).query.get ==> List(
+        ("BigProject", List(
+          ("Dev", "Alice"),
+          ("Dev", "Bob"),
+          ("Lead", "Carol"),
+          ("Dev", "Diana"),
+        )),
+        ("MediumProject", List(
+          ("Lead", "Alice"),
+          ("Dev", "Bob"),
+          ("Designer", "Eve"),
+          ("Designer", "Frank"),
+        )),
+        ("SmallProject", List(
+          ("Marketer", "Grace")
+        )),
+      )
+
+      Assignment.role_("Designer").Employee.name.query.get ==> List("Eve", "Frank")
     }
   }
 }

@@ -20,10 +20,10 @@ object Community extends DomainStructure {
 ```
 Molecule generates boilerplate code from this definition so that you can compose molecules of domain data.
 
-In SQL databases, entities/attributes translate to Tables and Columns.
+In SQL databases, entities/attributes translate to tables and columns.
 
 
-## Groups of entities
+## Segments
 
 A complex domain can group conceptually related entities in Segments as objects (beginning with lowercase letter):   
 
@@ -37,7 +37,7 @@ object Company extends DomainStructure {
     }
     trait Person {
       val name        = oneString
-      val professions = many[Profession]
+      val professions = manyToOne[Profession]
     }
   }
 
@@ -47,7 +47,7 @@ object Company extends DomainStructure {
       val no          = oneInt
       val contact     = manyToOne[hr.Person]
       val mainProduct = manyToOne[warehouse.Item]
-      val lines       = many[InvoiceLine]
+      val lines       = manyToOne[InvoiceLine]
     }
     trait InvoiceLine {
       val text    = oneString
@@ -82,22 +82,16 @@ accounting_Invoice.no.Contact.name.query.get
 
 ## Attributes
 
-As we saw in the examples above, an attribute is defined by applying a marker to a `val` with the name of the attribute:
+As we saw in the examples above, an attribute is defined as `val` that points to a marker defining the type of the attribute:
 
 ```scala
 val firstName = oneString
 ```
-This defines the cardinality and type of the Attribute, here a String Attribute named "firstName" with cardinality-one (it contains a single value).
+The "one" part indicates that this is single scalar value. It can also be "set", "seq" or "map" since Molecule supports collection types too.
+
 
 Unlike other database libraries that accommodate to the available types of various databases, Molecule thinks the other way around and enables the database to handle all Scala primitives. 
-          
-::: info
-_"Let the database come to Scala"_ 
-
-instead of 
-
-"Let Scala come to the database"
-:::
+   
 
 All primitive Scala type plus some common java types can be defined as attributes:
 
@@ -111,11 +105,9 @@ Molecule transparently maps each type to a corresponding or useful value type fo
 
 ### Collections
 
-Some databases support Arrays. 
+Molecule saves collection data as arrays or json depending on the capability of the database. All immutable `Set`, `Seq` and `Map` Scala collection types can be saved with Molecule.
 
-But Molecule takes it all the way by persisting and querying all immutable `Set`, `Seq` and `Map` Scala collection types!
-
-Again, think of data in your Scala code, and let it transparently be persisted in a database with Molecule. When a complete many-to-many relation to other entities are overkill, like a few nicknames, then we can for instance pick a `Set` from the immutable collections hierarchy of Scala: 
+When a complete many-to-many relation to other entities are overkill, like a few nicknames, then we can for instance pick a `Set` from the immutable collections hierarchy of Scala: 
 
 ```mermaid
 graph TD
@@ -151,7 +143,7 @@ graph TD
     linkStyle default stroke: grey;
 ```
 
-Collection types are prefixed to the element type in the domain structure definition:
+Collection types are prefixed to the attribute type in the domain structure definition:
 
 ```scala
 val hobbies      = setString // Set of String
@@ -318,8 +310,8 @@ trait Hobby:
   
 // Many-to-many relationship - Persons and Hobbies are independent
 trait Interest:
-  val person_id = manyToOne[Person]
-  val hobby_id  = manyToOne[Hobby]
+  val person = manyToOne[Person]
+  val hobby  = manyToOne[Hobby]
 ```
 :::
 
@@ -343,121 +335,26 @@ In databases that support json, `Map`s are saved as json. Otherwise, a synthetic
 In your code you can simply think in terms of a Scala `Map`.
 
 
-
-## Relationships
-
-SQL relationships are modelled with foreign keys, each referencing the primary key of another table.
-
-
-### many-to-one
-
-In Molecule, we always define a relationship on the entity where the foreign key is, the "many" side. 
-
-Many InvoiceLines can for instance have a ref attribute `invoice` - or foreign key - that points to the one Invoice they belong to:
-
-```scala
-trait InvoiceLine:
-  val invoice = manyToOne[Invoice] // foreign key to one Invoice
-```
-The `invoice` foreign key, or ref attribute, is accessible as any other attribute:
-
-```scala
-val invoiceId: Long = InvoiceLine.invoice.query.get.head
-```
-And from an `InvoiceLine` we can relate to `Invoice` to get the invoice number:
-```scala
-val invoiceNumber: Int = InvoiceLine.Invoice.no.query.get.head
-```
-
-
-
-### one-to-many
-
-We could also say that an `Invoice` has a one-to-many relationship to its invoice lines. But we still always define the relationship on the entity where the foreign key is - the "many" side, in this case on `InvoiceLine`.
-
-Molecule generates a one-to-many relationship accessor so we can access invoice lines directly from an invoice:
-```scala
-val lineCount: Int = Invoice.InvoiceLines.id(count).query.get.head
-```
-Or we can access the invoices lines as nested data:
-```scala
-Invoice.no.InvoiceLines.*(InvoiceLine.text.qty.amount).query.get ==> List(
-  (1, List(
-    ("coffee", 2, 10.0),
-    ("tea", 1, 4.0))),
-  (2, List(
-    ("chocolate", 5, 40.0),
-    ("milk", 2, 3.0))),
-)
-```
-##### One-to-many relationship name
-
-When defined as 
-```scala
-trait InvoiceLine:
-  val invoice = manyToOne[Invoice]
-```
-Molecule will as a default use the plural name of the `InvoiceLine` entity where the relationship is defined as the one-to-many relationship name, in this case `InvoiceLines`.
-
-We can also define the one-to-many relationship name explicitly with `oneToMany("MyName")`:
-```scala
-trait InvoiceLine:
-  val invoice = manyToOne[Invoice].oneToMany("Lines")
-```
-And we would then write this instead:
-```scala
-val lineCount: Int = Invoice.Lines.id(count).query.get.head
-```
-
-### many-to-many
-
-A many-to-many relationship is defined with a join entity that holds two (or more) many-to-one foreign keys.
-
-```scala
-trait Association:
-  val person_id = manyToOne[Person]
-  val group_id  = manyToOne[Group]
-```
-
-And we can access the associations as nested data:
-```scala
-Person.name.Associations.*(Association.Group.name).query.get ==> List(
-  ("Bob", List("Group A", "Group B")),
-  ("Alice", List("Group b", "Group D")),
-)
-```
-Or the other way around:
-```scala
-Group.name.Associations.*(Association.Person.name).query.get ==> List(
-  ("Group B", List("Bob", "Alice")),
-)
-```
-
-
-### one-to-one
-
-A one-to-one relationship is defined with a separate entity that holds a one-to-one foreign key.
-
 ## Attribute options
 
-One or more options can be added fluently to each attribute definition. 
+One or more options can be added to each attribute definition. 
 
 Here we define a `lastName` attribute and ask the database to index it and make it mandatory when persisting entities where the attribute belongs. So, if we want to add a `Person` in the database, we can only save it if the `lastName` attribute is set.
 
 ```scala
-val lastName = oneString.descr("Last name of person").indexed.mandatory
+val lastName = oneString.description("Last name of person").indexed.mandatory
 ```
 
 The following Attribute definition options are available in Molecule:
 
 
-### `descr`
+### `description`
 
 A description of an attribute is used to simply clarify the intention of the attribute. 
-The description can be added either with the `descr` method or applied to the type definition:
+The description can be added either with the `description` method or applied to the type definition:
 
 ```scala
-val lastName = oneString.descr("Last name of person")
+val lastName = oneString.description("Last name of person")
 // or
 val lastName = oneString("Last name of person")
 ```
@@ -536,7 +433,7 @@ val socialSecurityNumber = oneString.unique
 
 ### `mandatory`
 
-Enforce that the value of an attribute is always unique:
+Enforce that the value of an attribute is always present:
 
 ```scala
 val lastName = oneString.mandatory
@@ -573,7 +470,7 @@ val z = oneInt
 
 `regex`
 
-String attributes can have values conforming to a regex pattern:
+String attributes can be enforced to only have values that conform to a regex pattern:
 
 ```scala
 val username = oneString.regex("^[a-zA-Z0-9]+$")
@@ -593,6 +490,7 @@ String attributes can be defined to only accept valid emails:
 ```scala
 val email = oneString.email
 
+// or with custom error message
 val emailWithMsg = oneString.email("Please provide a real email")
 ```
 Strings are validated against the following regex taken from [here](https://www.baeldung.com/java-email-validation-regex).
@@ -601,3 +499,324 @@ Strings are validated against the following regex taken from [here](https://www.
 "^(?=.{1,64}@)[\\p{L}0-9_-]+(\\.[\\p{L}0-9_-]+)*@[^-][\\p{L}0-9-]+(\\.[\\p{L}0-9-]+)*(\\.[\\p{L}]{2,})$".r
 ```
 
+
+
+## Relationships
+
+As in an SQL schema definition we define a relationship with a foreign key attribute that points to the related entity.
+
+For instance we define `InvoiceLine`s to have a foreign key attribute `invoice` that points to the `Invoice` they belong to:
+
+```scala
+trait InvoiceLine:
+  val invoice = manyToOne[Invoice] // foreign key to one Invoice
+```
+
+As with SQL, in Molecule, we always define a relationship on the entity where the foreign key is, the "many" side. To be explicit about this, we use the `manyToOne` method to define the relationship. Many invoice lines are related to one invoice.
+
+
+#### Foreign key constraint 
+
+For each foreign key defined, Molecule adds a foreign key constraint in the generated SQL schema definition:
+
+```sql
+-- Foreign key constraints
+ALTER TABLE InvoiceLine 
+  ADD CONSTRAINT `_invoice` 
+  FOREIGN KEY (invoice) 
+  REFERENCES Invoice (id);
+```
+
+
+#### Foreign key index
+
+Molecule also generates an index for the foreign key attribute in the generated SQL schema definition:
+
+```sql
+-- Foreign key indexes
+CREATE INDEX IF NOT EXISTS _InvoiceLine_invoice ON InvoiceLine (invoice);
+```
+
+
+#### Foreign key attribute
+
+The `invoice` foreign key attribute is accessible as any other attribute:
+
+```scala
+val invoiceId: Long = InvoiceLine.invoice.query.get.head
+```
+
+### Many-to-one
+
+Molecule uses the capitalized name of the foreign key attribute as a relationship accessor name to go from the many-side to the one-side.
+
+In our invoice example we can therefore query the original many-to-one relationship from `InvoiceLine` to `Invoice` by using the capitalized `Invoice` many-to-one relationship accessor:
+
+::: code-tabs
+@tab Molecule
+```scala
+InvoiceLine.product.Invoice.no.query.get ==> List(
+  ("Chocolate", 2),
+  ("Coffee", 1),
+  ("Milk", 1),
+  ("Tea", 1),
+  ("Tea", 2),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  InvoiceLine.product,
+  Invoice.no
+FROM InvoiceLine
+  INNER JOIN Invoice ON
+    InvoiceLine.invoice = Invoice.id
+WHERE
+  InvoiceLine.product IS NOT NULL AND
+  Invoice.no          IS NOT NULL;
+```
+:::
+
+### One-to-many
+
+Molecule also generates a relationship accessor in the reverse direction from the one-side to the many-side by using the pluralized name of the entity where the relationship is defined. In our example, "InvoiceLine" where the relationship is defined is pluralized to "InvoiceLines".
+
+So now we can query the one-to-many relationship from `Invoice` to `InvoiceLine` by using the `InvoiceLines` one-to-many relationship accessor:
+
+::: code-tabs
+@tab Molecule
+```scala
+Invoice.no.InvoiceLines.product.query.get ==> List(
+  (1, "Coffee"),
+  (1, "Milk"),
+  (1, "Tea"),
+  (2, "Chocolate"),
+  (2, "Tea"),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Invoice.no,
+  InvoiceLine.product
+FROM Invoice
+  INNER JOIN InvoiceLine ON
+    Invoice.id = InvoiceLine.invoice
+WHERE
+  Invoice.no          IS NOT NULL AND
+  InvoiceLine.product IS NOT NULL;
+```
+:::
+
+
+::: info
+Note that relationships - independent of bidirectional queries - are always defined from the "many" side to the "one" side.
+:::
+
+#### Custom one-to-many name
+
+We can also define the one-to-many relationship name explicitly by adding `oneToMany("MyName")` after the relationship definition:
+```scala
+trait InvoiceLine:
+  val invoice = manyToOne[Invoice].oneToMany("Lines")
+```
+Then Molecule will call the reverse relationship accessor `Lines` instead. The SQL query will be the same as above since `Lines` still points to the same table `InvoiceLine`:
+
+::: code-tabs
+@tab Molecule
+```scala
+Invoice.no.Lines.product.query.get ==> List(
+  (1, "Coffee"),
+  (1, "Milk"),
+  (1, "Tea"),
+  (2, "Chocolate"),
+  (2, "Tea"),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Invoice.no,
+  InvoiceLine.product
+FROM Invoice
+  INNER JOIN InvoiceLine ON
+    Invoice.id = InvoiceLine.invoice
+WHERE
+  Invoice.no          IS NOT NULL AND
+  InvoiceLine.product IS NOT NULL;
+```
+:::
+
+
+### Cascade delete
+
+Add the `owner` option to a relationship definition to delete all related entities when the "owner" entity is deleted.
+
+In our invoice example, we can define the invoice relationship with `owner` to let the invoice own its invoice lines:
+
+```scala
+val invoice = manyToOne[Invoice].owner // Invoice owns its invoice lines
+
+// or with custom reverse name
+val invoice = manyToOne[Invoice].oneToMany("Lines").owner
+```
+
+Adding the `owner` option makes Molecule add "ON DELETE CASCADE" to the foreign key constraint in the generated SQL schema definition:
+
+```sql
+-- Foreign key constraints
+ALTER TABLE InvoiceLine 
+  ADD CONSTRAINT `_invoice` 
+  FOREIGN KEY (invoice) 
+  REFERENCES Invoice (id) 
+  ON DELETE CASCADE;
+```
+
+::: warning
+Beware! Owned relationships _delete all related entities_ when the "owner" entity is deleted. So in the example above, if an invoice is deleted, all its invoice lines will be deleted!
+:::
+
+
+### Nested accessor
+
+One-to-many relationships can even be queried as [nested data](/database/relationships/nested), now using the `Lines.*` accessor:
+
+::: code-tabs
+@tab Molecule
+```scala
+Invoice.no.Lines.*(InvoiceLine.product).query.i.get ==> List(
+  (1, List("Coffee", "Milk", "Tea")),
+  (2, List("Chocolate", "Tea")),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Invoice.id,
+  Invoice.no,
+  InvoiceLine.product
+FROM Invoice
+  INNER JOIN InvoiceLine ON
+    Invoice.id = InvoiceLine.invoice
+WHERE
+  Invoice.no          IS NOT NULL AND
+  InvoiceLine.product IS NOT NULL;
+```
+:::
+
+The only difference between the "flat" and "nested" SQL queries is that Molecule for the nested query also returns the id of the parent entity (`Invoice.id`) in order to nest the data correctly.
+
+### Many-to-many
+
+As in SQL, a many-to-many relationship is defined in Molecule with a join table/entity that defines two or more many-to-one relationships to the entities that need to be joined.
+
+To be treated as a many-to-many relationship by Molecule, the joining entity (`Assignment`) must extend the `Join` trait as shown below:
+
+```scala
+object Company extends DomainStructure {
+  trait Project {
+    val name   = oneString
+    val budget = oneInt
+  }
+  trait Employee {
+    val name = oneString
+  }
+  trait Assignment extends Join { // extend Join to treat as many-to-many
+    val project  = manyToOne[Project]
+    val employee = manyToOne[Employee]
+    val role     = oneString
+  }
+}
+```
+We can still query with a normal one-to-many nested relationship from `Project` to `Assignment` and then a flat many-to-one relationship from `Assignment` to `Employee`:
+
+::: code-tabs
+@tab Molecule
+```scala
+Project.name.Assignments.*(Assignment.Employee.name).query.get ==> List(
+  ("BigProject", List("Alice", "Bob", "Carol", "Diana")),
+  ("MediumProject", List("Alice", "Bob", "Eve", "Frank")),
+  ("SmallProject", List("Grace")),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Project.id,
+  Project.name,
+  Employee.name
+FROM Project
+  INNER JOIN Assignment ON
+    Project.id = Assignment.project
+  INNER JOIN Employee ON
+    Assignment.employee = Employee.id
+WHERE
+  Project.name  IS NOT NULL AND
+  Employee.name IS NOT NULL;
+```
+:::
+
+
+### Bridged accessor
+
+But by extending the `Join` trait, we can also query the many-to-many relationship directly from `Project` to `Employee` by using the bridging `Employees.**` many-to-many relationship accessor:
+
+::: code-tabs
+@tab Molecule
+```scala
+Project.name.Employees.**(Employee.name).query.get ==> List(
+  ("BigProject", List("Alice", "Bob", "Carol", "Diana")),
+  ("MediumProject", List("Alice", "Bob", "Eve", "Frank")),
+  ("SmallProject", List("Grace")),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Project.id,
+  Project.name,
+  Employee.name
+FROM Project
+  INNER JOIN Assignment ON
+    Project.id = Assignment.project
+  INNER JOIN Employee ON
+    Assignment.employee = Employee.id
+WHERE
+  Project.name  IS NOT NULL AND
+  Employee.name IS NOT NULL;
+```
+:::
+
+The `Employees.**` accessor is simply convenience syntax sugar for the previous two-step relationship build-up. So the generated SQL is exactly the same in both queries.
+
+And vice-versa we can make a bridged query in the opposite direction too:
+
+::: code-tabs
+@tab Molecule
+```scala
+Employee.name.Projects.**(Project.name).query.get ==> List(
+  ("Alice", List("BigProject", "MediumProject")),
+  ("Bob", List("BigProject", "MediumProject")),
+  ("Carol", List("BigProject")),
+  ("Diana", List("BigProject")),
+  ("Eve", List("MediumProject")),
+  ("Frank", List("MediumProject")),
+  ("Grace", List("SmallProject")),
+)
+```
+@tab SQL
+```sql
+SELECT DISTINCT
+  Employee.id,
+  Employee.name,
+  Project.name
+FROM Employee
+  INNER JOIN Assignment ON
+    Employee.id = Assignment.employee
+  INNER JOIN Project ON
+    Assignment.project = Project.id
+WHERE
+  Employee.name IS NOT NULL AND
+  Project.name  IS NOT NULL;
+```
+:::

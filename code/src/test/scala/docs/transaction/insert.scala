@@ -72,32 +72,32 @@ object insert extends H2Tests {
     "nested" - h2(Accounting_h2()) {
 
       Invoice.no.Lines.*(
-        InvoiceLine.qty.product.unitPrice.lineTotal
+        InvoiceLine.product.amount
       ).insert(
         // Invoice 1
         (1, List(
           // Invoice lines for invoice 1
-          (2, "Socks", 15, 30),
-          (5, "Bread", 10, 50),
+          ("Bread", 50),
+          ("Socks", 30),
         )),
 
         // Invoice 2
         (2, List(
-          (1, "Knife", 40, 50),
-          (4, "Bread", 10, 40),
+          ("Bread", 40),
+          ("Knife", 50),
         ))
       ).transact
 
       Invoice.no.a1.Lines.*(
-        InvoiceLine.qty.a1.product.unitPrice.lineTotal
+        InvoiceLine.product.a1.amount
       ).query.get ==> List(
         (1, List(
-          (2, "Socks", 15, 30),
-          (5, "Bread", 10, 50),
+          ("Bread", 50),
+          ("Socks", 30),
         )),
         (2, List(
-          (1, "Knife", 40, 50),
-          (4, "Bread", 10, 40),
+          ("Bread", 40),
+          ("Knife", 50),
         ))
       )
     }
@@ -106,30 +106,30 @@ object insert extends H2Tests {
     "nested opt" - h2(Accounting_h2()) {
 
       Invoice.no.Lines.*(
-        InvoiceLine.qty.product.unitPrice.lineTotal
+        InvoiceLine.product.a1.amount
       ).insert(
         (1, List(
-          (2, "Socks", 15, 30),
-          (5, "Bread", 10, 50),
+          ("Bread", 50),
+          ("Socks", 30),
         )),
         (2, List()) // Invoice 2 without invoice lines
       ).transact
 
       Invoice.no.a1.Lines.*(
-        InvoiceLine.qty.a1.product.unitPrice.lineTotal
+        InvoiceLine.product.a1.amount
       ).query.get ==> List(
         (1, List(
-          (2, "Socks", 15, 30),
-          (5, "Bread", 10, 50),
+          ("Bread", 50),
+          ("Socks", 30),
         ))
       )
 
       Invoice.no.a1.Lines.*?(
-        InvoiceLine.qty.a1.product.unitPrice.lineTotal
+        InvoiceLine.product.a1.amount
       ).query.get ==> List(
         (1, List(
-          (2, "Socks", 15, 30),
-          (5, "Bread", 10, 50),
+          ("Bread", 50),
+          ("Socks", 30),
         )),
         (2, List()) // Invoice 2 without invoice lines
       )

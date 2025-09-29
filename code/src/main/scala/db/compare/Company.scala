@@ -7,18 +7,16 @@ object Company extends DomainStructure {
 
   trait Department {
     val name = oneString
-    // .Employees (plural of Employee)
   }
 
   trait Employee {
     val name       = oneString
     val department = manyToOne[Department]
-    // .Projects via Assignment
   }
 
   trait Project {
-    val name      = oneString
-    val budget    = oneInt
+    val name   = oneString
+    val budget = oneInt
   }
 
   trait Assignment extends Join {
