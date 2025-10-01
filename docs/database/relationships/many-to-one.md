@@ -34,8 +34,7 @@ SELECT DISTINCT
   Address.street,
   Address.zip
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
+  INNER JOIN Address ON Person.home = Address.id
 WHERE
   Person.name    IS NOT NULL AND
   Person.age     IS NOT NULL AND
@@ -80,10 +79,8 @@ SELECT DISTINCT
   Address.zip,
   Country.name
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  INNER JOIN Country ON
-    Address.country = Country.id
+  INNER JOIN Address ON Person.home = Address.id
+  INNER JOIN Country ON Address.country = Country.id
 WHERE
   Person.name    IS NOT NULL AND
   Person.age     IS NOT NULL AND
@@ -118,10 +115,8 @@ SELECT DISTINCT
   Address.street,
   Address.zip
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  INNER JOIN Country ON
-    Address.country = Country.id
+  INNER JOIN Address ON Person.home = Address.id
+  INNER JOIN Country ON Address.country = Country.id
 WHERE
   Person.name    IS NOT NULL AND
   Person.age     IS NOT NULL AND
@@ -171,10 +166,8 @@ SELECT DISTINCT
   Address.zip,
   University.shortName
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  INNER JOIN University ON
-    Person.education = University.id
+  INNER JOIN Address    ON Person.home = Address.id
+  INNER JOIN University ON Person.education = University.id
 WHERE
   Person.name          IS NOT NULL AND
   Person.age           IS NOT NULL AND
@@ -223,14 +216,10 @@ SELECT DISTINCT
   University.shortName,
   State.abbr
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  INNER JOIN Country ON
-    Address.country = Country.id
-  INNER JOIN University ON
-    Person.education = University.id
-  INNER JOIN State ON
-    University.state = State.id
+  INNER JOIN Address    ON Person.home = Address.id
+  INNER JOIN Country    ON Address.country = Country.id
+  INNER JOIN University ON Person.education = University.id
+  INNER JOIN State      ON University.state = State.id
 WHERE
   Person.name          IS NOT NULL AND
   Person.age           IS NOT NULL AND
@@ -280,12 +269,9 @@ SELECT DISTINCT
   Country.name,
   Stats.crimeRate
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  INNER JOIN Country ON
-    Address.country = Country.id
-  INNER JOIN Stats ON
-    Address.stats = Stats.id
+  INNER JOIN Address ON Person.home = Address.id
+  INNER JOIN Country ON Address.country = Country.id
+  INNER JOIN Stats   ON Address.stats = Stats.id
 WHERE
   Person.name     IS NOT NULL AND
   Person.age      IS NOT NULL AND
@@ -326,8 +312,7 @@ SELECT DISTINCT
   Person.age,
   Address.street
 FROM Person
-  LEFT JOIN Address ON
-    Person.home = Address.id
+  LEFT JOIN Address ON Person.home = Address.id
 WHERE
   Person.name IS NOT NULL AND
   Person.age  IS NOT NULL;
@@ -352,8 +337,7 @@ SELECT DISTINCT
   Address.street,
   Address.zip
 FROM Person
-  LEFT JOIN Address ON
-    Person.home = Address.id
+  LEFT JOIN Address ON Person.home = Address.id
 WHERE
   Person.name IS NOT NULL AND
   Person.age  IS NOT NULL;
@@ -450,10 +434,8 @@ SELECT DISTINCT
   Address.zip,
   University.shortName
 FROM Person
-  INNER JOIN Address ON
-    Person.home = Address.id
-  LEFT JOIN University ON
-    Person.education = University.id
+  INNER JOIN Address   ON Person.home = Address.id
+  LEFT JOIN University ON Person.education = University.id
 WHERE
   Person.name    IS NOT NULL AND
   Person.age     IS NOT NULL AND
@@ -517,10 +499,8 @@ SELECT DISTINCT
   Address.zip,
   University.shortName
 FROM Person
-  LEFT JOIN Address ON
-    Person.home = Address.id
-  LEFT JOIN University ON
-    Person.education = University.id
+  LEFT JOIN Address    ON Person.home = Address.id
+  LEFT JOIN University ON Person.education = University.id
 WHERE
   Person.name IS NOT NULL AND
   Person.age  IS NOT NULL;
@@ -549,10 +529,8 @@ SELECT DISTINCT
   Address.street,
   Country.name
 FROM Person
-  LEFT JOIN Address ON
-    Person.home = Address.id
-  LEFT JOIN Country ON
-    Address.country = Country.id
+  LEFT JOIN Address ON Person.home = Address.id
+  LEFT JOIN Country ON Address.country = Country.id
 WHERE
   Person.name IS NOT NULL AND
   Person.age  IS NOT NULL;
@@ -588,10 +566,8 @@ SELECT DISTINCT
   Address.zip,
   Country.name
 FROM Person
-  LEFT JOIN Address ON
-    Person.home = Address.id
-  LEFT JOIN Country ON
-    Address.country = Country.id
+  LEFT JOIN Address ON Person.home = Address.id
+  LEFT JOIN Country ON Address.country = Country.id
 WHERE
   Person.name IS NOT NULL AND
   Person.age  IS NOT NULL;

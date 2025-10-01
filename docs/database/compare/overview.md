@@ -1,4 +1,4 @@
-# SQL libraries overview
+# SQL libs overview
 
 Current SQL libraries in the Scala ecosystem can be organised by the kind of code they are accessed with:
 
@@ -42,21 +42,13 @@ sql"""select p.name, p.age, a.street
 
 Libraries that offer a DSL resembling SQL syntax, while ensuring type-safety:
 
-- [ldbc](https://takapi327.github.io/ldbc/)
 - [ScalikeJDBC](https://scalikejdbc.org)
 - [Typo](https://github.com/oyvindberg/typo)
+- [ldbc](https://takapi327.github.io/ldbc/)
 - [Squeryl (Java)](https://www.squeryl.org)
 - [JOOQ (Java)](https://www.jooq.org)
 
 ::: code-tabs#coord
-@tab ldbc
-
-```scala
-TableQuery[Person]
-  .join(TableQuery[Address])
-  .on((p, a) => p.id === a.id)
-  .select((p, a) => p.name *: p.age *: a.street)
-```
 
 @tab ScalikeJDBC
 
@@ -83,6 +75,15 @@ val query =
     .map((p, a) => (p.name, p.age, a.street))
 
 val result = query.run(transaction) // Using Skunk as the backend
+```
+
+@tab ldbc
+
+```scala
+TableQuery[Person]
+  .join(TableQuery[Address])
+  .on((p, a) => p.id === a.id)
+  .select((p, a) => p.name *: p.age *: a.street)
 ```
 
 @tab Squeryl (Java)

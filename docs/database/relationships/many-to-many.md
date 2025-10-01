@@ -37,10 +37,8 @@ SELECT DISTINCT
   Project.name,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
 WHERE
   Project.name  IS NOT NULL AND
   Project.id    IS NOT NULL AND
@@ -73,10 +71,8 @@ SELECT DISTINCT
   Employee.name,
   Project.name
 FROM Employee
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Employee.name IS NOT NULL AND
   Employee.id   IS NOT NULL AND
@@ -118,10 +114,8 @@ SELECT DISTINCT
   Assignment.role,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
 WHERE
   Project.name    IS NOT NULL AND
   Project.id      IS NOT NULL AND
@@ -143,8 +137,7 @@ Assignment.role_("Designer").Employee.name.query.get ==> List("Eve", "Frank")
 SELECT DISTINCT
   Employee.name
 FROM Assignment
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Employee ON Assignment.employee = Employee.id
 WHERE
   Assignment.role = 'Designer' AND
   Employee.name   IS NOT NULL;

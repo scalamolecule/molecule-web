@@ -17,7 +17,7 @@ Scala SQL libraries offering a SQL-like DSL:
 | Repository methods |                            |                  |         |    ✅    |                     |                  |
 | Db compliance SPI  |            ✅ 1)            |                  |         |         |                     |                  |
 
-1) Molecule guarantees that all supported databases behave identically for the end-user. Each supported database pass the same comprehensive compliance SPI test suite of 1800+ tests.
+1) Molecule guarantees that all supported databases behave identically for the end-user. Each supported database pass the same comprehensive compliance SPI test suite of ~2000 tests.
 2) Compiles to JS/Native, but no examples of use provided.
 
 ### Supported databases

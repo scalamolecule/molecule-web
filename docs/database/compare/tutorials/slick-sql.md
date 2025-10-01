@@ -1,7 +1,7 @@
 # Slick SQL
 
 
-#### SELECT *
+### SELECT *
 
 ```scala
 sql"select * from PERSON".as[Person].list
@@ -13,7 +13,7 @@ Person.name.age.query.get
 
 Returned type is `Future[List[(String, Int)]]`
 
-#### SELECT
+### SELECT
 
 ```
 sql"""
@@ -30,7 +30,7 @@ Person.age.name.id.query.get.map(_.map {
 
 
 
-#### WHERE
+### WHERE
 
 ```
 sql"select * from PERSON where AGE >= 18 AND NAME = 'C. Vogt'".as[Person].list
@@ -42,7 +42,7 @@ Person.age.>=(18).name("C. Vogt").query.get
 (Again we would define which attribute values we want to return)
 
 
-#### ORDER BY
+### ORDER BY
 
 ```
 sql"select * from PERSON order by AGE asc, NAME".as[Person].list
@@ -52,7 +52,7 @@ Ordering is applied on the result set:
 Person.age.a1.name.query.get
 ```
 
-#### Aggregations
+### Aggregations
 
 ```
 sql"select max(AGE) from PERSON".as[Option[Int]].first
@@ -68,7 +68,7 @@ Person.age(max(3)).query.get
 We can aggregate values also with the counterpart `min` or get a random value with `rand`. Or perform aggregate calculations with `count`, `countDistinct`, `sum`, `avg`, `median`, `variance` and `stddev`.
 
 
-#### GROUP BY
+### GROUP BY
 
 ```
 sql"""
@@ -82,7 +82,7 @@ Molecule automatically group by attributes not having an aggregate expression. I
 Person.address.age(avg).query.get
 ```
 
-#### HAVING
+### HAVING
 
 ```
 sql"""
@@ -96,7 +96,7 @@ sql"""
 Person.address.age(avg).query.get.map(_.filter(_._2 > 50))
 ```
 
-#### Implicit join
+### Implicit join
 
 ```
 sql"""
@@ -109,7 +109,7 @@ sql"""
 Person.name.Address.city.query.get
 ```
 
-#### Explicit join
+### Inner join
 
 ```
 sql"""
@@ -122,7 +122,7 @@ sql"""
 Person.name.Address.city.query.get
 ```
 
-#### left/right/outer join
+### Left join
 
 ```
 sql"""
@@ -136,7 +136,7 @@ sql"""
 val persons: Future[List[(Option[String], String)]] = Person.name$.Address.city.query.get
 ```
 
-#### Sub query
+### Sub query
 
 ```
 sql"""
@@ -151,7 +151,7 @@ sql"""
 Person.age.name.Address.city_("New York City").query.get
 ```
 
-#### INSERT
+### INSERT
 
 ```
 sqlu"""
@@ -162,7 +162,7 @@ sqlu"""
 Person.name("M Odersky").age(12345).address(1).save
 ```
 
-#### UPDATE
+### UPDATE
 
 ```
 sqlu"""
@@ -177,7 +177,7 @@ for {
 } yield ()
 ```
 
-#### DELETE
+### DELETE
 
 ```
 sqlu"""
@@ -189,7 +189,7 @@ sqlu"""
 Person.id.name_("M. Odersky").query.get.map(_.head.retract)
 ```
 
-#### CASE
+### CASE
 
 ```
 sql"""

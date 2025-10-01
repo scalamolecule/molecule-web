@@ -69,6 +69,7 @@ object CompanyTest extends H2Tests {
         .query.get ==> List(("Development", 4), ("Design", 2))
 
       // Departments and number of employees working on projects with more than 2 developers and a budget over one million
+      // Departments with more than 2 employees assigned to projects with a budget exceeding 1M
       Department.name.Employees.id(countDistinct).>(2).d1.Projects.budget_.>(1000000)
         .query.get ==> List(("Development", 4))
 

@@ -35,7 +35,7 @@ We'll compare Molecule with the plain-SQL libraries in the following areas:
 | Repository pattern support |                            |    -    |    ✅    |    -    |      -       |
 | Db compliance SPI          |            ✅ 1)            |    -    |    -    |    -    |      -       |
 
-1) Molecule guarantees that all supported databases behave identically for the end-user. Each supported database pass the same comprehensive compliance SPI test suite of 2000+ tests.
+1) Molecule guarantees that all supported databases behave identically for the end-user. Each supported database pass the same comprehensive compliance SPI test suite of ~2000 tests.
 
 
 ## 2. Supported databases
@@ -67,7 +67,7 @@ We'll compare Molecule with the plain-SQL libraries in the following areas:
 
 |                          | Molecule | Doobie | Magnum | Skunk | Anorm |
 |--------------------------|:--------:|:------:|:------:|:-----:|:-----:|
-| _**Primitives**_         |          |        |        |       |       |
+| _**Scalars**_            |          |        |        |       |       |
 | String                   |    ✅     |        |        |       |       |
 | Int                      |    ✅     |        |        |       |       |
 | Long                     |    ✅     |        |        |       |       |
@@ -96,8 +96,8 @@ We'll compare Molecule with the plain-SQL libraries in the following areas:
 | java.time.ZonedDateTime  |    ✅     |        |        |       |       |
 |                          |          |        |        |       |       |
 | _**Collections**_        |          |        |        |       |       |
-| Seq                      |    ✅     |        |        |       |       |
 | Set                      |    ✅     |        |        |       |       |
+| Seq                      |    ✅     |        |        |       |       |
 | Map                      |    ✅     |        |        |       |       |
 |                          |          |        |        |       |       |
 |                          |          |        |        |       |       |
@@ -177,7 +177,7 @@ More comparisons...?
 
 ### Example query
 
-"Departments With More Than 2 Employees Assigned to Projects With a Budget Exceeding 1M"
+"Departments with more than 2 employees assigned to projects with a budget exceeding 1M"
 
 Molecule:
 ```scala
@@ -185,16 +185,20 @@ Department.name.Employees.id_(countDistinct).>(2).d1.Projects.budget_.>(1000000)
 ```
 
 SQL:
-```scala
-sql"""SELECT d.name AS department
-      FROM Department d
-      JOIN Employee e             ON e.department = d.id
-      JOIN EmployeeProject ep     ON e.id = ep.employee
-      JOIN Project p              ON ep.project = p.id
-      WHERE p.budget > 1000000
-      GROUP BY d.id, d.name
-      HAVING COUNT(DISTINCT e.id) > 2
-      ORDER BY COUNT(DISTINCT e.id) DESC"""
+```sql
+SELECT
+  Department.name,
+  COUNT(DISTINCT Employee.id) Employee_id_count
+FROM Department
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
+WHERE
+  Department.name IS NOT NULL AND
+  Project.budget  > 1000000
+GROUP BY Department.name
+HAVING COUNT(DISTINCT Employee.id) > 2
+ORDER BY Employee_id_count DESC;
 ```
 
 Of course, Table prefixes could often be omitted but for more complex queries they will often be needed anyway to distinguish fields.

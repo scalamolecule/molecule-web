@@ -309,7 +309,7 @@ trait Hobby:
   val name = oneString
   
 // Many-to-many relationship - Persons and Hobbies are independent
-trait Interest:
+trait Interest extends Join:
   val person = manyToOne[Person]
   val hobby  = manyToOne[Hobby]
 ```
@@ -377,7 +377,7 @@ Molecule transparently uses the original name against the database.
 
 ### `allowedValues`
 
-Allowed values can be added for any primitive type. Molecule will then validate that only defined enum values are transacted. A custom error message can be added:
+Allowed values can be added for any primitive type. Molecule will then validate that only allowed values are transacted. A custom error message can be added:
 
 ```scala
 val luckyNumber = oneInt.enums(7, 9, 13)
@@ -512,7 +512,7 @@ trait InvoiceLine:
   val invoice = manyToOne[Invoice] // foreign key to one Invoice
 ```
 
-As with SQL, in Molecule, we always define a relationship on the entity where the foreign key is, the "many" side. To be explicit about this, we use the `manyToOne` method to define the relationship. Many invoice lines are related to one invoice.
+As with SQL, in Molecule, we always define a relationship on the entity where the foreign key is, the "many" side. To be explicit about this, we use the `manyToOne` method to define the relationship. _Many_ invoice lines are related to _one_ invoice.
 
 
 #### Foreign key constraint 
@@ -569,8 +569,7 @@ SELECT DISTINCT
   InvoiceLine.product,
   Invoice.no
 FROM InvoiceLine
-  INNER JOIN Invoice ON
-    InvoiceLine.invoice = Invoice.id
+  INNER JOIN Invoice ON InvoiceLine.invoice = Invoice.id
 WHERE
   InvoiceLine.product IS NOT NULL AND
   Invoice.no          IS NOT NULL;
@@ -600,8 +599,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no          IS NOT NULL AND
   InvoiceLine.product IS NOT NULL;
@@ -639,8 +637,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no          IS NOT NULL AND
   InvoiceLine.product IS NOT NULL;
@@ -696,8 +693,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no          IS NOT NULL AND
   InvoiceLine.product IS NOT NULL;
@@ -746,10 +742,8 @@ SELECT DISTINCT
   Project.name,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
 WHERE
   Project.name  IS NOT NULL AND
   Employee.name IS NOT NULL;
@@ -777,10 +771,8 @@ SELECT DISTINCT
   Project.name,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
 WHERE
   Project.name  IS NOT NULL AND
   Employee.name IS NOT NULL;
@@ -811,10 +803,8 @@ SELECT DISTINCT
   Employee.name,
   Project.name
 FROM Employee
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Employee.name IS NOT NULL AND
   Project.name  IS NOT NULL;

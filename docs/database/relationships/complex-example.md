@@ -87,8 +87,7 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
+  INNER JOIN Employee ON Department.id = Employee.department
 WHERE
   Department.name IS NOT NULL
 GROUP BY Department.name
@@ -114,10 +113,8 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
 WHERE
   Department.name    IS NOT NULL AND
   Assignment.project IS NOT NULL
@@ -141,10 +138,8 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
 WHERE
   Department.name IS NOT NULL AND
   Assignment.role = 'Dev'
@@ -168,12 +163,9 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Department.name IS NOT NULL AND
   Project.budget  > 1000000
@@ -197,12 +189,9 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Department.name IS NOT NULL AND
   Project.budget  > 1000000
@@ -229,12 +218,9 @@ SELECT
   Department.name,
   COUNT(DISTINCT Employee.id) Employee_id_count
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Department.name IS NOT NULL AND
   Assignment.role = 'Dev' AND
@@ -265,8 +251,7 @@ SELECT DISTINCT
   Project.name,
   Assignment.role
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
+  INNER JOIN Assignment ON Project.id = Assignment.project
 WHERE
   Project.name    IS NOT NULL AND
   Project.id      IS NOT NULL AND
@@ -297,8 +282,7 @@ SELECT DISTINCT
   Employee.name,
   Assignment.role
 FROM Employee
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
 WHERE
   Employee.name   IS NOT NULL AND
   Employee.id     IS NOT NULL AND
@@ -325,10 +309,8 @@ SELECT DISTINCT
   Employee.name,
   Project.name
 FROM Employee
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Employee.name   IS NOT NULL AND
   Employee.id     IS NOT NULL AND
@@ -357,10 +339,8 @@ SELECT DISTINCT
   Project.name,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
 WHERE
   Project.name  IS NOT NULL AND
   Project.id    IS NOT NULL AND
@@ -389,12 +369,9 @@ SELECT DISTINCT
   Project.name,
   Employee.name
 FROM Project
-  INNER JOIN Assignment ON
-    Project.id = Assignment.project
-  INNER JOIN Employee ON
-    Assignment.employee = Employee.id
-  INNER JOIN Department ON
-    Employee.department = Department.id
+  INNER JOIN Assignment ON Project.id = Assignment.project
+  INNER JOIN Employee   ON Assignment.employee = Employee.id
+  INNER JOIN Department ON Employee.department = Department.id
 WHERE
   Project.name    IS NOT NULL AND
   Project.id      IS NOT NULL AND
@@ -446,12 +423,9 @@ SELECT DISTINCT
   Project.name,
   Project.budget
 FROM Department
-  INNER JOIN Employee ON
-    Department.id = Employee.department
-  INNER JOIN Assignment ON
-    Employee.id = Assignment.employee
-  INNER JOIN Project ON
-    Assignment.project = Project.id
+  INNER JOIN Employee   ON Department.id = Employee.department
+  INNER JOIN Assignment ON Employee.id = Assignment.employee
+  INNER JOIN Project    ON Assignment.project = Project.id
 WHERE
   Department.name IS NOT NULL AND
   Department.id   IS NOT NULL AND

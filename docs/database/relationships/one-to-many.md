@@ -35,8 +35,7 @@ SELECT DISTINCT
   InvoiceLine.product,
   Invoice.no
 FROM InvoiceLine
-  INNER JOIN Invoice ON
-    InvoiceLine.invoice = Invoice.id
+  INNER JOIN Invoice ON InvoiceLine.invoice = Invoice.id
 WHERE
   InvoiceLine.product IS NOT NULL AND
   Invoice.no          IS NOT NULL;
@@ -69,8 +68,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no          IS NOT NULL AND
   InvoiceLine.product IS NOT NULL;
@@ -99,8 +97,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no          IS NOT NULL AND
   InvoiceLine.product IS NOT NULL;
@@ -153,10 +150,8 @@ SELECT DISTINCT
   InvoiceLine.product,
   InvoiceLine.amount
 FROM Customer
-  INNER JOIN Invoice ON
-    Customer.id = Invoice.customer
-  INNER JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  INNER JOIN Invoice     ON Customer.id = Invoice.customer
+  INNER JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Customer.name       IS NOT NULL AND
   Invoice.no          IS NOT NULL AND
@@ -189,8 +184,7 @@ SELECT DISTINCT
   Invoice.no,
   InvoiceLine.product
 FROM Invoice
-  LEFT JOIN InvoiceLine ON
-    Invoice.id = InvoiceLine.invoice
+  LEFT JOIN InvoiceLine ON Invoice.id = InvoiceLine.invoice
 WHERE
   Invoice.no IS NOT NULL;
 ```
