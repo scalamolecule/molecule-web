@@ -489,8 +489,7 @@ How to execute multiple operations in a transaction:
 
 **Molecule** - Call `.transact` on the operation:
 ```scala
-given Conn =
-... // Molecule connection
+given Conn = //... Molecule connection
 
 // Single operation
 Person.name("Alice").age(30).save.transact
@@ -507,8 +506,7 @@ unitOfWork {
 
 **ScalikeJDBC** - Use `DB localTx` or `DB withinTx` block:
 ```scala
-implicit val session: DBSession =
-...
+implicit val session: DBSession = //...
 
 // Single operation
 DB localTx { implicit session =>
@@ -543,8 +541,7 @@ DB localTx { implicit session =>
 
 **Typo** - Use Doobie's `transact` on ConnectionIO operations:
 ```scala
-implicit val transactor: Transactor[IO] =
-... // Doobie transactor
+implicit val transactor: Transactor[IO] = //... Doobie transactor
 
 // Single operation
 personRepo.insert(
@@ -569,8 +566,7 @@ transaction.transact(transactor).unsafeRunSync()
 
 **ldbc** - Use IO monad with connection:
 ```scala
-implicit val connector: Connector[IO] =
-... // ldbc connector
+implicit val connector: Connector[IO] = //... ldbc connector
 
 // Single operation
 sql"INSERT INTO person (name, age) VALUES (${"Alice"}, ${30})"
@@ -618,8 +614,7 @@ transaction {
 
 **JOOQ** - Use `transaction` lambda or manual transaction control:
 ```scala
-val dsl: DSLContext =
-... // JOOQ DSL context
+val dsl: DSLContext = //... JOOQ DSL context
 
 // Single operation
 dsl.transaction((configuration: Configuration) => {

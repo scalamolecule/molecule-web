@@ -405,8 +405,7 @@ How to execute multiple operations in a transaction:
 
 **Molecule** - Call `.transact` on the operation:
 ```scala
-given Conn =
-... // Molecule connection
+given Conn = //... Molecule connection
 
 // Single operation
 Person.name("Alice").age(30).save.transact
@@ -423,8 +422,7 @@ unitOfWork {
 
 **ScalaSQL** - Use `dbClient.transaction` block:
 ```scala
-val dbClient: DbClient =
-... // ScalaSQL database client
+val dbClient: DbClient = //... ScalaSQL database client
 
 // Single operation
 dbClient.transaction { db =>
@@ -457,8 +455,7 @@ dbClient.transaction { db =>
 
 **Slick** - Use `.transactionally` combinator:
 ```scala
-val db: Database =
-... // Slick database
+val db: Database = //... Slick database
 
 // Single operation
 db.run(
