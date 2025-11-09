@@ -42,12 +42,12 @@ object insert extends H2Tests {
 
     "ref" - h2(Person_h2()) {
       Person.name.age.Home.street.insert(
-        ("Bob", 42, "Main st. 17"),
+        ("Bob", 42, "DoobieSetup2 st. 17"),
         ("Liz", 38, "5th Ave 1"),
       ).transact
 
       Person.name.age.Home.street.query.get ==> List(
-        ("Bob", 42, "Main st. 17"),
+        ("Bob", 42, "DoobieSetup2 st. 17"),
         ("Liz", 38, "5th Ave 1"),
       )
     }
@@ -58,12 +58,12 @@ object insert extends H2Tests {
       val usaId = Country.id.name_("USA").query.get.head
 
       Person.name.age.Home.street.country.insert(
-        ("Bob", 42, "Main st. 17", usaId),
+        ("Bob", 42, "DoobieSetup2 st. 17", usaId),
         ("Liz", 38, "5th Ave 1", usaId),
       ).transact
 
       Person.name.age.Home.street.Country.name.query.get ==> List(
-        ("Bob", 42, "Main st. 17", "USA"),
+        ("Bob", 42, "DoobieSetup2 st. 17", "USA"),
         ("Liz", 38, "5th Ave 1", "USA"),
       )
     }

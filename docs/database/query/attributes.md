@@ -180,7 +180,6 @@ A null value in an SQL table becomes a `None` in the result returned by the mole
 
 As we saw when defining a [Domain Structure](/database/setup/domain-structure), an attribute can be of basically any scalar type, Set, Seq or Map that we use in Scala! Molecule takes care of mapping each type to the database so that you can think freely in terms of Scala code and focus on your business code rather than in SQL types and implementation details.
 
-## Types & collections.query
 
 ::: code-tabs#types
 @tab Primitive
@@ -292,7 +291,7 @@ Map[String, Char]
 Molecule transparently maps each type to and from the database.
 
 
-
+### Collection types
 
 Using collection types is useful for smaller collections of values.
 
@@ -313,14 +312,17 @@ Person.langNames.query.get.head ==> Map(
 
 The `Map` type can often be useful to store language-keyed data.
 
-Collection data is always returned as the default collection type, in the case of `Seq`, the default subtype of `List` is returned:
+Collection data is always returned as the default collection type, in the case of `Seq`, the default subtype `List` is returned:
 
 ```scala
 Person.scores.query.get.head ==> List(1, 2, 3)
 
-// Or we can match the super type
+// We can still match the super type
 Person.scores.query.get.head ==> Seq(1, 2, 3)
 ```
+
+Molecule saves Map data as JSON in the database. Set and Seq data is saved as Arrays in the database where available, otherwise as JSON.
+
 
 ## Distinct rows
 

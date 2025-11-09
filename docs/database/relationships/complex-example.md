@@ -201,7 +201,7 @@ ORDER BY Employee_id_count DESC;
 ```
 :::
 
-Departments and number of developers working on projects with more than 2 developers and a budget over one million
+Departments and number of developers working on projects with more than 2 employees and a budget over one million
 
 ::: code-tabs
 @tab Molecule

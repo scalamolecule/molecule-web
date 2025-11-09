@@ -4,6 +4,7 @@ import db.compare.dsl.Company.*
 import db.compare.dsl.Company.metadb.Company_h2
 import docs.H2Tests
 import molecule.core.error.ModelError
+import molecule.db.compliance.domains.dsl.Types.Entity
 import molecule.db.h2.sync.*
 import utest.*
 
@@ -11,6 +12,21 @@ import utest.*
 object CompanyTest extends H2Tests {
 
   override lazy val tests = Tests {
+
+    "multiple mutations in single transaction" - h2(Company_h2()) {
+      transact(
+        Project.name("Project X").budget(100000).save,
+        Employee.name("Alice").salary(80000).project(p1).save,
+        Employee.name("Bob").salary(90000).project(p1).save
+      )
+
+      unitOfWork {
+        val p1 = Project.name("Project X").budget(100000).save.transact.id
+
+        Employee.name("Alice").salary(80000).project(p1).save.transact
+        Employee.name("Bob").salary(90000).project(p1).save.transact
+      }
+    }
 
     "company" - h2(Company_h2()) {
 

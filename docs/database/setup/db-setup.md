@@ -75,8 +75,6 @@ This brings in all the Namespaces and Attributes of your domain.
 
 ## 3. Connect to db
 
-
-
 Here are some simple examples of how to connect to the databases either in-memory or running in a test-container. For connecting to a persisted live database, please consult the documentation for that database.
 
 When Molecule generates boilerplate code, it also create some meta information for each database that Molecule uses to handle this database. An example is `Community_MetaDb_h2` that for instance contains the path to the generated SQL schema file in the resources directory. This allow the JdbcProxy to find the SQL schema creation code to create the database.

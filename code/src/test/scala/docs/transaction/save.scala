@@ -18,7 +18,7 @@ object save extends H2Tests {
     }
 
     "mandatory with ref" - h2(Person_h2()) {
-      Person.name("Bob").age(42).Home.street("Main st.").save.transact
+      Person.name("Bob").age(42).Home.street("DoobieSetup2 st.").save.transact
       Person.name.age.query.get.head ==> ("Bob", 42)
     }
 
@@ -44,7 +44,7 @@ object save extends H2Tests {
 
 
     "Set" - h2(Person_h2()) {
-      // Main collection type
+      // DoobieSetup2 collection type
       Person.hobbies(Set("stamps", "trains")).save.transact
 
       // Collection subtypes
@@ -55,7 +55,7 @@ object save extends H2Tests {
     }
 
     "Seq" - h2(Person_h2()) {
-      // Main collection type
+      // DoobieSetup2 collection type
       Person.scores(Seq(1, 2, 3)).save.transact
 
       // Collection subtypes
@@ -66,7 +66,7 @@ object save extends H2Tests {
     }
 
     "Map" - h2(Person_h2()) {
-      // Main collection type
+      // DoobieSetup2 collection type
       Person.langNames(Map("en" -> "Bob")).save.transact
 
       // Collection subtypes
@@ -79,37 +79,37 @@ object save extends H2Tests {
 
     "ref" - h2(Person_h2()) {
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17").save.transact
+        .Home.street("DoobieSetup2 st. 17").save.transact
 
       Person.name.age
         .Home.street.query.get.head ==>
-        ("Bob", 42, "Main st. 17")
+        ("Bob", 42, "DoobieSetup2 st. 17")
     }
 
 
     "refs" - h2(Person_h2()) {
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17")
+        .Home.street("DoobieSetup2 st. 17")
         .Country.name("USA")
         .save.transact
 
       Person.name.age
         .Home.street
         .Country.name.query.get.head ==>
-        ("Bob", 42, "Main st. 17", "USA")
+        ("Bob", 42, "DoobieSetup2 st. 17", "USA")
     }
 
 
     "backref" - h2(Person_h2()) {
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17")._Person
+        .Home.street("DoobieSetup2 st. 17")._Person
         .Education.shortName("Harvard")
         .save.transact
 
       Person.name.age
         .Home.street._Person
         .Education.shortName.query.get.head ==>
-        ("Bob", 42, "Main st. 17", "Harvard")
+        ("Bob", 42, "DoobieSetup2 st. 17", "Harvard")
     }
 
 
@@ -118,14 +118,14 @@ object save extends H2Tests {
       val usaId = Country.id.name_("USA").query.get.head
 
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17")
+        .Home.street("DoobieSetup2 st. 17")
         .country(usaId) // save country id with ref attr
         .save.transact
 
       Person.name.age
         .Home.street
         .Country.name.query.get.head ==>
-        ("Bob", 42, "Main st. 17", "USA")
+        ("Bob", 42, "DoobieSetup2 st. 17", "USA")
     }
   }
 }

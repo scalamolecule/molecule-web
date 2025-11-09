@@ -435,7 +435,7 @@ Given a relationship from Person to Address
 
 ```scala
 Person.name.likes_?.Home.?(Address.street).insert(
-  ("Bob", Some("Pasta"), Some("Main st. 17")),
+  ("Bob", Some("Pasta"), Some("DoobieSetup2 st. 17")),
   ("Eva", Some("Sushi"), None),
   ("Liz", None, Some("5th Ave. 1")),
   ("Tod", None, None),
@@ -454,7 +454,7 @@ Person.likes("Beef").Home.street_.update.transact
 
 // Existing likes of Bob updated since he also has a street address
 Person.name.likes_?.Home.?(Address.street).query.get ==> List(
-  ("Bob", Some("Beef"), Some("Main st. 17")), // likes updated
+  ("Bob", Some("Beef"), Some("DoobieSetup2 st. 17")), // likes updated
   ("Eva", Some("Sushi"), None),
   ("Liz", None, Some("5th Ave. 1")), // no update without likes value
   ("Tod", None, None),
@@ -471,7 +471,7 @@ Person.likes("Beef").Home.street_.upsert.transact
 
 // Likes of Bob and Liz upserted since they both have a street address
 Person.name.likes_?.Home.?(Address.street).query.get ==> List(
-  ("Bob", Some("Beef"), Some("Main st. 17")), // likes updated
+  ("Bob", Some("Beef"), Some("DoobieSetup2 st. 17")), // likes updated
   ("Eva", Some("Sushi"), None),
   ("Liz", Some("Beef"), Some("5th Ave. 1")), // likes inserted
   ("Tod", None, None),
@@ -525,12 +525,12 @@ val List(usaId, ukId) = Country.name.insert("USA", "UK").transact.ids
 
 // Bob in USA
 val bobId = Person.name("Bob")
-  .Home.street("Main st. 17")
+  .Home.street("DoobieSetup2 st. 17")
   .country(usaId) // set foreign key to US id
   .save.transact.id
 
 Person.name.Home.street.Country.name.query.get ==> List(
-  ("Bob", "Main st. 17", "USA"),
+  ("Bob", "DoobieSetup2 st. 17", "USA"),
 )
 
 // Bob moves to the UK

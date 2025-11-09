@@ -137,8 +137,8 @@ graph TD
       etc..
     )
 
-    classDef Main fill:#00AED499;
-    class C,D,E Main;
+    classDef DoobieSetup2 fill:#00AED499;
+    class C,D,E DoobieSetup2;
     
     linkStyle default stroke: grey;
 ```

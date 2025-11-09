@@ -14,7 +14,7 @@ Inspect a query molecule without returning data by adding `inspect` after `<acti
 
 ```scala
 Person.name("Bob").age(42)
-  .Home.street("Main st. 1")
+  .Home.street("DoobieSetup2 st. 1")
   .save.inspect // (returns Unit)
 ```
 
@@ -26,7 +26,7 @@ SAVE:
 AttrOneManString("Person", "name", Eq, Seq("Bob"), None, None, Nil, Nil, None, None, Seq(0, 1))
 AttrOneManInt("Person", "age", Eq, Seq(42), None, None, Nil, Nil, None, None, Seq(0, 4))
 Ref("Person", "home", "Address", CardOne, false, Seq(0, 6, 1))
-AttrOneManString("Address", "street", Eq, Seq("Main st. 1"), None, None, Nil, Nil, None, None, Seq(1, 12))
+AttrOneManString("Address", "street", Eq, Seq("DoobieSetup2 st. 1"), None, None, Nil, Nil, None, None, Seq(1, 12))
 
 Save(
   Ns(
@@ -53,7 +53,7 @@ When working on molecules we might want to do a quick check of the prepared stat
 
 ```scala
 Person.name("Bob").age(42)
-  .Home.street("Main st. 1")
+  .Home.street("DoobieSetup2 st. 1")
   .save.i.transact // adding `i` to also inspect
 ```
 

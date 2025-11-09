@@ -6,112 +6,69 @@ Current SQL libraries in the Scala ecosystem can be organised by the kind of cod
 - **SQL-flavored DSL**
 - **Scala collection-style DSL**
 
-Libraries in all 3 categories adapt to the semantics of SQL databases in various ways. One could say that "your domain comes to the database".
+Libraries in all 3 categories adapt to the semantics of SQL databases in various ways. 
 
-Molecule flips this direction of attention and provides boilerplate code to _**"let the database come to your domain"**_.
+Molecule on the other hand lets you use your domain terms to compose data models of _what_ data you're interested in with no need to write SQL or DSL code - the _how_. 
 
-Instead of writing code that access the database, you can _compose_ your domain terms to form declarative and fully type-inferred molecules, or data models,
-of _what_ data you're interested in. Molecule then translates that into _how_ it is mutated/fetched with SQL.
 
-#### A fourth category
-
-By reversing the dynamics and taking this domain-declarative approach, one could say that Molecule places itself in a 4th category of SQL libraries for custom domain-tailored data composition.
-
-Let's get an overview of libraries in the traditional 3 categories:
-
-## 1. Plain SQL libraries
+## 1. Plain-SQL libraries
 
 Libraries that let you write plain SQL directly with low-level control:
 
-- [Doobie](https://typelevel.org/doobie/index.html)
-- [Magnum](https://github.com/AugustNagro/magnum) (with additional repository methods)
-- [Anorm](https://playframework.github.io/anorm/)
-- [Skunk](https://typelevel.org/skunk/)
+- [Doobie](https://typelevel.org/doobie/index.html) - Pure functional JDBC layer for Scala and Cats
+- [Magnum](https://github.com/AugustNagro/magnum) - Pure functional raw-SQL library with repository helpers
+- [Skunk](https://typelevel.org/skunk/) - Pure functional Postgres library using cats-effect
+- [Anorm](https://playframework.github.io/anorm/) - Lightweight SQL wrapper integrated with Play Framework
 
-Example SQL query that is the same for the 4 libraries:
+Example query:
 
-```sql
+```scala
+// Molecule
+Person.name.age.Address.street.query.get
+```
+
+```scala
+// Same query in all 4 plain-SQL libraries: 
 sql"""select p.name, p.age, a.street 
       from Person as p 
       inner join Address as a on p.address = a.id"""
 ```
 
-[Compare](/database/compare/plain-sql) Molecule with plain SQL libraries...
+[More comparisons...](/database/compare/plain-sql)
+
 
 ## 2. SQL-flavored DSL libraries
 
 Libraries that offer a DSL resembling SQL syntax, while ensuring type-safety:
 
-- [ScalikeJDBC](https://scalikejdbc.org)
-- [Typo](https://github.com/oyvindberg/typo)
-- [ldbc](https://takapi327.github.io/ldbc/)
-- [Squeryl (Java)](https://www.squeryl.org)
-- [JOOQ (Java)](https://www.jooq.org)
-
-::: code-tabs#coord
-
-@tab ScalikeJDBC
+- [ScalikeJDBC](https://scalikejdbc.org) — SQL-centric DSL with interpolation, transaction/connection helpers, and JDBC integration.
+- [Typo](https://github.com/oyvindberg/typo) — Schema-first, code-generated, type-safe SQL DSL (commonly used with Skunk for Postgres).
+- [ldbc](https://takapi327.github.io/ldbc/) — Pure functional SQL library with a type-safe query builder in Scala 3.
+- [Squeryl (Java)](https://www.squeryl.org) — Mature, statically typed SQL DSL with ORM-style mapping on the JVM.
+- [JOOQ (Java)](https://www.jooq.org) — Fluent, type-safe SQL builder with powerful schema-driven code generation.
 
 ```scala
-val p = Person.syntax("p")
-val a = Address.syntax("a")
+// Molecule
+Person.name.age.Address.street.query.get
+```
 
+```scala
+// ScalikeJDBC
 withSQL {
   select(p.result.name, p.result.age, a.result.street)
     .from(Person as p)
     .innerJoin(Address as a)
     .on(p.addressId, a.id)
-}.map(rs => (rs.string(1), rs.int(2), rs.string(3)))
-  .list
-  .apply()
+}
 ```
-
-@tab Typo
 
 ```scala
-val query =
-  Person.select
-    .join(Address).on(_.addressId, _.id)
-    .map((p, a) => (p.name, p.age, a.street))
-
-val result = query.run(transaction) // Using Skunk as the backend
+// Typo
+Person.select
+  .join(Address)
+  .on(_.addressId, _.id)
+  .map((p, a) => (p.name, p.age, a.street))
 ```
-
-@tab ldbc
-
-```scala
-TableQuery[Person]
-  .join(TableQuery[Address])
-  .on((p, a) => p.id === a.id)
-  .select((p, a) => p.name *: p.age *: a.street)
-```
-
-@tab Squeryl (Java)
-
-```scala
-from(persons, addresses)((p, a) =>
-  where(p.addressId === a.id)
-    select ((p.name, p.age, a.street))
-)
-```
-
-@tab JOOQ (Java)
-
-```scala
-Result < Record3 < String
-, Integer
-, String >> result =
-  DSL.using(configuration)
-    .select(PERSON.NAME, PERSON.AGE, ADDRESS.STREET)
-    .from(PERSON)
-    .join(ADDRESS).on(PERSON.ADDRESS_ID.eq(ADDRESS.ID))
-    .fetch();
-```
-
-:::
-
-<details>
-<summary>Expand all</summary>
 
 ```scala
 // ldbc
@@ -122,32 +79,7 @@ TableQuery[Person]
 ```
 
 ```scala
-// ScalikeJDBC
-val p = Person.syntax("p")
-val a = Address.syntax("a")
-
-withSQL {
-  select(p.result.name, p.result.age, a.result.street)
-    .from(Person as p)
-    .innerJoin(Address as a)
-    .on(p.addressId, a.id)
-}.map(rs => (rs.string(1), rs.int(2), rs.string(3)))
-  .list
-  .apply()
-```
-
-```scala
-// Typo
-val query =
-  Person.select
-    .join(Address).on(_.addressId, _.id)
-    .map((p, a) => (p.name, p.age, a.street))
-
-val result = query.run(transaction) // Using Skunk as the backend
-```
-
-```scala
-// Squeryl (Java)
+// Squeryl
 from(persons, addresses)((p, a) =>
   where(p.addressId === a.id)
     select ((p.name, p.age, a.street))
@@ -155,65 +87,34 @@ from(persons, addresses)((p, a) =>
 ```
 
 ```scala
-// JOOQ (Java)
-Result < Record3 < String
-, Integer
-, String >> result =
-  DSL.using(configuration)
-    .select(PERSON.NAME, PERSON.AGE, ADDRESS.STREET)
-    .from(PERSON)
-    .join(ADDRESS).on(PERSON.ADDRESS_ID.eq(ADDRESS.ID))
-    .fetch();
+// JOOQ
+select(PERSON.NAME, PERSON.AGE, ADDRESS.STREET)
+  .from(PERSON)
+  .join(ADDRESS)
+  .on(PERSON.ADDRESS_ID.eq(ADDRESS.ID))
 ```
 
-</details>
 
-[Compare](/database/compare/sql-dsl) Molecule with SQL-like DSL libraries...
+[More comparisons...](/database/compare/sql-dsl)
 
 ## 3. Scala collection-style DSL libraries
 
 Libraries that use Scala collection-like syntax to query SQL data:
 
-- [ScalaSql](https://github.com/com-lihaoyi/scalasql)
-- [Slick](https://scala-slick.org)
-- [Quill](https://github.com/zio/zio-quill)
+- [ScalaSql](https://github.com/com-lihaoyi/scalasql) — Lightweight library whose query DSL mirrors Scala collections with minimal ceremony.
+- [Slick](https://scala-slick.org) — Functional Relational Mapping with a collection-like, type-safe query API and streaming support.
+- [Quill](https://github.com/zio/zio-quill) — Compile-time quoted, collection-style DSL that translates to SQL for multiple backends.
 
-::: code-tabs#coord
-@tab ScalaSql
 
 ```scala
-Person.select.join(Address)(_.id === _.personId)
-  .map { case (p, a) => (p.name, p.age, a.street) }
+// Molecule
+Person.name.age.Address.street.query.get
 ```
-
-@tab Slick
-
-```scala
-(people join addresses on (_.id === _.addressId))
-  .map { case (p, a) => (p.name, p.age, a.street) }
-```
-
-@tab Quill
-
-```scala
-val q = quote {
-  for {
-    p <- query[Person]
-    a <- query[Address] if p.addressId == a.id
-  } yield (p.name, p.age, a.street)
-}
-
-val result = run(q)
-```
-
-:::
-
-<details>
-<summary>Expand all</summary>
 
 ```scala
 // ScalaSql
-Person.select.join(Address)(_.id === _.personId)
+Person.select
+  .join(Address)(_.id === _.personId)
   .map { case (p, a) => (p.name, p.age, a.street) }
 ```
 
@@ -224,34 +125,14 @@ Person.select.join(Address)(_.id === _.personId)
 ```
 
 ```scala
-//tab Quill
-val q = quote {
-    for {
-      p <- query[Person]
-      a <- query[Address] if p.addressId == a.id
-    } yield (p.name, p.age, a.street)
-  }
-
-val result = run(q)
+// Quill
+quote {
+  for {
+    p <- query[Person]
+    a <- query[Address] if p.addressId == a.id
+  } yield (p.name, p.age, a.street)
+}
 ```
 
-</details>
 
-[Compare](/database/compare/collection-dsl) Molecule with Scala collection-like DSL libraries...
-
-## 4. Domain-tailored composition (Molecule)
-
-Libraries that compose queries declaratively from domain terms:
-
-- [Molecule](https://github.com/scalamolecule/molecule)
-
-```scala
-// Molecule
-Person.name.age.Address.street
-```
-
-Once your domain structure is defined, Molecule generates a domain-tailored DSL. You then compose your query declaratively with minimal syntax noise, focusing only on what data your domain cares about:
-
-Molecule doesn’t just aim to reduce boilerplate. It shifts the mental model: from writing how to fetch data to declaring what data your domain cares about.
-
-Molecule is also the only SQL library in the Scala ecosystem that can insert and return [nested data](/database/query/relationships.html#nested).
+[More comparisons...](/database/compare/collection-dsl)

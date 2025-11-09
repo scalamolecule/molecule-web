@@ -77,31 +77,30 @@ export default sidebar({
             ],
         },
 
-//         {
-//             text: 'Compare',
-//             collapsible: true,
-//             expanded: false,
-//             prefix: "compare/",
-//             children: [
-//                 "overview",
-//                 "plain-sql",
-//                 "sql-dsl",
-//                 "collection-dsl",
-//                 "limitations",
-//                 {
-//                     text: 'Tutorials',
-//                     collapsible: true,
-//                     expanded: false,
-//                     prefix: "tutorials/",
-//                     children: [
-//                         "slick",
-//                         "slick-sql",
-//                         "protoquill",
-//                         "scalasql",
-//                     ],
-//                 },
-//             ],
-//         },
+        {
+            text: 'Compare',
+            collapsible: true,
+            expanded: false,
+            prefix: "compare/",
+            children: [
+                "overview",
+                "plain-sql",
+                "sql-like-dsl",
+                "collection-like-dsl",
+                {
+                    text: 'Tutorials',
+                    collapsible: true,
+                    expanded: false,
+                    prefix: "tutorials/",
+                    children: [
+                        "slick",
+                        "slick-sql",
+                        "protoquill",
+                        "scalasql",
+                    ],
+                },
+            ],
+        },
 
         // {
         //     text: 'Cookbook',

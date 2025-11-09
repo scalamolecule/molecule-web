@@ -21,8 +21,8 @@ we can query for the name, age and home address of Persons in the database:
 @tab Molecule
 ```scala
 Person.name.age.Home.street.zip.query.get ==> List(
-  ("Bob", 42, "Main st. 17", 10240),
-  ("Liz", 38, "Main st. 17", 10240),
+  ("Bob", 42, "DoobieSetup2 st. 17", 10240),
+  ("Liz", 38, "DoobieSetup2 st. 17", 10240),
   ("Jon", 50, "Beach road", 11750),
 )
 ```
@@ -68,7 +68,7 @@ Chain multiple relationships by adding more relationship accessors like `Country
 @tab Molecule
 ```scala
 Person.name.age.Home.street.zip.Country.name.query.get.head ==>
-  ("Bob", 42, "Main st. 17", 10240, "USA")
+  ("Bob", 42, "DoobieSetup2 st. 17", 10240, "USA")
 ```
 @tab SQL
 ```sql
@@ -105,7 +105,7 @@ We don't necessarily have to return data from deeply related entities. We could 
 ```scala
 // Tacit Country name_
 Person.name.age.Home.street.zip.Country.name_("USA").query.get.head ==>
-  ("Bob", 42, "Main st. 17", 10240)
+  ("Bob", 42, "DoobieSetup2 st. 17", 10240)
 ```
 @tab SQL
 ```sql
@@ -153,7 +153,7 @@ Person.name.age
   .query.get.head ==>
   (
     "Bob", 42,
-    "Main st. 17", 10240, // branch 1 data 
+    "DoobieSetup2 st. 17", 10240, // branch 1 data 
     "Harvard" // branch 2 data
   )
 ```
@@ -201,7 +201,7 @@ Person.name.age
   .query.get.head ==>
   (
     "Bob", 42,
-    "Main st. 17", 10240, "USA", // branch 1 data 
+    "DoobieSetup2 st. 17", 10240, "USA", // branch 1 data 
     "Harvard", "MA" // branch 2 data
   )
 ```
@@ -255,7 +255,7 @@ Person.name.age
   .query.get.head ==>
   (
     "Bob", 42,
-    "Main st. 17", 10240, "USA", // branch 1 data 
+    "DoobieSetup2 st. 17", 10240, "USA", // branch 1 data 
     "Low" // branch 2 data
   )
 ```
@@ -301,7 +301,7 @@ We initiate the optional relationship with `Home.?(...)` and then build an "inne
 @tab Molecule
 ```scala
 Person.name.age.Home.?(Address.street).query.get ==> List(
-  ("Bob", 42, Some("Main st. 17")), // Option[<value>]
+  ("Bob", 42, Some("DoobieSetup2 st. 17")), // Option[<value>]
   ("Liz", 38, None) // Liz has no home address saved
 )
 ```
@@ -325,7 +325,7 @@ or with multiple optionally related attributes:
 @tab Molecule
 ```scala
 Person.name.age.Home.?(Address.street.zip).query.get ==> List(
-  ("Bob", 42, Some(("Main st. 17", 10240))), // Option[<tuple>]
+  ("Bob", 42, Some(("DoobieSetup2 st. 17", 10240))), // Option[<tuple>]
   ("Liz", 38, None)
 )
 ```
@@ -361,7 +361,7 @@ Now we start an optional entity `Person.?(...)` and then build an "inner molecul
 ```scala
 Person.?(Person.name).Home.street.query.get ==> List(
   (None, "Lonely st. 1"), // No-one lives on Lonely st.
-  (Some("Bob"), "Main st. 17"),
+  (Some("Bob"), "DoobieSetup2 st. 17"),
 )
 ```
 @tab SQL
@@ -384,7 +384,7 @@ And with multiple optional initial attributes:
 ```scala
 Person.?(Person.name.age).Home.street.query.i.get ==> List(
   (None, "Lonely st. 1"),
-  (Some(("Bob", 42)), "Main st. 17"),
+  (Some(("Bob", 42)), "DoobieSetup2 st. 17"),
 )
 ```
 @tab SQL
@@ -419,7 +419,7 @@ Person.name.age
   .query.get ==> List(
   (
     "Bob", 42,
-    "Main st. 17", 10240,
+    "DoobieSetup2 st. 17", 10240,
     Some("Harvard"),
   )
   // (Liz not included since home address is mandatory)
@@ -455,7 +455,7 @@ intercept[ModelError] {
     .query.get ==> List(
     (
       "Bob", 42,
-      Some(("Main st. 17", 10240)),
+      Some(("DoobieSetup2 st. 17", 10240)),
       Some("Harvard"),
     ),
     (
@@ -480,7 +480,7 @@ Person.name.age
   .query.get ==> List(
   (
     "Bob", 42,
-    Some(("Main st. 17", 10240)),
+    Some(("DoobieSetup2 st. 17", 10240)),
     Some("Harvard"),
   ),
   (
@@ -517,7 +517,7 @@ Mandatory relationship (`Country`) on inside optional relationship molecule is a
 ```scala
 Person.name.age
   .Home.?(Address.street.Country.name).query.get ==> List(
-  ("Bob", 42, Some(("Main st. 17", "USA"))),
+  ("Bob", 42, Some(("DoobieSetup2 st. 17", "USA"))),
   ("Liz", 38, None)
 )
 ```
@@ -551,7 +551,7 @@ Person.name.age
     .Country.?(Country.name)).query.get ==> List(
 
   ("Bob", 42, Some(
-    ("Main st. 17", 10240, Some(
+    ("DoobieSetup2 st. 17", 10240, Some(
       "USA")))),
 
   ("Liz", 38, None)

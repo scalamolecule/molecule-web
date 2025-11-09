@@ -9,6 +9,7 @@ object Person extends DomainStructure {
     val firstName = oneString
     val lastName  = oneString
     val age       = oneInt
+    val member    = oneBoolean
     val likes     = oneString
     val home      = manyToOne[Address]
     val education = manyToOne[University]

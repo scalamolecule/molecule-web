@@ -18,7 +18,7 @@ object relationships extends H2Tests {
       import db.dataModel.dsl.Person.*
 
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17").zip(10240).Country.name("USA")
+        .Home.street("DoobieSetup2 st. 17").zip(10240).Country.name("USA")
         ._Address.Stats.crimeRate("Low")
         ._Address._Person
         .Education.shortName("Harvard").State.abbr("MA")
@@ -30,30 +30,30 @@ object relationships extends H2Tests {
       // Ref ==============================================
 
       Person.name.age.Home.street.zip.query.get.head ==>
-        ("Bob", 42, "Main st. 17", 10240)
+        ("Bob", 42, "DoobieSetup2 st. 17", 10240)
 
       Person.name.age.home.query.get.head ==>
         ("Bob", 42, 1L)
 
       Person.name.age.Home.id.street.zip.query.get.head ==>
-        ("Bob", 42, 1L, "Main st. 17", 10240)
+        ("Bob", 42, 1L, "DoobieSetup2 st. 17", 10240)
 
       Person.name.age.
         Home.street.zip.
         Country.name.query.get.head ==>
-        ("Bob", 42, "Main st. 17", 10240, "USA")
+        ("Bob", 42, "DoobieSetup2 st. 17", 10240, "USA")
 
       Person.name.age.
         Home.street.zip.
         Country.name_("USA").query.get.head ==>
-        ("Bob", 42, "Main st. 17", 10240)
+        ("Bob", 42, "DoobieSetup2 st. 17", 10240)
     }
 
     "persons" - h2(Person_h2()) {
       import db.dataModel.dsl.Person.*
 
       Person.name("Bob").age(42)
-        .Home.street("Main st. 17").zip(10240).Country.name("USA")
+        .Home.street("DoobieSetup2 st. 17").zip(10240).Country.name("USA")
         ._Address.Stats.crimeRate("Low")
         ._Address._Person
         .Education.shortName("Harvard").State.abbr("MA")
@@ -65,18 +65,18 @@ object relationships extends H2Tests {
       // Ref ==============================================
 
       Person.name.age.Home.street.zip.query.get.head ==>
-        ("Bob", 42, "Main st. 17", 10240)
+        ("Bob", 42, "DoobieSetup2 st. 17", 10240)
 
       Person.name.age.home.query.get.head ==>
         ("Bob", 42, 1L)
 
       Person.name.age.Home.id.street.zip.query.get.head ==>
-        ("Bob", 42, 1L, "Main st. 17", 10240)
+        ("Bob", 42, 1L, "DoobieSetup2 st. 17", 10240)
 
       Person.name.age.
         Home.street.zip.
         Country.name.query.get.head ==>
-        ("Bob", 42, "Main st. 17", 10240, "USA")
+        ("Bob", 42, "DoobieSetup2 st. 17", 10240, "USA")
 
 
       // Backref ==============================================
@@ -88,7 +88,7 @@ object relationships extends H2Tests {
         .query.get.head ==>
         (
           "Bob", 42,
-          "Main st. 17", 10240, // branch 1 data
+          "DoobieSetup2 st. 17", 10240, // branch 1 data
           "Harvard" // branch 2 data
         )
 
@@ -99,7 +99,7 @@ object relationships extends H2Tests {
         .query.get.head ==>
         (
           "Bob", 42,
-          "Main st. 17", 10240, "USA", // branch 1 data
+          "DoobieSetup2 st. 17", 10240, "USA", // branch 1 data
           "Harvard", "MA" // branch 2 data
         )
 
@@ -110,7 +110,7 @@ object relationships extends H2Tests {
         .query.get.head ==>
         (
           "Bob", 42,
-          "Main st. 17", 10240, "USA", // branch 1 data
+          "DoobieSetup2 st. 17", 10240, "USA", // branch 1 data
           "Low" // branch 2 data
         )
 
@@ -119,13 +119,13 @@ object relationships extends H2Tests {
 
       // One optional related attribute
       Person.name.age.Home.?(Address.street).query.get ==> List(
-        ("Bob", 42, Some("Main st. 17")), // Option[<value>]
+        ("Bob", 42, Some("DoobieSetup2 st. 17")), // Option[<value>]
         ("Liz", 38, None)
       )
 
       // Multiple optional related attributes
       Person.name.age.Home.?(Address.street.zip).query.get ==> List(
-        ("Bob", 42, Some(("Main st. 17", 10240))), // Option[<tuple>]
+        ("Bob", 42, Some(("DoobieSetup2 st. 17", 10240))), // Option[<tuple>]
         ("Liz", 38, None)
       )
 
@@ -136,12 +136,12 @@ object relationships extends H2Tests {
 
       Person.?(Person.name).Home.street.query.get ==> List(
         (None, "Lonely st. 1"),
-        (Some("Bob"), "Main st. 17"),
+        (Some("Bob"), "DoobieSetup2 st. 17"),
       )
 
       Person.?(Person.name.age).Home.street.query.get ==> List(
         (None, "Lonely st. 1"),
-        (Some(("Bob", 42)), "Main st. 17"),
+        (Some(("Bob", 42)), "DoobieSetup2 st. 17"),
       )
 
 
@@ -154,7 +154,7 @@ object relationships extends H2Tests {
         .query.get ==> List(
         (
           "Bob", 42,
-          "Main st. 17", 10240,
+          "DoobieSetup2 st. 17", 10240,
           Some("Harvard"),
         )
         // (Liz not included since home address is mandatory)
@@ -168,7 +168,7 @@ object relationships extends H2Tests {
           .query.get ==> List(
           (
             "Bob", 42,
-            Some(("Main st. 17", 10240)),
+            Some(("DoobieSetup2 st. 17", 10240)),
             Some("Harvard"),
           ),
           (
@@ -186,7 +186,7 @@ object relationships extends H2Tests {
         .query.get ==> List(
         (
           "Bob", 42,
-          Some(("Main st. 17", 10240)),
+          Some(("DoobieSetup2 st. 17", 10240)),
           Some("Harvard"),
         ),
         (
@@ -199,7 +199,7 @@ object relationships extends H2Tests {
       // Inside
       Person.name.age
         .Home.?(Address.street.Country.name).query.i.get ==> List(
-        ("Bob", 42, Some(("Main st. 17", "USA"))),
+        ("Bob", 42, Some(("DoobieSetup2 st. 17", "USA"))),
         ("Liz", 38, None)
       )
 
@@ -209,7 +209,7 @@ object relationships extends H2Tests {
           .Country.?(Country.name)).query.i.get ==> List(
 
         ("Bob", 42, Some(
-          ("Main st. 17", 10240, Some(
+          ("DoobieSetup2 st. 17", 10240, Some(
             "USA")))),
 
         ("Liz", 38, None)

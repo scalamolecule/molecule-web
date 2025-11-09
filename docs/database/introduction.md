@@ -89,7 +89,7 @@ Likewise, Data can be transacted with molecules:
 ::: code-tabs#coord
 @tab Save
 ```scala
-Person.name("Ben").age(22).Address.street("Main st.").save.transact
+Person.name("Ben").age(22).Address.street("DoobieSetup2 st.").save.transact
 ```
 
 @tab Insert

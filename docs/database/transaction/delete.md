@@ -195,7 +195,7 @@ Delete entities and their relationships with filters across related entities:
 
 ```scala
 Person.name.Home.?(Address.street).insert(
-  ("Bob", Some("Main st. 1")),
+  ("Bob", Some("DoobieSetup2 st. 1")),
   ("Liz", Some("5th Ave. 1")),
   ("Tod", None),
 ).transact
@@ -204,7 +204,7 @@ Person.name.Home.?(Address.street).insert(
 Person.Home.street_.delete.transact
 
 Person.name.Home.?(Address.street).query.get ==> List(
-  // ("Bob", Some("Main st. 1")), // deleted
+  // ("Bob", Some("DoobieSetup2 st. 1")), // deleted
   // ("Liz", Some("5th Ave. 1")), // deleted
   ("Tod", None),
 )

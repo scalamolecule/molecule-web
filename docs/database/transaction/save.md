@@ -92,7 +92,7 @@ Collection attributes can be saved with a `Set`, `Seq` and `Map` or any subtype 
 ::: code-tabs#collection
 @tab Set
 ```scala
-// Main collection type
+// DoobieSetup2 collection type
 Person.hobbies(Set("stamps", "trains")).save.transact
 
 // Set subtypes
@@ -103,7 +103,7 @@ Person.hobbies(TreeSet("stamps", "trains")).save.transact
 
 @tab Seq
 ```scala
-// Main collection type
+// DoobieSetup2 collection type
 Person.scores(Seq(1, 2, 2)).save.transact
 
 // Seq subtypes
@@ -114,7 +114,7 @@ Person.scores(Vector(1, 2, 2)).save.transact
 
 @tab Map
 ```scala
-// Main collection type
+// DoobieSetup2 collection type
 Person.langNames(Map("en" -> "Hello", "es" -> "Hola")).save.transact
 
 // Map subtypes
@@ -131,18 +131,18 @@ Additional related data can be added, and Molecule will transparently create the
 
 ```scala
 Person.name("Bob").age(42)
-  .Home.street("Main st. 17").save.transact
+  .Home.street("DoobieSetup2 st. 17").save.transact
 
 Person.name.age
   .Home.street.query.get.head ==> 
-  ("Bob", 42, "Main st. 17")
+  ("Bob", 42, "DoobieSetup2 st. 17")
 ```
 
 Even though we would likely save Countries separately in a database, for tests it can be valuable to be able to create a chain of relationships:
 
 ```scala
 Person.name("Bob").age(42)
-  .Home.street("Main st. 17")
+  .Home.street("DoobieSetup2 st. 17")
   .Country.name("USA")
   .save.transact
 
@@ -150,7 +150,7 @@ Person.name.age
   .Home.street
   .Country.name
   .query.get.head ==>
-  ("Bob", 42, "Main st. 17", "USA")
+  ("Bob", 42, "DoobieSetup2 st. 17", "USA")
 ```
 
 ## Stepping back
@@ -159,7 +159,7 @@ We can use `_Person` to "step back" to `Person` and save additional relationship
 
 ```scala
 Person.name("Bob").age(42)
-  .Home.street("Main st. 17") // add relationship
+  .Home.street("DoobieSetup2 st. 17") // add relationship
   ._Person // step back to Person 
   .Education.shortName("Harvard") // add another relationship from Person
   .save.transact
@@ -169,7 +169,7 @@ Person.name.age
   .Home.street._Person
   .Education.shortName
   .query.get.head ==>
-  ("Bob", 42, "Main st. 17", "Harvard")
+  ("Bob", 42, "DoobieSetup2 st. 17", "Harvard")
 ```
 
 
@@ -180,7 +180,7 @@ As mentioned above, `Country` is likely a separate entity that we don't want to 
 val usaId = Country.id.name_("USA").query.get.head
 
 Person.name("Bob").age(42)
-  .Home.street("Main st. 17")
+  .Home.street("DoobieSetup2 st. 17")
   .country(usaId) // save country id `usaId` as a foreign key
   .save.transact
 
@@ -188,7 +188,7 @@ Person.name.age
   .Home.street
   .Country.name
   .query.get.head ==>
-  ("Bob", 42, "Main st. 17", "USA")
+  ("Bob", 42, "DoobieSetup2 st. 17", "USA")
 ```
 
 

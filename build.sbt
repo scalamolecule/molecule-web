@@ -1,6 +1,8 @@
 
 val moleculeVersion = "0.26.1-SNAPSHOT"
 
+val testContainerVersion     = "1.20.6"
+
 inThisBuild(
   List(
     organization := "org.scalamolecule",
@@ -46,17 +48,21 @@ lazy val code = project.in(file("code"))
       "com.dimafeng" %% "testcontainers-scala-mariadb" % "0.41.3",
       "org.mariadb.jdbc" % "mariadb-java-client" % "3.4.0",
 
-      "org.testcontainers" % "mysql" % "1.19.8",
+      "org.testcontainers" % "mysql" % testContainerVersion,
       "mysql" % "mysql-connector-java" % "8.0.33",
 
-      "org.testcontainers" % "postgresql" % "1.19.8",
-      "org.postgresql" % "postgresql" % "42.7.2",
+      "org.testcontainers" % "postgresql" % testContainerVersion,
+      "org.postgresql" % "postgresql" % "42.7.5",
 
       "org.xerial" % "sqlite-jdbc" % "3.46.0.0",
 
       "org.tpolecat" %% "doobie-core" % "1.0.0-RC8",
       "org.tpolecat" %% "doobie-postgres" % "1.0.0-RC8",
+      "com.augustnagro" %% "magnum" % "2.0.0-M2",
 
+      "org.tpolecat" %% "skunk-core" % "0.6.4",
+
+      "org.playframework.anorm" %% "anorm" % "2.7.0",
     ),
 
     Test / fork := true, // necessary for sbt testing

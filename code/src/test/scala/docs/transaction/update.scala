@@ -13,7 +13,7 @@ object update extends H2Tests {
   override lazy val tests = Tests {
 
     "id core" - h2(Person_h2()) {
-      Person.name("Bob").age(42).Home.street("Main st. 1").save.inspect
+      Person.name("Bob").age(42).Home.street("DoobieSetup2 st. 1").save.inspect
       Person.name("Bob").age(42).save.transact
 
       Person(1).age(43).update.transact
@@ -523,7 +523,7 @@ object update extends H2Tests {
 
 
     "Base update" - h2(Person_h2()) {
-      val List(a1, a2) = Address.street.insert("Main st. 17", "5th Ave. 1").transact.ids
+      val List(a1, a2) = Address.street.insert("DoobieSetup2 st. 17", "5th Ave. 1").transact.ids
       Person.name.likes_?.home_?.insert(
         ("Bob", Some("Pasta"), Some(a1)),
         ("Eva", Some("Sushi"), None),
@@ -536,7 +536,7 @@ object update extends H2Tests {
 
       // Existing likes of Bob updated since he also has a street address
       Person.name.likes_?.Home.?(Address.street).query.get ==> List(
-        ("Bob", Some("Beef"), Some("Main st. 17")), // likes updated
+        ("Bob", Some("Beef"), Some("DoobieSetup2 st. 17")), // likes updated
         ("Eva", Some("Sushi"), None),
         ("Liz", None, Some("5th Ave. 1")), // no update without likes value
         ("Tod", None, None),
@@ -551,7 +551,7 @@ object update extends H2Tests {
 
 
     "Ref update" - h2(Person_h2()) {
-      val List(a1, a2) = Address.street.insert("Main st. 17", "5th Ave. 1").transact.ids
+      val List(a1, a2) = Address.street.insert("DoobieSetup2 st. 17", "5th Ave. 1").transact.ids
       Person.name.likes_?.home_?.insert(
         ("Bob", Some("Pasta"), Some(a1)),
         ("Eva", Some("Sushi"), None),
@@ -576,10 +576,10 @@ object update extends H2Tests {
       val List(usaId, ukId) = Country.name.insert("USA", "UK").transact.ids
 
       val bobId = Person.name("Bob")
-        .Home.street("Main st. 17").country(usaId).save.transact.id
+        .Home.street("DoobieSetup2 st. 17").country(usaId).save.transact.id
 
       Person.name.Home.street.Country.name.query.get ==> List(
-        ("Bob", "Main st. 17", "USA"),
+        ("Bob", "DoobieSetup2 st. 17", "USA"),
       )
 
       Person(bobId)
