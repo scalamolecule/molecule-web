@@ -506,7 +506,7 @@ unitOfWork {
 
 **ScalikeJDBC** - Use `DB localTx` or `DB withinTx` block:
 ```scala
-implicit val session: DBSession = //...
+implicit val session: DBSession = //... ScalikeJDBC session
 
 // Single operation
 DB localTx { implicit session =>
@@ -636,8 +636,17 @@ dsl.transaction((configuration: Configuration) => {
 
   // Batch insert multiple employees
   ctx.batch(
-    ctx.insertInto(EMPLOYEE, EMPLOYEE.NAME, EMPLOYEE.SALARY, EMPLOYEE.PROJECT_ID)
-      .values(null.asInstanceOf[String], null.asInstanceOf[Integer], null.asInstanceOf[Long])
+    ctx.insertInto(
+        EMPLOYEE, 
+        EMPLOYEE.NAME, 
+        EMPLOYEE.SALARY, 
+        EMPLOYEE.PROJECT_ID
+      )
+      .values(
+        null.asInstanceOf[String], 
+        null.asInstanceOf[Integer], 
+        null.asInstanceOf[Long]
+      )
   ).bind("Alice", 80000, p1)
    .bind("Bob", 90000, p1)
    .execute()
