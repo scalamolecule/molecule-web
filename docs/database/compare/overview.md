@@ -24,7 +24,7 @@ Example query:
 
 ```scala
 // Molecule
-Person.name.age.Address.street.query.get
+Person.name.age.Address.street.query
 ```
 
 ```scala
@@ -49,17 +49,15 @@ Libraries that offer a DSL resembling SQL syntax, while ensuring type-safety:
 
 ```scala
 // Molecule
-Person.name.age.Address.street.query.get
+Person.name.age.Address.street.query
 ```
 
 ```scala
 // ScalikeJDBC
-withSQL {
-  select(p.result.name, p.result.age, a.result.street)
-    .from(Person as p)
-    .innerJoin(Address as a)
-    .on(p.addressId, a.id)
-}
+select(p.result.name, p.result.age, a.result.street)
+  .from(Person as p)
+  .innerJoin(Address as a)
+  .on(p.addressId, a.id)
 ```
 
 ```scala
@@ -108,7 +106,7 @@ Libraries that use Scala collection-like syntax to query SQL data:
 
 ```scala
 // Molecule
-Person.name.age.Address.street.query.get
+Person.name.age.Address.street.query
 ```
 
 ```scala
@@ -126,12 +124,10 @@ Person.select
 
 ```scala
 // Quill
-quote {
-  for {
-    p <- query[Person]
-    a <- query[Address] if p.addressId == a.id
-  } yield (p.name, p.age, a.street)
-}
+for {
+  p <- query[Person]
+  a <- query[Address] if p.addressId == a.id
+} yield (p.name, p.age, a.street)
 ```
 
 

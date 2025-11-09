@@ -325,25 +325,25 @@ val people: List[(String, Int, String)] =
 ```scala
 val (p, a) = (Person.syntax("p"), Address.syntax("a"))
 
-val people: List[(Person, Option[Address])] =
+val people: List[(Person, Address)] =
   withSQL {
     select(p.result.*, a.result.*)
       .from(Person as p)
-      .leftJoin(Address as a).on(p.id, a.personId)
+      .innerJoin(Address as a).on(p.addressId, a.id)
       .where.gt(p.age, 25)
       .orderBy(p.name)
   }.map { rs =>
     // Manual mapping from ResultSet
-    (Person(p)(rs), Address.opt(a)(rs))
+    (Person(p)(rs), Address(a)(rs))
   }.list.apply()
 ```
 
 **Typo** - Generated repository with query methods
 ```scala
-val people: ConnectionIO[List[(PersonRow, Option[AddressRow])]] =
+val people: ConnectionIO[List[(PersonRow, AddressRow)]] =
   personRepo.select
     .join(addressRepo.select)
-    .on((p, a) => p.id === a.personId)
+    .on((p, a) => p.addressId === a.id)
     .where((p, a) => p.age > 25)
     .orderBy((p, a) => p.name.asc)
     .toList
@@ -355,10 +355,10 @@ val people: ConnectionIO[List[(PersonRow, Option[AddressRow])]] =
 val personTable  = TableQuery[Person]
 val addressTable = TableQuery[Address]
 
-val people: IO[List[(Person, Option[Address])]] =
+val people: IO[List[(Person, Address)]] =
   personTable
-    .leftJoin(addressTable)
-    .on(_.id === _.personId)
+    .join(addressTable)
+    .on(_.addressId === _.id)
     .where(_._1.age > 25)
     .orderBy(_._1.name.asc)
     .query
@@ -369,13 +369,12 @@ val people: IO[List[(Person, Option[Address])]] =
 
 **Squeryl** - Scala-integrated query DSL
 ```scala
-val people: List[(Person, Option[Address])] =
+val people: List[(Person, Address)] =
   from(MySchema.persons, MySchema.addresses)((p, a) =>
-    where(p.age > 25)
+    where(p.age > 25 and p.addressId === a.id)
       select ((p, a))
       orderBy (p.name asc)
-  ).leftOuter.on((p, a) => p.id === a.personId)
-    .toList
+  ).toList
 // Automatic case class mapping
 ```
 
@@ -384,8 +383,8 @@ val people: List[(Person, Option[Address])] =
 val people: List[Record] =
   dsl.select(PERSON.NAME, PERSON.AGE, ADDRESS.STREET)
     .from(PERSON)
-    .leftJoin(ADDRESS)
-    .on(PERSON.ID.eq(ADDRESS.PERSON_ID))
+    .join(ADDRESS)
+    .on(PERSON.ADDRESS_ID.eq(ADDRESS.ID))
     .where(PERSON.AGE.gt(25))
     .orderBy(PERSON.NAME.asc())
     .fetch()
