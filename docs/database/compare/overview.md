@@ -131,4 +131,4 @@ for {
 ```
 
 
-[More comparisons...](/database/compare/collection-dsl)
+[More comparisons...](/database/compare/collection-like-dsl)
