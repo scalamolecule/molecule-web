@@ -1,5 +1,9 @@
 # Slick SQL
 
+Compare [Slick Tutorial](https://scala-slick.org/doc/stable/sql-to-slick.html) sql interpolation code examples with molecules in the following sections or see [setups](#slick-setup).
+
+_The molecule examples use the simple synchronous api for brevity. [Asynchronous/ZIO/cats.effect.IO](/database/query/attributes#4-apis) apis are also available._
+
 
 ### SELECT *
 

@@ -93,7 +93,7 @@ select(PERSON.NAME, PERSON.AGE, ADDRESS.STREET)
 ```
 
 
-[More comparisons...](/database/compare/sql-dsl)
+[More comparisons...](/database/compare/sql-like-dsl)
 
 ## 3. Scala collection-style DSL libraries
 
