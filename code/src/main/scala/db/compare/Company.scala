@@ -11,6 +11,7 @@ object Company extends DomainStructure {
 
   trait Employee {
     val name       = oneString
+    //    val salary     = oneInt
     val department = manyToOne[Department]
   }
 

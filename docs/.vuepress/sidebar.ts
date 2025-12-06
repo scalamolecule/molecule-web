@@ -43,6 +43,7 @@ export default sidebar({
                 "update",
                 "delete",
                 "raw-transact",
+                "tx-management",
                 // "migration",
             ],
         },
@@ -76,12 +77,28 @@ export default sidebar({
                 "complex-example",
             ],
         },
-
         {
-            text: 'Compare',
+            text: 'Authorization',
             collapsible: true,
             expanded: false,
-            prefix: "compare/",
+            prefix: "authorization",
+            children: [
+                "overview",
+                "1-roles",
+                "2-action-grants",
+                "3-attribute-restrictions",
+                "4-attribute-updates",
+                "raw-access",
+                "authentication",
+                "comparison",
+            ],
+        },
+
+        {
+            text: 'SQL libs',
+            collapsible: true,
+            expanded: false,
+            prefix: "sql-libs/",
             children: [
                 "overview",
                 "plain-sql",

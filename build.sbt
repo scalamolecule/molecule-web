@@ -9,7 +9,7 @@ inThisBuild(
     organizationName := "ScalaMolecule",
     organizationHomepage := Some(url("http://www.scalamolecule.org")),
     version := "0.1.0-SNAPSHOT",
-    scalaVersion := "3.7.3",
+    scalaVersion := "3.7.4",
 
     // Run tests for all systems sequentially to avoid data locks with db
     // Only applies on JVM. On JS platform there's no parallelism anyway.

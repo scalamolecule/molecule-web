@@ -7,6 +7,7 @@ import molecule.db.common.facade.{JdbcConn_JVM, JdbcHandler_JVM}
 import molecule.db.common.marshalling.JdbcProxy
 import org.postgresql.ds.PGSimpleDataSource
 import org.testcontainers.containers.PostgreSQLContainer
+import molecule.db.postgresql.sync.*
 
 object MoleculeSetup extends App {
   // Intentionally not closing DataSource/Connections/Container to keep the example minimal for docs — do not copy to production
@@ -29,19 +30,19 @@ object MoleculeSetup extends App {
     Project.name.budget.insert(
       ("Site Redesign", 1500000),
       ("Internal Tooling", 300000)
-    ).transact.map(_.ids.head).unsafeRunSync()
+    ).transact.id
 
   // Seed employees tied to project p1
   Employee.name.salary.project.insert(
     ("Alice", 120000, p1),
     ("Bob",   110000, p1)
-  ).transact.unsafeRunSync()
+  ).transact
 
   // Query (sorted by name for deterministic assertion)
   val rows =
     Employee.name.a1.salary.Project.name
       .budget_.>(1000000)
-      .query.get.unsafeRunSync()
+      .query.get
 
   val expected = List(
     ("Alice", 120000, "Site Redesign"),

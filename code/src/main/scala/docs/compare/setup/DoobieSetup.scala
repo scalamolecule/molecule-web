@@ -13,14 +13,17 @@ object DoobieSetup extends IOApp.Simple {
       container <- SharedSetup.containerR
       ds        <- SharedSetup.dataSourceR(container)
       _         <- Resource.eval(SharedSetup.migrate(ds))
-      xa        <- Resource.eval(IO.pure(
+      xa        <- Resource.eval(IO.pure {
+                     val props = new java.util.Properties()
+                     props.setProperty("user", container.getUsername)
+                     props.setProperty("password", container.getPassword)
                      Transactor.fromDriverManager[IO](
                        driver = "org.postgresql.Driver",
                        url    = container.getJdbcUrl,
-                       user   = container.getUsername,
-                       pass   = container.getPassword
+                       info   = props,
+                       logHandler = None
                      )
-                   ))
+                   })
     yield xa
 
   // Seed data
