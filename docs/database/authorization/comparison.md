@@ -1,6 +1,6 @@
 # Comparison
 
-Molecule provides compile-time validated, field-level authorization with zero boilerplate.
+This page compares Molecule's authorization approach with other common authorization systems like GraphQL directives, Spring Security, and Casbin. We'll examine how Molecule's compile-time validated, field-level authorization differs from traditional runtime approaches.
 
 ## The fundamental difference
 
