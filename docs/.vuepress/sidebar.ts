@@ -17,6 +17,7 @@ export default sidebar({
                 "sbt-setup",
                 "domain-structure",
                 "validation",
+                "db-column-props",
                 "db-setup",
             ],
         },

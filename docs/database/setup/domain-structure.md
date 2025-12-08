@@ -100,8 +100,8 @@ All primitive Scala type plus some common java types can be defined as attribute
 - java.time.*
 - java.util.{Date, UUID}
 
-Molecule transparently maps each type to a corresponding or useful value type for each database. 
-                
+Molecule transparently maps each type to a corresponding or useful value type for each database. You can customize these mappings with [custom database column properties](/database/setup/db-column-props).
+
 
 ### Collections
 
@@ -283,7 +283,7 @@ mapZonedDateTime  : Map[String, java.time.ZonedDateTime]
 :::
 
 
-Molecule transparently persist and retrieves all Scala primitive/collection types to the most optimal data type in each database. This gives you freedom to model your domain data with exactly the same Scala types that you would use for your domain class properties. 
+Molecule transparently persist and retrieves all Scala primitive/collection types to the most optimal data type in each database. See [custom database column properties](/database/setup/db-column-props) to customize SQL column types. This gives you freedom to model your domain data with exactly the same Scala types that you would use for your domain class properties. 
 
 
 ### Set
@@ -346,6 +346,18 @@ val lastName = oneString.description("Last name of person").indexed.mandatory
 ```
 
 The following Attribute definition options are available in Molecule:
+
+
+### `dbColumnProperties`
+
+Customize the SQL column type for a specific attribute while maintaining JDBC type compatibility:
+
+```scala
+val zipCode = oneString.dbColumnProperties(Db.PostgreSQL -> "VARCHAR(10)")
+val price = oneDouble.dbColumnProperties(Db.MySQL -> "DECIMAL(10,2)")
+```
+
+See [custom database column properties](/database/setup/db-column-props) for details.
 
 
 ### `description`

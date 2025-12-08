@@ -1,7 +1,8 @@
 
 # Validation
 
-Attributes can be defined in your domain structure with a validation lambda of type <nobr>`<baseType> => Boolean`</nobr>. Molecule will then only transact valid values for the Attribute.
+Attributes can be defined in your domain structure with a validation lambda of type <nobr>`<baseType> => Boolean`</nobr>. Molecule will then only transact valid values for the Attribute. 
+
 
 ```scala
 val intAttr       = oneInt.validate(_ > 2) // Int => Boolean

@@ -10,7 +10,7 @@ Molecule uses the sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-mole
 Add the latest version of the plugin in `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.21.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.23.0")
 ```
 
 Enable the plugin in your `build.sbt` file and import the molecule library that corresponds to the database(s) that you will use:
@@ -20,11 +20,11 @@ lazy val app = project
   .settings(
       libraryDependencies ++= Seq(
         // One or more database-specific imports
-        "org.scalamolecule" %% "molecule-db-h2" % "0.26.0",
-        "org.scalamolecule" %% "molecule-db-mariadb" % "0.26.0",
-        "org.scalamolecule" %% "molecule-db-mysql" % "0.26.0",
-        "org.scalamolecule" %% "molecule-db-postgres" % "0.26.0",
-        "org.scalamolecule" %% "molecule-db-sqlite" % "0.26.0",
+        "org.scalamolecule" %% "molecule-db-h2" % "0.28.0",
+        "org.scalamolecule" %% "molecule-db-mariadb" % "0.28.0",
+        "org.scalamolecule" %% "molecule-db-mysql" % "0.28.0",
+        "org.scalamolecule" %% "molecule-db-postgres" % "0.28.0",
+        "org.scalamolecule" %% "molecule-db-sqlite" % "0.28.0",
       )
     )
 ```
