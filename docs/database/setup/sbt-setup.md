@@ -10,7 +10,7 @@ Molecule uses the sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-mole
 Add the latest version of the plugin in `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.1")
 ```
 
 Enable the plugin in your `build.sbt` file and import the molecule library that corresponds to the database(s) that you will use:
@@ -67,20 +67,22 @@ SQL schema files for each available database are generated in the resources fold
 src
 └── main
     ├── resources
-    │   └── moleculeGen
-    │       └── app
-    │           ├── Bar
-    │           │   ├── Bar_h2.sql
-    │           │   ├── Bar_mariadb.sql
-    │           │   ├── Bar_mysql.sql
-    │           │   ├── Bar_postgresql.sql
-    │           │   └── Bar_sqlite.sql
-    │           └── Foo
-    │               ├── Foo_h2.sql
-    │               ├── Foo_mariadb.sql
-    │               ├── Foo_mysql.sql
-    │               ├── Foo_postgresql.sql
-    │               └── Foo_sqlite.sql
+    │   └── db
+    │       └── migration
+    │       └── schema
+    │           └── app
+    │               ├── Bar
+    │               │   ├── Bar_h2.sql
+    │               │   ├── Bar_mariadb.sql
+    │               │   ├── Bar_mysql.sql
+    │               │   ├── Bar_postgresql.sql
+    │               │   └── Bar_sqlite.sql
+    │               └── Foo
+    │                   ├── Foo_h2.sql
+    │                   ├── Foo_mariadb.sql
+    │                   ├── Foo_mysql.sql
+    │                   ├── Foo_postgresql.sql
+    │                   └── Foo_sqlite.sql
     └── scala
         └── app
             ├── Bar.scala

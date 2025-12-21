@@ -1,6 +1,6 @@
 # Ambiguous Changes
 
-When running `sbt moleculeGen` Molecule compares your domain structure with how it looked last time you ran `sbt moleculeClean` to detect changes. If it cannot determine your intent of a change, it throws an error and generates a **Resolution file** to guide you in resolving the ambiguity.
+When running `sbt moleculeGen` Molecule compares your domain structure with the previous structure to detect changes. If it cannot determine your intent of a change, it throws an error and generates a **Resolution file** to guide you in resolving the ambiguity.
 
 ## When ambiguity occurs
 

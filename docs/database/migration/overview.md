@@ -18,7 +18,7 @@ The SQL schema files are saved in `resources/db/schema/` for each domain and dat
 Then, when your domain has stabilized and you're ready to deploy to production, Molecule allows you to turn on migration handling with:
 
 ```bash
-sbt moleculeGen --init-migrations
+sbt "moleculeGen initMigrations"
 ```
 From now on Molecule will also generate Flyway migration files for each domain and database dialect in `resources/db/migration/`.
 
@@ -56,13 +56,22 @@ Enable migration tracking for your domain(s):
 
 ```bash
 # Initialize for all domains
-sbt moleculeGen --init-migrations
+sbt "moleculeGen initMigrations"
 
 # Initialize for the Company domain only
-sbt moleculeGen --init-migrations:Company
+sbt "moleculeGen initMigrations Company"
 
 # Initialize for multiple domains
-sbt moleculeGen --init-migrations:Company,Social
+sbt "moleculeGen initMigrations Company Social"
+```
+
+Alternatively, you can run these commands from within the SBT shell without quotes:
+
+```bash
+$ sbt
+sbt:yourProject> moleculeGen initMigrations
+sbt:yourProject> moleculeGen initMigrations Company
+sbt:yourProject> moleculeGen initMigrations Company Social
 ```
 
 This creates the initial migration file (V1__initial_schema.sql) and starts tracking future changes.
@@ -88,13 +97,21 @@ Remove migration tracking (back to development mode):
 
 ```bash
 # Remove all migration tracking
-sbt moleculeGen --delete-migrations
+sbt "moleculeGen deleteMigrations"
 
 # Remove for the Company domain only
-sbt moleculeGen --delete-migrations:Company
+sbt "moleculeGen deleteMigrations Company"
 
 # Remove for multiple domains
-sbt moleculeGen --delete-migrations:Company,Social
+sbt "moleculeGen deleteMigrations Company Social"
+```
+
+Alternatively, from within the SBT shell:
+
+```bash
+sbt:yourProject> moleculeGen deleteMigrations
+sbt:yourProject> moleculeGen deleteMigrations Company
+sbt:yourProject> moleculeGen deleteMigrations Company Social
 ```
 
 ## What can be migrated
