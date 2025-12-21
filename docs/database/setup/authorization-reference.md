@@ -5,7 +5,7 @@ You can define authorization rules directly in your domain model. This page show
 ## Basic Example
 
 ```scala
-object MyDomain extends DomainStructure {
+trait MyDomain extends DomainStructure {
 
   // Define roles with action permissions
   trait Guest extends Role with query

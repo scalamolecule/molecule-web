@@ -106,7 +106,7 @@ SQL-DSL libraries take different approaches to schema definition: some generate 
 
 User defines DomainStructure with one trait for each table
 ```scala
-object People extends DomainStructure {
+trait People extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt

@@ -26,7 +26,7 @@ actions:
 features:
   - title: 1. Define
 #    icon: b:markdown
-    details: <pre>object MyDomain extends DomainStructure {<br>  trait Hej<br>}</pre>
+    details: <pre>trait MyDomain extends DomainStructure {<br>  trait Hej<br>}</pre>
     link: /guide/markdown/
 #    details: Declare <i>what</i> data you want with molecules instead <i>how</i> with SQL
 

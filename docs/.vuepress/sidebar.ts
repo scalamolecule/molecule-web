@@ -45,7 +45,6 @@ export default sidebar({
                 "delete",
                 "raw-transact",
                 "tx-management",
-                // "migration",
             ],
         },
         {
@@ -92,6 +91,22 @@ export default sidebar({
                 "raw-access",
                 "authentication",
                 "comparison",
+            ],
+        },
+
+        {
+            text: 'Migration',
+            collapsible: true,
+            expanded: false,
+            prefix: "migration",
+            children: [
+                "overview",
+                "unambiguous-changes",
+                "ambiguous-changes",
+                "relationships",
+                "advanced",
+                "automatic-cleanup",
+                "reference",
             ],
         },
 

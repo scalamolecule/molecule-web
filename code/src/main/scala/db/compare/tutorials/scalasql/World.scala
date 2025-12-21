@@ -2,7 +2,7 @@ package db.compare.tutorials.scalasql
 
 import molecule.DomainStructure
 
-object World extends DomainStructure {
+trait World extends DomainStructure {
 
   trait Country {
     val code           = oneString

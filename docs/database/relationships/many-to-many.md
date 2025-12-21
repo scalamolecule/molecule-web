@@ -3,7 +3,7 @@
 As described in [Domain structure](/database/setup/domain-structure#many-to-many), a relationship can be defined as many-to-many join table between two entities.
 
 ```scala
-object Company extends DomainStructure {
+trait Company extends DomainStructure {
   trait Project {
     val name   = oneString
     val budget = oneInt

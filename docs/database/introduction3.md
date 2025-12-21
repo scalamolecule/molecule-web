@@ -28,7 +28,7 @@ Define your domain structure in plain Scala:
 ```scala
 import molecule.DomainStructure
 
-object MyDomainStructure extends DomainStructure {
+trait MyDomainStructure extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt

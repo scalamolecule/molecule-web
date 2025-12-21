@@ -22,7 +22,7 @@ import ctx._
 In Molecule you define things more in terms of your domain structure with Entities and their Attributes.
 
 ```scala
-object People extends DomainStructure {
+trait People extends DomainStructure {
   trait Person {
     val name = oneString
     val age  = oneInt

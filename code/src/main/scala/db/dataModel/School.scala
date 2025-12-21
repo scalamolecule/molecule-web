@@ -2,7 +2,7 @@ package db.dataModel
 
 import molecule.DomainStructure
 
-object School extends DomainStructure {
+trait School extends DomainStructure {
 
   trait Teacher {
     val name = oneString

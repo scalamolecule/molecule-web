@@ -97,7 +97,7 @@ In Molecule you simply define the structure of your domain with Entities and the
 - Single trait for each domain entity (instead of both case class and object)
 
 ```scala
-object World extends DomainStructure {
+trait World extends DomainStructure {
 
   trait Country {
     val code           = oneString

@@ -119,7 +119,7 @@ The [Domain Structure](/database/setup/domain-structure) for the example above i
 ```scala
 import molecule.DomainStructure
 
-object MyDomainStructure extends DomainStructure {
+trait MyDomainStructure extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt

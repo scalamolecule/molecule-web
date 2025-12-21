@@ -3,7 +3,7 @@ package db.compare
 import molecule.DomainStructure
 
 
-object Company2 extends DomainStructure {
+trait Company2 extends DomainStructure {
 
   trait Employee {
     val name    = oneString

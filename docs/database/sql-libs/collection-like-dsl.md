@@ -102,7 +102,7 @@ Collection-like DSL libraries define schemas directly in Scala code at runtime u
 
 User defines DomainStructure with one trait for each table
 ```scala
-object People extends DomainStructure {
+trait People extends DomainStructure {
   trait Person {
     val name    = oneString
     val age     = oneInt

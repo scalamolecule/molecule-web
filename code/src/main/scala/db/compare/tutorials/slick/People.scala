@@ -2,7 +2,7 @@ package db.compare.tutorials.slick
 
 import molecule.DomainStructure
 
-object People extends DomainStructure {
+trait People extends DomainStructure {
 
   trait Person {
     val name    = oneString

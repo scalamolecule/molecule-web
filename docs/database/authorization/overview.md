@@ -1,4 +1,4 @@
-# Overview
+# Authorization overview
 
 Molecule provides declarative, compile-time validated authorization integrated directly into your domain model. Define authorization rules once in the domain structure definition and they're automatically enforced at runtime.
 
@@ -63,7 +63,7 @@ Define some roles in your domain structure definition and let entities extend th
 ```scala
 import molecule.DomainStructure
 
-object MyDomain extends DomainStructure {
+trait MyDomain extends DomainStructure {
   trait Guest extends Role with query
   trait Member extends Role with query with save
   trait Moderator extends Role with query with save with insert with update with delete

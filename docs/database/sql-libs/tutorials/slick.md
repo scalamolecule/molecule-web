@@ -49,7 +49,7 @@ In Molecule you define things more in terms of your domain structure with only t
 - No redundant repetition of each column name ("street" .. "STREET")
 
 ```scala
-object People extends DomainStructure {
+trait People extends DomainStructure {
 
   trait Person {
     val name    = oneString

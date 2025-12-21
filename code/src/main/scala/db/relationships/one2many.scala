@@ -4,7 +4,7 @@ import db.dataModel.Accounting.InvoiceLine
 import molecule.DomainStructure
 
 @deprecated
-object one2many extends DomainStructure {
+trait one2many extends DomainStructure {
 
   trait Invoice {
     val no = oneInt

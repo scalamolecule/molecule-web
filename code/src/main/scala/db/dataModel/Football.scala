@@ -2,7 +2,7 @@ package db.dataModel
 
 import molecule.DomainStructure
 
-object Football extends DomainStructure {
+trait Football extends DomainStructure {
 
   // https://www.whoscored.com/Statistics
 

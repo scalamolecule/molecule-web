@@ -2,7 +2,7 @@ package db.dataModel
 
 import molecule.DomainStructure
 
-object ChatRoom extends DomainStructure {
+trait ChatRoom extends DomainStructure {
 
   trait Post {
     val user    = oneString

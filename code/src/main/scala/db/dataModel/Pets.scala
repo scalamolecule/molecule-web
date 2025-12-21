@@ -2,7 +2,7 @@ package db.dataModel
 
 import molecule.DomainStructure
 
-object Pets extends DomainStructure {
+trait Pets extends DomainStructure {
 //  val friends       = many[Person]
 //  val companionPets = many[Pet]
 

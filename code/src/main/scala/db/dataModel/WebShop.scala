@@ -2,7 +2,7 @@ package db.dataModel
 
 import molecule.DomainStructure
 
-object WebShop extends DomainStructure {
+trait WebShop extends DomainStructure {
 
   trait Developer {
     val name = oneString

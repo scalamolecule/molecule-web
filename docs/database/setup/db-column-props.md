@@ -10,7 +10,7 @@ By default, Molecule maps Scala types to appropriate SQL column types (e.g., `St
 Custom column properties let you substitute any SQL type that maps to the same JDBC type, allowing you to use database-specific constraints, optimize storage, or enforce limits while maintaining compatibility.
 
 ```scala
-object MyDomain extends DomainStructure {
+trait MyDomain extends DomainStructure {
   // Define general custom properties for the entire domain
   generalDbColumnProperties(
     Db.H2 -> Set(

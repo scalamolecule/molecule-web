@@ -4,7 +4,7 @@ import molecule.DomainStructure
 
 
 // Generate Molecule boilerplate code by running `sbt moleculeGen`
-object SetupExample extends DomainStructure {
+trait SetupExample extends DomainStructure {
   trait Project {
     val name   = oneString
     val budget = oneInt

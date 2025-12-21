@@ -5,7 +5,7 @@ Let's explore a more complex example of a company with departments, employees an
 ### Domain structure
 
 ```scala
-object Company extends DomainStructure {
+trait Company extends DomainStructure {
   trait Department {
     val name = oneString
   }

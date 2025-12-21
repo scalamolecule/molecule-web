@@ -6,7 +6,7 @@ Define the structure of your domain with entities (traits) and attributes (prope
 ```scala
 import molecule.DomainStructure
 
-object Community extends DomainStructure {
+trait Community extends DomainStructure {
   trait Person { // entity
     val name    = oneString // attribute
     val age     = oneInt
@@ -28,7 +28,7 @@ In SQL databases, entities/attributes translate to tables and columns.
 A complex domain can group conceptually related entities in Segments as objects (beginning with lowercase letter):   
 
 ```scala
-object Company extends DomainStructure {
+trait Company extends DomainStructure {
   
   // HR segment 
   object hr { 
@@ -403,7 +403,7 @@ val luckyNumberWithErrMsg = oneInt.enums(
 ### `enum`
 Scala 3 enumerations can be defined in the DomainStructure and an attribute defined to only accept those enums:
 ```scala
-object Community extends DomainStructure {
+trait Community extends DomainStructure {
 
   enum Color:
     case RED, BLUE, GREEN
@@ -721,7 +721,7 @@ As in SQL, a many-to-many relationship is defined in Molecule with a join table/
 To be treated as a many-to-many relationship by Molecule, the joining entity (`Assignment`) must extend the `Join` trait as shown below:
 
 ```scala
-object Company extends DomainStructure {
+trait Company extends DomainStructure {
   trait Project {
     val name   = oneString
     val budget = oneInt
