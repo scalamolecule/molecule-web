@@ -10,7 +10,7 @@ Molecule uses the sbt [MoleculePlugin](https://github.com/scalamolecule/sbt-mole
 Add the latest version of the plugin in `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.1")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.2")
 ```
 
 Enable the plugin in your `build.sbt` file and import the molecule library that corresponds to the database(s) that you will use:
