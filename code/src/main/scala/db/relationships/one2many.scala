@@ -1,6 +1,5 @@
 package db.relationships
 
-import db.dataModel.Accounting.InvoiceLine
 import molecule.DomainStructure
 
 @deprecated

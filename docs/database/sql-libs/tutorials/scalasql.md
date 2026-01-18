@@ -555,47 +555,53 @@ db.run(query).take(5) ==> Seq(
 )
 ```
 
-Molecule doesn't support explicit subqueries although some molecules translate to subqueries internally. In this case, two queries can be used to retrieve the same result:
+Molecule doesn't need subsequent mapping and sorting:
 
 ```scala
-// Fetch ids of 2 most populated countries
-val top2 = Country.id.population.d1.query.limit(2).get.map(_._1)
 
-// Fetch first 5 languages of those countries
-CountryLanguage.language.a1.Country.id_(top2).name.query.limit(5).get ==> Seq(
-  ("Asami", "India"),
-  ("Bengali", "India"),
-  ("Chinese", "China"),
-  ("Dong", "China"),
-  ("Gujarati", "India"),
+CountryLanguage.language.a1.join(
+  Country.name.population.d1 // inner sort on mandatory population attribute
+    .code_(CountryLanguage.countryCode_) // correlation with outer rows
+    .query.limit(2) // number of inner rows per outer row
+).query.limit(5).get ==> List(
+  ("Asami", ("India", 1013662000)),
+  ("Bengali", ("India", 1013662000)),
+  ("Chinese", ("China", 1277558000)),
+  ("Dong", ("China", 1277558000)),
+  ("Gujarati", ("India", 1013662000))
 )
 ```
 
-... or make a subquery with a raw SQL query:
 
-```scala
-rawQuery(
-  """SELECT countrylanguage1.language AS res_0, subquery0.name AS res_1
-    |FROM (SELECT
-    |    country0.code AS code,
-    |    country0.name AS name,
-    |    country0.population AS population
-    |  FROM country country0
-    |  ORDER BY population DESC
-    |  LIMIT 2) subquery0
-    |JOIN countrylanguage countrylanguage1
-    |ON (subquery0.code = countrylanguage1.countrycode)
-    |ORDER BY res_0
-    |LIMIT 5
-    |""".stripMargin
-) ==> Seq(
-  Seq("Asami", "India"),
-  Seq("Bengali", "India"),
-  Seq("Chinese", "China"),
-  Seq("Dong", "China"),
-  Seq("Gujarati", "India"),
+## Comparison with ScalaSql
+
+Molecule's correlated subqueries differ semantically from ScalaSql:
+
+**ScalaSql** (example from their docs):
+```scala 3
+// Global subquery: gets top 2 countries globally, then joins with languages
+CountryLanguage.select
+  .join(Country.select.sortBy(_.population).desc.take(2))(_.countryCode === _.code)
+```
+This creates a regular join with an **independent** subquery executed once. The `take(2)` gets the top 2 countries **globally**, not per language.
+
+**Molecule** (equivalent with per-row correlation):
+```scala 3
+// Per-row subquery: gets top 2 languages per country
+Country.name.population.d1.join(
+  CountryLanguage.language.a1.countryCode_(Country.code_).query.limit(2)
+).query.i.limit(6).get ==> List(
+  ("China", 1277558000, "Chinese"),
+  ("China", 1277558000, "Dong"),      // Top 2 for China
+  ("India", 1013662000, "Asami"),
+  ("India", 1013662000, "Bengali"),   // Top 2 for India
+  ("United States", 278357000, "Chinese"),
+  ("United States", 278357000, "English") // Top 2 for USA
 )
 ```
+Molecule uses LATERAL join semantics where the subquery executes once per outer row, with access to that row's values via the correlation attribute .countryCode_(Country.code_).
+
+
 
 ## Union/Except/Intersect
 

@@ -23,5 +23,27 @@ object CompanyTest2 extends H2Tests {
       }
     }
 
+    "self-aggregate" - h2(Company2_h2()) {
+      Employee.name.salary.insert(
+        ("Bob", 50000),
+        ("Eva", 60000),
+        ("Liz", 70000),
+      ).transact
+
+      Employee.salary(avg).query.get ==> List(60000)
+
+      Employee.name.salary.>(Employee.salary(avg)).query.get ==> List(
+        ("Liz", 70000, 60000),
+      )
+      Employee.name.salary.>(Employee.salary_(avg)).query.i.get ==> List(
+        ("Liz", 70000),
+      )
+
+      Employee.name.salary.join(Employee.salary(avg)).query.i.get ==> List(
+        ("Bob", 50000, 60000),
+        ("Eva", 60000, 60000),
+        ("Liz", 70000, 60000),
+      )
+    }
   }
 }

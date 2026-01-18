@@ -162,16 +162,18 @@ object Address extends SQLSyntaxSupport[Address] {
 User defines SQL schema:
 ```sql
 -- Write PostgreSQL schema
-CREATE TABLE person (
-  id         BIGSERIAL PRIMARY KEY,
-  name       VARCHAR(255) NOT NULL,
-  age        INT NOT NULL,
-  address_id BIGINT REFERENCES address(id)
+CREATE TABLE person
+(
+    id         BIGSERIAL PRIMARY KEY,
+    name       VARCHAR(255) NOT NULL,
+    age        INT          NOT NULL,
+    address_id BIGINT REFERENCES address (id)
 );
 
-CREATE TABLE address (
-  id     BIGSERIAL PRIMARY KEY,
-  street VARCHAR(255) NOT NULL
+CREATE TABLE address
+(
+    id     BIGSERIAL PRIMARY KEY,
+    street VARCHAR(255) NOT NULL
 );
 ```
 
@@ -199,12 +201,12 @@ case class Person(
   name: String,
   age: Int,
   addressId: Long
-)derives Table
+) derives Table
 
 case class Address(
   id: Long,
   street: String
-)derives Table
+) derives Table
 
 // Or explicit table definition
 class PersonTable extends Table[Person]("person"):
@@ -245,17 +247,19 @@ object MySchema extends Schema {
 User defines SQL schema:
 ```sql
 -- Write database schema (any SQL dialect)
-CREATE TABLE person (
-  id         BIGINT PRIMARY KEY,
-  name       VARCHAR(255) NOT NULL,
-  age        INT NOT NULL,
-  address_id BIGINT,
-  FOREIGN KEY (address_id) REFERENCES address(id)
+CREATE TABLE person
+(
+    id         BIGINT PRIMARY KEY,
+    name       VARCHAR(255) NOT NULL,
+    age        INT          NOT NULL,
+    address_id BIGINT,
+    FOREIGN KEY (address_id) REFERENCES address (id)
 );
 
-CREATE TABLE address (
-  id     BIGINT PRIMARY KEY,
-  street VARCHAR(255) NOT NULL
+CREATE TABLE address
+(
+    id     BIGINT PRIMARY KEY,
+    street VARCHAR(255) NOT NULL
 );
 ```
 
@@ -298,7 +302,7 @@ public class PersonRecord extends UpdatableRecordImpl<PersonRecord> {
 | Window functions            |          |             |  ✅   |      |         |  ✅   |
 | Set operations (union etc)  |          |      ✅      |  ✅   |  ✅   |    ✅    |  ✅   |
 |                             |          |             |      |      |         |      |
-| Subqueries                  |          |      ✅      |  ✅   |  ✅   |    ✅    |  ✅   |
+| Subqueries                  |    ✅     |      ✅      |  ✅   |  ✅   |    ✅    |  ✅   |
 | Fragments/query composition |          |      ✅      |  ✅   |  ✅   |    ✅    |  ✅   |
 |                             |          |             |      |      |         |      |
 | Offset pagination           |    ✅     |      ✅      |  ✅   |  ✅   |    ✅    |  ✅   |
@@ -372,8 +376,8 @@ val people: IO[List[(Person, Address)]] =
 val people: List[(Person, Address)] =
   from(MySchema.persons, MySchema.addresses)((p, a) =>
     where(p.age > 25 and p.addressId === a.id)
-      select ((p, a))
-      orderBy (p.name asc)
+    select((p, a))
+    orderBy(p.name asc)
   ).toList
 // Automatic case class mapping
 ```
@@ -491,8 +495,8 @@ How to execute multiple operations in a transaction:
 ```scala
 given Conn = //... Molecule connection
 
-// Single operation
-Person.name("Alice").age(30).save.transact
+  // Single operation
+  Person.name("Alice").age(30).save.transact
 
 // Multiple operations within unitOfWork
 unitOfWork {
@@ -508,15 +512,15 @@ unitOfWork {
 ```scala
 implicit val session: DBSession = //... ScalikeJDBC session
 
-// Single operation
-DB localTx { implicit session =>
-  withSQL {
-    insert.into(Person).namedValues(
-      Person.column.name -> "Alice",
-      Person.column.age -> 30
-    )
-  }.update.apply()
-}
+  // Single operation
+  DB localTx { implicit session =>
+    withSQL {
+      insert.into(Person).namedValues(
+        Person.column.name -> "Alice",
+        Person.column.age -> 30
+      )
+    }.update.apply()
+  }
 
 // Multiple operations in a transaction
 DB localTx { implicit session =>
@@ -543,10 +547,10 @@ DB localTx { implicit session =>
 ```scala
 implicit val transactor: Transactor[IO] = //... Doobie transactor
 
-// Single operation
-personRepo.insert(
-  PersonRow(0L, "Alice", 30, None)
-).transact(transactor).unsafeRunSync()
+  // Single operation
+  personRepo.insert(
+    PersonRow(0L, "Alice", 30, None)
+  ).transact(transactor).unsafeRunSync()
 
 // Multiple operations in a transaction
 val transaction: ConnectionIO[Unit] = for {
@@ -568,11 +572,11 @@ transaction.transact(transactor).unsafeRunSync()
 ```scala
 implicit val connector: Connector[IO] = //... ldbc connector
 
-// Single operation
-sql"INSERT INTO person (name, age) VALUES (${"Alice"}, ${30})"
-  .update
-  .readOnly(connector)
-  .unsafeRunSync()
+  // Single operation
+  sql"INSERT INTO person (name, age) VALUES (${"Alice"}, ${30})"
+    .update
+    .readOnly(connector)
+    .unsafeRunSync()
 
 // Multiple operations in a transaction
 val transaction: IO[Unit] = for {
@@ -616,13 +620,13 @@ transaction {
 ```scala
 val dsl: DSLContext = //... JOOQ DSL context
 
-// Single operation
-dsl.transaction((configuration: Configuration) => {
-  configuration.dsl()
-    .insertInto(PERSON, PERSON.NAME, PERSON.AGE)
-    .values("Alice", 30)
-    .execute()
-})
+  // Single operation
+  dsl.transaction((configuration: Configuration) => {
+    configuration.dsl()
+      .insertInto(PERSON, PERSON.NAME, PERSON.AGE)
+      .values("Alice", 30)
+      .execute()
+  })
 
 // Multiple operations in a transaction
 dsl.transaction((configuration: Configuration) => {
@@ -636,20 +640,20 @@ dsl.transaction((configuration: Configuration) => {
 
   // Batch insert multiple employees
   ctx.batch(
-    ctx.insertInto(
-        EMPLOYEE, 
-        EMPLOYEE.NAME, 
-        EMPLOYEE.SALARY, 
-        EMPLOYEE.PROJECT_ID
-      )
-      .values(
-        null.asInstanceOf[String], 
-        null.asInstanceOf[Integer], 
-        null.asInstanceOf[Long]
-      )
-  ).bind("Alice", 80000, p1)
-   .bind("Bob", 90000, p1)
-   .execute()
+      ctx.insertInto(
+          EMPLOYEE,
+          EMPLOYEE.NAME,
+          EMPLOYEE.SALARY,
+          EMPLOYEE.PROJECT_ID
+        )
+        .values(
+          null.asInstanceOf[String],
+          null.asInstanceOf[Integer],
+          null.asInstanceOf[Long]
+        )
+    ).bind("Alice", 80000, p1)
+    .bind("Bob", 90000, p1)
+    .execute()
 })
 ```
 

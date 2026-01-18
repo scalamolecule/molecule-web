@@ -113,7 +113,7 @@ Person.lastName(min(2)).query.get.head ==> Set("Benson", "Johnson")
 Person.lastName(max(2)).query.get.head ==> Set("Murray", "Taylor")
 ```
 
-Notice how the return type changes from `<basetype` to `Set[<basetype>]`.
+Notice how the return type changes from `<basetype>` to `Set[<basetype>]`.
 
 ### sample
 

@@ -1,5 +1,5 @@
 
-val moleculeVersion = "0.29.0"
+val moleculeVersion = "0.30.0"
 
 val testContainerVersion = "1.20.6"
 

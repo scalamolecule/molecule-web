@@ -249,10 +249,10 @@ inline def addresses = quote {
 | Computed expressions        |          |    ✅     |   ✅   |     ✅      |
 | Group by                    |    ✅     |    ✅     |   ✅   |     ✅      |
 | Having                      |    ✅     |    ✅     |   ✅   |     ✅      |
-| Window functions            |          |          |   ✅   |     ✅      |
+| Window functions            |          |     ✅     |   ✅   |     ✅      |
 | Set operations (union etc)  |          |    ✅     |   ✅   |     ✅      |
 |                             |          |          |       |            |
-| Subqueries                  |          |    ✅     |   ✅   |     ✅      |
+| Subqueries                  |     ✅     |    ✅     |   ✅   |     ✅      |
 | Fragments/query composition |          |    ✅     |   ✅   |     ✅      |
 |                             |          |          |       |            |
 | Offset pagination           |    ✅     |    ✅     |   ✅   |     ✅      |

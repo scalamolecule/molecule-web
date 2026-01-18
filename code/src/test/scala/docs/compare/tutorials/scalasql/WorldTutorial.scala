@@ -201,6 +201,8 @@ object WorldTutorial extends H2Tests {
 
 
     "subqueries" - {
+      // Using 2 queries to get languages of top 2 countries:
+      // "Get languages of 2 most populous countries"
       val top2 = Country.id.population.d1.query.limit(2).get.map(_._1)
       CountryLanguage.language.a1.Country.id_(top2).name.query.limit(5).get ==> Seq(
         ("Asami", "India"),
@@ -210,31 +212,66 @@ object WorldTutorial extends H2Tests {
         ("Gujarati", "India"),
       )
 
-
-      // CountryLanguage.language.a1.Country.id_(Country.id.population_.d1).name
-
-
-      rawQuery(
-        """SELECT countrylanguage1.language AS res_0, subquery0.name AS res_1
-          |FROM (SELECT
-          |    country0.code AS code,
-          |    country0.name AS name,
-          |    country0.population AS population
-          |  FROM country country0
-          |  ORDER BY population DESC
-          |  LIMIT 2) subquery0
-          |JOIN countrylanguage countrylanguage1
-          |ON (subquery0.code = countrylanguage1.countrycode)
-          |ORDER BY res_0
-          |LIMIT 5
-          |""".stripMargin
-      ) ==> Seq(
-        Seq("Asami", "India"),
-        Seq("Bengali", "India"),
-        Seq("Chinese", "China"),
-        Seq("Dong", "China"),
-        Seq("Gujarati", "India"),
+      // per-row correlation:
+      // "Get most populous countries each with 2 of their languages (alphabetically sorted)"
+      Country.name.population.d1.join(
+        CountryLanguage.language.a1.countryCode_(Country.code_).query.limit(2)
+      ).query.i.limit(6).get ==> List(
+        ("China", 1277558000, "Chinese"),
+        ("China", 1277558000, "Dong"),
+        ("India", 1013662000, "Asami"),
+        ("India", 1013662000, "Bengali"),
+        ("United States", 278357000, "Chinese"),
+        ("United States", 278357000, "English")
       )
+      // (molecule doesn't need subsequent mapping and sorting)
+
+      Country.name.population.d1.join(
+        CountryLanguage.language.a1.countryCode_(Country.code_).query.limit(2)
+      ).query.i.limit(6).get.contains(
+        """SELECT DISTINCT
+          |  CountryLanguage.language,
+          |  subquery1.name,
+          |  subquery1.population
+          |FROM CountryLanguage INNER JOIN (
+          |    SELECT DISTINCT
+          |      name, population, code
+          |    FROM (
+          |      SELECT DISTINCT
+          |        inner_query.*,
+          |        ROW_NUMBER() OVER (PARTITION BY inner_query.code ORDER BY inner_query.population DESC NULLS LAST) as rn
+          |      FROM (
+          |      SELECT DISTINCT
+          |        Country.name,
+          |        Country.population,
+          |        Country.code
+          |      FROM Country
+          |      WHERE
+          |        Country.name       IS NOT NULL AND
+          |        Country.population IS NOT NULL
+          |      ORDER BY Country.population DESC NULLS LAST
+          |  ) inner_query
+          |    ) filtered_query
+          |    WHERE rn <= 2
+          |  ) subquery1 ON CountryLanguage.countryCode = subquery1.code
+          |WHERE
+          |  CountryLanguage.language IS NOT NULL
+          |ORDER BY CountryLanguage.language NULLS FIRST, subquery1.population DESC
+          |LIMIT 5;""".stripMargin
+      )
+
+      // ScalaSql's example uses a regular join with an independent subquery: the subquery
+      // gets the top 2 most populous countries globally (executed once), then joins them
+      // with languages. This is NOT the same as getting the top 2 countries per language
+      // (which would require LATERAL joins or window functions). The example gives a false
+      // positive because Asami exists in both Bhutan and India - only India's Asami appears
+      // since India is globally top 2. The Molecule example above uses LATERAL join for
+      // true per-row correlation: the subquery executes once per language.
+
+      // CountryLanguage.select
+      //   .join(Country.select.sortBy(_.population).desc.take(2))(_.countryCode === _.code)
+      //   .map { case (language, country) => (language.language, country.name) }
+      //   .sortBy(_._1)
     }
 
 

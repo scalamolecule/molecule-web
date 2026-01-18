@@ -7,12 +7,12 @@ trait Company2 extends DomainStructure {
 
   trait Employee {
     val name    = oneString
-    val salary  = oneInt
+    val salary  = oneDouble
     val project = manyToOne[Project]
   }
 
   trait Project {
     val name   = oneString
-    val budget = oneInt
+    val budget = oneDouble
   }
 }

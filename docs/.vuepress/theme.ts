@@ -27,6 +27,7 @@ export default hopeTheme({
   favicon: "/static/favicon.ico",
 
   markdown: {
+    // alert: true,
     imgLazyload: true,
     imgSize: true,
     codeTabs: true,

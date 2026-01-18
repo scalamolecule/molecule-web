@@ -165,7 +165,7 @@ sql"DELETE FROM person WHERE id = $personId".update.run
 | Window functions            |          |   ✅    |   ✅    |   ✅   |   ✅   |
 | Set operations (union etc)  |          |   ✅    |   ✅    |   ✅   |   ✅   |
 |                             |          |        |        |       |       |
-| Subqueries                  |          |   ✅    |   ✅    |   ✅   |   ✅   |
+| Subqueries                  |     ✅     |   ✅    |   ✅    |   ✅   |   ✅   |
 | Fragments/query composition |          |   ✅    |        |   ✅   |       |
 |                             |          |        |        |       |       |
 | Offset pagination           |    ✅     |   ✅    |   ✅    |   ✅   |   ✅   |

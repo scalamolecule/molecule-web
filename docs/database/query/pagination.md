@@ -2,7 +2,7 @@
 
 Molecule offers both Offset pagination and Cursor pagination.
 
-## Offset
+## Offset pagination
 
 Offset pagination is easy to understand and use. But it comes with a performance penalty the bigger the offset is on big data sets since the whole data set is scanned each time. But for smaller data sets it works fine.
 
@@ -23,12 +23,7 @@ Gamer.rank.a1.query.limit(1).get ==> List(1)
 Gamer.rank.a1.query.limit(2).get ==> List(1, 2)
 ```
 
-It's like `take(n)` on a `List`. But applying a negative number changes the semantics and returns `n` rows from the end instead:
-
-```scala
-Gamer.rank.a1.query.limit(-1).get ==> List(3)
-Gamer.rank.a1.query.limit(-2).get ==> List(2, 3)
-```
+It's like `take(n)` on a `List`.
 
 
 ### Offset
@@ -61,21 +56,6 @@ Gamer.rank.a1.query.offset(2).get ==> (List(3), 3, false)
 Gamer.rank.a1.query.offset(3).get ==> (List(), 3, false)
 ```
 
-As with `limit` we can acquire an offset from the end with a negative `n`:
-
-```scala
-// Before end (all)
-Gamer.rank.a1.query.offset(0).get ==> (List(1, 2, 3), 3, false)
-
-// Before last row
-Gamer.rank.a1.query.offset(-1).get ==> (List(1, 2), 3, false)
-
-// Before second last row, etc.
-Gamer.rank.a1.query.offset(-2).get ==> (List(1), 3, false)
-Gamer.rank.a1.query.offset(-3).get ==> (List(), 3, false)
-```
-
-
 ### Paginate
 
 Offset pagination uses `limit` and `offset` in tandem. Going forward we can get page 1 and 2 like this:
@@ -95,29 +75,8 @@ Gamer.rank.a1.query.offset(0).limit(2).get ==> (List(1, 2), 3, true)
 Gamer.rank.a1.query.offset(2).limit(2).get ==> (List(3), 3, false)
 ```
 
-Going backwards from the end:
 
-```scala
-// Last page - more pages before...
-Gamer.rank.a1.query.limit(-2).offset(0).get ==> (List(2, 3), 3, true)
-
-// Previous page -  is first page (no more before)
-Gamer.rank.a1.query.limit(-2).offset(-2).get ==> (List(1), 3, false)
-```
-
-#### Reverse trick
-
-Backwards offset pagination uses `offset = totalCount-limit` which on large data sets become inefficient. So instead of using the negative number (which is otherwise fine for small data sets), you can reverse the ordering, take the first `n` rows and then reverse the result:
-
-```scala
-// Slower
-Gamer.rank.a1.query.limit(-2).offset(0).get._1 ==> List(2, 3)
-// Faster
-Gamer.rank.d1.query.limit(2).offset(0).get._1.reverse ==> List(2, 3)
-```
-
-
-## Cursor
+## Cursor pagination
 
 Molecule uses "Cursor pagination" as a broad term for fetching `n` rows or a "page" after/before the last shown row.
 
@@ -135,19 +94,6 @@ page2 ==> List(3)
 hasMore2 ==> false // no more pages
 ```
 
-We can also go backwards from the last page by using a negative `limit` number:
-
-```scala
-// Last page
-val (page1, cursor1, hasMore1) = Gamer.rank.a1.query.from("").limit(-2).get
-page1 ==> List(2, 3)
-hasMore1 ==> true // more pages
-
-// Previous page using cursor1 from last page
-val (page2, cursor2, hasMore2) = Gamer.rank.a1.query.from(cursor1).limit(-2).get
-page2 ==> List(1)
-hasMore2 ==> false // no more pages
-```
 
 The cursor String returned contains various information encoded with Base64 that Molecule uses to identify the next page rows.
 
